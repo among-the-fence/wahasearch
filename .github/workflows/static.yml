@@ -31,7 +31,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: enter app 
-        run: cd wahasearch
+        run: cd wahasearch/wahasearch
       - name: ls
         run: ls -la
       - name: Set up Node
