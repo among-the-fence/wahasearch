@@ -3,13 +3,11 @@ import {
     Card,
     CardContent,
     CardDescription,
-    CardFooter,
     CardHeader,
     CardTitle,
   } from "@/components/ui/card"
-import { Datasheet, Stat } from "@/models/faction";
+import { Datasheet } from "@/models/faction";
 import { compileStats } from "@/lib/unitformatter";
-import { Link } from "lucide-react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@radix-ui/react-collapsible";
 import { XMarkIcon } from "@heroicons/react/16/solid";
 import { WeaponProfile } from "./unitcomponents/weaponprofile";

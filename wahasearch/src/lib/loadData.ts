@@ -10,17 +10,17 @@ import h from "@/lib/data/datasources/10th/json/bloodangels.json"
 import i from "@/lib/data/datasources/10th/json/chaosdaemons.json"
 import j from "@/lib/data/datasources/10th/json/chaosknights.json"
 import k from "@/lib/data/datasources/10th/json/chaos_spacemarines.json"
-import l from "@/lib/data/datasources/10th/json/core.json"
+// import l from "@/lib/data/datasources/10th/json/core.json"
 import m from "@/lib/data/datasources/10th/json/darkangels.json"
 import n from "@/lib/data/datasources/10th/json/deathguard.json"
 import o from "@/lib/data/datasources/10th/json/deathwatch.json"
 import p from "@/lib/data/datasources/10th/json/drukhari.json"
 import q from "@/lib/data/datasources/10th/json/emperors_children.json"
-import r from "@/lib/data/datasources/10th/json/enhancements.json"
+// import r from "@/lib/data/datasources/10th/json/enhancements.json"
 import s from "@/lib/data/datasources/10th/json/greyknights.json"
 import t from "@/lib/data/datasources/10th/json/gsc.json"
 import u from "@/lib/data/datasources/10th/json/imperialknights.json"
-import v from "@/lib/data/datasources/10th/json/marines_leviathan.json"
+// import v from "@/lib/data/datasources/10th/json/marines_leviathan.json"
 import w from "@/lib/data/datasources/10th/json/necrons.json"
 import x from "@/lib/data/datasources/10th/json/orks.json"
 import y from "@/lib/data/datasources/10th/json/space_marines.json"
@@ -29,20 +29,22 @@ import aa from "@/lib/data/datasources/10th/json/tau.json"
 import ab from "@/lib/data/datasources/10th/json/thousandsons.json"
 import ac from "@/lib/data/datasources/10th/json/titan.json"
 import ad from "@/lib/data/datasources/10th/json/tyranids.json"
-import ae from "@/lib/data/datasources/10th/json/unaligned.json"
+// import ae from "@/lib/data/datasources/10th/json/unaligned.json"
 import af from "@/lib/data/datasources/10th/json/votann.json"
 import ag from "@/lib/data/datasources/10th/json/worldeaters.json"
 import { FactionRoot } from "@/models/faction"
-import {v4 as uuidv4} from 'uuid';
 
+function createRandomHash(length:number) {
+    return (Math.random() + 1).toString(36).substring(length);
+}
 
 function compileFactions() {
     console.log("DOING THE BIG WORK");
     const factionList: FactionRoot[] = [a,b,c,d,e,f,g,h,i,j,k,m,n,o,p,q,s,t,u,w,x,y,z,aa,ab,ac,ad,af,ag];
     factionList.map((f) => (f.datasheets.forEach((d) => {
         d.colours = f.colours;
-        d.uuid = uuidv4();
-        d.stats.forEach(s => s.uuid = uuidv4());
+        d.uuid = createRandomHash(20);
+        d.stats.forEach(s => s.uuid = createRandomHash(20));
         let compiledWords = [];
         compiledWords.push(d.name.toLowerCase());
         compiledWords = compiledWords.concat(d.stats.flatMap((s) => s.name.toLowerCase()));
