@@ -26,7 +26,6 @@ export const UnitCard = ({unit, onclick}: UnitCardProps) => {
             <CardTitle className={headerStyle} onClick={clicktrigger} style={{color: unit.colours?.header}}>{unit.name}</CardTitle>
             {unit.stats.map(sb => <CardDescription key={sb.uuid}>{compileStats(unit, sb)}</CardDescription>)}
             {unit.leads && (<p>{unit.leads.units.join(", ")}</p>)}
-            {unit.compiledKeywords && (<p>{unit.compiledKeywords.join(", ")}</p>)}
         </CardHeader>
     </Card>);
 }
