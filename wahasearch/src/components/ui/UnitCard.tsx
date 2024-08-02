@@ -1,13 +1,11 @@
 
 import {
     Card,
-    CardContent,
     CardDescription,
-    CardFooter,
     CardHeader,
     CardTitle,
   } from "@/components/ui/card"
-import { Datasheet, Stat } from "@/models/faction";
+import { Datasheet } from "@/models/faction";
 import { compileStats } from "@/lib/unitformatter";
 
 interface UnitCardProps {

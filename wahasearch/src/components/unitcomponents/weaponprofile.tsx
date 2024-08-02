@@ -1,14 +1,5 @@
 
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-  } from "@/components/ui/card"
-import { Datasheet, Profile, Stat } from "@/models/faction";
-import { compileStats } from "@/lib/unitformatter";
+import { Profile } from "@/models/faction";
 
 interface WeaponProfileProps {
     profile: Profile

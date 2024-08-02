@@ -4,14 +4,13 @@ import { Datasheet } from './models/faction'
 import { factions } from '@/lib/loadData';
 import { applyFilters } from '@/lib/filter';
 import { UnitCard } from './components/ui/UnitCard'
-import { ChangeEvent, useState } from 'react';
+import { useState } from 'react';
 import { ExampleSheet } from './components/UnitDetailsSheet';
 import { SearchSheet } from './components/SearchSheet';
 
 
 function App() {
   const [panelUnitStack, setPanelUnitStack] = useState<Datasheet[]>([]);
-  const [formState, setFormState] = useState(new Map());
   const [units, setUnits] = useState<Datasheet[]>(factions.flatMap((f) => f.datasheets)
   .sort((a,b) => (a.name < b.name ? -1 : 1)));
 
@@ -24,7 +23,6 @@ function App() {
   }
 
   const applySearchFormFilters = (currentFormState: Map<string, string>) => {
-    setFormState(currentFormState);
     const flatdatasheets = applyFilters(currentFormState);
     setUnits(flatdatasheets);
   }
