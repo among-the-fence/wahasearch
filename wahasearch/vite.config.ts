@@ -4,6 +4,7 @@ import { defineConfig } from "vite"
 
 export default defineConfig({
   server: {host: true},
+  base: "https://among-the-fence.github.io/wahasearch/",
   plugins: [react()],
   resolve: {
     alias: {
