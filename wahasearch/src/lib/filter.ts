@@ -32,11 +32,15 @@ const faction_nickname_map = {
 }
 
 function findFactionName(text: string) {
+    const patialMatchKeys = []
     for (const [k,v] of Object.entries(faction_nickname_map)) {
-        if (text == k|| v.includes(text))
+        if (text == k || v.includes(text))
             return k
+        else if (k.includes(text)) {
+            patialMatchKeys.push(k)
+        }
     }
-    return text
+    return (patialMatchKeys.length > 0) ? patialMatchKeys : text;
 }
 
 export function applyFilters(filters: Map<String, String>) {
@@ -53,7 +57,7 @@ export function applyFilters(filters: Map<String, String>) {
         }
         else if (k == "faction") {
             const lv = v.toLowerCase().split(",")
-                .map(x => findFactionName(x.trim())).filter(x => x.length > 0);
+                .flatMap(x => findFactionName(x.trim())).filter(x => x.length > 0);
             console.log(lv);
             const res = flatDatasheets
                 .filter((a) => a.factions.some(ks => lv.includes(ks.toLowerCase())))
