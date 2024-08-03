@@ -34,8 +34,10 @@ import af from "@/lib/data/datasources/10th/json/votann.json"
 import ag from "@/lib/data/datasources/10th/json/worldeaters.json"
 import { FactionRoot } from "@/models/faction"
 
-function createRandomHash(length:number) {
-    return (Math.random() + 1).toString(36).substring(length);
+function createRandomHash() {
+    const x = Math.random().toString(36).substring(2, 25)+Math.random().toString(36).substring(2, 25);
+    // console.log(x);
+    return x;
 }
 
 function compileFactions() {
@@ -43,8 +45,8 @@ function compileFactions() {
     const factionList: FactionRoot[] = [a,b,c,d,e,f,g,h,i,j,k,m,n,o,p,q,s,t,u,w,x,y,z,aa,ab,ac,ad,af,ag];
     factionList.map((f) => (f.datasheets.forEach((d) => {
         d.colours = f.colours;
-        d.uuid = createRandomHash(20);
-        d.stats.forEach(s => s.uuid = createRandomHash(20));
+        d.uuid = createRandomHash();
+        d.stats.forEach(s => s.uuid = createRandomHash());
         let compiledWords = [];
         compiledWords.push(d.name.toLowerCase());
         compiledWords = compiledWords.concat(d.stats.flatMap((s) => s.name.toLowerCase()));
@@ -57,7 +59,7 @@ function compileFactions() {
                 [...wp.keywords.flatMap(x => x.toLowerCase()), wp.name.toLowerCase()]
             ))));
         compiledWords = compiledWords.map(x=>x.trim()).filter(x => x.length > 0);
-        d.compiledKeywords = compiledWords;
+        d.compiledKeywords = [...new Set(compiledWords)];
     })));
     return factionList;
 }

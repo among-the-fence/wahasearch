@@ -6,7 +6,7 @@ import { applyFilters } from '@/lib/filter';
 import { UnitCard } from './components/ui/UnitCard'
 import { useState } from 'react';
 import { ExampleSheet } from './components/UnitDetailsSheet';
-import { SearchSheet } from './components/SearchSheet';
+import { SearchSheet } from './components/search/SearchSheet';
 
 
 function App() {

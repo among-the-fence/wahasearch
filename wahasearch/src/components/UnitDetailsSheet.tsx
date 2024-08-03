@@ -29,7 +29,7 @@ export const ExampleSheet = ({unit, handleClickToClose}: UnitDetailsSheetProps) 
     handleClickToClose();
     setOpen(false);
   }
-
+  const searchValue = `https://www.google.com/search?tbm=isch&q=warhammer+40k+${unit.name}`;
   return (
     <Dialog open={open} onClose={clickedClose} className="relative z-10">
       <DialogBackdrop
@@ -47,8 +47,18 @@ export const ExampleSheet = ({unit, handleClickToClose}: UnitDetailsSheetProps) 
               <div className="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl">
                 <div className="px-4 sm:px-6">
                   <div className="flex items-start justify-between">
-                    <DialogTitle className="text-base font-semibold leading-6 text-gray-900">Panel title</DialogTitle>
+                    <DialogTitle className="text-xl font-semibold leading-6 text-gray-900">{unit.name}</DialogTitle>
                     <div className="ml-3 flex h-7 items-center">
+                      <a
+                        target="_blank" onClick={()=> window.open(searchValue, "_blank")}
+                        className="mx-2 relative rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                        >
+                        <span className="absolute -inset-2.5" />
+                        <span className="sr-only">search</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                        </svg>
+                      </a>
                       <button
                         type="button"
                         onClick={clickedClose}
@@ -62,16 +72,16 @@ export const ExampleSheet = ({unit, handleClickToClose}: UnitDetailsSheetProps) 
                   </div>
                 </div>
                 <div className="relative mt-6 flex-1 px-4 sm:px-6">
-                <div className="grid md:grid-cols-2 sm:grid-cols-1  gap-4">
+                <div className="grid grid-cols-1">
                   {hasRanged && (
-                      <Collapsible defaultOpen={true}>
+                      <Collapsible className="col-span-1 my-2" defaultOpen={true}>
                           <CollapsibleTrigger><h3 className="text-lg font-semibold">Ranged</h3></CollapsibleTrigger>
                           <CollapsibleContent>
                               {unit.rangedWeapons.map((u) => u.profiles.map((uu) => <WeaponProfile key={uu.name} profile={uu}/>))}
                           </CollapsibleContent>
                       </Collapsible>
                   )}
-                  <Collapsible defaultOpen={true}>
+                  <Collapsible className="col-span-1 my-2" defaultOpen={true}>
                       <CollapsibleTrigger><h3 className="text-lg font-semibold">Melee</h3></CollapsibleTrigger>
                       <CollapsibleContent>
                           {unit.meleeWeapons.map((u) => u.profiles.map((uu) => <WeaponProfile key={uu.name} profile={uu}/>))}
@@ -79,7 +89,7 @@ export const ExampleSheet = ({unit, handleClickToClose}: UnitDetailsSheetProps) 
                   </Collapsible>
                   
                   {hasAbilities && (
-                      <Collapsible className="col-span-2" defaultOpen={true}>
+                      <Collapsible className="col-span-1 my-2" defaultOpen={true}>
                           <CollapsibleTrigger><h3 className="text-lg font-semibold">Abilities</h3></CollapsibleTrigger>
                           <CollapsibleContent>
                               {unit.abilities.other.map((a) => (<div><p className="text-lg font-semibold inline">{a.name}</p>: {a.description}</div>))}
@@ -88,7 +98,7 @@ export const ExampleSheet = ({unit, handleClickToClose}: UnitDetailsSheetProps) 
                   )}
 
                   {unit.compiledKeywords && (
-                      <Collapsible className="col-span-2" defaultOpen={false}>
+                      <Collapsible className="col-span-1 my-2" defaultOpen={false}>
                           <CollapsibleTrigger><h3 className="text-lg font-semibold">Searchable keywords</h3></CollapsibleTrigger>
                           <CollapsibleContent>
                               {unit.compiledKeywords.join(", ")}

@@ -18,7 +18,7 @@ export function SearchSheet({updateGlobalForm}: SearchSheetProps) {
   const [localFormState, setLocalFormState] = useState(new Map());
 
   const updateLocalFormState = (field: string, e: ChangeEvent<HTMLInputElement>) => {
-    console.log(field, e);
+    // console.log(field, e);
     setLocalFormState(new Map(localFormState).set(field, e.target.value));
   }
 
@@ -29,8 +29,8 @@ export function SearchSheet({updateGlobalForm}: SearchSheetProps) {
   
   return (
     <Sheet>
-      <SheetTrigger asChild>
-        <Button className="fixed top-0 left-0" variant="outline">
+      <SheetTrigger className="m-1" asChild>
+        <Button className="fixed top-0 left-0 py-5" variant="outline">
           <div
             className="HAMBURGER-ICON space-y-2"
           >
