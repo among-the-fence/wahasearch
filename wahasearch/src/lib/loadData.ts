@@ -48,17 +48,24 @@ function compileFactions() {
         d.uuid = createRandomHash();
         d.stats.forEach(s => s.uuid = createRandomHash());
         let compiledWords = [];
-        compiledWords.push(d.name.toLowerCase());
-        compiledWords = compiledWords.concat(d.stats.flatMap((s) => s.name.toLowerCase()));
-        compiledWords = compiledWords.concat(d.factions.map(f => f.toLowerCase()));
+        compiledWords.push(d.name);
+        compiledWords = compiledWords.concat(d.stats.flatMap((s) => s.name));
+        compiledWords = compiledWords.concat(d.factions.map(f => f));
         compiledWords = compiledWords.concat(d.meleeWeapons.flatMap(w => w.profiles.flatMap(wp => (
-            [...wp.keywords.flatMap(x => x.toLowerCase()), wp.name.toLowerCase()]
+            [...wp.keywords.flatMap(x => x), wp.name]
         ))));
         if (d.rangedWeapons)
             compiledWords = compiledWords.concat(d.rangedWeapons.flatMap(w => w.profiles.flatMap(wp => (
-                [...wp.keywords.flatMap(x => x.toLowerCase()), wp.name.toLowerCase()]
+                [...wp.keywords.flatMap(x => x), wp.name]
             ))));
-        compiledWords = compiledWords.map(x=>x.trim()).filter(x => x.length > 0);
+        if (d.leads?.units && d.leads?.units?.length > 0) {
+            compiledWords = compiledWords.concat(d.leads?.units);
+        }
+        if (d.leadBy && d.leadBy?.length > 0) {
+            compiledWords = compiledWords.concat(d.leadBy);
+        }
+        
+        compiledWords = compiledWords.map(x=>x.toLowerCase().trim()).filter(x => x.length > 0);
         d.compiledKeywords = [...new Set(compiledWords)];
     })));
     return factionList;
