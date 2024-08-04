@@ -23,7 +23,9 @@ import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/re
 export const ExampleSheet = ({unit, handleClickToClose}: UnitDetailsSheetProps) => {
   const [open, setOpen] = useState(true)
   const hasRanged = unit.rangedWeapons.length > 0;
+  const hasMelee = unit.meleeWeapons.length > 0;
   const hasAbilities = unit.abilities.other.length > 0;
+  const hasKeywords = unit.keywords.length > 0;
 
   function clickedClose() {
     handleClickToClose();
@@ -81,12 +83,15 @@ export const ExampleSheet = ({unit, handleClickToClose}: UnitDetailsSheetProps) 
                           </CollapsibleContent>
                       </Collapsible>
                   )}
-                  <Collapsible className="col-span-1 my-2" defaultOpen={true}>
-                      <CollapsibleTrigger><h3 className="text-lg font-semibold">Melee</h3></CollapsibleTrigger>
-                      <CollapsibleContent>
-                          {unit.meleeWeapons.map((u) => u.profiles.map((uu) => <WeaponProfile key={uu.name} profile={uu}/>))}
-                      </CollapsibleContent>
-                  </Collapsible>
+
+                  {hasMelee && (
+                    <Collapsible className="col-span-1 my-2" defaultOpen={true}>
+                        <CollapsibleTrigger><h3 className="text-lg font-semibold">Melee</h3></CollapsibleTrigger>
+                        <CollapsibleContent>
+                            {unit.meleeWeapons.map((u) => u.profiles.map((uu) => <WeaponProfile key={uu.name} profile={uu}/>))}
+                        </CollapsibleContent>
+                    </Collapsible>
+                  )}
                   
                   {hasAbilities && (
                       <Collapsible className="col-span-1 my-2" defaultOpen={true}>
@@ -97,17 +102,30 @@ export const ExampleSheet = ({unit, handleClickToClose}: UnitDetailsSheetProps) 
                       </Collapsible>
                   )}
 
-                  {unit.compiledKeywords && (
-                      <Collapsible className="col-span-1 my-2" defaultOpen={false}>
-                          <CollapsibleTrigger><h3 className="text-lg font-semibold">Searchable keywords</h3></CollapsibleTrigger>
+                  {hasKeywords && (
+                      <Collapsible className="col-span-1 my-2" defaultOpen={true}>
+                          <CollapsibleTrigger><h3 className="text-lg font-semibold">Keywords</h3></CollapsibleTrigger>
                           <CollapsibleContent>
-                              {unit.compiledKeywords.join(", ")}
+                              {unit.keywords.join(", ")}
                           </CollapsibleContent>
                       </Collapsible>
                   )}
 
-              </div>
-            </div>
+
+                  {unit.compiledKeywords && (
+                      <Collapsible className="col-span-1 my-2" defaultOpen={false}>
+                          <CollapsibleTrigger><h3 className="text-lg font-semibold">Debug</h3></CollapsibleTrigger>
+                          <CollapsibleContent>
+                              {unit.compiledKeywords.join(", ")}
+                              <pre>
+                                {JSON.stringify(unit, null, 2)}
+                              </pre>
+                          </CollapsibleContent>
+                      </Collapsible>
+                  )}
+
+                  </div>
+                </div>
               </div>
             </DialogPanel>
           </div>

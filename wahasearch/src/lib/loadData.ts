@@ -51,6 +51,7 @@ function compileFactions() {
         compiledWords.push(d.name);
         compiledWords = compiledWords.concat(d.stats.flatMap((s) => s.name));
         compiledWords = compiledWords.concat(d.factions.map(f => f));
+        compiledWords = compiledWords.concat(d.keywords.map(f => f));
         compiledWords = compiledWords.concat(d.meleeWeapons.flatMap(w => w.profiles.flatMap(wp => (
             [...wp.keywords.flatMap(x => x), wp.name]
         ))));

@@ -1,3 +1,4 @@
+import { SearchParams } from "./SearchParams";
 import { factions } from "./loadData";
 
 
@@ -43,28 +44,29 @@ function findFactionName(text: string) {
     return (patialMatchKeys.length > 0) ? patialMatchKeys : text;
 }
 
-export function applyFilters(filters: Map<String, String>) {
-    let flatDatasheets = factions.flatMap((f) => f.datasheets).sort((a,b) => (a.name < b.name ? -1 : 1));
-
-    for (const [k,v] of filters.entries()) {
-        if (v.length == 0 || v == " '")
-            continue;
-        console.log(`Filtering on '${k}': '${v}'`);
-        if (k == "unit" && v.trim() != "") {
-            const lv = v.toLowerCase().split(",").map(x => x.trim());
-            flatDatasheets = flatDatasheets
-                .filter((a) => lv.every(ilv => a.compiledKeywords?.some(ks => ks.includes(ilv))))
-        }
-        else if (k == "faction") {
-            const lv = v.toLowerCase().split(",")
-                .flatMap(x => findFactionName(x.trim())).filter(x => x.length > 0);
-            console.log(lv);
-            const res = flatDatasheets
-                .filter((a) => a.factions.some(ks => lv.includes(ks.toLowerCase())))
-            if (res.length > 0)
-                flatDatasheets = res;
-        }
+export function applyFilters(filters: Map<string, string>) {
+    console.log(filters);
+    let flatDatasheets = factions.flatMap((f) => f.datasheets).sort((a,b) => (a.name < b.name ? -1 : 1))
+    const faction = filters.get("faction");
+    if (faction && faction.length > 0 && faction.trim() != "") {
+        const lv = faction.toLowerCase().split(",")
+            .flatMap(x => findFactionName(x.trim())).filter(x => x.length > 0);
+        console.log(lv);
+        const res = flatDatasheets
+            .filter((a) => a.factions.some(ks => lv.includes(ks.toLowerCase())))
+        if (res.length > 0)
+            flatDatasheets = res;
     }
+    const keywords = filters.get("compiledKeywords");
+    if (keywords && keywords.trim() != "") {
+        const lv = keywords.toLowerCase().split(",").map(x => x.trim());
+        flatDatasheets = flatDatasheets
+            .filter((a) => lv.every(ilv => a.compiledKeywords?.some(ks => ks.includes(ilv))))
+    }
+
+    const search = new SearchParams(filters);
+    console.log(search);
+    flatDatasheets = flatDatasheets.filter(x => search.apply(x));
 
     return flatDatasheets;
 }

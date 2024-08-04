@@ -18,8 +18,13 @@ export function SearchSheet({updateGlobalForm}: SearchSheetProps) {
   const [localFormState, setLocalFormState] = useState(new Map());
 
   const updateLocalFormState = (field: string, e: ChangeEvent<HTMLInputElement>) => {
-    // console.log(field, e);
-    setLocalFormState(new Map(localFormState).set(field, e.target.value));
+    if (e.target.value.length == 0) {
+      localFormState.delete(field)
+      setLocalFormState(new Map(localFormState));
+    }
+    else {
+      setLocalFormState(new Map(localFormState).set(field, e.target.value));
+    }
   }
 
   useEffect(() => {
@@ -39,25 +44,102 @@ export function SearchSheet({updateGlobalForm}: SearchSheetProps) {
             <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
           </div></Button>
       </SheetTrigger>
-      <SheetContent side="left">
+      <SheetContent className="overflow-auto" side="left">
         <SheetHeader>
           <SheetTitle>Search</SheetTitle>
         </SheetHeader>
-        <div className="grid gap-4 py-4">
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="faction" className="text-left">
-              Faction
-            </Label>
-            <Input id="faction" value={localFormState.get("faction") || ""} className="col-span-3" onChange={(e) => (updateLocalFormState("faction", e))}/>
-          </div>
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="unitname" className="text-left">
-              Properties
-            </Label>
-            <Input id="unitname" value={localFormState.get("unit") || ""} className="col-span-3" onChange={(e) => updateLocalFormState("unit", e)}/>
-          </div>
+        <div className="grid gap-4 py-4 grid-cols-4 items-center gap-4 ">
+          
+        <SearchFormEntry
+            name="faction"
+            display="Faction"
+            placeholder="ari,tsons,demons"
+            formState={localFormState}
+            update={updateLocalFormState}
+           />
+          <SearchFormEntry
+            name="compiledKeywords"
+            display="Properties"
+            placeholder="dev,fly"
+            formState={localFormState}
+            update={updateLocalFormState}
+           />
+          <SearchFormEntry
+            name="movement"
+            display="M"
+            placeholder='10"'
+            formState={localFormState}
+            update={updateLocalFormState}
+           />
+          
+          <SearchFormEntry
+            name="toughness"
+            display="T"
+            placeholder=">12"
+            formState={localFormState}
+            update={updateLocalFormState}
+           />
+
+          <SearchFormEntry
+            name="save"
+            display="Save"
+            placeholder=''
+            formState={localFormState}
+            update={updateLocalFormState}
+           />
+
+          <SearchFormEntry
+            name="wounds"
+            display="W"
+            placeholder=''
+            formState={localFormState}
+            update={updateLocalFormState}
+           />
+
+          <SearchFormEntry
+            name="oc"
+            display="OC"
+            placeholder='10"'
+            formState={localFormState}
+            update={updateLocalFormState}
+           />
+
+          <SearchFormEntry
+            name="leadership"
+            display="Leadership"
+            placeholder=''
+            formState={localFormState}
+            update={updateLocalFormState}
+           />
+          <SearchFormEntry
+            name="strength"
+            display="S"
+            placeholder="<=12"
+            formState={localFormState}
+            update={updateLocalFormState}
+           />
         </div>
       </SheetContent>
     </Sheet>
   )
+}
+
+interface SearchFormEntryProps {
+  name: string;
+  display: string;
+  placeholder: string;
+  formState: Map<string, string>;
+  update: (a: string, b: any) => void;
+}
+const SearchFormEntry = ({name, display, placeholder, formState, update}: SearchFormEntryProps) => {
+  return (<>
+    <Label htmlFor={name} className="max-sm-hidden text-right">
+      {display}:
+    </Label>
+    <Input id={name} 
+      placeholder={placeholder} 
+      value={formState.get(name) || ""} 
+      className="col-span-3" 
+      onChange={(e) => update(name, e)}/>
+      </>)
 }
