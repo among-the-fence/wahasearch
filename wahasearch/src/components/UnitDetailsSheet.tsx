@@ -1,31 +1,27 @@
 
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardHeader,
-    CardTitle,
-  } from "@/components/ui/card"
 import { Datasheet } from "@/models/faction";
-import { compileStats } from "@/lib/unitformatter";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@radix-ui/react-collapsible";
 import { XMarkIcon } from "@heroicons/react/16/solid";
 import { WeaponProfile } from "./unitcomponents/weaponprofile";
 
 interface UnitDetailsSheetProps {
-    unit: Datasheet
-    handleClickToClose: ()=>void;
+  unit: Datasheet;
+  handleClickToClose: ()=>void;
+  addUnitToStack: (unit: Datasheet) => void;
 }
 
 import { useState } from 'react'
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react'
 
-export const ExampleSheet = ({unit, handleClickToClose}: UnitDetailsSheetProps) => {
+export const ExampleSheet = ({unit, handleClickToClose, addUnitToStack}: UnitDetailsSheetProps) => {
   const [open, setOpen] = useState(true)
   const hasRanged = unit.rangedWeapons.length > 0;
   const hasMelee = unit.meleeWeapons.length > 0;
   const hasAbilities = unit.abilities.other.length > 0;
   const hasKeywords = unit.keywords.length > 0;
+  const hasLeads = unit.leads && unit.leads.units.length > 0;
+  const hasLeadBy = unit.leadBy && unit.leadBy.length > 0;
+
 
   function clickedClose() {
     handleClickToClose();
@@ -106,19 +102,40 @@ export const ExampleSheet = ({unit, handleClickToClose}: UnitDetailsSheetProps) 
                       <Collapsible className="col-span-1 my-2" defaultOpen={true}>
                           <CollapsibleTrigger><h3 className="text-lg font-semibold">Keywords</h3></CollapsibleTrigger>
                           <CollapsibleContent>
-                              {unit.keywords.join(", ")}
+                              <p>{unit.keywords.join(", ")}</p>
                           </CollapsibleContent>
                       </Collapsible>
                   )}
 
+                  {(hasLeads) && (
+                    <Collapsible className="col-span-1 my-2" defaultOpen={true}>
+                      <CollapsibleTrigger><h3 className="text-lg font-semibold">Leads</h3></CollapsibleTrigger>
+                      <CollapsibleContent>
+                          <p>{unit.leads?.units.join(", ")}</p>
+                          <p>{unit.leads?.extra}</p>
+                          <p>{unit.leader}</p>
+                      </CollapsibleContent>
+                    </Collapsible>
+                  )}
 
-                  {unit.compiledKeywords && (
+                  {(hasLeadBy) && (
+                    <Collapsible className="col-span-1 my-2" defaultOpen={true}>
+                      <CollapsibleTrigger><h3 className="text-lg font-semibold">Leader</h3></CollapsibleTrigger>
+                      <CollapsibleContent>
+                          {/* <p onClick={e => addUnitToStack(findDatasheetByName(unit.leadBy?.at(0)))}>{unit.leadBy}</p> */}
+                          <p >{unit.leadBy}</p>
+                      </CollapsibleContent>
+                    </Collapsible>
+                  )}
+
+
+                  {unit.indexedFields?.compiledKeywords && (
                       <Collapsible className="col-span-1 my-2" defaultOpen={false}>
                           <CollapsibleTrigger><h3 className="text-lg font-semibold">Debug</h3></CollapsibleTrigger>
                           <CollapsibleContent>
-                              {unit.compiledKeywords.join(", ")}
+                              {unit.indexedFields?.compiledKeywords.join(", ")}
                               <pre>
-                                {JSON.stringify(unit, null, 2)}
+                                {JSON.stringify(unit, replacer, 2)}
                               </pre>
                           </CollapsibleContent>
                       </Collapsible>
@@ -135,56 +152,8 @@ export const ExampleSheet = ({unit, handleClickToClose}: UnitDetailsSheetProps) 
   )
 }
 
-export const UnitDetailsSheet = ({unit, handleClickToClose}: UnitDetailsSheetProps) => {
-    // console.log(unit)
-    const hasRanged = unit.rangedWeapons.length > 0;
-    const hasAbilities = unit.abilities.other.length > 0;
-    return (
-    <Card key={unit.id}>
-        <div className="ml-3 flex h-7 items-center">
-            <button
-                type="button"
-                onClick={handleClickToClose}
-                className="relative rounded-md bg-white text-gray-400 hover:text-gray-500 focus:ring-2 focus:ring-indigo-500"
-                >
-                <span className="absolute -inset-2.5" />
-                <span className="sr-only">Close panel</span>
-                <XMarkIcon aria-hidden="true" className="h-6 w-6" />
-            </button>
-        </div>
-        <CardHeader>
-            <CardTitle><a href="/unit/">{unit.name}</a></CardTitle>
-            {unit.stats.map(sb => <CardDescription key={sb.name}>{compileStats(unit, sb)}</CardDescription>)}
-        </CardHeader>
-
-        <CardContent>
-            <div className="grid md:grid-cols-2 sm:grid-cols-1  gap-4">
-                {hasRanged && (
-                    <Collapsible defaultOpen={true}>
-                        <CollapsibleTrigger><h2>Ranged</h2></CollapsibleTrigger>
-                        <CollapsibleContent>
-                            {unit.rangedWeapons.map((u) => u.profiles.map((uu) => <WeaponProfile key={uu.name} profile={uu}/>))}
-                        </CollapsibleContent>
-                    </Collapsible>
-                )}
-                <Collapsible defaultOpen={true}>
-                    <CollapsibleTrigger><h3>Melee</h3></CollapsibleTrigger>
-                    <CollapsibleContent>
-                        {unit.meleeWeapons.map((u) => u.profiles.map((uu) => <WeaponProfile key={uu.name} profile={uu}/>))}
-                    </CollapsibleContent>
-                </Collapsible>
-                {}
-                {hasAbilities && (
-                    <Collapsible className="col-span-2" defaultOpen={true}>
-                        <CollapsibleTrigger><h3>Abilities</h3></CollapsibleTrigger>
-                        <CollapsibleContent>
-                            {unit.abilities.other.map((a) => (<span><h3>{a.name}</h3>: {a.description}</span>))}
-                        </CollapsibleContent>
-                    </Collapsible>
-                )}
-            </div>
-        </CardContent>
-    </Card>);
+function replacer(key:any,value:any)
+{
+    if (key=="indexedFields") return undefined;
+    else return value;
 }
-
-export default UnitDetailsSheet;

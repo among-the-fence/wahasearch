@@ -30,7 +30,11 @@ function App() {
   return (
     <>
       <SearchSheet updateGlobalForm={applySearchFormFilters} />
-      {panelUnitStack.length > 0 && <ExampleSheet unit={panelUnitStack[panelUnitStack.length-1]} handleClickToClose={closeUnitDetails}/>}
+      { panelUnitStack.length > 0 && 
+        <ExampleSheet
+          unit={panelUnitStack[panelUnitStack.length-1]}
+          handleClickToClose={closeUnitDetails}
+          addUnitToStack={appendUnitStack} />}
       <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1  gap-4">
         {(units).map(unit => (
           <UnitCard key={unit.uuid} unit={unit} onclick={appendUnitStack}/>

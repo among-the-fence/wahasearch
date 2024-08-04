@@ -32,7 +32,7 @@ import ad from "@/lib/data/datasources/10th/json/tyranids.json"
 // import ae from "@/lib/data/datasources/10th/json/unaligned.json"
 import af from "@/lib/data/datasources/10th/json/votann.json"
 import ag from "@/lib/data/datasources/10th/json/worldeaters.json"
-import { FactionRoot } from "@/models/faction"
+import { FactionRoot, IndexedFields, MeleeWeapon, Profile, RangedWeapon, Stat } from "@/models/faction"
 
 function createRandomHash() {
     const x = Math.random().toString(36).substring(2, 25)+Math.random().toString(36).substring(2, 25);
@@ -47,6 +47,7 @@ function compileFactions() {
         d.colours = f.colours;
         d.uuid = createRandomHash();
         d.stats.forEach(s => s.uuid = createRandomHash());
+        d.indexedFields = {} as IndexedFields;
         let compiledWords = [];
         compiledWords.push(d.name);
         compiledWords = compiledWords.concat(d.stats.flatMap((s) => s.name));
@@ -67,8 +68,35 @@ function compileFactions() {
         }
         
         compiledWords = compiledWords.map(x=>x.toLowerCase().trim()).filter(x => x.length > 0);
-        d.compiledKeywords = [...new Set(compiledWords)];
-    })));
+        d.indexedFields.compiledKeywords = [...new Set(compiledWords)];
+        d.indexedFields.stats = new Array<Stat>();
+        d.indexedFields.weaponProfiles = new Array<Profile>();
+        d.stats.forEach(s => d.indexedFields?.stats.push({
+            ld: s.ld.replace("+", ""),
+            m: s.m.replace("\"", ""),
+            name: s.name,
+            oc: s.oc.replace("+", ""),
+            sv: s.sv.replace("+", ""),
+            t: s.t.replace("\"", ""),
+            w: s.w.replace("\"", "")
+        }));
+        d.meleeWeapons.forEach(m => {
+            m.profiles.forEach(pp => {
+                d.indexedFields?.weaponProfiles.push({
+                    ...pp
+                })
+            })
+        });
+        d.rangedWeapons.forEach(m => {
+            m.profiles.forEach(pp => {
+                d.indexedFields?.weaponProfiles.push({
+                    ...pp,
+                    range: pp.range.replace("\"", "")
+                })
+            })
+        });
+    }))
+    );
     return factionList;
 }
 

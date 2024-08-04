@@ -25,7 +25,7 @@ const faction_nickname_map = {
     "space wolves": ["wolves", "sw"],
     "votann": ["dwarves", "votan", "votann", "lov"],
     "world eaters": ["we", "eaters"],
-    "orks": ["orcs", "ork", "orc"],
+    "orks": ["orcs", "ork", "orc", "mushrooms"],
     "tyranids": ["nids", "bugs"],
     "tau empire": ["tau", "fish"],
     "thousand sons": ["tsons", "ksons", "1ksons", "dustyboiz", "dustyboys"],
@@ -45,7 +45,6 @@ function findFactionName(text: string) {
 }
 
 export function applyFilters(filters: Map<string, string>) {
-    console.log(filters);
     let flatDatasheets = factions.flatMap((f) => f.datasheets).sort((a,b) => (a.name < b.name ? -1 : 1))
     const faction = filters.get("faction");
     if (faction && faction.length > 0 && faction.trim() != "") {
@@ -61,7 +60,7 @@ export function applyFilters(filters: Map<string, string>) {
     if (keywords && keywords.trim() != "") {
         const lv = keywords.toLowerCase().split(",").map(x => x.trim());
         flatDatasheets = flatDatasheets
-            .filter((a) => lv.every(ilv => a.compiledKeywords?.some(ks => ks.includes(ilv))))
+            .filter((a) => lv.every(ilv => a.indexedFields?.compiledKeywords?.some(ks => ks.includes(ilv))))
     }
 
     const search = new SearchParams(filters);
@@ -69,4 +68,9 @@ export function applyFilters(filters: Map<string, string>) {
     flatDatasheets = flatDatasheets.filter(x => search.apply(x));
 
     return flatDatasheets;
+}
+
+export function findDatasheetByName(name: string) {
+    let flatDatasheets = factions.flatMap((f) => f.datasheets).sort((a,b) => (a.name < b.name ? -1 : 1))
+    return flatDatasheets.find(d => d.name == name)
 }

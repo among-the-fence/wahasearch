@@ -118,28 +118,28 @@ export class SearchItem {
         if (propName == "faction")
             return unit.factions
         else if (propName == "compiledKeywords") {
-            return unit.compiledKeywords || [];
+            return unit.indexedFields?.compiledKeywords || [];
         }
         else if (propName == "movement") {
-            return unit.stats.map(s => s.m.replace("\"", ""));
+            return unit.indexedFields?.stats.map(s => s.m.replace("\"", "")) || [];
         }
         else if (propName == "toughness") {
-            return unit.stats.map(s => s.t);
+            return unit.indexedFields?.stats.map(s => s.t) || [];
         }
         else if (propName == "save") {
-            return unit.stats.map(s => s.sv.replace("+", ""));
+            return unit.indexedFields?.stats.map(s => s.sv.replace("+", "")) || [];
         }
         else if (propName == "wounds") {
-            return unit.stats.map(s => s.w);
+            return unit.indexedFields?.stats.map(s => s.w) || [];
         }
         else if (propName == "oc") {
-            return unit.stats.map(s => s.oc);
+            return unit.indexedFields?.stats.map(s => s.oc) || [];
         }
         else if (propName == "ld") {
-            return unit.stats.map(s => s.ld.replace("+", ""));
+            return unit.indexedFields?.stats.map(s => s.ld.replace("+", "")) || [];
         }
         else if (propName == "strength") {
-            return unit.rangedWeapons.flatMap(p => p.profiles.map(pp => pp.strength)).concat(unit.meleeWeapons.flatMap(m => m.profiles.map(mm => mm.strength)));
+            return unit.indexedFields?.weaponProfiles.flatMap(pp => pp.strength) || [];
         }
         return [];
     }

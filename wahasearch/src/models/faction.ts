@@ -41,6 +41,12 @@ export interface FactionRoot {
     imperialArmour?: boolean
     leadBy?: string[]
     legends?: boolean
+    indexedFields?: IndexedFields
+  }
+
+  export interface IndexedFields {
+    stats: Stat[]
+    weaponProfiles: Profile[]
     compiledKeywords?: string[]
   }
   
