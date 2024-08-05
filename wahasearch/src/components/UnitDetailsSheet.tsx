@@ -12,9 +12,10 @@ interface UnitDetailsSheetProps {
 
 import { useState } from 'react'
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react'
+import { findDatasheetByName } from "@/lib/filter";
 
-export const ExampleSheet = ({unit, handleClickToClose}: UnitDetailsSheetProps) => {
-  const [open, setOpen] = useState(true)
+export const ExampleSheet = ({unit, handleClickToClose, addUnitToStack}: UnitDetailsSheetProps) => {
+  const [open] = useState(true)
   const hasRanged = unit.rangedWeapons.length > 0;
   const hasMelee = unit.meleeWeapons.length > 0;
   const hasAbilities = unit.abilities.other.length > 0;
@@ -25,7 +26,7 @@ export const ExampleSheet = ({unit, handleClickToClose}: UnitDetailsSheetProps) 
 
   function clickedClose() {
     handleClickToClose();
-    setOpen(false);
+    // setOpen(false);
   }
   const searchValue = `https://www.google.com/search?tbm=isch&q=warhammer+40k+${unit.name}`;
   return (
@@ -111,7 +112,7 @@ export const ExampleSheet = ({unit, handleClickToClose}: UnitDetailsSheetProps) 
                     <Collapsible className="col-span-1 my-2" defaultOpen={true}>
                       <CollapsibleTrigger><h3 className="text-lg font-semibold">Leads</h3></CollapsibleTrigger>
                       <CollapsibleContent>
-                          <p>{unit.leads?.units.join(", ")}</p>
+                          {unit.leads?.units.map(u => (<p className="cursor-pointer" onClick={_ => addUnitToStack(findDatasheetByName(u))}>{u} </p>))}
                           <p>{unit.leads?.extra}</p>
                           <p>{unit.leader}</p>
                       </CollapsibleContent>
@@ -122,8 +123,7 @@ export const ExampleSheet = ({unit, handleClickToClose}: UnitDetailsSheetProps) 
                     <Collapsible className="col-span-1 my-2" defaultOpen={true}>
                       <CollapsibleTrigger><h3 className="text-lg font-semibold">Leader</h3></CollapsibleTrigger>
                       <CollapsibleContent>
-                          {/* <p onClick={e => addUnitToStack(findDatasheetByName(unit.leadBy?.at(0)))}>{unit.leadBy}</p> */}
-                          <p >{unit.leadBy}</p>
+                          {unit.leadBy?.map(u => (<p className="cursor-pointer" onClick={_ => addUnitToStack(findDatasheetByName(u))}>{u} </p>))}
                       </CollapsibleContent>
                     </Collapsible>
                   )}

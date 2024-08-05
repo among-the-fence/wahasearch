@@ -83,7 +83,8 @@ function compileFactions() {
         d.meleeWeapons.forEach(m => {
             m.profiles.forEach(pp => {
                 d.indexedFields?.weaponProfiles.push({
-                    ...pp
+                    ...pp,
+                    ap: pp.ap.replace("-", "")
                 })
             })
         });
@@ -98,6 +99,33 @@ function compileFactions() {
     }))
     );
     return factionList;
+}
+
+export function calculateVariableStats(stat:string) {
+    const s = stat.toLowerCase();
+    if (s.includes("d")) {
+        const x = s.split("d");
+        let diceCount = 1;
+        if (x[0] !== '') {
+            diceCount = parseInt(x[0].trim());
+        }
+        let minRoll = diceCount;
+        const modSplit = x[1].split("+");
+        const diceSize = parseInt(modSplit[0].trim());
+        let maxRoll = diceCount * diceSize;
+        if (modSplit.length > 1) {
+            const modifier = parseInt(modSplit[1].trim());
+            minRoll += modifier;
+            maxRoll += modifier;
+        }
+        return [s.replace(" ", "")];//.concat(Array.from({ length: maxRoll - minRoll + 1 }, (_, i) => minRoll + i));
+    } else if (s === "n/a") {
+        return [0];
+    }
+    if (stat) {
+        return [parseInt(stat.replace("+", "").replace("-", ""))];
+    }
+    return [];
 }
 
 export const factions: FactionRoot[] = compileFactions();

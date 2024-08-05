@@ -79,6 +79,6 @@ export function applyFilters(filters: Map<string, string>) {
 }
 
 export function findDatasheetByName(name: string) {
-    let flatDatasheets = factions.flatMap((f) => f.datasheets).sort((a,b) => (a.name < b.name ? -1 : 1))
-    return flatDatasheets.find(d => d.name == name)
+    let flatDatasheets = factions.flatMap((f) => f.datasheets).sort((a,b) => (a.name < b.name ? -1 : 1));
+    return flatDatasheets.find(d => d.name == name) || flatDatasheets[0];
 }

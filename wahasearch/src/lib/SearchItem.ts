@@ -141,6 +141,18 @@ export class SearchItem {
         else if (propName == "strength") {
             return unit.indexedFields?.weaponProfiles.flatMap(pp => pp.strength) || [];
         }
+        else if (propName == "attacks") {
+            return unit.indexedFields?.weaponProfiles.flatMap(pp => pp.attacks) || [];
+        }
+        else if (propName == "armor penetration") {
+            return unit.indexedFields?.weaponProfiles.flatMap(pp => pp.ap) || [];
+        }
+        else if (propName == "damage") {
+            return unit.indexedFields?.weaponProfiles.flatMap(pp => pp.damage) || [];
+        }
+        else if (propName == "skill") {
+            return unit.indexedFields?.weaponProfiles.flatMap(pp => pp.skill) || [];
+        }
         return [];
     }
 }

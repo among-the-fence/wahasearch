@@ -119,13 +119,43 @@ export function SearchSheet({updateGlobalForm}: SearchSheetProps) {
             update={updateLocalFormState}
            />
           <SearchFormEntry
+            name="attacks"
+            display="A"
+            placeholder="<=12"
+            formState={localFormState}
+            update={updateLocalFormState}
+          />
+          <SearchFormEntry
+            name="skill"
+            display="BS/WS"
+            placeholder="<3"
+            formState={localFormState}
+            update={updateLocalFormState}
+          />
+          
+          <SearchFormEntry
             name="strength"
             display="S"
             placeholder="<=12"
             formState={localFormState}
             update={updateLocalFormState}
-           />
-           
+          />
+          
+          <SearchFormEntry
+            name="armor penetration"
+            display="AP"
+            placeholder=">2"
+            formState={localFormState}
+            update={updateLocalFormState}
+          />
+          
+          <SearchFormEntry
+            name="damage"
+            display="D"
+            placeholder=">=4"
+            formState={localFormState}
+            update={updateLocalFormState}
+          />
 
           <ToggleGroup defaultValue={["current"]} className="col-span-3" type="multiple" onValueChange={e => updateLegendsState(e)}>
             <ToggleGroupItem className="border-2" defaultChecked={true} value="current" aria-label="Toggle current">
