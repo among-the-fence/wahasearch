@@ -9,7 +9,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet"
 import { ChangeEvent, useEffect, useState } from "react"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+import { ToggleGroup, ToggleGroupItem } from "../ui/toggle-group"
 
 interface SearchSheetProps {
   updateGlobalForm: (localFormState: Map<string, string>) => void
@@ -28,8 +28,9 @@ export function SearchSheet({updateGlobalForm}: SearchSheetProps) {
     }
   }
 
-  const updateLegendsState = (value: string) => {
-    setLocalFormState(new Map(localFormState).set("legends", value));
+  const updateLegendsState = (value: string[]) => {
+    const show = (value.length >= 2) ? "all" : value.length == 0 ? "current" : value[0] == "legends" ? "legends" : "current";
+    setLocalFormState(new Map(localFormState).set("legends", show));
     updateGlobalForm(localFormState);
   }
 
@@ -54,9 +55,9 @@ export function SearchSheet({updateGlobalForm}: SearchSheetProps) {
         <SheetHeader>
           <SheetTitle>Search</SheetTitle>
         </SheetHeader>
-        <div className="grid gap-4 py-4 grid-cols-4 items-center gap-4 ">
+        <div className="grid gap-4 py-4 grid-cols-4 items-center gap-4 mb-56">
           
-        <SearchFormEntry
+          <SearchFormEntry
             name="faction"
             display="Faction"
             placeholder="ari,tsons,demons"
@@ -125,21 +126,15 @@ export function SearchSheet({updateGlobalForm}: SearchSheetProps) {
             update={updateLocalFormState}
            />
            
-           <RadioGroup defaultValue="current" onValueChange={e => updateLegendsState(e)}>
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem value="current" id="r1" />
-                <Label htmlFor="r1">Legends Off</Label>
-              </div>
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem value="all" id="r2" />
-                <Label htmlFor="r2">Mixed</Label>
-              </div>
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem value="legends" id="r3" />
-                <Label htmlFor="r3">Legends Only</Label>
-              </div>
-            </RadioGroup>
 
+          <ToggleGroup defaultValue={["current"]} className="col-span-3" type="multiple" onValueChange={e => updateLegendsState(e)}>
+            <ToggleGroupItem className="border-2" defaultChecked={true} value="current" aria-label="Toggle current">
+              Current
+            </ToggleGroupItem>
+            <ToggleGroupItem className="border-2" value="legends" aria-label="Toggle legends">
+              Legends
+            </ToggleGroupItem>
+          </ToggleGroup>
         </div>
       </SheetContent>
     </Sheet>
