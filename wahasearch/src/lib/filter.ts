@@ -45,7 +45,15 @@ function findFactionName(text: string) {
 }
 
 export function applyFilters(filters: Map<string, string>) {
-    let flatDatasheets = factions.flatMap((f) => f.datasheets).sort((a,b) => (a.name < b.name ? -1 : 1))
+    console.log(filters);
+    let flatDatasheets = factions.flatMap((f) => f.datasheets).sort((a,b) => (a.name < b.name ? -1 : 1));
+    const leegnds = filters.get("legends");
+    if (leegnds == null || leegnds == "current") {
+        flatDatasheets = flatDatasheets.filter(d => d.legends == undefined || d.legends == false)
+    } else if (leegnds == "legends") {
+        flatDatasheets = flatDatasheets.filter(d => d.legends)
+    }
+
     const faction = filters.get("faction");
     if (faction && faction.length > 0 && faction.trim() != "") {
         const lv = faction.toLowerCase().split(",")

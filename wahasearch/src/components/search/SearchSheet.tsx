@@ -9,6 +9,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet"
 import { ChangeEvent, useEffect, useState } from "react"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 
 interface SearchSheetProps {
   updateGlobalForm: (localFormState: Map<string, string>) => void
@@ -25,6 +26,11 @@ export function SearchSheet({updateGlobalForm}: SearchSheetProps) {
     else {
       setLocalFormState(new Map(localFormState).set(field, e.target.value));
     }
+  }
+
+  const updateLegendsState = (value: string) => {
+    setLocalFormState(new Map(localFormState).set("legends", value));
+    updateGlobalForm(localFormState);
   }
 
   useEffect(() => {
@@ -118,6 +124,22 @@ export function SearchSheet({updateGlobalForm}: SearchSheetProps) {
             formState={localFormState}
             update={updateLocalFormState}
            />
+           
+           <RadioGroup defaultValue="current" onValueChange={e => updateLegendsState(e)}>
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="current" id="r1" />
+                <Label htmlFor="r1">Legends Off</Label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="all" id="r2" />
+                <Label htmlFor="r2">Mixed</Label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="legends" id="r3" />
+                <Label htmlFor="r3">Legends Only</Label>
+              </div>
+            </RadioGroup>
+
         </div>
       </SheetContent>
     </Sheet>

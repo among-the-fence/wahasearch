@@ -13,7 +13,7 @@ interface UnitDetailsSheetProps {
 import { useState } from 'react'
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react'
 
-export const ExampleSheet = ({unit, handleClickToClose, addUnitToStack}: UnitDetailsSheetProps) => {
+export const ExampleSheet = ({unit, handleClickToClose}: UnitDetailsSheetProps) => {
   const [open, setOpen] = useState(true)
   const hasRanged = unit.rangedWeapons.length > 0;
   const hasMelee = unit.meleeWeapons.length > 0;

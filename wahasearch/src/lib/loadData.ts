@@ -32,7 +32,7 @@ import ad from "@/lib/data/datasources/10th/json/tyranids.json"
 // import ae from "@/lib/data/datasources/10th/json/unaligned.json"
 import af from "@/lib/data/datasources/10th/json/votann.json"
 import ag from "@/lib/data/datasources/10th/json/worldeaters.json"
-import { FactionRoot, IndexedFields, MeleeWeapon, Profile, RangedWeapon, Stat } from "@/models/faction"
+import { FactionRoot, IndexedFields, Profile, Stat } from "@/models/faction"
 
 function createRandomHash() {
     const x = Math.random().toString(36).substring(2, 25)+Math.random().toString(36).substring(2, 25);
