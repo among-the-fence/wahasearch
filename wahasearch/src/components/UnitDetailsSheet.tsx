@@ -17,7 +17,6 @@ import { findDatasheetByName } from "@/lib/filter";
 export const ExampleSheet = ({unit, handleClickToClose, addUnitToStack}: UnitDetailsSheetProps) => {
   const [open] = useState(true)
   const hasRanged = unit.rangedWeapons.length > 0;
-  const hasMelee = unit.meleeWeapons.length > 0;
   const hasAbilities = unit.abilities.other.length > 0;
   const hasKeywords = unit.keywords.length > 0;
   const hasLeads = unit.leads && unit.leads.units.length > 0;
@@ -29,6 +28,7 @@ export const ExampleSheet = ({unit, handleClickToClose, addUnitToStack}: UnitDet
     // setOpen(false);
   }
   const searchValue = `https://www.google.com/search?tbm=isch&q=warhammer+40k+${unit.name}`;
+  const headerStyle = `px-4 sm:px-6 bg-blue-50`
   return (
     <Dialog open={open} onClose={clickedClose} className="relative z-10">
       <DialogBackdrop
@@ -43,14 +43,14 @@ export const ExampleSheet = ({unit, handleClickToClose, addUnitToStack}: UnitDet
               transition
               className="pointer-events-auto w-screen max-w-3xl md-max-w-max transform transition duration-500 ease-in-out data-[closed]:translate-x-full sm:duration-700"
             >
-              <div className="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl">
-                <div className="px-4 sm:px-6">
+              <div className={`flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl`}>
+                <div className={headerStyle} style={{backgroundColor: unit.colours?.header}}>
                   <div className="flex items-start justify-between">
-                    <DialogTitle className="text-xl font-semibold leading-6 text-gray-900">{unit.name}</DialogTitle>
+                    <DialogTitle className="text-3xl py-2 font-semibold leading-6 text-white">{unit.name}</DialogTitle>
                     <div className="ml-3 flex h-7 items-center">
                       <a
                         target="_blank" onClick={()=> window.open(searchValue, "_blank")}
-                        className="mx-2 relative rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                        className="mx-2 relative rounded-md text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                         >
                         <span className="absolute -inset-2.5" />
                         <span className="sr-only">search</span>
@@ -61,7 +61,7 @@ export const ExampleSheet = ({unit, handleClickToClose, addUnitToStack}: UnitDet
                       <button
                         type="button"
                         onClick={clickedClose}
-                        className="relative rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                        className="relative rounded-md text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                       >
                         <span className="absolute -inset-2.5" />
                         <span className="sr-only">Close panel</span>
@@ -72,6 +72,16 @@ export const ExampleSheet = ({unit, handleClickToClose, addUnitToStack}: UnitDet
                 </div>
                 <div className="relative mt-6 flex-1 px-4 sm:px-6">
                 <div className="grid grid-cols-1">
+
+                  {hasRanged && (
+                      <Collapsible className="col-span-1 my-2" defaultOpen={true}>
+                          <CollapsibleContent>
+                              <p>{unit.composition}</p>
+                              <p>{unit.loadout}</p>
+                          </CollapsibleContent>
+                      </Collapsible>
+                  )}
+
                   {hasRanged && (
                       <Collapsible className="col-span-1 my-2" defaultOpen={true}>
                           <CollapsibleTrigger><h3 className="text-lg font-semibold">Ranged</h3></CollapsibleTrigger>
@@ -81,7 +91,7 @@ export const ExampleSheet = ({unit, handleClickToClose, addUnitToStack}: UnitDet
                       </Collapsible>
                   )}
 
-                  {hasMelee && (
+                  {unit.meleeWeapons.length > 0 && (
                     <Collapsible className="col-span-1 my-2" defaultOpen={true}>
                         <CollapsibleTrigger><h3 className="text-lg font-semibold">Melee</h3></CollapsibleTrigger>
                         <CollapsibleContent>
