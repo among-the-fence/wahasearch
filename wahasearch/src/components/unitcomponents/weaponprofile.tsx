@@ -7,37 +7,68 @@ interface WeaponProfileProps {
 
 export const WeaponProfile = ({profiles}: WeaponProfileProps) => {
     const includeRange = profiles[0].range != "Melee";
-    const colCount =  `grid-cols-${includeRange ? 8 : 7}`;
-    const skill = includeRange ? `WS` : `BS`;
+    const colCountBig =  `grid-cols-${includeRange ? 8 : 7}`;
+    const colCountSmall =  `grid-cols-${includeRange ? 8 : 7}`;
+    const skillBig = includeRange ? `Weapon Skill` : `Balistic Skill`;
+    const skillSmall = includeRange ? `WS` : `BS`;
     // const keywords = profile.keywords.length > 0 ? `${profile.keywords.join(", ")}` : null;
 
-    return (
-        <div className={`grid ${colCount} border`}>
-            <div className="border col-span-2">
-            </div>
-            {includeRange && (
-                <div className="border">
-                    Range
+    return (<>
+            <div className={`hidden ${colCountBig} border md:grid`}>
+                <div className="border col-span-2">
                 </div>
-            )}
-            <div className="border">
-                Attacks
-            </div> 
-            <div className="border">
-                {skill} 
-            </div>
-            <div className="border">
-                Strength
-            </div>
-            <div className="border">
-                Armor Pen
-            </div>
-            <div className="border">
-                Damage
+                {includeRange && (
+                    <div className="border">
+                        Range
+                    </div>
+                )}
+                <div className="border">
+                    Attacks
+                </div> 
+                <div className="border">
+                    {skillBig} 
+                </div>
+                <div className="border">
+                    Strength
+                </div>
+                <div className="border">
+                    Armor Pen
+                </div>
+                <div className="border">
+                    Damage
+                </div>
+
+                {profiles.map(p => <WeaponProfileRow profile={p} includeRange={includeRange} /> )}
             </div>
 
-            {profiles.map(p => <WeaponProfileRow profile={p} includeRange={includeRange} /> )}
-        </div>);
+            <div className={`grid ${colCountSmall} border md:hidden`}>
+                <div className="border col-span-2">
+                </div>
+                {includeRange && (
+                    <div className="border">
+                        R
+                    </div>
+                )}
+                <div className="border">
+                    A
+                </div> 
+                <div className="border">
+                    {skillSmall} 
+                </div>
+                <div className="border">
+                    S
+                </div>
+                <div className="border">
+                    AP
+                </div>
+                <div className="border">
+                    D
+                </div>
+
+                {profiles.map(p => <WeaponProfileRow profile={p} includeRange={includeRange} /> )}
+            </div>
+        </>
+    );
 }
 
 interface WeaponProfileRowProps {
@@ -46,6 +77,8 @@ interface WeaponProfileRowProps {
 }
 
 const WeaponProfileRow = ({profile, includeRange}: WeaponProfileRowProps) => {
+
+    const colCountFull =  `border col-span-${includeRange ? 8 : 7}`;
 
     return (
         <>
@@ -73,7 +106,7 @@ const WeaponProfileRow = ({profile, includeRange}: WeaponProfileRowProps) => {
                 {profile.damage}
             </div>
             {profile.keywords.length > 0 && (
-                <div className="border col-span-8">
+                <div className={colCountFull}>
                     {profile.keywords.join(", ")}
                 </div>
             )}
