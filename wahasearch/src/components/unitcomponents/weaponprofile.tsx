@@ -2,17 +2,81 @@
 import { Profile } from "@/models/faction";
 
 interface WeaponProfileProps {
-    profile: Profile
+    profiles: Profile[]
 }
 
-export const WeaponProfile = ({profile}: WeaponProfileProps) => {
-
-    const rangeText = profile.range == "Melee" ? "" :  `R:${profile.range} `;
-    const skill = profile.range == "Melee" ? `ws:${profile.skill} ` :  `bs:${profile.skill} `;
-    const keywords = profile.keywords.length > 0 ? `k:${profile.keywords.join(", ")}` : "";
+export const WeaponProfile = ({profiles}: WeaponProfileProps) => {
+    const includeRange = profiles[0].range != "Melee";
+    const colCount =  `grid-cols-${includeRange ? 8 : 7}`;
+    const skill = includeRange ? `WS` : `BS`;
+    // const keywords = profile.keywords.length > 0 ? `${profile.keywords.join(", ")}` : null;
 
     return (
-        <div>
-            {profile.name}: {rangeText}A:{profile.attacks} {skill} s:{profile.strength} ap:{profile.ap} d:{profile.damage} {keywords}
+        <div className={`grid ${colCount} border`}>
+            <div className="border col-span-2">
+            </div>
+            {includeRange && (
+                <div className="border">
+                    Range
+                </div>
+            )}
+            <div className="border">
+                Attacks
+            </div> 
+            <div className="border">
+                {skill} 
+            </div>
+            <div className="border">
+                Strength
+            </div>
+            <div className="border">
+                Armor Pen
+            </div>
+            <div className="border">
+                Damage
+            </div>
+
+            {profiles.map(p => <WeaponProfileRow profile={p} includeRange={includeRange} /> )}
         </div>);
+}
+
+interface WeaponProfileRowProps {
+    profile: Profile
+    includeRange: boolean
+}
+
+const WeaponProfileRow = ({profile, includeRange}: WeaponProfileRowProps) => {
+
+    return (
+        <>
+            <div className="border col-span-2">
+                <b>{profile.name}</b>
+            </div>
+            {includeRange && (
+                <div className="border">
+                    {profile.range}
+                </div>
+            )}
+            <div className="border">
+                {profile.attacks}
+            </div> 
+            <div className="border">
+                {profile.skill}
+            </div>
+            <div className="border">
+                {profile.strength}
+            </div>
+            <div className="border">
+                {profile.ap}
+            </div>
+            <div className="border">
+                {profile.damage}
+            </div>
+            {profile.keywords.length > 0 && (
+                <div className="border col-span-8">
+                    {profile.keywords.join(", ")}
+                </div>
+            )}
+        </>
+    );
 }

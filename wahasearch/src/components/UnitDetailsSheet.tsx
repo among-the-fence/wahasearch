@@ -1,5 +1,5 @@
 
-import { Datasheet } from "@/models/faction";
+import { Datasheet, Colours } from "@/models/faction";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@radix-ui/react-collapsible";
 import { XMarkIcon } from "@heroicons/react/16/solid";
 import { WeaponProfile } from "./unitcomponents/weaponprofile";
@@ -10,7 +10,7 @@ interface UnitDetailsSheetProps {
   addUnitToStack: (unit: Datasheet) => void;
 }
 
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react'
 import { findDatasheetByName } from "@/lib/filter";
 
@@ -37,6 +37,7 @@ export const ExampleSheet = ({unit, handleClickToClose, addUnitToStack}: UnitDet
       />
 
       <div className="fixed inset-0 overflow-hidden">
+        <div className="h-full w-5 border-1"></div>
         <div className="absolute inset-0 oversetOpenflow-hidden">
           <div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
             <DialogPanel
@@ -44,13 +45,13 @@ export const ExampleSheet = ({unit, handleClickToClose, addUnitToStack}: UnitDet
               className="pointer-events-auto w-screen max-w-3xl md-max-w-max transform transition duration-500 ease-in-out data-[closed]:translate-x-full sm:duration-700"
             >
               <div className={`flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl`}>
-                <div className={headerStyle} style={{backgroundColor: unit.colours?.header}}>
+                <div className={headerStyle} style={{backgroundColor: unit.colours?.banner}}>
                   <div className="flex items-start justify-between">
-                    <DialogTitle className="text-3xl py-2 font-semibold leading-6 text-white">{unit.name}</DialogTitle>
+                    <DialogTitle className="text-3xl py-2 font-semibold leading-6 text-gray-200">{unit.name}</DialogTitle>
                     <div className="ml-3 flex h-7 items-center">
                       <a
                         target="_blank" onClick={()=> window.open(searchValue, "_blank")}
-                        className="mx-2 relative rounded-md text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                        className="mx-2 cursor-pointer relative rounded-md text-white hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                         >
                         <span className="absolute -inset-2.5" />
                         <span className="sr-only">search</span>
@@ -61,7 +62,7 @@ export const ExampleSheet = ({unit, handleClickToClose, addUnitToStack}: UnitDet
                       <button
                         type="button"
                         onClick={clickedClose}
-                        className="relative rounded-md text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                        className="relative rounded-md text-white hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                       >
                         <span className="absolute -inset-2.5" />
                         <span className="sr-only">Close panel</span>
@@ -70,86 +71,69 @@ export const ExampleSheet = ({unit, handleClickToClose, addUnitToStack}: UnitDet
                     </div>
                   </div>
                 </div>
-                <div className="relative mt-6 flex-1 px-4 sm:px-6">
-                <div className="grid grid-cols-1">
+                <div className="relative w-full h-2" style={{backgroundColor: unit.colours?.header}}> </div>
 
-                  {hasRanged && (
-                      <Collapsible className="col-span-1 my-2" defaultOpen={true}>
-                          <CollapsibleContent>
-                              <p>{unit.composition}</p>
-                              <p>{unit.loadout}</p>
-                          </CollapsibleContent>
-                      </Collapsible>
-                  )}
+                <div className="relative mt-6 flex-1 px-4 sm:px-6 m-5 bg-white" >
+                  <div className="grid grid-cols-1">
 
-                  {hasRanged && (
-                      <Collapsible className="col-span-1 my-2" defaultOpen={true}>
-                          <CollapsibleTrigger><h3 className="text-lg font-semibold">Ranged</h3></CollapsibleTrigger>
-                          <CollapsibleContent>
-                              {unit.rangedWeapons.map((u) => u.profiles.map((uu) => <WeaponProfile key={uu.name} profile={uu}/>))}
-                          </CollapsibleContent>
-                      </Collapsible>
-                  )}
+                    {hasRanged && (
+                      <Section color={unit.colours} title="" >
+                        <p>{unit.composition}</p>
+                        <p>{unit.loadout}</p>
+                      </Section>
+                    )}
 
-                  {unit.meleeWeapons.length > 0 && (
-                    <Collapsible className="col-span-1 my-2" defaultOpen={true}>
-                        <CollapsibleTrigger><h3 className="text-lg font-semibold">Melee</h3></CollapsibleTrigger>
-                        <CollapsibleContent>
-                            {unit.meleeWeapons.map((u) => u.profiles.map((uu) => <WeaponProfile key={uu.name} profile={uu}/>))}
-                        </CollapsibleContent>
-                    </Collapsible>
-                  )}
-                  
-                  {hasAbilities && (
-                      <Collapsible className="col-span-1 my-2" defaultOpen={true}>
-                          <CollapsibleTrigger><h3 className="text-lg font-semibold">Abilities</h3></CollapsibleTrigger>
-                          <CollapsibleContent>
-                              {unit.abilities.other.map((a) => (<div><p className="text-lg font-semibold inline">{a.name}</p>: {a.description}</div>))}
-                          </CollapsibleContent>
-                      </Collapsible>
-                  )}
+                    {hasRanged && (
+                      <Section color={unit.colours} title="Ranged" >
+                        <WeaponProfile profiles={unit.rangedWeapons.flatMap(p => p.profiles)}/>
+                        <p>{unit.rangedWeapons.flatMap(p => JSON.stringify(p.abilities)).join(", ")}</p>
+                      </Section>
+                    )}
 
-                  {hasKeywords && (
-                      <Collapsible className="col-span-1 my-2" defaultOpen={true}>
-                          <CollapsibleTrigger><h3 className="text-lg font-semibold">Keywords</h3></CollapsibleTrigger>
-                          <CollapsibleContent>
-                              <p>{unit.keywords.join(", ")}</p>
-                          </CollapsibleContent>
-                      </Collapsible>
-                  )}
+                    {unit.meleeWeapons.length > 0 && (
+                      <Section color={unit.colours} title="Melee" >
+                        <WeaponProfile profiles={unit.meleeWeapons.flatMap(p => p.profiles)}/>
+                      </Section>
+                    )}
+                    
+                    {hasAbilities && (
+                      <Section color={unit.colours} title="Abilities" >
+                        {unit.abilities.other.map((a) => (<div><p className="text-lg font-semibold inline">{a.name}</p>: {a.description}</div>))}
+                      </Section>
+                    )}
 
-                  {(hasLeads) && (
-                    <Collapsible className="col-span-1 my-2" defaultOpen={true}>
-                      <CollapsibleTrigger><h3 className="text-lg font-semibold">Leads</h3></CollapsibleTrigger>
-                      <CollapsibleContent>
-                          {unit.leads?.units.map(u => (<p className="cursor-pointer" onClick={_ => addUnitToStack(findDatasheetByName(u))}>{u} </p>))}
-                          <p>{unit.leads?.extra}</p>
-                          <p>{unit.leader}</p>
-                      </CollapsibleContent>
-                    </Collapsible>
-                  )}
+                    {hasKeywords && (
+                      <Section color={unit.colours} title="Keywords" >
+                        <p>{unit.keywords.join(", ")}</p>
+                      </Section>
+                    )}
 
-                  {(hasLeadBy) && (
-                    <Collapsible className="col-span-1 my-2" defaultOpen={true}>
-                      <CollapsibleTrigger><h3 className="text-lg font-semibold">Leader</h3></CollapsibleTrigger>
-                      <CollapsibleContent>
-                          {unit.leadBy?.map(u => (<p className="cursor-pointer" onClick={_ => addUnitToStack(findDatasheetByName(u))}>{u} </p>))}
-                      </CollapsibleContent>
-                    </Collapsible>
-                  )}
+                    {(hasLeads) && (
+                      <Section color={unit.colours} title="Leads" >
+                        {unit.leads?.units.map(u => (<p className="cursor-pointer" onClick={_ => addUnitToStack(findDatasheetByName(u))}>{u} </p>))}
+                        <p>{unit.leads?.extra}</p>
+                        <p>{unit.leader}</p>
+                      </Section>
+                    )}
+
+                    {(hasLeadBy) && (
+                      <Section color={unit.colours} title="Lead By">
+                        {unit.leadBy?.map(u => (<p className="cursor-pointer" onClick={_ => addUnitToStack(findDatasheetByName(u))}>{u} </p>))}
+                      </Section>
+                    )}
 
 
-                  {unit.indexedFields?.compiledKeywords && (
-                      <Collapsible className="col-span-1 my-2" defaultOpen={false}>
-                          <CollapsibleTrigger><h3 className="text-lg font-semibold">Debug</h3></CollapsibleTrigger>
-                          <CollapsibleContent>
-                              {unit.indexedFields?.compiledKeywords.join(", ")}
-                              <pre>
-                                {JSON.stringify(unit, replacer, 2)}
-                              </pre>
-                          </CollapsibleContent>
-                      </Collapsible>
-                  )}
+                    {unit.indexedFields?.compiledKeywords && (
+                        <Collapsible className="col-span-1 my-2" defaultOpen={false}>
+                            <CollapsibleTrigger><h3 className="text-lg font-semibold">Debug</h3></CollapsibleTrigger>
+                            <CollapsibleContent>
+                                {unit.indexedFields?.compiledKeywords.join(", ")}
+                                <pre>
+                                  {JSON.stringify(unit, replacer, 2)}
+                                </pre>
+                            </CollapsibleContent>
+                        </Collapsible>
+                    )}
 
                   </div>
                 </div>
@@ -160,6 +144,21 @@ export const ExampleSheet = ({unit, handleClickToClose, addUnitToStack}: UnitDet
       </div>
     </Dialog>
   )
+}
+
+interface SectionProps {
+  color: Colours | undefined
+  title: string
+  children: React.ReactNode
+}
+
+const Section = ({title, children, color} : SectionProps) => {
+  return (<Collapsible className="col-span-1 my-2" defaultOpen={true} >
+    <CollapsibleTrigger ><h3 className="text-lg font-semibold text-gray-200" style={{color: color?.banner}} >{title}</h3></CollapsibleTrigger>
+    <CollapsibleContent>
+      {children}
+    </CollapsibleContent>
+  </Collapsible>);
 }
 
 function replacer(key:any,value:any)
