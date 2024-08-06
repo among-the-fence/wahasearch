@@ -7,23 +7,20 @@ interface WeaponProfileProps {
 
 export const WeaponProfile = ({profiles}: WeaponProfileProps) => {
     const includeRange = profiles[0].range != "Melee";
-    const colCountBig =  `grid grid-cols-8 border`;
-    const colCountSmall =  `grid grid-cols-${includeRange ? 6 : 7} border md:hidden`;
+    const gridDefinitionLarge = `hidden grid-cols-${includeRange ? "8" : "8"} border md:grid`;
+    const gridDefinitionSmall = `grid grid-cols-${includeRange ? "8" : "8"} border md:hidden`;
+    const nameSize = `border col-span-${includeRange ? 2 : 3}`
     const skillBig = includeRange ? `Weapon Skill` : `Balistic Skill`;
     const skillSmall = includeRange ? `WS` : `BS`;
     // const keywords = profile.keywords.length > 0 ? `${profile.keywords.join(", ")}` : null;
 
     return (<>
-            <div className={colCountBig}>
-                <div className="border col-span-2">
+            <div className={gridDefinitionLarge}>
+                <div className={nameSize}>
                 </div>
                 {includeRange && (
                     <div className="border">
                         Range
-                    </div>
-                )}
-                {!includeRange && (
-                    <div className="border">
                     </div>
                 )}
                 <div className="border">
@@ -45,13 +42,10 @@ export const WeaponProfile = ({profiles}: WeaponProfileProps) => {
                 {profiles.map(p => <WeaponProfileRow profile={p} includeRange={includeRange} /> )}
             </div>
 
-            <div className={colCountSmall}>
+            <div className={gridDefinitionSmall}>
+                <div className={nameSize}>
+                </div>
                 {includeRange && (
-                    <div className="border">
-                        R
-                    </div>
-                )}
-                {!includeRange && (
                     <div className="border">
                         R
                     </div>
@@ -85,20 +79,17 @@ interface WeaponProfileRowProps {
 
 const WeaponProfileRow = ({profile, includeRange}: WeaponProfileRowProps) => {
 
-    const colCountFull =  `border col-span-8`;
+    const colCountFull =  `border col-span-${includeRange ? "8" : "8"}`;
+    const nameSize = `border col-span-${includeRange ? 2 : 3}`
 
     return (
         <>
-            <div className="border col-span-2">
+            <div className={nameSize}>
                 <b>{profile.name}</b>
             </div>
             {includeRange && (
                 <div className="border">
                     {profile.range}
-                </div>
-            )}
-            {!includeRange && (
-                <div className="border">
                 </div>
             )}
             <div className="border">
