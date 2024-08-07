@@ -13,7 +13,7 @@ export const WeaponProfile = ({profiles}: WeaponProfileProps) => {
                 <RegularDisplay profiles={profiles} />
             </div>
             <div className="hidden sm:block md:hidden">
-                <CompactDisplay profiles={profiles} />
+                <RegularDisplay profiles={profiles} />
             </div>
 
             <div className="block sm:hidden">
@@ -27,13 +27,15 @@ const RegularDisplay = ({profiles}: WeaponProfileProps) => {
     const includeRange = profiles[0].range != "Melee";
     const skillBig = includeRange ? `Weapon Skill` : `Ballistic Skill`;
 
-    return (
+    return ( includeRange ? (
         <div className='grid grid-cols-8'>
             <div className='border col-span-2'>
             </div>
-            <div className="border">
-                Range
-            </div>
+            {includeRange && 
+                <div className="border">
+                    Range
+                </div>
+            }
             <div className="border">
                 Attacks
             </div> 
@@ -52,37 +54,79 @@ const RegularDisplay = ({profiles}: WeaponProfileProps) => {
 
             {profiles.map(p => <WeaponProfileRow profile={p} includeRange={includeRange} namespane='border col-span-2' keywordspan='border col-span-6' keywordpad='border col-span-2'/> )}
         </div>
-    );
+    ) : (
+        <div className='grid grid-cols-7'>
+            <div className='border col-span-2'>
+            </div>
+            <div className="border">
+                Attacks
+            </div> 
+            <div className="border">
+                {skillBig} 
+            </div>
+            <div className="border">
+                Strength
+            </div>
+            <div className="border">
+                Armor Pen
+            </div>
+            <div className="border">
+                Damage
+            </div>
+
+            {profiles.map(p => <WeaponProfileRow profile={p} includeRange={includeRange} namespane='border col-span-2' keywordspan='border col-span-5' keywordpad='border col-span-2'/> )}
+        </div>
+    ));
 }
 
 const CompactDisplay = ({profiles}: WeaponProfileProps) => {
     const includeRange = profiles[0].range != "Melee";
     const skillSmall = includeRange ? `WS` : `BS`;
-    return (
-        <div className='grid grid-cols-6'>
-            <div className='border col-span-6'>
-            </div>
-            <div className="border">
-                R
-            </div>
-            <div className="border">
-                A
-            </div> 
-            <div className="border">
-                {skillSmall} 
-            </div>
-            <div className="border">
-                S
-            </div>
-            <div className="border">
-                AP
-            </div>
-            <div className="border">
-                D
-            </div>
+    return (includeRange ? (
+            <div className='grid grid-cols-6'>
+                {includeRange && 
+                <div className="border">
+                    R
+                </div>}
+                <div className="border">
+                    A
+                </div> 
+                <div className="border">
+                    {skillSmall} 
+                </div>
+                <div className="border">
+                    S
+                </div>
+                <div className="border">
+                    AP
+                </div>
+                <div className="border">
+                    D
+                </div>
 
-            {profiles.map(p => <WeaponProfileRow profile={p} includeRange={includeRange} namespane='border col-span-6' keywordspan='border col-span-6'/> )}
-        </div>)
+                {profiles.map(p => <WeaponProfileRow profile={p} includeRange={includeRange} namespane='border col-span-6' keywordspan='border col-span-6'/> )}
+            </div>
+        ) : (
+            <div className='grid grid-cols-5'>
+                <div className="border">
+                    A
+                </div> 
+                <div className="border">
+                    {skillSmall} 
+                </div>
+                <div className="border">
+                    S
+                </div>
+                <div className="border">
+                    AP
+                </div>
+                <div className="border">
+                    D
+                </div>
+    
+                {profiles.map(p => <WeaponProfileRow profile={p} includeRange={includeRange} namespane='border col-span-5' keywordspan='border col-span-5'/> )}
+            </div>
+        )); 
 }
 
 
@@ -94,15 +138,16 @@ interface WeaponProfileRowProps {
     keywordpad?: string
 }
 
-const WeaponProfileRow = ({profile, namespane, keywordspan, keywordpad}: WeaponProfileRowProps) => {
+const WeaponProfileRow = ({profile, includeRange, namespane, keywordspan, keywordpad}: WeaponProfileRowProps) => {
     return (
         <>
             <div className={namespane}>
                 <b>{profile.name}</b>
             </div>
+            {includeRange && 
             <div className="border">
                 {profile.range}
-            </div>
+            </div>}
             <div className="border">
                 {profile.attacks}
             </div> 
