@@ -6,21 +6,21 @@ import { factions } from "./loadData";
 const faction_nickname_map = {
     "astra militarum": ["am", "ig", "guard", "imperial guard"],
     "adepta sororitas": ["mommy", "senoritas", "sisters", "sob"],
+    "adeptus custodes": ["custodes"],
+    "adeptus mechanicus": ["admech"],
+    "aeldari": ["elves", "elf", "eldar", "legalos and friends"],
+    "agents of the imperium": ["ia", "imperial agents", "imperial"],
     "blood angels": ["ba", "angles"],
     "dark angels": ["da", "angles"],
     "chaos knights": ["ck"],
-    "legiones daemonica": ["daemons", "demons"],
+    "legiones daemonica": ["daemons", "demon", "demons", "daemon"],
     "chaos space marines": ["csm", "chaos marines"],
     "death guard": ["dg"],
-    "death watch": ["dw"],
+    "deathwatch": ["dw", "death watch", "watch"],
     "drukhari": ["dark elves", "dark eldar", "bad elves", "dark elf", "bad elf"],
     "black templars": ["bt"],
-    "adeptus custodes": ["custodes"],
-    "adeptus mechanicus": ["admech"],
-    "aeldari": ["elves", "elf", "eldar", "aeldar", "eldari", "aeldar", "legalos and friends"],
     "grey knights": ["gk"],
     "genestealer cults": ["gsc", "genestealer", "genestealers"],
-    "agents of the imperium": ["ia", "imperial agents", "imperial"],
     "imperial knights": ["ik"],
     "space marines": ["sm", "marines"],
     "space wolves": ["wolves", "sw"],
@@ -29,9 +29,20 @@ const faction_nickname_map = {
     "orks": ["orcs", "ork", "orc", "mushrooms"],
     "tyranids": ["nids", "bugs", "bug"],
     "tau empire": ["tau", "fish", "t'au"],
-    "thousand sons": ["tsons", "ksons", "1ksons", "dustyboiz", "dustyboys"],
+    "thousand sons": ["tsons", "ksons", "1ksons", "dustyboiz", "dustyboys", "sons", "1kson", "tson", "kson"],
     "necrons": ["necrons", "crons", "zombies"]
 }
+
+
+/*
+"black templars"
+"heretic astartes"
+"emperors children"
+"adeptus astartes"
+"ultramarines"
+"adeptus titanicus"
+*/
+
 
 function findFactionName(text: string) {
     const patialMatchKeys = []
@@ -74,7 +85,7 @@ export function applyFilters(filters: Map<string, string>, favorites: string[]) 
         const lv = faction.toLowerCase().split(",")
             .flatMap(x => findFactionName(x.trim())).filter(x => x.length > 0);
         const res = flatDatasheets
-            .filter((a) => a.indexedFields?.compiledKeywords?.some(ks => lv.includes(ks.toLowerCase())))
+            .filter((a) => a.indexedFields?.factions.some(ks => lv.includes(ks.toLowerCase())))
         if (res.length > 0)
             flatDatasheets = res;
     }
