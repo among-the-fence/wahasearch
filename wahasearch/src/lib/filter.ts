@@ -5,18 +5,18 @@ import { factions } from "./loadData";
 
 const faction_nickname_map = {
     "astra militarum": ["am", "ig", "guard", "imperial guard"],
-    "adepta sororitas": ["mommy", "sororitas", "senoritas", "sisters", "sob"],
+    "adeptus sororitas": ["mommy", "sororitas", "senoritas", "sisters", "sob"],
     "blood angels": ["ba", "angels", "blood angles"],
     "dark angels": ["da", "angles", "dark angles"],
     "chaos knights": ["ck"],
-    "chaos deamons": ["daemons", "demons"],
+    "legiones daemonica": ["daemons", "demons"],
     "chaos space marines": ["csm", "chaos marines"],
     "death guard": ["dg"],
     "death watch": ["dw"],
     "drukhari": ["dark elves", "dark eldar", "bad elves", "dark elf", "bad elf"],
     "black templars": ["bt"],
-    "adepta custodes": ["custodes"],
-    "adepta mechanicus": ["admech"],
+    "adeptus custodes": ["custodes"],
+    "adeptus mechanicus": ["admech"],
     "aeldari": ["elves", "elf", "eldar", "aeldar", "eldari", "aeldar", "legalos and friends"],
     "grey knights": ["gk"],
     "genestealer cults": ["gsc", "genestealer", "genestealers"],
@@ -27,8 +27,8 @@ const faction_nickname_map = {
     "votann": ["dwarves", "votan", "votann", "lov"],
     "world eaters": ["we", "eaters"],
     "orks": ["orcs", "ork", "orc", "mushrooms"],
-    "tyranids": ["nids", "bugs"],
-    "tau empire": ["tau", "fish"],
+    "tyranids": ["nids", "bugs", "bug"],
+    "t’au empire": ["tau", "fish", "t'au"],
     "thousand sons": ["tsons", "ksons", "1ksons", "dustyboiz", "dustyboys"],
     "necrons": ["necrons", "crons", "zombies"]
 }
