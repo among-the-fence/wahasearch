@@ -42,6 +42,7 @@ function createRandomHash() {
 
 function compileFactions() {
     console.log("DOING THE BIG WORK");
+    const factionNames: any[] = [];
     const factionList: FactionRoot[] = [a,b,c,d,e,f,g,h,i,j,k,m,n,o,p,q,s,t,u,w,x,y,z,aa,ab,ac,ad,af,ag];
     factionList.map((f) => (f.datasheets.forEach((d) => {
         // console.log(d.name);
@@ -78,7 +79,14 @@ function compileFactions() {
             compiledWords.push("damaged");
             compiledWords.push("damage");
         }
+        d.indexedFields.factions = d.factions.map(f => f.toLowerCase().replace(/[^0-9a-z ]/gi, ''))
 
+        if (d.indexedFields.factions.length == 1){
+            factionNames.push(d.indexedFields.factions[0]);
+        }
+        else {
+            factionNames.push(d.indexedFields.factions);
+        }
         d.indexedFields.compiledKeywords = [...new Set(compiledWords)];
         d.indexedFields.stats = new Array<Stat>();
         d.indexedFields.weaponProfiles = new Array<Profile>();
@@ -109,6 +117,7 @@ function compileFactions() {
         });
     }))
     );
+    console.log(new Set(factionNames));
     return factionList;
 }
 

@@ -5,9 +5,9 @@ import { factions } from "./loadData";
 
 const faction_nickname_map = {
     "astra militarum": ["am", "ig", "guard", "imperial guard"],
-    "adeptus sororitas": ["mommy", "sororitas", "senoritas", "sisters", "sob"],
-    "blood angels": ["ba", "angels", "blood angles"],
-    "dark angels": ["da", "angles", "dark angles"],
+    "adepta sororitas": ["mommy", "senoritas", "sisters", "sob"],
+    "blood angels": ["ba", "angles"],
+    "dark angels": ["da", "angles"],
     "chaos knights": ["ck"],
     "legiones daemonica": ["daemons", "demons"],
     "chaos space marines": ["csm", "chaos marines"],
@@ -20,15 +20,15 @@ const faction_nickname_map = {
     "aeldari": ["elves", "elf", "eldar", "aeldar", "eldari", "aeldar", "legalos and friends"],
     "grey knights": ["gk"],
     "genestealer cults": ["gsc", "genestealer", "genestealers"],
-    "imperial agents": ["ia"],
+    "agents of the imperium": ["ia", "imperial agents", "imperial"],
     "imperial knights": ["ik"],
     "space marines": ["sm", "marines"],
     "space wolves": ["wolves", "sw"],
-    "votann": ["dwarves", "votan", "votann", "lov"],
+    "leagues of votann": ["dwarves", "gimli", "lov"],
     "world eaters": ["we", "eaters"],
     "orks": ["orcs", "ork", "orc", "mushrooms"],
     "tyranids": ["nids", "bugs", "bug"],
-    "t’au empire": ["tau", "fish", "t'au"],
+    "tau empire": ["tau", "fish", "t'au"],
     "thousand sons": ["tsons", "ksons", "1ksons", "dustyboiz", "dustyboys"],
     "necrons": ["necrons", "crons", "zombies"]
 }
@@ -74,7 +74,7 @@ export function applyFilters(filters: Map<string, string>, favorites: string[]) 
         const lv = faction.toLowerCase().split(",")
             .flatMap(x => findFactionName(x.trim())).filter(x => x.length > 0);
         const res = flatDatasheets
-            .filter((a) => a.factions.some(ks => lv.includes(ks.toLowerCase())))
+            .filter((a) => a.indexedFields?.compiledKeywords?.some(ks => lv.includes(ks.toLowerCase())))
         if (res.length > 0)
             flatDatasheets = res;
     }

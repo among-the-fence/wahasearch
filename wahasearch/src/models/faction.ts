@@ -45,6 +45,7 @@ export interface FactionRoot {
   }
 
   export interface IndexedFields {
+    factions: string[]
     stats: Stat[]
     weaponProfiles: Profile[]
     compiledKeywords?: string[]
