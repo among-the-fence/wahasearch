@@ -51,7 +51,7 @@ function App() {
           addUnitToStack={appendUnitStack} />}
       <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1  gap-4">
         {(units).map(unit => (
-          <UnitCard key={unit.uuid} unit={unit} onclick={appendUnitStack} updateFavorites={updateFavorite}/>
+          <UnitCard key={unit.uuid} unit={unit} onclick={appendUnitStack} updateFavorites={updateFavorite} isFavorite={favorites.includes(unit.name)} />
         ))}
       </div>
     </>

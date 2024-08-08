@@ -7,15 +7,16 @@ import {
   } from "@/components/ui/card"
 import { Datasheet } from "@/models/faction";
 import { compileStats } from "@/lib/unitformatter";
-import { StarOpen } from "./starIcons";
+import { StarFilled, StarOpen } from "./starIcons";
 
 interface UnitCardProps {
     unit: Datasheet
     onclick: (unit:Datasheet) => void
     updateFavorites: (unitName: string) => void
+    isFavorite: boolean
 }
 
-export const UnitCard = ({unit, onclick, updateFavorites}: UnitCardProps) => {
+export const UnitCard = ({unit, onclick, updateFavorites, isFavorite}: UnitCardProps) => {
 
     const clicktrigger = () => {
         onclick(unit);
@@ -33,7 +34,8 @@ export const UnitCard = ({unit, onclick, updateFavorites}: UnitCardProps) => {
                 >
                 <span className="absolute -inset-2.5" />
                 <span className="sr-only">Close panel</span>
-                <StarOpen aria-hidden="true" />
+                {isFavorite && <StarFilled aria-hidden="true" /> }
+                {!isFavorite && <StarOpen aria-hidden="true" /> }
             </button>
             <CardTitle className={headerStyle} onClick={clicktrigger} style={{color: unit.colours?.header}}>{unit.name}</CardTitle>
             {unit.stats.map(sb => <CardDescription key={sb.uuid}>{compileStats(unit, sb)}</CardDescription>)}

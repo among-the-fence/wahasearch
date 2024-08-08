@@ -46,13 +46,16 @@ function findFactionName(text: string) {
 }
 
 export function compareUnits(favorites: string[], a: Datasheet, b: Datasheet) {
-    const favA = favorites.includes(a.name);
-    const favB = favorites.includes(b.name);
-    if (favA && !favB) {
+    const favA = favorites.indexOf(a.name);
+    const favB = favorites.indexOf(b.name);
+    if (favA >= 0) {
+        if (favB >= 0) {
+            return favA - favB;
+        }
         return -1;
     }
-    if (favB && !favA) {
-        return 1
+    if (favB >= 0) {
+        return 1;
     }
     return (a.name < b.name ? -1 : 1)
 }
