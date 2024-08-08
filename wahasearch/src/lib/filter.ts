@@ -1,3 +1,4 @@
+import { Datasheet } from "@/models/faction";
 import { SearchParams } from "./SearchParams";
 import { factions } from "./loadData";
 
@@ -44,9 +45,20 @@ function findFactionName(text: string) {
     return (patialMatchKeys.length > 0) ? patialMatchKeys : text;
 }
 
-export function applyFilters(filters: Map<string, string>) {
-    console.log(filters);
-    let flatDatasheets = factions.flatMap((f) => f.datasheets).sort((a,b) => (a.name < b.name ? -1 : 1));
+export function compareUnits(favorites: string[], a: Datasheet, b: Datasheet) {
+    const favA = favorites.includes(a.name);
+    const favB = favorites.includes(b.name);
+    if (favA && !favB) {
+        return -1;
+    }
+    if (favB && !favA) {
+        return 1
+    }
+    return (a.name < b.name ? -1 : 1)
+}
+
+export function applyFilters(filters: Map<string, string>, favorites: string[]) {
+    let flatDatasheets = factions.flatMap((f) => f.datasheets).sort((a,b) => compareUnits(favorites, a, b));
     const leegnds = filters.get("legends");
     if (leegnds == null || leegnds == "current") {
         flatDatasheets = flatDatasheets.filter(d => d.legends == undefined || d.legends == false)
@@ -58,7 +70,6 @@ export function applyFilters(filters: Map<string, string>) {
     if (faction && faction.length > 0 && faction.trim() != "") {
         const lv = faction.toLowerCase().split(",")
             .flatMap(x => findFactionName(x.trim())).filter(x => x.length > 0);
-        console.log(lv);
         const res = flatDatasheets
             .filter((a) => a.factions.some(ks => lv.includes(ks.toLowerCase())))
         if (res.length > 0)
@@ -72,7 +83,6 @@ export function applyFilters(filters: Map<string, string>) {
     }
 
     const search = new SearchParams(filters);
-    console.log(search);
     flatDatasheets = flatDatasheets.filter(x => search.apply(x));
 
     return flatDatasheets;
