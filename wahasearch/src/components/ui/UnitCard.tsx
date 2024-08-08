@@ -1,6 +1,7 @@
 
 import {
     Card,
+    CardContent,
     CardDescription,
     CardHeader,
     CardTitle,
@@ -24,22 +25,26 @@ export const UnitCard = ({unit, onclick, updateFavorites, isFavorite}: UnitCardP
     const headerStyle = ((unit.legends && "text-slate-500") || "text-black-50") + " cursor-pointer"
 
     return (
-    <Card key={unit.uuid}>
-        <CardHeader>
+    <Card key={unit.uuid} className="relative">
+        <button
+            type="button"
+            onClick={_ => updateFavorites(unit.name)}
+            className="absolute top-1 left-1 rounded-md text-white hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+            >
+            <span className="absolute -inset-2.5" />
+            <span className="sr-only">Close panel</span>
+            {isFavorite && <StarFilled aria-hidden="true" /> }
+            {!isFavorite && <StarOpen aria-hidden="true" /> }
+        </button>
+        <CardHeader >
+            <CardTitle className={headerStyle} onClick={clicktrigger} style={{color: unit.colours?.header}}>
+                {unit.name}
+            </CardTitle>
 
-            <button
-                type="button"
-                onClick={_ => updateFavorites(unit.name)}
-                className="relative rounded-md text-white hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                >
-                <span className="absolute -inset-2.5" />
-                <span className="sr-only">Close panel</span>
-                {isFavorite && <StarFilled aria-hidden="true" /> }
-                {!isFavorite && <StarOpen aria-hidden="true" /> }
-            </button>
-            <CardTitle className={headerStyle} onClick={clicktrigger} style={{color: unit.colours?.header}}>{unit.name}</CardTitle>
+        </CardHeader>
+        <CardContent>
             {unit.stats.map(sb => <CardDescription key={sb.uuid}>{compileStats(unit, sb)}</CardDescription>)}
             {/* {unit.leads && (<p>{unit.leads.units.join(", ")}</p>)} */}
-        </CardHeader>
+        </CardContent>
     </Card>);
 }

@@ -44,6 +44,7 @@ function compileFactions() {
     console.log("DOING THE BIG WORK");
     const factionList: FactionRoot[] = [a,b,c,d,e,f,g,h,i,j,k,m,n,o,p,q,s,t,u,w,x,y,z,aa,ab,ac,ad,af,ag];
     factionList.map((f) => (f.datasheets.forEach((d) => {
+        // console.log(d.name);
         d.colours = f.colours;
         d.uuid = createRandomHash();
         d.stats.forEach(s => s.uuid = createRandomHash());
@@ -68,6 +69,16 @@ function compileFactions() {
         }
         
         compiledWords = compiledWords.map(x=>x.toLowerCase().trim()).filter(x => x.length > 0);
+
+        if (d.abilities.primarch?.length > 0) {
+            compiledWords.push("primarch");
+            d.abilities.primarch.map(p => compiledWords.push(p.name));
+        }
+        if (d.abilities.damaged.description.length > 0) {
+            compiledWords.push("damaged");
+            compiledWords.push("damage");
+        }
+
         d.indexedFields.compiledKeywords = [...new Set(compiledWords)];
         d.indexedFields.stats = new Array<Stat>();
         d.indexedFields.weaponProfiles = new Array<Profile>();

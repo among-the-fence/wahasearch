@@ -17,10 +17,12 @@ import { findDatasheetByName } from "@/lib/filter";
 export const ExampleSheet = ({unit, handleClickToClose, addUnitToStack}: UnitDetailsSheetProps) => {
   const [open] = useState(true)
   const hasRanged = unit.rangedWeapons.length > 0;
-  const hasAbilities = unit.abilities.other.length > 0;
+  const hasAbilities = unit.abilities.other.length > 0 
+  const hasDamagedKeywords = unit.abilities.damaged.description.length > 0;
   const hasKeywords = unit.keywords.length > 0;
   const hasLeads = unit.leads && unit.leads.units.length > 0;
   const hasLeadBy = unit.leadBy && unit.leadBy.length > 0;
+  const hasPrimarch = unit.abilities.primarch && unit.abilities.primarch.length > 0;
 
 
   function clickedClose() {
@@ -96,9 +98,17 @@ export const ExampleSheet = ({unit, handleClickToClose, addUnitToStack}: UnitDet
                       </Section>
                     )}
                     
-                    {hasAbilities && (
+                    {(hasAbilities || hasDamagedKeywords) && (
                       <Section color={unit.colours} title="Abilities" >
-                        {unit.abilities.other.map((a) => (<div><p className="text-lg font-semibold inline">{a.name}</p>: {a.description}</div>))}
+                        {hasAbilities && unit.abilities.other.map((a) => (<div><p className="text-lg font-semibold inline">{a.name}</p>: {a.description}</div>))}
+                        {hasDamagedKeywords && (<div><b>Damaged:</b><p>{unit.abilities.damaged.description} {unit.abilities.damaged.range}</p></div>) }
+
+                      </Section>
+                    )}
+
+                    {(hasPrimarch) && (
+                      <Section color={unit.colours} title="Primarch">  
+                        <p>{unit.abilities.primarch.map(p => p.name + ": " + JSON.stringify(p) ).join(", ")}</p>
                       </Section>
                     )}
 

@@ -56,14 +56,7 @@ export function SearchSheet({updateGlobalForm}: SearchSheetProps) {
           <SheetTitle>Search</SheetTitle>
         </SheetHeader>
         <div className="grid gap-4 py-4 grid-cols-4 items-center gap-4 mb-56">
-          
-          <SearchFormEntry
-            name="faction"
-            display="Faction"
-            placeholder="ari,tsons,demons"
-            formState={localFormState}
-            update={updateLocalFormState}
-           />
+          <p className="col-span-4" onClick={_ => setLocalFormState(new Map())}>Clear</p>
           <SearchFormEntry
             name="compiledKeywords"
             display="Properties"
@@ -71,6 +64,13 @@ export function SearchSheet({updateGlobalForm}: SearchSheetProps) {
             formState={localFormState}
             update={updateLocalFormState}
            />
+           <SearchFormEntry
+             name="faction"
+             display="Faction"
+             placeholder="ari,tsons,demons"
+             formState={localFormState}
+             update={updateLocalFormState}
+            />
           <SearchFormEntry
             name="movement"
             display="M"
