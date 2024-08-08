@@ -13,23 +13,23 @@ const faction_nickname_map = {
     "blood angels": ["ba", "angles"],
     "dark angels": ["da", "angles"],
     "chaos knights": ["ck"],
-    "legiones daemonica": ["daemons", "demon", "demons", "daemon"],
+    "legiones daemonica": ["daemons", "demons"],
     "chaos space marines": ["csm", "chaos marines"],
     "death guard": ["dg"],
     "deathwatch": ["dw", "death watch", "watch"],
     "drukhari": ["dark elves", "dark eldar", "bad elves", "dark elf", "bad elf"],
     "black templars": ["bt"],
     "grey knights": ["gk"],
-    "genestealer cults": ["gsc", "genestealer", "genestealers"],
+    "genestealer cults": ["gsc", "genestealers"],
     "imperial knights": ["ik"],
     "space marines": ["sm", "marines"],
     "space wolves": ["wolves", "sw"],
     "leagues of votann": ["dwarves", "gimli", "lov"],
     "world eaters": ["we", "eaters"],
     "orks": ["orcs", "ork", "orc", "mushrooms"],
-    "tyranids": ["nids", "bugs", "bug"],
+    "tyranids": ["nids", "bugs"],
     "tau empire": ["tau", "fish", "t'au"],
-    "thousand sons": ["tsons", "ksons", "1ksons", "dustyboiz", "dustyboys", "sons", "1kson", "tson", "kson"],
+    "thousand sons": ["tsons", "ksons", "1ksons", "dustyboiz", "dustyboys"],
     "necrons": ["necrons", "crons", "zombies"]
 }
 
@@ -46,13 +46,16 @@ const faction_nickname_map = {
 
 function findFactionName(text: string) {
     const patialMatchKeys = []
+    const superMatches = []
     for (const [k,v] of Object.entries(faction_nickname_map)) {
         if (text == k || v.includes(text))
-            return k
-        else if (k.includes(text)) {
+            superMatches.push(k)
+        else if (k.includes(text) || v.some(vv => vv.includes(text))) {
             patialMatchKeys.push(k)
         }
     }
+    if (superMatches.length > 0)
+        return superMatches;
     return (patialMatchKeys.length > 0) ? patialMatchKeys : text;
 }
 
