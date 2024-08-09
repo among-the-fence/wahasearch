@@ -142,7 +142,7 @@ export function SearchSheet({updateGlobalForm}: SearchSheetProps) {
           />
           
           <SearchFormEntry
-            name="armor penetration"
+            name="armorpenetration"
             display="AP"
             placeholder=">2"
             formState={localFormState}

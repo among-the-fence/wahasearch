@@ -144,7 +144,7 @@ export class SearchItem {
         else if (propName == "attacks") {
             return unit.indexedFields?.weaponProfiles.flatMap(pp => pp.attacks) || [];
         }
-        else if (propName == "armor penetration") {
+        else if (propName == "armorpenetration") {
             return unit.indexedFields?.weaponProfiles.flatMap(pp => pp.ap) || [];
         }
         else if (propName == "damage") {

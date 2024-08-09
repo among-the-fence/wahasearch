@@ -26,7 +26,8 @@ export class SearchParams {
         this.parseSearchParameter("weaponskill", params.get('weaponskill'));
         this.parseSearchParameter("strength", params.get('strength'));
         this.parseSearchParameter("damage", params.get('damage'));
-        this.parseSearchParameter("ap", params.get('ap'));
+        this.parseSearchParameter("armorpenetration", params.get('armorpenetration'));
+        this.parseSearchParameter("ld", params.get('ld'));
         this.parseSearchParameter("points", params.get('points'));
         // this.parseSearchParameter("compiledKeywords", params.get('compiledKeywords'));
         this.parseSearchParameter("oc", params.get('oc'));

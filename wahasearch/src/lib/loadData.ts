@@ -104,7 +104,7 @@ function compileFactions() {
                 d.indexedFields?.weaponProfiles.push({
                     ...pp,
                     ap: pp.ap.replace("-", "")
-                })
+                });
             })
         });
         d.rangedWeapons.forEach(m => {
@@ -112,7 +112,7 @@ function compileFactions() {
                 d.indexedFields?.weaponProfiles.push({
                     ...pp,
                     range: pp.range.replace("\"", "")
-                })
+                });
             })
         });
     }))
