@@ -7,7 +7,7 @@ import { WeaponProfile } from "./unitcomponents/weaponprofile";
 interface UnitDetailsSheetProps {
   unit: Datasheet;
   handleClickToClose: ()=>void;
-  addUnitToStack: (unit: Datasheet) => void;
+  addUnitToStack: (unit: Datasheet|null) => void;
 }
 
 import React, { useState } from 'react'

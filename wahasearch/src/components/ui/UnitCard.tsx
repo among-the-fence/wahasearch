@@ -12,7 +12,7 @@ import { StarFilled, StarOpen } from "./starIcons";
 
 interface UnitCardProps {
     unit: Datasheet
-    onclick: (unit:Datasheet) => void
+    onclick: (unit:Datasheet|null) => void
     updateFavorites: (unitName: string) => void
     isFavorite: boolean
 }
