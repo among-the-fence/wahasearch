@@ -12,6 +12,7 @@ export class SearchItem {
     searchFunction: ((unit:Datasheet) => boolean) | undefined;
 
     constructor(propName:string, itemStr:string) {
+        
         this.__raw = `${propName}:${itemStr}`;
         this.propName = propName;
         this.searchValue = -1; 
@@ -30,6 +31,7 @@ export class SearchItem {
                     this.searchFunction = (unit) => this.digForProp(unit, propName).includes(itemStr);
                 }
             } else {
+                itemStr = itemStr.replace("+", "").replace("\"", "").replace("-", "").trim()
                 if (itemStr.includes(">=")) {
                     this.searchValue = itemStr.replace(">=", "");
                     this.searchType = (x) => x >= this.searchValue;
@@ -54,6 +56,7 @@ export class SearchItem {
                     this.searchValue = itemStr.replace("=", "");
                     this.searchType = (x) => x == this.searchValue;
                 }
+                console.log(this.searchValue);
             }
         }
     }

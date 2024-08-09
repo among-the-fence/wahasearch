@@ -53,7 +53,7 @@ export class SearchParams {
                     });
                 }
             } else {
-                this.filters.push(...item.split(",").map(x => new SearchItem(key, x.trim())));
+                this.filters.push(...item.split(",").map(x => new SearchItem(key, x.replace(/\+-\"/g, "").trim())));
             }
         }
     }

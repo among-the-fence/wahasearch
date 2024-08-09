@@ -111,7 +111,8 @@ function compileFactions() {
             m.profiles.forEach(pp => {
                 d.indexedFields?.weaponProfiles.push({
                     ...pp,
-                    range: pp.range.replace("\"", "")
+                    range: pp.range.replace("\"", ""),
+                    ap: pp.ap.replace("-", "")
                 });
             })
         });
