@@ -2,22 +2,27 @@
 import './App.css'
 import { Datasheet } from './models/faction'
 import { factions } from '@/lib/loadData';
-import { applyFilters, compareUnits } from '@/lib/filter';
+import { applyFilters, compareUnits, findDatasheetByName } from '@/lib/filter';
 import { UnitCard } from './components/ui/UnitCard'
 import { useState } from 'react';
 import { ExampleSheet } from './components/UnitDetailsSheet';
 import { SearchSheet } from './components/search/SearchSheet';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const storedFavorites = () => JSON.parse(localStorage.getItem('favorites') || "[]");
 
 function App() {
-  const [panelUnitStack, setPanelUnitStack] = useState<Datasheet[]>([]);
+  const navigate = useNavigate();
+  const params = useParams();
+  const [panelUnitStack, setPanelUnitStack] = useState<Datasheet[]>((params.unit && params.faction) ?
+   [findDatasheetByName(params.unit)] : []);
   const [formState, setFormState] = useState<Map<string, string>>(new Map());
   const [favorites, setFavorites] = useState<string[]>(storedFavorites());
   const [units, setUnits] = useState<Datasheet[]>(factions.flatMap((f) => f.datasheets)
-  .sort((a,b) => compareUnits(favorites, a, b)));
+    .sort((a,b) => compareUnits(favorites, a, b)));
 
   const appendUnitStack = (unit:Datasheet) => {
+    navigate(`/wahasearch/${unit.indexedFields?.factions[0]}/${unit.name.toLowerCase()}`);
     setPanelUnitStack([...panelUnitStack, unit]);
   }
 
@@ -32,7 +37,16 @@ function App() {
   }
 
   const closeUnitDetails = () => {
-    setPanelUnitStack(panelUnitStack.slice(0,-1));
+    const updatedStack = panelUnitStack.slice(0,-1);
+    if (updatedStack.length > 0) {
+      const unit = updatedStack[updatedStack.length - 1]
+      navigate(`/wahasearch/${unit.indexedFields?.factions[0]}/${unit.name.toLowerCase()}`);
+      setPanelUnitStack(updatedStack);
+    }
+    else {
+      navigate('/wahasearch/')
+      setPanelUnitStack([]);
+    }
   }
 
   const applySearchFormFilters = (currentFormState: Map<string, string>) => {

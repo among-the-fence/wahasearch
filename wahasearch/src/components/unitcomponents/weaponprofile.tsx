@@ -5,6 +5,10 @@ interface WeaponProfileProps {
     profiles: Profile[]
 }
 
+function randomKey(profile: Profile) {
+    return profile.name + Math.random().toString(36).substring(2, 25);
+}
+
 export const WeaponProfile = ({profiles}: WeaponProfileProps) => {
     // const keywords = profile.keywords.length > 0 ? `${profile.keywords.join(", ")}` : null;
 
@@ -52,7 +56,7 @@ const RegularDisplay = ({profiles}: WeaponProfileProps) => {
                 Damage
             </div>
 
-            {profiles.map(p => <WeaponProfileRow profile={p} includeRange={includeRange} namespane='border col-span-2' keywordspan='border col-span-6' keywordpad='border col-span-2'/> )}
+            {profiles.map(p => <WeaponProfileRow key={randomKey(p)} profile={p} includeRange={includeRange} namespane='border col-span-2' keywordspan='border col-span-6' keywordpad='border col-span-2'/> )}
         </div>
     ) : (
         <div className='grid grid-cols-7'>
@@ -74,7 +78,7 @@ const RegularDisplay = ({profiles}: WeaponProfileProps) => {
                 Damage
             </div>
 
-            {profiles.map(p => <WeaponProfileRow profile={p} includeRange={includeRange} namespane='border col-span-2' keywordspan='border col-span-5' keywordpad='border col-span-2'/> )}
+            {profiles.map(p => <WeaponProfileRow key={randomKey(p)}  profile={p} includeRange={includeRange} namespane='border col-span-2' keywordspan='border col-span-5' keywordpad='border col-span-2'/> )}
         </div>
     ));
 }
@@ -104,7 +108,7 @@ const CompactDisplay = ({profiles}: WeaponProfileProps) => {
                     D
                 </div>
 
-                {profiles.map(p => <WeaponProfileRow profile={p} includeRange={includeRange} namespane='border col-span-6' keywordspan='border col-span-6'/> )}
+                {profiles.map(p => <WeaponProfileRow key={randomKey(p)}  profile={p} includeRange={includeRange} namespane='border col-span-6' keywordspan='border col-span-6'/> )}
             </div>
         ) : (
             <div className='grid grid-cols-5'>
@@ -124,7 +128,7 @@ const CompactDisplay = ({profiles}: WeaponProfileProps) => {
                     D
                 </div>
     
-                {profiles.map(p => <WeaponProfileRow profile={p} includeRange={includeRange} namespane='border col-span-5' keywordspan='border col-span-5'/> )}
+                {profiles.map(p => <WeaponProfileRow key={randomKey(p)} profile={p} includeRange={includeRange} namespane='border col-span-5' keywordspan='border col-span-5'/> )}
             </div>
         )); 
 }
