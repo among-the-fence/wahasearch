@@ -105,7 +105,9 @@ export function applyFilters(filters: Map<string, string>, favorites: string[]) 
     return flatDatasheets;
 }
 export function findDatasheetByName(name: string) {
+    const cleanName = name.replace(/\+/g, " ").toLowerCase();
+    console.log(cleanName);
     const flatDatasheets = factions.flatMap((f) => f.datasheets).sort((a,b) => (a.name < b.name ? -1 : 1));
-    const found = flatDatasheets.find(d => d.name.toLowerCase() == name.toLowerCase());
+    const found = flatDatasheets.find(d => d.name.toLowerCase() == cleanName);
     return found || flatDatasheets[0];
 }
