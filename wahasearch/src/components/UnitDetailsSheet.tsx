@@ -139,7 +139,7 @@ export const ExampleSheet = ({unit, handleClickToClose, addUnitToStack}: UnitDet
                             <CollapsibleContent>
                                 {unit.indexedFields?.compiledKeywords.join(", ")}
                                 <pre>
-                                  {JSON.stringify(unit, replacer, 2)}
+                                  {JSON.stringify(unit, null, 2)}
                                 </pre>
                             </CollapsibleContent>
                         </Collapsible>
@@ -169,10 +169,4 @@ const Section = ({title, children, color} : SectionProps) => {
       {children}
     </CollapsibleContent>
   </Collapsible>);
-}
-
-function replacer(key:any,value:any)
-{
-    if (key=="indexedFields") return undefined;
-    else return value;
 }

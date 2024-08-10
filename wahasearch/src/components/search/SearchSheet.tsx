@@ -118,13 +118,20 @@ export function SearchSheet({updateGlobalForm}: SearchSheetProps) {
             formState={localFormState}
             update={updateLocalFormState}
            />
-          <SearchFormEntry
-            name="attacks"
-            display="A"
-            placeholder="<=12"
-            formState={localFormState}
-            update={updateLocalFormState}
-          />
+           <SearchFormEntry
+             name="range"
+             display="Range"
+             placeholder="Melee,>24"
+             formState={localFormState}
+             update={updateLocalFormState}
+           />
+           <SearchFormEntry
+             name="attacks"
+             display="A"
+             placeholder="<=12"
+             formState={localFormState}
+             update={updateLocalFormState}
+           />
           <SearchFormEntry
             name="skill"
             display="BS/WS"

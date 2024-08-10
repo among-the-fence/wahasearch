@@ -47,7 +47,7 @@ export interface FactionRoot {
   export interface IndexedFields {
     factions: string[]
     stats: Stat[]
-    weaponProfiles: Profile[]
+    weaponProfiles: IndexedProfile[]
     compiledKeywords?: string[]
   }
   
@@ -100,6 +100,17 @@ export interface FactionRoot {
     range: string
     skill: string
     strength: string
+  }
+  
+  export interface IndexedProfile {
+    ap: string[]
+    attacks: string[]
+    damage?: string[]
+    keywords: string[]
+    name: string
+    range: string[]
+    skill: string[]
+    strength: string[]
   }
   
   export interface Point {

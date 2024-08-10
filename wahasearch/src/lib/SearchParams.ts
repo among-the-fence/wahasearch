@@ -29,7 +29,7 @@ export class SearchParams {
         this.parseSearchParameter("armorpenetration", params.get('armorpenetration'));
         this.parseSearchParameter("ld", params.get('ld'));
         this.parseSearchParameter("points", params.get('points'));
-        // this.parseSearchParameter("compiledKeywords", params.get('compiledKeywords'));
+        this.parseSearchParameter("range", params.get('range'));
         this.parseSearchParameter("oc", params.get('oc'));
     }
 
@@ -53,6 +53,8 @@ export class SearchParams {
                     });
                 }
             } else {
+                if ( key == "range" && item.toLowerCase() == "melee")
+                    item = "0";
                 this.filters.push(...item.split(",").map(x => new SearchItem(key, x.replace(/\+-\"/g, "").trim())));
             }
         }

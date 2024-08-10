@@ -156,6 +156,9 @@ export class SearchItem {
         else if (propName == "skill") {
             return unit.indexedFields?.weaponProfiles.flatMap(pp => pp.skill) || [];
         }
+        else if (propName == "range") {
+            return unit.indexedFields?.weaponProfiles.flatMap(pp => pp.range) || [];
+        }
         return [];
     }
 }

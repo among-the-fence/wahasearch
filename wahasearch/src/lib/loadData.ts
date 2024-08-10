@@ -32,7 +32,7 @@ import ad from "@/lib/data/datasources/10th/json/tyranids.json"
 // import ae from "@/lib/data/datasources/10th/json/unaligned.json"
 import af from "@/lib/data/datasources/10th/json/votann.json"
 import ag from "@/lib/data/datasources/10th/json/worldeaters.json"
-import { FactionRoot, IndexedFields, Profile, Stat } from "@/models/faction"
+import { FactionRoot, IndexedFields, IndexedProfile, Profile, Stat } from "@/models/faction"
 
 function createRandomHash() {
     const x = Math.random().toString(36).substring(2, 25)+Math.random().toString(36).substring(2, 25);
@@ -89,7 +89,7 @@ function compileFactions() {
         }
         d.indexedFields.compiledKeywords = [...new Set(compiledWords)];
         d.indexedFields.stats = new Array<Stat>();
-        d.indexedFields.weaponProfiles = new Array<Profile>();
+        d.indexedFields.weaponProfiles = new Array<IndexedProfile>();
         d.stats.forEach(s => d.indexedFields?.stats.push({
             ld: s.ld.replace("+", ""),
             m: s.m.replace("\"", ""),
@@ -101,19 +101,12 @@ function compileFactions() {
         }));
         d.meleeWeapons.forEach(m => {
             m.profiles.forEach(pp => {
-                d.indexedFields?.weaponProfiles.push({
-                    ...pp,
-                    ap: pp.ap.replace("-", "")
-                });
+                d.indexedFields?.weaponProfiles.push(indexWeapon(pp));
             })
         });
         d.rangedWeapons.forEach(m => {
             m.profiles.forEach(pp => {
-                d.indexedFields?.weaponProfiles.push({
-                    ...pp,
-                    range: pp.range.replace("\"", ""),
-                    ap: pp.ap.replace("-", "")
-                });
+                d.indexedFields?.weaponProfiles.push(indexWeapon(pp));
             })
         });
     }))
@@ -122,8 +115,20 @@ function compileFactions() {
     return factionList;
 }
 
-export function calculateVariableStats(stat:string) {
-    const s = stat.toLowerCase();
+function indexWeapon(weapon:Profile):IndexedProfile {
+    return {
+        name: weapon.name,
+        range: calculateVariableStats(weapon.range),
+        attacks: calculateVariableStats(weapon.attacks),
+        strength: calculateVariableStats(weapon.strength),
+        ap: calculateVariableStats(weapon.ap),
+        damage: calculateVariableStats(weapon.damage || ""),
+        keywords: weapon.keywords.map(k => k.toLowerCase())
+     } as IndexedProfile;
+}
+
+export function calculateVariableStats(stat:string):string[] {
+    const s = stat.toLowerCase().replace("\"", "").replace("\+", "").replace("-", "");
     if (s.includes("d")) {
         const x = s.split("d");
         let diceCount = 1;
@@ -139,12 +144,12 @@ export function calculateVariableStats(stat:string) {
             minRoll += modifier;
             maxRoll += modifier;
         }
-        return [s.replace(" ", "")];//.concat(Array.from({ length: maxRoll - minRoll + 1 }, (_, i) => minRoll + i));
+        return [s].concat(Array.from({ length: maxRoll - minRoll + 1 }, (_, i) => minRoll + i).map(i => `${i}`));
     } else if (s === "n/a") {
-        return [0];
+        return ["0"];
     }
-    if (stat) {
-        return [parseInt(stat.replace("+", "").replace("-", ""))];
+    if (s) {
+        return [s];
     }
     return [];
 }
