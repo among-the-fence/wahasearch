@@ -66,17 +66,17 @@ function App() {
 
   return (
     <>
-      <SearchSheet updateGlobalForm={applySearchFormFilters} />
       { panelUnitStack.length > 0 && 
         <ExampleSheet
           unit={panelUnitStack[panelUnitStack.length-1]}
           handleClickToClose={closeUnitDetails}
           addUnitToStack={appendUnitStack} />}
-      <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1  gap-4">
+      <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 mt-5 lg:mt-0 gap-4">
         {(units).map(unit => (
           <UnitCard key={unit.uuid} unit={unit} onclick={appendUnitStack} updateFavorites={updateFavorite} isFavorite={favorites.includes(unit.name)} />
         ))}
       </div>
+      <SearchSheet updateGlobalForm={applySearchFormFilters} />
     </>
   )
 }
