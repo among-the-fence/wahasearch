@@ -10,12 +10,14 @@ export class SearchItem {
     searchType: ((unit: any) => boolean) | undefined;
     searchValue: string | number;
     searchFunction: ((unit:Datasheet) => boolean) | undefined;
+    digFunction: ((arg:any) => string[]) | undefined;
 
-    constructor(propName:string, itemStr:string) {
+    constructor(propName:string, itemStr:string, dig:((arg:any)=>string[])|undefined) {
         
         this.__raw = `${propName}:${itemStr}`;
         this.propName = propName;
         this.searchValue = -1; 
+        this.digFunction = dig;
 
         if (itemStr.length > 0) {
             if (itemStr.includes("min")) {
@@ -56,7 +58,6 @@ export class SearchItem {
                     this.searchValue = itemStr.replace("=", "");
                     this.searchType = (x) => x == this.searchValue;
                 }
-                console.log(this.searchValue);
             }
         }
     }
@@ -65,12 +66,12 @@ export class SearchItem {
         return this.__raw;
     }
 
-    apply(unit: Datasheet) {
+    apply(unit: any) {
         if (this.searchFunction) {
             return this.searchFunction(unit);
         }
         else if (this.searchType && this.propName) {
-            const foundProps = this.digForProp(unit, this.propName).map(x=> parseInt(x) || x)
+            const foundProps = this.digFunction ? this.digFunction(unit) : this.digForProp(unit, this.propName).map(x=> parseInt(x) || x)
             const res = foundProps?.some(x => this.searchType && this.searchType(x))
             // console.log(`searching ${foundProps} : ${this.searchValue} : ${this.__raw} : ${res}` )
 
@@ -93,13 +94,13 @@ export class SearchItem {
         let extremeValue = -1;
         if (this.maxFilter) {
             const propName = this.maxFilter;
-            const flattenValues = SearchItem.flatten(units.map(x => this.digForProp(x, propName)));
+            const flattenValues = SearchItem.flatten(units.map(x => this.digFunction ? this.digFunction(x) : this.digForProp(x, propName)));
             const filteredValues = flattenValues.filter(x => typeof x === 'number');
             extremeValue = Math.max(...filteredValues);
         }
         if (this.minFilter) {
             const propName = this.minFilter;
-            const flattenValues = SearchItem.flatten(units.map(x => this.digForProp(x, propName)));
+            const flattenValues = SearchItem.flatten(units.map(x => this.digFunction ? this.digFunction(x) : this.digForProp(x, propName)));
             extremeValue = Math.min(...flattenValues);
         }
         const out = [];
@@ -108,7 +109,7 @@ export class SearchItem {
                 extremeValue = extremeValue[0];
             }
             for (const u of units) {
-                const gotProp = this.digForProp(u, this.propName);
+                const gotProp = this.digFunction ? this.digFunction(u) : this.digForProp(u, this.propName);
                 if (gotProp && gotProp.includes(extremeValue)) {
                     out.push(u);
                 }

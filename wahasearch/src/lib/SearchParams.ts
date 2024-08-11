@@ -1,6 +1,7 @@
 import {SearchItem} from "@/lib/SearchItem"
 import { Datasheet } from "@/models/faction";
 
+
 const keywordAbbreviationMap = {
     "devestating wounds": ["dw", "dev wounds"],
     "deadly demise": ["dd"],
@@ -9,31 +10,84 @@ const keywordAbbreviationMap = {
     "re-roll": ["rr", "reroll", "re roll"],
 };
 
+
+function getDigFunction(propName: string) : ((arg: any) => string[]) {
+
+    if (propName == "faction")
+        return (unit: any) => {return unit.factions}
+    else if (propName == "compiledKeywords") {
+        return (unit: any) => {return unit.indexedFields?.compiledKeywords;};
+    }
+    else if (propName == "movement") {
+        return (unit: any) => {return unit.indexedFields?.stats.map((s: { m: string; }) => s.m.replace("\"", ""));};
+    }
+    else if (propName == "toughness") {
+        return (unit: any) => {return unit.indexedFields?.stats.map((s: { t: string; }) => s.t);};
+    }
+    else if (propName == "save") {
+        return (unit: any) => {return unit.indexedFields?.stats.map((s: { sv: string; }) => s.sv.replace("+", ""));};
+    }
+    else if (propName == "wounds") {
+        return (unit: any) => {return unit.indexedFields?.stats.map((s: { w: string; }) => s.w);};
+    }
+    else if (propName == "oc") {
+        return (unit: any) => {return unit.indexedFields?.stats.map((s: { oc: string; }) => s.oc) ;};
+    }
+    else if (propName == "ld") {
+        return (unit: any) => {return unit.indexedFields?.stats.map((s: { ld: string; }) => s.ld.replace("+", ""));};
+    }
+    else if (propName == "strength") {
+        return (profile: any) => {return profile.strength};
+    }
+    else if (propName == "attacks") {
+        return (profile: any) => {return profile.attacks};
+    }
+    else if (propName == "armorpenetration") {
+        return (profile: any) => {return profile.ap};
+    }
+    else if (propName == "damage") {
+        return (profile: any) => {return profile.damage};
+    }
+    else if (propName == "skill") {
+        return (profile: any) => {return profile.skill};
+    }
+    else if (propName == "range") {
+        return (profile: any) => {return profile.range};
+    }
+    return (_:any) => [];
+}
+
 export class SearchParams {
     faction: string | undefined;
-    filters: any[];
+    filters: SearchItem[];
+    weaponFilters: SearchItem[];
 
     constructor(params: Map<string, string>) {
         this.faction = params.get('faction');
         this.filters = [];
-        this.parseSearchParameter("toughness", params.get('toughness'));
-        this.parseSearchParameter("save", params.get('save'));
-        this.parseSearchParameter("wounds", params.get('wounds'));
-        this.parseSearchParameter("movement", params.get('movement'));
-        this.parseSearchParameter("invuln", params.get('invuln'));
-        this.parseSearchParameter("feelnopain", params.get('feelnopain'));
-        this.parseSearchParameter("attacks", params.get('attacks'));
-        this.parseSearchParameter("weaponskill", params.get('weaponskill'));
-        this.parseSearchParameter("strength", params.get('strength'));
-        this.parseSearchParameter("damage", params.get('damage'));
-        this.parseSearchParameter("armorpenetration", params.get('armorpenetration'));
-        this.parseSearchParameter("ld", params.get('ld'));
-        this.parseSearchParameter("points", params.get('points'));
-        this.parseSearchParameter("range", params.get('range'));
-        this.parseSearchParameter("oc", params.get('oc'));
+        this.weaponFilters = []
+        this.filters = this.filters.concat(this.parseSearchParameter("save", params.get('save')));
+        this.filters = this.filters.concat(this.parseSearchParameter("wounds", params.get('wounds')));
+        this.filters = this.filters.concat(this.parseSearchParameter("movement", params.get('movement')));
+        this.filters = this.filters.concat(this.parseSearchParameter("invuln", params.get('invuln')));
+        this.filters = this.filters.concat(this.parseSearchParameter("feelnopain", params.get('feelnopain')));
+        this.filters = this.filters.concat(this.parseSearchParameter("toughness", params.get('toughness')));
+        this.filters = this.filters.concat(this.parseSearchParameter("ld", params.get('ld')));
+        this.filters = this.filters.concat(this.parseSearchParameter("points", params.get('points')));
+        this.filters = this.filters.concat(this.parseSearchParameter("oc", params.get('oc')));
+        this.weaponFilters = this.weaponFilters.concat(this.parseSearchParameter("range", params.get('range')));
+        this.weaponFilters = this.weaponFilters.concat(this.parseSearchParameter("attacks", params.get('attacks')));
+        this.weaponFilters = this.weaponFilters.concat(this.parseSearchParameter("weaponskill", params.get('weaponskill')));
+        this.weaponFilters = this.weaponFilters.concat(this.parseSearchParameter("strength", params.get('strength')));
+        this.weaponFilters = this.weaponFilters.concat(this.parseSearchParameter("damage", params.get('damage')));
+        this.weaponFilters = this.weaponFilters.concat(this.parseSearchParameter("armorpenetration", params.get('armorpenetration')));
+        console.log(this.filters);
+        console.log(this.weaponFilters);
+
     }
 
     parseSearchParameter(key:string, item:string|undefined) {
+        const newFilters = [];
         if (item) {
             if (key === "compiledKeywords") {
                 if (item) {
@@ -42,22 +96,23 @@ export class SearchParams {
                         let added = false;
                         for (const [k, v] of Object.entries(keywordAbbreviationMap)) {
                             if (v.includes(x)) {
-                                this.filters.push(new SearchItem("compiledKeywords", k));
+                                newFilters.push(new SearchItem("compiledKeywords", k, undefined));
                                 added = true;
                                 break;
                             }
                         }
                         if (!added) {
-                            this.filters.push(new SearchItem("compiledKeywords", x));
+                            newFilters.push(new SearchItem("compiledKeywords", x, undefined));
                         }
                     });
                 }
             } else {
                 if ( key == "range" && item.toLowerCase() == "melee")
                     item = "0";
-                this.filters.push(...item.split(",").map(x => new SearchItem(key, x.replace(/\+-\"/g, "").trim())));
+                    newFilters.push(...item.split(",").map(x => new SearchItem(key, x.replace(/\+-\"/g, "").trim(), getDigFunction(key))));
             }
         }
+        return newFilters;
     }
 
     toString() {
@@ -70,7 +125,10 @@ export class SearchParams {
     }
 
     apply(unit: Datasheet) {
-        return this.filters.every(f => f && f.apply(unit));
+        const match_all_unit_filters = (!this.filters || this.filters.every(f => f && f.apply(unit)));
+        const matchAllWeaponFilters = (!this.weaponFilters || unit.indexedFields?.weaponProfiles.some(pp => this.weaponFilters.every(wf => { return wf.apply(pp)})));
+        return match_all_unit_filters && matchAllWeaponFilters;
+            
     }
 
     filter(unitList: Datasheet[]) {
