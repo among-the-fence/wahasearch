@@ -96,13 +96,13 @@ export class SearchParams {
                         let added = false;
                         for (const [k, v] of Object.entries(keywordAbbreviationMap)) {
                             if (v.includes(x)) {
-                                newFilters.push(new SearchItem("compiledKeywords", k, undefined));
+                                newFilters.push(new SearchItem("compiledKeywords", k, getDigFunction("compiledKeywords")));
                                 added = true;
                                 break;
                             }
                         }
                         if (!added) {
-                            newFilters.push(new SearchItem("compiledKeywords", x, undefined));
+                            newFilters.push(new SearchItem("compiledKeywords", x, getDigFunction("compiledKeywords")));
                         }
                     });
                 }

@@ -10,9 +10,9 @@ export class SearchItem {
     searchType: ((unit: any) => boolean) | undefined;
     searchValue: string | number;
     searchFunction: ((unit:Datasheet) => boolean) | undefined;
-    digFunction: ((arg:any) => string[]) | undefined;
+    digFunction: ((arg:any) => string[]);
 
-    constructor(propName:string, itemStr:string, dig:((arg:any)=>string[])|undefined) {
+    constructor(propName:string, itemStr:string, dig:((arg:any)=>string[])) {
         
         this.__raw = `${propName}:${itemStr}`;
         this.propName = propName;
@@ -27,10 +27,10 @@ export class SearchItem {
             } else if (["keywords"].includes(propName)) {
                 if (itemStr.includes("!=")) {
                     itemStr = itemStr.replace("!=", "");
-                    this.searchFunction = (unit) => !this.digForProp(unit, propName).includes(itemStr);
+                    this.searchFunction = (unit) => !unit.indexedFields?.compiledKeywords?.includes(itemStr) || false;
                 } else {
                     itemStr = itemStr.replace("=", "");
-                    this.searchFunction = (unit) => this.digForProp(unit, propName).includes(itemStr);
+                    this.searchFunction = (unit) => unit.indexedFields?.compiledKeywords?.includes(itemStr) || false;
                 }
             } else {
                 itemStr = itemStr.replace("+", "").replace("\"", "").replace("-", "").trim()
@@ -71,7 +71,7 @@ export class SearchItem {
             return this.searchFunction(unit);
         }
         else if (this.searchType && this.propName) {
-            const foundProps = this.digFunction ? this.digFunction(unit) : this.digForProp(unit, this.propName).map(x=> parseInt(x) || x)
+            const foundProps = this.digFunction(unit);
             const res = foundProps?.some(x => this.searchType && this.searchType(x))
             // console.log(`searching ${foundProps} : ${this.searchValue} : ${this.__raw} : ${res}` )
 
@@ -91,76 +91,34 @@ export class SearchItem {
     }
 
     filter(units: Datasheet[]) {
+        console.log("stuff");
         let extremeValue = -1;
-        if (this.maxFilter) {
-            const propName = this.maxFilter;
-            const flattenValues = SearchItem.flatten(units.map(x => this.digFunction ? this.digFunction(x) : this.digForProp(x, propName)));
-            const filteredValues = flattenValues.filter(x => typeof x === 'number');
-            extremeValue = Math.max(...filteredValues);
+        let propName = this.maxFilter
+        if (this.maxFilter) {;
+            const flattenValues = units.flatMap(x => this.digFunction(x)).map(x => parseInt(x));
+            console.log(`max: ${flattenValues}`)
+            extremeValue = Math.max(...flattenValues);
         }
         if (this.minFilter) {
-            const propName = this.minFilter;
-            const flattenValues = SearchItem.flatten(units.map(x => this.digFunction ? this.digFunction(x) : this.digForProp(x, propName)));
+            propName = this.minFilter;
+            const flattenValues = SearchItem.flatten(units.map(x => this.digFunction(x)));
+            console.log(`min: ${flattenValues}`)
             extremeValue = Math.min(...flattenValues);
         }
         const out = [];
-        if (this.propName) {
+        console.log(`extreme: ${extremeValue}`)
+        if (propName) {
             if (Array.isArray(extremeValue)) {
                 extremeValue = extremeValue[0];
             }
             for (const u of units) {
-                const gotProp = this.digFunction ? this.digFunction(u) : this.digForProp(u, this.propName);
-                if (gotProp && gotProp.includes(extremeValue)) {
+                const gotProp = this.digFunction(u);
+                if (gotProp && gotProp.includes(`${extremeValue}`)) {
                     out.push(u);
                 }
             }
         }
         return out;
-    }
-
-    digForProp(unit: Datasheet, propName: string): any[] {
-        if (propName == "faction")
-            return unit.factions
-        else if (propName == "compiledKeywords") {
-            return unit.indexedFields?.compiledKeywords || [];
-        }
-        else if (propName == "movement") {
-            return unit.indexedFields?.stats.map(s => s.m.replace("\"", "")) || [];
-        }
-        else if (propName == "toughness") {
-            return unit.indexedFields?.stats.map(s => s.t) || [];
-        }
-        else if (propName == "save") {
-            return unit.indexedFields?.stats.map(s => s.sv.replace("+", "")) || [];
-        }
-        else if (propName == "wounds") {
-            return unit.indexedFields?.stats.map(s => s.w) || [];
-        }
-        else if (propName == "oc") {
-            return unit.indexedFields?.stats.map(s => s.oc) || [];
-        }
-        else if (propName == "ld") {
-            return unit.indexedFields?.stats.map(s => s.ld.replace("+", "")) || [];
-        }
-        else if (propName == "strength") {
-            return unit.indexedFields?.weaponProfiles.flatMap(pp => pp.strength) || [];
-        }
-        else if (propName == "attacks") {
-            return unit.indexedFields?.weaponProfiles.flatMap(pp => pp.attacks) || [];
-        }
-        else if (propName == "armorpenetration") {
-            return unit.indexedFields?.weaponProfiles.flatMap(pp => pp.ap) || [];
-        }
-        else if (propName == "damage") {
-            return unit.indexedFields?.weaponProfiles.flatMap(pp => pp.damage) || [];
-        }
-        else if (propName == "skill") {
-            return unit.indexedFields?.weaponProfiles.flatMap(pp => pp.skill) || [];
-        }
-        else if (propName == "range") {
-            return unit.indexedFields?.weaponProfiles.flatMap(pp => pp.range) || [];
-        }
-        return [];
     }
 }
 

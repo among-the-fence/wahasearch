@@ -36,7 +36,6 @@ import { FactionRoot, IndexedFields, IndexedProfile, Profile, Stat } from "@/mod
 
 function createRandomHash() {
     const x = Math.random().toString(36).substring(2, 25)+Math.random().toString(36).substring(2, 25);
-    // console.log(x);
     return x;
 }
 
@@ -45,7 +44,6 @@ function compileFactions() {
     const factionNames: any[] = [];
     const factionList: FactionRoot[] = [a,b,c,d,e,f,g,h,i,j,k,m,n,o,p,q,s,t,u,w,x,y,z,aa,ab,ac,ad,af,ag];
     factionList.map((f) => (f.datasheets.forEach((d) => {
-        // console.log(d.name);
         d.colours = f.colours;
         d.uuid = createRandomHash();
         d.stats.forEach(s => s.uuid = createRandomHash());
@@ -128,7 +126,7 @@ function indexWeapon(weapon:Profile):IndexedProfile {
 }
 
 export function calculateVariableStats(stat:string):string[] {
-    const s = stat.toLowerCase().replace("\"", "").replace("\+", "").replace("-", "");
+    const s = stat.toLowerCase().replace("\"", "").replace("-", "");
     if (s.includes("d")) {
         const x = s.split("d");
         let diceCount = 1;
