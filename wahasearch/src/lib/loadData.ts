@@ -89,13 +89,13 @@ function compileFactions() {
         d.indexedFields.stats = new Array<Stat>();
         d.indexedFields.weaponProfiles = new Array<IndexedProfile>();
         d.stats.forEach(s => d.indexedFields?.stats.push({
-            ld: s.ld.replace("+", ""),
-            m: s.m.replace("\"", ""),
+            ld: s.ld.replace("+", "").replace("-", "").replace("\"", ""),
+            m: s.m.replace("+", "").replace("-", "").replace("\"", ""),
             name: s.name,
-            oc: s.oc.replace("+", ""),
-            sv: s.sv.replace("+", ""),
-            t: s.t.replace("\"", ""),
-            w: s.w.replace("\"", "")
+            oc: s.oc.replace("+", "").replace("-", "").replace("\"", ""),
+            sv: s.sv.replace("+", "").replace("-", "").replace("\"", ""),
+            t: s.t.replace("+", "").replace("-", "").replace("\"", ""),
+            w: s.w.replace("+", "").replace("-", "").replace("\"", "")
         }));
         d.meleeWeapons.forEach(m => {
             m.profiles.forEach(pp => {

@@ -19,7 +19,7 @@ function getDigFunction(propName: string) : ((arg: any) => string[]) {
         return (unit: any) => {return unit.indexedFields?.compiledKeywords;};
     }
     else if (propName == "movement") {
-        return (unit: any) => {return unit.indexedFields?.stats.map((s: { m: string; }) => s.m.replace("\"", ""));};
+        return (unit: any) => {return unit.indexedFields?.stats.map((s: { m: string; }) => s.m);};
     }
     else if (propName == "toughness") {
         return (unit: any) => {
@@ -27,7 +27,7 @@ function getDigFunction(propName: string) : ((arg: any) => string[]) {
         };
     }
     else if (propName == "save") {
-        return (unit: any) => {return unit.indexedFields?.stats.map((s: { sv: string; }) => s.sv.replace("+", ""));};
+        return (unit: any) => {return unit.indexedFields?.stats.map((s: { sv: string; }) => s.sv);};
     }
     else if (propName == "wounds") {
         return (unit: any) => {return unit.indexedFields?.stats.map((s: { w: string; }) => s.w);};
@@ -36,7 +36,7 @@ function getDigFunction(propName: string) : ((arg: any) => string[]) {
         return (unit: any) => {return unit.indexedFields?.stats.map((s: { oc: string; }) => s.oc) ;};
     }
     else if (propName == "ld") {
-        return (unit: any) => {return unit.indexedFields?.stats.map((s: { ld: string; }) => s.ld.replace("+", ""));};
+        return (unit: any) => {return unit.indexedFields?.stats.map((s: { ld: string; }) => s.ld);};
     }
     else if (propName == "strength") {
         return (profile: any) => {return profile.strength};
@@ -83,7 +83,6 @@ export class SearchParams {
         this.weaponFilters = this.weaponFilters.concat(this.parseSearchParameter("strength", params.get('strength')));
         this.weaponFilters = this.weaponFilters.concat(this.parseSearchParameter("damage", params.get('damage')));
         this.weaponFilters = this.weaponFilters.concat(this.parseSearchParameter("armorpenetration", params.get('armorpenetration')));
-
     }
 
     parseSearchParameter(key:string, item:string|undefined) {
