@@ -20,9 +20,9 @@ export class SearchItem {
         this.digFunction = dig;
 
         if (itemStr.length > 0) {
-            if (itemStr.includes("min")) {
+            if (itemStr.toLowerCase().includes("min")) {
                 this.minFilter = propName;
-            } else if (itemStr.includes("max")) {
+            } else if (itemStr.toLowerCase().includes("max")) {
                 this.maxFilter = propName;
             } else if (["keywords"].includes(propName)) {
                 if (itemStr.includes("!=")) {
