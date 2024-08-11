@@ -22,7 +22,9 @@ function getDigFunction(propName: string) : ((arg: any) => string[]) {
         return (unit: any) => {return unit.indexedFields?.stats.map((s: { m: string; }) => s.m.replace("\"", ""));};
     }
     else if (propName == "toughness") {
-        return (unit: any) => {return unit.indexedFields?.stats.map((s: { t: string; }) => s.t);};
+        return (unit: any) => {
+            return unit.indexedFields?.stats.map((s: { t: string; }) => s.t);
+        };
     }
     else if (propName == "save") {
         return (unit: any) => {return unit.indexedFields?.stats.map((s: { sv: string; }) => s.sv.replace("+", ""));};
@@ -81,8 +83,6 @@ export class SearchParams {
         this.weaponFilters = this.weaponFilters.concat(this.parseSearchParameter("strength", params.get('strength')));
         this.weaponFilters = this.weaponFilters.concat(this.parseSearchParameter("damage", params.get('damage')));
         this.weaponFilters = this.weaponFilters.concat(this.parseSearchParameter("armorpenetration", params.get('armorpenetration')));
-        console.log(this.filters);
-        console.log(this.weaponFilters);
 
     }
 
@@ -109,9 +109,10 @@ export class SearchParams {
             } else {
                 if ( key == "range" && item.toLowerCase() == "melee")
                     item = "0";
-                    newFilters.push(...item.split(",").map(x => new SearchItem(key, x.replace(/\+-\"/g, "").trim(), getDigFunction(key))));
+                newFilters.push(...item.split(",").map(x => new SearchItem(key, x.replace(/\+-\"/g, "").trim(), getDigFunction(key))));
             }
         }
+        // newFilters.forEach(f => console.log(f.__raw));
         return newFilters;
     }
 

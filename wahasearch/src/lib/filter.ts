@@ -100,7 +100,7 @@ export function applyFilters(filters: Map<string, string>, favorites: string[]) 
     }
 
     const search = new SearchParams(filters);
-    flatDatasheets = flatDatasheets.filter(x => search.apply(x));
+    flatDatasheets = search.filter(flatDatasheets.filter(x => search.apply(x)));
 
     return flatDatasheets;
 }

@@ -13,10 +13,11 @@ import { ToggleGroup, ToggleGroupItem } from "../ui/toggle-group"
 
 interface SearchSheetProps {
   updateGlobalForm: (localFormState: Map<string, string>) => void
+  initialFormState: Map<string, string>
 }
 
-export function SearchSheet({updateGlobalForm}: SearchSheetProps) {
-  const [localFormState, setLocalFormState] = useState(new Map());
+export function SearchSheet({updateGlobalForm, initialFormState}: SearchSheetProps) {
+  const [localFormState, setLocalFormState] = useState(initialFormState);
 
   const updateLocalFormState = (field: string, e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.value.length == 0) {

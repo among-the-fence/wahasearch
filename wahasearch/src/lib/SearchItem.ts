@@ -77,7 +77,7 @@ export class SearchItem {
 
            return res;
         }
-        return false;
+        return true;
     }
 
     static flatten(lst: any[]) {
@@ -91,22 +91,25 @@ export class SearchItem {
     }
 
     filter(units: Datasheet[]) {
-        console.log("stuff");
         let extremeValue = -1;
         let propName = this.maxFilter
         if (this.maxFilter) {;
-            const flattenValues = units.flatMap(x => this.digFunction(x)).map(x => parseInt(x));
-            console.log(`max: ${flattenValues}`)
+            const flattenValues = units.flatMap(x => {
+                const v = this.digFunction(x);
+                // console.log(v);
+                return v
+            }).map(x => {
+                return parseInt(x);
+            });
             extremeValue = Math.max(...flattenValues);
         }
         if (this.minFilter) {
             propName = this.minFilter;
             const flattenValues = SearchItem.flatten(units.map(x => this.digFunction(x)));
-            console.log(`min: ${flattenValues}`)
             extremeValue = Math.min(...flattenValues);
         }
         const out = [];
-        console.log(`extreme: ${extremeValue}`)
+        // console.log(`extreme: ${extremeValue}`)
         if (propName) {
             if (Array.isArray(extremeValue)) {
                 extremeValue = extremeValue[0];

@@ -11,11 +11,19 @@ import { useSearchParams } from 'react-router-dom';
 
 const storedFavorites = () => JSON.parse(localStorage.getItem('favorites') || "[]");
 
+function unpackSearchForm(queryParams: URLSearchParams): Map<string,string> {
+  const out = new Map<string, string>();
+  queryParams.forEach((v,k) => { out.set(k, v);});
+  return out;
+}
+
 function App() {
+
+
   const [queryParams, setQueryParams] = useSearchParams();
   const starterUnits = findDatasheetByName(queryParams.get("unit"))
   const [panelUnitStack, setPanelUnitStack] = useState<Datasheet[]>((starterUnits) ? [starterUnits] : []);
-  const [formState, setFormState] = useState<Map<string, string>>(new Map());
+  const [formState, setFormState] = useState<Map<string, string>>(unpackSearchForm(queryParams));
   const [favorites, setFavorites] = useState<string[]>(storedFavorites());
   const [units, setUnits] = useState<Datasheet[]>(factions.flatMap((f) => f.datasheets)
     .sort((a,b) => compareUnits(favorites, a, b)));
@@ -59,11 +67,20 @@ function App() {
   }
 
   const applySearchFormFilters = (currentFormState: Map<string, string>) => {
+
+    setQueryParams(searchParams => {
+      searchParams.forEach((_,k) => {searchParams.delete(k);});
+      for (let [k,v] of currentFormState) {
+        if (v.trim().length > 0)
+        searchParams.set(k,v.trim());
+      }
+      return searchParams;
+    });
     const flatdatasheets = applyFilters(currentFormState, favorites);
     setFormState(currentFormState);
     setUnits(flatdatasheets);
   }
-
+  
   return (
     <>
       { panelUnitStack.length > 0 && 
@@ -76,7 +93,7 @@ function App() {
           <UnitCard key={unit.uuid} unit={unit} onclick={appendUnitStack} updateFavorites={updateFavorite} isFavorite={favorites.includes(unit.name)} />
         ))}
       </div>
-      <SearchSheet updateGlobalForm={applySearchFormFilters} />
+      <SearchSheet updateGlobalForm={applySearchFormFilters} initialFormState={formState}/>
     </>
   )
 }
