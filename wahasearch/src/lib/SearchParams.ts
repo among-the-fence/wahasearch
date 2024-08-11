@@ -108,7 +108,7 @@ export class SearchParams {
             } else {
                 if ( key == "range" && item.toLowerCase() == "melee")
                     item = "0";
-                newFilters.push(...item.split(",").map(x => new SearchItem(key, x.replace(/\+-\"/g, "").trim(), getDigFunction(key))));
+                newFilters.push(...item.toLowerCase().split(",").map(x => new SearchItem(key, x.replace(/\+-\"/g, "").trim(), getDigFunction(key))));
             }
         }
         // newFilters.forEach(f => console.log(f.__raw));
