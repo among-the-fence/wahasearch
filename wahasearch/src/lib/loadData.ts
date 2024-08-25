@@ -76,7 +76,17 @@ function compileFactions() {
         if (d.abilities.damaged.description.length > 0) {
             compiledWords.push("damaged");
             compiledWords.push("damage");
+            compiledWords.push("bracket");
         }
+        d.abilities.other.map(a => {
+            if (a.description.toLowerCase().includes("objective marker remains under your control")) {
+                compiledWords.push("sticky");
+            }
+            else if (a.description.toLowerCase().includes("objective marker you control")) {
+                compiledWords.push("objective");
+                compiledWords.push("objective control");
+            }
+        });
         d.indexedFields.factions = d.factions.map(f => f.toLowerCase().replace(/[^0-9a-z ]/gi, ''))
 
         if (d.indexedFields.factions.length == 1){
