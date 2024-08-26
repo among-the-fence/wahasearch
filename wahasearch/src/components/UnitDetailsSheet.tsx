@@ -78,17 +78,14 @@ export const ExampleSheet = ({unit, handleClickToClose, addUnitToStack}: UnitDet
                 <div className="relative mt-6 flex-1 px-4 sm:px-6 m-5 bg-white" >
                   <div className="grid grid-cols-1">
 
-                    {hasRanged && (
-                      <Section color={unit.colours} title="" >
-                        <p>{unit.composition}</p>
-                        <p>{unit.loadout}</p>
-                      </Section>
-                    )}
+                    <Section color={unit.colours} title="" >
+                      <p>{unit.composition}</p>
+                      <p>{unit.loadout}</p>
+                    </Section>
 
                     {hasRanged && (
                       <Section color={unit.colours} title="Ranged" >
-                        <WeaponProfile profiles={unit.rangedWeapons.flatMap(p => p.profiles)}/>
-                        <p>{unit.rangedWeapons.flatMap(p => JSON.stringify(p.abilities)).join(", ")}</p>
+                        <WeaponProfile profiles={unit.rangedWeapons.flatMap(p => p.profiles)} abilities={unit.rangedWeapons.flatMap(p => p.abilities)} />
                       </Section>
                     )}
 
@@ -98,8 +95,9 @@ export const ExampleSheet = ({unit, handleClickToClose, addUnitToStack}: UnitDet
                       </Section>
                     )}
                     
-                    {(hasAbilities || hasDamagedKeywords) && (
+                    {(hasAbilities || hasDamagedKeywords || unit.abilities.core.length > 0) && (
                       <Section color={unit.colours} title="Abilities" >
+                        {unit.abilities.core.length > 0 && (<div><p className="text-lg font-semibold inline">{unit.abilities.core.join(", ")}</p></div>)}
                         {hasAbilities && unit.abilities.other.map((a) => (<div><p className="text-lg font-semibold inline">{a.name}</p>: {a.description}</div>))}
                         {hasDamagedKeywords && (<div><b>Damaged:</b><p>{unit.abilities.damaged.description} {unit.abilities.damaged.range}</p></div>) }
 

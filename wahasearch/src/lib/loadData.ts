@@ -66,8 +66,9 @@ function compileFactions() {
         if (d.leadBy && d.leadBy?.length > 0) {
             compiledWords = compiledWords.concat(d.leadBy);
         }
-        
-        compiledWords = compiledWords.map(x=>x.toLowerCase().trim()).filter(x => x.length > 0);
+        d.abilities.core.map(ca => {
+            compiledWords.push(ca);
+        });
 
         if (d.abilities.primarch?.length > 0) {
             compiledWords.push("primarch");
@@ -87,6 +88,7 @@ function compileFactions() {
                 compiledWords.push("objective control");
             }
         });
+        compiledWords = compiledWords.map(x=>x.toLowerCase().trim()).filter(x => x.length > 0);
         d.indexedFields.factions = d.factions.map(f => f.toLowerCase().replace(/[^0-9a-z ]/gi, ''))
 
         if (d.indexedFields.factions.length == 1){

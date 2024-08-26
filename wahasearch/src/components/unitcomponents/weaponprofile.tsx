@@ -1,33 +1,34 @@
 
-import { Profile } from "@/models/faction";
+import { Profile, Ability } from "@/models/faction";
 
 interface WeaponProfileProps {
     profiles: Profile[]
+    abilities?: (Ability|undefined)[];
 }
 
 function randomKey(profile: Profile) {
     return profile.name + Math.random().toString(36).substring(2, 25);
 }
 
-export const WeaponProfile = ({profiles}: WeaponProfileProps) => {
+export const WeaponProfile = ({profiles, abilities}: WeaponProfileProps) => {
     // const keywords = profile.keywords.length > 0 ? `${profile.keywords.join(", ")}` : null;
-
+    console.log(abilities);
     return (<>
             <div className="hidden md:block">
-                <RegularDisplay profiles={profiles} />
+                <RegularDisplay profiles={profiles} abilities={abilities}/>
             </div>
             <div className="hidden sm:block md:hidden">
-                <RegularDisplay profiles={profiles} />
+                <RegularDisplay profiles={profiles} abilities={abilities}/>
             </div>
 
             <div className="block sm:hidden">
-                <CompactDisplay profiles={profiles} />
+                <CompactDisplay profiles={profiles} abilities={abilities}/>
             </div>
         </>
     );
 }
 
-const RegularDisplay = ({profiles}: WeaponProfileProps) => {
+const RegularDisplay = ({profiles, abilities}: WeaponProfileProps) => {
     const includeRange = profiles[0].range != "Melee";
     const skillBig = includeRange ? `Weapon Skill` : `Ballistic Skill`;
 
@@ -56,7 +57,14 @@ const RegularDisplay = ({profiles}: WeaponProfileProps) => {
                 Damage
             </div>
 
-            {profiles.map(p => <WeaponProfileRow key={randomKey(p)} profile={p} includeRange={includeRange} namespane='border col-span-2' keywordspan='border col-span-6' keywordpad='border col-span-2'/> )}
+            { profiles.map(function(p, i) { 
+                return <WeaponProfileRow 
+                    key={randomKey(p)} 
+                    profile={p} 
+                    ability={abilities && abilities?.length > i ? abilities[i] : undefined}
+                    includeRange={includeRange} 
+                    namespane='border col-span-2' keywordspan='border col-span-6' keywordpad='border col-span-2'/> 
+            })}
         </div>
     ) : (
         <div className='grid grid-cols-7'>
@@ -78,12 +86,19 @@ const RegularDisplay = ({profiles}: WeaponProfileProps) => {
                 Damage
             </div>
 
-            {profiles.map(p => <WeaponProfileRow key={randomKey(p)}  profile={p} includeRange={includeRange} namespane='border col-span-2' keywordspan='border col-span-5' keywordpad='border col-span-2'/> )}
+            { profiles.map(function(p, i) { 
+                return <WeaponProfileRow 
+                    key={randomKey(p)} 
+                    profile={p} 
+                    ability={abilities && abilities?.length > i ? abilities[i] : undefined}
+                    includeRange={includeRange} 
+                    namespane='border col-span-2' keywordspan='border col-span-5' keywordpad='border col-span-2'/> 
+            })}
         </div>
     ));
 }
 
-const CompactDisplay = ({profiles}: WeaponProfileProps) => {
+const CompactDisplay = ({profiles, abilities}: WeaponProfileProps) => {
     const includeRange = profiles[0].range != "Melee";
     const skillSmall = includeRange ? `WS` : `BS`;
     return (includeRange ? (
@@ -108,7 +123,13 @@ const CompactDisplay = ({profiles}: WeaponProfileProps) => {
                     D
                 </div>
 
-                {profiles.map(p => <WeaponProfileRow key={randomKey(p)}  profile={p} includeRange={includeRange} namespane='border col-span-6' keywordspan='border col-span-6'/> )}
+                { profiles.map(function(p, i) { 
+                    return <WeaponProfileRow 
+                        key={randomKey(p)} 
+                        profile={p} 
+                        ability={abilities && abilities?.length > i ? abilities[i] : undefined}
+                        includeRange={includeRange}  namespane='border col-span-6' keywordspan='border col-span-6'/>}
+                )}
             </div>
         ) : (
             <div className='grid grid-cols-5'>
@@ -128,7 +149,14 @@ const CompactDisplay = ({profiles}: WeaponProfileProps) => {
                     D
                 </div>
     
-                {profiles.map(p => <WeaponProfileRow key={randomKey(p)} profile={p} includeRange={includeRange} namespane='border col-span-5' keywordspan='border col-span-5'/> )}
+                { profiles.map(function(p, i) { 
+                    return <WeaponProfileRow 
+                        key={randomKey(p)} 
+                        profile={p} 
+                        includeRange={includeRange}
+                        ability={abilities && abilities?.length > i ? abilities[i] : undefined}
+                        namespane='border col-span-5' keywordspan='border col-span-5'/>
+                 })}
             </div>
         )); 
 }
@@ -136,16 +164,18 @@ const CompactDisplay = ({profiles}: WeaponProfileProps) => {
 
 interface WeaponProfileRowProps {
     profile: Profile
+    ability?: Ability
     includeRange: boolean
     namespane: string
     keywordspan: string
     keywordpad?: string
 }
 
-const WeaponProfileRow = ({profile, includeRange, namespane, keywordspan, keywordpad}: WeaponProfileRowProps) => {
+const WeaponProfileRow = ({profile, ability, includeRange, namespane, keywordspan, keywordpad}: WeaponProfileRowProps) => {
+    const filteredKeywords = profile.keywords.filter(k => k != ability?.name)
     return (
         <>
-            <div className={namespane}>
+            <div className={namespane + " bg-gray-50"}>
                 <b>{profile.name}</b>
             </div>
             {includeRange && 
@@ -167,14 +197,23 @@ const WeaponProfileRow = ({profile, includeRange, namespane, keywordspan, keywor
             <div className="border">
                 {profile.damage}
             </div>
-            {profile.keywords.length > 0 && (
+            {filteredKeywords.length > 0 && (
                 <>
                     {keywordpad && <div className={keywordpad} />}
                     <div className={keywordspan}>
-                        {profile.keywords.join(", ")}
+                        {filteredKeywords.join(", ")}
                     </div>
                 </>
             )}
+            {ability && 
+                (<>
+                    <div className={keywordpad} />
+                    <div className={keywordspan}>
+                        <b>{ability.name}</b> {ability.description}
+                    </div>
+                </>)
+            }
+
         </>
     );
 }
