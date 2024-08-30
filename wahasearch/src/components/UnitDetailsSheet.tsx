@@ -2,6 +2,7 @@
 import { Datasheet, Colours } from "@/models/faction";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@radix-ui/react-collapsible";
 import { XMarkIcon } from "@heroicons/react/16/solid";
+import { compileStats } from "@/lib/unitformatter";
 import { WeaponProfile } from "./unitcomponents/weaponprofile";
 
 interface UnitDetailsSheetProps {
@@ -81,6 +82,7 @@ export const ExampleSheet = ({unit, handleClickToClose, addUnitToStack}: UnitDet
                     <Section color={unit.colours} title="" >
                       <p>{unit.composition}</p>
                       <p>{unit.loadout}</p>
+                      {unit.stats.map(sb => <p key={sb.uuid}>{compileStats(unit, sb)}</p>)}
                     </Section>
 
                     {hasRanged && (
