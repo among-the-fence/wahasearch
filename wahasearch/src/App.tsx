@@ -8,6 +8,7 @@ import { useState } from 'react';
 import { ExampleSheet } from './components/UnitDetailsSheet';
 import { SearchSheet } from './components/search/SearchSheet';
 import { useSearchParams } from 'react-router-dom';
+import { QuickSearchForm } from './components/search/QuickSearchBar';
 
 const storedFavorites = () => JSON.parse(localStorage.getItem('favorites') || "[]");
 
@@ -18,12 +19,12 @@ function unpackSearchForm(queryParams: URLSearchParams): Map<string,string> {
 }
 
 function App() {
-
-
   const [queryParams, setQueryParams] = useSearchParams();
   const starterUnits = findDatasheetByName(queryParams.get("unit"))
   const [panelUnitStack, setPanelUnitStack] = useState<Datasheet[]>((starterUnits) ? [starterUnits] : []);
   const [formState, setFormState] = useState<Map<string, string>>(unpackSearchForm(queryParams));
+  const [quickSearchState, setQuickSearchState] = useState(formState.get('compiledKeywords') || '');
+
   const [favorites, setFavorites] = useState<string[]>(storedFavorites());
   const [units, setUnits] = useState<Datasheet[]>(factions.flatMap((f) => f.datasheets)
     .sort((a,b) => compareUnits(favorites, a, b)));
@@ -66,8 +67,15 @@ function App() {
     }
   }
 
-  const applySearchFormFilters = (currentFormState: Map<string, string>) => {
+  const applyQuickSearch = (currentQuickSearchValue: string) => {
+    setQuickSearchState(currentQuickSearchValue);
+    formState.set('compiledKeywords', currentQuickSearchValue)
+    const flatdatasheets = applyFilters(formState, favorites);
+    setFormState(formState);
+    setUnits(flatdatasheets);
+  }
 
+  const applySearchFormFilters = (currentFormState: Map<string, string>) => {
     setQueryParams(searchParams => {
       searchParams.forEach((_,k) => {searchParams.delete(k);});
       for (let [k,v] of currentFormState) {
@@ -76,6 +84,7 @@ function App() {
       }
       return searchParams;
     });
+    setQuickSearchState(currentFormState.get('compiledKeywords') || '')
     const flatdatasheets = applyFilters(currentFormState, favorites);
     setFormState(currentFormState);
     setUnits(flatdatasheets);
@@ -83,6 +92,7 @@ function App() {
 
   return (
     <>
+      <QuickSearchForm updateGlobalForm={applyQuickSearch} intialValue={quickSearchState}/>
       { panelUnitStack.length > 0 && 
         <ExampleSheet
           unit={panelUnitStack[panelUnitStack.length-1]}
