@@ -92,16 +92,21 @@ function App() {
 
   return (
     <>
-      <QuickSearchForm updateGlobalForm={applyQuickSearch} intialValue={quickSearchState}/>
       { panelUnitStack.length > 0 && 
         <ExampleSheet
           unit={panelUnitStack[panelUnitStack.length-1]}
           handleClickToClose={closeUnitDetails}
           addUnitToStack={appendUnitStack} />}
-      <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 mt-5 lg:mt-0 gap-4">
-        {(units).map(unit => (
-          <UnitCard key={unit.uuid} unit={unit} onclick={appendUnitStack} updateFavorites={updateFavorite} isFavorite={favorites.includes(unit.name)} />
-        ))}
+      <div className='mt-12'>
+        <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 mt-5 lg:mt-0 gap-4">
+          {(units).map(unit => (
+            <UnitCard key={unit.uuid} unit={unit} onclick={appendUnitStack} updateFavorites={updateFavorite} isFavorite={favorites.includes(unit.name)} />
+          ))}
+        </div>
+      </div>
+
+      <div className="flex w-3/5 md:w-2/5 fixed top-4 justify-center justify-items-center content-center">
+        <QuickSearchForm updateGlobalForm={applyQuickSearch} intialValue={quickSearchState}/>
       </div>
       <SearchSheet updateGlobalForm={applySearchFormFilters} initialFormState={formState}/>
     </>

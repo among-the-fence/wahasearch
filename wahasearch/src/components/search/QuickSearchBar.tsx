@@ -19,8 +19,6 @@ export function QuickSearchForm({updateGlobalForm, intialValue}: QuickSearchForm
   }, [quickSearch]);
   
   return (
-    <div className="flex justify-center justify-items-center content-center w-full mb-4">
-        <Input className='w-3/5' value={quickSearch} onChange={updateQuickSearchState}/>
-    </div>
+    <Input className='w-full' value={quickSearch} onChange={updateQuickSearchState}/>
   )
 }
