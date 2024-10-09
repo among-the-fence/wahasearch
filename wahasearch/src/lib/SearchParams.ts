@@ -128,7 +128,6 @@ export class SearchParams {
         const match_all_unit_filters = (!this.filters || this.filters.every(f => f && f.apply(unit)));
         const matchAllWeaponFilters = (!this.weaponFilters || unit.indexedFields?.weaponProfiles.some(pp => this.weaponFilters.every(wf => { return wf.apply(pp)})));
         return match_all_unit_filters && matchAllWeaponFilters;
-            
     }
 
     filter(unitList: Datasheet[]) {

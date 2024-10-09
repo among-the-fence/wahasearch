@@ -30,7 +30,7 @@ const faction_nickname_map = {
     "tyranids": ["nids", "bugs", "henry"],
     "tau empire": ["tau", "fish", "t'au", "henry"],
     "thousand sons": ["tsons", "ksons", "1ksons", "dustyboiz", "dustyboys", "jason"],
-    "necrons": ["necrons", "crons", "zombies"]
+    "necrons": ["necrons", "crons", "zombies", "ben"]
 }
 
 
@@ -42,7 +42,6 @@ const faction_nickname_map = {
 "ultramarines"
 "adeptus titanicus"
 */
-
 
 function findFactionName(text: string) {
     const patialMatchKeys = []
@@ -104,12 +103,12 @@ export function applyFilters(filters: Map<string, string>, favorites: string[]) 
 
     return flatDatasheets;
 }
+
 export function findDatasheetByName(name: string|null) 
 {
     if (!name)
         return null;
     const cleanName = name.replace(/\+/g, " ").toLowerCase();
-    console.log(cleanName);
     const flatDatasheets = factions.flatMap((f) => f.datasheets).sort((a,b) => (a.name < b.name ? -1 : 1));
     const found = flatDatasheets.find(d => d.name.toLowerCase() == cleanName);
     return found || flatDatasheets[0];

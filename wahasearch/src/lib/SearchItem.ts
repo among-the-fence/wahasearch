@@ -8,7 +8,7 @@ export class SearchItem {
     minFilter: string | undefined;
     maxFilter: string | undefined;
     searchType: ((unit: any) => boolean) | undefined;
-    searchValue: string | number;
+    searchValue: number;
     searchFunction: ((unit:Datasheet) => boolean) | undefined;
     digFunction: ((arg:any) => string[]);
 
@@ -35,27 +35,29 @@ export class SearchItem {
             } else {
                 itemStr = itemStr.replace("+", "").replace("\"", "").replace("-", "").trim()
                 if (itemStr.includes(">=")) {
-                    this.searchValue = itemStr.replace(">=", "");
+                    this.searchValue = Number(itemStr.replace(">=", ""));
                     this.searchType = (x) => x >= this.searchValue;
                 }
                 else if (itemStr.includes("<=")) {
-                    this.searchValue = itemStr.replace("<=", "");
+                    this.searchValue = Number(itemStr.replace("<=", ""));
                     this.searchType = (x) => x <= this.searchValue;
                 }
                 else if (itemStr.includes(">")) {
-                    this.searchValue = itemStr.replace(">", "");
-                    this.searchType = (x) => x > this.searchValue;
+                    this.searchValue = Number(itemStr.replace(">", ""));
+                    this.searchType = (x) => {
+                        return Number(x) > this.searchValue;
+                    };
                 }
                 else if (itemStr.includes("<")) {
-                    this.searchValue = itemStr.replace("<", "");
-                    this.searchType = (x) => x < this.searchValue;
+                    this.searchValue = Number(itemStr.replace("<", ""));
+                    this.searchType = (x) => x <=this.searchValue;
                 } 
                 else if (itemStr.includes("!=")) {
-                    this.searchValue = itemStr.replace("!=", "");
+                    this.searchValue = Number(itemStr.replace("!=", ""));
                     this.searchType = (x) => x != this.searchValue;
                 }
                 else {
-                    this.searchValue = itemStr.replace("=", "");
+                    this.searchValue = Number(itemStr.replace("=", ""));
                     this.searchType = (x) => x == this.searchValue;
                 }
             }

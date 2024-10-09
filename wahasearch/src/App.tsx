@@ -5,7 +5,7 @@ import { factions } from '@/lib/loadData';
 import { applyFilters, compareUnits, findDatasheetByName } from '@/lib/filter';
 import { UnitCard } from './components/ui/UnitCard'
 import { useState } from 'react';
-import { ExampleSheet } from './components/UnitDetailsSheet';
+import { PanelSheet } from './components/UnitDetailsSheet';
 import { SearchSheet } from './components/search/SearchSheet';
 import { useSearchParams } from 'react-router-dom';
 import { QuickSearchForm } from './components/search/QuickSearchBar';
@@ -40,7 +40,7 @@ function App() {
     }
   }
 
-  const updateFavorite = (unit:string) => {
+  const updateFavorite = (e: MouseEvent, unit:string) => {
     let newFavorites = [...favorites, unit]
     if (favorites.includes(unit)) {
       newFavorites = favorites.filter(i => i != unit);
@@ -48,6 +48,7 @@ function App() {
     localStorage.setItem('favorites', JSON.stringify(newFavorites));
     setFavorites(newFavorites);
     setUnits(applyFilters(formState, newFavorites));
+    e.stopPropagation();
   }
 
   const closeUnitDetails = () => {
@@ -93,7 +94,7 @@ function App() {
   return (
     <>
       { panelUnitStack.length > 0 && 
-        <ExampleSheet
+        <PanelSheet
           unit={panelUnitStack[panelUnitStack.length-1]}
           handleClickToClose={closeUnitDetails}
           addUnitToStack={appendUnitStack} />}

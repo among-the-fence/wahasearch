@@ -13,7 +13,7 @@ import { StarFilled, StarOpen } from "./starIcons";
 interface UnitCardProps {
     unit: Datasheet
     onclick: (unit:Datasheet|null) => void
-    updateFavorites: (unitName: string) => void
+    updateFavorites: (e: MouseEvent, unitName: string) => void
     isFavorite: boolean
 }
 
@@ -22,13 +22,13 @@ export const UnitCard = ({unit, onclick, updateFavorites, isFavorite}: UnitCardP
     const clicktrigger = () => {
         onclick(unit);
     }
-    const headerStyle = ((unit.legends && "text-slate-500") || "text-black-50") + " cursor-pointer"
+    const headerStyle = ((unit.legends && "text-slate-500") || "text-black-50")
 
     return (
-    <Card key={unit.uuid} className="relative">
+    <Card key={unit.uuid} onClick={clicktrigger} className="relative cursor-pointer">
         <button
             type="button"
-            onClick={_ => updateFavorites(unit.name)}
+            onClick={e => updateFavorites(e, unit.name)}
             className="absolute top-1 left-1 rounded-md text-white hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
             >
             <span className="absolute -inset-2.5" />
@@ -37,7 +37,7 @@ export const UnitCard = ({unit, onclick, updateFavorites, isFavorite}: UnitCardP
             {!isFavorite && <StarOpen aria-hidden="true" /> }
         </button>
         <CardHeader >
-            <CardTitle className={headerStyle} onClick={clicktrigger} style={{color: unit.colours?.header}}>
+            <CardTitle className={headerStyle} style={{color: unit.colours?.header}}>
                 {unit.name}
             </CardTitle>
 

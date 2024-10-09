@@ -14,7 +14,7 @@ export function compileStats(unit: Datasheet, statblock: Stat) {
     if (statblock.sv != null) {
         out += `SV:${statblock.sv}`
     }
-    if (unit.abilities?.invul != null) {
+    if (unit.abilities?.invul?.value?.length > 0) {
         out += `/${unit.abilities?.invul?.value}+`
     }
     if (unit.abilities?.core?.length > 0) {

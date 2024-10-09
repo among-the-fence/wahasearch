@@ -15,7 +15,8 @@ import React, { useState } from 'react'
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react'
 import { findDatasheetByName } from "@/lib/filter";
 
-export const ExampleSheet = ({unit, handleClickToClose, addUnitToStack}: UnitDetailsSheetProps) => {
+export const PanelSheet = ({unit, handleClickToClose, addUnitToStack}: UnitDetailsSheetProps) => {
+  
   const [open] = useState(true)
   const hasRanged = unit.rangedWeapons.length > 0;
   const hasAbilities = unit.abilities.other.length > 0 
