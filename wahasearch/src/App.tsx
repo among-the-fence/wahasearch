@@ -40,7 +40,7 @@ function App() {
     }
   }
 
-  const updateFavorite = (e: MouseEvent, unit:string) => {
+  const updateFavorite = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, unit:string) => {
     let newFavorites = [...favorites, unit]
     if (favorites.includes(unit)) {
       newFavorites = favorites.filter(i => i != unit);

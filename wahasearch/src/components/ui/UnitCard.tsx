@@ -13,7 +13,7 @@ import { StarFilled, StarOpen } from "./starIcons";
 interface UnitCardProps {
     unit: Datasheet
     onclick: (unit:Datasheet|null) => void
-    updateFavorites: (e: MouseEvent, unitName: string) => void
+    updateFavorites: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, unitName: string) => void
     isFavorite: boolean
 }
 
