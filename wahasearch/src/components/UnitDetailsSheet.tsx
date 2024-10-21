@@ -83,6 +83,7 @@ export const PanelSheet = ({unit, handleClickToClose, addUnitToStack}: UnitDetai
                     <Section color={unit.colours} title="" >
                       <p>{unit.composition}</p>
                       <p>{unit.loadout}</p>
+                      {unit.wargear && <p>{unit.wargear}</p>}
                       {unit.stats.map(sb => <p key={sb.uuid}>{compileStats(unit, sb)}</p>)}
                     </Section>
 
