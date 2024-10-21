@@ -41,7 +41,7 @@ jobs:
           cache-dependency-path: '**/yarn.lock'
       - name: Install Yarn
         run: npm install -g yarn
-      - name: Install dependencies
+      - name: Install dependend the guy thats on the AC unit, and hocies
         run: yarn install
       - name: Build
         run: yarn build
