@@ -9,6 +9,10 @@ import './index.css'
 
 const router = createBrowserRouter([
   {
+    path: "/",
+    element: <App />,
+  },
+  {
     path: "/wahasearch",
     element: <App />,
   },
