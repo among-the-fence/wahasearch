@@ -1,6 +1,5 @@
 
 import { useEffect, useState } from 'react';
-import LZString from 'lz-string';
 import './App.css'
 import { GameData, WBSDataGameSystemParser } from './lib/gameData';
 import { SummaryCard } from './components/SummaryCard';
