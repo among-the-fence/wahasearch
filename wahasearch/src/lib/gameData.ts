@@ -2,19 +2,7 @@ import { XMLParser } from 'fast-xml-parser';
 import { GameSystem } from './models/gst';
 import { ensureArray } from './util';
 import { Dispatch, SetStateAction } from 'react';
-
-
-interface Base {
-    _raw: any;
-    id: string;
-    typeId: string;
-    typeName: string;
-    type: string;
-}
-
-interface Named {
-    name: string;
-}
+import { Base, Named, mapBase, mapName } from './models/baseModels';
 
 
 // Define interfaces for Warhammer 40K game system
@@ -35,7 +23,8 @@ export interface Catalogue extends Base, Named{
     authorContact: string;
     selectionEntries?: SelectionEntry[];
     sharedRules?: Rule[];
-    sharedProfiles?: Profile[];
+    selectionEntryGroups?: SelectionEntryGroup[];
+    sharedProfiles: Map<String, Profile>;
     categoryEntries?: CategoryEntry[];
 }
 
@@ -64,6 +53,7 @@ export interface SelectionEntry extends Base, Named {
     selectionEntryGroups?: SelectionEntryGroup[];
     sharedSelectionEntries?: SelectionEntry[];
     sharedSelectionEntryGroups?: SelectionEntryGroup[];
+    // infoLinks: InfoLinks[];
 }
 
 export interface SelectionEntryGroup extends Base, Named {
@@ -107,42 +97,38 @@ export class WBSDataGameSystemParser {
         return x;
     }
 
-    private mapBase(data: any): Base {
-        return {
-            _raw: data,
-            id: data["@_id"],
-            typeId: data["@_typeId"],
-            typeName: data["@_typeName"],
-            type: data["@_type"],
-        };
-    }
-    private mapName(data: any): Named {
-        return {
-            name: data["@_name"],
-        };
-    }
 
     private mapCatalogue(data: any): Catalogue {
         const categoryEntries = data.categoryEntries ? ensureArray(data.categoryEntries.categoryEntry).map((c: any) => this.mapCategoryEntry(c)) : []
+        const sharedProfiles = new Map<String, Profile>();
+        if (data.sharedProfiles?.profile?.length > 0){
+            data.sharedProfiles?.profile?.forEach((p: any) => {
+                console.log(p);
+                const x = this.mapProfile(p);
+                if (x) {
+                    sharedProfiles.set(x.id, x);
+                }
+            });
+        }
         return {
-            ...this.mapBase(data),
-            ...this.mapName(data),
+            ...mapBase(data),
+            ...mapName(data),
             gameSystemId: data["@_gameSystemId"],
             gameSystemRevision: parseInt(data["@_gameSystemRevision"]),
             revision: parseInt(data["@_revision"]),
             authorName: data["@_authorName"],
             authorContact: data["@_authorContact"],
             selectionEntries: data.sharedSelectionEntries ? ensureArray(data.sharedSelectionEntries.selectionEntry).map((e: any) => this.mapSelectionEntry(e)) : [],
+            selectionEntryGroups: data.sharedSelectionEntryGroups ? ensureArray(data.sharedSelectionEntryGroups.selectionEntryGroup).map((g: any) => this.mapSelectionEntryGroup(g)) : [],
             sharedRules: data.sharedRules ? ensureArray(data.sharedRules.rule).map((r: any) => this.mapRule(r)) : [],
-            sharedProfiles: data.sharedProfiles ? ensureArray(data.sharedProfiles.profile).map((p: any) => this.mapProfile(p)) : [],
+            sharedProfiles: sharedProfiles,
             categoryEntries: categoryEntries
         };
     }
 
     private mapRule(data: any): Rule {
         return {
-            id: data["@_id"],
-            ...this.mapName(data),
+            ...mapName(data),
             description: data.description || "",
         };
     }
@@ -155,8 +141,8 @@ export class WBSDataGameSystemParser {
         const costs = data?.costs?.cost;
 
         return {
-            ...this.mapBase(data),
-            ...this.mapName(data),
+            ...mapBase(data),
+            ...mapName(data),
             costs: costs ? ensureArray(costs)?.map(c => this.mapCost(c)) : [],
             profiles: profiles ? ensureArray(profiles)?.map(p => this.mapProfile(p)) : [],
             categoryLinks: categoryLinks ? ensureArray(categoryLinks)?.map(c => this.mapCategoryEntry(c)) : [],
@@ -168,9 +154,8 @@ export class WBSDataGameSystemParser {
     private mapSelectionEntryGroup(data: any): SelectionEntryGroup {
         const subselection = data.selectionEntries?.selectionEntry
         return {
-            ...this.mapBase(data),
-            id: data["@_id"],
-            ...this.mapName(data),
+            ...mapBase(data),
+            ...mapName(data),
             selectionEntries: subselection ? ensureArray(subselection)?.map(e => this.mapSelectionEntry(e)) : []
         };
     }
@@ -178,8 +163,8 @@ export class WBSDataGameSystemParser {
     private mapProfile(data: any): Profile {
         if (!data) { return { _raw: data, id: "", name: "", typeId: "", typeName: "", type: "", characteristics: [] }; }
         return {
-            ...this.mapBase(data),
-            ...this.mapName(data),
+            ...mapBase(data),
+            ...mapName(data),
             characteristics: ensureArray(data.characteristics?.characteristic)?.map(c => this.mapCharacteristic(c)) || [],
         };
     }
@@ -187,8 +172,8 @@ export class WBSDataGameSystemParser {
     private mapCharacteristic(data: any): Characteristic {
         if (!data) { return { _raw: data, id: "", typeId: "", typeName: "", type: "", name: "", value: "" }; }
         return {
-            ...this.mapBase(data),
-            ...this.mapName(data),
+            ...mapBase(data),
+            ...mapName(data),
             value: data["#text"],
         };
     }
@@ -196,8 +181,8 @@ export class WBSDataGameSystemParser {
     private mapCategoryEntry(data: any): CategoryEntry {
         if (!data) { return { _raw: data, id: "", name: "", hidden: false, typeId: "", typeName: "", type: "" }; }
         return {
-            ...this.mapBase(data),
-            ...this.mapName(data),
+            ...mapBase(data),
+            ...mapName(data),
             hidden: data["@_hidden"] === "true",
         };
     }

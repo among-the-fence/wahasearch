@@ -18,8 +18,8 @@ import { SummaryCard } from './components/SummaryCard';
     }, []);
   
     const units = parsedData?.catalogues?.map(c => 
-      c.selectionEntries).flat()
-    .sort((a, b) => {
+      c.selectionEntries).flat();
+    /*.sort((a, b) => {
       if (a) {
         if (b) {
           return a.name.localeCompare(b.name);
@@ -33,7 +33,7 @@ import { SummaryCard } from './components/SummaryCard';
           return 0;
         }
       }
-    });
+    });/**/
 
   return (
     (!units) ? <div className='text-white'>{displayMessage}</div> :
