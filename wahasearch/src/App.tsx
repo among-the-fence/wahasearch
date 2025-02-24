@@ -1,11 +1,13 @@
 
 import { useEffect, useState } from 'react';
 import './App.css'
-import { GameData, WBSDataGameSystemParser } from './lib/gameData';
+import { GameData, SelectionEntry, WBSDataGameSystemParser } from './lib/gameData';
 import { SummaryCard } from './components/SummaryCard';
+import { UnitDetailsSheet } from './components/UnitDetailsSheet';
 
  function App() {
     const [displayMessage, setdisplayMessage] = useState<string>("Loading"); 
+    const [selected, setSelected] = useState<SelectionEntry | undefined>(undefined); 
     const [parsedData, setParsedData] = useState<GameData | undefined>(undefined);
 
     useEffect(() => {
@@ -35,21 +37,26 @@ import { SummaryCard } from './components/SummaryCard';
       }
     });/**/
 
-  return (
-    (!units) ? <div className='text-white'>{displayMessage}</div> :
-    (units && (
-      <>
-        <div className='mt-12'>
-          <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 mt-5 lg:mt-0 gap-4">
-            {units?.map(unit => (
-              unit && 
-              <SummaryCard entry={unit} />
-            ))}
+
+
+  return (<>
+    {!units && <div className='text-white'>{displayMessage}</div>}
+    {selected && (<UnitDetailsSheet unit={selected} handleClickToClose={function (): void {
+      setSelected(undefined);
+    } } />)}
+    {units && (
+          <div className='mt-12'>
+            <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 mt-5 lg:mt-0 gap-4">
+              {units?.map(unit => (
+                unit && 
+                <SummaryCard entry={unit} openDetails={setSelected} />
+              ))}
+            </div>
           </div>
-        </div>
-      </>
-    ))
+      )}
+    </>
 )
+
 }
 
 export default App

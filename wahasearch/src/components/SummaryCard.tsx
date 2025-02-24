@@ -2,9 +2,10 @@ import { SelectionEntry } from "@/lib/gameData";
 
 export interface SummaryCardProps {
     entry: SelectionEntry;
+    openDetails: (entry: SelectionEntry) => void;
 }
 
-export const SummaryCard = ({entry}: SummaryCardProps) => {
+export const SummaryCard = ({entry, openDetails}: SummaryCardProps) => {
 
     const unitprofiles = entry.profiles.filter(p => p.typeName == "Unit"); 
     const multiProfiles = entry.selectionEntryGroups?.[0]?.selectionEntries?.filter(p => p.type == "model");
@@ -15,7 +16,7 @@ export const SummaryCard = ({entry}: SummaryCardProps) => {
     }
 
     return (
-        <div key={entry.id} className="bg-white rounded-lg shadow-lg p-4">
+        <div key={entry.id} className="bg-white rounded-lg shadow-lg p-4" onClick={() => openDetails(entry)}>
             <h1>{entry.name}</h1>
             <p>{entry.type}</p>
             {unitprofiles.map(p => (

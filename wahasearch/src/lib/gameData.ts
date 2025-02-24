@@ -95,8 +95,6 @@ export class WBSDataGameSystemParser {
             x.catalogues.push(catalogue);
         }
         console.log("DONE");
-
-        console.log(x)
         
         return x;
     }
@@ -107,7 +105,6 @@ export class WBSDataGameSystemParser {
         const sharedProfiles = new Map<String, Profile>();
         if (data.sharedProfiles?.profile?.length > 0){
             data.sharedProfiles?.profile?.forEach((p: any) => {
-                console.log(p);
                 const x = this.mapProfile(p);
                 if (x) {
                     sharedProfiles.set(x.id, x);
