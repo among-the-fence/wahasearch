@@ -53,7 +53,11 @@ export interface SelectionEntry extends Base, Named {
     selectionEntryGroups?: SelectionEntryGroup[];
     sharedSelectionEntries?: SelectionEntry[];
     sharedSelectionEntryGroups?: SelectionEntryGroup[];
-    // infoLinks: InfoLinks[];
+    infoLinks: InfoLink[];
+}
+
+export interface InfoLink extends Base, Named{
+    targetId: string;
 }
 
 export interface SelectionEntryGroup extends Base, Named {
@@ -139,6 +143,7 @@ export class WBSDataGameSystemParser {
         const profiles = data?.profiles?.profile;
         const categoryLinks = data?.categoryLinks?.categoryLink;
         const costs = data?.costs?.cost;
+        const links = data.infoLinks?.infoLink;
 
         return {
             ...mapBase(data),
@@ -147,7 +152,8 @@ export class WBSDataGameSystemParser {
             profiles: profiles ? ensureArray(profiles)?.map(p => this.mapProfile(p)) : [],
             categoryLinks: categoryLinks ? ensureArray(categoryLinks)?.map(c => this.mapCategoryEntry(c)) : [],
             selectionEntries: subselections ? ensureArray(subselections).map(e => this.mapSelectionEntry(e)) : [],
-            selectionEntryGroups: selectionEntryGroups ? ensureArray(selectionEntryGroups).map(g => this.mapSelectionEntryGroup(g)) : []
+            selectionEntryGroups: selectionEntryGroups ? ensureArray(selectionEntryGroups).map(g => this.mapSelectionEntryGroup(g)) : [],
+            infoLinks: links ? ensureArray(links).map((i: any) => this.mapInfoLink(i)) : [], // ✅ Added
         };
     }
 
@@ -159,6 +165,16 @@ export class WBSDataGameSystemParser {
             selectionEntries: subselection ? ensureArray(subselection)?.map(e => this.mapSelectionEntry(e)) : []
         };
     }
+
+    private mapInfoLink(data: any): InfoLink {
+        return {
+            ...mapBase(data),
+            ...mapName(data),
+            targetId: data["@_targetId"],
+            type: data["@_type"],
+        };
+    }
+    
 
     private mapProfile(data: any): Profile {
         if (!data) { return { _raw: data, id: "", name: "", typeId: "", typeName: "", type: "", characteristics: [] }; }
