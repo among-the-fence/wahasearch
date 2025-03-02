@@ -1,4 +1,4 @@
-import { SelectionEntry } from "@/lib/gameData";
+import { SelectionEntry } from "@/lib/models/gameData";
 
 export interface SummaryCardProps {
     entry: SelectionEntry;

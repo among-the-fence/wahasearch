@@ -1,8 +1,8 @@
 import { XMLParser } from 'fast-xml-parser';
-import { GameSystem } from './models/gst';
-import { ensureArray } from './util';
+import { GameSystem } from './gst';
+import { ensureArray } from '../util';
 import { Dispatch, SetStateAction } from 'react';
-import { Base, Named, mapBase, mapName } from './models/baseModels';
+import { Base, Named, mapBase, mapName } from './baseModels';
 
 
 // Define interfaces for Warhammer 40K game system
