@@ -19,9 +19,9 @@ export const UnitDetailsSheet = ({unit, handleClickToClose}: UnitDetailsSheetPro
   function stringifywithoutraw(obj: any) {
     return JSON.stringify(obj, (key, value) => {
       if (key === '_raw') {
-        return undefined; // Exclude property 'b'
+        return undefined;
       }
-      return value; // Include other properties
+      return value;
     });
   }
 
