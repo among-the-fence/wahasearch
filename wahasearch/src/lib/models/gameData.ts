@@ -1,8 +1,8 @@
-import { XMLParser } from 'fast-xml-parser';
 import { GameSystem } from './gst';
 import { ensureArray } from '../util';
 import { Dispatch, SetStateAction } from 'react';
 import { Base, Named, mapBase, mapName } from './baseModels';
+import jsonContent from "@/lib/data/wh40k-10e.json"
 
 
 // Define interfaces for Warhammer 40K game system
@@ -72,29 +72,17 @@ export interface Cost {
 export class WBSDataGameSystemParser {
     
     public async parseGameSystem(messageUpdater: Dispatch<SetStateAction<string>>): Promise<GameData> {
-        const catfiles = import.meta.glob('/src/lib/data/wh40k-10e/*.cat', { as: 'raw' });
-        const gstfiles = import.meta.glob('/src/lib/data/wh40k-10e/*.gst', { as: 'raw' });
-        const parser = new XMLParser({ ignoreAttributes: false, attributeNamePrefix: "@_" });
-
-        const gstfilepath = Object.keys(gstfiles)[0]; // Get the first file path
-        const gstFileContent = await gstfiles[gstfilepath]();
-
-        const x = new GameData(new GameSystem(gstFileContent, parser));
-        // Call the function and parse XML
-        for (const path in catfiles) {
-            if (path.endsWith('.gst') || path.startsWith('.')) {
-                messageUpdater('What the hell');
-                console.log("what the hell: ", path);
-                continue;
-            }
-            messageUpdater(path);
-            const content = await catfiles[path]();
-            const jsonifiedXmlData = parser.parse(content);
-            const catalogue = this.mapCatalogue(jsonifiedXmlData.catalogue);
+       
+        console.log("Parsing Game System");
+        const x = new GameData(new GameSystem());
+        (jsonContent as any[]).forEach((entry: any) => {
+            messageUpdater(entry?.catalogue['@_name']);
+            const catalogue = this.mapCatalogue(entry.catalogue);
 
             x.catalogues.push(catalogue);
-        }
+        });
         console.log("DONE");
+        console.log(x);
         
         return x;
     }

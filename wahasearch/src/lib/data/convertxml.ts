@@ -31,7 +31,7 @@ async function processFile() {
         }
 
         console.log("DONE");
-        await writeFile(outputFile + ".gst", JSON.stringify(gstData, null, 2), 'utf8');
+        await writeFile(outputFile + ".gst.json", JSON.stringify(gstData, null, 2), 'utf8');
         await writeFile(outputFile + ".json", JSON.stringify(out, null, 2), 'utf8');
         console.log(`Data written to ${outputFile}`);
     } catch (error) {

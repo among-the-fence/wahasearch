@@ -1,6 +1,6 @@
-import { XMLParser } from "fast-xml-parser";
 import { ensureArray } from "../util";
 import { Base, Named, mapBase, mapName } from './baseModels';
+import gstData from "@/lib/data/wh40k-10e.gst.json"
 
 // Define interfaces for Warhammer 40K game system
 export class GameSystem implements Named {
@@ -13,9 +13,8 @@ export class GameSystem implements Named {
     rules: Map<string, Rule>;
     costTypes: CostType[];
 
-    constructor(gstContent: string, parser: XMLParser) {
+    constructor() {
 
-        const jsonObj = parser.parse(gstContent);
         this.id = "";
         this.name = "";
         this.revision = 10;
@@ -24,7 +23,7 @@ export class GameSystem implements Named {
         this.rules = new Map<string, Rule>();
         this.costTypes = [];
         
-        this.mapGameSystem(jsonObj.gameSystem);
+        this.mapGameSystem(gstData.gameSystem);
     }
 
     private mapGameSystem(data: any): void {
