@@ -1,0 +1,4768 @@
+{
+  "?xml": {
+    "@_version": "1.0",
+    "@_encoding": "UTF-8",
+    "@_standalone": "yes"
+  },
+  "gameSystem": {
+    "publications": {
+      "publication": [
+        {
+          "@_id": "48fc-15aa-b307-9443",
+          "@_name": "10th Edition Core Rules",
+          "@_shortName": "10th Ed Core"
+        },
+        {
+          "@_name": "Github",
+          "@_hidden": "false",
+          "@_id": "8db3-575d-91b-47f8",
+          "@_shortName": "BSData/wh40k-10e",
+          "@_publisherUrl": "https://github.com/BSData/wh40k-10e"
+        }
+      ]
+    },
+    "costTypes": {
+      "costType": [
+        {
+          "modifiers": {
+            "modifier": {
+              "conditionGroups": {
+                "conditionGroup": {
+                  "conditions": {
+                    "condition": [
+                      {
+                        "@_type": "atLeast",
+                        "@_value": "1",
+                        "@_field": "selections",
+                        "@_scope": "roster",
+                        "@_childId": "cac3-71d1-ea4b-795d",
+                        "@_shared": "true",
+                        "@_includeChildSelections": "true",
+                        "@_includeChildForces": "true"
+                      },
+                      {
+                        "@_type": "instanceOf",
+                        "@_value": "1",
+                        "@_field": "selections",
+                        "@_scope": "self",
+                        "@_childId": "roster",
+                        "@_shared": "true"
+                      }
+                    ]
+                  },
+                  "@_type": "and"
+                }
+              },
+              "@_type": "set",
+              "@_value": "true",
+              "@_field": "hidden"
+            }
+          },
+          "@_id": "51b2-306e-1021-d207",
+          "@_name": "pts",
+          "@_defaultCostLimit": "-1",
+          "@_hidden": "false"
+        },
+        {
+          "modifiers": {
+            "modifier": {
+              "conditions": {
+                "condition": {
+                  "@_type": "instanceOf",
+                  "@_value": "1",
+                  "@_field": "selections",
+                  "@_scope": "self",
+                  "@_childId": "cac3-71d1-ea4b-795d",
+                  "@_shared": "true",
+                  "@_includeChildSelections": "true",
+                  "@_includeChildForces": "true"
+                }
+              },
+              "@_type": "set",
+              "@_value": "false",
+              "@_field": "hidden",
+              "@_scope": "roster"
+            }
+          },
+          "@_name": "Crusade Points",
+          "@_id": "b03b-c239-15a5-da55",
+          "@_defaultCostLimit": "-1",
+          "@_hidden": "true"
+        },
+        {
+          "comment": "Tracking number for Crusade",
+          "@_name": "Crusade: Battle Honours",
+          "@_id": "75bb-ded1-c86d-bdf0",
+          "@_defaultCostLimit": "-1",
+          "@_hidden": "true"
+        },
+        {
+          "comment": "Tracking number for Crusade",
+          "@_name": "Crusade: Experience",
+          "@_id": "a623-fe74-1d33-cddf",
+          "@_defaultCostLimit": "-1",
+          "@_hidden": "true"
+        },
+        {
+          "comment": "Tracking number for Crusade",
+          "@_name": "Crusade: Weapon Modifications",
+          "@_id": "716d-91b7-d55a-1022",
+          "@_defaultCostLimit": "-1",
+          "@_hidden": "true"
+        }
+      ]
+    },
+    "profileTypes": {
+      "profileType": [
+        {
+          "characteristicTypes": {
+            "characteristicType": [
+              {
+                "@_id": "e703-ecb6-5ce7-aec1",
+                "@_name": "M"
+              },
+              {
+                "@_id": "d29d-cf75-fc2d-34a4",
+                "@_name": "T"
+              },
+              {
+                "@_id": "450-a17e-9d5e-29da",
+                "@_name": "SV"
+              },
+              {
+                "@_id": "750a-a2ec-90d3-21fe",
+                "@_name": "W"
+              },
+              {
+                "@_id": "58d2-b879-49c7-43bc",
+                "@_name": "LD"
+              },
+              {
+                "@_id": "bef7-942a-1a23-59f8",
+                "@_name": "OC"
+              }
+            ]
+          },
+          "@_id": "c547-1836-d8a-ff4f",
+          "@_name": "Unit"
+        },
+        {
+          "characteristicTypes": {
+            "characteristicType": [
+              {
+                "@_id": "9896-9419-16a1-92fc",
+                "@_name": "Range"
+              },
+              {
+                "@_id": "3bb-c35f-f54-fb08",
+                "@_name": "A"
+              },
+              {
+                "@_id": "94d-8a98-cf90-183e",
+                "@_name": "BS"
+              },
+              {
+                "@_id": "2229-f494-25db-c5d3",
+                "@_name": "S"
+              },
+              {
+                "@_id": "9ead-8a10-520-de15",
+                "@_name": "AP"
+              },
+              {
+                "@_id": "a354-c1c8-a745-f9e3",
+                "@_name": "D"
+              },
+              {
+                "@_id": "7f1b-8591-2fcf-d01c",
+                "@_name": "Keywords"
+              }
+            ]
+          },
+          "@_id": "f77d-b953-8fa4-b762",
+          "@_name": "Ranged Weapons"
+        },
+        {
+          "characteristicTypes": {
+            "characteristicType": {
+              "@_id": "9b8f-694b-e5e-b573",
+              "@_name": "Description"
+            }
+          },
+          "@_id": "9cc3-6d83-4dd3-9b64",
+          "@_name": "Abilities"
+        },
+        {
+          "characteristicTypes": {
+            "characteristicType": [
+              {
+                "@_id": "914c-b413-91e3-a132",
+                "@_name": "Range"
+              },
+              {
+                "@_id": "2337-daa1-6682-b110",
+                "@_name": "A"
+              },
+              {
+                "@_id": "95d1-95f-45b4-11d6",
+                "@_name": "WS"
+              },
+              {
+                "@_id": "ab33-d393-96ce-ccba",
+                "@_name": "S"
+              },
+              {
+                "@_id": "41a0-1301-112a-e2f2",
+                "@_name": "AP"
+              },
+              {
+                "@_id": "3254-9fe6-d824-513e",
+                "@_name": "D"
+              },
+              {
+                "@_id": "893f-9000-ccf7-648e",
+                "@_name": "Keywords"
+              }
+            ]
+          },
+          "@_id": "8a40-4aaa-c780-9046",
+          "@_name": "Melee Weapons"
+        },
+        {
+          "characteristicTypes": {
+            "characteristicType": {
+              "@_id": "30f2-be70-861d-1b84",
+              "@_name": "Capacity"
+            }
+          },
+          "@_id": "74f8-5443-9d6d-1f1e",
+          "@_name": "Transport"
+        }
+      ]
+    },
+    "categoryEntries": {
+      "categoryEntry": [
+        {
+          "@_id": "9cfd-1c32-585f-7d5c",
+          "@_name": "Character",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "4f3a-f0f7-6647-348d",
+          "@_name": "Epic Hero",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "cf47-a0d7-7207-29dc",
+          "@_name": "Infantry",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "9693-cf84-fe69-37a9",
+          "@_name": "Monster",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "e338-111e-d0c6-b687",
+          "@_name": "Battleline",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "ba07-411c-2832-1f79",
+          "@_name": "Dedicated Transport",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "14a0-40c9-2748-ae6e",
+          "@_name": "Mounted",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "2d7f-1892-2fd0-e29c",
+          "@_name": "Captain",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "5a61-81ac-eb7c-a87e",
+          "@_name": "Grenades",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "aff3-d6a3-2a95-9dc",
+          "@_name": "Imperium",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "4ac9-fd30-1e3d-b249",
+          "@_name": "Configuration",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "1160-70ae-a862-b1a8",
+          "@_name": "Unit",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "c619-2086-bbcf-69c9",
+          "@_name": "Fly",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "6df-937-16bc-8c1a",
+          "@_name": "Smoke",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "13bf-2bee-3ae0-b414",
+          "@_name": "Psyker",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "dbd4-63-af05-998",
+          "@_name": "Vehicle",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "6dda-e157-334d-e93a",
+          "@_name": "Walker",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "75e8-57c4-40e3-1817",
+          "@_name": "Transport",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "63f1-e6e8-f6f6-a4f0",
+          "@_name": "Aircraft",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "19d7-9c74-2140-5851",
+          "@_name": "Fortification",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "d666-e2c9-b6cc-5716",
+          "@_name": "Towering",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "5929-ad51-d006-e008",
+          "@_name": "Titanic",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "4c3e-9310-a516-3590",
+          "@_name": "Beast",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "4c00-2578-faf5-6918",
+          "@_name": "Chaos",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "bb67-f191-6562-acc7",
+          "@_name": "Faction: Chaos Knights",
+          "@_hidden": "false"
+        },
+        {
+          "constraints": {
+            "constraint": {
+              "@_type": "max",
+              "@_value": "-1",
+              "@_field": "51b2-306e-1021-d207",
+              "@_scope": "force",
+              "@_shared": "true",
+              "@_id": "10a0-a45c-f379-bb06",
+              "@_includeChildSelections": "true",
+              "@_includeChildForces": "false"
+            }
+          },
+          "modifiers": {
+            "modifier": [
+              {
+                "conditionGroups": {
+                  "conditionGroup": {
+                    "conditions": {
+                      "condition": [
+                        {
+                          "@_type": "instanceOf",
+                          "@_value": "1",
+                          "@_field": "selections",
+                          "@_scope": "primary-catalogue",
+                          "@_childId": "3bdf-a114-5035-c6ac",
+                          "@_shared": "true",
+                          "@_includeChildSelections": "false"
+                        },
+                        {
+                          "@_type": "greaterThan",
+                          "@_value": "0",
+                          "@_field": "selections",
+                          "@_scope": "force",
+                          "@_childId": "d62d-db22-4893-4bc0",
+                          "@_shared": "true",
+                          "@_includeChildSelections": "true"
+                        }
+                      ]
+                    },
+                    "@_type": "and"
+                  }
+                },
+                "@_type": "set",
+                "@_value": "500",
+                "@_field": "10a0-a45c-f379-bb06",
+                "@_id": "d345-5a54-3609-7600"
+              },
+              {
+                "conditionGroups": {
+                  "conditionGroup": {
+                    "conditions": {
+                      "condition": [
+                        {
+                          "@_type": "greaterThan",
+                          "@_value": "0",
+                          "@_field": "selections",
+                          "@_scope": "force",
+                          "@_childId": "baf8-997f-e323-a090",
+                          "@_shared": "true",
+                          "@_includeChildSelections": "true"
+                        },
+                        {
+                          "@_type": "instanceOf",
+                          "@_value": "1",
+                          "@_field": "selections",
+                          "@_scope": "primary-catalogue",
+                          "@_childId": "3bdf-a114-5035-c6ac",
+                          "@_shared": "true",
+                          "@_includeChildSelections": "false"
+                        }
+                      ]
+                    },
+                    "@_type": "and"
+                  }
+                },
+                "@_type": "set",
+                "@_value": "1000",
+                "@_field": "10a0-a45c-f379-bb06",
+                "@_id": "8a58-5a9f-9d23-5682"
+              },
+              {
+                "conditionGroups": {
+                  "conditionGroup": {
+                    "conditions": {
+                      "condition": [
+                        {
+                          "@_type": "greaterThan",
+                          "@_value": "0",
+                          "@_field": "selections",
+                          "@_scope": "force",
+                          "@_childId": "4204-82d0-908c-a62a",
+                          "@_shared": "true",
+                          "@_includeChildSelections": "true"
+                        },
+                        {
+                          "@_type": "instanceOf",
+                          "@_value": "1",
+                          "@_field": "selections",
+                          "@_scope": "primary-catalogue",
+                          "@_childId": "3bdf-a114-5035-c6ac",
+                          "@_shared": "true",
+                          "@_includeChildSelections": "false"
+                        }
+                      ]
+                    },
+                    "@_type": "and"
+                  }
+                },
+                "@_type": "set",
+                "@_value": "1500",
+                "@_field": "10a0-a45c-f379-bb06",
+                "@_id": "8438-8892-1129-d075"
+              }
+            ]
+          },
+          "@_id": "d1d8-6ae0-1be7-e9e",
+          "@_name": "Faction: Tyranids",
+          "@_hidden": "false"
+        },
+        {
+          "constraints": {
+            "constraint": {
+              "@_type": "max",
+              "@_value": "-1",
+              "@_field": "51b2-306e-1021-d207",
+              "@_scope": "force",
+              "@_shared": "true",
+              "@_id": "4d8f-6e09-606e-788e",
+              "@_includeChildSelections": "true",
+              "@_includeChildForces": "false"
+            }
+          },
+          "modifiers": {
+            "modifier": [
+              {
+                "conditionGroups": {
+                  "conditionGroup": {
+                    "conditions": {
+                      "condition": [
+                        {
+                          "@_type": "notInstanceOf",
+                          "@_value": "1",
+                          "@_field": "selections",
+                          "@_scope": "primary-catalogue",
+                          "@_childId": "38de-521f-1ce0-44a0",
+                          "@_shared": "true",
+                          "@_includeChildSelections": "false"
+                        },
+                        {
+                          "@_type": "greaterThan",
+                          "@_value": "0",
+                          "@_field": "selections",
+                          "@_scope": "force",
+                          "@_childId": "d62d-db22-4893-4bc0",
+                          "@_shared": "true",
+                          "@_includeChildSelections": "true"
+                        }
+                      ]
+                    },
+                    "@_type": "and"
+                  }
+                },
+                "@_type": "set",
+                "@_value": "500",
+                "@_field": "4d8f-6e09-606e-788e",
+                "@_id": "f5a0-b59-1410-a903"
+              },
+              {
+                "conditionGroups": {
+                  "conditionGroup": {
+                    "conditions": {
+                      "condition": [
+                        {
+                          "@_type": "notInstanceOf",
+                          "@_value": "1",
+                          "@_field": "selections",
+                          "@_scope": "primary-catalogue",
+                          "@_childId": "38de-521f-1ce0-44a0",
+                          "@_shared": "true",
+                          "@_includeChildSelections": "false"
+                        },
+                        {
+                          "@_type": "greaterThan",
+                          "@_value": "0",
+                          "@_field": "selections",
+                          "@_scope": "force",
+                          "@_childId": "baf8-997f-e323-a090",
+                          "@_shared": "true",
+                          "@_includeChildSelections": "true"
+                        }
+                      ]
+                    },
+                    "@_type": "and"
+                  }
+                },
+                "@_type": "set",
+                "@_value": "1000",
+                "@_field": "4d8f-6e09-606e-788e",
+                "@_id": "2e33-3f3b-a0f6-a6bd"
+              },
+              {
+                "conditionGroups": {
+                  "conditionGroup": {
+                    "conditions": {
+                      "condition": [
+                        {
+                          "@_type": "notInstanceOf",
+                          "@_value": "1",
+                          "@_field": "selections",
+                          "@_scope": "primary-catalogue",
+                          "@_childId": "38de-521f-1ce0-44a0",
+                          "@_shared": "true",
+                          "@_includeChildSelections": "false"
+                        },
+                        {
+                          "@_type": "greaterThan",
+                          "@_value": "0",
+                          "@_field": "selections",
+                          "@_scope": "force",
+                          "@_childId": "4204-82d0-908c-a62a",
+                          "@_shared": "true",
+                          "@_includeChildSelections": "true"
+                        }
+                      ]
+                    },
+                    "@_type": "and"
+                  }
+                },
+                "@_type": "set",
+                "@_value": "1500",
+                "@_field": "4d8f-6e09-606e-788e",
+                "@_id": "2e5f-b5f2-28bb-573e"
+              }
+            ]
+          },
+          "@_id": "1015-db48-a2fa-c7da",
+          "@_name": "Faction: Drukhari",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "4378-1827-4988-be4e",
+          "@_name": "Faction: Asuryani",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "fa45-57e-930e-602b",
+          "@_name": "Faction: Astra Militarum",
+          "@_hidden": "false"
+        },
+        {
+          "modifiers": {
+            "modifier": [
+              {
+                "conditionGroups": {
+                  "conditionGroup": {
+                    "conditions": {
+                      "condition": [
+                        {
+                          "@_type": "notInstanceOf",
+                          "@_value": "1",
+                          "@_field": "selections",
+                          "@_scope": "primary-catalogue",
+                          "@_childId": "25dd-7aa0-6bf4-f2d5",
+                          "@_shared": "true",
+                          "@_includeChildForces": "false"
+                        },
+                        {
+                          "@_type": "equalTo",
+                          "@_value": "0",
+                          "@_field": "selections",
+                          "@_scope": "force",
+                          "@_childId": "4c40-ab9-54af-d290",
+                          "@_shared": "true"
+                        }
+                      ]
+                    },
+                    "conditionGroups": {
+                      "conditionGroup": {
+                        "conditions": {
+                          "condition": [
+                            {
+                              "@_type": "greaterThan",
+                              "@_value": "0",
+                              "@_field": "selections",
+                              "@_scope": "roster",
+                              "@_childId": "e4d6-1a77-132b-f39d",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true",
+                              "@_includeChildForces": "true"
+                            },
+                            {
+                              "@_type": "greaterThan",
+                              "@_value": "0",
+                              "@_field": "selections",
+                              "@_scope": "roster",
+                              "@_childId": "af4c-b971-a31c-669c",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true",
+                              "@_includeChildForces": "true"
+                            },
+                            {
+                              "@_type": "greaterThan",
+                              "@_value": "0",
+                              "@_field": "selections",
+                              "@_scope": "roster",
+                              "@_childId": "481c-3b2e-5c99-c248",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true",
+                              "@_includeChildForces": "true"
+                            },
+                            {
+                              "@_type": "greaterThan",
+                              "@_value": "0",
+                              "@_field": "selections",
+                              "@_scope": "roster",
+                              "@_childId": "f76f-29c1-de9-74c2",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true",
+                              "@_includeChildForces": "true"
+                            }
+                          ]
+                        },
+                        "@_type": "or"
+                      }
+                    },
+                    "@_type": "and"
+                  }
+                },
+                "@_type": "set",
+                "@_value": "1",
+                "@_field": "807c-44c1-6f7d-dfb8"
+              },
+              {
+                "conditionGroups": {
+                  "conditionGroup": {
+                    "conditions": {
+                      "condition": [
+                        {
+                          "@_type": "notInstanceOf",
+                          "@_value": "1",
+                          "@_field": "selections",
+                          "@_scope": "primary-catalogue",
+                          "@_childId": "25dd-7aa0-6bf4-f2d5",
+                          "@_shared": "true",
+                          "@_includeChildForces": "false"
+                        },
+                        {
+                          "@_type": "atLeast",
+                          "@_value": "1",
+                          "@_field": "selections",
+                          "@_scope": "force",
+                          "@_childId": "4c40-ab9-54af-d290",
+                          "@_shared": "true"
+                        }
+                      ]
+                    },
+                    "conditionGroups": {
+                      "conditionGroup": {
+                        "conditions": {
+                          "condition": [
+                            {
+                              "@_type": "equalTo",
+                              "@_value": "0",
+                              "@_field": "selections",
+                              "@_scope": "roster",
+                              "@_childId": "e4d6-1a77-132b-f39d",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true",
+                              "@_includeChildForces": "true"
+                            },
+                            {
+                              "@_type": "equalTo",
+                              "@_value": "0",
+                              "@_field": "selections",
+                              "@_scope": "roster",
+                              "@_childId": "af4c-b971-a31c-669c",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true",
+                              "@_includeChildForces": "true"
+                            },
+                            {
+                              "@_type": "equalTo",
+                              "@_value": "0",
+                              "@_field": "selections",
+                              "@_scope": "roster",
+                              "@_childId": "f76f-29c1-de9-74c2",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true",
+                              "@_includeChildForces": "true"
+                            },
+                            {
+                              "@_type": "equalTo",
+                              "@_value": "0",
+                              "@_field": "selections",
+                              "@_scope": "roster",
+                              "@_childId": "481c-3b2e-5c99-c248",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true",
+                              "@_includeChildForces": "true"
+                            }
+                          ]
+                        },
+                        "@_type": "or"
+                      }
+                    },
+                    "@_type": "and"
+                  }
+                },
+                "@_type": "set",
+                "@_value": "3",
+                "@_field": "807c-44c1-6f7d-dfb8"
+              },
+              {
+                "conditionGroups": {
+                  "conditionGroup": {
+                    "conditions": {
+                      "condition": [
+                        {
+                          "@_type": "notInstanceOf",
+                          "@_value": "1",
+                          "@_field": "selections",
+                          "@_scope": "primary-catalogue",
+                          "@_childId": "25dd-7aa0-6bf4-f2d5",
+                          "@_shared": "true",
+                          "@_includeChildForces": "false"
+                        },
+                        {
+                          "@_type": "atLeast",
+                          "@_value": "1",
+                          "@_field": "selections",
+                          "@_scope": "force",
+                          "@_childId": "4c40-ab9-54af-d290",
+                          "@_shared": "true"
+                        }
+                      ]
+                    },
+                    "conditionGroups": {
+                      "conditionGroup": {
+                        "conditions": {
+                          "condition": [
+                            {
+                              "@_type": "greaterThan",
+                              "@_value": "0",
+                              "@_field": "selections",
+                              "@_scope": "roster",
+                              "@_childId": "e4d6-1a77-132b-f39d",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true",
+                              "@_includeChildForces": "true"
+                            },
+                            {
+                              "@_type": "greaterThan",
+                              "@_value": "0",
+                              "@_field": "selections",
+                              "@_scope": "roster",
+                              "@_childId": "af4c-b971-a31c-669c",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true",
+                              "@_includeChildForces": "true"
+                            },
+                            {
+                              "@_type": "greaterThan",
+                              "@_value": "0",
+                              "@_field": "selections",
+                              "@_scope": "roster",
+                              "@_childId": "f76f-29c1-de9-74c2",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true",
+                              "@_includeChildForces": "true"
+                            },
+                            {
+                              "@_type": "greaterThan",
+                              "@_value": "0",
+                              "@_field": "selections",
+                              "@_scope": "roster",
+                              "@_childId": "481c-3b2e-5c99-c248",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true",
+                              "@_includeChildForces": "true"
+                            }
+                          ]
+                        },
+                        "@_type": "or"
+                      }
+                    },
+                    "@_type": "and"
+                  }
+                },
+                "@_type": "set",
+                "@_value": "0",
+                "@_field": "807c-44c1-6f7d-dfb8"
+              }
+            ]
+          },
+          "constraints": {
+            "constraint": {
+              "@_type": "max",
+              "@_value": "-1",
+              "@_field": "selections",
+              "@_scope": "force",
+              "@_shared": "true",
+              "@_id": "807c-44c1-6f7d-dfb8",
+              "@_includeChildSelections": "true",
+              "@_includeChildForces": "true"
+            }
+          },
+          "@_id": "b5e4-3253-c157-54fd",
+          "@_name": "Faction: Imperial Knights",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "1e42-dfae-cbdd-207d",
+          "@_name": "Faction: Heretic Astartes",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "fd71-afa6-b13b-7fda",
+          "@_name": "Faction: Adepta Sororitas",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "ee0-cf31-4fb5-6b26",
+          "@_name": "Faction: Necrons",
+          "@_hidden": "false"
+        },
+        {
+          "constraints": {
+            "constraint": {
+              "@_type": "max",
+              "@_value": "-1",
+              "@_field": "51b2-306e-1021-d207",
+              "@_scope": "force",
+              "@_shared": "true",
+              "@_id": "f70b-465d-493f-52e3",
+              "@_includeChildSelections": "true"
+            }
+          },
+          "modifiers": {
+            "modifier": [
+              {
+                "conditionGroups": {
+                  "conditionGroup": {
+                    "conditions": {
+                      "condition": [
+                        {
+                          "@_type": "notInstanceOf",
+                          "@_value": "1",
+                          "@_field": "selections",
+                          "@_scope": "primary-catalogue",
+                          "@_childId": "d265-877b-e03d-30ca",
+                          "@_shared": "true"
+                        },
+                        {
+                          "@_type": "greaterThan",
+                          "@_value": "0",
+                          "@_field": "selections",
+                          "@_scope": "force",
+                          "@_childId": "d62d-db22-4893-4bc0",
+                          "@_shared": "true",
+                          "@_includeChildSelections": "true"
+                        }
+                      ]
+                    },
+                    "@_type": "and"
+                  }
+                },
+                "@_type": "set",
+                "@_value": "250",
+                "@_field": "f70b-465d-493f-52e3",
+                "@_id": "4796-8c50-4a43-66c8"
+              },
+              {
+                "conditionGroups": {
+                  "conditionGroup": {
+                    "conditions": {
+                      "condition": [
+                        {
+                          "@_type": "notInstanceOf",
+                          "@_value": "1",
+                          "@_field": "selections",
+                          "@_scope": "primary-catalogue",
+                          "@_childId": "d265-877b-e03d-30ca",
+                          "@_shared": "true"
+                        },
+                        {
+                          "@_type": "greaterThan",
+                          "@_value": "0",
+                          "@_field": "selections",
+                          "@_scope": "force",
+                          "@_childId": "baf8-997f-e323-a090",
+                          "@_shared": "true",
+                          "@_includeChildSelections": "true"
+                        }
+                      ]
+                    },
+                    "@_type": "and"
+                  }
+                },
+                "@_type": "set",
+                "@_value": "500",
+                "@_field": "f70b-465d-493f-52e3",
+                "@_id": "bc6-87f4-482b-c1cd"
+              },
+              {
+                "conditionGroups": {
+                  "conditionGroup": {
+                    "conditions": {
+                      "condition": [
+                        {
+                          "@_type": "notInstanceOf",
+                          "@_value": "1",
+                          "@_field": "selections",
+                          "@_scope": "primary-catalogue",
+                          "@_childId": "d265-877b-e03d-30ca",
+                          "@_shared": "true"
+                        },
+                        {
+                          "@_type": "greaterThan",
+                          "@_value": "0",
+                          "@_field": "selections",
+                          "@_scope": "force",
+                          "@_childId": "4204-82d0-908c-a62a",
+                          "@_shared": "true",
+                          "@_includeChildSelections": "true"
+                        }
+                      ]
+                    },
+                    "@_type": "and"
+                  }
+                },
+                "@_type": "set",
+                "@_value": "750",
+                "@_field": "f70b-465d-493f-52e3",
+                "@_id": "b336-af46-e756-ab15"
+              }
+            ]
+          },
+          "@_id": "571f-ec3a-a5a2-751a",
+          "@_name": "Faction: Legiones Daemonica",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "b2a9-ede5-7a83-4da8",
+          "@_name": "Slaanesh",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "ed0d-8e2a-225c-2340",
+          "@_name": "Nurgle",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "4bd-5ee0-f179-2fc5",
+          "@_name": "Khorne",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "b188-114f-6ba5-79a1",
+          "@_name": "Tzeentch",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "6e7-40c-58d9-e402",
+          "@_name": "Faction: Adeptus Astartes",
+          "@_hidden": "false"
+        },
+        {
+          "modifiers": {
+            "modifier": [
+              {
+                "conditionGroups": {
+                  "conditionGroup": {
+                    "conditions": {
+                      "condition": [
+                        {
+                          "@_type": "instanceOf",
+                          "@_value": "1",
+                          "@_field": "selections",
+                          "@_scope": "primary-catalogue",
+                          "@_childId": "25dd-7aa0-6bf4-f2d5",
+                          "@_shared": "true",
+                          "@_includeChildSelections": "true",
+                          "@_includeChildForces": "true"
+                        },
+                        {
+                          "@_type": "greaterThan",
+                          "@_value": "0",
+                          "@_field": "selections",
+                          "@_scope": "force",
+                          "@_childId": "d62d-db22-4893-4bc0",
+                          "@_shared": "true",
+                          "@_includeChildSelections": "true",
+                          "@_includeChildForces": "true"
+                        }
+                      ]
+                    },
+                    "@_type": "and"
+                  }
+                },
+                "@_type": "set",
+                "@_value": "250",
+                "@_field": "dee8-c245-3c3c-86b6",
+                "@_id": "5155-3d32-76df-053b"
+              },
+              {
+                "conditionGroups": {
+                  "conditionGroup": {
+                    "conditions": {
+                      "condition": [
+                        {
+                          "@_type": "greaterThan",
+                          "@_value": "0",
+                          "@_field": "selections",
+                          "@_scope": "force",
+                          "@_childId": "baf8-997f-e323-a090",
+                          "@_shared": "true",
+                          "@_includeChildSelections": "true",
+                          "@_includeChildForces": "true"
+                        },
+                        {
+                          "@_type": "instanceOf",
+                          "@_value": "1",
+                          "@_field": "selections",
+                          "@_scope": "primary-catalogue",
+                          "@_childId": "25dd-7aa0-6bf4-f2d5",
+                          "@_shared": "true",
+                          "@_includeChildSelections": "true",
+                          "@_includeChildForces": "true"
+                        }
+                      ]
+                    },
+                    "@_type": "and"
+                  }
+                },
+                "@_type": "set",
+                "@_value": "500",
+                "@_field": "dee8-c245-3c3c-86b6",
+                "@_id": "2f2a-1769-3b72-b003"
+              },
+              {
+                "conditionGroups": {
+                  "conditionGroup": {
+                    "conditions": {
+                      "condition": [
+                        {
+                          "@_type": "greaterThan",
+                          "@_value": "0",
+                          "@_field": "selections",
+                          "@_scope": "force",
+                          "@_childId": "4204-82d0-908c-a62a",
+                          "@_shared": "true",
+                          "@_includeChildSelections": "true",
+                          "@_includeChildForces": "true"
+                        },
+                        {
+                          "@_type": "instanceOf",
+                          "@_value": "1",
+                          "@_field": "selections",
+                          "@_scope": "primary-catalogue",
+                          "@_childId": "25dd-7aa0-6bf4-f2d5",
+                          "@_shared": "true",
+                          "@_includeChildSelections": "true",
+                          "@_includeChildForces": "true"
+                        }
+                      ]
+                    },
+                    "@_type": "and"
+                  }
+                },
+                "@_type": "set",
+                "@_value": "750",
+                "@_field": "dee8-c245-3c3c-86b6",
+                "@_id": "464a-d2f8-101b-1fab"
+              }
+            ]
+          },
+          "constraints": {
+            "constraint": {
+              "@_type": "max",
+              "@_value": "-1",
+              "@_field": "51b2-306e-1021-d207",
+              "@_scope": "roster",
+              "@_shared": "true",
+              "@_id": "dee8-c245-3c3c-86b6",
+              "@_includeChildSelections": "true",
+              "@_includeChildForces": "true",
+              "@_negative": "false"
+            }
+          },
+          "@_id": "5418-f86b-6e76-c5a",
+          "@_name": "Faction: Adeptus Mechanicus",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "226b-cf1e-353a-ae7f",
+          "@_name": "Faction: Genestealer Cults",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "bd1d-c1a5-6ca2-c791",
+          "@_name": "Faction: World Eaters",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "8474-765-16a9-f00d",
+          "@_name": "Faction: Leagues of Votann",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "9888-ddb2-a141-6037",
+          "@_name": "Faction: Death Guard",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "3d58-2655-391e-ecc",
+          "@_name": "Faction: T'au Empire",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "eea5-aeaf-bbf0-d5ee",
+          "@_name": "Faction: Adeptus Custodes",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "56cc-5f43-2403-8da0",
+          "@_name": "Faction: Orks",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "7002-1fbb-7571-e8e7",
+          "@_name": "Faction: Thousand Sons",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "d564-3284-bf44-b873",
+          "@_name": "Faction: Grey Knights",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "5128-90b-e4a5-dcbd",
+          "@_name": "Faction: Agents of the Imperium",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "aab1-4f05-fabe-5ba5",
+          "@_name": "Faction: Dark Angels",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "65e4-13-4fa8-b36c",
+          "@_name": "Faction: Salamanders",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "d39c-9989-db7f-d815",
+          "@_name": "Faction: Deathwatch",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "62ac-ef42-27b4-ae7",
+          "@_name": "Faction: Blood Angels",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "1a2d-2f00-c054-4dcb",
+          "@_name": "Faction: Ultramarines",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "a0d9-c115-2a-8330",
+          "@_name": "Faction: Space Wolves",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "9249-acae-2882-d95",
+          "@_name": "Faction: Black Templars",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "84b7-7194-3b84-1b0c",
+          "@_name": "Faction: Raven Guard",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "b88e-1b0c-b79f-5cdf",
+          "@_name": "Faction: Iron Hands",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "97aa-d0e4-71c7-96c3",
+          "@_name": "Faction: Imperial Fists",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "5c0e-2250-dd3a-1df9",
+          "@_name": "Faction: White Scars",
+          "@_hidden": "false"
+        },
+        {
+          "constraints": {
+            "constraint": [
+              {
+                "@_field": "selections",
+                "@_scope": "roster",
+                "@_value": "1",
+                "@_percentValue": "false",
+                "@_shared": "true",
+                "@_includeChildSelections": "true",
+                "@_includeChildForces": "false",
+                "@_id": "16ac-a6c9-6d9a-d6d5",
+                "@_type": "min"
+              },
+              {
+                "@_field": "selections",
+                "@_scope": "roster",
+                "@_value": "1",
+                "@_percentValue": "false",
+                "@_shared": "true",
+                "@_includeChildSelections": "true",
+                "@_includeChildForces": "false",
+                "@_id": "3d50-6d29-4f91-8f73",
+                "@_type": "max"
+              }
+            ]
+          },
+          "@_id": "5c0e-4c31-d51b-e470",
+          "@_name": "Warlord",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "9c0e-7e25-4580-e439",
+          "@_name": "Daemon",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "6474-0ce3-6b5a-120c",
+          "@_name": "Primarch",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "4f09-0141-6c70-6c5a",
+          "@_name": "Daemon Prince",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "b00b-5bae-444f-964e",
+          "@_name": "Swarm",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "2471-e2e0-3f55-d6cb",
+          "@_name": "Drone",
+          "@_hidden": "false"
+        },
+        {
+          "@_id": "7850-cc5a-c191-b80d",
+          "@_name": "Great Devourer",
+          "@_hidden": "false"
+        },
+        {
+          "@_name": "Retinue",
+          "@_hidden": "false",
+          "@_id": "cc77-a53-fca8-f48e"
+        },
+        {
+          "@_name": "Terminator",
+          "@_hidden": "false",
+          "@_id": "740a-892c-8958-defa"
+        },
+        {
+          "@_name": "Rhino",
+          "@_hidden": "false",
+          "@_id": "50a2-5557-84bb-ca4d"
+        },
+        {
+          "@_id": "dda2-bb0a-215e-ad9c",
+          "@_name": "Jump Pack",
+          "@_hidden": "false"
+        },
+        {
+          "@_name": "Armiger",
+          "@_id": "4c40-ab9-54af-d290",
+          "@_hidden": "false"
+        },
+        {
+          "@_name": "Questoris",
+          "@_id": "e4d6-1a77-132b-f39d"
+        },
+        {
+          "@_name": "Dominus",
+          "@_id": "af4c-b971-a31c-669c"
+        },
+        {
+          "modifiers": {
+            "modifier": [
+              {
+                "conditions": {
+                  "condition": {
+                    "@_type": "instanceOf",
+                    "@_value": "1",
+                    "@_field": "selections",
+                    "@_scope": "primary-catalogue",
+                    "@_childId": "3bdf-a114-5035-c6ac",
+                    "@_shared": "true",
+                    "@_includeChildSelections": "true",
+                    "@_includeChildForces": "true"
+                  }
+                },
+                "@_type": "set",
+                "@_value": "Brood Brothers",
+                "@_field": "name"
+              },
+              {
+                "conditionGroups": {
+                  "conditionGroup": {
+                    "conditions": {
+                      "condition": [
+                        {
+                          "@_type": "instanceOf",
+                          "@_value": "1",
+                          "@_field": "selections",
+                          "@_scope": "primary-catalogue",
+                          "@_childId": "3bdf-a114-5035-c6ac",
+                          "@_shared": "true",
+                          "@_includeChildSelections": "true",
+                          "@_includeChildForces": "true"
+                        },
+                        {
+                          "@_type": "greaterThan",
+                          "@_value": "0",
+                          "@_field": "selections",
+                          "@_scope": "force",
+                          "@_childId": "d62d-db22-4893-4bc0",
+                          "@_shared": "true",
+                          "@_includeChildSelections": "true",
+                          "@_includeChildForces": "true"
+                        }
+                      ]
+                    },
+                    "@_type": "and"
+                  }
+                },
+                "@_type": "set",
+                "@_value": "500",
+                "@_field": "4d8f-6e09-606e-788e",
+                "@_id": "4ff4-f313-206c-fcb0"
+              },
+              {
+                "conditionGroups": {
+                  "conditionGroup": {
+                    "conditions": {
+                      "condition": [
+                        {
+                          "@_type": "greaterThan",
+                          "@_value": "0",
+                          "@_field": "selections",
+                          "@_scope": "force",
+                          "@_childId": "baf8-997f-e323-a090",
+                          "@_shared": "true",
+                          "@_includeChildSelections": "true",
+                          "@_includeChildForces": "true"
+                        },
+                        {
+                          "@_type": "instanceOf",
+                          "@_value": "1",
+                          "@_field": "selections",
+                          "@_scope": "primary-catalogue",
+                          "@_childId": "3bdf-a114-5035-c6ac",
+                          "@_shared": "true",
+                          "@_includeChildSelections": "true",
+                          "@_includeChildForces": "true"
+                        }
+                      ]
+                    },
+                    "@_type": "and"
+                  }
+                },
+                "@_type": "set",
+                "@_value": "1000",
+                "@_field": "4d8f-6e09-606e-788e",
+                "@_id": "934b-e7e4-b560-2d8c"
+              },
+              {
+                "conditionGroups": {
+                  "conditionGroup": {
+                    "conditions": {
+                      "condition": [
+                        {
+                          "@_type": "greaterThan",
+                          "@_value": "0",
+                          "@_field": "selections",
+                          "@_scope": "force",
+                          "@_childId": "4204-82d0-908c-a62a",
+                          "@_shared": "true",
+                          "@_includeChildSelections": "true",
+                          "@_includeChildForces": "true"
+                        },
+                        {
+                          "@_type": "instanceOf",
+                          "@_value": "1",
+                          "@_field": "selections",
+                          "@_scope": "primary-catalogue",
+                          "@_childId": "3bdf-a114-5035-c6ac",
+                          "@_shared": "true",
+                          "@_includeChildSelections": "true",
+                          "@_includeChildForces": "true"
+                        }
+                      ]
+                    },
+                    "@_type": "and"
+                  }
+                },
+                "@_type": "set",
+                "@_value": "1500",
+                "@_field": "4d8f-6e09-606e-788e",
+                "@_id": "d1e5-86a2-d34b-13b3"
+              }
+            ]
+          },
+          "constraints": {
+            "constraint": {
+              "@_type": "max",
+              "@_value": "-1",
+              "@_field": "51b2-306e-1021-d207",
+              "@_scope": "roster",
+              "@_shared": "true",
+              "@_id": "4d8f-6e09-606e-788e",
+              "@_includeChildSelections": "true",
+              "@_includeChildForces": "true",
+              "@_negative": "false"
+            }
+          },
+          "@_name": "Allied Units",
+          "@_hidden": "false",
+          "@_id": "887b-ab87-92a2-20f5"
+        },
+        {
+          "@_name": "Acastus",
+          "@_hidden": "false",
+          "@_id": "f76f-29c1-de9-74c2"
+        },
+        {
+          "@_name": "Cerastus",
+          "@_hidden": "false",
+          "@_id": "481c-3b2e-5c99-c248"
+        },
+        {
+          "@_name": "Artillery",
+          "@_hidden": "false",
+          "@_id": "8cab-448d-37b7-32bc"
+        },
+        {
+          "@_name": "Order of Battle",
+          "@_id": "ac7e-be7b-eb02-4752",
+          "@_hidden": "false"
+        },
+        {
+          "@_name": "Faction: Harlequins",
+          "@_id": "a5a2-d0c0-0349-d226",
+          "@_hidden": "false"
+        },
+        {
+          "@_name": "Faction: Ynnari",
+          "@_id": "9a21-190a-9d31-35d2",
+          "@_hidden": "false"
+        }
+      ]
+    },
+    "forceEntries": {
+      "forceEntry": [
+        {
+          "categoryLinks": {
+            "categoryLink": [
+              {
+                "@_id": "d5de-ee57-ad4b-e4b7",
+                "@_name": "Configuration",
+                "@_hidden": "false",
+                "@_targetId": "4ac9-fd30-1e3d-b249",
+                "@_primary": "false"
+              },
+              {
+                "@_id": "16fc-8e39-ee82-cf96",
+                "@_name": "Epic Hero",
+                "@_hidden": "false",
+                "@_targetId": "4f3a-f0f7-6647-348d",
+                "@_primary": "false"
+              },
+              {
+                "constraints": {
+                  "constraint": {
+                    "@_field": "selections",
+                    "@_scope": "roster",
+                    "@_value": "1",
+                    "@_percentValue": "false",
+                    "@_shared": "true",
+                    "@_includeChildSelections": "true",
+                    "@_includeChildForces": "true",
+                    "@_id": "f08b-2179-601f-9af",
+                    "@_type": "min"
+                  }
+                },
+                "modifiers": {
+                  "modifier": {
+                    "conditionGroups": {
+                      "conditionGroup": {
+                        "conditions": {
+                          "condition": [
+                            {
+                              "@_type": "instanceOf",
+                              "@_value": "1",
+                              "@_field": "selections",
+                              "@_scope": "primary-catalogue",
+                              "@_childId": "bdc0-c0d-72d7-87e2",
+                              "@_shared": "true",
+                              "@_id": "1fe4-8f37-4c24-271"
+                            },
+                            {
+                              "@_type": "instanceOf",
+                              "@_value": "1",
+                              "@_field": "selections",
+                              "@_scope": "primary-catalogue",
+                              "@_childId": "880c-c7e-4a43-a0c1",
+                              "@_shared": "true",
+                              "@_id": "f16a-b2cd-1da5-4050"
+                            }
+                          ]
+                        },
+                        "@_type": "or"
+                      }
+                    },
+                    "@_type": "set",
+                    "@_value": "0",
+                    "@_field": "f08b-2179-601f-9af"
+                  }
+                },
+                "@_id": "c932-1176-dc9-b390",
+                "@_name": "Character",
+                "@_hidden": "false",
+                "@_targetId": "9cfd-1c32-585f-7d5c",
+                "@_primary": "false"
+              },
+              {
+                "@_id": "b3ba-1e1a-a92d-60d2",
+                "@_name": "Battleline",
+                "@_hidden": "false",
+                "@_targetId": "e338-111e-d0c6-b687",
+                "@_primary": "false"
+              },
+              {
+                "@_id": "6d77-b79d-3ccb-6bf6",
+                "@_name": "Infantry",
+                "@_hidden": "false",
+                "@_targetId": "cf47-a0d7-7207-29dc",
+                "@_primary": "false"
+              },
+              {
+                "@_id": "f5d5-b603-69b3-411c",
+                "@_name": "Swarm",
+                "@_hidden": "false",
+                "@_targetId": "b00b-5bae-444f-964e",
+                "@_primary": "false"
+              },
+              {
+                "@_id": "6503-057c-cb62-badb",
+                "@_name": "Mounted",
+                "@_hidden": "false",
+                "@_targetId": "14a0-40c9-2748-ae6e",
+                "@_primary": "false"
+              },
+              {
+                "@_id": "87ea-37d2-7b40-c708",
+                "@_name": "Beast",
+                "@_hidden": "false",
+                "@_targetId": "4c3e-9310-a516-3590",
+                "@_primary": "false"
+              },
+              {
+                "@_id": "8e39-465e-7cfc-3085",
+                "@_name": "Monster",
+                "@_hidden": "false",
+                "@_targetId": "9693-cf84-fe69-37a9",
+                "@_primary": "false"
+              },
+              {
+                "@_id": "2c76-65c5-bad0-8208",
+                "@_name": "Vehicle",
+                "@_hidden": "false",
+                "@_targetId": "dbd4-63-af05-998",
+                "@_primary": "false"
+              },
+              {
+                "@_id": "8243-857b-2133-8887",
+                "@_name": "Drone",
+                "@_hidden": "false",
+                "@_targetId": "2471-e2e0-3f55-d6cb",
+                "@_primary": "false"
+              },
+              {
+                "@_id": "cf3e-2c24-fe34-39f9",
+                "@_name": "Dedicated Transport",
+                "@_hidden": "false",
+                "@_targetId": "ba07-411c-2832-1f79",
+                "@_primary": "false"
+              },
+              {
+                "@_id": "9198-c35d-71cd-eea3",
+                "@_name": "Fortification",
+                "@_hidden": "false",
+                "@_targetId": "19d7-9c74-2140-5851",
+                "@_primary": "false"
+              },
+              {
+                "@_id": "a41a-6330-4718-d8d2",
+                "@_name": "Unit",
+                "@_hidden": "false",
+                "@_targetId": "1160-70ae-a862-b1a8",
+                "@_primary": "false"
+              },
+              {
+                "@_name": "Allied Units",
+                "@_hidden": "false",
+                "@_id": "8d39-1cfc-6e44-2dae",
+                "@_targetId": "887b-ab87-92a2-20f5"
+              }
+            ]
+          },
+          "@_id": "bb9d-299a-ed60-2d8a",
+          "@_name": "Army Roster",
+          "@_hidden": "false"
+        },
+        {
+          "categoryLinks": {
+            "categoryLink": [
+              {
+                "@_id": "4f79-1f3a-7f95-ae21",
+                "@_name": "Configuration",
+                "@_hidden": "false",
+                "@_targetId": "4ac9-fd30-1e3d-b249",
+                "@_primary": "false"
+              },
+              {
+                "@_id": "73b6-764d-b0ab-977c",
+                "@_name": "Epic Hero",
+                "@_hidden": "false",
+                "@_targetId": "4f3a-f0f7-6647-348d",
+                "@_primary": "false"
+              },
+              {
+                "constraints": {
+                  "constraint": {
+                    "@_field": "selections",
+                    "@_scope": "roster",
+                    "@_value": "1",
+                    "@_percentValue": "false",
+                    "@_shared": "true",
+                    "@_includeChildSelections": "true",
+                    "@_includeChildForces": "true",
+                    "@_id": "f08b-2179-601f-9af",
+                    "@_type": "min"
+                  }
+                },
+                "@_id": "95ea-911f-b9a5-2d3e",
+                "@_name": "Character",
+                "@_hidden": "false",
+                "@_targetId": "9cfd-1c32-585f-7d5c",
+                "@_primary": "false"
+              },
+              {
+                "@_id": "57d9-fc38-a603-fdd2",
+                "@_name": "Battleline",
+                "@_hidden": "false",
+                "@_targetId": "e338-111e-d0c6-b687",
+                "@_primary": "false"
+              },
+              {
+                "@_id": "ee07-d0f5-deb6-b64c",
+                "@_name": "Infantry",
+                "@_hidden": "false",
+                "@_targetId": "cf47-a0d7-7207-29dc",
+                "@_primary": "false"
+              },
+              {
+                "@_id": "6d07-c461-1f18-a3eb",
+                "@_name": "Swarm",
+                "@_hidden": "false",
+                "@_targetId": "b00b-5bae-444f-964e",
+                "@_primary": "false"
+              },
+              {
+                "@_id": "d9fd-28fe-bd15-d67e",
+                "@_name": "Mounted",
+                "@_hidden": "false",
+                "@_targetId": "14a0-40c9-2748-ae6e",
+                "@_primary": "false"
+              },
+              {
+                "@_id": "9835-544c-d9d1-72bf",
+                "@_name": "Beast",
+                "@_hidden": "false",
+                "@_targetId": "4c3e-9310-a516-3590",
+                "@_primary": "false"
+              },
+              {
+                "@_id": "bc76-9342-c298-99c9",
+                "@_name": "Monster",
+                "@_hidden": "false",
+                "@_targetId": "9693-cf84-fe69-37a9",
+                "@_primary": "false"
+              },
+              {
+                "@_id": "61bf-bd6b-cba7-70b2",
+                "@_name": "Vehicle",
+                "@_hidden": "false",
+                "@_targetId": "dbd4-63-af05-998",
+                "@_primary": "false"
+              },
+              {
+                "@_id": "5db7-9406-f21f-2de0",
+                "@_name": "Drone",
+                "@_hidden": "false",
+                "@_targetId": "2471-e2e0-3f55-d6cb",
+                "@_primary": "false"
+              },
+              {
+                "@_id": "fe2b-ae0-8572-b6ff",
+                "@_name": "Dedicated Transport",
+                "@_hidden": "false",
+                "@_targetId": "ba07-411c-2832-1f79",
+                "@_primary": "false"
+              },
+              {
+                "@_name": "Retinue",
+                "@_hidden": "false",
+                "@_id": "d932-86b9-29ec-c799",
+                "@_targetId": "cc77-a53-fca8-f48e"
+              }
+            ]
+          },
+          "@_name": "Boarding Action",
+          "@_hidden": "true",
+          "@_id": "1d6e-2579-8e7f-1ed4"
+        },
+        {
+          "forceEntries": {
+            "forceEntry": {
+              "categoryLinks": {
+                "categoryLink": {
+                  "@_name": "Configuration",
+                  "@_hidden": "false",
+                  "@_id": "c078-56fb-a0e9-fa0d",
+                  "@_targetId": "4ac9-fd30-1e3d-b249"
+                }
+              },
+              "modifiers": {
+                "modifier": [
+                  {
+                    "conditions": {
+                      "condition": {
+                        "@_type": "atLeast",
+                        "@_value": "1",
+                        "@_field": "selections",
+                        "@_scope": "roster",
+                        "@_childId": "d62d-db22-4893-4bc0",
+                        "@_shared": "true",
+                        "@_includeChildSelections": "true"
+                      }
+                    },
+                    "@_type": "set",
+                    "@_value": "1000",
+                    "@_field": "57b7-ac0e-5d06-9ddb"
+                  },
+                  {
+                    "conditions": {
+                      "condition": {
+                        "@_type": "atLeast",
+                        "@_value": "1",
+                        "@_field": "selections",
+                        "@_scope": "roster",
+                        "@_childId": "baf8-997f-e323-a090",
+                        "@_shared": "true",
+                        "@_includeChildSelections": "true"
+                      }
+                    },
+                    "@_type": "set",
+                    "@_value": "2000",
+                    "@_field": "57b7-ac0e-5d06-9ddb"
+                  },
+                  {
+                    "conditions": {
+                      "condition": {
+                        "@_type": "atLeast",
+                        "@_value": "1",
+                        "@_field": "selections",
+                        "@_scope": "roster",
+                        "@_childId": "4204-82d0-908c-a62a",
+                        "@_shared": "true",
+                        "@_includeChildSelections": "true"
+                      }
+                    },
+                    "@_type": "set",
+                    "@_value": "3000",
+                    "@_field": "57b7-ac0e-5d06-9ddb"
+                  },
+                  {
+                    "conditions": {
+                      "condition": {
+                        "@_type": "atLeast",
+                        "@_value": "1",
+                        "@_field": "forces",
+                        "@_scope": "roster",
+                        "@_childId": "cac3-71d1-ea4b-795d",
+                        "@_shared": "true",
+                        "@_includeChildSelections": "true",
+                        "@_includeChildForces": "true"
+                      }
+                    },
+                    "@_type": "set",
+                    "@_value": "1",
+                    "@_field": "21dc-d454-3048-5aeb"
+                  }
+                ]
+              },
+              "constraints": {
+                "constraint": [
+                  {
+                    "@_type": "min",
+                    "@_value": "0",
+                    "@_field": "forces",
+                    "@_scope": "roster",
+                    "@_shared": "true",
+                    "@_id": "21dc-d454-3048-5aeb",
+                    "@_includeChildSelections": "true",
+                    "@_includeChildForces": "true"
+                  },
+                  {
+                    "@_type": "max",
+                    "@_value": "1",
+                    "@_field": "forces",
+                    "@_scope": "roster",
+                    "@_shared": "true",
+                    "@_id": "97cd-724b-362c-071d",
+                    "@_includeChildSelections": "true",
+                    "@_includeChildForces": "true"
+                  },
+                  {
+                    "@_type": "max",
+                    "@_value": "0",
+                    "@_field": "51b2-306e-1021-d207",
+                    "@_scope": "force",
+                    "@_shared": "true",
+                    "@_id": "57b7-ac0e-5d06-9ddb",
+                    "@_includeChildSelections": "true"
+                  }
+                ]
+              },
+              "@_name": "Crusade Army",
+              "@_id": "ff7b-8f73-1756-650a",
+              "@_hidden": "false"
+            }
+          },
+          "categoryLinks": {
+            "categoryLink": [
+              {
+                "@_name": "Order of Battle",
+                "@_hidden": "false",
+                "@_id": "2452-ede7-7eb6-add4",
+                "@_targetId": "ac7e-be7b-eb02-4752"
+              },
+              {
+                "@_name": "Configuration",
+                "@_hidden": "false",
+                "@_id": "a290-a601-b0c5-3ba1",
+                "@_targetId": "4ac9-fd30-1e3d-b249"
+              },
+              {
+                "@_name": "Epic Hero",
+                "@_hidden": "false",
+                "@_id": "50c3-798d-734d-6d5f",
+                "@_targetId": "4f3a-f0f7-6647-348d",
+                "@_primary": "false"
+              },
+              {
+                "constraints": {
+                  "constraint": {
+                    "@_type": "min",
+                    "@_value": "1",
+                    "@_field": "selections",
+                    "@_scope": "roster",
+                    "@_shared": "true",
+                    "@_id": "771b-70a4-6eca-ca13",
+                    "@_percentValue": "false",
+                    "@_includeChildSelections": "true",
+                    "@_includeChildForces": "true"
+                  }
+                },
+                "modifiers": {
+                  "modifier": {
+                    "conditionGroups": {
+                      "conditionGroup": {
+                        "conditions": {
+                          "condition": [
+                            {
+                              "@_type": "instanceOf",
+                              "@_value": "1",
+                              "@_field": "selections",
+                              "@_scope": "primary-catalogue",
+                              "@_childId": "bdc0-c0d-72d7-87e2",
+                              "@_shared": "true",
+                              "@_id": "6850-9e2d-ee40-9fdb"
+                            },
+                            {
+                              "@_type": "instanceOf",
+                              "@_value": "1",
+                              "@_field": "selections",
+                              "@_scope": "primary-catalogue",
+                              "@_childId": "880c-c7e-4a43-a0c1",
+                              "@_shared": "true",
+                              "@_id": "ebb2-e80e-a08a-e168"
+                            }
+                          ]
+                        },
+                        "@_type": "or"
+                      }
+                    },
+                    "@_type": "set",
+                    "@_value": "0",
+                    "@_field": "771b-70a4-6eca-ca13"
+                  }
+                },
+                "@_name": "Character",
+                "@_hidden": "false",
+                "@_id": "5fa8-178e-cb6c-4669",
+                "@_targetId": "9cfd-1c32-585f-7d5c",
+                "@_primary": "false"
+              },
+              {
+                "@_name": "Battleline",
+                "@_hidden": "false",
+                "@_id": "ceb5-d65a-179b-cfdd",
+                "@_targetId": "e338-111e-d0c6-b687",
+                "@_primary": "false"
+              },
+              {
+                "@_name": "Infantry",
+                "@_hidden": "false",
+                "@_id": "9447-a1b3-41e2-8e71",
+                "@_targetId": "cf47-a0d7-7207-29dc",
+                "@_primary": "false"
+              },
+              {
+                "@_name": "Swarm",
+                "@_hidden": "false",
+                "@_id": "a8d2-e42d-2d2d-5b61",
+                "@_targetId": "b00b-5bae-444f-964e",
+                "@_primary": "false"
+              },
+              {
+                "@_name": "Mounted",
+                "@_hidden": "false",
+                "@_id": "2252-2bf7-54da-f3e3",
+                "@_targetId": "14a0-40c9-2748-ae6e",
+                "@_primary": "false"
+              },
+              {
+                "@_name": "Beast",
+                "@_hidden": "false",
+                "@_id": "c56a-baf2-b6e3-dc10",
+                "@_targetId": "4c3e-9310-a516-3590",
+                "@_primary": "false"
+              },
+              {
+                "@_name": "Monster",
+                "@_hidden": "false",
+                "@_id": "8eef-7007-d7a2-a968",
+                "@_targetId": "9693-cf84-fe69-37a9",
+                "@_primary": "false"
+              },
+              {
+                "@_name": "Vehicle",
+                "@_hidden": "false",
+                "@_id": "f68a-2d0c-fd7b-9460",
+                "@_targetId": "dbd4-63-af05-998",
+                "@_primary": "false"
+              },
+              {
+                "@_name": "Drone",
+                "@_hidden": "false",
+                "@_id": "1285-e936-26c8-b9bd",
+                "@_targetId": "2471-e2e0-3f55-d6cb",
+                "@_primary": "false"
+              },
+              {
+                "@_name": "Dedicated Transport",
+                "@_hidden": "false",
+                "@_id": "8ef9-4038-9434-2ed0",
+                "@_targetId": "ba07-411c-2832-1f79",
+                "@_primary": "false"
+              },
+              {
+                "@_name": "Fortification",
+                "@_hidden": "false",
+                "@_id": "9521-ccd2-1cb5-eef5",
+                "@_targetId": "19d7-9c74-2140-5851",
+                "@_primary": "false"
+              },
+              {
+                "@_name": "Unit",
+                "@_hidden": "false",
+                "@_id": "4657-058c-657b-3d14",
+                "@_targetId": "1160-70ae-a862-b1a8",
+                "@_primary": "false"
+              },
+              {
+                "@_name": "Allied Units",
+                "@_hidden": "false",
+                "@_id": "8d77-c7df-e1a3-0680",
+                "@_targetId": "887b-ab87-92a2-20f5"
+              }
+            ]
+          },
+          "modifiers": {
+            "modifier": {
+              "repeats": {
+                "repeat": {
+                  "@_value": "1",
+                  "@_repeats": "1",
+                  "@_field": "selections",
+                  "@_scope": "force",
+                  "@_childId": "4213-a51d-bffe-87dc",
+                  "@_shared": "true",
+                  "@_roundUp": "false",
+                  "@_includeChildSelections": "true",
+                  "@_includeChildForces": "true"
+                }
+              },
+              "@_type": "increment",
+              "@_value": "1",
+              "@_field": "215f-8816-ff04-d1ef"
+            }
+          },
+          "constraints": {
+            "constraint": {
+              "@_type": "max",
+              "@_value": "0",
+              "@_field": "51b2-306e-1021-d207",
+              "@_scope": "force",
+              "@_shared": "true",
+              "@_id": "215f-8816-ff04-d1ef",
+              "@_includeChildSelections": "true",
+              "@_includeChildForces": "true"
+            }
+          },
+          "@_name": "Crusade Force",
+          "@_id": "cac3-71d1-ea4b-795d",
+          "@_hidden": "true"
+        }
+      ]
+    },
+    "entryLinks": {
+      "entryLink": {
+        "@_id": "7380-3e40-6ed6-b7cc",
+        "@_name": "Battle Size",
+        "@_hidden": "false",
+        "@_collective": "false",
+        "@_import": "true",
+        "@_targetId": "564e-fbc6-5266-3ea4",
+        "@_type": "selectionEntry"
+      }
+    },
+    "sharedSelectionEntries": {
+      "selectionEntry": [
+        {
+          "constraints": {
+            "constraint": [
+              {
+                "@_field": "selections",
+                "@_scope": "roster",
+                "@_value": "1",
+                "@_percentValue": "false",
+                "@_shared": "true",
+                "@_includeChildSelections": "true",
+                "@_includeChildForces": "true",
+                "@_id": "d907-5a90-75f2-feec",
+                "@_type": "max"
+              },
+              {
+                "@_field": "selections",
+                "@_scope": "roster",
+                "@_value": "1",
+                "@_percentValue": "false",
+                "@_shared": "true",
+                "@_includeChildSelections": "true",
+                "@_includeChildForces": "true",
+                "@_id": "6b1c-4cb6-1e16-5ada",
+                "@_type": "min"
+              }
+            ]
+          },
+          "categoryLinks": {
+            "categoryLink": {
+              "@_id": "bc21-bf76-b29d-576c",
+              "@_name": "Configuration",
+              "@_hidden": "false",
+              "@_targetId": "4ac9-fd30-1e3d-b249",
+              "@_primary": "true"
+            }
+          },
+          "selectionEntryGroups": {
+            "selectionEntryGroup": {
+              "constraints": {
+                "constraint": [
+                  {
+                    "@_field": "selections",
+                    "@_scope": "parent",
+                    "@_value": "1",
+                    "@_percentValue": "false",
+                    "@_shared": "true",
+                    "@_includeChildSelections": "false",
+                    "@_includeChildForces": "false",
+                    "@_id": "132a-318-b78a-7afb",
+                    "@_type": "min"
+                  },
+                  {
+                    "@_field": "selections",
+                    "@_scope": "parent",
+                    "@_value": "1",
+                    "@_percentValue": "false",
+                    "@_shared": "true",
+                    "@_includeChildSelections": "false",
+                    "@_includeChildForces": "false",
+                    "@_id": "dea4-90c8-6d86-3a01",
+                    "@_type": "max"
+                  }
+                ]
+              },
+              "selectionEntries": {
+                "selectionEntry": [
+                  {
+                    "costs": {
+                      "cost": {
+                        "@_name": "pts",
+                        "@_typeId": "51b2-306e-1021-d207",
+                        "@_value": "0"
+                      }
+                    },
+                    "modifiers": {
+                      "modifier": {
+                        "conditions": {
+                          "condition": {
+                            "@_type": "instanceOf",
+                            "@_value": "1",
+                            "@_field": "selections",
+                            "@_scope": "force",
+                            "@_childId": "1d6e-2579-8e7f-1ed4",
+                            "@_shared": "true",
+                            "@_includeChildForces": "true"
+                          }
+                        },
+                        "@_type": "set",
+                        "@_value": "true",
+                        "@_field": "hidden"
+                      }
+                    },
+                    "@_id": "d62d-db22-4893-4bc0",
+                    "@_name": "1. Incursion (1000 Point limit)",
+                    "@_hidden": "false",
+                    "@_collective": "false",
+                    "@_import": "true",
+                    "@_type": "upgrade"
+                  },
+                  {
+                    "costs": {
+                      "cost": {
+                        "@_name": "pts",
+                        "@_typeId": "51b2-306e-1021-d207",
+                        "@_value": "0"
+                      }
+                    },
+                    "modifiers": {
+                      "modifier": {
+                        "conditions": {
+                          "condition": {
+                            "@_type": "instanceOf",
+                            "@_value": "1",
+                            "@_field": "selections",
+                            "@_scope": "force",
+                            "@_childId": "1d6e-2579-8e7f-1ed4",
+                            "@_shared": "true",
+                            "@_includeChildForces": "true"
+                          }
+                        },
+                        "@_type": "set",
+                        "@_value": "true",
+                        "@_field": "hidden"
+                      }
+                    },
+                    "@_id": "baf8-997f-e323-a090",
+                    "@_name": "2. Strike Force (2000 Point limit)",
+                    "@_hidden": "false",
+                    "@_collective": "false",
+                    "@_import": "true",
+                    "@_type": "upgrade"
+                  },
+                  {
+                    "costs": {
+                      "cost": {
+                        "@_name": "pts",
+                        "@_typeId": "51b2-306e-1021-d207",
+                        "@_value": "0"
+                      }
+                    },
+                    "modifiers": {
+                      "modifier": {
+                        "conditions": {
+                          "condition": {
+                            "@_type": "instanceOf",
+                            "@_value": "1",
+                            "@_field": "selections",
+                            "@_scope": "force",
+                            "@_childId": "1d6e-2579-8e7f-1ed4",
+                            "@_shared": "true",
+                            "@_includeChildForces": "true"
+                          }
+                        },
+                        "@_type": "set",
+                        "@_value": "true",
+                        "@_field": "hidden"
+                      }
+                    },
+                    "@_id": "4204-82d0-908c-a62a",
+                    "@_name": "3. Onslaught (3000 Point limit)",
+                    "@_hidden": "false",
+                    "@_collective": "false",
+                    "@_import": "true",
+                    "@_type": "upgrade"
+                  },
+                  {
+                    "modifiers": {
+                      "modifier": {
+                        "conditions": {
+                          "condition": {
+                            "@_type": "notInstanceOf",
+                            "@_value": "1",
+                            "@_field": "selections",
+                            "@_scope": "force",
+                            "@_childId": "1d6e-2579-8e7f-1ed4",
+                            "@_shared": "true",
+                            "@_includeChildForces": "true"
+                          }
+                        },
+                        "@_type": "set",
+                        "@_value": "true",
+                        "@_field": "hidden"
+                      }
+                    },
+                    "@_type": "upgrade",
+                    "@_import": "true",
+                    "@_name": "4. Boarding Patrol (500 Point Limit)",
+                    "@_hidden": "false",
+                    "@_id": "21b-48a5-24c-152c"
+                  }
+                ]
+              },
+              "@_id": "b960-4789-a3a6-59cb",
+              "@_name": "Battle Size",
+              "@_hidden": "false",
+              "@_collective": "false",
+              "@_import": "true",
+              "@_defaultSelectionEntryId": "none"
+            }
+          },
+          "costs": {
+            "cost": {
+              "@_name": "pts",
+              "@_typeId": "51b2-306e-1021-d207",
+              "@_value": "0"
+            }
+          },
+          "modifiers": {
+            "modifier": {
+              "conditions": {
+                "condition": {
+                  "@_type": "instanceOf",
+                  "@_value": "1",
+                  "@_field": "selections",
+                  "@_scope": "force",
+                  "@_childId": "cac3-71d1-ea4b-795d",
+                  "@_shared": "true"
+                }
+              },
+              "@_type": "set",
+              "@_value": "true",
+              "@_field": "hidden"
+            }
+          },
+          "@_id": "564e-fbc6-5266-3ea4",
+          "@_name": "Battle Size",
+          "@_hidden": "false",
+          "@_collective": "false",
+          "@_import": "true",
+          "@_type": "upgrade"
+        },
+        {
+          "categoryLinks": {
+            "categoryLink": {
+              "@_targetId": "4ac9-fd30-1e3d-b249",
+              "@_id": "8f35-ad49-afb5-715",
+              "@_primary": "true",
+              "@_name": "Configuration"
+            }
+          },
+          "constraints": {
+            "constraint": [
+              {
+                "@_field": "selections",
+                "@_scope": "force",
+                "@_value": "1",
+                "@_percentValue": "false",
+                "@_shared": "true",
+                "@_includeChildSelections": "false",
+                "@_includeChildForces": "false",
+                "@_id": "7cbd-24e3-bacb-1eb1",
+                "@_type": "min"
+              },
+              {
+                "@_type": "min",
+                "@_value": "1",
+                "@_field": "selections",
+                "@_scope": "parent",
+                "@_shared": "true",
+                "@_id": "51d8-e3c2-867-5eb"
+              },
+              {
+                "@_type": "max",
+                "@_value": "1",
+                "@_field": "selections",
+                "@_scope": "parent",
+                "@_shared": "true",
+                "@_id": "1f32-5aaa-603e-fed1"
+              }
+            ]
+          },
+          "modifiers": {
+            "modifier": [
+              {
+                "@_type": "set",
+                "@_field": "7cbd-24e3-bacb-1eb1",
+                "@_value": "0"
+              },
+              {
+                "@_type": "set",
+                "@_field": "51d8-e3c2-867-5eb",
+                "@_value": "0"
+              },
+              {
+                "@_type": "set",
+                "@_value": "Legends are visible",
+                "@_field": "name"
+              }
+            ]
+          },
+          "@_type": "upgrade",
+          "@_import": "true",
+          "@_name": "Show Legends",
+          "@_hidden": "false",
+          "@_id": "9ed-cbf4-bfe5-90bf"
+        },
+        {
+          "constraints": {
+            "constraint": [
+              {
+                "@_field": "selections",
+                "@_scope": "force",
+                "@_value": "1",
+                "@_percentValue": "false",
+                "@_shared": "true",
+                "@_includeChildSelections": "false",
+                "@_includeChildForces": "false",
+                "@_id": "756f-43f7-60e3-d93b",
+                "@_type": "min"
+              },
+              {
+                "@_type": "min",
+                "@_value": "1",
+                "@_field": "selections",
+                "@_scope": "parent",
+                "@_shared": "true",
+                "@_id": "2caa-2d0e-2ef7-2245"
+              },
+              {
+                "@_type": "max",
+                "@_value": "1",
+                "@_field": "selections",
+                "@_scope": "parent",
+                "@_shared": "true",
+                "@_id": "ed3f-a6a6-a555-2a07"
+              }
+            ]
+          },
+          "modifiers": {
+            "modifier": [
+              {
+                "@_type": "set",
+                "@_field": "756f-43f7-60e3-d93b",
+                "@_value": "0"
+              },
+              {
+                "@_type": "set",
+                "@_field": "2caa-2d0e-2ef7-2245",
+                "@_value": "0"
+              },
+              {
+                "@_type": "set",
+                "@_value": "Unaligned Forces are visible",
+                "@_field": "name"
+              }
+            ]
+          },
+          "@_type": "upgrade",
+          "@_import": "true",
+          "@_name": "Show Unaligned Forces",
+          "@_hidden": "false",
+          "@_id": "2973-ea51-7f8d-5403"
+        },
+        {
+          "constraints": {
+            "constraint": [
+              {
+                "@_field": "selections",
+                "@_scope": "force",
+                "@_value": "1",
+                "@_percentValue": "false",
+                "@_shared": "true",
+                "@_includeChildSelections": "false",
+                "@_includeChildForces": "false",
+                "@_id": "555c-624d-1099-249b",
+                "@_type": "min"
+              },
+              {
+                "@_type": "min",
+                "@_value": "1",
+                "@_field": "selections",
+                "@_scope": "parent",
+                "@_shared": "true",
+                "@_id": "d690-2eb1-642-a72a"
+              },
+              {
+                "@_type": "max",
+                "@_value": "1",
+                "@_field": "selections",
+                "@_scope": "parent",
+                "@_shared": "true",
+                "@_id": "355a-61e4-abb8-b97b"
+              }
+            ]
+          },
+          "modifiers": {
+            "modifier": [
+              {
+                "@_type": "set",
+                "@_field": "555c-624d-1099-249b",
+                "@_value": "0"
+              },
+              {
+                "@_type": "set",
+                "@_field": "d690-2eb1-642-a72a",
+                "@_value": "0"
+              },
+              {
+                "@_type": "set",
+                "@_value": "Unaligned Fortifications are visible",
+                "@_field": "name"
+              }
+            ]
+          },
+          "@_type": "upgrade",
+          "@_import": "true",
+          "@_name": "Show Unaligned Fortifications",
+          "@_hidden": "false",
+          "@_id": "e916-2cf4-a49d-b8c4"
+        },
+        {
+          "entryLinks": {
+            "entryLink": [
+              {
+                "@_import": "true",
+                "@_name": "Show Legends",
+                "@_hidden": "false",
+                "@_type": "selectionEntry",
+                "@_id": "892f-57ca-d650-7199",
+                "@_targetId": "9ed-cbf4-bfe5-90bf"
+              },
+              {
+                "@_import": "true",
+                "@_name": "Show Unaligned Forces",
+                "@_hidden": "false",
+                "@_type": "selectionEntry",
+                "@_id": "985-e753-2e94-859",
+                "@_targetId": "2973-ea51-7f8d-5403"
+              },
+              {
+                "@_import": "true",
+                "@_name": "Show Unaligned Fortifications",
+                "@_hidden": "false",
+                "@_type": "selectionEntry",
+                "@_id": "4d37-22c-a45c-64f8",
+                "@_targetId": "e916-2cf4-a49d-b8c4"
+              }
+            ]
+          },
+          "constraints": {
+            "constraint": {
+              "@_field": "selections",
+              "@_scope": "force",
+              "@_value": "1",
+              "@_percentValue": "false",
+              "@_shared": "true",
+              "@_includeChildSelections": "false",
+              "@_includeChildForces": "false",
+              "@_id": "7478-2e95-2444-b500",
+              "@_type": "min"
+            }
+          },
+          "modifiers": {
+            "modifier": [
+              {
+                "@_type": "set",
+                "@_field": "7478-2e95-2444-b500",
+                "@_value": "0"
+              },
+              {
+                "@_type": "set-primary",
+                "@_value": "4ac9-fd30-1e3d-b249",
+                "@_field": "category"
+              },
+              {
+                "conditionGroups": {
+                  "conditionGroup": {
+                    "conditions": {
+                      "condition": [
+                        {
+                          "@_type": "notInstanceOf",
+                          "@_value": "1",
+                          "@_field": "selections",
+                          "@_scope": "force",
+                          "@_childId": "cac3-71d1-ea4b-795d",
+                          "@_shared": "true"
+                        },
+                        {
+                          "@_type": "atLeast",
+                          "@_value": "1",
+                          "@_field": "selections",
+                          "@_scope": "roster",
+                          "@_childId": "cac3-71d1-ea4b-795d",
+                          "@_shared": "true"
+                        }
+                      ]
+                    },
+                    "@_type": "and"
+                  }
+                },
+                "@_type": "set",
+                "@_value": "true",
+                "@_field": "hidden"
+              }
+            ]
+          },
+          "@_type": "upgrade",
+          "@_import": "true",
+          "@_name": "Show/Hide Options",
+          "@_hidden": "false",
+          "@_id": "e8ef-836a-a9d1-901d"
+        },
+        {
+          "categoryLinks": {
+            "categoryLink": {
+              "@_name": "Order of Battle",
+              "@_hidden": "false",
+              "@_id": "9cd2-0658-7168-7881",
+              "@_targetId": "ac7e-be7b-eb02-4752",
+              "@_primary": "true"
+            }
+          },
+          "constraints": {
+            "constraint": [
+              {
+                "@_type": "min",
+                "@_value": "1",
+                "@_field": "selections",
+                "@_scope": "roster",
+                "@_shared": "true",
+                "@_id": "d59f-2804-3c43-6b7e",
+                "@_includeChildSelections": "true"
+              },
+              {
+                "@_type": "max",
+                "@_value": "1",
+                "@_field": "selections",
+                "@_scope": "roster",
+                "@_shared": "true",
+                "@_id": "b3a1-d8c7-6085-5d98",
+                "@_includeChildSelections": "true"
+              }
+            ]
+          },
+          "selectionEntries": {
+            "selectionEntry": [
+              {
+                "constraints": {
+                  "constraint": {
+                    "@_type": "max",
+                    "@_value": "10",
+                    "@_field": "selections",
+                    "@_scope": "parent",
+                    "@_shared": "true",
+                    "@_id": "b320-bdb5-fe91-6078",
+                    "@_includeChildSelections": "false"
+                  }
+                },
+                "@_type": "upgrade",
+                "@_import": "true",
+                "@_name": "Requisition Points",
+                "@_hidden": "false",
+                "@_id": "ce7f-9d46-52a9-947c",
+                "@_defaultAmount": "5"
+              },
+              {
+                "@_type": "upgrade",
+                "@_import": "true",
+                "@_name": "Battle Tally",
+                "@_hidden": "false",
+                "@_id": "3dd5-2e5a-a042-6595"
+              },
+              {
+                "@_type": "upgrade",
+                "@_import": "true",
+                "@_name": "Victories",
+                "@_hidden": "false",
+                "@_id": "1d15-6e78-ba49-ace9"
+              },
+              {
+                "constraints": {
+                  "constraint": {
+                    "@_type": "min",
+                    "@_value": "1000",
+                    "@_field": "selections",
+                    "@_scope": "parent",
+                    "@_shared": "true",
+                    "@_id": "6be6-c41c-ea86-298a",
+                    "@_includeChildSelections": "false"
+                  }
+                },
+                "@_type": "upgrade",
+                "@_import": "true",
+                "@_name": "Supply Limit",
+                "@_hidden": "false",
+                "@_id": "4213-a51d-bffe-87dc"
+              }
+            ]
+          },
+          "modifiers": {
+            "modifier": [
+              {
+                "conditions": {
+                  "condition": {
+                    "@_type": "notInstanceOf",
+                    "@_value": "1",
+                    "@_field": "selections",
+                    "@_scope": "force",
+                    "@_childId": "cac3-71d1-ea4b-795d",
+                    "@_shared": "true",
+                    "@_includeChildSelections": "false",
+                    "@_includeChildForces": "false"
+                  }
+                },
+                "@_type": "set",
+                "@_value": "0",
+                "@_field": "d59f-2804-3c43-6b7e"
+              },
+              {
+                "conditions": {
+                  "condition": {
+                    "@_type": "notInstanceOf",
+                    "@_value": "1",
+                    "@_field": "selections",
+                    "@_scope": "force",
+                    "@_childId": "cac3-71d1-ea4b-795d",
+                    "@_shared": "true",
+                    "@_includeChildSelections": "false",
+                    "@_includeChildForces": "false"
+                  }
+                },
+                "@_type": "set",
+                "@_value": "true",
+                "@_field": "hidden"
+              }
+            ]
+          },
+          "comment": "Crusade content",
+          "@_type": "upgrade",
+          "@_import": "true",
+          "@_name": "Order of Battle",
+          "@_hidden": "false",
+          "@_id": "eda7-8b4b-3719-af36"
+        },
+        {
+          "constraints": {
+            "constraint": {
+              "@_type": "max",
+              "@_value": "30",
+              "@_field": "selections",
+              "@_scope": "parent",
+              "@_shared": "true",
+              "@_id": "466f-ffd6-0947-139b",
+              "@_includeChildSelections": "false"
+            }
+          },
+          "modifiers": {
+            "modifier": {
+              "conditionGroups": {
+                "conditionGroup": {
+                  "conditions": {
+                    "condition": [
+                      {
+                        "@_type": "instanceOf",
+                        "@_value": "1",
+                        "@_field": "selections",
+                        "@_scope": "ancestor",
+                        "@_childId": "9cfd-1c32-585f-7d5c",
+                        "@_shared": "true",
+                        "@_includeChildSelections": "true"
+                      },
+                      {
+                        "@_type": "atLeast",
+                        "@_value": "1",
+                        "@_field": "selections",
+                        "@_scope": "parent",
+                        "@_childId": "1511-18fe-f51e-7b9d",
+                        "@_shared": "true",
+                        "@_includeChildSelections": "true"
+                      }
+                    ]
+                  },
+                  "@_type": "or"
+                }
+              },
+              "@_type": "set",
+              "@_value": "-1",
+              "@_field": "466f-ffd6-0947-139b"
+            }
+          },
+          "costs": {
+            "cost": [
+              {
+                "@_name": "pts",
+                "@_typeId": "51b2-306e-1021-d207",
+                "@_value": "0"
+              },
+              {
+                "@_name": "Crusade: Crusade Points",
+                "@_typeId": "b03b-c239-15a5-da55",
+                "@_value": "0"
+              },
+              {
+                "@_name": "Crusade: Battle Honours",
+                "@_typeId": "75bb-ded1-c86d-bdf0",
+                "@_value": "0"
+              },
+              {
+                "@_name": "Crusade: Experience",
+                "@_typeId": "a623-fe74-1d33-cddf",
+                "@_value": "1"
+              }
+            ]
+          },
+          "comment": "Crusade content",
+          "@_type": "upgrade",
+          "@_import": "true",
+          "@_name": "Experience Points",
+          "@_hidden": "false",
+          "@_id": "2dbf-4d49-5d74-85c9"
+        },
+        {
+          "constraints": {
+            "constraint": {
+              "@_type": "max",
+              "@_value": "1",
+              "@_field": "selections",
+              "@_scope": "parent",
+              "@_shared": "true",
+              "@_id": "1ae8-a0c8-eb1c-8318",
+              "@_includeChildSelections": "false"
+            }
+          },
+          "modifiers": {
+            "modifier": {
+              "conditions": {
+                "condition": {
+                  "@_type": "instanceOf",
+                  "@_value": "1",
+                  "@_field": "selections",
+                  "@_scope": "ancestor",
+                  "@_childId": "9cfd-1c32-585f-7d5c",
+                  "@_shared": "true",
+                  "@_includeChildSelections": "true"
+                }
+              },
+              "@_type": "set",
+              "@_value": "true",
+              "@_field": "hidden"
+            }
+          },
+          "comment": "Crusade content",
+          "@_type": "upgrade",
+          "@_import": "true",
+          "@_name": "Legendary Veterans",
+          "@_hidden": "false",
+          "@_id": "1511-18fe-f51e-7b9d"
+        },
+        {
+          "constraints": {
+            "constraint": {
+              "@_type": "max",
+              "@_value": "3",
+              "@_field": "selections",
+              "@_scope": "parent",
+              "@_shared": "true",
+              "@_id": "4a83-fc07-f67a-f3ab",
+              "@_includeChildSelections": "false"
+            }
+          },
+          "modifiers": {
+            "modifier": [
+              {
+                "conditionGroups": {
+                  "conditionGroup": {
+                    "conditions": {
+                      "condition": [
+                        {
+                          "@_type": "instanceOf",
+                          "@_value": "1",
+                          "@_field": "selections",
+                          "@_scope": "ancestor",
+                          "@_childId": "9cfd-1c32-585f-7d5c",
+                          "@_shared": "true"
+                        },
+                        {
+                          "@_type": "atLeast",
+                          "@_value": "1",
+                          "@_field": "selections",
+                          "@_scope": "parent",
+                          "@_childId": "1511-18fe-f51e-7b9d",
+                          "@_shared": "true"
+                        }
+                      ]
+                    },
+                    "@_type": "or"
+                  }
+                },
+                "@_type": "set",
+                "@_value": "6",
+                "@_field": "4a83-fc07-f67a-f3ab"
+              },
+              {
+                "conditions": {
+                  "condition": {
+                    "@_type": "instanceOf",
+                    "@_value": "1",
+                    "@_field": "selections",
+                    "@_scope": "ancestor",
+                    "@_childId": "5929-ad51-d006-e008",
+                    "@_shared": "true"
+                  }
+                },
+                "@_type": "set",
+                "@_value": "2",
+                "@_field": "b03b-c239-15a5-da55"
+              }
+            ]
+          },
+          "costs": {
+            "cost": [
+              {
+                "@_name": "pts",
+                "@_typeId": "51b2-306e-1021-d207",
+                "@_value": "0"
+              },
+              {
+                "@_name": "Crusade Points",
+                "@_typeId": "b03b-c239-15a5-da55",
+                "@_value": "1"
+              },
+              {
+                "@_name": "Crusade: Battle Honours",
+                "@_typeId": "75bb-ded1-c86d-bdf0",
+                "@_value": "1"
+              },
+              {
+                "@_name": "Crusade: Experience",
+                "@_typeId": "a623-fe74-1d33-cddf",
+                "@_value": "0"
+              },
+              {
+                "@_name": "Crusade: Weapon Modifications",
+                "@_typeId": "716d-91b7-d55a-1022",
+                "@_value": "0"
+              }
+            ]
+          },
+          "comment": "Crusade content",
+          "@_type": "upgrade",
+          "@_import": "true",
+          "@_name": "Weapon Modifications",
+          "@_hidden": "false",
+          "@_id": "d1a5-4297-168b-11cd"
+        }
+      ]
+    },
+    "sharedRules": {
+      "rule": [
+        {
+          "description": "Weapons with [PISTOL] in their profile are known as Pistols. If a unit contains any models equipped with Pistols, that unit is eligible to shoot in its controlling player’s Shooting phase even while it is within Engagement Range of one or more enemy units. When such a unit is selected to shoot, it can only resolve attacks using its Pistols and can only target one of the enemy units it is within Engagement Range of. In such circumstances, a Pistol can target an enemy unit even if other friendly units are within Engagement Range of the same enemy unit. \n\nIf a model is equipped with one or more Pistols, unless it is a MONSTER or VEHICLE model, it can either shoot with its Pistols or with all of its other ranged weapons. Declare whether such a model will shoot with its Pistols or its other ranged weapons before selecting targets.",
+          "@_id": "8bf7-8812-923d-29e4",
+          "@_name": "Pistol",
+          "@_publicationId": "48fc-15aa-b307-9443",
+          "@_page": "25",
+          "@_hidden": "false"
+        },
+        {
+          "description": "Weapons with [HAZARDOUS] in their profile are known as Hazardous weapons. Each time a unit is selected to shoot or fight, after that unit has resolved all of its attacks, for each Hazardous weapon that targets were selected for when resolving those attacks, that unit must take one Hazardous test. To do so, roll one D6: on a 1, that test is failed. For each failed test you must resolve the following sequence (resolve each failed test one at a time): \n\n■ If possible, select one model in that unit that has lost one or more wounds and is equipped with one or more Hazardous weapons. \n■ Otherwise, if possible, select one model in that unit (excluding CHARACTER models) equipped with one or more Hazardous weapons. \n■ Otherwise, select one CHARACTER model in that unit equipped with one or more Hazardous weapons. \n\nIf a model was selected, that unit suffers 3 mortal wounds and when allocating those mortal wounds, they must be allocated to the selected model. \n\nIf a unit from a player’s army is selected as the target of the Fire Overwatch Stratagem in their opponent’s Charge phase, any mortal wounds inflicted by Hazardous tests are allocated after the charging unit has ended its Charge move.",
+          "@_id": "8367-374c-f87-c627",
+          "@_name": "Hazardous",
+          "@_publicationId": "48fc-15aa-b307-9443",
+          "@_page": "28",
+          "@_hidden": "false"
+        },
+        {
+          "description": "While a Bodyguard unit contains a Leader, it is known as an Attached unit and, with the exception of rules that are triggered when units are destroyed (pg 12), it is treated as a single unit for all rules purposes. Each time an attack targets an Attached unit, until the attacking unit has resolved all of its attacks, you must use the Toughness characteristic of the Bodyguard models in that unit, even if a Leader in that unit has a different Toughness characteristic. Each time an attack successfully wounds an Attached unit, that attack cannot be allocated to a Character model in that unit, even if that Character model has lost one or more wounds or has already had attacks allocated to it this phase. As soon as the last Bodyguard model in an Attached unit has been destroyed, any attacks made against that unit that have yet to be allocated can then be allocated to Character models in that unit.\n\nEach time the last model in a Bodyguard unit is destroyed, each CHARACTER unit that is part of that Attached unit becomes a separate unit, with its original Starting Strength. If this happens as the result of an attack, they become separate units after the attacking unit has resolved all of its attacks. \n\nEach time the last model in a CHARACTER unit that is attached to a Bodyguard unit is destroyed and there is not another CHARACTER unit attached, that Attached unit’s Bodyguard unit becomes a separate unit, with its original Starting Strength. If this happens as the result of an attack, they become separate units after the attacking unit has resolved all of its attacks. \n\nEach time a unit that is part of an Attached unit is destroyed, it does not have the keywords of any other units that make up that Attached unit (unless it has those keywords on its own datasheet) for the purposes of any rules that would be triggered when that unit is destroyed.",
+          "@_id": "b4dd-3e1f-41cb-218f",
+          "@_name": "Leader",
+          "@_publicationId": "48fc-15aa-b307-9443",
+          "@_page": "39",
+          "@_hidden": "false"
+        },
+        {
+          "description": "Weapons with [DEVASTATING WOUNDS] in their profile are known as Devastating Wounds weapons. Each time an attack is made with such a weapon, if that attack scores a Critical Wound, no saving throw of any kind can be made against that attack (including invulnerable saving throws). Such attacks are only allocated to models after all other attacks made by the attacking unit have been allocated and resolved. After that attack is allocated and after any modifiers are applied, it inflicts a number of mortal wounds on the target equal to the Damage characteristic of that attack, instead of inflicting damage normally.",
+          "@_id": "be1e-ac8e-1e2c-3528",
+          "@_name": "Devastating Wounds",
+          "@_publicationId": "48fc-15aa-b307-9443",
+          "@_page": "28",
+          "@_hidden": "false"
+        },
+        {
+          "description": "Weapons with [ASSAULT] in their profile are known as Assault weapons. If a unit that Advanced this turn contains any models equipped with Assault weapons, it is still eligible to shoot in this turn’s Shooting phase. When such a unit is selected to shoot, you can only resolve attacks using Assault weapons its models are equipped with.",
+          "@_id": "fc8a-8c24-bae9-cc1c",
+          "@_name": "Assault",
+          "@_publicationId": "48fc-15aa-b307-9443",
+          "@_page": "25",
+          "@_hidden": "false"
+        },
+        {
+          "description": "Weapons with [EXTRA ATTACKS] in their profile are known as Extra Attacks weapons. Each time the bearer of one or more Extra Attacks weapons fights, it makes attacks with each of the Extra Attacks melee weapons it is equipped with and it makes attacks with one of the melee weapons it is equipped with that does not have the [EXTRA ATTACKS] ability (if any). The number of attacks made with an Extra Attacks weapon cannot be modified by other rules, unless that weapon’s name is explicitly specified in that rule.",
+          "@_id": "115b-79dc-f723-d761",
+          "@_name": "Extra Attacks",
+          "@_publicationId": "48fc-15aa-b307-9443",
+          "@_page": "28",
+          "@_hidden": "false"
+        },
+        {
+          "description": "Weapons with [TWIN-LINKED] in their profile are known as Twin-linked weapons. Each time an attack is made with such a weapon, you can re-roll that attack’s Wound roll.",
+          "@_id": "cf93-ad4d-2f08-a79d",
+          "@_name": "Twin-linked",
+          "@_publicationId": "48fc-15aa-b307-9443",
+          "@_page": "25",
+          "@_hidden": "false"
+        },
+        {
+          "description": "Weapons with [ANTI-KEYWORD X+] in their profile are known as Anti weapons. Each time an attack is made with such a weapon against a target with the keyword after the word ‘Anti-’, an unmodified Wound roll of ‘x+’ scores a Critical Wound.",
+          "@_id": "4111-82e3-9444-e942",
+          "@_name": "Anti-",
+          "@_publicationId": "48fc-15aa-b307-9443",
+          "@_page": "28",
+          "@_hidden": "false"
+        },
+        {
+          "description": "Weapons with [SUSTAINED HITS X] in their profile are known as Sustained Hits weapons. Each time an attack is made with such a weapon, if a Critical Hit is rolled, that attack scores a number of additional hits on the target as denoted by ‘x’",
+          "@_id": "1897-c22c-9597-12b1",
+          "@_name": "Sustained Hits",
+          "@_publicationId": "48fc-15aa-b307-9443",
+          "@_page": "28",
+          "@_hidden": "false"
+        },
+        {
+          "description": "Weapons with [HEAVY] in their profile are known as Heavy weapons. Each time an attack is made with such a weapon, if the attacking model’s unit Remained Stationary this turn, add 1 to that attack’s Hit roll.",
+          "@_id": "1202-10a8-78e9-4c67",
+          "@_name": "Heavy",
+          "@_publicationId": "48fc-15aa-b307-9443",
+          "@_page": "26",
+          "@_hidden": "false"
+        },
+        {
+          "description": "Weapons with [MELTA X] in their profile are known as Melta weapons. Each time an attack made with such a weapon targets a unit within half that weapon’s range, that attack’s Damage characteristic is increased by the amount denoted by ‘x’.",
+          "@_id": "7cdb-fb99-44a9-8849",
+          "@_name": "Melta",
+          "@_publicationId": "48fc-15aa-b307-9443",
+          "@_page": "26",
+          "@_hidden": "false"
+        },
+        {
+          "description": "Some models have 'Feel No Pain x+' listed in their abilities. Each time a model with this ability suffers damage and so would lose a wound (including wounds lost due to mortal wounds), roll one D6: if the result is greater than or equal to the number denoted by 'x: that wound is ignored and is not lost. If a model has more than one Feel No Pain ability, you can only use one of those abilities each time that model suffers damage and so would lose a wound.",
+          "@_id": "9bf4-280f-bbe2-6fbb",
+          "@_name": "Feel No Pain",
+          "@_publicationId": "48fc-15aa-b307-9443",
+          "@_page": "23",
+          "@_hidden": "false"
+        },
+        {
+          "description": "Weapons with [BLAST] in their profile are known as Blast weapons, and they make a random number of attacks. Each time you determine how many attacks are made with a Blast weapon, add 1 to the result for every five models that were in the target unit when you selected it as the target (rounding down). Blast weapons can never be used to make attacks against a unit that is within Engagement Range of one or more units from the attacking model’s army (including its own unit).",
+          "@_id": "6c1f-1cf7-ff25-c99e",
+          "@_name": "Blast",
+          "@_publicationId": "48fc-15aa-b307-9443",
+          "@_page": "26",
+          "@_hidden": "false"
+        },
+        {
+          "description": "Weapons with [PRECISION] in their profile are known as Precision weapons. Each time an attack made with such a weapon successfully wounds an Attached unit, if a Character model in that unit is visible to the attacking model, the attacking model’s player can choose to have that attack allocated to that Character model instead of following the normal attack sequence.",
+          "@_id": "9143-31ae-e0a6-6007",
+          "@_name": "Precision",
+          "@_publicationId": "48fc-15aa-b307-9443",
+          "@_page": "26",
+          "@_hidden": "false"
+        },
+        {
+          "description": "Weapons with [INDIRECT FIRE] in their profile are known as Indirect Fire weapons, and attacks can be made with them even if the target is not visible to the attacking model. These attacks can destroy enemy models in a target unit even though none may have been visible to the attacking unit when you selected that target.\n\n\nIf no models in a target unit are visible to the attacking unit when you select that target, then each time a model in the attacking unit makes an attack against that target using an Indirect Fire weapon, subtract 1 from that attack’s Hit roll, an unmodified Hit roll of 1-3 always fails, and the target has the Benefit of Cover against that attack. Weapons with the [TORRENT] ability cannot be fired using the [INDIRECT FIRE] ability.",
+          "@_id": "4ddd-4e29-acdd-5e6d",
+          "@_name": "Indirect Fire",
+          "@_publicationId": "48fc-15aa-b307-9443",
+          "@_page": "26",
+          "@_hidden": "false"
+        },
+        {
+          "description": "Weapons with [LANCE] in their profile are known as Lance weapons. Each time an attack is made with such a weapon, if the bearer made a Charge move this turn, add 1 to that attack’s Wound roll.",
+          "@_id": "2ebc-abdf-8129-6c57",
+          "@_name": "Lance",
+          "@_publicationId": "48fc-15aa-b307-9443",
+          "@_page": "25",
+          "@_hidden": "false"
+        },
+        {
+          "description": "Weapons with [LETHAL HITS] in their profile are known as Lethal Hits weapons. Each time an attack is made with such a weapon, a Critical Hit automatically wounds the target.",
+          "@_id": "d1d1-611e-5191-1095",
+          "@_name": "Lethal Hits",
+          "@_publicationId": "48fc-15aa-b307-9443",
+          "@_page": "25",
+          "@_hidden": "false"
+        },
+        {
+          "description": "Weapons with [IGNORES COVER] in their profile are known as Ignores Cover weapons. Each time an attack is made with such a weapon, the target cannot have the Benefit of Cover against that attack.",
+          "@_id": "4640-43e7-30b-215a",
+          "@_name": "Ignores Cover",
+          "@_publicationId": "48fc-15aa-b307-9443",
+          "@_page": "25",
+          "@_hidden": "false"
+        },
+        {
+          "description": "Weapons with [RAPID FIRE X] in their profile are known as Rapid Fire weapons. Each time such a weapon targets a unit within half that weapon’s range, the Attacks characteristic of that weapon is increased by the amount denoted by ‘x’.",
+          "@_id": "c5c8-8b58-b8b6-7786",
+          "@_name": "Rapid Fire",
+          "@_publicationId": "48fc-15aa-b307-9443",
+          "@_page": "25",
+          "@_hidden": "false"
+        },
+        {
+          "description": "Weapons with [TORRENT] in their profile are known as Torrent weapons. Each time an attack is made with such a weapon, that attack automatically hits the target.",
+          "@_id": "5edf-d619-23e0-9b56",
+          "@_name": "Torrent",
+          "@_publicationId": "48fc-15aa-b307-9443",
+          "@_page": "25",
+          "@_hidden": "false"
+        },
+        {
+          "description": "Some units have ‘Scouts x\"’ listed in their abilities. If every model in a unit has this ability, then at the start of the first battle round, before the first turn begins, it can make a Normal move of up to x\", with the exception that, while making that move, the distance moved by each model in that unit can be greater than that model's Move characteristic, as long as it is not greater than x\". \n\nDEDICATED TRANSPORT models can make use of any Scouts x\" ability listed in their abilities, or a Scouts x\" ability that a unit that starts the battle embarked within that DEDICATED TRANSPORT  model has (provided only models with this ability are embarked within that Dedicated Transport model), regardless of how that embarked unit gained this ability (e.g. listed in their abilities, conferred by an Enhancement or by an attached Character, etc.). \n\nA unit that moves using this ability must end that move more than 9\" horizontally away from all enemy models. If both players have units that can do this, the player who is taking the first turn moves their units first.",
+          "@_id": "ada6-bac1-ffe0-d6f7",
+          "@_name": "Scouts",
+          "@_publicationId": "48fc-15aa-b307-9443",
+          "@_page": "39",
+          "@_hidden": "false"
+        },
+        {
+          "description": "During deployment, if every model in a unit has this ability, then when you set it up, it can be set up anywhere on the battlefield that is more than 9\" horizontally away from the enemy deployment zone and all enemy models.",
+          "@_id": "c05d-f4c3-f091-4938",
+          "@_name": "Infiltrators",
+          "@_publicationId": "48fc-15aa-b307-9443",
+          "@_page": "39",
+          "@_hidden": "false"
+        },
+        {
+          "description": "During the Declare Battle Formations step, if every model in a unit has this ability, you can set it up in Reserves instead of setting it up on the battlefield. If you do, in the Reinforcements step of one of your Movement phases you can set up this unit anywhere on the battlefield that is more than 9\" horizontally away from all enemy models.\n\nIf a unit with the Deep Strike ability arrives from Strategic Reserves, the controlling player can choose for that unit to be set up either using the rules for Strategic Reserves or using the Deep Strike ability.",
+          "@_id": "7cb5-dd6b-dd87-ad3b",
+          "@_name": "Deep Strike",
+          "@_publicationId": "48fc-15aa-b307-9443",
+          "@_page": "39",
+          "@_hidden": "false"
+        },
+        {
+          "description": "Some models have 'Deadly Demise x' listed in their abilities. When such a model is destroyed, roll one D6 before removing it from play (if such a model is a TRANSPORT, roll before any embarked models disembark). On a 6, each unit within 6\" of that model suffers a number of mortal wounds denoted by 'x' (if this is a random number, roll separately for each unit within 6\").",
+          "@_id": "b68a-5ded-65ac-98c",
+          "@_name": "Deadly Demise",
+          "@_publicationId": "48fc-15aa-b307-9443",
+          "@_page": "23",
+          "@_hidden": "false"
+        },
+        {
+          "description": "If every model in a unit has this ability, then each time a ranged attack is made against it, subtract 1 from that attack’s Hit roll.",
+          "@_id": "bec5-4288-34a6-ccfa",
+          "@_name": "Stealth",
+          "@_publicationId": "48fc-15aa-b307-9443",
+          "@_page": "20",
+          "@_hidden": "false"
+        },
+        {
+          "description": "Each time a model with this ability makes a Normal, Advance or Fall Back move, it can move through models (excluding TITANIC models) and sections of terrain features that are 4\" or less in height. \nWhen doing so:\n- It can move within Engagement Range of enemy models, but cannot end that move within Engagement Range of them.\n- It can also move through sections of terrain features that are more than 4\" in height, but if it does, after it has moved, roll one D6: on a 1, that model is Battle-shocked.",
+          "@_id": "5e13-1624-d280-418d",
+          "@_name": "Super-Heavy Walker",
+          "@_hidden": "false"
+        },
+        {
+          "description": "Unless part of an Attached unit, this unit can only be selected as the target of a ranged attack if the attacking model is within 12\".",
+          "@_id": "a8a0-8fe7-898-e0f3",
+          "@_name": "Lone Operative",
+          "@_publicationId": "48fc-15aa-b307-9443",
+          "@_page": "19",
+          "@_hidden": "false"
+        },
+        {
+          "description": "Some AIRCRAFT models have 'Hover' listed in their abilities. When you are instructed to Declare Battle Formations, before doing anything else, you must first declare which models from your army with this ability will be in Hover mode.\n\nIf a model is in Hover mode,  then until the end of the battle, its Move characteristic is changed to 20\", it loses the AIRCRAFT keyword and it loses all associated rules for being an AlRCRAFT model. Models in Hover mode do not start the battle in Reserves, but you can choose to place them into Strategic Reserves following the normal rules if you wish.",
+          "@_id": "eec5-5f54-9c03-c305",
+          "@_name": "Hover",
+          "@_publicationId": "48fc-15aa-b307-9443",
+          "@_page": "53",
+          "@_hidden": "false"
+        },
+        {
+          "description": "Units with this ability that are eligible to fight do so in the Fights First step, provided every model in the unit has this ability.",
+          "@_id": "24-c886-e8ba-5a89",
+          "@_name": "Fights First",
+          "@_publicationId": "48fc-15aa-b307-9443",
+          "@_page": "32",
+          "@_hidden": "false"
+        },
+        {
+          "description": "Some weapons and abilities can only be used by PSYKERS. Such weapons and abilities are tagged with the word 'Psychic'. If a Psychic weapon or ability causes any unit to suffer one or more wounds, each of those wounds is considered to have been inflicted by a Psychic Attack.",
+          "@_id": "e9c4-2bb8-12ee-cd1b",
+          "@_name": "Psychic",
+          "@_publicationId": "48fc-15aa-b307-9443",
+          "@_page": "38",
+          "@_hidden": "false"
+        },
+        {
+          "description": "Some TRANSPORT models have ‘Firing Deck x’ listed in their abilities. Each time such a model is selected to shoot in the Shooting phase, you can select up to ‘x’ models embarked within it whose units have not already shot this phase. Then, for each of those embarked models, you can select one ranged weapon that embarked model is equipped with (excluding weapons with the [ONE SHOT] ability). Until that TRANSPORT model has resolved all of its attacks, it counts as being equipped with all of the weapons you selected in this way, in addition to its other weapons. Until the end of the phase, those selected models’ units are not eligible to shoot.",
+          "@_id": "13b2-6518-dab3-7ea1",
+          "@_name": "Firing Deck",
+          "@_page": "17",
+          "@_hidden": "false"
+        },
+        {
+          "description": "The bearer can only shoot with this weapon once per battle.",
+          "@_id": "cd26-1611-860a-91e4",
+          "@_name": "One Shot",
+          "@_hidden": "false"
+        }
+      ]
+    },
+    "sharedProfiles": {
+      "profile": [
+        {
+          "characteristics": {
+            "characteristic": {
+              "#text": "While an enemy unit is only within Engagement Range of one or more FORTIFICATIONS from your army:\n- That unit can still be selected as the target of ranged attacks, but each time such an attack is made, unless it is made with a Pistol, subtract 1 from the Hit roll.\n- Models in that unit do not need to take Desperate Escape tests due to Falling Back while Battle-shocked, except for those that will move over enemy models when doing so.",
+              "@_name": "Description",
+              "@_typeId": "9b8f-694b-e5e-b573"
+            }
+          },
+          "@_id": "fa4e-5ac8-11a6-78d2",
+          "@_name": "Fortification",
+          "@_hidden": "false",
+          "@_typeId": "9cc3-6d83-4dd3-9b64",
+          "@_typeName": "Abilities"
+        },
+        {
+          "characteristics": {
+            "characteristic": {
+              "#text": "Each time your opponent targets a unit from their army with a Stratagem, if that unit is within 12\" of this model, increase the cost of that use of that Stratagem by 1CP.",
+              "@_name": "Description",
+              "@_typeId": "9b8f-694b-e5e-b573"
+            }
+          },
+          "@_name": "Lord of Deceit (Aura)",
+          "@_typeId": "9cc3-6d83-4dd3-9b64",
+          "@_typeName": "Abilities",
+          "@_hidden": "false",
+          "@_id": "8332-466b-a51f-63ab"
+        }
+      ]
+    },
+    "sharedSelectionEntryGroups": {
+      "selectionEntryGroup": [
+        {
+          "selectionEntries": {
+            "selectionEntry": [
+              {
+                "constraints": {
+                  "constraint": {
+                    "@_type": "max",
+                    "@_value": "1",
+                    "@_field": "selections",
+                    "@_scope": "parent",
+                    "@_shared": "true",
+                    "@_id": "75f5-1a3b-0da5-91b0",
+                    "@_includeChildSelections": "false"
+                  }
+                },
+                "costs": {
+                  "cost": [
+                    {
+                      "@_name": "pts",
+                      "@_typeId": "51b2-306e-1021-d207",
+                      "@_value": "0"
+                    },
+                    {
+                      "@_name": "Crusade Points",
+                      "@_typeId": "b03b-c239-15a5-da55",
+                      "@_value": "0"
+                    },
+                    {
+                      "@_name": "Crusade: Experience",
+                      "@_typeId": "a623-fe74-1d33-cddf",
+                      "@_value": "0"
+                    },
+                    {
+                      "@_name": "Crusade: Weapon Modifications",
+                      "@_typeId": "716d-91b7-d55a-1022",
+                      "@_value": "1"
+                    }
+                  ]
+                },
+                "modifierGroups": {
+                  "modifierGroup": {
+                    "comment": "Brutal",
+                    "modifiers": {
+                      "modifier": [
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "greaterThan",
+                              "@_value": "0",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "d92a-5d2e-0b38-ea01",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "append",
+                          "@_value": "Brutal",
+                          "@_field": "annotation",
+                          "@_join": ",",
+                          "@_scope": "upgrade",
+                          "@_affects": "self.entries.profiles.Ranged Weapons"
+                        },
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "atLeast",
+                              "@_value": "1",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "d92a-5d2e-0b38-ea01",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "increment",
+                          "@_value": "1",
+                          "@_field": "2229-f494-25db-c5d3",
+                          "@_scope": "upgrade",
+                          "@_affects": "self.entries.profiles.Ranged Weapons"
+                        },
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "atLeast",
+                              "@_value": "1",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "d92a-5d2e-0b38-ea01",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "increment",
+                          "@_value": "1",
+                          "@_field": "ab33-d393-96ce-ccba",
+                          "@_scope": "upgrade",
+                          "@_affects": "self.entries.profiles.Melee Weapons"
+                        },
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "greaterThan",
+                              "@_value": "0",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "d92a-5d2e-0b38-ea01",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "append",
+                          "@_value": "Brutal",
+                          "@_field": "annotation",
+                          "@_join": ",",
+                          "@_scope": "upgrade",
+                          "@_affects": "self.entries.profiles.Melee Weapons"
+                        }
+                      ]
+                    },
+                    "@_type": "and"
+                  }
+                },
+                "@_type": "upgrade",
+                "@_import": "true",
+                "@_name": "Brutal (S+1)",
+                "@_hidden": "false",
+                "@_id": "d92a-5d2e-0b38-ea01"
+              },
+              {
+                "constraints": {
+                  "constraint": {
+                    "@_type": "max",
+                    "@_value": "1",
+                    "@_field": "selections",
+                    "@_scope": "parent",
+                    "@_shared": "true",
+                    "@_id": "3018-0ec7-e3e5-de6a",
+                    "@_includeChildSelections": "false"
+                  }
+                },
+                "costs": {
+                  "cost": [
+                    {
+                      "@_name": "pts",
+                      "@_typeId": "51b2-306e-1021-d207",
+                      "@_value": "0"
+                    },
+                    {
+                      "@_name": "Crusade Points",
+                      "@_typeId": "b03b-c239-15a5-da55",
+                      "@_value": "0"
+                    },
+                    {
+                      "@_name": "Crusade: Experience",
+                      "@_typeId": "a623-fe74-1d33-cddf",
+                      "@_value": "0"
+                    },
+                    {
+                      "@_name": "Crusade: Weapon Modifications",
+                      "@_typeId": "716d-91b7-d55a-1022",
+                      "@_value": "1"
+                    }
+                  ]
+                },
+                "modifierGroups": {
+                  "modifierGroup": {
+                    "comment": "Armour Piercing",
+                    "modifiers": {
+                      "modifier": [
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "greaterThan",
+                              "@_value": "0",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "d181-a615-5566-8e5a",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "append",
+                          "@_value": "Armour Piercing",
+                          "@_field": "annotation",
+                          "@_join": ",",
+                          "@_scope": "upgrade",
+                          "@_affects": "self.entries.profiles.Ranged Weapons"
+                        },
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "atLeast",
+                              "@_value": "1",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "d181-a615-5566-8e5a",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "decrement",
+                          "@_value": "1",
+                          "@_field": "9ead-8a10-520-de15",
+                          "@_scope": "upgrade",
+                          "@_affects": "self.entries.profiles.Ranged Weapons"
+                        },
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "greaterThan",
+                              "@_value": "0",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "d181-a615-5566-8e5a",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "append",
+                          "@_value": "Armour Piercing",
+                          "@_field": "annotation",
+                          "@_join": ",",
+                          "@_scope": "upgrade",
+                          "@_affects": "self.entries.profiles.Melee Weapons"
+                        },
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "atLeast",
+                              "@_value": "1",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "d181-a615-5566-8e5a",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "decrement",
+                          "@_value": "1",
+                          "@_field": "41a0-1301-112a-e2f2",
+                          "@_scope": "upgrade",
+                          "@_affects": "self.entries.profiles.Melee Weapons"
+                        }
+                      ]
+                    },
+                    "@_type": "and"
+                  }
+                },
+                "@_type": "upgrade",
+                "@_import": "true",
+                "@_name": "Armour Piercing (AP+1)",
+                "@_hidden": "false",
+                "@_id": "d181-a615-5566-8e5a"
+              },
+              {
+                "constraints": {
+                  "constraint": {
+                    "@_type": "max",
+                    "@_value": "1",
+                    "@_field": "selections",
+                    "@_scope": "parent",
+                    "@_shared": "true",
+                    "@_id": "6002-d56b-06a2-194a",
+                    "@_includeChildSelections": "false"
+                  }
+                },
+                "profiles": {
+                  "profile": {
+                    "characteristics": {
+                      "characteristic": {
+                        "#text": "Each time a Critical Wound is scored for an attack made with this weapon, that attack has the [PRECISION] ability.",
+                        "@_name": "Description",
+                        "@_typeId": "9b8f-694b-e5e-b573"
+                      }
+                    },
+                    "@_name": "Precise",
+                    "@_typeId": "9cc3-6d83-4dd3-9b64",
+                    "@_typeName": "Abilities",
+                    "@_hidden": "false",
+                    "@_id": "a3d2-6ce8-adf3-448a"
+                  }
+                },
+                "infoLinks": {
+                  "infoLink": {
+                    "@_name": "Precision",
+                    "@_id": "119c-b206-e441-6abe",
+                    "@_hidden": "false",
+                    "@_type": "rule",
+                    "@_targetId": "9143-31ae-e0a6-6007"
+                  }
+                },
+                "costs": {
+                  "cost": [
+                    {
+                      "@_name": "pts",
+                      "@_typeId": "51b2-306e-1021-d207",
+                      "@_value": "0"
+                    },
+                    {
+                      "@_name": "Crusade Points",
+                      "@_typeId": "b03b-c239-15a5-da55",
+                      "@_value": "0"
+                    },
+                    {
+                      "@_name": "Crusade: Experience",
+                      "@_typeId": "a623-fe74-1d33-cddf",
+                      "@_value": "0"
+                    },
+                    {
+                      "@_name": "Crusade: Weapon Modifications",
+                      "@_typeId": "716d-91b7-d55a-1022",
+                      "@_value": "1"
+                    }
+                  ]
+                },
+                "@_type": "upgrade",
+                "@_import": "true",
+                "@_name": "Precise",
+                "@_hidden": "false",
+                "@_id": "658a-396c-f9a0-d15f"
+              },
+              {
+                "constraints": {
+                  "constraint": {
+                    "@_type": "max",
+                    "@_value": "1",
+                    "@_field": "selections",
+                    "@_scope": "parent",
+                    "@_shared": "true",
+                    "@_id": "f492-ff46-c01c-fa7f",
+                    "@_includeChildSelections": "false"
+                  }
+                },
+                "costs": {
+                  "cost": [
+                    {
+                      "@_name": "pts",
+                      "@_typeId": "51b2-306e-1021-d207",
+                      "@_value": "0"
+                    },
+                    {
+                      "@_name": "Crusade Points",
+                      "@_typeId": "b03b-c239-15a5-da55",
+                      "@_value": "0"
+                    },
+                    {
+                      "@_name": "Crusade: Experience",
+                      "@_typeId": "a623-fe74-1d33-cddf",
+                      "@_value": "0"
+                    },
+                    {
+                      "@_name": "Crusade: Weapon Modifications",
+                      "@_typeId": "716d-91b7-d55a-1022",
+                      "@_value": "1"
+                    }
+                  ]
+                },
+                "modifierGroups": {
+                  "modifierGroup": {
+                    "comment": "Master-worked",
+                    "modifiers": {
+                      "modifier": [
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "greaterThan",
+                              "@_value": "0",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "4b25-c6e7-3350-9c1c",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "append",
+                          "@_value": "Master-worked",
+                          "@_field": "annotation",
+                          "@_join": ",",
+                          "@_scope": "upgrade",
+                          "@_affects": "profiles.Ranged Weapons"
+                        },
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "atLeast",
+                              "@_value": "1",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "4b25-c6e7-3350-9c1c",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "increment",
+                          "@_value": "1",
+                          "@_field": "a354-c1c8-a745-f9e3",
+                          "@_scope": "upgrade",
+                          "@_affects": "profiles.Ranged Weapons"
+                        },
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "greaterThan",
+                              "@_value": "0",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "4b25-c6e7-3350-9c1c",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "append",
+                          "@_value": "Master-worked",
+                          "@_field": "annotation",
+                          "@_join": ",",
+                          "@_scope": "upgrade",
+                          "@_affects": "profiles.Melee Weapons"
+                        },
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "atLeast",
+                              "@_value": "1",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "4b25-c6e7-3350-9c1c",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "increment",
+                          "@_value": "1",
+                          "@_field": "3254-9fe6-d824-513e",
+                          "@_scope": "upgrade",
+                          "@_affects": "profiles.Melee Weapons"
+                        }
+                      ]
+                    },
+                    "@_type": "and"
+                  }
+                },
+                "@_type": "upgrade",
+                "@_import": "true",
+                "@_name": "Master-worked (D+1)",
+                "@_hidden": "false",
+                "@_id": "4b25-c6e7-3350-9c1c"
+              },
+              {
+                "constraints": {
+                  "constraint": {
+                    "@_type": "max",
+                    "@_value": "1",
+                    "@_field": "selections",
+                    "@_scope": "parent",
+                    "@_shared": "true",
+                    "@_id": "9712-b244-1f9c-e8c2",
+                    "@_includeChildSelections": "false"
+                  }
+                },
+                "costs": {
+                  "cost": [
+                    {
+                      "@_name": "pts",
+                      "@_typeId": "51b2-306e-1021-d207",
+                      "@_value": "0"
+                    },
+                    {
+                      "@_name": "Crusade Points",
+                      "@_typeId": "b03b-c239-15a5-da55",
+                      "@_value": "0"
+                    },
+                    {
+                      "@_name": "Crusade: Experience",
+                      "@_typeId": "a623-fe74-1d33-cddf",
+                      "@_value": "0"
+                    },
+                    {
+                      "@_name": "Crusade: Weapon Modifications",
+                      "@_typeId": "716d-91b7-d55a-1022",
+                      "@_value": "1"
+                    }
+                  ]
+                },
+                "modifierGroups": {
+                  "modifierGroup": {
+                    "comment": "Heirloom",
+                    "modifiers": {
+                      "modifier": [
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "greaterThan",
+                              "@_value": "0",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "09c4-6313-8cd5-d77a",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "append",
+                          "@_value": "Heirloom",
+                          "@_field": "annotation",
+                          "@_join": ",",
+                          "@_scope": "upgrade",
+                          "@_affects": "profiles.Ranged Weapons"
+                        },
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "atLeast",
+                              "@_value": "1",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "09c4-6313-8cd5-d77a",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "increment",
+                          "@_value": "1",
+                          "@_field": "3bb-c35f-f54-fb08",
+                          "@_scope": "upgrade",
+                          "@_affects": "profiles.Ranged Weapons"
+                        },
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "atLeast",
+                              "@_value": "1",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "09c4-6313-8cd5-d77a",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "increment",
+                          "@_value": "1",
+                          "@_field": "2337-daa1-6682-b110",
+                          "@_scope": "upgrade",
+                          "@_affects": "profiles.Melee Weapons"
+                        },
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "greaterThan",
+                              "@_value": "0",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "09c4-6313-8cd5-d77a",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "append",
+                          "@_value": "Heirloom",
+                          "@_field": "annotation",
+                          "@_join": ",",
+                          "@_scope": "upgrade",
+                          "@_affects": "profiles.Melee Weapons"
+                        }
+                      ]
+                    },
+                    "@_type": "and"
+                  }
+                },
+                "@_type": "upgrade",
+                "@_import": "true",
+                "@_name": "Heirloom (A+1)",
+                "@_hidden": "false",
+                "@_id": "09c4-6313-8cd5-d77a"
+              },
+              {
+                "constraints": {
+                  "constraint": {
+                    "@_type": "max",
+                    "@_value": "1",
+                    "@_field": "selections",
+                    "@_scope": "parent",
+                    "@_shared": "true",
+                    "@_id": "26be-21c9-e43a-04c0",
+                    "@_includeChildSelections": "false"
+                  }
+                },
+                "costs": {
+                  "cost": [
+                    {
+                      "@_name": "pts",
+                      "@_typeId": "51b2-306e-1021-d207",
+                      "@_value": "0"
+                    },
+                    {
+                      "@_name": "Crusade Points",
+                      "@_typeId": "b03b-c239-15a5-da55",
+                      "@_value": "0"
+                    },
+                    {
+                      "@_name": "Crusade: Experience",
+                      "@_typeId": "a623-fe74-1d33-cddf",
+                      "@_value": "0"
+                    },
+                    {
+                      "@_name": "Crusade: Weapon Modifications",
+                      "@_typeId": "716d-91b7-d55a-1022",
+                      "@_value": "1"
+                    }
+                  ]
+                },
+                "modifierGroups": {
+                  "modifierGroup": {
+                    "comment": "Finely Balanced",
+                    "modifiers": {
+                      "modifier": [
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "greaterThan",
+                              "@_value": "0",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "13b7-d8d5-72c2-1f72",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "append",
+                          "@_value": "Finely Balanced",
+                          "@_field": "annotation",
+                          "@_join": ",",
+                          "@_scope": "upgrade",
+                          "@_affects": "self.entries.profiles.Ranged Weapons"
+                        },
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "atLeast",
+                              "@_value": "1",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "13b7-d8d5-72c2-1f72",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "decrement",
+                          "@_value": "1",
+                          "@_field": "94d-8a98-cf90-183e",
+                          "@_scope": "upgrade",
+                          "@_affects": "self.entries.profiles.Ranged Weapons"
+                        },
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "atLeast",
+                              "@_value": "1",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "13b7-d8d5-72c2-1f72",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "decrement",
+                          "@_value": "1",
+                          "@_field": "95d1-95f-45b4-11d6",
+                          "@_scope": "upgrade",
+                          "@_affects": "self.entries.profiles.Melee Weapons"
+                        },
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "greaterThan",
+                              "@_value": "0",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "13b7-d8d5-72c2-1f72",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "append",
+                          "@_value": "Finely Balanced",
+                          "@_field": "annotation",
+                          "@_join": ",",
+                          "@_scope": "upgrade",
+                          "@_affects": "self.entries.profiles.Melee Weapons"
+                        }
+                      ]
+                    },
+                    "@_type": "and"
+                  }
+                },
+                "@_type": "upgrade",
+                "@_import": "true",
+                "@_name": "Finely Balanced (BS/WS+1)",
+                "@_hidden": "false",
+                "@_id": "13b7-d8d5-72c2-1f72"
+              }
+            ]
+          },
+          "modifiers": {
+            "modifier": [
+              {
+                "conditionGroups": {
+                  "conditionGroup": {
+                    "conditions": {
+                      "condition": {
+                        "@_type": "lessThan",
+                        "@_value": "1",
+                        "@_field": "selections",
+                        "@_scope": "roster",
+                        "@_childId": "cac3-71d1-ea4b-795d",
+                        "@_shared": "true",
+                        "@_includeChildSelections": "true",
+                        "@_includeChildForces": "true"
+                      }
+                    },
+                    "conditionGroups": {
+                      "conditionGroup": [
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "lessThan",
+                              "@_value": "1",
+                              "@_field": "selections",
+                              "@_scope": "self",
+                              "@_childId": "any",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "conditionGroups": {
+                            "conditionGroup": {
+                              "conditionGroups": {
+                                "conditionGroup": [
+                                  {
+                                    "conditions": {
+                                      "condition": [
+                                        {
+                                          "@_type": "equalTo",
+                                          "@_value": "6",
+                                          "@_field": "75bb-ded1-c86d-bdf0",
+                                          "@_scope": "model-or-unit",
+                                          "@_childId": "any",
+                                          "@_shared": "true",
+                                          "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                          "@_type": "atLeast",
+                                          "@_value": "1",
+                                          "@_field": "selections",
+                                          "@_scope": "model-or-unit",
+                                          "@_childId": "1511-18fe-f51e-7b9d",
+                                          "@_shared": "true",
+                                          "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                          "@_type": "notInstanceOf",
+                                          "@_value": "1",
+                                          "@_field": "selections",
+                                          "@_scope": "ancestor",
+                                          "@_childId": "9cfd-1c32-585f-7d5c",
+                                          "@_shared": "true",
+                                          "@_includeChildSelections": "true"
+                                        }
+                                      ]
+                                    },
+                                    "@_type": "and"
+                                  },
+                                  {
+                                    "conditions": {
+                                      "condition": [
+                                        {
+                                          "@_type": "equalTo",
+                                          "@_value": "3",
+                                          "@_field": "75bb-ded1-c86d-bdf0",
+                                          "@_scope": "model-or-unit",
+                                          "@_childId": "any",
+                                          "@_shared": "true",
+                                          "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                          "@_type": "lessThan",
+                                          "@_value": "1",
+                                          "@_field": "selections",
+                                          "@_scope": "model-or-unit",
+                                          "@_childId": "1511-18fe-f51e-7b9d",
+                                          "@_shared": "true",
+                                          "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                          "@_type": "notInstanceOf",
+                                          "@_value": "1",
+                                          "@_field": "selections",
+                                          "@_scope": "ancestor",
+                                          "@_childId": "9cfd-1c32-585f-7d5c",
+                                          "@_shared": "true",
+                                          "@_includeChildSelections": "true"
+                                        }
+                                      ]
+                                    },
+                                    "@_type": "and"
+                                  },
+                                  {
+                                    "conditions": {
+                                      "condition": [
+                                        {
+                                          "@_type": "instanceOf",
+                                          "@_value": "1",
+                                          "@_field": "selections",
+                                          "@_scope": "ancestor",
+                                          "@_childId": "9cfd-1c32-585f-7d5c",
+                                          "@_shared": "true",
+                                          "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                          "@_type": "equalTo",
+                                          "@_value": "6",
+                                          "@_field": "75bb-ded1-c86d-bdf0",
+                                          "@_scope": "model-or-unit",
+                                          "@_childId": "any",
+                                          "@_shared": "true",
+                                          "@_includeChildSelections": "true"
+                                        }
+                                      ]
+                                    },
+                                    "@_type": "and"
+                                  }
+                                ]
+                              },
+                              "@_type": "or"
+                            }
+                          },
+                          "@_type": "and"
+                        },
+                        {
+                          "conditions": {
+                            "condition": [
+                              {
+                                "@_type": "lessThan",
+                                "@_value": "1",
+                                "@_field": "selections",
+                                "@_scope": "model",
+                                "@_childId": "d1a5-4297-168b-11cd",
+                                "@_shared": "true",
+                                "@_includeChildSelections": "true",
+                                "@_includeChildForces": "false"
+                              },
+                              {
+                                "@_type": "lessThan",
+                                "@_value": "1",
+                                "@_field": "selections",
+                                "@_scope": "unit",
+                                "@_childId": "d1a5-4297-168b-11cd",
+                                "@_shared": "true",
+                                "@_includeChildSelections": "true",
+                                "@_includeChildForces": "false"
+                              }
+                            ]
+                          },
+                          "@_type": "and"
+                        }
+                      ]
+                    },
+                    "@_type": "or"
+                  }
+                },
+                "@_type": "set",
+                "@_value": "true",
+                "@_field": "hidden"
+              },
+              {
+                "conditions": {
+                  "condition": {
+                    "@_type": "equalTo",
+                    "@_value": "1",
+                    "@_field": "selections",
+                    "@_scope": "self",
+                    "@_childId": "any",
+                    "@_shared": "true"
+                  }
+                },
+                "@_type": "set",
+                "@_value": "2",
+                "@_field": "2a14-db5e-c5ad-5ae9"
+              }
+            ]
+          },
+          "constraints": {
+            "constraint": [
+              {
+                "@_type": "max",
+                "@_value": "2",
+                "@_field": "selections",
+                "@_scope": "self",
+                "@_shared": "true",
+                "@_id": "b96f-03f7-d8a1-92ce",
+                "@_includeChildSelections": "false"
+              },
+              {
+                "@_type": "min",
+                "@_value": "0",
+                "@_field": "selections",
+                "@_scope": "self",
+                "@_shared": "true",
+                "@_id": "2a14-db5e-c5ad-5ae9"
+              }
+            ]
+          },
+          "comment": "Crusade content",
+          "@_name": "Weapon Modifications",
+          "@_id": "f9da-852a-d7f0-92e9",
+          "@_hidden": "false"
+        },
+        {
+          "constraints": {
+            "constraint": {
+              "@_type": "max",
+              "@_value": "3",
+              "@_field": "selections",
+              "@_scope": "self",
+              "@_shared": "true",
+              "@_id": "9825-f20a-66cc-7147",
+              "@_includeChildSelections": "true"
+            }
+          },
+          "comment": "Crusade content",
+          "selectionEntryGroups": {
+            "selectionEntryGroup": {
+              "selectionEntries": {
+                "selectionEntry": [
+                  {
+                    "constraints": {
+                      "constraint": {
+                        "@_type": "max",
+                        "@_value": "1",
+                        "@_field": "selections",
+                        "@_scope": "parent",
+                        "@_shared": "true",
+                        "@_id": "ed4f-7458-34ff-ae92",
+                        "@_includeChildSelections": "false"
+                      }
+                    },
+                    "profiles": {
+                      "profile": {
+                        "characteristics": {
+                          "characteristic": {
+                            "#text": "Each time this unit takes a Battle-shock, Leadership, Desperate Escape or Out of Action test, subtract 1 from that test.",
+                            "@_name": "Description",
+                            "@_typeId": "9b8f-694b-e5e-b573"
+                          }
+                        },
+                        "@_name": "Battle-weary",
+                        "@_typeId": "9cc3-6d83-4dd3-9b64",
+                        "@_typeName": "Abilities",
+                        "@_hidden": "false",
+                        "@_id": "4889-1296-cec0-fdbe"
+                      }
+                    },
+                    "costs": {
+                      "cost": [
+                        {
+                          "@_name": "pts",
+                          "@_typeId": "51b2-306e-1021-d207",
+                          "@_value": "0"
+                        },
+                        {
+                          "@_name": "Crusade Points",
+                          "@_typeId": "b03b-c239-15a5-da55",
+                          "@_value": "-1"
+                        },
+                        {
+                          "@_name": "Crusade: Battle Honours",
+                          "@_typeId": "75bb-ded1-c86d-bdf0",
+                          "@_value": "0"
+                        },
+                        {
+                          "@_name": "Crusade: Experience",
+                          "@_typeId": "a623-fe74-1d33-cddf",
+                          "@_value": "0"
+                        }
+                      ]
+                    },
+                    "@_type": "upgrade",
+                    "@_import": "true",
+                    "@_name": "Battle-weary",
+                    "@_hidden": "false",
+                    "@_id": "856a-44c0-4d44-4fd6"
+                  },
+                  {
+                    "constraints": {
+                      "constraint": {
+                        "@_type": "max",
+                        "@_value": "1",
+                        "@_field": "selections",
+                        "@_scope": "parent",
+                        "@_shared": "true",
+                        "@_id": "159e-81b2-f506-493f",
+                        "@_includeChildSelections": "false"
+                      }
+                    },
+                    "profiles": {
+                      "profile": {
+                        "characteristics": {
+                          "characteristic": {
+                            "#text": "This unit cannot Advance and you must subtract 1\" from the Move characteristic of models in this unit.",
+                            "@_name": "Description",
+                            "@_typeId": "9b8f-694b-e5e-b573"
+                          }
+                        },
+                        "@_name": "Crippling Damage",
+                        "@_typeId": "9cc3-6d83-4dd3-9b64",
+                        "@_typeName": "Abilities",
+                        "@_hidden": "false",
+                        "@_id": "301a-57e2-10bd-abe2"
+                      }
+                    },
+                    "costs": {
+                      "cost": [
+                        {
+                          "@_name": "pts",
+                          "@_typeId": "51b2-306e-1021-d207",
+                          "@_value": "0"
+                        },
+                        {
+                          "@_name": "Crusade Points",
+                          "@_typeId": "b03b-c239-15a5-da55",
+                          "@_value": "-1"
+                        },
+                        {
+                          "@_name": "Crusade: Battle Honours",
+                          "@_typeId": "75bb-ded1-c86d-bdf0",
+                          "@_value": "0"
+                        },
+                        {
+                          "@_name": "Crusade: Experience",
+                          "@_typeId": "a623-fe74-1d33-cddf",
+                          "@_value": "0"
+                        }
+                      ]
+                    },
+                    "modifierGroups": {
+                      "modifierGroup": {
+                        "comment": "Battle Scars: Crippling Damage",
+                        "modifiers": {
+                          "modifier": [
+                            {
+                              "conditionGroups": {
+                                "conditionGroup": {
+                                  "conditions": {
+                                    "condition": [
+                                      {
+                                        "@_type": "atLeast",
+                                        "@_value": "1",
+                                        "@_field": "selections",
+                                        "@_scope": "model-or-unit",
+                                        "@_childId": "4135-1065-ae32-09a4",
+                                        "@_shared": "true",
+                                        "@_includeChildSelections": "true"
+                                      },
+                                      {
+                                        "@_type": "notInstanceOf",
+                                        "@_value": "1",
+                                        "@_field": "selections",
+                                        "@_scope": "ancestor",
+                                        "@_childId": "63f1-e6e8-f6f6-a4f0",
+                                        "@_shared": "true"
+                                      }
+                                    ]
+                                  },
+                                  "@_type": "and"
+                                }
+                              },
+                              "@_type": "decrement",
+                              "@_value": "1",
+                              "@_field": "e703-ecb6-5ce7-aec1",
+                              "@_affects": "self.entries.profiles.Unit",
+                              "@_scope": "model-or-unit"
+                            },
+                            {
+                              "conditions": {
+                                "condition": {
+                                  "@_type": "atLeast",
+                                  "@_value": "1",
+                                  "@_field": "selections",
+                                  "@_scope": "model-or-unit",
+                                  "@_childId": "4135-1065-ae32-09a4",
+                                  "@_shared": "true",
+                                  "@_includeChildSelections": "true"
+                                }
+                              },
+                              "@_type": "append",
+                              "@_value": "Crippling Damage",
+                              "@_field": "annotation",
+                              "@_join": ",",
+                              "@_affects": "self.entries.profiles.Unit",
+                              "@_scope": "model-or-unit"
+                            },
+                            {
+                              "conditionGroups": {
+                                "conditionGroup": {
+                                  "conditions": {
+                                    "condition": [
+                                      {
+                                        "@_type": "atLeast",
+                                        "@_value": "1",
+                                        "@_field": "selections",
+                                        "@_scope": "model-or-unit",
+                                        "@_childId": "4135-1065-ae32-09a4",
+                                        "@_shared": "true",
+                                        "@_includeChildSelections": "true"
+                                      },
+                                      {
+                                        "@_type": "notInstanceOf",
+                                        "@_value": "1",
+                                        "@_field": "selections",
+                                        "@_scope": "ancestor",
+                                        "@_childId": "63f1-e6e8-f6f6-a4f0",
+                                        "@_shared": "true"
+                                      }
+                                    ]
+                                  },
+                                  "@_type": "and"
+                                }
+                              },
+                              "@_type": "floor",
+                              "@_value": "0",
+                              "@_field": "e703-ecb6-5ce7-aec1",
+                              "@_affects": "self.entries.profiles.Unit",
+                              "@_scope": "model-or-unit"
+                            }
+                          ]
+                        },
+                        "@_type": "and"
+                      }
+                    },
+                    "@_type": "upgrade",
+                    "@_import": "true",
+                    "@_name": "Crippling Damage",
+                    "@_hidden": "false",
+                    "@_id": "4135-1065-ae32-09a4"
+                  },
+                  {
+                    "constraints": {
+                      "constraint": {
+                        "@_type": "max",
+                        "@_value": "1",
+                        "@_field": "selections",
+                        "@_scope": "parent",
+                        "@_shared": "true",
+                        "@_id": "9965-6300-9c34-fe31",
+                        "@_includeChildSelections": "false"
+                      }
+                    },
+                    "profiles": {
+                      "profile": {
+                        "characteristics": {
+                          "characteristic": {
+                            "#text": "Each time a Critical Hit is scored against this unit, that attack automatically wounds this unit.",
+                            "@_name": "Description",
+                            "@_typeId": "9b8f-694b-e5e-b573"
+                          }
+                        },
+                        "@_name": "Deep Scars",
+                        "@_typeId": "9cc3-6d83-4dd3-9b64",
+                        "@_typeName": "Abilities",
+                        "@_hidden": "false",
+                        "@_id": "7588-ae4f-208e-e049"
+                      }
+                    },
+                    "costs": {
+                      "cost": [
+                        {
+                          "@_name": "pts",
+                          "@_typeId": "51b2-306e-1021-d207",
+                          "@_value": "0"
+                        },
+                        {
+                          "@_name": "Crusade Points",
+                          "@_typeId": "b03b-c239-15a5-da55",
+                          "@_value": "-1"
+                        },
+                        {
+                          "@_name": "Crusade: Battle Honours",
+                          "@_typeId": "75bb-ded1-c86d-bdf0",
+                          "@_value": "0"
+                        },
+                        {
+                          "@_name": "Crusade: Experience",
+                          "@_typeId": "a623-fe74-1d33-cddf",
+                          "@_value": "0"
+                        }
+                      ]
+                    },
+                    "@_type": "upgrade",
+                    "@_import": "true",
+                    "@_name": "Deep Scars",
+                    "@_hidden": "false",
+                    "@_id": "e20d-1f8c-2b62-2abb"
+                  },
+                  {
+                    "constraints": {
+                      "constraint": {
+                        "@_type": "max",
+                        "@_value": "1",
+                        "@_field": "selections",
+                        "@_scope": "parent",
+                        "@_shared": "true",
+                        "@_id": "c2ac-ab01-45de-8eca",
+                        "@_includeChildSelections": "false"
+                      }
+                    },
+                    "profiles": {
+                      "profile": {
+                        "characteristics": {
+                          "characteristic": {
+                            "#text": "You cannot use any Stratagems to affect this unit and this unit cannot be Marked for Greatness.",
+                            "@_name": "Description",
+                            "@_typeId": "9b8f-694b-e5e-b573"
+                          }
+                        },
+                        "@_name": "Disgraced",
+                        "@_typeId": "9cc3-6d83-4dd3-9b64",
+                        "@_typeName": "Abilities",
+                        "@_hidden": "false",
+                        "@_id": "f179-c11e-72f3-2906"
+                      }
+                    },
+                    "costs": {
+                      "cost": [
+                        {
+                          "@_name": "pts",
+                          "@_typeId": "51b2-306e-1021-d207",
+                          "@_value": "0"
+                        },
+                        {
+                          "@_name": "Crusade Points",
+                          "@_typeId": "b03b-c239-15a5-da55",
+                          "@_value": "-1"
+                        },
+                        {
+                          "@_name": "Crusade: Battle Honours",
+                          "@_typeId": "75bb-ded1-c86d-bdf0",
+                          "@_value": "0"
+                        },
+                        {
+                          "@_name": "Crusade: Experience",
+                          "@_typeId": "a623-fe74-1d33-cddf",
+                          "@_value": "0"
+                        }
+                      ]
+                    },
+                    "@_type": "upgrade",
+                    "@_import": "true",
+                    "@_name": "Disgraced",
+                    "@_hidden": "false",
+                    "@_id": "e3a2-6b61-fd36-df18"
+                  },
+                  {
+                    "constraints": {
+                      "constraint": {
+                        "@_type": "max",
+                        "@_value": "1",
+                        "@_field": "selections",
+                        "@_scope": "parent",
+                        "@_shared": "true",
+                        "@_id": "87a1-d9ce-1886-3f2c",
+                        "@_includeChildSelections": "false"
+                      }
+                    },
+                    "profiles": {
+                      "profile": {
+                        "characteristics": {
+                          "characteristic": {
+                            "#text": "Subtract 1 from the Objective Control characteristic of models in this unit and this unit never receives a Charge bonus.",
+                            "@_name": "Description",
+                            "@_typeId": "9b8f-694b-e5e-b573"
+                          }
+                        },
+                        "@_name": "Fatigued",
+                        "@_typeId": "9cc3-6d83-4dd3-9b64",
+                        "@_typeName": "Abilities",
+                        "@_hidden": "false",
+                        "@_id": "7d0f-4235-b32f-77f2"
+                      }
+                    },
+                    "costs": {
+                      "cost": [
+                        {
+                          "@_name": "pts",
+                          "@_typeId": "51b2-306e-1021-d207",
+                          "@_value": "0"
+                        },
+                        {
+                          "@_name": "Crusade Points",
+                          "@_typeId": "b03b-c239-15a5-da55",
+                          "@_value": "-1"
+                        },
+                        {
+                          "@_name": "Crusade: Battle Honours",
+                          "@_typeId": "75bb-ded1-c86d-bdf0",
+                          "@_value": "0"
+                        },
+                        {
+                          "@_name": "Crusade: Experience",
+                          "@_typeId": "a623-fe74-1d33-cddf",
+                          "@_value": "0"
+                        }
+                      ]
+                    },
+                    "modifierGroups": {
+                      "modifierGroup": {
+                        "modifiers": {
+                          "modifier": [
+                            {
+                              "conditions": {
+                                "condition": {
+                                  "@_type": "atLeast",
+                                  "@_value": "1",
+                                  "@_field": "selections",
+                                  "@_scope": "model-or-unit",
+                                  "@_childId": "9d70-a94e-3f89-5eed",
+                                  "@_shared": "true",
+                                  "@_includeChildSelections": "true"
+                                }
+                              },
+                              "@_type": "decrement",
+                              "@_value": "1",
+                              "@_field": "bef7-942a-1a23-59f8",
+                              "@_scope": "model-or-unit",
+                              "@_affects": "self.entries.profiles.Unit"
+                            },
+                            {
+                              "conditions": {
+                                "condition": {
+                                  "@_type": "atLeast",
+                                  "@_value": "1",
+                                  "@_field": "selections",
+                                  "@_scope": "model-or-unit",
+                                  "@_childId": "9d70-a94e-3f89-5eed",
+                                  "@_shared": "true",
+                                  "@_includeChildSelections": "true"
+                                }
+                              },
+                              "@_type": "append",
+                              "@_value": "Fatigued",
+                              "@_field": "annotation",
+                              "@_join": ",",
+                              "@_scope": "model-or-unit",
+                              "@_affects": "self.entries.profiles.Unit"
+                            },
+                            {
+                              "conditions": {
+                                "condition": {
+                                  "@_type": "atLeast",
+                                  "@_value": "1",
+                                  "@_field": "selections",
+                                  "@_scope": "model-or-unit",
+                                  "@_childId": "9d70-a94e-3f89-5eed",
+                                  "@_shared": "true",
+                                  "@_includeChildSelections": "true"
+                                }
+                              },
+                              "@_type": "floor",
+                              "@_value": "0",
+                              "@_field": "bef7-942a-1a23-59f8",
+                              "@_scope": "model-or-unit",
+                              "@_affects": "self.entries.profiles.Unit"
+                            }
+                          ]
+                        },
+                        "comment": "Battle Scars: Fatigued",
+                        "@_type": "and"
+                      }
+                    },
+                    "@_type": "upgrade",
+                    "@_import": "true",
+                    "@_name": "Fatigued",
+                    "@_hidden": "false",
+                    "@_id": "9d70-a94e-3f89-5eed"
+                  },
+                  {
+                    "constraints": {
+                      "constraint": {
+                        "@_type": "max",
+                        "@_value": "1",
+                        "@_field": "selections",
+                        "@_scope": "parent",
+                        "@_shared": "true",
+                        "@_id": "1ae4-98fb-48fc-f64c",
+                        "@_includeChildSelections": "false"
+                      }
+                    },
+                    "profiles": {
+                      "profile": {
+                        "characteristics": {
+                          "characteristic": {
+                            "#text": "This unit cannot form an Attached unit, it is unaffected by the Aura abilities of friendly units, and it cannot be Marked for Greatness.",
+                            "@_name": "Description",
+                            "@_typeId": "9b8f-694b-e5e-b573"
+                          }
+                        },
+                        "@_name": "Mark of Shame",
+                        "@_typeId": "9cc3-6d83-4dd3-9b64",
+                        "@_typeName": "Abilities",
+                        "@_hidden": "false",
+                        "@_id": "d8fe-6343-8c67-476d"
+                      }
+                    },
+                    "costs": {
+                      "cost": [
+                        {
+                          "@_name": "pts",
+                          "@_typeId": "51b2-306e-1021-d207",
+                          "@_value": "0"
+                        },
+                        {
+                          "@_name": "Crusade Points",
+                          "@_typeId": "b03b-c239-15a5-da55",
+                          "@_value": "-1"
+                        },
+                        {
+                          "@_name": "Crusade: Battle Honours",
+                          "@_typeId": "75bb-ded1-c86d-bdf0",
+                          "@_value": "0"
+                        },
+                        {
+                          "@_name": "Crusade: Experience",
+                          "@_typeId": "a623-fe74-1d33-cddf",
+                          "@_value": "0"
+                        }
+                      ]
+                    },
+                    "@_type": "upgrade",
+                    "@_import": "true",
+                    "@_name": "Mark of Shame",
+                    "@_hidden": "false",
+                    "@_id": "0e21-97c3-92fa-e2a1"
+                  }
+                ]
+              },
+              "@_name": "Main Rules Battle Scars",
+              "@_id": "39da-ebb3-1551-dd9e",
+              "@_hidden": "false"
+            }
+          },
+          "@_name": "Battle Scars",
+          "@_id": "1576-e816-033f-828d",
+          "@_hidden": "false"
+        },
+        {
+          "comment": "Crusade content",
+          "@_name": "Battle Traits",
+          "@_id": "0511-d9ad-2978-2234",
+          "@_hidden": "false"
+        },
+        {
+          "comment": "Crusade content",
+          "modifiers": {
+            "modifier": {
+              "conditions": {
+                "condition": {
+                  "@_type": "notInstanceOf",
+                  "@_value": "1",
+                  "@_field": "selections",
+                  "@_scope": "ancestor",
+                  "@_childId": "9cfd-1c32-585f-7d5c",
+                  "@_shared": "true"
+                }
+              },
+              "@_type": "set",
+              "@_value": "true",
+              "@_field": "hidden"
+            }
+          },
+          "@_name": "Crusade Relics",
+          "@_id": "e919-5b46-974d-a5b1",
+          "@_hidden": "false"
+        }
+      ]
+    },
+    "@_xmlns": "http://www.battlescribe.net/schema/gameSystemSchema",
+    "@_id": "sys-352e-adc2-7639-d6a9",
+    "@_name": "Warhammer 40,000 10th Edition",
+    "@_revision": "32",
+    "@_battleScribeVersion": "2.03",
+    "@_type": "gameSystem"
+  }
+}

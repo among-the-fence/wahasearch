@@ -69,8 +69,7 @@ export const UnitDetailsSheet = ({unit, handleClickToClose}: UnitDetailsSheetPro
                   <div className='w-full bg-slate-50' >
                     <div className="bg-white bg-opacity-100">
                       <div>
-                        <button onClick={() => clickedClose()}>X</button>
-                        <h2>{unit.name}</h2>
+                        <h2 className="text-xl font-bold">{unit.name}</h2>
                         <Section title="Models">
                           <p>{stringifywithoutraw(unit.profiles)}</p>
                         </Section>
@@ -85,6 +84,9 @@ export const UnitDetailsSheet = ({unit, handleClickToClose}: UnitDetailsSheetPro
                         </Section>
                         <Section title="sharedgroup">
                           <p>{stringifywithoutraw(unit.sharedSelectionEntryGroups)}</p>
+                        </Section>
+                        <Section title="raw" defaultVisible={false}>
+                          <p>{JSON.stringify(unit._raw)}</p>
                         </Section>
                       </div>
                     </div>
@@ -104,12 +106,17 @@ export const UnitDetailsSheet = ({unit, handleClickToClose}: UnitDetailsSheetPro
 interface SectionProps {
   title: string
   children: React.ReactNode
+  defaultVisible?: boolean
 }
 
-const Section = ({title, children} : SectionProps) => {
-  return (<>
-  <h1>{title}</h1><p>
-      {children}
-    </p>
-      </>);
-}
+const Section = ({title, children, defaultVisible = true} : SectionProps) => {
+
+  const [visible, setVisible] = useState(defaultVisible)
+  return (
+    <div onClick={() => setVisible(!visible)} className="cursor-pointer">
+      <h1 className="text-lg font-bold">{title}</h1>
+        {(visible !== false) && (<p>
+          {children}
+        </p>)}
+    </div>);
+  }
