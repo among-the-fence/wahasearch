@@ -18,6 +18,9 @@ async function processFile() {
                 const data = await readFile(inputDir + file, 'utf8');
                 const jsonifiedXmlData = parser.parse(data);
                 out.push(jsonifiedXmlData);
+                if (file.includes("Aeldari Library") || file.includes("Craftworld")) {
+                    await writeFile(outputFile + file + ".json", JSON.stringify(jsonifiedXmlData, null, 2), 'utf8');
+                }
             }
             else if (file.endsWith('.gst')) {
                 console.log(`Processing: ${file}`);
