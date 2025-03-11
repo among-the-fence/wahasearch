@@ -87,6 +87,7 @@ export class WBSDataGameSystemParser {
        
         console.log("Parsing Game System");
         const x = new GameData(new GameSystem());
+        const everythingInAMap = new Map<string, any>();
         (jsonContent as any[]).forEach((entry: any) => {
             messageUpdater(entry?.catalogue['@_name']);
             console.log("Parsing Catalogue: " + entry.catalogue['@_name']);
@@ -96,10 +97,23 @@ export class WBSDataGameSystemParser {
                     x.datacards.push(new DataCard(link));
                 });
             }
+            catalogue.selectionEntries?.forEach((entry) => {
+                everythingInAMap.set(entry.id, entry);
+            });
+            catalogue.selectionEntryGroups?.forEach((entry) => {
+                everythingInAMap.set(entry.id, entry);
+            });
+            catalogue.sharedProfiles?.forEach((entry) => {
+                everythingInAMap.set(entry.id, entry);
+            });
 
             x.catalogues.push(catalogue);
         });
         console.log("DONE");
+        x.datacards.forEach((dc: DataCard) => {
+            dc.linkedItem = everythingInAMap.get(dc.entrylink.targetId);
+        });
+        console.log(everythingInAMap);
         console.log(x);
         
         return x;

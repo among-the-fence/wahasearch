@@ -6,6 +6,7 @@ import { SelectionEntry } from "@/lib/models/gameData";
 import { useState } from 'react'
 import { Dialog, DialogPanel, DialogTitle } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
+import { stringifywithoutraw } from "@/lib/util";
 
 interface UnitDetailsSheetProps {
   unit?: SelectionEntry;
@@ -23,16 +24,6 @@ export const UnitDetailsSheet = ({unit, handleClickToClose}: UnitDetailsSheetPro
     // setOpen(value);
   }
   
-
-  function stringifywithoutraw(obj: any) {
-    return JSON.stringify(obj, (key, value) => {
-      if (key === '_raw') {
-        return undefined;
-      }
-      return value;
-    });
-  }
-
   if (!unit) {
     return null;
   }
