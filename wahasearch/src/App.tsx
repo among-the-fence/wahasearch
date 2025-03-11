@@ -2,8 +2,8 @@
 import { useEffect, useState } from 'react';
 import './App.css'
 import { GameData, SelectionEntry, WBSDataGameSystemParser } from './lib/models/gameData';
-import { SummaryCard } from './components/SummaryCard';
 import { UnitDetailsSheet } from './components/UnitDetailsSheet';
+import { DatacardSummaryCard } from './components/unitcomponents/datacard/DatacardSummaryCard';
 
  function App() {
     const [displayMessage, setdisplayMessage] = useState<string>("Loading"); 
@@ -18,8 +18,9 @@ import { UnitDetailsSheet } from './components/UnitDetailsSheet';
       });
     }, []);
   
-    const units = parsedData?.catalogues?.map(c => 
-      c.selectionEntries).flat();
+    const units = parsedData?.datacards;
+    //?.map(c => 
+    //  c.selectionEntries).flat();
     /*.sort((a, b) => {
       if (a) {
         if (b) {
@@ -48,7 +49,7 @@ import { UnitDetailsSheet } from './components/UnitDetailsSheet';
             <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 mt-5 lg:mt-0 gap-4">
               {units?.map(unit => (
                 unit && 
-                <SummaryCard entry={unit} openDetails={setSelected} />
+                <DatacardSummaryCard entry={unit}  />
               ))}
             </div>
           </div>

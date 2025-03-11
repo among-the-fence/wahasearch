@@ -3,15 +3,19 @@ import { ensureArray } from '../util';
 import { Dispatch, SetStateAction } from 'react';
 import { Base, Named, mapBase, mapName } from './baseModels';
 import jsonContent from "@/lib/data/wh40k-10e.json"
+import { DataCard } from './datacard/datacard';
 
 
 // Define interfaces for Warhammer 40K game system
 export class GameData {
     gameSystem: GameSystem;
     catalogues: Catalogue[];
+    datacards: any[];
+
     constructor(gameSystem: GameSystem) {
         this.gameSystem = gameSystem;
         this.catalogues = [];
+        this.datacards = [];
     }
 }
 
@@ -26,6 +30,7 @@ export interface Catalogue extends Base, Named{
     selectionEntryGroups?: SelectionEntryGroup[];
     sharedProfiles: Map<String, Profile>;
     categoryEntries?: CategoryEntry[];
+    entryLinks?: EntryLink[];
 }
 
 export interface Rule extends Named {
@@ -42,6 +47,13 @@ export interface Characteristic extends Base, Named {
 }
 
 export interface CategoryEntry extends Base, Named {
+    hidden: boolean;
+}
+
+export interface EntryLink extends Base, Named {
+    targetId: string;
+    shouldImport: boolean;
+    collective: boolean;
     hidden: boolean;
 }
 
@@ -77,7 +89,13 @@ export class WBSDataGameSystemParser {
         const x = new GameData(new GameSystem());
         (jsonContent as any[]).forEach((entry: any) => {
             messageUpdater(entry?.catalogue['@_name']);
+            console.log("Parsing Catalogue: " + entry.catalogue['@_name']);
             const catalogue = this.mapCatalogue(entry.catalogue);
+            if (catalogue.entryLinks) {
+                catalogue.entryLinks.forEach((link: EntryLink) => {
+                    x.datacards.push(new DataCard(link));
+                });
+            }
 
             x.catalogues.push(catalogue);
         });
@@ -99,6 +117,7 @@ export class WBSDataGameSystemParser {
                 }
             });
         }
+        const entryLinks = data.entryLinks ? ensureArray(data.entryLinks.entryLink).map((e: any) => this.mapEntryLink(e)) : [];
         return {
             ...mapBase(data),
             ...mapName(data),
@@ -111,8 +130,20 @@ export class WBSDataGameSystemParser {
             selectionEntryGroups: data.sharedSelectionEntryGroups ? ensureArray(data.sharedSelectionEntryGroups.selectionEntryGroup).map((g: any) => this.mapSelectionEntryGroup(g)) : [],
             sharedRules: data.sharedRules ? ensureArray(data.sharedRules.rule).map((r: any) => this.mapRule(r)) : [],
             sharedProfiles: sharedProfiles,
-            categoryEntries: categoryEntries
+            categoryEntries: categoryEntries,
+            entryLinks: entryLinks,
         };
+    }
+
+    private mapEntryLink(data: any): any {
+        return {
+            ...mapBase(data),
+            ...mapName(data),
+            targetId: data["@_targetId"],
+            shouldImport: data["@_shouldImport"] === "true",
+            collective: data["@_collective"] === "true",
+            hidden: data["@_hidden"] === "true",
+        }
     }
 
     private mapRule(data: any): Rule {
