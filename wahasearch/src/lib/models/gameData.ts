@@ -111,7 +111,7 @@ export class WBSDataGameSystemParser {
         });
         console.log("DONE");
         x.datacards.forEach((dc: DataCard) => {
-            dc.linkedItem = everythingInAMap.get(dc.entrylink.targetId);
+            dc.setLinkedItem(everythingInAMap.get(dc.entrylink.targetId));
         });
         console.log(everythingInAMap);
         console.log(x);
@@ -221,6 +221,7 @@ export class WBSDataGameSystemParser {
             ...mapBase(data),
             ...mapName(data),
             value: data["#text"],
+
         };
     }
 

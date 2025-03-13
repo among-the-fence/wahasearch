@@ -1,6 +1,5 @@
 import { DataCard } from "@/lib/models/datacard/datacard";
 import { BaseCard } from "../BaseCard";
-import { stringifywithoutraw } from "@/lib/util";
 
 
 export interface DatacardSummaryCardProps {
@@ -8,12 +7,28 @@ export interface DatacardSummaryCardProps {
 }
 
 export const DatacardSummaryCard = ({entry}: DatacardSummaryCardProps) => {
-    const headerclass = `text-md font-semibold ${entry.isLegends ? "text-slate-500" : ""}`;
+    const headerclass = `inline text-md font-semibold ${entry.isLegends ? "text-slate-500" : ""}`;
+    const oneProfile = entry.profiles.length == 1;
     return (
         <BaseCard itemId={entry.id}>
             <div onClick={() => {console.log(entry);}}>
-                <h1 className={headerclass} >{entry.name}</h1>
-                {<p>{stringifywithoutraw(entry.getDisplayedProfile())}</p>}
+                <div>
+                    <h1 className={headerclass} >{entry.name}</h1>
+                    <h4 className="inline"> ({entry.cost})</h4>
+                </div>
+                {entry.profiles.map(p => {
+                    return (
+                        <div className="inline" key={p.id}>
+                            {!oneProfile && <h2 >{p.name} </h2>}
+                            <p className="inline">M:{p.m}" </p>
+                            <p className="inline">T:{p.t} </p>
+                            <p className="inline">W:{p.w} </p>
+                            <p className="inline">LD:{p.ld}+ </p>
+                            <p className="inline">OC:{p.oc} </p>
+                            <p className="inline">SV:{p.sv}+ </p>
+                        </div>
+                    );
+                })}
             </div>
         </BaseCard>
     );
