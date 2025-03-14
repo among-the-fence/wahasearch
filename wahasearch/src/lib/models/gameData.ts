@@ -8,12 +8,10 @@ import { DataCard } from './datacard/datacard';
 
 // Define interfaces for Warhammer 40K game system
 export class GameData {
-    gameSystem: GameSystem;
     catalogues: Catalogue[];
     datacards: any[];
 
-    constructor(gameSystem: GameSystem) {
-        this.gameSystem = gameSystem;
+    constructor() {
         this.catalogues = [];
         this.datacards = [];
     }
@@ -86,11 +84,10 @@ export class WBSDataGameSystemParser {
     public async parseGameSystem(messageUpdater: Dispatch<SetStateAction<string>>): Promise<GameData> {
        
         console.log("Parsing Game System");
-        const x = new GameData(new GameSystem());
+        const x = new GameData();
         const everythingInAMap = new Map<string, any>();
         (jsonContent as any[]).forEach((entry: any) => {
             messageUpdater(entry?.catalogue['@_name']);
-            console.log("Parsing Catalogue: " + entry.catalogue['@_name']);
             const catalogue = this.mapCatalogue(entry.catalogue);
             if (catalogue.entryLinks) {
                 catalogue.entryLinks.forEach((link: EntryLink) => {
@@ -243,4 +240,6 @@ export class WBSDataGameSystemParser {
     }
 
 }
+
+export const gamedata = new GameData();
 

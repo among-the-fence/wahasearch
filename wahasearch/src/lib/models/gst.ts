@@ -8,22 +8,25 @@ export class GameSystem implements Named {
     id: string;
     name: string;
     revision: number;
-    profileTypes: ProfileType[];
+    profileTypes: Map<string,ProfileType>;
     categories: CategoryEntry[];
     rules: Map<string, Rule>;
     costTypes: CostType[];
+    costTypeId: string;
 
     constructor() {
 
         this.id = "";
         this.name = "";
-        this.revision = 10;
-        this.profileTypes = [];
+        this.revision = 0;
+        this.profileTypes = new Map<string, ProfileType>();
         this.categories = [];
         this.rules = new Map<string, Rule>();
         this.costTypes = [];
+        this.costTypeId = "";
         
         this.mapGameSystem(gstData.gameSystem);
+        console.log(this);
     }
 
     private mapGameSystem(data: any): void {
@@ -32,7 +35,10 @@ export class GameSystem implements Named {
         this.id = namedInterface.id;
         this.name = namedInterface.name;
         this.revision = parseInt(data["@_revision"], 4);
-        this.profileTypes = data.profileTypes?.profileType?.map((p: any) => this.mapProfile(p)) || [];
+        const profiles = data.profileTypes?.profileType?.map((p: any) => this.mapProfile(p));
+        profiles.forEach((p: ProfileType) => {
+            this.profileTypes.set(p.name, p);
+        });
         this.categories = data.categoryEntries?.categoryEntry?.map((c: any) => this.mapCategoryEntry(c)) || [];
         data.sharedRules?.rule.forEach((r: any) => {
             const x = this.mapRule(r); 
@@ -42,6 +48,7 @@ export class GameSystem implements Named {
         });
         
         this.costTypes = data.costTypes?.costType?.map((c: any) => this.mapCostType(c)) || [];
+        this.costTypeId = this.costTypes.filter((c: any) => c.name === "pts")[0]?.id;
     }
 
     private mapRule(data: any): Rule {
@@ -104,3 +111,5 @@ export interface Rule extends Base, Named {
 
 export interface CostType extends Base, Named {
 }
+
+export const gameSystem = new GameSystem();
