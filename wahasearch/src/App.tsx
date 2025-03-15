@@ -17,7 +17,7 @@ import { UnitDetailsSheet } from './components/UnitDetailsSheet';
       });
     }, []);
   
-    const units = parsedData?.datacards;
+    const units = parsedData?.datacards?.filter((units) => units.linkedItem);
     //?.map(c => 
     //  c.selectionEntries).flat();
     /*.sort((a, b) => {

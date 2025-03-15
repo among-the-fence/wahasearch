@@ -99,31 +99,31 @@ export class DataCard {
 
 
     renderSummaryCard() {
-            const headerclass = `inline text-md font-semibold ${this.isLegends ? "text-slate-500" : ""}`;
-            const oneProfile = this.profiles.length == 1;
-            return (
-                <BaseCard itemId={this.id}>
-                    <div onClick={() => {console.log(this);}}>
-                        <div>
-                            <h1 className={headerclass} >{this.name}</h1>
-                            <h4 className="inline"> ({(this.cost)})</h4>
-                        </div>
-                        {this.profiles.map(p => {
-                            return (
-                                <div className="inline" key={p.id}>
-                                    {!oneProfile && <h2 >{p.name} </h2>}
-                                    <p className="inline">M:{p.m}" </p>
-                                    <p className="inline">T:{p.t} </p>
-                                    <p className="inline">W:{p.w} </p>
-                                    <p className="inline">LD:{p.ld}+ </p>
-                                    <p className="inline">OC:{p.oc} </p>
-                                    <p className="inline">SV:{p.sv}+ </p>
-                                </div>
-                            );
-                        })}
+        const headerclass = `inline text-md font-semibold ${this.isLegends ? "text-slate-500" : ""}`;
+        const oneProfile = this.profiles.length == 1;
+        return (
+            <BaseCard itemId={this.id}>
+                <div onClick={() => {console.log(this);}}>
+                    <div>
+                        <h1 className={headerclass} >{this.name}</h1>
+                        <h4 className="inline"> ({(this.cost)})</h4>
                     </div>
-                </BaseCard>
-            );
+                    {this.profiles.map(p => {
+                        return (
+                            <div className="inline" key={p.id}>
+                                {!oneProfile && <h2 >{p.name} </h2>}
+                                <p className="inline">M:{p.m}" </p>
+                                <p className="inline">T:{p.t} </p>
+                                <p className="inline">W:{p.w} </p>
+                                <p className="inline">LD:{p.ld}+ </p>
+                                <p className="inline">OC:{p.oc} </p>
+                                <p className="inline">SV:{p.sv}+ </p>
+                            </div>
+                        );
+                    })}
+                </div>
+            </BaseCard>
+        );
     }
 
 }
