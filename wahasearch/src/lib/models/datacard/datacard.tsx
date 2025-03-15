@@ -159,47 +159,36 @@ export class DataCard {
                     );
                 })}
             </div>
-          {/*  <div>
+            <div>
                 <div>
                     <h2>Ranged Weapons</h2>
                     <div>
                         {this.rangedProfiles.map((p: any) => {
                             return (
                                 <div key={p.id}>
-                                    <h3>{p.name}</h3>
-                                    <p>{p.description}</p>
+                                    <p>{p.name}</p>
                                     <p>Range: {p.range}"</p>
-                                    <p>Attacks: {p.attacks}</p>
-                                    <p>Strength: {p.strength}</p>
-                                    <p>AP: {p.armorPen}</p>
-                                    <p>Damage: {p.damage}</p>
-                                    <p>Keywords: {p.keywords}</p>
-                                </div>
-                            );
-                        })}
-                    </div>
-                </div>
-                <div>
-                    <h2>Melee Weapons</h2>
-                    <div>
-                        {this.meleeProfiles.map((p: any) => {
-                            return (
-                                <div key={p.id}>
-                                    <h3>{p.name}</h3>
-                                    <p>{p.description}</p>
-                                    <p>Attacks: {p.attacks}</p>
-                                    <p>Strength: {p.strength}</p>
-                                    <p>AP: {p.armorPen}</p>
-                                    <p>Damage: {p.damage}</p>
-                                    <p>Keywords: {p.keywords}</p>
                                 </div>
                             );
                         })}
                     </div>
                 </div>
 
+                <div>
+                    <h2>Melee Weapons</h2>
+                    <div>
+                        {this.meleeProfiles.map((p: any) => {
+                            return (
+                                <div key={p.id}>
+                                    <p>{p.name}</p>
+                                    
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
             </div>
-*/}
+
             <div className="width-full">
                 <pre>{JSON.stringify(this.subProfiles, (key, value) => {
                     if (key === '_raw') {
