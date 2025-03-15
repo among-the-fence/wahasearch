@@ -98,12 +98,12 @@ export class DataCard {
     }
 
 
-    renderSummaryCard() {
+    renderSummaryCard(setSelected: (card: DataCard) => void) {
         const headerclass = `inline text-md font-semibold ${this.isLegends ? "text-slate-500" : ""}`;
         const oneProfile = this.profiles.length == 1;
         return (
-            <BaseCard itemId={this.id}>
-                <div onClick={() => {console.log(this);}}>
+            <BaseCard handleClick={() => setSelected(this)} itemId={this.id}>
+                <div>
                     <div>
                         <h1 className={headerclass} >{this.name}</h1>
                         <h4 className="inline"> ({(this.cost)})</h4>
@@ -124,6 +124,33 @@ export class DataCard {
                 </div>
             </BaseCard>
         );
+    }
+
+    renderDetailsSheet() {
+        return (<div>
+            <div>
+                <h1 className="inline">{this.name}</h1>
+                <h4 className="inline"> ({(this.cost)})</h4>
+            </div>
+            <div>
+                {this.profiles.map(p => {
+                    return (
+                        <div key={p.id}>
+                            <h2 className="inline" >{p.name} </h2>
+                            <p className="inline" >M:{p.m}" </p>
+                            <p className="inline" >T:{p.t} </p>
+                            <p className="inline" >W:{p.w} </p>
+                            <p className="inline" >LD:{p.ld}+ </p>
+                            <p className="inline" >OC:{p.oc} </p>
+                            <p className="inline" >SV:{p.sv}+ </p>
+                        </div>
+                    );
+                })}
+            </div>
+            <div className="width-full">
+                <pre>{JSON.stringify(this)}</pre>
+            </div>
+        </div>);
     }
 
 }

@@ -46,7 +46,8 @@ export const UnitDetailsSheet = ({unit, handleClickToClose}: UnitDetailsSheetPro
                     <div className="ml-3 flex h-7 items-center">
                       <button
                         type="button"
-                        onClick={() => setOpen(false)}
+                        onClick={() => 
+                          handleClickToClose()}
                         className="relative rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                       >
                         <span className="absolute -inset-2.5" />
@@ -60,25 +61,7 @@ export const UnitDetailsSheet = ({unit, handleClickToClose}: UnitDetailsSheetPro
                   <div className='w-full bg-slate-50' >
                     <div className="bg-white bg-opacity-100">
                       <div>
-                        <h2 className="text-xl font-bold">{unit.name}</h2>
-                        <Section title="Models">
-                          <p>{stringifywithoutraw(unit.profiles)}</p>
-                        </Section>
-                        <Section title="entries">
-                          <p>{stringifywithoutraw(unit.selectionEntries)}</p>
-                        </Section>
-                        <Section title="groups">
-                          <p>{stringifywithoutraw(unit.selectionEntryGroups)}</p>
-                        </Section>
-                        <Section title="shared">
-                          <p>{stringifywithoutraw(unit.sharedSelectionEntries)}</p>
-                        </Section>
-                        <Section title="sharedgroup">
-                          <p>{stringifywithoutraw(unit.sharedSelectionEntryGroups)}</p>
-                        </Section>
-                        <Section title="raw" defaultVisible={false}>
-                          <p>{JSON.stringify(unit._raw)}</p>
-                        </Section>
+                        {unit.renderDetailsSheet()}
                       </div>
                     </div>
                   </div>
