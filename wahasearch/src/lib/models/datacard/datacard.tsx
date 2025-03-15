@@ -3,7 +3,7 @@ import { EntryLink } from "../gameData";
 import { BaseCard } from "@/components/unitcomponents/BaseCard";
 import { gameSystem } from "../gst";
 
-const DEBUG_SHEET = ["Vypers"];
+const DEBUG_SHEET = [""];
 
 export class DataCard {
     name: string;
@@ -56,7 +56,8 @@ export class DataCard {
         this.profiles = newList;
         this.meleeProfiles = this.subProfiles.filter((p: any) => p.profiles?.find((x: any) => x.typeName == "Melee Weapons")).map((p: any) => new WeaponProfile(p));
         this.rangedProfiles = this.subProfiles.filter((p: any) => p.profiles?.find((x: any) => x.typeName == "Ranged Weapons")).map((p: any) => new WeaponProfile(p));
-        // if (DEBUG_SHEET.includes(this.name))   console.log(this.subProfiles);
+
+        if (DEBUG_SHEET.includes(this.name))   console.log(this);
         //
     }
 
@@ -133,6 +134,7 @@ export class DataCard {
     }
 
     renderDetailsSheet() {
+        console.log(this);
         const cats = "• " + this.linkedItem?.categoryLinks?.map((c: any) => c.name).join(" • ") + " •";
         return (<div>
             <div>
@@ -166,13 +168,20 @@ export class DataCard {
                         {this.rangedProfiles.map((p: any) => {
                             return (
                                 <div key={p.id}>
-                                    <p>{p.name}</p>
-                                    <p>Range: {p.range}"</p>
+                                    <p className="inline">{p.name}</p>
+                                    <p className="inline">Range: {p.range}"</p>
+                                    <p className="inline">Attacks: {p.attacks}</p>
+                                    <p className="inline">BS: {p.skill}</p>
+                                    <p className="inline">S: {p.strength}</p>
+                                    <p className="inline">AP: {p.armorPen}</p>
+                                    <p className="inline">D: {p.damage}</p>
+                                    
                                 </div>
                             );
                         })}
                     </div>
                 </div>
+
 
                 <div>
                     <h2>Melee Weapons</h2>
@@ -180,7 +189,12 @@ export class DataCard {
                         {this.meleeProfiles.map((p: any) => {
                             return (
                                 <div key={p.id}>
-                                    <p>{p.name}</p>
+                                    <p className="inline">{p.name} </p>
+                                    <p className="inline">Attacks: {p.attacks} </p>
+                                    <p className="inline">BS: {p.skill} </p>
+                                    <p className="inline">S: {p.strength} </p>
+                                    <p className="inline">AP: {p.armorPen} </p>
+                                    <p className="inline">D: {p.damage} </p>
                                     
                                 </div>
                             );
@@ -238,11 +252,11 @@ export class WeaponProfile {
     type: string;
     id: string;
     _raw: any;
-    range: number;
+    range: string;
     attacks: string;
-    skill: number;
-    strength: number;
-    armorPen: number;
+    skill: string;
+    strength: string;
+    armorPen: string;
     damage: string;
     keywords: any;
 
@@ -252,18 +266,17 @@ export class WeaponProfile {
         this.id = profile.id;
         const profileData = profile.profiles[0];
         
-        this.range = this.parseCharacteristic(profileData.characteristics?.find((c: { name: string; }) => c.name === "Range"));
-        this.attacks = profileData.characteristics?.find((c: { name: string; }) => c.name === "A");
-        this.skill = this.parseCharacteristic(profileData.characteristics?.find((c: { name: string; }) => c.name === "BS" || c.name === "WS"));
-        this.strength = this.parseCharacteristic(profileData.characteristics?.find((c: { name: string; }) => c.name === "S"));
-        this.armorPen = this.parseCharacteristic(profileData.characteristics?.find((c: { name: string; }) => c.name === "AP"));
-        this.damage = profileData.characteristics?.find((c: { name: string; }) => c.name === "D");
+        this.range = this.extractCharacteristic(profileData, "Range");
+        this.attacks = this.extractCharacteristic(profileData, "A");
+        this.skill = this.extractCharacteristic(profileData, "BS");
+        this.strength = this.extractCharacteristic(profileData,"S");
+        this.armorPen = this.extractCharacteristic(profileData, "AP");
+        this.damage = this.extractCharacteristic(profileData, "D");
         this.keywords = profileData.keywords;
         this._raw = profile;
     }
 
-    parseCharacteristic = (characteristic: any) => {
-        if (!characteristic) return 0;
-        return parseInt(`${characteristic.value}`.replace('\\\"', '').replace('+', ''));
-    }
+    extractCharacteristic = (profile: any, name: string) => {
+        return profile.characteristics?.find((c: { name: string; }) => c.name === name)?.value;
+    };
 }

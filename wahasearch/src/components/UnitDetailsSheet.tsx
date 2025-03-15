@@ -6,7 +6,6 @@ import { SelectionEntry } from "@/lib/models/gameData";
 import { useState } from 'react'
 import { Dialog, DialogPanel, DialogTitle } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
-import { stringifywithoutraw } from "@/lib/util";
 
 interface UnitDetailsSheetProps {
   unit?: SelectionEntry;

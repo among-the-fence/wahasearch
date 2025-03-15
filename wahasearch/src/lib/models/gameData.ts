@@ -60,6 +60,7 @@ export interface SelectionEntry extends Base, Named {
     costs: Cost[];
     profiles: Profile[];
     categoryLinks: CategoryEntry[];
+    entryLinks: EntryLink[];
     selectionEntries?: SelectionEntry[];
     selectionEntryGroups?: SelectionEntryGroup[];
     sharedSelectionEntries?: SelectionEntry[];
@@ -183,7 +184,8 @@ export class WBSDataGameSystemParser {
             categoryLinks: categoryLinks ? ensureArray(categoryLinks)?.map(c => this.mapCategoryEntry(c)) : [],
             selectionEntries: subselections ? ensureArray(subselections).map(e => this.mapSelectionEntry(e)) : [],
             selectionEntryGroups: selectionEntryGroups ? ensureArray(selectionEntryGroups).map(g => this.mapSelectionEntryGroup(g)) : [],
-            infoLinks: links ? ensureArray(links).map((i: any) => this.mapInfoLink(i)) : [], // ✅ Added
+            infoLinks: links ? ensureArray(links).map((i: any) => this.mapInfoLink(i)) : [],
+            entryLinks: data.entryLinks ? ensureArray(data.entryLinks.entryLink).map((e: any) => this.mapEntryLink(e)) : [],
         };
     }
 
