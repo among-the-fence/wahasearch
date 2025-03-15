@@ -37,7 +37,7 @@ export const UnitDetailsSheet = ({unit, handleClickToClose}: UnitDetailsSheetPro
           <div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-2 sm:pl-2">
             <DialogPanel
               transition
-              className="pointer-events-auto w-screen max-w-4xl transform transition duration-500 ease-in-out data-[closed]:translate-x-full sm:duration-700"
+              className="pointer-events-auto w-screen max-w-5xl transform transition duration-500 ease-in-out data-[closed]:translate-x-full sm:duration-700"
             >
               <div className="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl">
                 <div className="px-4 sm:px-6">

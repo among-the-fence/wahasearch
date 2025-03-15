@@ -14,6 +14,8 @@ export class DataCard {
     profiles: UnitProfile[];
     cost: Set<number>;
     subProfiles: UnitProfile[];
+    meleeProfiles: WeaponProfile[];
+    rangedProfiles: WeaponProfile[];
 
     constructor(link: EntryLink) {
         this.name = link.name.replace(" [Legends]", "");
@@ -24,6 +26,8 @@ export class DataCard {
         this.profiles = []; 
         this.cost = new Set();
         this.subProfiles = [];
+        this.meleeProfiles = [];
+        this.rangedProfiles = [];
     }
 
     setLinkedItem(item: any, sharedItems: Map<string, any>) {
@@ -50,6 +54,8 @@ export class DataCard {
         });
         
         this.profiles = newList;
+        this.meleeProfiles = this.subProfiles.filter((p: any) => p.profiles?.find((x: any) => x.typeName == "Melee Weapons")).map((p: any) => new WeaponProfile(p));
+        this.rangedProfiles = this.subProfiles.filter((p: any) => p.profiles?.find((x: any) => x.typeName == "Ranged Weapons")).map((p: any) => new WeaponProfile(p));
         // if (DEBUG_SHEET.includes(this.name))   console.log(this.subProfiles);
         //
     }
@@ -153,9 +159,54 @@ export class DataCard {
                     );
                 })}
             </div>
+          {/*  <div>
+                <div>
+                    <h2>Ranged Weapons</h2>
+                    <div>
+                        {this.rangedProfiles.map((p: any) => {
+                            return (
+                                <div key={p.id}>
+                                    <h3>{p.name}</h3>
+                                    <p>{p.description}</p>
+                                    <p>Range: {p.range}"</p>
+                                    <p>Attacks: {p.attacks}</p>
+                                    <p>Strength: {p.strength}</p>
+                                    <p>AP: {p.armorPen}</p>
+                                    <p>Damage: {p.damage}</p>
+                                    <p>Keywords: {p.keywords}</p>
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
+                <div>
+                    <h2>Melee Weapons</h2>
+                    <div>
+                        {this.meleeProfiles.map((p: any) => {
+                            return (
+                                <div key={p.id}>
+                                    <h3>{p.name}</h3>
+                                    <p>{p.description}</p>
+                                    <p>Attacks: {p.attacks}</p>
+                                    <p>Strength: {p.strength}</p>
+                                    <p>AP: {p.armorPen}</p>
+                                    <p>Damage: {p.damage}</p>
+                                    <p>Keywords: {p.keywords}</p>
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
 
+            </div>
+*/}
             <div className="width-full">
-                <pre>{JSON.stringify(this, null, 2)}</pre>
+                <pre>{JSON.stringify(this.subProfiles, (key, value) => {
+                    if (key === '_raw') {
+                        return undefined;
+                    }
+                    return value;
+                    }, 2)}</pre>
             </div>
         </div>);
     }
@@ -191,4 +242,39 @@ export class UnitProfile {
         return parseInt(`${characteristic.value}`.replace('\\\"', '').replace('+', ''));
     }
     
+}
+
+export class WeaponProfile {
+    name: string;
+    type: string;
+    id: string;
+    _raw: any;
+    range: number;
+    attacks: string;
+    skill: number;
+    strength: number;
+    armorPen: number;
+    damage: string;
+    keywords: any;
+
+    constructor(profile: any) {
+        this.name = profile.name;
+        this.type = profile.type;
+        this.id = profile.id;
+        const profileData = profile.profiles[0];
+        
+        this.range = this.parseCharacteristic(profileData.characteristics?.find((c: { name: string; }) => c.name === "Range"));
+        this.attacks = profileData.characteristics?.find((c: { name: string; }) => c.name === "A");
+        this.skill = this.parseCharacteristic(profileData.characteristics?.find((c: { name: string; }) => c.name === "BS" || c.name === "WS"));
+        this.strength = this.parseCharacteristic(profileData.characteristics?.find((c: { name: string; }) => c.name === "S"));
+        this.armorPen = this.parseCharacteristic(profileData.characteristics?.find((c: { name: string; }) => c.name === "AP"));
+        this.damage = profileData.characteristics?.find((c: { name: string; }) => c.name === "D");
+        this.keywords = profileData.keywords;
+        this._raw = profile;
+    }
+
+    parseCharacteristic = (characteristic: any) => {
+        if (!characteristic) return 0;
+        return parseInt(`${characteristic.value}`.replace('\\\"', '').replace('+', ''));
+    }
 }
