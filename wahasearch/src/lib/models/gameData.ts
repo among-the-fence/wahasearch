@@ -29,6 +29,7 @@ export interface Catalogue extends Base, Named{
     sharedProfiles: Map<String, Profile>;
     categoryEntries?: CategoryEntry[];
     entryLinks?: EntryLink[];
+    infoLinks?: InfoLink[];
 }
 
 export interface Rule extends Named {
@@ -108,7 +109,7 @@ export class WBSDataGameSystemParser {
         });
         console.log("DONE");
         x.datacards.forEach((dc: DataCard) => {
-            dc.setLinkedItem(everythingInAMap.get(dc.entrylink.targetId));
+            dc.setLinkedItem(everythingInAMap.get(dc.entrylink.targetId), everythingInAMap);
         });
         console.log(everythingInAMap);
         console.log(x);
@@ -129,6 +130,7 @@ export class WBSDataGameSystemParser {
             });
         }
         const entryLinks = data.entryLinks ? ensureArray(data.entryLinks.entryLink).map((e: any) => this.mapEntryLink(e)) : [];
+        const infoLinks = data.infolinks? ensureArray(data.infoLinks.infoLink).map((e:any) => this.mapEntryLink(e)) : [];
         return {
             ...mapBase(data),
             ...mapName(data),
@@ -143,6 +145,7 @@ export class WBSDataGameSystemParser {
             sharedProfiles: sharedProfiles,
             categoryEntries: categoryEntries,
             entryLinks: entryLinks,
+            infoLinks: infoLinks,
         };
     }
 
