@@ -127,10 +127,16 @@ export class DataCard {
     }
 
     renderDetailsSheet() {
+        const cats = "• " + this.linkedItem?.categoryLinks?.map((c: any) => c.name).join(" • ") + " •";
         return (<div>
             <div>
                 <h1 className="inline">{this.name}</h1>
                 <h4 className="inline"> ({(this.cost)})</h4>
+            </div>
+            <div>
+                <div>
+                    {cats}
+                </div>
             </div>
             <div>
                 {this.profiles.map(p => {
@@ -147,8 +153,9 @@ export class DataCard {
                     );
                 })}
             </div>
+
             <div className="width-full">
-                <pre>{JSON.stringify(this)}</pre>
+                <pre>{JSON.stringify(this, null, 2)}</pre>
             </div>
         </div>);
     }
