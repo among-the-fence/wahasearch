@@ -5,6 +5,8 @@ import { gameSystem } from "../gst";
 
 const DEBUG_SHEET = [""];
 
+const LINKED_WEAPON_TYPE_NAMES = ["Melee Weapon", "Ranged Weapon", "upgrade"];
+
 export class DataCard {
     name: string;
     id: string;
@@ -16,6 +18,7 @@ export class DataCard {
     subProfiles: UnitProfile[];
     meleeProfiles: WeaponProfile[];
     rangedProfiles: WeaponProfile[];
+    abilities: any[];
 
     constructor(link: EntryLink) {
         this.name = link.name.replace(" [Legends]", "");
@@ -28,6 +31,7 @@ export class DataCard {
         this.subProfiles = [];
         this.meleeProfiles = [];
         this.rangedProfiles = [];
+        this.abilities = [];
     }
 
     setLinkedItem(item: any, sharedItems: Map<string, any>) {
@@ -36,10 +40,12 @@ export class DataCard {
         this.cost = new Set([item?.costs?.find((c: { typeId: string; }) => c.typeId === gameSystem.costTypeId)?.value]);
 
         this.subProfiles = this.extractNextedProfiles(item);
+        // if (DEBUG_SHEET.includes(this.name)) console.log(this.subProfiles);
+
         const linkedSubProfiles = [
                 [...new Set(this.subProfiles.filter((p:any) => p.targetId).map((p:any) => p.targetId))].map((id: string) => sharedItems.get(id)).filter((p: any) => p?.typeName == "Unit"),
                 this.subProfiles.filter((p:any) => p.typeName == "Unit")
-        ].flat();
+            ].flat();
         const newList: UnitProfile[] = [];
         linkedSubProfiles.forEach((p: any) => {
             const prof = new UnitProfile(p)
@@ -52,13 +58,19 @@ export class DataCard {
                 newList.push(prof);
             }
         });
-        
-        this.profiles = newList;
-        this.meleeProfiles = this.subProfiles.filter((p: any) => p.profiles?.find((x: any) => x.typeName == "Melee Weapons")).map((p: any) => new WeaponProfile(p));
-        this.rangedProfiles = this.subProfiles.filter((p: any) => p.profiles?.find((x: any) => x.typeName == "Ranged Weapons")).map((p: any) => new WeaponProfile(p));
 
-        if (DEBUG_SHEET.includes(this.name))   console.log(this);
-        //
+        const linkedSubWeapon = [
+                [...new Set(this.subProfiles.filter((p:any) => p.targetId).map((p:any) => p.targetId))].map((id: string) => sharedItems.get(id)).filter((p: any) => LINKED_WEAPON_TYPE_NAMES.includes(p?.type)),
+                this.subProfiles.filter((p:any) => LINKED_WEAPON_TYPE_NAMES.includes(p?.type))
+            ].flat();
+        if (DEBUG_SHEET.includes(this.name))   console.log(linkedSubWeapon);
+        
+        const combinedWeapson = [...new Set([...linkedSubWeapon, ...this.subProfiles])];
+        this.profiles = newList;
+        this.meleeProfiles =combinedWeapson.filter((p: any) => p.profiles?.find((x: any) => x.typeName == "Melee Weapons")).map((p: any) => new WeaponProfile(p));
+        this.rangedProfiles = combinedWeapson.filter((p: any) => p.profiles?.find((x: any) => x.typeName == "Ranged Weapons")).map((p: any) => new WeaponProfile(p));
+        this.abilities = this.linkedItem?.profiles?.filter((p: any) => p.typeName == "Abilities");
+     //
     }
 
     extractNextedProfiles(data: any): any[] {
@@ -72,7 +84,7 @@ export class DataCard {
             return data.map((d: any) => this.extractNextedProfiles(d));
         }
         if (data?.costs) {
-            if (DEBUG_SHEET.includes(this.name)) console.log(data);
+            // if (DEBUG_SHEET.includes(this.name)) console.log(data);
             const profilCosts = data.costs.find((c: { typeId: string; }) => c.typeId === gameSystem.costTypeId)?.value
             if (profilCosts) {
                 this.cost.add(profilCosts);
@@ -85,10 +97,11 @@ export class DataCard {
         allData.push(data.selectionEntry);
         allData.push(data.selectionEntries);
         allData.push(data.sharedProfiles);
+        allData.push(data.entryLinks);
         allData.push(data.infoLinks);
         allData.push(data.profiles);
         allData.push(data.profile);
-        // if (DEBUG_SHEET.includes(this.name)) console.log(allData);
+        // if (DEBUG_SHEET.includes(this.name)) console.log(data.entryLinks);
         
         return allData.filter((d: any) => !this.profileFilter(d)).flatMap((d:any) => {
             return this.extractNextedProfiles(d)
@@ -96,7 +109,7 @@ export class DataCard {
     }
 
     profileFilter(profile: any): boolean {
-        return profile && (profile.type == "profile" || profile.typeName == "Abilities" || profile.type == "upgrade" || profile.typeName == "Unit" || profile.typeName == "Melee Weapon" || profile.typeName == "Ranged Weapon");
+        return profile && ( profile.targetId || profile.type == "profile" || profile.typeName == "Abilities" || profile.type == "upgrade" || profile.typeName == "Unit" || profile.typeName == "Melee Weapon" || profile.typeName == "Ranged Weapon");
      }
 
 
@@ -147,58 +160,117 @@ export class DataCard {
                 </div>
             </div>
             <div>
-                {this.profiles.map(p => {
-                    return (
-                        <div key={p.id}>
-                            <h2 className="inline" >{p.name} </h2>
-                            <p className="inline" >M:{p.m}" </p>
-                            <p className="inline" >T:{p.t} </p>
-                            <p className="inline" >W:{p.w} </p>
-                            <p className="inline" >LD:{p.ld}+ </p>
-                            <p className="inline" >OC:{p.oc} </p>
-                            <p className="inline" >SV:{p.sv}+ </p>
-                        </div>
-                    );
-                })}
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>M</th>
+                            <th>T</th>
+                            <th>W</th>
+                            <th>LD</th>
+                            <th>OC</th>
+                            <th>SV</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.profiles.map((p: any) => {
+                            return (
+                                <tr key={p.id}>
+                                    <td className="font-semibold">{p.name}</td>
+                                    <td>{p.m}"</td>
+                                    <td>{p.t}</td>
+                                    <td>{p.w}</td>
+                                    <td>{p.ld}+</td>
+                                    <td>{p.oc}</td>
+                                    <td>{p.sv}+</td>
+                                </tr>
+                            );
+                        })}
+                    </tbody>
+                </table>
             </div>
             <div>
                 <div>
-                    <h2>Ranged Weapons</h2>
+                    <h2 className="font-bold">Ranged Weapons</h2>
                     <div>
-                        {this.rangedProfiles.map((p: any) => {
-                            return (
-                                <div key={p.id}>
-                                    <p className="inline">{p.name}</p>
-                                    <p className="inline">Range: {p.range}"</p>
-                                    <p className="inline">Attacks: {p.attacks}</p>
-                                    <p className="inline">BS: {p.skill}</p>
-                                    <p className="inline">S: {p.strength}</p>
-                                    <p className="inline">AP: {p.armorPen}</p>
-                                    <p className="inline">D: {p.damage}</p>
-                                    
-                                </div>
-                            );
-                        })}
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Range</th>
+                                    <th>A</th>
+                                    <th>BS</th>
+                                    <th>S</th>
+                                    <th>AP</th>
+                                    <th>D</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {this.rangedProfiles.map((p: any) => {
+                                    return (
+                                        <tr key={p.id}>
+                                            <td>{p.name}</td>
+                                            <td>{p.range}"</td>
+                                            <td>{p.attacks}</td>
+                                            <td>{p.skill}</td>
+                                            <td>{p.strength}</td>
+                                            <td>{p.armorPen}</td>
+                                            <td>{p.damage}</td>
+                                        </tr>
+                                    );
+                                })}
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 
 
                 <div>
-                    <h2>Melee Weapons</h2>
+                    <h2 className="font-bold">Melee Weapons</h2>
                     <div>
-                        {this.meleeProfiles.map((p: any) => {
-                            return (
-                                <div key={p.id}>
-                                    <p className="inline">{p.name} </p>
-                                    <p className="inline">Attacks: {p.attacks} </p>
-                                    <p className="inline">BS: {p.skill} </p>
-                                    <p className="inline">S: {p.strength} </p>
-                                    <p className="inline">AP: {p.armorPen} </p>
-                                    <p className="inline">D: {p.damage} </p>
-                                    
-                                </div>
-                            );
-                        })}
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>A</th>
+                                    <th>BS</th>
+                                    <th>S</th>
+                                    <th>AP</th>
+                                    <th>D</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {this.meleeProfiles.map((p: any) => {
+                                    return (
+                                        <tr key={p.id}>
+                                            <td>{p.name}</td>
+                                            <td>{p.attacks}</td>
+                                            <td>{p.skill}</td>
+                                            <td>{p.strength}</td>
+                                            <td>{p.armorPen}</td>
+                                            <td>{p.damage}</td>
+                                        </tr>
+                                    );
+                                })}
+                            </tbody>
+                        </table>
+                    
+                    </div>
+
+                    <div>
+                        <h2 className="font-bold">Abilities</h2>
+                        <div>
+                            <ul>
+                                {this.abilities.map((p: any) => {
+                                    return (
+                                        <li key={p.id}>
+                                            <h3 className="font-semibold">{p.name}</h3>
+                                            <p>{p.characteristics[0].value}</p>
+                                        </li>
+                                    );
+                                })}
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

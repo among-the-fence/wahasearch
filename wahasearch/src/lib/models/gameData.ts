@@ -43,6 +43,7 @@ export interface Profile extends Base, Named {
 
 export interface Characteristic extends Base, Named {
     value: string;
+    description: string;
 }
 
 export interface CategoryEntry extends Base, Named {
@@ -218,12 +219,12 @@ export class WBSDataGameSystemParser {
     }
 
     private mapCharacteristic(data: any): Characteristic {
-        if (!data) { return { _raw: data, id: "", typeId: "", typeName: "", type: "", name: "", value: "" }; }
+        if (!data) { return { _raw: data, id: "", typeId: "", typeName: "", type: "", name: "", value: "", description: "" }; }
         return {
             ...mapBase(data),
             ...mapName(data),
             value: data["#text"],
-
+            description: data["@_description"],
         };
     }
 
