@@ -67,10 +67,30 @@ export class DataCard {
         
         const combinedWeapson = [...new Set([...linkedSubWeapon, ...this.subProfiles])];
         this.profiles = newList;
-        this.meleeProfiles =combinedWeapson.filter((p: any) => p.profiles?.find((x: any) => x.typeName == "Melee Weapons")).map((p: any) => new WeaponProfile(p));
-        this.rangedProfiles = combinedWeapson.filter((p: any) => p.profiles?.find((x: any) => x.typeName == "Ranged Weapons")).map((p: any) => new WeaponProfile(p));
+
+        this.rangedProfiles.push(...this.buildWeaponProfiles(combinedWeapson, "Ranged Weapons"));
+        this.meleeProfiles.push(...this.buildWeaponProfiles(combinedWeapson, "Melee Weapons"));
+
         this.abilities = this.linkedItem?.profiles?.filter((p: any) => p.typeName == "Abilities");
      //
+    }
+
+    buildWeaponProfiles(profile: any, type: string): WeaponProfile[] {
+        const weaponList: WeaponProfile[] = []
+        profile.filter((p: any) => p.profiles?.find((x: any) => x.typeName == type)).forEach((p: any) => {
+            p.profiles
+                .map((subProfile: any) => {
+                    if (DEBUG_SHEET.includes(this.name)) console.log(subProfile);
+                    return new WeaponProfile(p, subProfile)})
+                .forEach((newWep: WeaponProfile) => {
+                    if (!weaponList.find((wp: WeaponProfile) => {
+                        return wp.name == newWep.name && wp.range == newWep.range && wp.attacks == newWep.attacks && wp.skill == newWep.skill && wp.strength == newWep.strength && wp.armorPen == newWep.armorPen && wp.damage == newWep.damage;
+                    })) {
+                        weaponList.push(newWep);
+                    }
+                });
+            });
+        return weaponList;
     }
 
     extractNextedProfiles(data: any): any[] {
@@ -276,7 +296,7 @@ export class DataCard {
             </div>
 
             <div className="width-full">
-                <pre>{JSON.stringify(this.subProfiles, (key, value) => {
+                <pre>{JSON.stringify(this.linkedItem._raw, (key, value) => {
                     if (key === '_raw') {
                         return undefined;
                     }
@@ -332,23 +352,22 @@ export class WeaponProfile {
     damage: string;
     keywords: any;
 
-    constructor(profile: any) {
-        this.name = profile.name;
+    constructor(profile: any, subProfile?: any) {
+        this.name = subProfile?.name || profile.name;
         this.type = profile.type;
-        this.id = profile.id;
-        const profileData = profile.profiles[0];
+        this.id = profile.id + subProfile.id;
         
-        this.range = this.extractCharacteristic(profileData, "Range");
-        this.attacks = this.extractCharacteristic(profileData, "A");
-        this.skill = this.extractCharacteristic(profileData, "BS");
-        this.strength = this.extractCharacteristic(profileData,"S");
-        this.armorPen = this.extractCharacteristic(profileData, "AP");
-        this.damage = this.extractCharacteristic(profileData, "D");
-        this.keywords = profileData.keywords;
+        this.range = this.extractCharacteristic(subProfile, ["Range"]);
+        this.attacks = this.extractCharacteristic(subProfile, ["A"]);
+        this.skill = this.extractCharacteristic(subProfile, ["BS", "WS"]);
+        this.strength = this.extractCharacteristic(subProfile, ["S"]);
+        this.armorPen = this.extractCharacteristic(subProfile, ["AP"]);
+        this.damage = this.extractCharacteristic(subProfile, ["D"]);
+        this.keywords = subProfile?.keywords;
         this._raw = profile;
     }
 
-    extractCharacteristic = (profile: any, name: string) => {
-        return profile.characteristics?.find((c: { name: string; }) => c.name === name)?.value;
+    extractCharacteristic = (profile: any, name: string[]) => {
+        return profile?.characteristics?.find((c: { name: string; }) => name.includes(c.name))?.value;
     };
 }
