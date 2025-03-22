@@ -3,10 +3,11 @@ import { useEffect, useState } from 'react';
 import './App.css'
 import { gamedata, GameData, SelectionEntry, WBSDataGameSystemParser } from './lib/models/gameData';
 import { UnitDetailsSheet } from './components/UnitDetailsSheet';
+import { Renderable } from './lib/models/renderable';
 
  function App() {
     const [displayMessage, setdisplayMessage] = useState<string>("Loading"); 
-    const [selected, setSelected] = useState<SelectionEntry | undefined>(undefined); 
+    const [selected, setSelected] = useState<Renderable | undefined>(undefined); 
     const [parsedData, setParsedData] = useState<GameData | undefined>(gamedata);
 
     useEffect(() => {

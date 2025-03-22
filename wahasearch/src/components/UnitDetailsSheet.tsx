@@ -6,9 +6,10 @@ import { SelectionEntry } from "@/lib/models/gameData";
 import { useState } from 'react'
 import { Dialog, DialogPanel, DialogTitle } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
+import { Renderable } from "@/lib/models/renderable";
 
 interface UnitDetailsSheetProps {
-  unit?: SelectionEntry;
+  unit?: Renderable;
   handleClickToClose: ()=>void;
 }
 
@@ -41,7 +42,7 @@ export const UnitDetailsSheet = ({unit, handleClickToClose}: UnitDetailsSheetPro
               <div className="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl">
                 <div className="px-4 sm:px-6">
                   <div className="flex items-start justify-between">
-                    <DialogTitle className="text-base font-semibold text-gray-900">Panel title</DialogTitle>
+                    <DialogTitle className="text-base font-semibold text-gray-900">{unit.renderDetailsTitle()}</DialogTitle>
                     <div className="ml-3 flex h-7 items-center">
                       <button
                         type="button"
@@ -74,22 +75,3 @@ export const UnitDetailsSheet = ({unit, handleClickToClose}: UnitDetailsSheetPro
   )
 }
 
-
-
-interface SectionProps {
-  title: string
-  children: React.ReactNode
-  defaultVisible?: boolean
-}
-
-const Section = ({title, children, defaultVisible = true} : SectionProps) => {
-
-  const [visible, setVisible] = useState(defaultVisible)
-  return (
-    <div onClick={() => setVisible(!visible)} className="cursor-pointer">
-      <h1 className="text-lg font-bold">{title}</h1>
-        {(visible !== false) && (<p>
-          {children}
-        </p>)}
-    </div>);
-  }

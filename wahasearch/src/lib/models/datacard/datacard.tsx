@@ -2,12 +2,16 @@ import React from "react";
 import { EntryLink } from "../gameData";
 import { BaseCard } from "@/components/unitcomponents/BaseCard";
 import { gameSystem } from "../gst";
+import { Renderable } from "../renderable";
+import { Section } from "@/components/ui/section";
 
 const DEBUG_SHEET = [""];
 
 const LINKED_WEAPON_TYPE_NAMES = ["Melee Weapon", "Ranged Weapon", "upgrade"];
 
-export class DataCard {
+
+
+export class DataCard implements Renderable {
     name: string;
     id: string;
     isLegends: boolean;
@@ -166,144 +170,148 @@ export class DataCard {
         );
     }
 
-    renderDetailsSheet() {
-        console.log(this);
+    renderDetailsTitle() {
         const cats = "• " + this.linkedItem?.categoryLinks?.map((c: any) => c.name).join(" • ") + " •";
-        return (<div>
-            <div>
-                <h1 className="inline">{this.name}</h1>
-                <h4 className="inline"> ({(this.cost)})</h4>
-            </div>
-            <div>
+        return (
+            <div className="flex items-center gap-4">
                 <div>
+                    <h1 className="text-xl font-bold">{this.name}</h1>
+                    <div className="text-sm text-gray-600">{(this.cost)} points</div>
+                </div>
+                <div className="text-xs text-gray-500">
                     {cats}
                 </div>
-            </div>
-            <div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>M</th>
-                            <th>T</th>
-                            <th>W</th>
-                            <th>LD</th>
-                            <th>OC</th>
-                            <th>SV</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {this.profiles.map((p: any) => {
-                            return (
-                                <tr key={p.id}>
-                                    <td className="font-semibold">{p.name}</td>
-                                    <td>{p.m}"</td>
-                                    <td>{p.t}</td>
-                                    <td>{p.w}</td>
-                                    <td>{p.ld}+</td>
-                                    <td>{p.oc}</td>
-                                    <td>{p.sv}+</td>
-                                </tr>
-                            );
-                        })}
-                    </tbody>
-                </table>
-            </div>
-            <div>
-                <div>
-                    <h2 className="font-bold">Ranged Weapons</h2>
-                    <div>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Range</th>
-                                    <th>A</th>
-                                    <th>BS</th>
-                                    <th>S</th>
-                                    <th>AP</th>
-                                    <th>D</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {this.rangedProfiles.map((p: any) => {
-                                    return (
-                                        <tr key={p.id}>
-                                            <td>{p.name}</td>
-                                            <td>{p.range}"</td>
-                                            <td>{p.attacks}</td>
-                                            <td>{p.skill}</td>
-                                            <td>{p.strength}</td>
-                                            <td>{p.armorPen}</td>
-                                            <td>{p.damage}</td>
-                                        </tr>
-                                    );
-                                })}
-                            </tbody>
-                        </table>
+                {this.isLegends && (
+                    <div className="text-xs text-slate-500 bg-slate-100 px-2 py-1 rounded">
+                        Legends
                     </div>
-                </div>
+                )}
+            </div>
+        );
+    }
 
-
-                <div>
-                    <h2 className="font-bold">Melee Weapons</h2>
-                    <div>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>A</th>
-                                    <th>BS</th>
-                                    <th>S</th>
-                                    <th>AP</th>
-                                    <th>D</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {this.meleeProfiles.map((p: any) => {
-                                    return (
-                                        <tr key={p.id}>
-                                            <td>{p.name}</td>
-                                            <td>{p.attacks}</td>
-                                            <td>{p.skill}</td>
-                                            <td>{p.strength}</td>
-                                            <td>{p.armorPen}</td>
-                                            <td>{p.damage}</td>
+    renderDetailsSheet() {
+        console.log(this);
+        return (
+            <div className="space-y-4 p-2">
+                <div className="space-y-4">
+                    <Section title="Unit Profiles" defaultVisible={true}>
+                        <div className="overflow-x-auto">
+                            <table className="min-w-full divide-y divide-gray-200 text-sm">
+                                <thead className="bg-gray-50">
+                                    <tr>
+                                        <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+                                        <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">M</th>
+                                        <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">T</th>
+                                        <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">W</th>
+                                        <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">LD</th>
+                                        <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">OC</th>
+                                        <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">SV</th>
+                                    </tr>
+                                </thead>
+                                <tbody className="bg-white divide-y divide-gray-200">
+                                    {this.profiles.map((p: any) => (
+                                        <tr key={p.id} className="hover:bg-gray-50">
+                                            <td className="px-3 py-2 whitespace-nowrap font-medium">{p.name}</td>
+                                            <td className="px-3 py-2 whitespace-nowrap">{p.m}"</td>
+                                            <td className="px-3 py-2 whitespace-nowrap">{p.t}</td>
+                                            <td className="px-3 py-2 whitespace-nowrap">{p.w}</td>
+                                            <td className="px-3 py-2 whitespace-nowrap">{p.ld}+</td>
+                                            <td className="px-3 py-2 whitespace-nowrap">{p.oc}</td>
+                                            <td className="px-3 py-2 whitespace-nowrap">{p.sv}+</td>
                                         </tr>
-                                    );
-                                })}
-                            </tbody>
-                        </table>
-                    
-                    </div>
-
-                    <div>
-                        <h2 className="font-bold">Abilities</h2>
-                        <div>
-                            <ul>
-                                {this.abilities.map((p: any) => {
-                                    return (
-                                        <li key={p.id}>
-                                            <h3 className="font-semibold">{p.name}</h3>
-                                            <p>{p.characteristics[0].value}</p>
-                                        </li>
-                                    );
-                                })}
-                            </ul>
+                                    ))}
+                                </tbody>
+                            </table>
                         </div>
-                    </div>
+                    </Section>
+
+                    <Section title="Ranged Weapons" defaultVisible={true}>
+                        <div className="overflow-x-auto">
+                            <table className="min-w-full divide-y divide-gray-200 text-sm">
+                                <thead className="bg-gray-50">
+                                    <tr>
+                                        <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+                                        <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Range</th>
+                                        <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">A</th>
+                                        <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">BS</th>
+                                        <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">S</th>
+                                        <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">AP</th>
+                                        <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">D</th>
+                                    </tr>
+                                </thead>
+                                <tbody className="bg-white divide-y divide-gray-200">
+                                    {this.rangedProfiles.map((p: any) => (
+                                        <tr key={p.id} className="hover:bg-gray-50">
+                                            <td className="px-3 py-2 whitespace-nowrap font-medium">{p.name}</td>
+                                            <td className="px-3 py-2 whitespace-nowrap">{p.range}"</td>
+                                            <td className="px-3 py-2 whitespace-nowrap">{p.attacks}</td>
+                                            <td className="px-3 py-2 whitespace-nowrap">{p.skill}</td>
+                                            <td className="px-3 py-2 whitespace-nowrap">{p.strength}</td>
+                                            <td className="px-3 py-2 whitespace-nowrap">{p.armorPen}</td>
+                                            <td className="px-3 py-2 whitespace-nowrap">{p.damage}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    </Section>
+
+                    <Section title="Melee Weapons" defaultVisible={true}>
+                        <div className="overflow-x-auto">
+                            <table className="min-w-full divide-y divide-gray-200 text-sm">
+                                <thead className="bg-gray-50">
+                                    <tr>
+                                        <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+                                        <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">A</th>
+                                        <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">WS</th>
+                                        <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">S</th>
+                                        <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">AP</th>
+                                        <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">D</th>
+                                    </tr>
+                                </thead>
+                                <tbody className="bg-white divide-y divide-gray-200">
+                                    {this.meleeProfiles.map((p: any) => (
+                                        <tr key={p.id} className="hover:bg-gray-50">
+                                            <td className="px-3 py-2 whitespace-nowrap font-medium">{p.name}</td>
+                                            <td className="px-3 py-2 whitespace-nowrap">{p.attacks}</td>
+                                            <td className="px-3 py-2 whitespace-nowrap">{p.skill}</td>
+                                            <td className="px-3 py-2 whitespace-nowrap">{p.strength}</td>
+                                            <td className="px-3 py-2 whitespace-nowrap">{p.armorPen}</td>
+                                            <td className="px-3 py-2 whitespace-nowrap">{p.damage}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    </Section>
+
+                    <Section title="Abilities" defaultVisible={true}>
+                        <div className="space-y-2">
+                            {this.abilities.map((p: any) => (
+                                <div key={p.id} className="bg-white p-2 rounded shadow-sm">
+                                    <h3 className="text-sm font-semibold text-gray-900">{p.name}</h3>
+                                    <p className="mt-1 text-xs text-gray-600">{p.characteristics[0].value}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </Section>
+
+                    <Section title="Raw Data" defaultVisible={false}>
+                        <div className="bg-gray-50 p-2 rounded overflow-x-auto">
+                            <pre className="text-xs text-gray-700 whitespace-pre-wrap">
+                                {JSON.stringify(this.linkedItem._raw, (key, value) => {
+                                    if (key === '_raw') {
+                                        return undefined;
+                                    }
+                                    return value;
+                                }, 2)}
+                            </pre>
+                        </div>
+                    </Section>
                 </div>
             </div>
-
-            <div className="width-full">
-                <pre>{JSON.stringify(this.linkedItem._raw, (key, value) => {
-                    if (key === '_raw') {
-                        return undefined;
-                    }
-                    return value;
-                    }, 2)}</pre>
-            </div>
-        </div>);
+        );
     }
 
 }
