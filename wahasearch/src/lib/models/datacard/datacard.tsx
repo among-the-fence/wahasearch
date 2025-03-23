@@ -1,4 +1,3 @@
-import React from "react";
 import { EntryLink } from "../gameData";
 import { BaseCard } from "@/components/unitcomponents/BaseCard";
 import { gameSystem } from "../gst";

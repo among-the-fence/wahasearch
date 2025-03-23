@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from 'react';
 import './App.css'
-import { gamedata, GameData, SelectionEntry, WBSDataGameSystemParser } from './lib/models/gameData';
+import { gamedata, GameData, WBSDataGameSystemParser } from './lib/models/gameData';
 import { UnitDetailsSheet } from './components/UnitDetailsSheet';
 import { Renderable } from './lib/models/renderable';
 

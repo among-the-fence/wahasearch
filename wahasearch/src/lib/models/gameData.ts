@@ -1,4 +1,3 @@
-import { GameSystem } from './gst';
 import { ensureArray } from '../util';
 import { Dispatch, SetStateAction } from 'react';
 import { Base, Named, mapBase, mapName } from './baseModels';
