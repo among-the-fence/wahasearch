@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="b39e-4401-8f3e-fdf7" name="Imperium - Adepta Sororitas" gameSystemId="sys-352e-adc2-7639-d6a9" gameSystemRevision="1" revision="53" battleScribeVersion="2.03" authorName="CrusherJoe" type="catalogue" authorContact="@CrusherJoe on Discord" authorUrl="Sometimes GitHub blows">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="b39e-4401-8f3e-fdf7" name="Imperium - Adepta Sororitas" gameSystemId="sys-352e-adc2-7639-d6a9" gameSystemRevision="1" revision="60" battleScribeVersion="2.03" authorName="CrusherJoe" type="catalogue" authorContact="@CrusherJoe on Discord" authorUrl="Sometimes GitHub blows">
   <categoryEntries>
     <categoryEntry name="Aestred Thurga and Agathae Dolan" hidden="false" id="c8ba-2b2d-e47f-d7a6"/>
     <categoryEntry name="Arco-flagellants" hidden="false" id="63f8-3a5d-ef9c-d86e"/>
@@ -312,7 +312,7 @@
         <cost name="pts" typeId="51b2-306e-1021-d207" value="45"/>
       </costs>
       <modifiers>
-        <modifier type="set" value="150" field="51b2-306e-1021-d207">
+        <modifier type="set" value="140" field="51b2-306e-1021-d207">
           <conditions>
             <condition type="atLeast" value="4" field="selections" scope="ca59-3760-5efc-9846" childId="4950-9b2a-c4de-5e" shared="true" includeChildSelections="true"/>
           </conditions>
@@ -405,7 +405,7 @@
                 <constraint type="max" value="9" field="selections" scope="parent" shared="true" id="d711-d9d3-e52d-b3c5" includeChildSelections="true"/>
               </constraints>
             </selectionEntry>
-            <selectionEntry type="model" import="true" name="Battle Sister w/ Simulacrum Imperialus" hidden="false" id="cc4b-338b-47bd-edde">
+            <selectionEntry type="model" import="true" name="Battle Sister w/ Simulacrum Imperialis" hidden="false" id="cc4b-338b-47bd-edde">
               <infoLinks>
                 <infoLink name="Battle Sister" hidden="false" type="profile" id="9501-8565-98aa-1400" targetId="68fd-7de8-6eb0-b30e"/>
               </infoLinks>
@@ -757,42 +757,8 @@
         <categoryLink targetId="fef8-7c60-b716-cf27" id="dd73-8f5c-e6fb-6bb" primary="false" name="Canoness"/>
         <categoryLink targetId="fd71-afa6-b13b-7fda" id="5865-74c2-fccf-70a7" primary="false" name="Faction: Adepta Sororitas"/>
       </categoryLinks>
-      <selectionEntries>
-        <selectionEntry id="558f-f0de-2314-eed" name="Rod of Office" hidden="false" collective="false" import="true" type="upgrade">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition field="selections" scope="c338-14f9-4ee-f223" value="0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="3e95-d35a-5189-9021" type="equalTo"/>
-                    <condition field="selections" scope="c338-14f9-4ee-f223" value="0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="4ef1-dc81-763b-3ac3" type="equalTo"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-          <constraints>
-            <constraint field="selections" scope="parent" value="0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d6bc-ed5e-0774-6f97" type="min"/>
-            <constraint field="selections" scope="parent" value="1" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7ded-3a54-579c-353f" type="max"/>
-          </constraints>
-          <profiles>
-            <profile name="Rod of Office" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="327-b48b-848c-4390">
-              <characteristics>
-                <characteristic name="Description" typeId="9b8f-694b-e5e-b573">Each time a model in the bearer&apos;s unit makes an attack, re-roll a Hit roll of 1.</characteristic>
-              </characteristics>
-            </profile>
-          </profiles>
-        </selectionEntry>
-      </selectionEntries>
       <selectionEntryGroups>
         <selectionEntryGroup id="ae95-4b02-9e6e-420a" name="May have:" hidden="false" collective="false" import="true">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="c338-14f9-4ee-f223" value="0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e580-8335-3315-f716" type="equalTo"/>
-              </conditions>
-            </modifier>
-          </modifiers>
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="1a6a-b267-fc9f-647d"/>
           </constraints>
@@ -808,6 +774,13 @@
                   </characteristics>
                 </profile>
               </profiles>
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditions>
+                    <condition type="equalTo" value="0" field="selections" scope="c338-14f9-4ee-f223" childId="e580-8335-3315-f716" shared="true" percentValue="false" includeChildSelections="true" includeChildForces="false"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntry>
             <selectionEntry id="d2a8-bd20-4ac1-4275" name="Brazier of Holy Fire" hidden="false" collective="false" import="true" type="upgrade">
               <constraints>
@@ -831,6 +804,37 @@
                 <infoLink name="Torrent" hidden="false" type="rule" id="665c-8c03-ac20-1222" targetId="5edf-d619-23e0-9b56"/>
                 <infoLink name="One Shot" hidden="false" type="rule" id="8370-6297-fcbd-2319" targetId="cd26-1611-860a-91e4"/>
               </infoLinks>
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditions>
+                    <condition type="equalTo" value="0" field="selections" scope="c338-14f9-4ee-f223" childId="e580-8335-3315-f716" shared="true" percentValue="false" includeChildSelections="true" includeChildForces="false"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Rod of Office" hidden="false" id="7ae2-9d06-52cb-a61a" collective="false">
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition type="equalTo" value="0" field="selections" scope="c338-14f9-4ee-f223" childId="3e95-d35a-5189-9021" shared="true" percentValue="false" includeChildSelections="true" includeChildForces="false"/>
+                        <condition type="equalTo" value="0" field="selections" scope="c338-14f9-4ee-f223" childId="4ef1-dc81-763b-3ac3" shared="true" percentValue="false" includeChildSelections="true" includeChildForces="false"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+              </modifiers>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a241-313d-590b-796d" percentValue="false" includeChildSelections="false" includeChildForces="false"/>
+              </constraints>
+              <profiles>
+                <profile name="Rod of Office" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="4dce-d8aa-02ec-abef">
+                  <characteristics>
+                    <characteristic name="Description" typeId="9b8f-694b-e5e-b573">Each time a model in the bearer&apos;s unit makes an attack, re-roll a Hit roll of 1.</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -1300,7 +1304,7 @@
     </selectionEntry>
     <selectionEntry id="f1af-4984-1a52-c5" name="Celestian Sacresants" hidden="false" collective="false" import="true" type="unit" publicationId="7d85-6d0f-57e0-5dea">
       <modifiers>
-        <modifier type="set" field="51b2-306e-1021-d207" value="150">
+        <modifier type="set" field="51b2-306e-1021-d207" value="130">
           <conditions>
             <condition field="selections" scope="f1af-4984-1a52-c5" value="6" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="model" type="atLeast"/>
           </conditions>
@@ -1384,7 +1388,11 @@
         </selectionEntryGroup>
       </selectionEntryGroups>
       <costs>
-        <cost name="pts" typeId="51b2-306e-1021-d207" value="75"/>
+        <cost name="pts" typeId="51b2-306e-1021-d207" value="70"/>
+        <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
+        <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
+        <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
+        <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
       </costs>
       <constraints>
         <constraint type="max" value="3" field="selections" scope="force" shared="true" id="b9af-92b4-a125-1446" includeChildSelections="false"/>
@@ -1738,7 +1746,7 @@ This model can be attached to a Battle Sisters Squad, even if one Canoness, Pala
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Dominion Squad" hidden="false" id="d929-b22d-3040-9707" publicationId="7d85-6d0f-57e0-5dea">
       <costs>
-        <cost name="pts" typeId="51b2-306e-1021-d207" value="125"/>
+        <cost name="pts" typeId="51b2-306e-1021-d207" value="115"/>
         <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
         <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
         <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
@@ -4055,10 +4063,14 @@ of your Command phase, you can choose one of the following:
         </profile>
       </profiles>
       <costs>
-        <cost name="pts" typeId="51b2-306e-1021-d207" value="90"/>
+        <cost name="pts" typeId="51b2-306e-1021-d207" value="85"/>
+        <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
+        <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
+        <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
+        <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
       </costs>
       <modifiers>
-        <modifier type="set" value="180" field="51b2-306e-1021-d207">
+        <modifier type="set" value="170" field="51b2-306e-1021-d207">
           <conditions>
             <condition type="atLeast" value="6" field="selections" scope="7d63-7b55-a632-6a10" childId="model" shared="true" includeChildSelections="true" includeChildForces="true"/>
           </conditions>
@@ -4583,14 +4595,14 @@ of your Command phase, you can choose one of the following:
         </selectionEntry>
       </selectionEntries>
       <costs>
-        <cost name="pts" typeId="51b2-306e-1021-d207" value="90"/>
+        <cost name="pts" typeId="51b2-306e-1021-d207" value="85"/>
         <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
         <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
         <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
         <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
       </costs>
       <modifiers>
-        <modifier type="set" value="190" field="51b2-306e-1021-d207">
+        <modifier type="set" value="170" field="51b2-306e-1021-d207">
           <conditions>
             <condition type="atLeast" value="6" field="selections" scope="bee9-172b-7db7-f748" childId="model" shared="true" includeChildSelections="true" includeChildForces="true"/>
           </conditions>
@@ -5306,14 +5318,14 @@ Before making your selection, if this unit made a Charge move this turn, you can
         </profile>
       </profiles>
       <costs>
-        <cost name="pts" typeId="51b2-306e-1021-d207" value="85"/>
+        <cost name="pts" typeId="51b2-306e-1021-d207" value="80"/>
         <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
         <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
         <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
         <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
       </costs>
       <modifiers>
-        <modifier type="set" value="170" field="51b2-306e-1021-d207">
+        <modifier type="set" value="160" field="51b2-306e-1021-d207">
           <conditions>
             <condition type="atLeast" value="6" field="selections" scope="22f0-a7d8-b2b6-e26" childId="model" shared="true" includeChildSelections="true" includeChildForces="true"/>
           </conditions>
@@ -6122,6 +6134,456 @@ Before making your selection, if this unit made a Charge move this turn, you can
         <infoLink name="Acts of Faith" id="8b30-35c7-f431-8bc5" hidden="false" type="rule" targetId="7ef7-dca6-e2ea-ecc8"/>
       </infoLinks>
     </selectionEntry>
+    <selectionEntry type="unit" import="true" name="Sanctifiers" hidden="false" id="eade-6ec7-7236-bfdb">
+      <costs>
+        <cost name="pts" typeId="51b2-306e-1021-d207" value="100"/>
+        <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
+        <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
+        <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
+        <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
+      </costs>
+      <selectionEntries>
+        <selectionEntry type="model" import="true" name="Miraculist" hidden="false" id="9dfc-709d-2540-7538" sortIndex="5">
+          <constraints>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="1cde-21f7-7d17-dd10" includeChildSelections="false"/>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="ecdc-f904-c823-5459" includeChildSelections="false"/>
+          </constraints>
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Holy fire" hidden="false" id="563d-5e1d-0fc1-781a">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="2414-fa35-3c23-f1ad" includeChildSelections="false"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="96a4-7faa-d480-d25a" includeChildSelections="false"/>
+              </constraints>
+              <profiles>
+                <profile name="Holy fire" typeId="f77d-b953-8fa4-b762" typeName="Ranged Weapons" hidden="false" id="d6a8-9945-5440-a35c">
+                  <characteristics>
+                    <characteristic name="Range" typeId="9896-9419-16a1-92fc">12&quot;</characteristic>
+                    <characteristic name="A" typeId="3bb-c35f-f54-fb08">D6</characteristic>
+                    <characteristic name="BS" typeId="94d-8a98-cf90-183e">N/A</characteristic>
+                    <characteristic name="S" typeId="2229-f494-25db-c5d3">6</characteristic>
+                    <characteristic name="AP" typeId="9ead-8a10-520-de15">-1</characteristic>
+                    <characteristic name="D" typeId="a354-c1c8-a745-f9e3">2</characteristic>
+                    <characteristic name="Keywords" typeId="7f1b-8591-2fcf-d01c">Ignores Cover, One Shot, Torrent</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <infoLinks>
+                <infoLink name="Ignores Cover" id="e060-c1e3-8473-718f" hidden="false" type="rule" targetId="4640-43e7-30b-215a"/>
+                <infoLink name="One Shot" id="8dce-d607-c304-c64b" hidden="false" type="rule" targetId="cd26-1611-860a-91e4"/>
+                <infoLink name="Torrent" id="1af8-4d25-7d9e-5169" hidden="false" type="rule" targetId="5edf-d619-23e0-9b56"/>
+              </infoLinks>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Burning hands" hidden="false" id="e697-34ef-f17f-50df">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="bf9d-699a-2f01-3aad" includeChildSelections="false"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a466-4e3f-9e48-3c7c" includeChildSelections="false"/>
+              </constraints>
+              <profiles>
+                <profile name="Burning hands" typeId="8a40-4aaa-c780-9046" typeName="Melee Weapons" hidden="false" id="9e90-c5a3-adde-117c">
+                  <characteristics>
+                    <characteristic name="Range" typeId="914c-b413-91e3-a132">Melee</characteristic>
+                    <characteristic name="A" typeId="2337-daa1-6682-b110">1</characteristic>
+                    <characteristic name="WS" typeId="95d1-95f-45b4-11d6">2+</characteristic>
+                    <characteristic name="S" typeId="ab33-d393-96ce-ccba">6</characteristic>
+                    <characteristic name="AP" typeId="41a0-1301-112a-e2f2">-2</characteristic>
+                    <characteristic name="D" typeId="3254-9fe6-d824-513e">3</characteristic>
+                    <characteristic name="Keywords" typeId="893f-9000-ccf7-648e">Devastating Wounds</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <infoLinks>
+                <infoLink name="Devastating Wounds" id="c3c7-3b96-6123-c965" hidden="false" type="rule" targetId="be1e-ac8e-1e2c-3528"/>
+              </infoLinks>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntry>
+        <selectionEntry type="model" import="true" name="Salvationist" hidden="false" id="489c-4153-c332-875c" sortIndex="8">
+          <constraints>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="2909-45b0-01a9-bfbc-min" includeChildSelections="false"/>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2909-45b0-01a9-bfbc-max" includeChildSelections="false"/>
+          </constraints>
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Salvationist Medikit" hidden="false" id="d256-323c-742a-254a">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="a482-f839-719d-2f09-min" includeChildSelections="false"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a482-f839-719d-2f09-max" includeChildSelections="false"/>
+              </constraints>
+              <profiles>
+                <profile name="Salvationist Medikit" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="e0cf-9351-ff1e-de26">
+                  <characteristics>
+                    <characteristic name="Description" typeId="9b8f-694b-e5e-b573">In your Command phase, if the bearer is on the battlefield, you can return up to D3 destroyed models (excluding ^^**Character models^^**) to this unit.</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Close combat weapon" hidden="false" id="d355-22c1-244a-2c42" collective="false">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="51b5-aebc-1136-30b0"/>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="f942-4d66-b175-9d06"/>
+              </constraints>
+              <profiles>
+                <profile name="Close combat weapon" typeId="8a40-4aaa-c780-9046" typeName="Melee Weapons" hidden="false" id="5e17-1e3f-d4b9-7999">
+                  <characteristics>
+                    <characteristic name="Range" typeId="914c-b413-91e3-a132">Melee</characteristic>
+                    <characteristic name="A" typeId="2337-daa1-6682-b110">2</characteristic>
+                    <characteristic name="WS" typeId="95d1-95f-45b4-11d6">3+</characteristic>
+                    <characteristic name="S" typeId="ab33-d393-96ce-ccba">3</characteristic>
+                    <characteristic name="AP" typeId="41a0-1301-112a-e2f2">0</characteristic>
+                    <characteristic name="D" typeId="3254-9fe6-d824-513e">1</characteristic>
+                    <characteristic name="Keywords" typeId="893f-9000-ccf7-648e">-</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntry>
+        <selectionEntry type="model" import="true" name="Death Cult Assassin" hidden="false" id="3683-addb-14e9-344c" sortIndex="6">
+          <constraints>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="85f0-77d6-11cc-2865-min" includeChildSelections="false"/>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="85f0-77d6-11cc-2865-max" includeChildSelections="false"/>
+          </constraints>
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Death Cult blades" hidden="false" id="48ca-7e47-02c5-b2f0">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="0899-4031-0c25-5328-min" includeChildSelections="false"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="0899-4031-0c25-5328-max" includeChildSelections="false"/>
+              </constraints>
+              <profiles>
+                <profile name="Death Cult blades" typeId="8a40-4aaa-c780-9046" typeName="Melee Weapons" hidden="false" id="f89b-3688-7a60-b906">
+                  <characteristics>
+                    <characteristic name="Range" typeId="914c-b413-91e3-a132">Melee</characteristic>
+                    <characteristic name="A" typeId="2337-daa1-6682-b110">4</characteristic>
+                    <characteristic name="WS" typeId="95d1-95f-45b4-11d6">2+</characteristic>
+                    <characteristic name="S" typeId="ab33-d393-96ce-ccba">4</characteristic>
+                    <characteristic name="AP" typeId="41a0-1301-112a-e2f2">-2</characteristic>
+                    <characteristic name="D" typeId="3254-9fe6-d824-513e">1</characteristic>
+                    <characteristic name="Keywords" typeId="893f-9000-ccf7-648e">Precision</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <infoLinks>
+                <infoLink name="Precision" id="7a9d-ed87-4ca2-b222" hidden="false" type="rule" targetId="9143-31ae-e0a6-6007"/>
+              </infoLinks>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntry>
+        <selectionEntry type="model" import="true" name="Missionary w/ plasma gun" hidden="false" id="5997-9e02-2e9c-298d" sortIndex="3">
+          <constraints>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="7209-ca26-d576-2001-min" includeChildSelections="false"/>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="7209-ca26-d576-2001-max" includeChildSelections="false"/>
+          </constraints>
+          <selectionEntryGroups>
+            <selectionEntryGroup name="Weapon" id="f3c8-b1da-a917-fa75" hidden="false" defaultSelectionEntryId="f09e-982f-65f5-728f">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="1732-a2d4-e6f4-ac1c-min" includeChildSelections="false"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="1732-a2d4-e6f4-ac1c-max" includeChildSelections="false"/>
+              </constraints>
+              <selectionEntries>
+                <selectionEntry type="upgrade" import="true" name="Plasma gun" hidden="false" id="1d79-8808-a4c0-21f0" publicationId="4115-3627-e608-39f6" page="29" collective="false">
+                  <profiles>
+                    <profile name="➤ Plasma gun - standard" typeId="f77d-b953-8fa4-b762" typeName="Ranged Weapons" hidden="false" id="c507-1319-84ce-1868" publicationId="4115-3627-e608-39f6" page="29">
+                      <characteristics>
+                        <characteristic name="Range" typeId="9896-9419-16a1-92fc">12&quot;</characteristic>
+                        <characteristic name="A" typeId="3bb-c35f-f54-fb08">1</characteristic>
+                        <characteristic name="BS" typeId="94d-8a98-cf90-183e">3+</characteristic>
+                        <characteristic name="S" typeId="2229-f494-25db-c5d3">7</characteristic>
+                        <characteristic name="AP" typeId="9ead-8a10-520-de15">-2</characteristic>
+                        <characteristic name="D" typeId="a354-c1c8-a745-f9e3">1</characteristic>
+                        <characteristic name="Keywords" typeId="7f1b-8591-2fcf-d01c">Rapid Fire 1</characteristic>
+                      </characteristics>
+                    </profile>
+                    <profile name="➤ Plasma gun - supercharge" typeId="f77d-b953-8fa4-b762" typeName="Ranged Weapons" hidden="false" id="4ca0-d8f8-543e-0c82" publicationId="4115-3627-e608-39f6" page="29">
+                      <characteristics>
+                        <characteristic name="Range" typeId="9896-9419-16a1-92fc">12&quot;</characteristic>
+                        <characteristic name="A" typeId="3bb-c35f-f54-fb08">1</characteristic>
+                        <characteristic name="BS" typeId="94d-8a98-cf90-183e">3+</characteristic>
+                        <characteristic name="S" typeId="2229-f494-25db-c5d3">8</characteristic>
+                        <characteristic name="AP" typeId="9ead-8a10-520-de15">-3</characteristic>
+                        <characteristic name="D" typeId="a354-c1c8-a745-f9e3">2</characteristic>
+                        <characteristic name="Keywords" typeId="7f1b-8591-2fcf-d01c">Hazardous, Rapid Fire 1</characteristic>
+                      </characteristics>
+                    </profile>
+                  </profiles>
+                  <infoLinks>
+                    <infoLink name="Hazardous" id="47e9-396d-728d-aa77" hidden="false" type="rule" targetId="8367-374c-f87-c627"/>
+                    <infoLink name="Rapid Fire" id="deba-5d51-0965-df2a" hidden="false" type="rule" targetId="c5c8-8b58-b8b6-7786"/>
+                  </infoLinks>
+                </selectionEntry>
+                <selectionEntry type="upgrade" import="true" name="Meltagun" hidden="false" id="f0c9-4c1f-fc0c-586f">
+                  <profiles>
+                    <profile name="Meltagun" typeId="f77d-b953-8fa4-b762" typeName="Ranged Weapons" hidden="false" id="9d85-4fce-442e-cd20">
+                      <characteristics>
+                        <characteristic name="Range" typeId="9896-9419-16a1-92fc">12&quot;</characteristic>
+                        <characteristic name="A" typeId="3bb-c35f-f54-fb08">1</characteristic>
+                        <characteristic name="BS" typeId="94d-8a98-cf90-183e">4+</characteristic>
+                        <characteristic name="S" typeId="2229-f494-25db-c5d3">9</characteristic>
+                        <characteristic name="AP" typeId="9ead-8a10-520-de15">-4</characteristic>
+                        <characteristic name="D" typeId="a354-c1c8-a745-f9e3">D6</characteristic>
+                        <characteristic name="Keywords" typeId="7f1b-8591-2fcf-d01c">Melta 2</characteristic>
+                      </characteristics>
+                    </profile>
+                  </profiles>
+                  <infoLinks>
+                    <infoLink name="Melta" id="f519-5bba-73a2-fe9e" hidden="false" type="rule" targetId="7cdb-fb99-44a9-8849"/>
+                  </infoLinks>
+                </selectionEntry>
+              </selectionEntries>
+            </selectionEntryGroup>
+          </selectionEntryGroups>
+          <entryLinks>
+            <entryLink import="true" name="Sanctifier melee weapon" hidden="false" id="c77b-cf0d-8612-97fa" type="selectionEntry" targetId="e56f-68cb-9b0c-0e28"/>
+          </entryLinks>
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Holy fire" hidden="false" id="cc08-0b4e-b6a2-7f70">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="189e-284a-9e5b-2df4" includeChildSelections="false"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="0" field="189e-284a-9e5b-2df4">
+                  <conditions>
+                    <condition type="lessThan" value="1" field="selections" scope="parent" childId="1d79-8808-a4c0-21f0" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+              <profiles>
+                <profile name="Holy fire" typeId="f77d-b953-8fa4-b762" typeName="Ranged Weapons" hidden="false" id="ce25-88bb-4ad8-5b6d">
+                  <characteristics>
+                    <characteristic name="Range" typeId="9896-9419-16a1-92fc">12&quot;</characteristic>
+                    <characteristic name="A" typeId="3bb-c35f-f54-fb08">D6</characteristic>
+                    <characteristic name="BS" typeId="94d-8a98-cf90-183e">N/A</characteristic>
+                    <characteristic name="S" typeId="2229-f494-25db-c5d3">6</characteristic>
+                    <characteristic name="AP" typeId="9ead-8a10-520-de15">-1</characteristic>
+                    <characteristic name="D" typeId="a354-c1c8-a745-f9e3">2</characteristic>
+                    <characteristic name="Keywords" typeId="7f1b-8591-2fcf-d01c">Ignores Cover, One Shot, Torrent</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <infoLinks>
+                <infoLink name="Ignores Cover" id="2948-f02e-7864-64dd" hidden="false" type="rule" targetId="4640-43e7-30b-215a"/>
+                <infoLink name="Torrent" id="8f5b-01ab-b687-07df" hidden="false" type="rule" targetId="5edf-d619-23e0-9b56"/>
+                <infoLink name="One Shot" id="21fc-648a-7024-6410" hidden="false" type="rule" targetId="cd26-1611-860a-91e4"/>
+              </infoLinks>
+            </selectionEntry>
+          </selectionEntries>
+          <modifiers>
+            <modifier type="set" value="Missionary w/ meltagun" field="name">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="parent" childId="f0c9-4c1f-fc0c-586f" shared="true" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </selectionEntry>
+        <selectionEntry type="model" import="true" name="Missionary w/ flamer" hidden="false" id="59ae-80e5-64f6-7806" sortIndex="7">
+          <constraints>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="e930-7558-4d98-f05d-min" includeChildSelections="false"/>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e930-7558-4d98-f05d-max" includeChildSelections="false"/>
+          </constraints>
+          <entryLinks>
+            <entryLink import="true" name="Sanctifier melee weapon" hidden="false" id="c80f-9c99-b0e7-8173" type="selectionEntry" targetId="e56f-68cb-9b0c-0e28"/>
+            <entryLink import="true" name="Ministorum flamer" hidden="false" id="ff0c-5f4d-58f5-047d" type="selectionEntry" targetId="375e-b143-c7b6-d71e">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="0e41-a4c3-7240-d770-min" includeChildSelections="false"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="0e41-a4c3-7240-d770-max" includeChildSelections="false"/>
+              </constraints>
+            </entryLink>
+          </entryLinks>
+        </selectionEntry>
+        <selectionEntry type="model" import="true" name="Sanctifier w/ hand flamer" hidden="false" id="02ea-3564-ae2f-6bfa" sortIndex="4">
+          <constraints>
+            <constraint type="min" value="4" field="selections" scope="parent" shared="true" id="dbac-1d91-4e2c-8dab-min" includeChildSelections="false" automatic="true"/>
+            <constraint type="max" value="4" field="selections" scope="parent" shared="true" id="dbac-1d91-4e2c-8dab-max" includeChildSelections="false" automatic="true"/>
+          </constraints>
+          <entryLinks>
+            <entryLink import="true" name="Sanctifier melee weapon" hidden="false" id="cee0-e550-b044-fbb8" type="selectionEntry" targetId="e56f-68cb-9b0c-0e28"/>
+            <entryLink import="true" name="Ministorum hand flamer" hidden="false" id="a2dd-442c-1c35-8b01" type="selectionEntry" targetId="3035-91a8-7c70-8f9c">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="cd83-3561-963c-7b67-min" includeChildSelections="false"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="cd83-3561-963c-7b67-max" includeChildSelections="false"/>
+              </constraints>
+            </entryLink>
+          </entryLinks>
+          <modifiers>
+            <modifier type="decrement" value="1" field="dbac-1d91-4e2c-8dab-min">
+              <repeats>
+                <repeat value="1" repeats="1" field="selections" scope="eade-6ec7-7236-bfdb" childId="b2e0-94f0-2644-8160" shared="true" roundUp="false" includeChildSelections="true"/>
+                <repeat value="1" repeats="1" field="selections" scope="eade-6ec7-7236-bfdb" childId="0d2d-f123-bba2-3429" shared="true" roundUp="false" includeChildSelections="true"/>
+              </repeats>
+            </modifier>
+            <modifier type="decrement" value="1" field="dbac-1d91-4e2c-8dab-max">
+              <repeats>
+                <repeat value="1" repeats="1" field="selections" scope="eade-6ec7-7236-bfdb" childId="b2e0-94f0-2644-8160" shared="true" roundUp="false" includeChildSelections="true"/>
+                <repeat value="1" repeats="1" field="selections" scope="eade-6ec7-7236-bfdb" childId="0d2d-f123-bba2-3429" shared="true" roundUp="false" includeChildSelections="true"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+        </selectionEntry>
+        <selectionEntry type="model" import="true" name="Sanctifier w/ two hand flamers" hidden="false" id="0d2d-f123-bba2-3429" sortIndex="2">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="3a3f-576b-8b13-a395" includeChildSelections="false" automatic="true"/>
+          </constraints>
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Close combat weapon" hidden="false" id="306c-d89c-94d7-2ba6" collective="false">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="06a0-7791-210c-4efc"/>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="fe45-cd9a-1e25-943c"/>
+              </constraints>
+              <profiles>
+                <profile name="Close combat weapon" typeId="8a40-4aaa-c780-9046" typeName="Melee Weapons" hidden="false" id="7cb2-97db-06f1-b27d">
+                  <characteristics>
+                    <characteristic name="Range" typeId="914c-b413-91e3-a132">Melee</characteristic>
+                    <characteristic name="A" typeId="2337-daa1-6682-b110">2</characteristic>
+                    <characteristic name="WS" typeId="95d1-95f-45b4-11d6">3+</characteristic>
+                    <characteristic name="S" typeId="ab33-d393-96ce-ccba">3</characteristic>
+                    <characteristic name="AP" typeId="41a0-1301-112a-e2f2">0</characteristic>
+                    <characteristic name="D" typeId="3254-9fe6-d824-513e">1</characteristic>
+                    <characteristic name="Keywords" typeId="893f-9000-ccf7-648e">-</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+          </selectionEntries>
+          <entryLinks>
+            <entryLink import="true" name="Ministorum hand flamer" hidden="false" id="9ddd-c47a-b04d-84cd" type="selectionEntry" targetId="3035-91a8-7c70-8f9c">
+              <constraints>
+                <constraint type="min" value="2" field="selections" scope="parent" shared="true" id="3d3f-7c59-a393-317a-min" includeChildSelections="false"/>
+                <constraint type="max" value="2" field="selections" scope="parent" shared="true" id="3d3f-7c59-a393-317a-max" includeChildSelections="false"/>
+              </constraints>
+            </entryLink>
+          </entryLinks>
+        </selectionEntry>
+        <selectionEntry type="model" import="true" name="Sanctifier w/ simulacrum imperialis" hidden="false" id="b2e0-94f0-2644-8160" sortIndex="1">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="c286-e35f-753e-560b" includeChildSelections="false" automatic="true"/>
+          </constraints>
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Close combat weapon" hidden="false" id="707f-2421-c362-a29b" collective="false">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="1a3f-597f-2888-8009"/>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="8f7e-0236-3d53-59ea"/>
+              </constraints>
+              <profiles>
+                <profile name="Close combat weapon" typeId="8a40-4aaa-c780-9046" typeName="Melee Weapons" hidden="false" id="5bf6-ed1c-67e9-c56b">
+                  <characteristics>
+                    <characteristic name="Range" typeId="914c-b413-91e3-a132">Melee</characteristic>
+                    <characteristic name="A" typeId="2337-daa1-6682-b110">2</characteristic>
+                    <characteristic name="WS" typeId="95d1-95f-45b4-11d6">3+</characteristic>
+                    <characteristic name="S" typeId="ab33-d393-96ce-ccba">3</characteristic>
+                    <characteristic name="AP" typeId="41a0-1301-112a-e2f2">0</characteristic>
+                    <characteristic name="D" typeId="3254-9fe6-d824-513e">1</characteristic>
+                    <characteristic name="Keywords" typeId="893f-9000-ccf7-648e">-</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Simulacrum Imperialis" hidden="false" id="1891-2bb1-05c5-733d">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="2fc8-a1a4-69a4-9d85-min" includeChildSelections="false"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2fc8-a1a4-69a4-9d85-max" includeChildSelections="false"/>
+              </constraints>
+              <profiles>
+                <profile name="Simulacrum Imperialis" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="733c-91f4-956f-310b">
+                  <characteristics>
+                    <characteristic name="Description" typeId="9b8f-694b-e5e-b573">Improve the Leadership characteristic of models in the bearer’s unit by 1.</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <modifiers>
+                <modifier type="decrement" value="1" field="58d2-b879-49c7-43bc" scope="4e74-3710-7a66-9d6c" affects="self.entries.profiles.Unit"/>
+              </modifiers>
+            </selectionEntry>
+          </selectionEntries>
+          <entryLinks>
+            <entryLink import="true" name="Ministorum hand flamer" hidden="false" id="6fbb-9be5-ceda-18e7" type="selectionEntry" targetId="3035-91a8-7c70-8f9c">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="e999-adc0-5610-5434-min" includeChildSelections="false"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e999-adc0-5610-5434-max" includeChildSelections="false"/>
+              </constraints>
+            </entryLink>
+          </entryLinks>
+        </selectionEntry>
+      </selectionEntries>
+      <profiles>
+        <profile name="Sanctifiers" typeId="c547-1836-d8a-ff4f" typeName="Unit" hidden="false" id="23fb-147f-f4ce-ef6d">
+          <characteristics>
+            <characteristic name="M" typeId="e703-ecb6-5ce7-aec1">6&quot;</characteristic>
+            <characteristic name="T" typeId="d29d-cf75-fc2d-34a4">3</characteristic>
+            <characteristic name="SV" typeId="450-a17e-9d5e-29da">6+</characteristic>
+            <characteristic name="W" typeId="750a-a2ec-90d3-21fe">1</characteristic>
+            <characteristic name="LD" typeId="58d2-b879-49c7-43bc">7+</characteristic>
+            <characteristic name="OC" typeId="bef7-942a-1a23-59f8">1</characteristic>
+          </characteristics>
+        </profile>
+        <profile name="Ministorum Sermon" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="8a3c-df78-6d77-f5e2">
+          <characteristics>
+            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">While this unit contains a **^^Ministorum Priest**^^, melee weapons equipped by models in this unit have the [SUSTAINED HITS 1] ability.</characteristic>
+          </characteristics>
+        </profile>
+        <profile name="Cherub" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="297a-b626-a0c5-a84b">
+          <characteristics>
+            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">Once per battle, after this unit has performed an Act of Faith, you gain 1 Miracle dice.</characteristic>
+          </characteristics>
+        </profile>
+        <profile name="Attached Unit" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="3907-15ad-c461-6590">
+          <characteristics>
+            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">If a ^^**Ministorum Priest^^** model from your army with the Leader ability can be attached to a ^^**Battle Sisters Squad^^**, it can be attached to this unit instead. If a ^^**Ministorum Priest^^** model from your army is attached to this unit during the Declare Battle Formations step, that model gains the Scouts 6&quot; ability.</characteristic>
+          </characteristics>
+        </profile>
+        <profile name="Invulnerable Save" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="4540-bee4-a354-4d09">
+          <characteristics>
+            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">Models in this unit have a 5+ invulnerable save.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <infoLinks>
+        <infoLink name="Scouts" id="a117-dc82-d7de-fcc5" hidden="false" type="rule" targetId="ada6-bac1-ffe0-d6f7">
+          <modifiers>
+            <modifier type="append" value="6&quot;" field="name"/>
+          </modifiers>
+        </infoLink>
+        <infoLink name="Assigned Agents" id="dffb-180c-5bad-89b9" hidden="false" type="rule" targetId="58c1-ec7a-74f5-26b9"/>
+      </infoLinks>
+      <categoryLinks>
+        <categoryLink name="Infantry" hidden="false" id="40a8-9155-4e01-054a" targetId="cf47-a0d7-7207-29dc" primary="true"/>
+        <categoryLink name="Grenades" hidden="false" id="71d2-b676-a962-6757" targetId="5a61-81ac-eb7c-a87e" primary="false"/>
+        <categoryLink name="Imperium" hidden="false" id="e0dd-4111-9009-df19" targetId="aff3-d6a3-2a95-9dc" primary="false"/>
+        <categoryLink name="Sanctifiers" hidden="false" id="833a-221f-f777-6ecc" targetId="9d4f-4beb-107d-3175" primary="false"/>
+        <categoryLink name="Faction: Adepta Sororitas" hidden="false" id="9d2c-ae61-1e7e-a5c1" targetId="fd71-afa6-b13b-7fda" primary="false"/>
+      </categoryLinks>
+      <modifiers>
+        <modifier type="set" value="true" field="hidden">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="b00-cd86-4b4c-97ba" shared="true"/>
+                <condition type="lessThan" value="1" field="selections" scope="roster" childId="e08b-2448-5606-fefb" shared="true" includeChildSelections="true" includeChildForces="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint type="max" value="3" field="selections" scope="roster" shared="true" id="b2f2-5aa6-3be2-7ef7" includeChildSelections="true"/>
+      </constraints>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Ministorum hand flamer" hidden="false" id="abd0-62a8-dc25-633e">
+      <profiles>
+        <profile name="Ministorum hand flamer" typeId="f77d-b953-8fa4-b762" typeName="Ranged Weapons" hidden="false" id="0551-6390-eddd-95e1">
+          <characteristics>
+            <characteristic name="Range" typeId="9896-9419-16a1-92fc">12&quot;</characteristic>
+            <characteristic name="A" typeId="3bb-c35f-f54-fb08">D6</characteristic>
+            <characteristic name="BS" typeId="94d-8a98-cf90-183e">N/A</characteristic>
+            <characteristic name="S" typeId="2229-f494-25db-c5d3">4</characteristic>
+            <characteristic name="AP" typeId="9ead-8a10-520-de15">0</characteristic>
+            <characteristic name="D" typeId="a354-c1c8-a745-f9e3">1</characteristic>
+            <characteristic name="Keywords" typeId="7f1b-8591-2fcf-d01c">Ignores Cover, Torrent</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <infoLinks>
+        <infoLink name="Ignores Cover" id="5dba-d78d-667f-5793" hidden="false" type="rule" targetId="4640-43e7-30b-215a"/>
+        <infoLink name="Torrent" id="0277-fbd1-8a02-7626" hidden="false" type="rule" targetId="5edf-d619-23e0-9b56"/>
+      </infoLinks>
+    </selectionEntry>
   </sharedSelectionEntries>
   <sharedProfiles>
     <profile name="Bolt pistol" hidden="false" id="c934-fc40-d6a2-8919" typeName="Ranged Weapons" typeId="f77d-b953-8fa4-b762">
@@ -6291,15 +6753,14 @@ Before making your selection, if this unit made a Charge move this turn, you can
   </sharedProfiles>
   <sharedRules>
     <rule name="Acts of Faith" hidden="false" id="7ef7-dca6-e2ea-ecc8">
-      <description>If your Army Faction is ADEPTA SORORITAS, each unit from your army with this ability can perform one Act of Faith per phase. This is done using Miracle dice.
-
+      <description>If your Army Faction is ^^Adepta Sororitas^^, each unit from your army with this ability can perform one Act of Faith per phase. This is done using Miracle dice.
 
 GAINING MIRACLE DICE
 If your Army Faction is ADEPTA SORORITAS, you gain 1 Miracle dice:
-■ At the start of each battle round.
-■ At the end of each phase, If one or more ADEPTA SORORITAS units from your army were destroyed that phase.
-Each time you gain a Miracle dice, roll one D6. The number you roll is the value of that Miracle dice. This value cannot be changed or re-rolled, unless a rule specifically states otherwise. Keep your Miracle dice to one side – this is your Miracle dice pool.
+- At the start of each battle round.
+- Each time an ^^Adepta Sororitas^^ unit from your army is destroyed.
 
+Each time you gain a Miracle dice, roll one D6. The number you roll is the value of that Miracle dice. This value cannot be changed or re-rolled, unless a rule specifically states otherwise. Keep your Miracle dice to one side – this is your Miracle dice pool.
 
 PERFORMING AN ACT OF FAITH
 Before making a dice roll for a model or unit from your army with the Acts of Faith ability, if you have one or more dice in your Miracle dice pool, that unit can perform an Act of Faith. If it does, select one of the dice from your Miracle dice pool to substitute that dice roll (if a roll involves more than one dice, e.g. a Charge roll or Battle-shock test, only a single dice can
@@ -7107,6 +7568,7 @@ Celestian Sacresants and Paragon Warsuits models in that unit by 1.</descriptio
         <constraint type="max" value="1" field="selections" scope="force" shared="true" id="c105-b0a1-fac3-f34d" includeChildSelections="false"/>
       </constraints>
     </entryLink>
+    <entryLink import="true" name="Sanctifiers" hidden="false" id="9c29-9181-6f36-18ea" type="selectionEntry" targetId="eade-6ec7-7236-bfdb"/>
   </entryLinks>
   <catalogueLinks>
     <catalogueLink type="catalogue" name="Imperium - Imperial Knights - Library" id="f82d-fbeb-8ed2-4284" targetId="1b6d-dc06-5db9-c7d1" importRootEntries="true"/>

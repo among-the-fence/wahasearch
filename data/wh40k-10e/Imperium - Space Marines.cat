@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" id="e0af-67df-9d63-8fb7" name="Imperium - Space Marines" revision="97" battleScribeVersion="2.03" library="false" gameSystemId="sys-352e-adc2-7639-d6a9" gameSystemRevision="1" type="catalogue" authorName="Acebaur">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" id="e0af-67df-9d63-8fb7" name="Imperium - Adeptus Astartes - Space Marines" revision="104" battleScribeVersion="2.03" library="false" gameSystemId="sys-352e-adc2-7639-d6a9" gameSystemRevision="1" type="catalogue" authorName="Acebaur">
   <categoryEntries>
     <categoryEntry id="5179-8ede-45e3-49a2" name="Tacticus" hidden="false"/>
     <categoryEntry id="930d-2875-125b-a65e" name="Bladeguard Veteran Squad" hidden="false"/>
@@ -122,6 +122,7 @@
     <categoryEntry name="Biologis" id="6820-5587-dd68-4d0f" hidden="false"/>
     <categoryEntry name="Watch Master" id="6e-71bd-2538-d468" hidden="false"/>
     <categoryEntry name="Sanguinary Priest" id="561f-8606-9555-b3ba" hidden="false"/>
+    <categoryEntry name="Death Company" id="7278-781b-ce6c-d23c" hidden="false"/>
   </categoryEntries>
   <entryLinks>
     <entryLink import="true" name="Detachment" hidden="false" type="selectionEntry" id="e9ed-6763-ea0d-39fe" targetId="82cb-ba1-1aae-3b1d"/>
@@ -2797,7 +2798,7 @@
                         <characteristic name="S" typeId="2229-f494-25db-c5d3">5</characteristic>
                         <characteristic name="AP" typeId="9ead-8a10-520-de15">-1</characteristic>
                         <characteristic name="D" typeId="a354-c1c8-a745-f9e3">3</characteristic>
-                        <characteristic name="Keywords" typeId="7f1b-8591-2fcf-d01c">-</characteristic>
+                        <characteristic name="Keywords" typeId="7f1b-8591-2fcf-d01c">Assault, Heavy</characteristic>
                       </characteristics>
                     </profile>
                   </profiles>
@@ -2817,6 +2818,10 @@
                       </modifiers>
                     </entryLink>
                   </entryLinks>
+                  <infoLinks>
+                    <infoLink name="Heavy" id="48b2-501d-05ae-aa80" hidden="false" targetId="1202-10a8-78e9-4c67" type="rule"/>
+                    <infoLink name="Assault" id="81da-0a17-eddd-e80b" hidden="false" targetId="fc8a-8c24-bae9-cc1c" type="rule"/>
+                  </infoLinks>
                 </selectionEntry>
               </selectionEntries>
             </selectionEntry>
@@ -3058,7 +3063,7 @@
       <profiles>
         <profile name="Relic Shield" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="d54c-ae42-9d78-71df">
           <characteristics>
-            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">Add 1 to the bearer&apos;s wound characteristics</characteristic>
+            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">Add 1 to the bearer&apos;s Wounds characteristic.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -7598,10 +7603,15 @@ Strategic Reserves.</characteristic>
         </selectionEntryGroup>
       </selectionEntryGroups>
       <costs>
-        <cost name="pts" typeId="51b2-306e-1021-d207" value="90"/>
+        <cost name="pts" typeId="51b2-306e-1021-d207" value="80"/>
+        <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
+        <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
+        <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
+        <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
+        <cost name="Honour Points" typeId="8135-9a2f-6627-09e2" value="0"/>
       </costs>
       <modifiers>
-        <modifier type="set" value="180" field="51b2-306e-1021-d207">
+        <modifier type="set" value="160" field="51b2-306e-1021-d207">
           <conditions>
             <condition type="atLeast" value="4" field="selections" scope="7044-bf1-f949-c32d" childId="fa1c-b448-12fa-e1d6" shared="true" id="392e-6b9-8a3c-cc35"/>
           </conditions>
@@ -10977,7 +10987,12 @@ by 1.</characteristic>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Centurion Devastator Squad" hidden="false" id="6ba0-cede-e278-f86b">
       <costs>
-        <cost name="pts" typeId="51b2-306e-1021-d207" value="185"/>
+        <cost name="pts" typeId="51b2-306e-1021-d207" value="165"/>
+        <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
+        <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
+        <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
+        <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
+        <cost name="Honour Points" typeId="8135-9a2f-6627-09e2" value="0"/>
       </costs>
       <constraints>
         <constraint type="max" value="3" field="selections" scope="roster" shared="true" id="3cf9-1b1c-e7ac-71e1"/>
@@ -11210,7 +11225,7 @@ by 1.</characteristic>
         </selectionEntryGroup>
       </selectionEntryGroups>
       <modifiers>
-        <modifier type="set" value="370" field="51b2-306e-1021-d207">
+        <modifier type="set" value="330" field="51b2-306e-1021-d207">
           <conditions>
             <condition type="atLeast" value="4" field="selections" scope="6ba0-cede-e278-f86b" childId="cd88-5a62-bbb7-eb2a" shared="true" id="4e3a-158a-baa1-87c8"/>
           </conditions>
@@ -12324,6 +12339,7 @@ by 1.</characteristic>
         <categoryLink targetId="aff3-d6a3-2a95-9dc" id="9f00-913-1e1e-8ba5" primary="false" name="Imperium"/>
         <categoryLink targetId="c7d9-a778-b8db-26d4" id="4956-b29e-a0ed-4d58" primary="false" name="Redemptor Dreadnought"/>
         <categoryLink targetId="6e7-40c-58d9-e402" id="77a4-6d59-25b7-357c" primary="false" name="Faction: Adeptus Astartes"/>
+        <categoryLink name="Dreadnought" hidden="false" id="38d0-6bd5-2b61-04be" targetId="c97c-376-e2e0-1dd2" primary="false"/>
       </categoryLinks>
       <infoLinks>
         <infoLink name="Deadly Demise" hidden="false" type="rule" id="3cb7-85b-65ce-8244" targetId="b68a-5ded-65ac-98c">
@@ -12659,11 +12675,12 @@ by 1.</characteristic>
         <constraint type="min" value="0" field="716d-91b7-d55a-1022" scope="self" shared="true" id="c14c-f21e-5ae3-4ae1" includeChildSelections="true"/>
       </constraints>
       <costs>
-        <cost name="pts" typeId="51b2-306e-1021-d207" value="130"/>
+        <cost name="pts" typeId="51b2-306e-1021-d207" value="140"/>
         <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
         <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
         <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
         <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
+        <cost name="Honour Points" typeId="8135-9a2f-6627-09e2" value="0"/>
       </costs>
       <profiles>
         <profile name="Ballistus Dreadnought" typeId="c547-1836-d8a-ff4f" typeName="Unit" hidden="false" id="96f7-307-efa6-dd1a">
@@ -12700,6 +12717,7 @@ by 1.</characteristic>
         <categoryLink targetId="aff3-d6a3-2a95-9dc" id="30ec-884d-eae1-8db2" primary="false" name="Imperium"/>
         <categoryLink targetId="2ade-80d5-d39b-baeb" id="4427-701b-afe8-59f8" primary="false" name="Ballistus Dreadnought"/>
         <categoryLink targetId="6e7-40c-58d9-e402" id="a9bf-d810-fd6f-eae7" primary="false" name="Faction: Adeptus Astartes"/>
+        <categoryLink name="Dreadnought" hidden="false" id="fb56-ca92-f1f0-e272" targetId="c97c-376-e2e0-1dd2" primary="false"/>
       </categoryLinks>
       <modifiers>
         <modifier type="add" value="e21f-8e64-c5d-7df0" field="category">
@@ -14032,7 +14050,7 @@ by 1.</characteristic>
         </profile>
         <profile name="Outrider Escort" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="e845-dd69-ee7c-5661">
           <characteristics>
-            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">Once per turn, in your opponent’s Shooting phase, when a friendly Adeptus Astartes Mounted unit within 6&quot; of this model is selected as the target of an attack, this model can use this ability. If it does, after that enemy unit has finished making its attacks, this model can shoot as if it were your Shooting phase, but when resolving those attacks it can only target that enemy unit (and only if it is an eligible target).</characteristic>
+            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">Once per turn, in your opponent&apos;s Shooting phase, when another friendly ^^Adeptus Astartes Mounted^^ unit within 6&quot; of this model is selected as the target of an attack, one model from your army with this ability can use it. If it does, after that enemy unit has finished making its attacks, that model can shoot as if it were your Shooting phase , but when resolving those attacks it can only target that enemy unit [and only if it is an eligible target).</characteristic>
           </characteristics>
           <modifiers>
             <modifier type="set" value="true" field="hidden">
@@ -14533,7 +14551,7 @@ by 1.</characteristic>
       <profiles>
         <profile name="Outrider Escort" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="6542-61e5-432c-b5bf">
           <characteristics>
-            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">Once per turn, in your opponent’s Shooting phase, when a friendly Adeptus Astartes Mounted unit within 6&quot; of this model is selected as the target of an attack, this model can use this ability. If it does, after that enemy unit has finished making its attacks, this model can shoot as if it were your Shooting phase, but when resolving those attacks it can only target that enemy unit (and only if it is an eligible target).</characteristic>
+            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">Once per turn, in your opponent’s Shooting phase, when a friendly ^^Adeptus Astartes Mounted^^ unit within 6&quot; of this model is selected as the target of an attack, this model can use this ability. If it does, after that enemy unit has finished making its attacks, this model can shoot as if it were your Shooting phase, but when resolving those attacks it can only target that enemy unit (and only if it is an eligible target).</characteristic>
           </characteristics>
           <modifiers>
             <modifier type="set" value="true" field="hidden">
@@ -17186,7 +17204,7 @@ by 1.</characteristic>
             <characteristic name="A" typeId="3bb-c35f-f54-fb08">2</characteristic>
             <characteristic name="BS" typeId="94d-8a98-cf90-183e">3+</characteristic>
             <characteristic name="S" typeId="2229-f494-25db-c5d3">9</characteristic>
-            <characteristic name="AP" typeId="9ead-8a10-520-de15">-1</characteristic>
+            <characteristic name="AP" typeId="9ead-8a10-520-de15">-2</characteristic>
             <characteristic name="D" typeId="a354-c1c8-a745-f9e3">D6</characteristic>
             <characteristic name="Keywords" typeId="7f1b-8591-2fcf-d01c">-</characteristic>
           </characteristics>
@@ -18107,18 +18125,10 @@ Normal move. If it does so, until the end of the turn, this unit is not eligible
                     <entryLink import="true" name="Weapon Modifications" hidden="false" id="2f90-7b54-139a-e099" type="selectionEntryGroup" targetId="f9da-852a-d7f0-92e9"/>
                   </entryLinks>
                 </entryLink>
-                <entryLink import="true" name="Twin Lightning Claws" hidden="false" type="selectionEntry" id="24d2-4940-8f56-5065" targetId="8bd8-a0de-a0b9-a72e">
-                  <constraints>
-                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="5588-a4e-ebaf-3924"/>
-                  </constraints>
-                  <entryLinks>
-                    <entryLink import="true" name="Weapon Modifications" hidden="false" id="f68d-a33a-e36a-6116" type="selectionEntryGroup" targetId="f9da-852a-d7f0-92e9"/>
-                  </entryLinks>
-                </entryLink>
                 <entryLink import="true" name="Terminator Honours upgrade" hidden="false" id="2e0f-aac1-0efa-cea1" type="selectionEntry" targetId="e7f9-66f5-9b9e-c587"/>
               </entryLinks>
               <selectionEntryGroups>
-                <selectionEntryGroup name="Weapon 1" hidden="false" id="d54c-a677-b1db-4fa3" defaultSelectionEntryId="206f-d005-75c8-2fe5">
+                <selectionEntryGroup name="Weapon 1" hidden="false" id="d54c-a677-b1db-4fa3" defaultSelectionEntryId="15a0-95fc-f8f5-f2eb">
                   <constraints>
                     <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="dc79-e995-9994-8fdc"/>
                     <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8120-851a-7ac8-6178"/>
@@ -18137,11 +18147,6 @@ Normal move. If it does so, until the end of the turn, this unit is not eligible
                     <entryLink import="true" name="Grav-pistol" hidden="false" type="selectionEntry" id="f36e-b05b-7673-eff1" targetId="1f74-a1b-2835-ccdd">
                       <entryLinks>
                         <entryLink import="true" name="Weapon Modifications" hidden="false" id="7b3d-0c71-a8b4-d4b1" type="selectionEntryGroup" targetId="f9da-852a-d7f0-92e9"/>
-                      </entryLinks>
-                    </entryLink>
-                    <entryLink import="true" name="Hand Flamer" hidden="false" type="selectionEntry" id="74da-a2b6-a9ef-63bf" targetId="9dc6-6ad8-818e-db2e">
-                      <entryLinks>
-                        <entryLink import="true" name="Weapon Modifications" hidden="false" id="3eb4-4c22-f2e5-b8d8" type="selectionEntryGroup" targetId="f9da-852a-d7f0-92e9"/>
                       </entryLinks>
                     </entryLink>
                     <entryLink import="true" name="Plasma Pistol" hidden="false" type="selectionEntry" id="3e0e-e401-cf1d-749c" targetId="25c2-104f-fa0c-809e">
@@ -18165,20 +18170,8 @@ Normal move. If it does so, until the end of the turn, this unit is not eligible
                       </entryLinks>
                     </entryLink>
                   </entryLinks>
-                  <modifiers>
-                    <modifier type="set" value="0" field="dc79-e995-9994-8fdc">
-                      <conditions>
-                        <condition type="atLeast" value="1" field="selections" scope="dade-57a5-2db7-22ca" childId="8bd8-a0de-a0b9-a72e" shared="true" id="bbe-eeca-dd3a-3b11" includeChildSelections="true"/>
-                      </conditions>
-                    </modifier>
-                    <modifier type="set" value="0" field="8120-851a-7ac8-6178">
-                      <conditions>
-                        <condition type="atLeast" value="1" field="selections" scope="dade-57a5-2db7-22ca" childId="8bd8-a0de-a0b9-a72e" shared="true" id="bbe-eeca-dd3a-3b11" includeChildSelections="true"/>
-                      </conditions>
-                    </modifier>
-                  </modifiers>
                 </selectionEntryGroup>
-                <selectionEntryGroup name="Weapon 2" hidden="false" id="a870-498c-e5b5-e7ac" defaultSelectionEntryId="b78-35f8-147e-6ac1">
+                <selectionEntryGroup name="Weapon 2" hidden="false" id="a870-498c-e5b5-e7ac" defaultSelectionEntryId="add8-664e-adee-3412">
                   <constraints>
                     <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="c143-70e6-138e-6440"/>
                     <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2216-11f-b43c-45cf"/>
@@ -18220,18 +18213,6 @@ Normal move. If it does so, until the end of the turn, this unit is not eligible
                       </entryLinks>
                     </entryLink>
                   </entryLinks>
-                  <modifiers>
-                    <modifier type="set" value="0" field="c143-70e6-138e-6440">
-                      <conditions>
-                        <condition type="atLeast" value="1" field="selections" scope="dade-57a5-2db7-22ca" childId="8bd8-a0de-a0b9-a72e" shared="true" id="bbe-eeca-dd3a-3b11" includeChildSelections="true"/>
-                      </conditions>
-                    </modifier>
-                    <modifier type="set" value="0" field="2216-11f-b43c-45cf">
-                      <conditions>
-                        <condition type="atLeast" value="1" field="selections" scope="dade-57a5-2db7-22ca" childId="8bd8-a0de-a0b9-a72e" shared="true" id="bbe-eeca-dd3a-3b11" includeChildSelections="true"/>
-                      </conditions>
-                    </modifier>
-                  </modifiers>
                 </selectionEntryGroup>
               </selectionEntryGroups>
               <profiles>
@@ -19368,6 +19349,7 @@ Normal move. If it does so, until the end of the turn, this unit is not eligible
           </characteristics>
         </profile>
       </profiles>
+      <comment>S6</comment>
     </selectionEntry>
     <selectionEntry type="model" import="true" name="Stalker [Legends]" hidden="false" id="adcd-2954-5a7f-d7ed">
       <costs>
@@ -19554,7 +19536,12 @@ Normal move. If it does so, until the end of the turn, this unit is not eligible
     </selectionEntry>
     <selectionEntry type="model" import="true" name="Whirlwind" hidden="false" id="ae85-3e33-217d-7413">
       <costs>
-        <cost name="pts" typeId="51b2-306e-1021-d207" value="180"/>
+        <cost name="pts" typeId="51b2-306e-1021-d207" value="190"/>
+        <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
+        <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
+        <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
+        <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
+        <cost name="Honour Points" typeId="8135-9a2f-6627-09e2" value="0"/>
       </costs>
       <categoryLinks>
         <categoryLink targetId="aff3-d6a3-2a95-9dc" id="91d5-6dab-b939-c469" primary="false" name="Imperium"/>
@@ -19731,7 +19718,12 @@ Normal move. If it does so, until the end of the turn, this unit is not eligible
     </selectionEntry>
     <selectionEntry type="model" import="true" name="Predator Destructor" hidden="false" id="d4c8-dd6a-cd7a-ccc3">
       <costs>
-        <cost name="pts" typeId="51b2-306e-1021-d207" value="130"/>
+        <cost name="pts" typeId="51b2-306e-1021-d207" value="140"/>
+        <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
+        <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
+        <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
+        <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
+        <cost name="Honour Points" typeId="8135-9a2f-6627-09e2" value="0"/>
       </costs>
       <entryLinks>
         <entryLink import="true" name="Crusade" hidden="false" id="1e1f-5089-d2a2-274a" type="selectionEntryGroup" targetId="9a99-f13c-a667-e698" sortIndex="1"/>
@@ -19942,7 +19934,12 @@ Normal move. If it does so, until the end of the turn, this unit is not eligible
     </selectionEntry>
     <selectionEntry type="model" import="true" name="Predator Annihilator" hidden="false" id="31a-6c3e-5843-4023">
       <costs>
-        <cost name="pts" typeId="51b2-306e-1021-d207" value="130"/>
+        <cost name="pts" typeId="51b2-306e-1021-d207" value="135"/>
+        <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
+        <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
+        <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
+        <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
+        <cost name="Honour Points" typeId="8135-9a2f-6627-09e2" value="0"/>
       </costs>
       <categoryLinks>
         <categoryLink targetId="dbd4-63-af05-998" id="6df-73a4-d227-a2f1" primary="true" name="Vehicle"/>
@@ -20207,7 +20204,7 @@ Normal move. If it does so, until the end of the turn, this unit is not eligible
       <selectionEntryGroups>
         <selectionEntryGroup name="Wargear" id="c1b9-bdec-ff57-9b87" hidden="false" sortIndex="2">
           <entryLinks>
-            <entryLink import="true" name="Armoured Tracks" hidden="false" id="a778-9cb8-f643-91f4" type="selectionEntry" targetId="d3da-d5f3-70a9-50ed">
+            <entryLink import="true" name="Armoured Hull" hidden="false" id="a778-9cb8-f643-91f4" type="selectionEntry" targetId="a879-624d-42ab-2b43">
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="4b48-dbb5-f8ba-2b52"/>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="b950-e8dd-ac23-9f40"/>
@@ -20528,7 +20525,7 @@ Normal move. If it does so, until the end of the turn, this unit is not eligible
       <selectionEntryGroups>
         <selectionEntryGroup name="Wargear" id="bf18-91ee-150a-d48d" hidden="false" sortIndex="2">
           <entryLinks>
-            <entryLink import="true" name="Armoured Tracks" hidden="false" id="1b98-2877-8ef6-b1b1" type="selectionEntry" targetId="d3da-d5f3-70a9-50ed">
+            <entryLink import="true" name="Armoured Hull" hidden="false" id="1b98-2877-8ef6-b1b1" type="selectionEntry" targetId="a879-624d-42ab-2b43">
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="f8d5-e960-cb10-c8cc"/>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="7bd8-81f2-7757-3f9d"/>
@@ -20740,7 +20737,7 @@ Normal move. If it does so, until the end of the turn, this unit is not eligible
       <selectionEntryGroups>
         <selectionEntryGroup name="Wargear" id="3952-8d14-1795-908f" hidden="false">
           <entryLinks>
-            <entryLink import="true" name="Armoured Tracks" hidden="false" id="27c5-3155-4827-3f6f" type="selectionEntry" targetId="d3da-d5f3-70a9-50ed">
+            <entryLink import="true" name="Armoured Hull" hidden="false" id="27c5-3155-4827-3f6f" type="selectionEntry" targetId="a879-624d-42ab-2b43">
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="ecbf-eee7-87e9-d437"/>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6a68-5f4d-9d5a-a0ea"/>
@@ -20826,7 +20823,12 @@ Normal move. If it does so, until the end of the turn, this unit is not eligible
     </selectionEntry>
     <selectionEntry type="model" import="true" name="Vindicator" hidden="false" id="cb6d-201f-4888-3027">
       <costs>
-        <cost name="pts" typeId="51b2-306e-1021-d207" value="175"/>
+        <cost name="pts" typeId="51b2-306e-1021-d207" value="185"/>
+        <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
+        <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
+        <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
+        <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
+        <cost name="Honour Points" typeId="8135-9a2f-6627-09e2" value="0"/>
       </costs>
       <categoryLinks>
         <categoryLink targetId="dbd4-63-af05-998" id="1625-96de-2f90-8b5a" primary="true" name="Vehicle"/>
@@ -21675,7 +21677,7 @@ Normal move. If it does so, until the end of the turn, this unit is not eligible
       <selectionEntryGroups>
         <selectionEntryGroup name="Wargear" id="6bde-c589-104e-1461" hidden="false" sortIndex="2">
           <entryLinks>
-            <entryLink import="true" name="Armoured Tracks" hidden="false" id="89ad-6643-1cbb-e782" type="selectionEntry" targetId="eaa5-a41b-9e59-a5f3">
+            <entryLink import="true" name="Armoured Hull" hidden="false" id="89ad-6643-1cbb-e782" type="selectionEntry" targetId="3b59-048c-5410-33fe">
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="16bd-da2f-0e27-3367"/>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="70c0-4a0c-7fd4-6084"/>
@@ -21924,7 +21926,7 @@ Normal move. If it does so, until the end of the turn, this unit is not eligible
       <selectionEntryGroups>
         <selectionEntryGroup name="Wargear" id="93cf-228c-b0c1-f467" hidden="false" sortIndex="2">
           <entryLinks>
-            <entryLink import="true" name="Armoured Tracks" hidden="false" id="7d38-2481-face-71a2" type="selectionEntry" targetId="eaa5-a41b-9e59-a5f3">
+            <entryLink import="true" name="Armoured Hull" hidden="false" id="7d38-2481-face-71a2" type="selectionEntry" targetId="3b59-048c-5410-33fe">
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="458d-c963-8bc6-94c8"/>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="cf65-bbdb-7c90-5dcc"/>
@@ -22525,7 +22527,7 @@ Normal move. If it does so, until the end of the turn, this unit is not eligible
       <selectionEntryGroups>
         <selectionEntryGroup name="Wargear" id="cbe2-7302-9573-7f47" hidden="false" sortIndex="2">
           <entryLinks>
-            <entryLink import="true" name="Armoured Tracks" hidden="false" id="cf78-d78a-b81f-1c4a" type="selectionEntry" targetId="d3da-d5f3-70a9-50ed">
+            <entryLink import="true" name="Armoured Hull" hidden="false" id="cf78-d78a-b81f-1c4a" type="selectionEntry" targetId="a879-624d-42ab-2b43">
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="bac8-b43d-166f-4bfa"/>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="bc39-ce28-4924-5067"/>
@@ -22772,11 +22774,9 @@ Normal move. If it does so, until the end of the turn, this unit is not eligible
             <characteristic name="D" typeId="3254-9fe6-d824-513e">1</characteristic>
             <characteristic name="Keywords" typeId="893f-9000-ccf7-648e">-</characteristic>
           </characteristics>
-          <modifiers>
-            <modifier type="set" value="Armoured Hull" field="name"/>
-          </modifiers>
         </profile>
       </profiles>
+      <comment>S8</comment>
     </selectionEntry>
     <selectionEntry type="model" import="true" name="Drop Pod" hidden="false" id="4d57-c5c8-c1a1-e8a6">
       <costs>
@@ -23173,7 +23173,7 @@ Normal move. If it does so, until the end of the turn, this unit is not eligible
       <selectionEntryGroups>
         <selectionEntryGroup name="Wargear" id="9360-3333-511f-6423" hidden="false" sortIndex="2">
           <entryLinks>
-            <entryLink import="true" name="Armoured Tracks" hidden="false" id="551f-ad6f-fef-f6c9" type="selectionEntry" targetId="d3da-d5f3-70a9-50ed">
+            <entryLink import="true" name="Armoured Hull" hidden="false" id="551f-ad6f-fef-f6c9" type="selectionEntry" targetId="a879-624d-42ab-2b43">
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="9659-9ce1-fb90-0221"/>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6efa-b303-6ac2-b9c3"/>
@@ -23405,7 +23405,7 @@ Normal move. If it does so, until the end of the turn, this unit is not eligible
       <selectionEntryGroups>
         <selectionEntryGroup name="Wargear" id="e2c8-5dc3-007d-7ac0" hidden="false" sortIndex="2">
           <entryLinks>
-            <entryLink import="true" name="Armoured Tracks" hidden="false" id="8442-db0e-4194-5e7e" type="selectionEntry" targetId="d3da-d5f3-70a9-50ed">
+            <entryLink import="true" name="Armoured Hull" hidden="false" id="8442-db0e-4194-5e7e" type="selectionEntry" targetId="a879-624d-42ab-2b43">
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="c4cc-10fc-66a3-74b7"/>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d40a-b5d5-b185-67f8"/>
@@ -23654,7 +23654,7 @@ Normal move. If it does so, until the end of the turn, this unit is not eligible
             </selectionEntry>
           </selectionEntries>
           <entryLinks>
-            <entryLink import="true" name="Armoured Tracks" hidden="false" id="9fec-81ff-a1f2-1e29" type="selectionEntry" targetId="eaa5-a41b-9e59-a5f3">
+            <entryLink import="true" name="Armoured Hull" hidden="false" id="9fec-81ff-a1f2-1e29" type="selectionEntry" targetId="3b59-048c-5410-33fe">
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="b093-1e45-aa78-a7c5"/>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2eac-068f-61d5-7585"/>
@@ -24901,7 +24901,7 @@ You can attach this model a unit it can lead even if one Captain or Chapter Mas
         </profile>
         <profile name="Strategic Dispersal" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="eec8-a500-c73f-95d7">
           <characteristics>
-            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">In your Shooting phase, after this model’s unit has shot, if it is not within Engagement Range of any enemy models, it can make a Normal move of up to D6&quot;</characteristic>
+            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">In your Shooting phase, after this model’s unit has shot, if it is not within Engagement Range of any enemy models, it can make a Normal move of up to  6&quot;. If it does, until the end of the turn, that unit is not eligible to declare a charge.’</characteristic>
           </characteristics>
         </profile>
         <profile name="Leader" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="6071-4e16-eb0f-63a6">
@@ -25607,7 +25607,7 @@ model is within 12&quot;.</characteristic>
         </selectionEntryGroup>
       </selectionEntryGroups>
       <profiles>
-        <profile name="Veil of Time [Pyschic]" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="31b2-e5b4-c863-9992">
+        <profile name="Veil of Time [Psychic]" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="31b2-e5b4-c863-9992">
           <characteristics>
             <characteristic name="Description" typeId="9b8f-694b-e5e-b573">While this model is leading a unit, weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability.</characteristic>
           </characteristics>
@@ -29743,7 +29743,7 @@ You can attach this model to one of the above units even if one Captain, Chapte
             <constraint field="selections" scope="parent" value="1" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="bbf2-9881-fa6d-54bd" type="max"/>
           </constraints>
           <selectionEntries>
-            <selectionEntry id="c6aa-b3a5-4ff3-e0d3" name="Bolt Pistol, Master-crafted Bolt Rifle, Melee Weapon" hidden="false" collective="false" import="true" type="upgrade">
+            <selectionEntry id="c6aa-b3a5-4ff3-e0d3" name="Bolt Pistol, Master-crafted Bolter, Melee Weapon" hidden="false" collective="false" import="true" type="upgrade">
               <selectionEntryGroups>
                 <selectionEntryGroup id="1591-a4ae-50fb-3c21" name="Melee Weapon" hidden="false" collective="false" import="true" defaultSelectionEntryId="74b1-e680-e6f1-2845">
                   <constraints>
@@ -29861,7 +29861,7 @@ You can attach this model to one of the above units even if one Captain, Chapte
                         <characteristic name="S" typeId="2229-f494-25db-c5d3">4</characteristic>
                         <characteristic name="AP" typeId="9ead-8a10-520-de15">-1</characteristic>
                         <characteristic name="D" typeId="a354-c1c8-a745-f9e3">1</characteristic>
-                        <characteristic name="Keywords" typeId="7f1b-8591-2fcf-d01c">[PISTOL]</characteristic>
+                        <characteristic name="Keywords" typeId="7f1b-8591-2fcf-d01c">Pistol</characteristic>
                       </characteristics>
                     </profile>
                   </profiles>
@@ -31768,6 +31768,9 @@ You can attach this model to one of the above units even if one Captain, Chapte
               </selectionEntries>
             </selectionEntryGroup>
           </selectionEntryGroups>
+          <entryLinks>
+            <entryLink import="true" name="Armoured feet" hidden="false" id="b05f-2b19-0168-baeb" collective="false" targetId="d961-1269-6476-6f8c" type="selectionEntry"/>
+          </entryLinks>
         </selectionEntryGroup>
       </selectionEntryGroups>
       <modifiers>
@@ -32372,7 +32375,7 @@ You can attach this model to one of the above units even if one Captain, Chapte
                     <characteristic name="BS" typeId="94d-8a98-cf90-183e">3+</characteristic>
                     <characteristic name="S" typeId="2229-f494-25db-c5d3">12</characteristic>
                     <characteristic name="AP" typeId="9ead-8a10-520-de15">-4</characteristic>
-                    <characteristic name="D" typeId="a354-c1c8-a745-f9e3">6</characteristic>
+                    <characteristic name="D" typeId="a354-c1c8-a745-f9e3">D6</characteristic>
                     <characteristic name="Keywords" typeId="7f1b-8591-2fcf-d01c">Melta 4, Twin-Linked</characteristic>
                   </characteristics>
                 </profile>
@@ -34218,7 +34221,7 @@ You can attach this model to one of the above units even if one Character model
                     <characteristic name="M" typeId="e703-ecb6-5ce7-aec1">12&quot;</characteristic>
                     <characteristic name="T" typeId="d29d-cf75-fc2d-34a4">5</characteristic>
                     <characteristic name="SV" typeId="450-a17e-9d5e-29da">3+</characteristic>
-                    <characteristic name="W" typeId="750a-a2ec-90d3-21fe">3</characteristic>
+                    <characteristic name="W" typeId="750a-a2ec-90d3-21fe">2</characteristic>
                     <characteristic name="LD" typeId="58d2-b879-49c7-43bc">6+</characteristic>
                     <characteristic name="OC" typeId="bef7-942a-1a23-59f8">2</characteristic>
                   </characteristics>
@@ -34447,7 +34450,7 @@ You can attach this model to one of the above units even if one Character model
                     <characteristic name="M" typeId="e703-ecb6-5ce7-aec1">12&quot;</characteristic>
                     <characteristic name="T" typeId="d29d-cf75-fc2d-34a4">5</characteristic>
                     <characteristic name="SV" typeId="450-a17e-9d5e-29da">3+</characteristic>
-                    <characteristic name="W" typeId="750a-a2ec-90d3-21fe">3</characteristic>
+                    <characteristic name="W" typeId="750a-a2ec-90d3-21fe">2</characteristic>
                     <characteristic name="LD" typeId="58d2-b879-49c7-43bc">6+</characteristic>
                     <characteristic name="OC" typeId="bef7-942a-1a23-59f8">2</characteristic>
                   </characteristics>
@@ -36519,7 +36522,7 @@ per turn.</characteristic>
       <profiles>
         <profile name="Hammer of Wrath" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="1df-b883-26cb-3084">
           <characteristics>
-            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">Each time this unit ends a Charge move, select one enemy unit within Engagement range of it, then roll  one D6 for each model in this unit that is within Engagement range of that enemy unit. On a 4+ that enemy unit suffers one mortal wound</characteristic>
+            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">Each time this unit ends a Charge move, select one enemy unit within Engagement Range of it, then roll one D6 for each model in this unit that is within Engagement Range of that enemy unit: for each 4+, that enemy unit suffers 1 mortal wound.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -36634,7 +36637,12 @@ per turn.</characteristic>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Company Heroes" hidden="false" id="2f2e-d99b-b235-163a">
       <costs>
-        <cost name="pts" typeId="51b2-306e-1021-d207" value="95"/>
+        <cost name="pts" typeId="51b2-306e-1021-d207" value="105"/>
+        <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
+        <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
+        <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
+        <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
+        <cost name="Honour Points" typeId="8135-9a2f-6627-09e2" value="0"/>
       </costs>
       <profiles>
         <profile name="Ancient Banner" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="9ced-4a20-1c04-203d">
@@ -37323,6 +37331,38 @@ per turn.</characteristic>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="f36d-3087-a6c1-1b48" includeChildSelections="false"/>
       </constraints>
     </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Armoured Hull" hidden="false" id="3b59-048c-5410-33fe">
+      <profiles>
+        <profile name="Armoured Hull" typeId="8a40-4aaa-c780-9046" typeName="Melee Weapons" hidden="false" id="b45e-46d1-f4fc-bbea">
+          <characteristics>
+            <characteristic name="Range" typeId="914c-b413-91e3-a132">Melee</characteristic>
+            <characteristic name="A" typeId="2337-daa1-6682-b110">6</characteristic>
+            <characteristic name="WS" typeId="95d1-95f-45b4-11d6">4+</characteristic>
+            <characteristic name="S" typeId="ab33-d393-96ce-ccba">8</characteristic>
+            <characteristic name="AP" typeId="41a0-1301-112a-e2f2">0</characteristic>
+            <characteristic name="D" typeId="3254-9fe6-d824-513e">1</characteristic>
+            <characteristic name="Keywords" typeId="893f-9000-ccf7-648e">-</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <comment>S8</comment>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Armoured Hull" hidden="false" id="a879-624d-42ab-2b43">
+      <profiles>
+        <profile name="Armoured Hull" typeId="8a40-4aaa-c780-9046" typeName="Melee Weapons" hidden="false" id="b695-6a40-93a3-f048">
+          <characteristics>
+            <characteristic name="Range" typeId="914c-b413-91e3-a132">Melee</characteristic>
+            <characteristic name="A" typeId="2337-daa1-6682-b110">3</characteristic>
+            <characteristic name="WS" typeId="95d1-95f-45b4-11d6">4+</characteristic>
+            <characteristic name="S" typeId="ab33-d393-96ce-ccba">6</characteristic>
+            <characteristic name="AP" typeId="41a0-1301-112a-e2f2">0</characteristic>
+            <characteristic name="D" typeId="3254-9fe6-d824-513e">1</characteristic>
+            <characteristic name="Keywords" typeId="893f-9000-ccf7-648e">-</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <comment>S6</comment>
+    </selectionEntry>
   </sharedSelectionEntries>
   <sharedProfiles>
     <profile id="90c7-c55c-21e2-2232" name="Rites of Battle" hidden="false" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities">
@@ -37843,7 +37883,7 @@ Their Appointed Hour: You can re‑roll Advance and Charge rolls made for this
     </selectionEntryGroup>
     <selectionEntryGroup name="Enhancements" hidden="false" id="9e5d-de4c-c5d1-1d3e" collapsible="true">
       <selectionEntryGroups>
-        <selectionEntryGroup name="Gladius Enhancements" hidden="false" id="dff5-fd4c-749d-e42">
+        <selectionEntryGroup name="Gladius Task Force Enhancements" hidden="false" id="dff5-fd4c-749d-e42">
           <selectionEntries>
             <selectionEntry type="upgrade" import="true" name="Artificer Armour" hidden="false" id="e57e-d55a-be75-2205">
               <constraints>
@@ -37909,11 +37949,12 @@ Their Appointed Hour: You can re‑roll Advance and Charge rolls made for this
                 </profile>
               </profiles>
               <costs>
-                <cost name="pts" typeId="51b2-306e-1021-d207" value="40"/>
+                <cost name="pts" typeId="51b2-306e-1021-d207" value="25"/>
                 <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
                 <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
                 <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
                 <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
+                <cost name="Honour Points" typeId="8135-9a2f-6627-09e2" value="0"/>
               </costs>
             </selectionEntry>
           </selectionEntries>
@@ -38188,11 +38229,12 @@ Their Appointed Hour: You can re‑roll Advance and Charge rolls made for this
                 </profile>
               </profiles>
               <costs>
-                <cost name="pts" typeId="51b2-306e-1021-d207" value="25"/>
+                <cost name="pts" typeId="51b2-306e-1021-d207" value="35"/>
                 <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
                 <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
                 <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
                 <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
+                <cost name="Honour Points" typeId="8135-9a2f-6627-09e2" value="0"/>
               </costs>
             </selectionEntry>
             <selectionEntry type="upgrade" import="true" name="Gift of Foresight" hidden="false" id="3daa-03be-5449-710e">
@@ -39262,6 +39304,13 @@ is Battle-shocked, models in that unit have the Feel No Pain 4+ ability instead.
                 <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
                 <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
               </costs>
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditions>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="dda2-bb0a-215e-ad9c" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntry>
             <selectionEntry type="upgrade" import="true" name="Artisan of War" hidden="false" id="7ff3-5681-9afa-d421">
               <constraints>
@@ -39277,6 +39326,13 @@ is Battle-shocked, models in that unit have the Feel No Pain 4+ ability instead.
               <costs>
                 <cost name="pts" typeId="51b2-306e-1021-d207" value="20"/>
               </costs>
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditions>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="dda2-bb0a-215e-ad9c" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntry>
             <selectionEntry type="upgrade" import="true" name="Gleaming Pinions" hidden="false" id="3e32-76ee-c00a-86fb">
               <profiles>
@@ -39296,6 +39352,13 @@ is Battle-shocked, models in that unit have the Feel No Pain 4+ ability instead.
                 <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
                 <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
               </costs>
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditions>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="dda2-bb0a-215e-ad9c" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntry>
             <selectionEntry type="upgrade" import="true" name="Visage of Death" hidden="false" id="62d4-d909-3d3b-6656">
               <constraints>
@@ -39311,6 +39374,13 @@ is Battle-shocked, models in that unit have the Feel No Pain 4+ ability instead.
               <costs>
                 <cost name="pts" typeId="51b2-306e-1021-d207" value="15"/>
               </costs>
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditions>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="dda2-bb0a-215e-ad9c" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntry>
           </selectionEntries>
           <modifiers>
@@ -39351,6 +39421,13 @@ is Battle-shocked, models in that unit have the Feel No Pain 4+ ability instead.
                 <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
                 <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
               </costs>
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditions>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="7278-781b-ce6c-d23c" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntry>
             <selectionEntry type="upgrade" import="true" name="Sanguinius&apos; Grace" hidden="false" id="d4bd-87c4-6825-c07e">
               <constraints>
@@ -39370,6 +39447,13 @@ is Battle-shocked, models in that unit have the Feel No Pain 4+ ability instead.
                 <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
                 <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
               </costs>
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditions>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="7278-781b-ce6c-d23c" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntry>
             <selectionEntry type="upgrade" import="true" name="To Slay the Warmaster" hidden="false" id="1141-0c39-2208-da0f">
               <constraints>
@@ -39389,6 +39473,13 @@ is Battle-shocked, models in that unit have the Feel No Pain 4+ ability instead.
                 <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
                 <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
               </costs>
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditions>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="7278-781b-ce6c-d23c" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntry>
             <selectionEntry type="upgrade" import="true" name="Vengeful Onslaught" hidden="false" id="24ca-aa0a-625a-34a1">
               <constraints>
@@ -39408,6 +39499,13 @@ is Battle-shocked, models in that unit have the Feel No Pain 4+ ability instead.
                 <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
                 <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
               </costs>
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditions>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="7278-781b-ce6c-d23c" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntry>
           </selectionEntries>
           <constraints>
@@ -39645,11 +39743,12 @@ targeted by ranged attacks unless the attacking model is within 18&quot;.</char
             </selectionEntry>
             <selectionEntry type="upgrade" import="true" name="Fusillade" hidden="false" id="83b5-8f79-f92f-b64f">
               <costs>
-                <cost name="pts" typeId="51b2-306e-1021-d207" value="15"/>
+                <cost name="pts" typeId="51b2-306e-1021-d207" value="35"/>
                 <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
                 <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
                 <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
                 <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
+                <cost name="Honour Points" typeId="8135-9a2f-6627-09e2" value="0"/>
               </costs>
               <profiles>
                 <profile name="Fusillade" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="3107-ddb4-d645-b988">
@@ -42796,7 +42895,7 @@ Until the end of the phase, this model&apos;s melee weapons have that ability.</
     <rule name="Oath of Moment" id="3b76-4053-ece9-6e7d" hidden="false">
       <description>If your Army Faction is Adeptus Astartes, at the start of your Command phase, select one unit from your opponent’s army. Until the start of your next Command phase, that enemy unit is your Oath of Moment target. Each time a model with this ability makes an attack that targets your Oath of Moment target:
 ■ You can reroll the Hit roll
-■ If your army does not include one or more units with the Black Templars, Blood Angels, Dark Angels, Deathwatch or Space Wolves keywords, add 1 to the Wound roll as well.</description>
+■ If you are using a Codex: Space Marines Detachment and your army does not include one or more units with the Black Templars, Blood Angels, Dark Angels, Deathwatch or Space Wolves keywords, add 1 to the Wound roll as well.</description>
     </rule>
   </sharedRules>
   <infoLinks>

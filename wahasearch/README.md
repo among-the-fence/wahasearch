@@ -28,3 +28,25 @@ export default {
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+## Running Tests with Vitest
+
+This project uses [Vitest](https://vitest.dev/) for unit testing.
+
+### To run tests:
+
+```bash
+npm test
+```
+
+or
+
+```bash
+npx vitest
+```
+
+Vitest is configured to use the `jsdom` environment for React component testing. Test files should be named with `.test.ts`, `.test.tsx`, `.spec.ts`, or `.spec.tsx` and placed anywhere under the `src/` directory.
+
+See `vitest.config.ts` for configuration details.
+
+For more, see the [Vitest documentation](https://vitest.dev/).

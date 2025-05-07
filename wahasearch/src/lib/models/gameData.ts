@@ -25,7 +25,7 @@ export interface Catalogue extends Base, Named{
     selectionEntries?: SelectionEntry[];
     sharedRules?: Rule[];
     selectionEntryGroups?: SelectionEntryGroup[];
-    sharedProfiles: Map<String, Profile>;
+    sharedProfiles: Map<string, Profile>;
     categoryEntries?: CategoryEntry[];
     entryLinks?: EntryLink[];
     infoLinks?: InfoLink[];
@@ -118,10 +118,17 @@ export class WBSDataGameSystemParser {
         return x;
     }
 
+    public parseEntry(entry: any): any {
+        return {
+            ...mapBase(entry),
+            ...mapName(entry),
+        };
+    }
+
 
     private mapCatalogue(data: any): Catalogue {
         const categoryEntries = data.categoryEntries ? ensureArray(data.categoryEntries.categoryEntry).map((c: any) => this.mapCategoryEntry(c)) : []
-        const sharedProfiles = new Map<String, Profile>();
+        const sharedProfiles = new Map<string, Profile>();
         if (data.sharedProfiles?.profile?.length > 0){
             data.sharedProfiles?.profile?.forEach((p: any) => {
                 const x = this.mapProfile(p);

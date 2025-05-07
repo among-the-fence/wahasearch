@@ -879,6 +879,117 @@
           "@_hidden": "false"
         },
         {
+          "constraints": {
+            "constraint": {
+              "@_type": "max",
+              "@_value": "-1",
+              "@_field": "51b2-306e-1021-d207",
+              "@_scope": "force",
+              "@_shared": "true",
+              "@_id": "fbba-7f7e-16a1-370a",
+              "@_includeChildSelections": "true"
+            }
+          },
+          "modifiers": {
+            "modifier": [
+              {
+                "conditionGroups": {
+                  "conditionGroup": {
+                    "conditions": {
+                      "condition": [
+                        {
+                          "@_type": "notInstanceOf",
+                          "@_value": "1",
+                          "@_field": "selections",
+                          "@_scope": "primary-catalogue",
+                          "@_childId": "c8da-e875-58f7-f6d6",
+                          "@_shared": "true"
+                        },
+                        {
+                          "@_type": "greaterThan",
+                          "@_value": "0",
+                          "@_field": "selections",
+                          "@_scope": "force",
+                          "@_childId": "d62d-db22-4893-4bc0",
+                          "@_shared": "true",
+                          "@_includeChildSelections": "true"
+                        }
+                      ]
+                    },
+                    "@_type": "and"
+                  }
+                },
+                "@_type": "set",
+                "@_value": "500",
+                "@_field": "fbba-7f7e-16a1-370a",
+                "@_id": "4fa7-457c-8229-7e77"
+              },
+              {
+                "conditionGroups": {
+                  "conditionGroup": {
+                    "conditions": {
+                      "condition": [
+                        {
+                          "@_type": "notInstanceOf",
+                          "@_value": "1",
+                          "@_field": "selections",
+                          "@_scope": "primary-catalogue",
+                          "@_childId": "c8da-e875-58f7-f6d6",
+                          "@_shared": "true"
+                        },
+                        {
+                          "@_type": "greaterThan",
+                          "@_value": "0",
+                          "@_field": "selections",
+                          "@_scope": "force",
+                          "@_childId": "baf8-997f-e323-a090",
+                          "@_shared": "true",
+                          "@_includeChildSelections": "true"
+                        }
+                      ]
+                    },
+                    "@_type": "and"
+                  }
+                },
+                "@_type": "set",
+                "@_value": "1000",
+                "@_field": "fbba-7f7e-16a1-370a",
+                "@_id": "94e5-8ddd-5373-00cf"
+              },
+              {
+                "conditionGroups": {
+                  "conditionGroup": {
+                    "conditions": {
+                      "condition": [
+                        {
+                          "@_type": "notInstanceOf",
+                          "@_value": "1",
+                          "@_field": "selections",
+                          "@_scope": "primary-catalogue",
+                          "@_childId": "c8da-e875-58f7-f6d6",
+                          "@_shared": "true"
+                        },
+                        {
+                          "@_type": "greaterThan",
+                          "@_value": "0",
+                          "@_field": "selections",
+                          "@_scope": "force",
+                          "@_childId": "4204-82d0-908c-a62a",
+                          "@_shared": "true",
+                          "@_includeChildSelections": "true"
+                        }
+                      ]
+                    },
+                    "@_type": "and"
+                  }
+                },
+                "@_type": "set",
+                "@_value": "1500",
+                "@_field": "fbba-7f7e-16a1-370a",
+                "@_id": "a7d0-0334-fd3e-416b"
+              }
+            ]
+          },
           "@_id": "1e42-dfae-cbdd-207d",
           "@_name": "Faction: Heretic Astartes",
           "@_hidden": "false"
@@ -3276,707 +3387,6 @@
     "sharedSelectionEntryGroups": {
       "selectionEntryGroup": [
         {
-          "selectionEntries": {
-            "selectionEntry": [
-              {
-                "constraints": {
-                  "constraint": {
-                    "@_type": "max",
-                    "@_value": "1",
-                    "@_field": "selections",
-                    "@_scope": "parent",
-                    "@_shared": "true",
-                    "@_id": "75f5-1a3b-0da5-91b0",
-                    "@_includeChildSelections": "false"
-                  }
-                },
-                "costs": {
-                  "cost": [
-                    {
-                      "@_name": "pts",
-                      "@_typeId": "51b2-306e-1021-d207",
-                      "@_value": "0"
-                    },
-                    {
-                      "@_name": "Crusade Points",
-                      "@_typeId": "b03b-c239-15a5-da55",
-                      "@_value": "0"
-                    },
-                    {
-                      "@_name": "Crusade: Experience",
-                      "@_typeId": "a623-fe74-1d33-cddf",
-                      "@_value": "0"
-                    },
-                    {
-                      "@_name": "Crusade: Weapon Modifications",
-                      "@_typeId": "716d-91b7-d55a-1022",
-                      "@_value": "1"
-                    }
-                  ]
-                },
-                "modifierGroups": {
-                  "modifierGroup": {
-                    "comment": "Brutal",
-                    "modifiers": {
-                      "modifier": [
-                        {
-                          "conditions": {
-                            "condition": {
-                              "@_type": "greaterThan",
-                              "@_value": "0",
-                              "@_field": "selections",
-                              "@_scope": "upgrade",
-                              "@_childId": "d92a-5d2e-0b38-ea01",
-                              "@_shared": "true",
-                              "@_includeChildSelections": "true"
-                            }
-                          },
-                          "@_type": "append",
-                          "@_value": "Brutal",
-                          "@_field": "annotation",
-                          "@_join": ",",
-                          "@_scope": "upgrade",
-                          "@_affects": "self.entries.profiles.Ranged Weapons"
-                        },
-                        {
-                          "conditions": {
-                            "condition": {
-                              "@_type": "atLeast",
-                              "@_value": "1",
-                              "@_field": "selections",
-                              "@_scope": "upgrade",
-                              "@_childId": "d92a-5d2e-0b38-ea01",
-                              "@_shared": "true",
-                              "@_includeChildSelections": "true"
-                            }
-                          },
-                          "@_type": "increment",
-                          "@_value": "1",
-                          "@_field": "2229-f494-25db-c5d3",
-                          "@_scope": "upgrade",
-                          "@_affects": "self.entries.profiles.Ranged Weapons"
-                        },
-                        {
-                          "conditions": {
-                            "condition": {
-                              "@_type": "atLeast",
-                              "@_value": "1",
-                              "@_field": "selections",
-                              "@_scope": "upgrade",
-                              "@_childId": "d92a-5d2e-0b38-ea01",
-                              "@_shared": "true",
-                              "@_includeChildSelections": "true"
-                            }
-                          },
-                          "@_type": "increment",
-                          "@_value": "1",
-                          "@_field": "ab33-d393-96ce-ccba",
-                          "@_scope": "upgrade",
-                          "@_affects": "self.entries.profiles.Melee Weapons"
-                        },
-                        {
-                          "conditions": {
-                            "condition": {
-                              "@_type": "greaterThan",
-                              "@_value": "0",
-                              "@_field": "selections",
-                              "@_scope": "upgrade",
-                              "@_childId": "d92a-5d2e-0b38-ea01",
-                              "@_shared": "true",
-                              "@_includeChildSelections": "true"
-                            }
-                          },
-                          "@_type": "append",
-                          "@_value": "Brutal",
-                          "@_field": "annotation",
-                          "@_join": ",",
-                          "@_scope": "upgrade",
-                          "@_affects": "self.entries.profiles.Melee Weapons"
-                        }
-                      ]
-                    },
-                    "@_type": "and"
-                  }
-                },
-                "@_type": "upgrade",
-                "@_import": "true",
-                "@_name": "Brutal (S+1)",
-                "@_hidden": "false",
-                "@_id": "d92a-5d2e-0b38-ea01"
-              },
-              {
-                "constraints": {
-                  "constraint": {
-                    "@_type": "max",
-                    "@_value": "1",
-                    "@_field": "selections",
-                    "@_scope": "parent",
-                    "@_shared": "true",
-                    "@_id": "3018-0ec7-e3e5-de6a",
-                    "@_includeChildSelections": "false"
-                  }
-                },
-                "costs": {
-                  "cost": [
-                    {
-                      "@_name": "pts",
-                      "@_typeId": "51b2-306e-1021-d207",
-                      "@_value": "0"
-                    },
-                    {
-                      "@_name": "Crusade Points",
-                      "@_typeId": "b03b-c239-15a5-da55",
-                      "@_value": "0"
-                    },
-                    {
-                      "@_name": "Crusade: Experience",
-                      "@_typeId": "a623-fe74-1d33-cddf",
-                      "@_value": "0"
-                    },
-                    {
-                      "@_name": "Crusade: Weapon Modifications",
-                      "@_typeId": "716d-91b7-d55a-1022",
-                      "@_value": "1"
-                    }
-                  ]
-                },
-                "modifierGroups": {
-                  "modifierGroup": {
-                    "comment": "Armour Piercing",
-                    "modifiers": {
-                      "modifier": [
-                        {
-                          "conditions": {
-                            "condition": {
-                              "@_type": "greaterThan",
-                              "@_value": "0",
-                              "@_field": "selections",
-                              "@_scope": "upgrade",
-                              "@_childId": "d181-a615-5566-8e5a",
-                              "@_shared": "true",
-                              "@_includeChildSelections": "true"
-                            }
-                          },
-                          "@_type": "append",
-                          "@_value": "Armour Piercing",
-                          "@_field": "annotation",
-                          "@_join": ",",
-                          "@_scope": "upgrade",
-                          "@_affects": "self.entries.profiles.Ranged Weapons"
-                        },
-                        {
-                          "conditions": {
-                            "condition": {
-                              "@_type": "atLeast",
-                              "@_value": "1",
-                              "@_field": "selections",
-                              "@_scope": "upgrade",
-                              "@_childId": "d181-a615-5566-8e5a",
-                              "@_shared": "true",
-                              "@_includeChildSelections": "true"
-                            }
-                          },
-                          "@_type": "decrement",
-                          "@_value": "1",
-                          "@_field": "9ead-8a10-520-de15",
-                          "@_scope": "upgrade",
-                          "@_affects": "self.entries.profiles.Ranged Weapons"
-                        },
-                        {
-                          "conditions": {
-                            "condition": {
-                              "@_type": "greaterThan",
-                              "@_value": "0",
-                              "@_field": "selections",
-                              "@_scope": "upgrade",
-                              "@_childId": "d181-a615-5566-8e5a",
-                              "@_shared": "true",
-                              "@_includeChildSelections": "true"
-                            }
-                          },
-                          "@_type": "append",
-                          "@_value": "Armour Piercing",
-                          "@_field": "annotation",
-                          "@_join": ",",
-                          "@_scope": "upgrade",
-                          "@_affects": "self.entries.profiles.Melee Weapons"
-                        },
-                        {
-                          "conditions": {
-                            "condition": {
-                              "@_type": "atLeast",
-                              "@_value": "1",
-                              "@_field": "selections",
-                              "@_scope": "upgrade",
-                              "@_childId": "d181-a615-5566-8e5a",
-                              "@_shared": "true",
-                              "@_includeChildSelections": "true"
-                            }
-                          },
-                          "@_type": "decrement",
-                          "@_value": "1",
-                          "@_field": "41a0-1301-112a-e2f2",
-                          "@_scope": "upgrade",
-                          "@_affects": "self.entries.profiles.Melee Weapons"
-                        }
-                      ]
-                    },
-                    "@_type": "and"
-                  }
-                },
-                "@_type": "upgrade",
-                "@_import": "true",
-                "@_name": "Armour Piercing (AP+1)",
-                "@_hidden": "false",
-                "@_id": "d181-a615-5566-8e5a"
-              },
-              {
-                "constraints": {
-                  "constraint": {
-                    "@_type": "max",
-                    "@_value": "1",
-                    "@_field": "selections",
-                    "@_scope": "parent",
-                    "@_shared": "true",
-                    "@_id": "6002-d56b-06a2-194a",
-                    "@_includeChildSelections": "false"
-                  }
-                },
-                "profiles": {
-                  "profile": {
-                    "characteristics": {
-                      "characteristic": {
-                        "#text": "Each time a Critical Wound is scored for an attack made with this weapon, that attack has the [PRECISION] ability.",
-                        "@_name": "Description",
-                        "@_typeId": "9b8f-694b-e5e-b573"
-                      }
-                    },
-                    "@_name": "Precise",
-                    "@_typeId": "9cc3-6d83-4dd3-9b64",
-                    "@_typeName": "Abilities",
-                    "@_hidden": "false",
-                    "@_id": "a3d2-6ce8-adf3-448a"
-                  }
-                },
-                "infoLinks": {
-                  "infoLink": {
-                    "@_name": "Precision",
-                    "@_id": "119c-b206-e441-6abe",
-                    "@_hidden": "false",
-                    "@_type": "rule",
-                    "@_targetId": "9143-31ae-e0a6-6007"
-                  }
-                },
-                "costs": {
-                  "cost": [
-                    {
-                      "@_name": "pts",
-                      "@_typeId": "51b2-306e-1021-d207",
-                      "@_value": "0"
-                    },
-                    {
-                      "@_name": "Crusade Points",
-                      "@_typeId": "b03b-c239-15a5-da55",
-                      "@_value": "0"
-                    },
-                    {
-                      "@_name": "Crusade: Experience",
-                      "@_typeId": "a623-fe74-1d33-cddf",
-                      "@_value": "0"
-                    },
-                    {
-                      "@_name": "Crusade: Weapon Modifications",
-                      "@_typeId": "716d-91b7-d55a-1022",
-                      "@_value": "1"
-                    }
-                  ]
-                },
-                "@_type": "upgrade",
-                "@_import": "true",
-                "@_name": "Precise",
-                "@_hidden": "false",
-                "@_id": "658a-396c-f9a0-d15f"
-              },
-              {
-                "constraints": {
-                  "constraint": {
-                    "@_type": "max",
-                    "@_value": "1",
-                    "@_field": "selections",
-                    "@_scope": "parent",
-                    "@_shared": "true",
-                    "@_id": "f492-ff46-c01c-fa7f",
-                    "@_includeChildSelections": "false"
-                  }
-                },
-                "costs": {
-                  "cost": [
-                    {
-                      "@_name": "pts",
-                      "@_typeId": "51b2-306e-1021-d207",
-                      "@_value": "0"
-                    },
-                    {
-                      "@_name": "Crusade Points",
-                      "@_typeId": "b03b-c239-15a5-da55",
-                      "@_value": "0"
-                    },
-                    {
-                      "@_name": "Crusade: Experience",
-                      "@_typeId": "a623-fe74-1d33-cddf",
-                      "@_value": "0"
-                    },
-                    {
-                      "@_name": "Crusade: Weapon Modifications",
-                      "@_typeId": "716d-91b7-d55a-1022",
-                      "@_value": "1"
-                    }
-                  ]
-                },
-                "modifierGroups": {
-                  "modifierGroup": {
-                    "comment": "Master-worked",
-                    "modifiers": {
-                      "modifier": [
-                        {
-                          "conditions": {
-                            "condition": {
-                              "@_type": "greaterThan",
-                              "@_value": "0",
-                              "@_field": "selections",
-                              "@_scope": "upgrade",
-                              "@_childId": "4b25-c6e7-3350-9c1c",
-                              "@_shared": "true",
-                              "@_includeChildSelections": "true"
-                            }
-                          },
-                          "@_type": "append",
-                          "@_value": "Master-worked",
-                          "@_field": "annotation",
-                          "@_join": ",",
-                          "@_scope": "upgrade",
-                          "@_affects": "profiles.Ranged Weapons"
-                        },
-                        {
-                          "conditions": {
-                            "condition": {
-                              "@_type": "atLeast",
-                              "@_value": "1",
-                              "@_field": "selections",
-                              "@_scope": "upgrade",
-                              "@_childId": "4b25-c6e7-3350-9c1c",
-                              "@_shared": "true",
-                              "@_includeChildSelections": "true"
-                            }
-                          },
-                          "@_type": "increment",
-                          "@_value": "1",
-                          "@_field": "a354-c1c8-a745-f9e3",
-                          "@_scope": "upgrade",
-                          "@_affects": "profiles.Ranged Weapons"
-                        },
-                        {
-                          "conditions": {
-                            "condition": {
-                              "@_type": "greaterThan",
-                              "@_value": "0",
-                              "@_field": "selections",
-                              "@_scope": "upgrade",
-                              "@_childId": "4b25-c6e7-3350-9c1c",
-                              "@_shared": "true",
-                              "@_includeChildSelections": "true"
-                            }
-                          },
-                          "@_type": "append",
-                          "@_value": "Master-worked",
-                          "@_field": "annotation",
-                          "@_join": ",",
-                          "@_scope": "upgrade",
-                          "@_affects": "profiles.Melee Weapons"
-                        },
-                        {
-                          "conditions": {
-                            "condition": {
-                              "@_type": "atLeast",
-                              "@_value": "1",
-                              "@_field": "selections",
-                              "@_scope": "upgrade",
-                              "@_childId": "4b25-c6e7-3350-9c1c",
-                              "@_shared": "true",
-                              "@_includeChildSelections": "true"
-                            }
-                          },
-                          "@_type": "increment",
-                          "@_value": "1",
-                          "@_field": "3254-9fe6-d824-513e",
-                          "@_scope": "upgrade",
-                          "@_affects": "profiles.Melee Weapons"
-                        }
-                      ]
-                    },
-                    "@_type": "and"
-                  }
-                },
-                "@_type": "upgrade",
-                "@_import": "true",
-                "@_name": "Master-worked (D+1)",
-                "@_hidden": "false",
-                "@_id": "4b25-c6e7-3350-9c1c"
-              },
-              {
-                "constraints": {
-                  "constraint": {
-                    "@_type": "max",
-                    "@_value": "1",
-                    "@_field": "selections",
-                    "@_scope": "parent",
-                    "@_shared": "true",
-                    "@_id": "9712-b244-1f9c-e8c2",
-                    "@_includeChildSelections": "false"
-                  }
-                },
-                "costs": {
-                  "cost": [
-                    {
-                      "@_name": "pts",
-                      "@_typeId": "51b2-306e-1021-d207",
-                      "@_value": "0"
-                    },
-                    {
-                      "@_name": "Crusade Points",
-                      "@_typeId": "b03b-c239-15a5-da55",
-                      "@_value": "0"
-                    },
-                    {
-                      "@_name": "Crusade: Experience",
-                      "@_typeId": "a623-fe74-1d33-cddf",
-                      "@_value": "0"
-                    },
-                    {
-                      "@_name": "Crusade: Weapon Modifications",
-                      "@_typeId": "716d-91b7-d55a-1022",
-                      "@_value": "1"
-                    }
-                  ]
-                },
-                "modifierGroups": {
-                  "modifierGroup": {
-                    "comment": "Heirloom",
-                    "modifiers": {
-                      "modifier": [
-                        {
-                          "conditions": {
-                            "condition": {
-                              "@_type": "greaterThan",
-                              "@_value": "0",
-                              "@_field": "selections",
-                              "@_scope": "upgrade",
-                              "@_childId": "09c4-6313-8cd5-d77a",
-                              "@_shared": "true",
-                              "@_includeChildSelections": "true"
-                            }
-                          },
-                          "@_type": "append",
-                          "@_value": "Heirloom",
-                          "@_field": "annotation",
-                          "@_join": ",",
-                          "@_scope": "upgrade",
-                          "@_affects": "profiles.Ranged Weapons"
-                        },
-                        {
-                          "conditions": {
-                            "condition": {
-                              "@_type": "atLeast",
-                              "@_value": "1",
-                              "@_field": "selections",
-                              "@_scope": "upgrade",
-                              "@_childId": "09c4-6313-8cd5-d77a",
-                              "@_shared": "true",
-                              "@_includeChildSelections": "true"
-                            }
-                          },
-                          "@_type": "increment",
-                          "@_value": "1",
-                          "@_field": "3bb-c35f-f54-fb08",
-                          "@_scope": "upgrade",
-                          "@_affects": "profiles.Ranged Weapons"
-                        },
-                        {
-                          "conditions": {
-                            "condition": {
-                              "@_type": "atLeast",
-                              "@_value": "1",
-                              "@_field": "selections",
-                              "@_scope": "upgrade",
-                              "@_childId": "09c4-6313-8cd5-d77a",
-                              "@_shared": "true",
-                              "@_includeChildSelections": "true"
-                            }
-                          },
-                          "@_type": "increment",
-                          "@_value": "1",
-                          "@_field": "2337-daa1-6682-b110",
-                          "@_scope": "upgrade",
-                          "@_affects": "profiles.Melee Weapons"
-                        },
-                        {
-                          "conditions": {
-                            "condition": {
-                              "@_type": "greaterThan",
-                              "@_value": "0",
-                              "@_field": "selections",
-                              "@_scope": "upgrade",
-                              "@_childId": "09c4-6313-8cd5-d77a",
-                              "@_shared": "true",
-                              "@_includeChildSelections": "true"
-                            }
-                          },
-                          "@_type": "append",
-                          "@_value": "Heirloom",
-                          "@_field": "annotation",
-                          "@_join": ",",
-                          "@_scope": "upgrade",
-                          "@_affects": "profiles.Melee Weapons"
-                        }
-                      ]
-                    },
-                    "@_type": "and"
-                  }
-                },
-                "@_type": "upgrade",
-                "@_import": "true",
-                "@_name": "Heirloom (A+1)",
-                "@_hidden": "false",
-                "@_id": "09c4-6313-8cd5-d77a"
-              },
-              {
-                "constraints": {
-                  "constraint": {
-                    "@_type": "max",
-                    "@_value": "1",
-                    "@_field": "selections",
-                    "@_scope": "parent",
-                    "@_shared": "true",
-                    "@_id": "26be-21c9-e43a-04c0",
-                    "@_includeChildSelections": "false"
-                  }
-                },
-                "costs": {
-                  "cost": [
-                    {
-                      "@_name": "pts",
-                      "@_typeId": "51b2-306e-1021-d207",
-                      "@_value": "0"
-                    },
-                    {
-                      "@_name": "Crusade Points",
-                      "@_typeId": "b03b-c239-15a5-da55",
-                      "@_value": "0"
-                    },
-                    {
-                      "@_name": "Crusade: Experience",
-                      "@_typeId": "a623-fe74-1d33-cddf",
-                      "@_value": "0"
-                    },
-                    {
-                      "@_name": "Crusade: Weapon Modifications",
-                      "@_typeId": "716d-91b7-d55a-1022",
-                      "@_value": "1"
-                    }
-                  ]
-                },
-                "modifierGroups": {
-                  "modifierGroup": {
-                    "comment": "Finely Balanced",
-                    "modifiers": {
-                      "modifier": [
-                        {
-                          "conditions": {
-                            "condition": {
-                              "@_type": "greaterThan",
-                              "@_value": "0",
-                              "@_field": "selections",
-                              "@_scope": "upgrade",
-                              "@_childId": "13b7-d8d5-72c2-1f72",
-                              "@_shared": "true",
-                              "@_includeChildSelections": "true"
-                            }
-                          },
-                          "@_type": "append",
-                          "@_value": "Finely Balanced",
-                          "@_field": "annotation",
-                          "@_join": ",",
-                          "@_scope": "upgrade",
-                          "@_affects": "self.entries.profiles.Ranged Weapons"
-                        },
-                        {
-                          "conditions": {
-                            "condition": {
-                              "@_type": "atLeast",
-                              "@_value": "1",
-                              "@_field": "selections",
-                              "@_scope": "upgrade",
-                              "@_childId": "13b7-d8d5-72c2-1f72",
-                              "@_shared": "true",
-                              "@_includeChildSelections": "true"
-                            }
-                          },
-                          "@_type": "decrement",
-                          "@_value": "1",
-                          "@_field": "94d-8a98-cf90-183e",
-                          "@_scope": "upgrade",
-                          "@_affects": "self.entries.profiles.Ranged Weapons"
-                        },
-                        {
-                          "conditions": {
-                            "condition": {
-                              "@_type": "atLeast",
-                              "@_value": "1",
-                              "@_field": "selections",
-                              "@_scope": "upgrade",
-                              "@_childId": "13b7-d8d5-72c2-1f72",
-                              "@_shared": "true",
-                              "@_includeChildSelections": "true"
-                            }
-                          },
-                          "@_type": "decrement",
-                          "@_value": "1",
-                          "@_field": "95d1-95f-45b4-11d6",
-                          "@_scope": "upgrade",
-                          "@_affects": "self.entries.profiles.Melee Weapons"
-                        },
-                        {
-                          "conditions": {
-                            "condition": {
-                              "@_type": "greaterThan",
-                              "@_value": "0",
-                              "@_field": "selections",
-                              "@_scope": "upgrade",
-                              "@_childId": "13b7-d8d5-72c2-1f72",
-                              "@_shared": "true",
-                              "@_includeChildSelections": "true"
-                            }
-                          },
-                          "@_type": "append",
-                          "@_value": "Finely Balanced",
-                          "@_field": "annotation",
-                          "@_join": ",",
-                          "@_scope": "upgrade",
-                          "@_affects": "self.entries.profiles.Melee Weapons"
-                        }
-                      ]
-                    },
-                    "@_type": "and"
-                  }
-                },
-                "@_type": "upgrade",
-                "@_import": "true",
-                "@_name": "Finely Balanced (BS/WS+1)",
-                "@_hidden": "false",
-                "@_id": "13b7-d8d5-72c2-1f72"
-              }
-            ]
-          },
           "modifiers": {
             "modifier": [
               {
@@ -4187,6 +3597,785 @@
             ]
           },
           "comment": "Crusade content",
+          "selectionEntries": {
+            "selectionEntry": [
+              {
+                "constraints": {
+                  "constraint": {
+                    "@_type": "max",
+                    "@_value": "1",
+                    "@_field": "selections",
+                    "@_scope": "parent",
+                    "@_shared": "true",
+                    "@_id": "113d-f8b1-7c83-8844",
+                    "@_includeChildSelections": "false"
+                  }
+                },
+                "costs": {
+                  "cost": [
+                    {
+                      "@_name": "pts",
+                      "@_typeId": "51b2-306e-1021-d207",
+                      "@_value": "0"
+                    },
+                    {
+                      "@_name": "Crusade Points",
+                      "@_typeId": "b03b-c239-15a5-da55",
+                      "@_value": "0"
+                    },
+                    {
+                      "@_name": "Crusade: Experience",
+                      "@_typeId": "a623-fe74-1d33-cddf",
+                      "@_value": "0"
+                    },
+                    {
+                      "@_name": "Crusade: Weapon Modifications",
+                      "@_typeId": "716d-91b7-d55a-1022",
+                      "@_value": "1"
+                    }
+                  ]
+                },
+                "modifierGroups": {
+                  "modifierGroup": {
+                    "comment": "Armour Piercing",
+                    "modifiers": {
+                      "modifier": [
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "greaterThan",
+                              "@_value": "0",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "128d-c573-273f-47b5",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "append",
+                          "@_value": "Armour Piercing",
+                          "@_field": "annotation",
+                          "@_join": ",",
+                          "@_scope": "upgrade",
+                          "@_affects": "self.entries.profiles.Ranged Weapons"
+                        },
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "atLeast",
+                              "@_value": "1",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "128d-c573-273f-47b5",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "decrement",
+                          "@_value": "1",
+                          "@_field": "9ead-8a10-520-de15",
+                          "@_scope": "upgrade",
+                          "@_affects": "self.entries.profiles.Ranged Weapons"
+                        },
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "greaterThan",
+                              "@_value": "0",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "128d-c573-273f-47b5",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "append",
+                          "@_value": "Armour Piercing",
+                          "@_field": "annotation",
+                          "@_join": ",",
+                          "@_scope": "upgrade",
+                          "@_affects": "self.entries.profiles.Melee Weapons"
+                        },
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "atLeast",
+                              "@_value": "1",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "128d-c573-273f-47b5",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "decrement",
+                          "@_value": "1",
+                          "@_field": "41a0-1301-112a-e2f2",
+                          "@_scope": "upgrade",
+                          "@_affects": "self.entries.profiles.Melee Weapons"
+                        }
+                      ]
+                    },
+                    "@_type": "and"
+                  }
+                },
+                "@_type": "upgrade",
+                "@_import": "true",
+                "@_name": "Armour Piercing (AP+1)",
+                "@_hidden": "false",
+                "@_id": "128d-c573-273f-47b5"
+              },
+              {
+                "constraints": {
+                  "constraint": {
+                    "@_type": "max",
+                    "@_value": "1",
+                    "@_field": "selections",
+                    "@_scope": "parent",
+                    "@_shared": "true",
+                    "@_id": "f0b9-cb53-9d50-446b",
+                    "@_includeChildSelections": "false"
+                  }
+                },
+                "costs": {
+                  "cost": [
+                    {
+                      "@_name": "pts",
+                      "@_typeId": "51b2-306e-1021-d207",
+                      "@_value": "0"
+                    },
+                    {
+                      "@_name": "Crusade Points",
+                      "@_typeId": "b03b-c239-15a5-da55",
+                      "@_value": "0"
+                    },
+                    {
+                      "@_name": "Crusade: Experience",
+                      "@_typeId": "a623-fe74-1d33-cddf",
+                      "@_value": "0"
+                    },
+                    {
+                      "@_name": "Crusade: Weapon Modifications",
+                      "@_typeId": "716d-91b7-d55a-1022",
+                      "@_value": "1"
+                    }
+                  ]
+                },
+                "modifierGroups": {
+                  "modifierGroup": {
+                    "comment": "Brutal",
+                    "modifiers": {
+                      "modifier": [
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "greaterThan",
+                              "@_value": "0",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "c5fb-58f5-2d2f-cc09",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "append",
+                          "@_value": "Brutal",
+                          "@_field": "annotation",
+                          "@_join": ",",
+                          "@_scope": "upgrade",
+                          "@_affects": "self.entries.profiles.Ranged Weapons"
+                        },
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "atLeast",
+                              "@_value": "1",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "c5fb-58f5-2d2f-cc09",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "increment",
+                          "@_value": "1",
+                          "@_field": "2229-f494-25db-c5d3",
+                          "@_scope": "upgrade",
+                          "@_affects": "self.entries.profiles.Ranged Weapons"
+                        },
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "atLeast",
+                              "@_value": "1",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "c5fb-58f5-2d2f-cc09",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "increment",
+                          "@_value": "1",
+                          "@_field": "ab33-d393-96ce-ccba",
+                          "@_scope": "upgrade",
+                          "@_affects": "self.entries.profiles.Melee Weapons"
+                        },
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "greaterThan",
+                              "@_value": "0",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "c5fb-58f5-2d2f-cc09",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "append",
+                          "@_value": "Brutal",
+                          "@_field": "annotation",
+                          "@_join": ",",
+                          "@_scope": "upgrade",
+                          "@_affects": "self.entries.profiles.Melee Weapons"
+                        }
+                      ]
+                    },
+                    "@_type": "and"
+                  }
+                },
+                "@_type": "upgrade",
+                "@_import": "true",
+                "@_name": "Brutal (S+1)",
+                "@_hidden": "false",
+                "@_id": "c5fb-58f5-2d2f-cc09"
+              },
+              {
+                "constraints": {
+                  "constraint": {
+                    "@_type": "max",
+                    "@_value": "1",
+                    "@_field": "selections",
+                    "@_scope": "parent",
+                    "@_shared": "true",
+                    "@_id": "2e35-2606-32de-f70e",
+                    "@_includeChildSelections": "false"
+                  }
+                },
+                "costs": {
+                  "cost": [
+                    {
+                      "@_name": "pts",
+                      "@_typeId": "51b2-306e-1021-d207",
+                      "@_value": "0"
+                    },
+                    {
+                      "@_name": "Crusade Points",
+                      "@_typeId": "b03b-c239-15a5-da55",
+                      "@_value": "0"
+                    },
+                    {
+                      "@_name": "Crusade: Experience",
+                      "@_typeId": "a623-fe74-1d33-cddf",
+                      "@_value": "0"
+                    },
+                    {
+                      "@_name": "Crusade: Weapon Modifications",
+                      "@_typeId": "716d-91b7-d55a-1022",
+                      "@_value": "1"
+                    }
+                  ]
+                },
+                "modifierGroups": {
+                  "modifierGroup": {
+                    "comment": "Finely Balanced",
+                    "modifiers": {
+                      "modifier": [
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "greaterThan",
+                              "@_value": "0",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "a925-2f50-1580-0f5c",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "append",
+                          "@_value": "Finely Balanced",
+                          "@_field": "annotation",
+                          "@_join": ",",
+                          "@_scope": "upgrade",
+                          "@_affects": "self.entries.profiles.Ranged Weapons"
+                        },
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "atLeast",
+                              "@_value": "1",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "a925-2f50-1580-0f5c",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "decrement",
+                          "@_value": "1",
+                          "@_field": "94d-8a98-cf90-183e",
+                          "@_scope": "upgrade",
+                          "@_affects": "self.entries.profiles.Ranged Weapons"
+                        },
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "atLeast",
+                              "@_value": "1",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "a925-2f50-1580-0f5c",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "decrement",
+                          "@_value": "1",
+                          "@_field": "95d1-95f-45b4-11d6",
+                          "@_scope": "upgrade",
+                          "@_affects": "self.entries.profiles.Melee Weapons"
+                        },
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "greaterThan",
+                              "@_value": "0",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "a925-2f50-1580-0f5c",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "append",
+                          "@_value": "Finely Balanced",
+                          "@_field": "annotation",
+                          "@_join": ",",
+                          "@_scope": "upgrade",
+                          "@_affects": "self.entries.profiles.Melee Weapons"
+                        }
+                      ]
+                    },
+                    "@_type": "and"
+                  }
+                },
+                "@_type": "upgrade",
+                "@_import": "true",
+                "@_name": "Finely Balanced (BS/WS+1)",
+                "@_hidden": "false",
+                "@_id": "a925-2f50-1580-0f5c"
+              },
+              {
+                "constraints": {
+                  "constraint": {
+                    "@_type": "max",
+                    "@_value": "1",
+                    "@_field": "selections",
+                    "@_scope": "parent",
+                    "@_shared": "true",
+                    "@_id": "7351-cca3-269c-9d17",
+                    "@_includeChildSelections": "false"
+                  }
+                },
+                "costs": {
+                  "cost": [
+                    {
+                      "@_name": "pts",
+                      "@_typeId": "51b2-306e-1021-d207",
+                      "@_value": "0"
+                    },
+                    {
+                      "@_name": "Crusade Points",
+                      "@_typeId": "b03b-c239-15a5-da55",
+                      "@_value": "0"
+                    },
+                    {
+                      "@_name": "Crusade: Experience",
+                      "@_typeId": "a623-fe74-1d33-cddf",
+                      "@_value": "0"
+                    },
+                    {
+                      "@_name": "Crusade: Weapon Modifications",
+                      "@_typeId": "716d-91b7-d55a-1022",
+                      "@_value": "1"
+                    }
+                  ]
+                },
+                "modifierGroups": {
+                  "modifierGroup": {
+                    "comment": "Heirloom",
+                    "modifiers": {
+                      "modifier": [
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "greaterThan",
+                              "@_value": "0",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "2801-9f1c-645d-cb3d",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "append",
+                          "@_value": "Heirloom",
+                          "@_field": "annotation",
+                          "@_join": ",",
+                          "@_scope": "upgrade",
+                          "@_affects": "profiles.Ranged Weapons"
+                        },
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "atLeast",
+                              "@_value": "1",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "2801-9f1c-645d-cb3d",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "increment",
+                          "@_value": "1",
+                          "@_field": "3bb-c35f-f54-fb08",
+                          "@_scope": "upgrade",
+                          "@_affects": "profiles.Ranged Weapons",
+                          "@_position": "-1"
+                        },
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "atLeast",
+                              "@_value": "1",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "2801-9f1c-645d-cb3d",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "increment",
+                          "@_value": "1",
+                          "@_field": "2337-daa1-6682-b110",
+                          "@_scope": "upgrade",
+                          "@_affects": "profiles.Melee Weapons",
+                          "@_position": "-1"
+                        },
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "greaterThan",
+                              "@_value": "0",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "2801-9f1c-645d-cb3d",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "append",
+                          "@_value": "Heirloom",
+                          "@_field": "annotation",
+                          "@_join": ",",
+                          "@_scope": "upgrade",
+                          "@_affects": "profiles.Melee Weapons"
+                        },
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "atLeast",
+                              "@_value": "1",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "2801-9f1c-645d-cb3d",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "replace",
+                          "@_field": "3bb-c35f-f54-fb08",
+                          "@_scope": "upgrade",
+                          "@_affects": "profiles.Ranged Weapons",
+                          "@_arg": "+0"
+                        },
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "atLeast",
+                              "@_value": "1",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "2801-9f1c-645d-cb3d",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "replace",
+                          "@_field": "2337-daa1-6682-b110",
+                          "@_scope": "upgrade",
+                          "@_affects": "profiles.Melee Weapons",
+                          "@_arg": "+0"
+                        }
+                      ]
+                    },
+                    "@_type": "and"
+                  }
+                },
+                "@_type": "upgrade",
+                "@_import": "true",
+                "@_name": "Heirloom (A+1)",
+                "@_hidden": "false",
+                "@_id": "2801-9f1c-645d-cb3d"
+              },
+              {
+                "constraints": {
+                  "constraint": {
+                    "@_type": "max",
+                    "@_value": "1",
+                    "@_field": "selections",
+                    "@_scope": "parent",
+                    "@_shared": "true",
+                    "@_id": "a0b6-8226-f8e5-c390",
+                    "@_includeChildSelections": "false"
+                  }
+                },
+                "costs": {
+                  "cost": [
+                    {
+                      "@_name": "pts",
+                      "@_typeId": "51b2-306e-1021-d207",
+                      "@_value": "0"
+                    },
+                    {
+                      "@_name": "Crusade Points",
+                      "@_typeId": "b03b-c239-15a5-da55",
+                      "@_value": "0"
+                    },
+                    {
+                      "@_name": "Crusade: Experience",
+                      "@_typeId": "a623-fe74-1d33-cddf",
+                      "@_value": "0"
+                    },
+                    {
+                      "@_name": "Crusade: Weapon Modifications",
+                      "@_typeId": "716d-91b7-d55a-1022",
+                      "@_value": "1"
+                    }
+                  ]
+                },
+                "modifierGroups": {
+                  "modifierGroup": {
+                    "comment": "Master-worked",
+                    "modifiers": {
+                      "modifier": [
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "greaterThan",
+                              "@_value": "0",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "584b-5fa7-a3c3-942e",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "append",
+                          "@_value": "Master-worked",
+                          "@_field": "annotation",
+                          "@_join": ",",
+                          "@_scope": "upgrade",
+                          "@_affects": "profiles.Ranged Weapons"
+                        },
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "atLeast",
+                              "@_value": "1",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "584b-5fa7-a3c3-942e",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "increment",
+                          "@_value": "1",
+                          "@_field": "a354-c1c8-a745-f9e3",
+                          "@_scope": "upgrade",
+                          "@_affects": "profiles.Ranged Weapons",
+                          "@_position": "-1"
+                        },
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "greaterThan",
+                              "@_value": "0",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "584b-5fa7-a3c3-942e",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "append",
+                          "@_value": "Master-worked",
+                          "@_field": "annotation",
+                          "@_join": ",",
+                          "@_scope": "upgrade",
+                          "@_affects": "profiles.Melee Weapons"
+                        },
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "atLeast",
+                              "@_value": "1",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "584b-5fa7-a3c3-942e",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "increment",
+                          "@_value": "1",
+                          "@_field": "3254-9fe6-d824-513e",
+                          "@_scope": "upgrade",
+                          "@_affects": "profiles.Melee Weapons",
+                          "@_position": "-1"
+                        },
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "atLeast",
+                              "@_value": "1",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "584b-5fa7-a3c3-942e",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "replace",
+                          "@_field": "a354-c1c8-a745-f9e3",
+                          "@_scope": "upgrade",
+                          "@_affects": "profiles.Ranged Weapons",
+                          "@_join": "",
+                          "@_arg": "+0"
+                        },
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "atLeast",
+                              "@_value": "1",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "584b-5fa7-a3c3-942e",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "replace",
+                          "@_field": "3254-9fe6-d824-513e",
+                          "@_scope": "upgrade",
+                          "@_affects": "profiles.Melee Weapons",
+                          "@_join": "",
+                          "@_arg": "+0"
+                        }
+                      ]
+                    },
+                    "@_type": "and"
+                  }
+                },
+                "@_type": "upgrade",
+                "@_import": "true",
+                "@_name": "Master-worked (D+1)",
+                "@_hidden": "false",
+                "@_id": "584b-5fa7-a3c3-942e"
+              },
+              {
+                "constraints": {
+                  "constraint": {
+                    "@_type": "max",
+                    "@_value": "1",
+                    "@_field": "selections",
+                    "@_scope": "parent",
+                    "@_shared": "true",
+                    "@_id": "01a3-f7d7-2d1c-0425",
+                    "@_includeChildSelections": "false"
+                  }
+                },
+                "profiles": {
+                  "profile": {
+                    "characteristics": {
+                      "characteristic": {
+                        "#text": "Each time a Critical Wound is scored for an attack made with this weapon, that attack has the [PRECISION] ability.",
+                        "@_name": "Description",
+                        "@_typeId": "9b8f-694b-e5e-b573"
+                      }
+                    },
+                    "@_name": "Precise",
+                    "@_typeId": "9cc3-6d83-4dd3-9b64",
+                    "@_typeName": "Abilities",
+                    "@_hidden": "false",
+                    "@_id": "e257-ed3e-c157-a9c6"
+                  }
+                },
+                "infoLinks": {
+                  "infoLink": {
+                    "@_name": "Precision",
+                    "@_id": "e2aa-a903-21c9-9a9b",
+                    "@_hidden": "false",
+                    "@_type": "rule",
+                    "@_targetId": "9143-31ae-e0a6-6007"
+                  }
+                },
+                "costs": {
+                  "cost": [
+                    {
+                      "@_name": "pts",
+                      "@_typeId": "51b2-306e-1021-d207",
+                      "@_value": "0"
+                    },
+                    {
+                      "@_name": "Crusade Points",
+                      "@_typeId": "b03b-c239-15a5-da55",
+                      "@_value": "0"
+                    },
+                    {
+                      "@_name": "Crusade: Experience",
+                      "@_typeId": "a623-fe74-1d33-cddf",
+                      "@_value": "0"
+                    },
+                    {
+                      "@_name": "Crusade: Weapon Modifications",
+                      "@_typeId": "716d-91b7-d55a-1022",
+                      "@_value": "1"
+                    }
+                  ]
+                },
+                "@_type": "upgrade",
+                "@_import": "true",
+                "@_name": "Precise",
+                "@_hidden": "false",
+                "@_id": "56e5-82b6-8596-85f5"
+              }
+            ]
+          },
           "@_name": "Weapon Modifications",
           "@_id": "f9da-852a-d7f0-92e9",
           "@_hidden": "false"
@@ -4761,7 +4950,7 @@
     "@_xmlns": "http://www.battlescribe.net/schema/gameSystemSchema",
     "@_id": "sys-352e-adc2-7639-d6a9",
     "@_name": "Warhammer 40,000 10th Edition",
-    "@_revision": "32",
+    "@_revision": "36",
     "@_battleScribeVersion": "2.03",
     "@_type": "gameSystem"
   }

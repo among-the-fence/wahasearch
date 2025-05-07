@@ -4,7 +4,7 @@ export interface BaseCardProps {
     itemId: string;
     children?: React.ReactNode;
     handleClick?: () => void;
-};
+}
 
 export const BaseCard: React.FC<BaseCardProps> = ({ itemId, children, handleClick }) => {
     return (

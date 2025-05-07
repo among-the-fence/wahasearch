@@ -1,6 +1,6 @@
 import { EntryLink } from "../gameData";
 import { BaseCard } from "@/components/unitcomponents/BaseCard";
-import { gameSystem } from "../gst";
+import { gameSystem } from "../../parser/gst";
 import { Renderable } from "../renderable";
 import { Section } from "@/components/ui/section";
 
