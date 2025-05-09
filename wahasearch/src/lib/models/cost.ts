@@ -39,12 +39,8 @@ export class Cost {
         }
         try {
             const pointlist: Cost[] = [];
-            ensureArray(modifierGroups?.modifierGroup?.modifiers?.modifier).forEach((c: any) => {
-                console.log(c);
-            });
-            console.log();
             ensureArray(modifierGroups?.modifierGroup?.modifiers?.modifier)
-                .filter((c: any) => Object.keys(c).includes("@_field") && c['@_field']?.includes(COST_TYPE_ID))
+                .filter((c: any) => c && Object.keys(c).includes("@_field") && c['@_field']?.includes(COST_TYPE_ID))
                 .forEach((c: any) => {
                     pointlist.push(new Cost(c));
                 });

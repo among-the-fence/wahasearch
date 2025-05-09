@@ -2,10 +2,10 @@ import { deepClone, ensureArray } from "@/lib/util";
 import { Cost } from "./cost";
 
 export class DataCard {
-    name: string;
-    legends: boolean;
     _raw: Object;
     data: Object;
+    name: string;
+    legends: boolean;
     costs: Array<Cost>;
     constructor(data: any) {
         this._raw = deepClone(data);
