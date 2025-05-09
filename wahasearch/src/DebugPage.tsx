@@ -2,7 +2,6 @@ import React from "react";
 import JsonRenderer from "./ui/jsonRenderer";
 import { WahaSearchLoader } from "./lib/models/wahaSearchLoader";
 
-// You can replace this with any test/debug JSON data you want to inspect
 const debugData = WahaSearchLoader.data();
 
 const DebugPage: React.FC = () => {

@@ -1,14 +1,19 @@
 
 export function ensureArray<T>(value: T | T[]): T[] {
-    return Array.isArray(value) ? value : [value];
+  return Array.isArray(value) ? value : [value];
 }
 
 
 export function stringifywithoutraw(obj: any) {
-    return JSON.stringify(obj, (key, value) => {
-      if (key === '_raw') {
-        return undefined;
-      }
-      return value;
-    });
-  }
+  return JSON.stringify(obj, (key, value) => {
+    if (key === '_raw') {
+      return undefined;
+    }
+    return value;
+  });
+}
+
+
+export function deepClone<T>(obj: T): T {
+  return typeof structuredClone === 'function' ? structuredClone(obj) : JSON.parse(JSON.stringify(obj));
+}

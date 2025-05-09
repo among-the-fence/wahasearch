@@ -1,9 +1,9 @@
 import repl from 'repl';
 
-import testJsonContent from "@/lib/data/wh40k-10eAeldari - Aeldari Library.cat.json"
+import { WahaSearchLoader } from './lib/models/wahaSearchLoader';
 
 async function main() {
-    const result = testJsonContent;
+    const result = WahaSearchLoader.debugdata();
     repl.start('> ').context.result = result;
 }
 

@@ -33,9 +33,11 @@ function isPrimitive(val: any) {
     return val === null || typeof val !== 'object';
 }
 
-function getType(val: any) {
-    if (Array.isArray(val)) return `Array[${val.length}]`;
+function displayType(val: any) {
     if (val === null) return 'null';
+    if (Array.isArray(val)) return `Array[${val.length}]`;
+    if (val instanceof Map) return `Map[${val.size}]`;
+    if (typeof val === 'object') return `Object{${Object.keys(val).length}}`;
     return typeof val;
 }
 
@@ -50,21 +52,71 @@ function CopyButton({ value }: { value: any }) {
         </button>
     );
 }
-
+const levelStyle: React.CSSProperties = {
+    marginLeft: 2,
+    borderLeft: '1px solid #666',
+    paddingLeft: 10
+};
 const JsonRenderer: React.FC<JsonRendererProps> = ({ data }) => {
     if (isPrimitive(data)) {
         return (
             <span style={valueStyle}>
                 {typeof data === 'string' ? `"${data}"` : String(data)}
-                <span style={typeStyle}>({getType(data)})</span>
+                <span style={typeStyle}>({displayType(data)})</span>
                 <CopyButton value={data} />
             </span>
+        );
+    }
+    if (data instanceof Map) {
+        const entries = Array.from(data.entries());
+        if (entries.length === 0) return <span style={valueStyle}>{'{}'} <span style={typeStyle}>(empty map)</span></span>;
+        return (
+            <div style={levelStyle}>
+                {entries.map(([key, value], idx) => {
+                    let label = String(key);
+                    if (value && typeof value === 'object') {
+                        let extra = '';
+                        if ('name' in value && typeof value.name === 'string') {
+                            extra = " : " + value.name;
+                        } else if ('@_name' in value && typeof value['@_name'] === 'string') {
+                            extra = " : " + value['@_name'];
+                        } else if ('type' in value && typeof value.type === 'string') {
+                            extra = " : " + value.type;
+                        } else if ('@_type' in value && typeof value['@_type'] === 'string') {
+                            extra = " : " + value['@_type'];
+                        }
+                        if (extra) label = `${key}${extra}`;
+                    }
+                    return isPrimitive(value) ? (
+                        <div key={String(key)} style={{ display: 'flex', alignItems: 'center' }}>
+                            <span style={keyStyle}>{label}:</span>
+                            <span style={valueStyle}>
+                                {typeof value === 'string' ? `"${value}"` : String(value)}
+                                <span style={typeStyle}>({displayType(value)})</span>
+                                <CopyButton value={value} />
+                            </span>
+                        </div>
+                    ) : (
+                        <Collapsible key={String(key)} defaultOpen={entries.length <= 3 && !String(key).startsWith("_")}>
+                            <CollapsibleTrigger>
+                                <span style={keyStyle}>{label}</span>
+                                <span style={typeStyle}>
+                                    {displayType(value)}
+                                </span>
+                            </CollapsibleTrigger>
+                            <CollapsibleContent>
+                                <JsonRenderer data={value} />
+                            </CollapsibleContent>
+                        </Collapsible>
+                    );
+                })}
+            </div>
         );
     }
     if (Array.isArray(data)) {
         if (data.length === 0) return <span style={valueStyle}>[] <span style={typeStyle}>(empty array)</span></span>;
         return (
-            <div style={{ marginLeft: 12 }}>
+            <div style={levelStyle}>
                 {data.map((item, idx) => {
                     let label = `[${idx}]`;
                     if (item && typeof item === 'object') {
@@ -81,10 +133,10 @@ const JsonRenderer: React.FC<JsonRendererProps> = ({ data }) => {
                         if (extra) label = `[${idx}] ${extra}`;
                     }
                     return (
-                        <Collapsible key={idx} defaultOpen={data.length <= 3}>
+                        <Collapsible key={idx} defaultOpen={data.length <= 3 && !String(idx).startsWith("_")}>
                             <CollapsibleTrigger>
                                 <span style={keyStyle}>{label}</span>
-                                <span style={typeStyle}> {getType(item)}</span>
+                                <span style={typeStyle}> {displayType(item)}</span>
                             </CollapsibleTrigger>
                             <CollapsibleContent>
                                 <JsonRenderer data={item} />
@@ -99,25 +151,23 @@ const JsonRenderer: React.FC<JsonRendererProps> = ({ data }) => {
         const entries = Object.entries(data);
         if (entries.length === 0) return <span style={valueStyle}>{'{}'} <span style={typeStyle}>(empty object)</span></span>;
         return (
-            <div style={{ marginLeft: 12 }}>
+            <div style={levelStyle}>
                 {entries.map(([key, value], idx) => (
                     isPrimitive(value) ? (
                         <div key={key} style={{ display: 'flex', alignItems: 'center' }}>
                             <span style={keyStyle}>{key}:</span>
                             <span style={valueStyle}>
                                 {typeof value === 'string' ? `"${value}"` : String(value)}
-                                <span style={typeStyle}>({getType(value)})</span>
+                                <span style={typeStyle}>({displayType(value)})</span>
                                 <CopyButton value={value} />
                             </span>
                         </div>
                     ) : (
-                        <Collapsible key={key} defaultOpen={entries.length <= 3}>
+                        <Collapsible key={key} defaultOpen={entries.length <= 3 && !String(key).startsWith("_")}>
                             <CollapsibleTrigger>
                                 <span style={keyStyle}>{key}</span>
                                 <span style={typeStyle}>
-                                    {Array.isArray(value)
-                                        ? `: Array[${value.length}]`
-                                        : (typeof value === 'object' && value !== null ? `: Object{${Object.keys(value as object).length}}` : '')}
+                                    {displayType(value)}
                                 </span>
                             </CollapsibleTrigger>
                             <CollapsibleContent>
