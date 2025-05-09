@@ -7,6 +7,8 @@ import {
 import App from './App.tsx'
 import './index.css'
 
+import DebugPage from "./DebugPage";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -19,6 +21,10 @@ const router = createBrowserRouter([
   {
     path: "/wahasearch/:faction/:unit",
     element: <App />,
+  },
+  {
+    path: "/wahasearch/debug",
+    element: <DebugPage />,
   },
 ]);
 
