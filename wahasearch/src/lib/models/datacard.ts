@@ -15,6 +15,7 @@ export class DataCard {
         this.name = n.replace("[Legends]", "").trim();
         delete d['@_name'];
         this.costs = Cost.extractCosts(d['costs']);
+        this.costs.push(...Cost.extractAdditionalCosts(d['modifierGroups']));
         delete d['costs'];
         this.data = d;
     }

@@ -11,7 +11,7 @@ export class Cost {
         this._raw = deepClone(data);
         this.name = data['@_name'] ?? "";
         delete data['@_name'];
-        this.value = data['@_value'] ?? 0;
+        this.value = parseInt(data['@_value'] ?? "0");
         delete data['@_value'];
         this.data = data;
     }
@@ -33,19 +33,24 @@ export class Cost {
         }
     }
 
-    static extractAdditionalCosts(modifiers: any) {
-        if (!modifiers) {
+    static extractAdditionalCosts(modifierGroups: any) {
+        if (!modifierGroups) {
             return [];
         }
         try {
             const pointlist: Cost[] = [];
-            ensureArray(modifiers?.modifier).filter((c: any) => c['@_name']?.includes("pts"))
+            ensureArray(modifierGroups?.modifierGroup?.modifiers?.modifier).forEach((c: any) => {
+                console.log(c);
+            });
+            console.log();
+            ensureArray(modifierGroups?.modifierGroup?.modifiers?.modifier)
+                .filter((c: any) => Object.keys(c).includes("@_field") && c['@_field']?.includes(COST_TYPE_ID))
                 .forEach((c: any) => {
                     pointlist.push(new Cost(c));
                 });
             return pointlist;
         } catch (error) {
-            console.error("Error extracting costs:", modifiers, error);
+            console.error("Error extracting costs:", modifierGroups, error);
             return [];
         }
     }

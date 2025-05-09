@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { Catalogue, Detachment, Upgrade } from '@/lib/models/catalogue';
+import { Catalogue } from '@/lib/models/catalogue';
 import debugDataAeldari from '@/lib/data/wh40k-10eAeldari - Aeldari Library.cat.json';
 import { DataCard } from '../datacard';
 import { Cost } from '../cost';
@@ -31,6 +31,8 @@ describe('Catalogue', () => {
             const catalogue = new Catalogue(debugDataAeldari);
             expect(catalogue.detachments).toBeInstanceOf(Map);
             expect(catalogue.detachments.size).toBeGreaterThan(0);
+
+            //  TODO: check data
         });
     });
 
@@ -46,9 +48,10 @@ describe('Catalogue', () => {
             const catalogue = new Catalogue(debugDataAeldari);
             let card = catalogue.datacards.filter((dc: DataCard) => dc.name === "Troupe")[0];
             expect(card.costs).toBeInstanceOf(Array<Cost>);
-            expect(card.costs.length).toBeGreaterThan(0);
-            expect(card.costs[0].name).toBe("pts");
-            expect(card.costs[0].value).toBe("85");
+            expect(card.costs.length).toBeGreaterThan(1);
+            const values = card.costs.map((c: Cost) => c.value);
+            const allInB = values.every(element => [85, 100, 190, 205].includes(element));
+            expect(allInB).toBe(true);
         });
     });
 });
