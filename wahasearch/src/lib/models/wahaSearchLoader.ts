@@ -7,7 +7,12 @@ export class WahaSearchLoader {
         return WahaSearchLoader.extract(aeldari);
     }
     static data() {
-        return WahaSearchLoader.extract(alldata);
+        const data:any = []
+        const extracted = WahaSearchLoader.extract(alldata);
+        extracted.forEach((library) => {
+            data.push(...library.datacards);
+        })
+        return data;
     }
 
     static extract(x: any) {
