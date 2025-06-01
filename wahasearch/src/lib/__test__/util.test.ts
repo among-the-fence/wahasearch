@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { ensureArray } from '../util';
+import { ensureArray } from '@/lib/util';
 
 describe('ensureArray', () => {
   it('returns an empty array when given null', () => {

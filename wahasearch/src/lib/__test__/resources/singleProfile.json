@@ -1,0 +1,41 @@
+{
+    "characteristics": {
+        "characteristic": [
+            {
+                "#text": "7\"",
+                "@_name": "M",
+                "@_typeId": "e703-ecb6-5ce7-aec1"
+            },
+            {
+                "#text": 3,
+                "@_name": "T",
+                "@_typeId": "d29d-cf75-fc2d-34a4"
+            },
+            {
+                "#text": "2+",
+                "@_name": "SV",
+                "@_typeId": "450-a17e-9d5e-29da"
+            },
+            {
+                "#text": 5,
+                "@_name": "W",
+                "@_typeId": "750a-a2ec-90d3-21fe"
+            },
+            {
+                "#text": "6+",
+                "@_name": "LD",
+                "@_typeId": "58d2-b879-49c7-43bc"
+            },
+            {
+                "#text": 1,
+                "@_name": "OC",
+                "@_typeId": "bef7-942a-1a23-59f8"
+            }
+        ]
+    },
+    "@_id": "dd63-cf49-2bda-19d2",
+    "@_name": "Asurmen",
+    "@_hidden": "false",
+    "@_typeId": "c547-1836-d8a-ff4f",
+    "@_typeName": "Unit"
+}

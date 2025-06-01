@@ -1,5 +1,7 @@
-import { deepClone, ensureArray } from "@/lib/util";
+import { collectSelectionEntries, deepClone, ensureArray } from "@/lib/util";
 import { Cost } from "./cost";
+import { IndexedData } from "./indexedData";
+import { collectSelectionProfiles } from "../collectProfiles";
 
 export class DataCard {
     _raw: Object;
@@ -7,17 +9,20 @@ export class DataCard {
     name: string;
     legends: boolean;
     costs: Array<Cost>;
+    profiles: Array<any>;
+
     constructor(data: any) {
         this._raw = deepClone(data);
         const d = deepClone(data);
         const n = d['@_name'] ?? "";
         this.legends = n.includes("[Legends]");
+        this.costs = Cost.extractCosts(d['costs']);
         this.name = n.replace("[Legends]", "").trim();
         delete d['@_name'];
-        this.costs = Cost.extractCosts(d['costs']);
-        this.costs.push(...Cost.extractAdditionalCosts(d['modifierGroups']));
+        this.costs.push(...Cost.extractFromModifiers(d['modifierGroups']));
         delete d['costs'];
         this.data = d;
+        this.profiles = collectSelectionProfiles(d);
     }
 
     static extractDataCards(sharedSelectionEntries: any) {

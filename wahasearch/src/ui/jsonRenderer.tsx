@@ -104,6 +104,7 @@ const JsonRenderer: React.FC<JsonRendererProps> = ({ data }) => {
                                     {displayType(value)}
                                 </span>
                             </CollapsibleTrigger>
+                            <CopyButton value={value} />
                             <CollapsibleContent>
                                 <JsonRenderer data={value} />
                             </CollapsibleContent>
@@ -138,6 +139,7 @@ const JsonRenderer: React.FC<JsonRendererProps> = ({ data }) => {
                                 <span style={keyStyle}>{label}</span>
                                 <span style={typeStyle}> {displayType(item)}</span>
                             </CollapsibleTrigger>
+                            <CopyButton value={(item)} />
                             <CollapsibleContent>
                                 <JsonRenderer data={item} />
                             </CollapsibleContent>
@@ -170,6 +172,7 @@ const JsonRenderer: React.FC<JsonRendererProps> = ({ data }) => {
                                     {displayType(value)}
                                 </span>
                             </CollapsibleTrigger>
+                            <CopyButton value={(value)} />
                             <CollapsibleContent>
                                 <JsonRenderer data={value} />
                             </CollapsibleContent>

@@ -33,7 +33,7 @@ export class Cost {
         }
     }
 
-    static extractAdditionalCosts(modifierGroups: any) {
+    static extractFromModifiers(modifierGroups: any) {
         if (!modifierGroups) {
             return [];
         }
