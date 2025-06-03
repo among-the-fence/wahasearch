@@ -23,7 +23,4 @@ export class Profile {
         this.characteristicKeys = Array.from(this.characteristics.keys());
         this.data = d;
     }
-
-    static extractProfile(x: any) {
-    }
 }
