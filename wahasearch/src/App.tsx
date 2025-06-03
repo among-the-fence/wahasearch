@@ -2,8 +2,7 @@
 import { useEffect, useState } from 'react';
 import './App.css'
 import { WahaSearchLoader } from './lib/models/wahaSearchLoader';
-import JsonRenderer from './ui/jsonRenderer';
-import { Card } from './components/ui/card';
+import { DataCardCard } from './ui/dataCardCard';
 
 
 function App() {
@@ -18,14 +17,14 @@ function App() {
   }
 
   return (
-          <div className='mt-12'>
-        <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 mt-5 lg:mt-0 gap-4">
-      {
-        catalogue.map((element:any) => {
-          return (<Card>{element.name}</Card>);
-        })
-      }
-    </div>
+    <div className='mt-12'>
+      <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 mt-5 lg:mt-0 gap-4">
+        {
+          catalogue.map((element: any) => {
+            return (<DataCardCard key={element.name} datacard={element} />);
+          })
+        }
+      </div>
     </div>
   );
 

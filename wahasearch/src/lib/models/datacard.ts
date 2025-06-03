@@ -1,7 +1,7 @@
-import { collectSelectionEntries, deepClone, ensureArray } from "@/lib/util";
+import { deepClone, ensureArray } from "@/lib/util";
 import { Cost } from "./cost";
-import { IndexedData } from "./indexedData";
 import { collectSelectionProfiles } from "../collectProfiles";
+import { Profile } from "./profile";
 
 export class DataCard {
     _raw: Object;
@@ -9,7 +9,7 @@ export class DataCard {
     name: string;
     legends: boolean;
     costs: Array<Cost>;
-    profiles: Array<any>;
+    profiles: Array<Profile>;
 
     constructor(data: any) {
         this._raw = deepClone(data);

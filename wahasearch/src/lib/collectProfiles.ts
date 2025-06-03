@@ -4,7 +4,7 @@ import { ensureArray } from "./util";
 export function collectSelectionProfiles(data: any) {
   const result: any[] = [];
   if (data) {
-    console.log(data);
+    // console.log(data);
     ensureArray(data).forEach(item => {
       if (item.profile)
         result.push(...ensureArray(item.profile));
