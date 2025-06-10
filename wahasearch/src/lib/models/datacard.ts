@@ -1,7 +1,8 @@
-import { deepClone, ensureArray } from "@/lib/util";
+import { cleanName, deepClone, ensureArray } from "@/lib/util";
 import { Cost } from "./cost";
 import { collectSelectionProfiles } from "../collectProfiles";
 import { Profile } from "./profile";
+import { IndexedData } from "./indexedData";
 
 export class DataCard {
     _raw: Object;
@@ -10,6 +11,8 @@ export class DataCard {
     legends: boolean;
     costs: Array<Cost>;
     profiles: Array<Profile>;
+
+    index: IndexedData;
 
     constructor(data: any) {
         this._raw = deepClone(data);
@@ -23,6 +26,7 @@ export class DataCard {
         delete d['costs'];
         this.data = d;
         this.profiles = collectSelectionProfiles(d);
+        this.index = new IndexedData(this);
     }
 
     static extractDataCards(sharedSelectionEntries: any) {
@@ -36,10 +40,13 @@ export class DataCard {
                 .forEach((dc: any) => {
                     cardList.push(new DataCard(dc));
                 });
-            return cardList.sort((a, b) => (a.legends ? 1 : 0) - (b.legends ? 1 : 0) || a.name.localeCompare(b.name));
+            return cardList.sort(DataCard.datacardCompare);
         } catch (error) {
             console.error("Error extracting data cards:", sharedSelectionEntries, error);
             return [];
         }
     }
+
+    static datacardCompare = (a: DataCard, b: DataCard) => a.index.sortingName.localeCompare(b.index.sortingName)
+    static datacardCompareLegends = (a: DataCard, b: DataCard) => (a.legends ? 1 : 0) - (b.legends ? 1 : 0) || a.name.localeCompare(b.name);
 }

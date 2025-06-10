@@ -1,16 +1,19 @@
-import { collectSelectionEntries, deepClone, ensureArray } from "@/lib/util";
-import { Cost } from "./cost";
-import { indexedCharacteristic } from "./indexedCharacteristic";
+import { cleanName, deepClone } from "@/lib/util";
+import { DataCard } from "./datacard";
 
 export class IndexedData {
     _raw: Object;
     data: Object;
-    profiles: Map<string, indexedCharacteristic>;
+    sortingName: string;
+    names: string[];
 
-    constructor(data: any) {
+    constructor(data: DataCard) {
         this._raw = deepClone(data);
         const d = deepClone(data);
-        this.profiles = new Map<string, indexedCharacteristic>();
+        this.names = [];
+        this.sortingName = cleanName(data.name);
+        this.names.push(data.name);
+        this.names.push(this.sortingName);
         this.data = d;
     }
 }

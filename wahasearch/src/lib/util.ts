@@ -17,3 +17,7 @@ export function stringifywithoutraw(obj: any) {
 export function deepClone<T>(obj: T): T {
   return typeof structuredClone === 'function' ? structuredClone(obj) : JSON.parse(JSON.stringify(obj));
 }
+
+export function cleanName(name: string): string {
+  return name.replace('‘', '').replace('\'', '');
+}
