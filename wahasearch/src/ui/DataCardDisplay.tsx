@@ -143,7 +143,6 @@ const DataCardSheet = ({ datacard, cardClick }: DataCardCardProps) => {
                                         ))}
                                     </tr>
                                     <tr key={profile.name + '-keywords'}>
-                                        {/* Empty cell for Range */}
                                         <td colSpan={weaponProfileOrder.length + 1} style={{ fontStyle: 'italic', color: '#666', borderBottom: '1px solid #eee' }}>
                                             {keywords}
                                         </td>
@@ -159,7 +158,6 @@ const DataCardSheet = ({ datacard, cardClick }: DataCardCardProps) => {
                     <thead>
                         <tr>
                             <th style={{ borderBottom: '1px solid #ccc', textAlign: 'left' }}>Name</th>
-                            <th style={{ borderBottom: '1px solid #ccc', textAlign: 'left' }}>Range</th>
                             {weaponProfileOrder.map((char) => (
                                 <th key={char} style={{ borderBottom: '1px solid #ccc', textAlign: 'left' }}>{char}</th>
                             ))}
@@ -167,20 +165,17 @@ const DataCardSheet = ({ datacard, cardClick }: DataCardCardProps) => {
                     </thead>
                     <tbody>
                         {meleeProfiles.map((profile, idx) => {
-                            const range = profile.characteristics.get('Range')?.['#text'] ?? '';
                             const rowValues = weaponProfileOrder.map((key) => profile.characteristics.get(key)?.['#text'] ?? '');
                             const keywords = profile.characteristics.get('Keywords')?.['#text'] ?? '';
                             return (
                                 <>
                                     <tr key={profile.name + '-main'}>
                                         <td rowSpan={2} style={{ fontWeight: 'bold', verticalAlign: 'top', borderBottom: '1px solid #eee' }}>{profile.name}</td>
-                                        <td style={{ borderBottom: '1px solid #eee' }}>{range}</td>
                                         {rowValues.map((val, i) => (
                                             <td key={i} style={{ borderBottom: '1px solid #eee' }}>{val}</td>
                                         ))}
                                     </tr>
                                     <tr key={profile.name + '-keywords'}>
-                                        {/* Empty cell for Range */}
                                         <td colSpan={weaponProfileOrder.length + 1} style={{ fontStyle: 'italic', color: '#666', borderBottom: '1px solid #eee' }}>
                                             {keywords}
                                         </td>
