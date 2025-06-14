@@ -17,9 +17,13 @@ async function processFile() {
 
                 const data = await readFile(inputDir + file, 'utf8');
                 const jsonifiedXmlData = parser.parse(data);
-                out.push(jsonifiedXmlData);
+
+                // const processed = preprocessCatalogue(jsonifiedXmlData);
+                const processed = jsonifiedXmlData;
+
+                out.push(processed);
                 if (file.includes("Aeldari Library") || file.includes("Craftworld")) {
-                    await writeFile(outputFile + file + ".json", JSON.stringify([jsonifiedXmlData], null, 2), 'utf8');
+                    await writeFile(outputFile + file + ".json", JSON.stringify([processed], null, 2), 'utf8');
                 }
             }
             else if (file.endsWith('.gst')) {
@@ -40,6 +44,36 @@ async function processFile() {
     } catch (error) {
         console.error("Error:", error);
     }
+}
+
+function preprocessCatalogue(data: any): any {
+    const pluralToSingular: Record<string, string> = {
+        catalogueLinks: 'catalogueLink',
+        sharedSelectionEntries: 'sharedSelectionEntry',
+        selectionEntries: 'selectionEntry',
+        costs: 'cost',
+    };
+
+    if (Array.isArray(data)) {
+        return data.map(preprocessCatalogue);
+    } else if (data && typeof data === 'object') {
+        const newObj: any = {};
+        for (const key of Object.keys(data)) {
+            const singular = pluralToSingular[key];
+            if (
+                singular &&
+                data[key] &&
+                typeof data[key] === 'object' &&
+                Array.isArray(data[key][singular])
+            ) {
+                newObj[key] = data[key][singular].map(preprocessCatalogue);
+            } else {
+                newObj[key] = preprocessCatalogue(data[key]);
+            }
+        }
+        return newObj;
+    }
+    return data;
 }
 
 processFile();
