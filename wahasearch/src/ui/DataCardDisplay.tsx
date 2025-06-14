@@ -2,6 +2,9 @@ import { Card } from "@/components/ui/card";
 import { DataCard } from "@/lib/models/datacard";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { useState } from "react";
+import JsonRenderer from "./jsonRenderer";
+import { Collapsible } from "@radix-ui/react-collapsible";
+import { CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 
 export interface DataCardDisplayProps {
     datacard: DataCard
@@ -21,7 +24,20 @@ export const DataCardDisplay = ({ datacard }: DataCardDisplayProps) => {
             </SheetTrigger>
             <SheetContent side="right" style={{ maxWidth: "100%", width: '800px' }}>
                 <SheetHeader>
-                    <SheetTitle>{datacard.name}</SheetTitle>
+                    <SheetTitle>
+                        <div>
+                            <div>
+                                <div>{datacard.name} {datacard.legends ? "[Legends]" : ""}</div>
+                                {datacard.costs.length > 0 && (
+                                    <div>({datacard.costs.map((c) => c.value).sort((a, b) => a - b).join(", ")})</div>
+                                )}
+                            </div>
+                            {datacard.factions.length > 0 &&
+                                (<div>
+                                    {datacard.factions.join(", ")}
+                                </div>)}
+                        </div>
+                    </SheetTitle>
                 </SheetHeader>
                 <DataCardSheet datacard={datacard} cardClick={async () => setOpen(false)} />
             </SheetContent>
@@ -93,6 +109,11 @@ const DataCardSheet = ({ datacard, cardClick }: DataCardCardProps) => {
     return (
         <div style={{ maxHeight: '70vh', overflowY: 'auto', padding: '1em 0' }}>
             <div>
+
+                {datacard.keywords.length > 0 &&
+                    (<div>
+                        {datacard.keywords.join(", ")}
+                    </div>)}
                 {modelProfiles.length > 1 && (
                     modelProfiles.map((p, idx) => {
                         // Prepare characteristic values, fallback to empty string if missing
@@ -201,6 +222,14 @@ const DataCardSheet = ({ datacard, cardClick }: DataCardCardProps) => {
                     </div>
                 </div>);
             })}
+            <Collapsible >
+                <CollapsibleTrigger>Debug</CollapsibleTrigger>
+                <CollapsibleContent>
+                    <div style={{ background: 'black' }}>
+                        <JsonRenderer data={datacard} />
+                    </div>
+                </CollapsibleContent>
+            </Collapsible>
         </div>);
 
 };

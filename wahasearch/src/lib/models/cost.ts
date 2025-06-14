@@ -6,14 +6,10 @@ export class Cost {
     name: string;
     value: number;
     _raw: Object;
-    data: Object;
     constructor(data: any) {
-        this._raw = deepClone(data);
+        this._raw = data;
         this.name = data['@_name'] ?? "";
-        delete data['@_name'];
         this.value = parseInt(data['@_value'] ?? "0");
-        delete data['@_value'];
-        this.data = data;
     }
 
     static extractCosts(costs: any) {
@@ -44,6 +40,8 @@ export class Cost {
                 .forEach((c: any) => {
                     pointlist.push(new Cost(c));
                 });
+            if (pointlist.length > 0)
+                console.log(pointlist);
             return pointlist;
         } catch (error) {
             console.error("Error extracting costs:", modifierGroups, error);

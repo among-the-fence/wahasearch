@@ -9,6 +9,8 @@ export class DataCard {
     data: Object;
     name: string;
     legends: boolean;
+    factions: Array<String>;
+    keywords: Array<String>;
     costs: Array<Cost>;
     profiles: Array<Profile>;
 
@@ -24,7 +26,53 @@ export class DataCard {
         delete d['@_name'];
         this.costs.push(...Cost.extractFromModifiers(d['modifierGroups']));
         delete d['costs'];
+        this.factions = [];
+        this.keywords = [];
+        ensureArray(d.categoryLinks?.categoryLink).forEach((value: any) => {
+            try {
+                if (!value) {
+                    console.error("THIS SHIT SHOULDN:T BE", value);
+                    return;
+                }
+                const name = value['@_name'];
+                if (!name) {
+                    console.error("TE FUCK", value);
+                    return;
+                }
+                if (name.includes('Faction:'))
+                    this.factions.push(name.replace("Faction:", ""));
+                else {
+                    this.keywords.push(name);
+                }
+            }
+            catch {
+                console.error();
+            }
+        });
+        ensureArray(d.infolinks?.infoLink).forEach((value: any) => {
+            try {
+                if (!value) {
+                    console.error("THIS SHIT SHOULDN:T BE", value);
+                    return;
+                }
+                const name = value['@_name'];
+                if (!name) {
+                    console.error("TE FUCK", value);
+                    return;
+                }
+                if (name.includes('Faction:'))
+                    this.factions.push(name.replace("Faction:", ""));
+                else {
+                    this.keywords.push(name);
+                }
+            }
+            catch {
+                console.error();
+            }
+        });
+
         this.data = d;
+
         this.profiles = collectSelectionProfiles(d);
         this.index = new IndexedData(this);
     }
