@@ -1,0 +1,684 @@
+{
+    "constraints": {
+        "constraint": {
+            "@_field": "selections",
+            "@_scope": "roster",
+            "@_value": "1",
+            "@_percentValue": "false",
+            "@_shared": "true",
+            "@_includeChildSelections": "false",
+            "@_includeChildForces": "false",
+            "@_id": "b908-f607-57e-38c5",
+            "@_type": "max"
+        }
+    },
+    "profiles": {
+        "profile": [
+            {
+                "characteristics": {
+                    "characteristic": [
+                        {
+                            "#text": "7\"",
+                            "@_name": "M",
+                            "@_typeId": "e703-ecb6-5ce7-aec1"
+                        },
+                        {
+                            "#text": 3,
+                            "@_name": "T",
+                            "@_typeId": "d29d-cf75-fc2d-34a4"
+                        },
+                        {
+                            "#text": "2+",
+                            "@_name": "SV",
+                            "@_typeId": "450-a17e-9d5e-29da"
+                        },
+                        {
+                            "#text": 5,
+                            "@_name": "W",
+                            "@_typeId": "750a-a2ec-90d3-21fe"
+                        },
+                        {
+                            "#text": "6+",
+                            "@_name": "LD",
+                            "@_typeId": "58d2-b879-49c7-43bc"
+                        },
+                        {
+                            "#text": 1,
+                            "@_name": "OC",
+                            "@_typeId": "bef7-942a-1a23-59f8"
+                        }
+                    ]
+                },
+                "@_id": "dd63-cf49-2bda-19d2",
+                "@_name": "Asurmen",
+                "@_hidden": "false",
+                "@_typeId": "c547-1836-d8a-ff4f",
+                "@_typeName": "Unit"
+            },
+            {
+                "characteristics": {
+                    "characteristic": {
+                        "#text": "Asurmen has a 4+ Invulnerable save",
+                        "@_name": "Description",
+                        "@_typeId": "9b8f-694b-e5e-b573"
+                    }
+                },
+                "@_id": "d953-7284-3e17-61a",
+                "@_name": "Invulnerable Save (Asurmen)",
+                "@_hidden": "false",
+                "@_typeId": "9cc3-6d83-4dd3-9b64",
+                "@_typeName": "Abilities"
+            },
+            {
+                "characteristics": {
+                    "characteristic": {
+                        "#text": "Once per battle, when this model is selected to shoot, it can use this ability. If it does, until the end of the phase, its Bloody Twins weapon has a Damage characteristic of 3 and the [Anti-Infantry 5+] and [Devastating Wounds] abilities.",
+                        "@_name": "Description",
+                        "@_typeId": "9b8f-694b-e5e-b573"
+                    }
+                },
+                "@_id": "cac4-9ec2-1044-a28a",
+                "@_name": "Hand of Asuryan",
+                "@_hidden": "false",
+                "@_typeId": "9cc3-6d83-4dd3-9b64",
+                "@_typeName": "Abilities"
+            },
+            {
+                "characteristics": {
+                    "characteristic": {
+                        "#text": "While this model is leading a unit, in your Shooting phase, after that unit has shot, it can make a Normal move of up to 6\". If it does, until the end of the turn, that unit is not eligible to declare a charge.",
+                        "@_name": "Description",
+                        "@_typeId": "9b8f-694b-e5e-b573"
+                    }
+                },
+                "modifiers": {
+                    "modifier": {
+                        "conditions": {
+                            "condition": {
+                                "@_type": "atLeast",
+                                "@_value": "1",
+                                "@_field": "forces",
+                                "@_scope": "roster",
+                                "@_childId": "1d6e-2579-8e7f-1ed4",
+                                "@_shared": "true"
+                            }
+                        },
+                        "@_type": "set",
+                        "@_value": "true",
+                        "@_field": "hidden"
+                    }
+                },
+                "@_id": "e574-c4c7-b1dc-e9e7",
+                "@_name": "Tactical Acumen",
+                "@_hidden": "false",
+                "@_typeId": "9cc3-6d83-4dd3-9b64",
+                "@_typeName": "Abilities"
+            },
+            {
+                "characteristics": {
+                    "characteristic": {
+                        "#text": "This model can be attached to the following unit:\n■ Dire Avengers",
+                        "@_name": "Description",
+                        "@_typeId": "9b8f-694b-e5e-b573"
+                    }
+                },
+                "@_id": "718f-8b96-eb96-a5be",
+                "@_name": "Leader",
+                "@_hidden": "false",
+                "@_typeId": "9cc3-6d83-4dd3-9b64",
+                "@_typeName": "Abilities"
+            }
+        ]
+    },
+    "infoLinks": {
+        "infoLink": [
+            {
+                "@_id": "b73e-f6e7-c734-3eee",
+                "@_name": "Leader",
+                "@_hidden": "false",
+                "@_targetId": "b4dd-3e1f-41cb-218f",
+                "@_type": "rule"
+            },
+            {
+                "@_id": "4769-f45c-5002-8bc5",
+                "@_name": "Battle Focus",
+                "@_hidden": "false",
+                "@_targetId": "c324-e193-e23c-7d2e",
+                "@_type": "rule"
+            }
+        ]
+    },
+    "categoryLinks": {
+        "categoryLink": [
+            {
+                "@_id": "a0f2-d697-134d-cef9",
+                "@_name": "Infantry",
+                "@_hidden": "false",
+                "@_targetId": "cf47-a0d7-7207-29dc",
+                "@_primary": "false"
+            },
+            {
+                "@_id": "a046-c245-45de-1e25",
+                "@_name": "Epic Hero",
+                "@_hidden": "false",
+                "@_targetId": "4f3a-f0f7-6647-348d",
+                "@_primary": "true"
+            },
+            {
+                "@_id": "cd1d-db6e-aeb3-991c",
+                "@_name": "Character",
+                "@_hidden": "false",
+                "@_targetId": "9cfd-1c32-585f-7d5c",
+                "@_primary": "false"
+            },
+            {
+                "@_id": "bb8f-8a43-218c-7669",
+                "@_name": "Phoenix Lord",
+                "@_hidden": "false",
+                "@_targetId": "4e0f-4e9d-c47a-446",
+                "@_primary": "false"
+            },
+            {
+                "@_id": "c34d-4b56-809-e308",
+                "@_name": "Asurmen",
+                "@_hidden": "false",
+                "@_targetId": "e4af-94a7-ff42-9ec6",
+                "@_primary": "false"
+            },
+            {
+                "@_id": "d9eb-4674-b6dd-561f",
+                "@_name": "Faction: Asuryani",
+                "@_hidden": "false",
+                "@_targetId": "4378-1827-4988-be4e",
+                "@_primary": "false"
+            },
+            {
+                "@_targetId": "e035-51fc-813a-1313",
+                "@_id": "c373-b560-2352-e498",
+                "@_primary": "false",
+                "@_name": "Aeldari"
+            },
+            {
+                "@_targetId": "5a61-81ac-eb7c-a87e",
+                "@_id": "5154-223e-5d73-44c7",
+                "@_primary": "false",
+                "@_name": "Grenades"
+            },
+            {
+                "@_targetId": "4d82-2943-8868-2782",
+                "@_id": "3b51-958f-9749-6d2a",
+                "@_primary": "false",
+                "@_name": "Aspect Warrior"
+            }
+        ]
+    },
+    "selectionEntries": {
+        "selectionEntry": [
+            {
+                "constraints": {
+                    "constraint": [
+                        {
+                            "@_field": "selections",
+                            "@_scope": "parent",
+                            "@_value": "1",
+                            "@_percentValue": "false",
+                            "@_shared": "true",
+                            "@_includeChildSelections": "false",
+                            "@_includeChildForces": "false",
+                            "@_id": "6101-9b54-3263-97f",
+                            "@_type": "min"
+                        },
+                        {
+                            "@_field": "selections",
+                            "@_scope": "parent",
+                            "@_value": "1",
+                            "@_percentValue": "false",
+                            "@_shared": "true",
+                            "@_includeChildSelections": "false",
+                            "@_includeChildForces": "false",
+                            "@_id": "16da-bd16-f557-efb4",
+                            "@_type": "max"
+                        }
+                    ]
+                },
+                "profiles": {
+                    "profile": {
+                        "characteristics": {
+                            "characteristic": [
+                                {
+                                    "#text": "24\"",
+                                    "@_name": "Range",
+                                    "@_typeId": "9896-9419-16a1-92fc"
+                                },
+                                {
+                                    "#text": 6,
+                                    "@_name": "A",
+                                    "@_typeId": "3bb-c35f-f54-fb08"
+                                },
+                                {
+                                    "#text": "2+",
+                                    "@_name": "BS",
+                                    "@_typeId": "94d-8a98-cf90-183e"
+                                },
+                                {
+                                    "#text": 5,
+                                    "@_name": "S",
+                                    "@_typeId": "2229-f494-25db-c5d3"
+                                },
+                                {
+                                    "#text": -1,
+                                    "@_name": "AP",
+                                    "@_typeId": "9ead-8a10-520-de15"
+                                },
+                                {
+                                    "#text": 2,
+                                    "@_name": "D",
+                                    "@_typeId": "a354-c1c8-a745-f9e3"
+                                },
+                                {
+                                    "#text": "Assault, Pistol",
+                                    "@_name": "Keywords",
+                                    "@_typeId": "7f1b-8591-2fcf-d01c"
+                                }
+                            ]
+                        },
+                        "@_id": "5ed6-602b-128c-54c5",
+                        "@_name": "The Bloody Twins",
+                        "@_hidden": "false",
+                        "@_typeId": "f77d-b953-8fa4-b762",
+                        "@_typeName": "Ranged Weapons"
+                    }
+                },
+                "infoLinks": {
+                    "infoLink": [
+                        {
+                            "@_id": "d091-ad0c-42f5-eb14",
+                            "@_name": "Assault",
+                            "@_hidden": "false",
+                            "@_targetId": "fc8a-8c24-bae9-cc1c",
+                            "@_type": "rule"
+                        },
+                        {
+                            "@_id": "d285-741-1cc0-121a",
+                            "@_name": "Pistol",
+                            "@_hidden": "false",
+                            "@_targetId": "8bf7-8812-923d-29e4",
+                            "@_type": "rule"
+                        }
+                    ]
+                },
+                "costs": {
+                    "cost": {
+                        "@_name": "pts",
+                        "@_typeId": "51b2-306e-1021-d207",
+                        "@_value": "0"
+                    }
+                },
+                "@_id": "a25-e434-bca0-6a39",
+                "@_name": "The Bloody Twins",
+                "@_hidden": "false",
+                "@_collective": "false",
+                "@_import": "true",
+                "@_type": "upgrade"
+            },
+            {
+                "constraints": {
+                    "constraint": [
+                        {
+                            "@_field": "selections",
+                            "@_scope": "parent",
+                            "@_value": "1",
+                            "@_percentValue": "false",
+                            "@_shared": "true",
+                            "@_includeChildSelections": "false",
+                            "@_includeChildForces": "false",
+                            "@_id": "cd9b-ab6e-5383-e8d8",
+                            "@_type": "min"
+                        },
+                        {
+                            "@_field": "selections",
+                            "@_scope": "parent",
+                            "@_value": "1",
+                            "@_percentValue": "false",
+                            "@_shared": "true",
+                            "@_includeChildSelections": "false",
+                            "@_includeChildForces": "false",
+                            "@_id": "7b57-bd5e-7cbd-537f",
+                            "@_type": "max"
+                        }
+                    ]
+                },
+                "profiles": {
+                    "profile": {
+                        "characteristics": {
+                            "characteristic": [
+                                {
+                                    "#text": "Melee",
+                                    "@_name": "Range",
+                                    "@_typeId": "914c-b413-91e3-a132"
+                                },
+                                {
+                                    "#text": 6,
+                                    "@_name": "A",
+                                    "@_typeId": "2337-daa1-6682-b110"
+                                },
+                                {
+                                    "#text": "2+",
+                                    "@_name": "WS",
+                                    "@_typeId": "95d1-95f-45b4-11d6"
+                                },
+                                {
+                                    "#text": 6,
+                                    "@_name": "S",
+                                    "@_typeId": "ab33-d393-96ce-ccba"
+                                },
+                                {
+                                    "#text": -3,
+                                    "@_name": "AP",
+                                    "@_typeId": "41a0-1301-112a-e2f2"
+                                },
+                                {
+                                    "#text": 3,
+                                    "@_name": "D",
+                                    "@_typeId": "3254-9fe6-d824-513e"
+                                },
+                                {
+                                    "#text": "Devastating Wounds",
+                                    "@_name": "Keywords",
+                                    "@_typeId": "893f-9000-ccf7-648e"
+                                }
+                            ]
+                        },
+                        "@_id": "25e2-1809-549b-55e",
+                        "@_name": "The Sword of Asur",
+                        "@_hidden": "false",
+                        "@_typeId": "8a40-4aaa-c780-9046",
+                        "@_typeName": "Melee Weapons"
+                    }
+                },
+                "infoLinks": {
+                    "infoLink": {
+                        "@_id": "12dc-4f82-13af-53ee",
+                        "@_name": "Devastating Wounds",
+                        "@_hidden": "false",
+                        "@_targetId": "be1e-ac8e-1e2c-3528",
+                        "@_type": "rule"
+                    }
+                },
+                "costs": {
+                    "cost": {
+                        "@_name": "pts",
+                        "@_typeId": "51b2-306e-1021-d207",
+                        "@_value": "0"
+                    }
+                },
+                "@_id": "15b0-cbfd-7a9f-adc2",
+                "@_name": "The Sword of Asur",
+                "@_hidden": "false",
+                "@_collective": "false",
+                "@_import": "true",
+                "@_type": "upgrade"
+            }
+        ]
+    },
+    "entryLinks": {
+        "entryLink": {
+            "@_id": "9f07-da87-2493-1605",
+            "@_name": "Warlord",
+            "@_hidden": "false",
+            "@_collective": "false",
+            "@_import": "true",
+            "@_targetId": "3f04-19ab-bfb0-6c67",
+            "@_type": "selectionEntry"
+        }
+    },
+    "costs": {
+        "cost": [
+            {
+                "@_name": "pts",
+                "@_typeId": "51b2-306e-1021-d207",
+                "@_value": "135"
+            },
+            {
+                "@_name": "Crusade Points",
+                "@_typeId": "b03b-c239-15a5-da55",
+                "@_value": "0"
+            },
+            {
+                "@_name": "Crusade: Battle Honours",
+                "@_typeId": "75bb-ded1-c86d-bdf0",
+                "@_value": "0"
+            },
+            {
+                "@_name": "Crusade: Experience",
+                "@_typeId": "a623-fe74-1d33-cddf",
+                "@_value": "0"
+            },
+            {
+                "@_name": "Crusade: Weapon Modifications",
+                "@_typeId": "716d-91b7-d55a-1022",
+                "@_value": "0"
+            }
+        ]
+    },
+    "modifiers": {
+        "modifier": [
+            {
+                "conditionGroups": {
+                    "conditionGroup": {
+                        "conditions": {
+                            "condition": {
+                                "@_type": "atLeast",
+                                "@_value": "1",
+                                "@_field": "forces",
+                                "@_scope": "roster",
+                                "@_childId": "1d6e-2579-8e7f-1ed4",
+                                "@_shared": "true"
+                            }
+                        },
+                        "conditionGroups": {
+                            "conditionGroup": {
+                                "conditions": {
+                                    "condition": [
+                                        {
+                                            "@_type": "atLeast",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "force",
+                                            "@_childId": "df57-7a59-75eb-ce63",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                            "@_type": "atLeast",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "force",
+                                            "@_childId": "497a-263e-966a-5a15",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                            "@_type": "atLeast",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "force",
+                                            "@_childId": "8732-df2f-a542-805f",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                            "@_type": "atLeast",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "force",
+                                            "@_childId": "f48e-276e-a997-c90e",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                            "@_type": "atLeast",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "force",
+                                            "@_childId": "b2f5-8219-f875-917e",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                            "@_type": "atLeast",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "force",
+                                            "@_childId": "9262-3993-1368-be5a",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                            "@_type": "atLeast",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "force",
+                                            "@_childId": "2713-f82d-5189-d5de",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                            "@_type": "atLeast",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "force",
+                                            "@_childId": "77f9-e8de-225f-9e68",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                            "@_type": "atLeast",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "force",
+                                            "@_childId": "c9ed-d190-419c-78d3",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                            "@_type": "atLeast",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "force",
+                                            "@_childId": "6f18-95b7-2662-8925",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                            "@_type": "atLeast",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "force",
+                                            "@_childId": "1fbf-55d9-5ca8-4e9e",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                            "@_type": "atLeast",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "force",
+                                            "@_childId": "e53b-7d09-eb7c-c6c7",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                            "@_type": "atLeast",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "force",
+                                            "@_childId": "dd79-c2fe-59d6-d2",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                            "@_type": "atLeast",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "force",
+                                            "@_childId": "ada5-25ce-d5d5-4ccb",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                            "@_type": "atLeast",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "force",
+                                            "@_childId": "ffed-8509-9bf7-820e",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true"
+                                        }
+                                    ]
+                                },
+                                "@_type": "or"
+                            }
+                        },
+                        "@_type": "and"
+                    }
+                },
+                "@_type": "set",
+                "@_value": "true",
+                "@_field": "hidden"
+            },
+            {
+                "conditionGroups": {
+                    "conditionGroup": {
+                        "conditions": {
+                            "condition": [
+                                {
+                                    "@_type": "atLeast",
+                                    "@_value": "1",
+                                    "@_field": "selections",
+                                    "@_scope": "roster",
+                                    "@_childId": "ada5-25ce-d5d5-4ccb",
+                                    "@_shared": "true",
+                                    "@_includeChildSelections": "true",
+                                    "@_includeChildForces": "true"
+                                },
+                                {
+                                    "@_type": "atLeast",
+                                    "@_value": "1",
+                                    "@_field": "selections",
+                                    "@_scope": "roster",
+                                    "@_childId": "68fb-4b6f-2bf8-7105",
+                                    "@_shared": "true",
+                                    "@_includeChildSelections": "true",
+                                    "@_includeChildForces": "true"
+                                },
+                                {
+                                    "@_type": "atLeast",
+                                    "@_value": "1",
+                                    "@_field": "selections",
+                                    "@_scope": "roster",
+                                    "@_childId": "dd79-c2fe-59d6-d2",
+                                    "@_shared": "true",
+                                    "@_includeChildSelections": "true",
+                                    "@_includeChildForces": "true"
+                                }
+                            ]
+                        },
+                        "@_type": "or"
+                    }
+                },
+                "@_type": "set",
+                "@_value": "true",
+                "@_field": "hidden"
+            }
+        ]
+    },
+    "@_id": "828d-840a-9a67-9074",
+    "@_name": "Asurmen",
+    "@_publicationId": "442c-a37c-3908-d701",
+    "@_page": "7",
+    "@_hidden": "false",
+    "@_collective": "false",
+    "@_import": "true",
+    "@_type": "model"
+}

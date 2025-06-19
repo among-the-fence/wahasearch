@@ -29,7 +29,7 @@ export const DataCardDisplay = ({ datacard }: DataCardDisplayProps) => {
                             <div>
                                 <div>{datacard.name} {datacard.legends ? "[Legends]" : ""}</div>
                                 {datacard.costs.length > 0 && (
-                                    <div>({datacard.costs.map((c) => c.value).sort((a, b) => a - b).join(", ")})</div>
+                                    <div>({datacard.costString})</div>
                                 )}
                             </div>
                             {datacard.factions.length > 0 &&

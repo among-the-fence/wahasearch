@@ -1,0 +1,1999 @@
+{
+    "modifierGroups": {
+        "modifierGroup": {
+            "modifiers": {
+                "modifier": [
+                    {
+                        "conditions": {
+                            "condition": {
+                                "@_field": "selections",
+                                "@_scope": "dac1-6a7f-a06a-82cf",
+                                "@_value": "12",
+                                "@_percentValue": "false",
+                                "@_shared": "true",
+                                "@_includeChildSelections": "true",
+                                "@_includeChildForces": "false",
+                                "@_childId": "model",
+                                "@_type": "equalTo"
+                            }
+                        },
+                        "@_type": "set",
+                        "@_field": "51b2-306e-1021-d207",
+                        "@_value": "205"
+                    },
+                    {
+                        "conditionGroups": {
+                            "conditionGroup": {
+                                "conditions": {
+                                    "condition": [
+                                        {
+                                            "@_field": "selections",
+                                            "@_scope": "dac1-6a7f-a06a-82cf",
+                                            "@_value": "6",
+                                            "@_percentValue": "false",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true",
+                                            "@_includeChildForces": "false",
+                                            "@_childId": "model",
+                                            "@_type": "greaterThan"
+                                        },
+                                        {
+                                            "@_field": "selections",
+                                            "@_scope": "dac1-6a7f-a06a-82cf",
+                                            "@_value": "12",
+                                            "@_percentValue": "false",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true",
+                                            "@_includeChildForces": "false",
+                                            "@_childId": "model",
+                                            "@_type": "lessThan"
+                                        }
+                                    ]
+                                },
+                                "@_type": "and"
+                            }
+                        },
+                        "@_type": "set",
+                        "@_field": "51b2-306e-1021-d207",
+                        "@_value": "190"
+                    },
+                    {
+                        "conditions": {
+                            "condition": {
+                                "@_field": "selections",
+                                "@_scope": "dac1-6a7f-a06a-82cf",
+                                "@_value": "6",
+                                "@_percentValue": "false",
+                                "@_shared": "true",
+                                "@_includeChildSelections": "true",
+                                "@_includeChildForces": "false",
+                                "@_childId": "model",
+                                "@_type": "equalTo"
+                            }
+                        },
+                        "@_type": "set",
+                        "@_field": "51b2-306e-1021-d207",
+                        "@_value": "100"
+                    }
+                ]
+            }
+        }
+    },
+    "categoryLinks": {
+        "categoryLink": [
+            {
+                "@_id": "c688-a3f-c7fe-e875",
+                "@_name": "Troupe",
+                "@_hidden": "false",
+                "@_targetId": "fcb-7cf9-db1d-8ccd",
+                "@_primary": "false"
+            },
+            {
+                "@_id": "286-917-8d4b-d414",
+                "@_name": "Infantry",
+                "@_hidden": "false",
+                "@_targetId": "cf47-a0d7-7207-29dc",
+                "@_primary": "true"
+            },
+            {
+                "@_id": "9584-2346-8da4-8337",
+                "@_name": "Grenades",
+                "@_hidden": "false",
+                "@_targetId": "5a61-81ac-eb7c-a87e",
+                "@_primary": "false"
+            },
+            {
+                "@_targetId": "83bb-5ddb-b1d9-39b8",
+                "@_id": "bfbf-cbf4-5bf8-fabe",
+                "@_primary": "false",
+                "@_name": "Harlequin Allies"
+            },
+            {
+                "@_targetId": "e035-51fc-813a-1313",
+                "@_id": "55cd-f415-419a-7df4",
+                "@_primary": "false",
+                "@_name": "Aeldari"
+            },
+            {
+                "@_targetId": "a5a2-d0c0-0349-d226",
+                "@_id": "2524-503f-2749-ddb4",
+                "@_primary": "false",
+                "@_name": "Faction: Harlequins"
+            },
+            {
+                "@_targetId": "e554-d095-bb9d-c930",
+                "@_id": "29f6-a837-9480-85b6",
+                "@_primary": "false",
+                "@_name": "Corsairs and Travelling Players"
+            }
+        ]
+    },
+    "costs": {
+        "cost": [
+            {
+                "@_name": "pts",
+                "@_typeId": "51b2-306e-1021-d207",
+                "@_value": "85"
+            },
+            {
+                "@_name": "Crusade Points",
+                "@_typeId": "b03b-c239-15a5-da55",
+                "@_value": "0"
+            },
+            {
+                "@_name": "Crusade: Battle Honours",
+                "@_typeId": "75bb-ded1-c86d-bdf0",
+                "@_value": "0"
+            },
+            {
+                "@_name": "Crusade: Experience",
+                "@_typeId": "a623-fe74-1d33-cddf",
+                "@_value": "0"
+            },
+            {
+                "@_name": "Crusade: Weapon Modifications",
+                "@_typeId": "716d-91b7-d55a-1022",
+                "@_value": "0"
+            }
+        ]
+    },
+    "profiles": {
+        "profile": [
+            {
+                "characteristics": {
+                    "characteristic": {
+                        "#text": "This unit has a 4+ Invulnerable save",
+                        "@_name": "Description",
+                        "@_typeId": "9b8f-694b-e5e-b573"
+                    }
+                },
+                "@_id": "34c-c620-eeaa-581c",
+                "@_name": "Invulnerable Save",
+                "@_hidden": "false",
+                "@_typeId": "9cc3-6d83-4dd3-9b64",
+                "@_typeName": "Abilities"
+            },
+            {
+                "characteristics": {
+                    "characteristic": {
+                        "#text": "At the start of the Fight phase, select one of the following abilities for this unit to gain until the end of the phase:\n■ Hero's Prowess: Each time a model in this unit makes an attack, re-roll a Hit roll of 1.\n■ Villain's Doom: Each time a model in this unit makes an attack, add 1 to the Wound roll.\n■ Trickster's Grace: Each time an attack targets this unit, subtract 1 from the Hit roll.",
+                        "@_name": "Description",
+                        "@_typeId": "9b8f-694b-e5e-b573"
+                    }
+                },
+                "@_name": "Dance of Death",
+                "@_typeId": "9cc3-6d83-4dd3-9b64",
+                "@_typeName": "Abilities",
+                "@_hidden": "false",
+                "@_id": "2e68-c478-cb2f-9ff6"
+            }
+        ]
+    },
+    "selectionEntryGroups": {
+        "selectionEntryGroup": {
+            "selectionEntries": {
+                "selectionEntry": [
+                    {
+                        "constraints": {
+                            "constraint": [
+                                {
+                                    "@_type": "min",
+                                    "@_value": "1",
+                                    "@_field": "selections",
+                                    "@_scope": "parent",
+                                    "@_shared": "true",
+                                    "@_id": "c02a-8d8f-8afa-251d"
+                                },
+                                {
+                                    "@_type": "max",
+                                    "@_value": "1",
+                                    "@_field": "selections",
+                                    "@_scope": "parent",
+                                    "@_shared": "true",
+                                    "@_id": "2f73-a025-b642-1ebc"
+                                }
+                            ]
+                        },
+                        "selectionEntryGroups": {
+                            "selectionEntryGroup": [
+                                {
+                                    "selectionEntries": {
+                                        "selectionEntry": [
+                                            {
+                                                "infoLinks": {
+                                                    "infoLink": [
+                                                        {
+                                                            "@_name": "Devastating Wounds",
+                                                            "@_id": "67bc-dc80-1123-aad4",
+                                                            "@_hidden": "false",
+                                                            "@_type": "rule",
+                                                            "@_targetId": "be1e-ac8e-1e2c-3528"
+                                                        },
+                                                        {
+                                                            "@_name": "Harlequin's Blade",
+                                                            "@_id": "8a47-c651-a5fb-0922",
+                                                            "@_hidden": "false",
+                                                            "@_type": "profile",
+                                                            "@_targetId": "b95b-acd5-b326-7185"
+                                                        }
+                                                    ]
+                                                },
+                                                "@_type": "upgrade",
+                                                "@_import": "true",
+                                                "@_name": "Harlequin's Blade",
+                                                "@_hidden": "false",
+                                                "@_id": "148e-438-7d0b-104d",
+                                                "@_collective": "false"
+                                            },
+                                            {
+                                                "profiles": {
+                                                    "profile": {
+                                                        "characteristics": {
+                                                            "characteristic": [
+                                                                {
+                                                                    "#text": "Melee",
+                                                                    "@_name": "Range",
+                                                                    "@_typeId": "914c-b413-91e3-a132"
+                                                                },
+                                                                {
+                                                                    "#text": 4,
+                                                                    "@_name": "A",
+                                                                    "@_typeId": "2337-daa1-6682-b110"
+                                                                },
+                                                                {
+                                                                    "#text": "3+",
+                                                                    "@_name": "WS",
+                                                                    "@_typeId": "95d1-95f-45b4-11d6"
+                                                                },
+                                                                {
+                                                                    "#text": 4,
+                                                                    "@_name": "S",
+                                                                    "@_typeId": "ab33-d393-96ce-ccba"
+                                                                },
+                                                                {
+                                                                    "#text": -1,
+                                                                    "@_name": "AP",
+                                                                    "@_typeId": "41a0-1301-112a-e2f2"
+                                                                },
+                                                                {
+                                                                    "#text": 1,
+                                                                    "@_name": "D",
+                                                                    "@_typeId": "3254-9fe6-d824-513e"
+                                                                },
+                                                                {
+                                                                    "#text": "Devastating Wounds",
+                                                                    "@_name": "Keywords",
+                                                                    "@_typeId": "893f-9000-ccf7-648e"
+                                                                }
+                                                            ]
+                                                        },
+                                                        "@_name": "Harlequin's Special Weapon",
+                                                        "@_typeId": "8a40-4aaa-c780-9046",
+                                                        "@_typeName": "Melee Weapons",
+                                                        "@_hidden": "false",
+                                                        "@_id": "e975-e852-f7b6-96a9"
+                                                    }
+                                                },
+                                                "infoLinks": {
+                                                    "infoLink": {
+                                                        "@_name": "Devastating Wounds",
+                                                        "@_id": "1437-cc70-fb51-4220",
+                                                        "@_hidden": "false",
+                                                        "@_type": "rule",
+                                                        "@_targetId": "be1e-ac8e-1e2c-3528"
+                                                    }
+                                                },
+                                                "@_type": "upgrade",
+                                                "@_import": "true",
+                                                "@_name": "Harlequin's Special Weapon",
+                                                "@_hidden": "false",
+                                                "@_id": "2d4f-8b5c-89f-b855"
+                                            },
+                                            {
+                                                "profiles": {
+                                                    "profile": {
+                                                        "characteristics": {
+                                                            "characteristic": [
+                                                                {
+                                                                    "#text": "Melee",
+                                                                    "@_name": "Range",
+                                                                    "@_typeId": "914c-b413-91e3-a132"
+                                                                },
+                                                                {
+                                                                    "#text": 5,
+                                                                    "@_name": "A",
+                                                                    "@_typeId": "2337-daa1-6682-b110"
+                                                                },
+                                                                {
+                                                                    "#text": "3+",
+                                                                    "@_name": "WS",
+                                                                    "@_typeId": "95d1-95f-45b4-11d6"
+                                                                },
+                                                                {
+                                                                    "#text": 4,
+                                                                    "@_name": "S",
+                                                                    "@_typeId": "ab33-d393-96ce-ccba"
+                                                                },
+                                                                {
+                                                                    "#text": -2,
+                                                                    "@_name": "AP",
+                                                                    "@_typeId": "41a0-1301-112a-e2f2"
+                                                                },
+                                                                {
+                                                                    "#text": 1,
+                                                                    "@_name": "D",
+                                                                    "@_typeId": "3254-9fe6-d824-513e"
+                                                                },
+                                                                {
+                                                                    "#text": "Devastating Wounds",
+                                                                    "@_name": "Keywords",
+                                                                    "@_typeId": "893f-9000-ccf7-648e"
+                                                                }
+                                                            ]
+                                                        },
+                                                        "@_id": "7513-6efd-dee-3eb7",
+                                                        "@_name": "Power sword",
+                                                        "@_hidden": "false",
+                                                        "@_typeId": "8a40-4aaa-c780-9046",
+                                                        "@_typeName": "Melee Weapons"
+                                                    }
+                                                },
+                                                "costs": {
+                                                    "cost": {
+                                                        "@_name": "pts",
+                                                        "@_typeId": "51b2-306e-1021-d207",
+                                                        "@_value": "0"
+                                                    }
+                                                },
+                                                "infoLinks": {
+                                                    "infoLink": {
+                                                        "@_name": "Devastating Wounds",
+                                                        "@_id": "3af6-7cbe-391a-1662",
+                                                        "@_hidden": "false",
+                                                        "@_type": "rule",
+                                                        "@_targetId": "be1e-ac8e-1e2c-3528"
+                                                    }
+                                                },
+                                                "@_id": "d10-caa3-9a82-d68",
+                                                "@_name": "Power sword",
+                                                "@_hidden": "false",
+                                                "@_collective": "false",
+                                                "@_import": "true",
+                                                "@_type": "upgrade"
+                                            }
+                                        ]
+                                    },
+                                    "constraints": {
+                                        "constraint": [
+                                            {
+                                                "@_type": "min",
+                                                "@_value": "1",
+                                                "@_field": "selections",
+                                                "@_scope": "parent",
+                                                "@_shared": "true",
+                                                "@_id": "d896-f9a7-80b7-6e28"
+                                            },
+                                            {
+                                                "@_type": "max",
+                                                "@_value": "1",
+                                                "@_field": "selections",
+                                                "@_scope": "parent",
+                                                "@_shared": "true",
+                                                "@_id": "58f7-3285-44d1-4fc3"
+                                            }
+                                        ]
+                                    },
+                                    "@_name": "Melee Weapon",
+                                    "@_hidden": "false",
+                                    "@_id": "7b1e-13b7-a98b-f610",
+                                    "@_defaultSelectionEntryId": "148e-438-7d0b-104d"
+                                },
+                                {
+                                    "selectionEntries": {
+                                        "selectionEntry": {
+                                            "profiles": {
+                                                "profile": {
+                                                    "characteristics": {
+                                                        "characteristic": [
+                                                            {
+                                                                "#text": "12\"",
+                                                                "@_name": "Range",
+                                                                "@_typeId": "9896-9419-16a1-92fc"
+                                                            },
+                                                            {
+                                                                "#text": 1,
+                                                                "@_name": "A",
+                                                                "@_typeId": "3bb-c35f-f54-fb08"
+                                                            },
+                                                            {
+                                                                "#text": "3+",
+                                                                "@_name": "BS",
+                                                                "@_typeId": "94d-8a98-cf90-183e"
+                                                            },
+                                                            {
+                                                                "#text": 4,
+                                                                "@_name": "S",
+                                                                "@_typeId": "2229-f494-25db-c5d3"
+                                                            },
+                                                            {
+                                                                "#text": -1,
+                                                                "@_name": "AP",
+                                                                "@_typeId": "9ead-8a10-520-de15"
+                                                            },
+                                                            {
+                                                                "#text": 1,
+                                                                "@_name": "D",
+                                                                "@_typeId": "a354-c1c8-a745-f9e3"
+                                                            },
+                                                            {
+                                                                "#text": "Assault, Pistol",
+                                                                "@_name": "Keywords",
+                                                                "@_typeId": "7f1b-8591-2fcf-d01c"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "@_id": "2000-a049-9c43-224",
+                                                    "@_name": "Shuriken Pistol",
+                                                    "@_hidden": "false",
+                                                    "@_typeId": "f77d-b953-8fa4-b762",
+                                                    "@_typeName": "Ranged Weapons"
+                                                }
+                                            },
+                                            "infoLinks": {
+                                                "infoLink": [
+                                                    {
+                                                        "@_id": "a407-c44-c52d-1534",
+                                                        "@_name": "Pistol",
+                                                        "@_hidden": "false",
+                                                        "@_targetId": "8bf7-8812-923d-29e4",
+                                                        "@_type": "rule"
+                                                    },
+                                                    {
+                                                        "@_id": "afd8-a525-81b4-787c",
+                                                        "@_name": "Assault",
+                                                        "@_hidden": "false",
+                                                        "@_targetId": "fc8a-8c24-bae9-cc1c",
+                                                        "@_type": "rule"
+                                                    }
+                                                ]
+                                            },
+                                            "@_id": "7115-869-942a-766c",
+                                            "@_name": "Shuriken Pistol",
+                                            "@_hidden": "false",
+                                            "@_collective": "false",
+                                            "@_import": "true",
+                                            "@_type": "upgrade"
+                                        }
+                                    },
+                                    "constraints": {
+                                        "constraint": [
+                                            {
+                                                "@_type": "min",
+                                                "@_value": "1",
+                                                "@_field": "selections",
+                                                "@_scope": "parent",
+                                                "@_shared": "true",
+                                                "@_id": "75b8-df19-30c9-a91"
+                                            },
+                                            {
+                                                "@_type": "max",
+                                                "@_value": "1",
+                                                "@_field": "selections",
+                                                "@_scope": "parent",
+                                                "@_shared": "true",
+                                                "@_id": "569e-4540-d405-be24"
+                                            }
+                                        ]
+                                    },
+                                    "entryLinks": {
+                                        "entryLink": [
+                                            {
+                                                "@_import": "true",
+                                                "@_name": "Fusion Pistol",
+                                                "@_hidden": "false",
+                                                "@_type": "selectionEntry",
+                                                "@_id": "e7e7-14c5-3bba-e6b7",
+                                                "@_targetId": "3849-3ae7-3ab9-a2e4"
+                                            },
+                                            {
+                                                "@_import": "true",
+                                                "@_name": "Neuro Disruptor",
+                                                "@_hidden": "false",
+                                                "@_type": "selectionEntry",
+                                                "@_id": "2e70-9581-90a9-3f37",
+                                                "@_targetId": "a290-45ae-dc73-9c30"
+                                            }
+                                        ]
+                                    },
+                                    "@_name": "Pistol",
+                                    "@_hidden": "false",
+                                    "@_id": "d206-d0cc-8d22-476f",
+                                    "@_defaultSelectionEntryId": "7115-869-942a-766c"
+                                }
+                            ]
+                        },
+                        "profiles": {
+                            "profile": {
+                                "characteristics": {
+                                    "characteristic": [
+                                        {
+                                            "#text": "8\"",
+                                            "@_name": "M",
+                                            "@_typeId": "e703-ecb6-5ce7-aec1"
+                                        },
+                                        {
+                                            "#text": 3,
+                                            "@_name": "T",
+                                            "@_typeId": "d29d-cf75-fc2d-34a4"
+                                        },
+                                        {
+                                            "#text": "6+",
+                                            "@_name": "SV",
+                                            "@_typeId": "450-a17e-9d5e-29da"
+                                        },
+                                        {
+                                            "#text": 1,
+                                            "@_name": "W",
+                                            "@_typeId": "750a-a2ec-90d3-21fe"
+                                        },
+                                        {
+                                            "#text": "6+",
+                                            "@_name": "LD",
+                                            "@_typeId": "58d2-b879-49c7-43bc"
+                                        },
+                                        {
+                                            "#text": 1,
+                                            "@_name": "OC",
+                                            "@_typeId": "bef7-942a-1a23-59f8"
+                                        }
+                                    ]
+                                },
+                                "modifiers": {
+                                    "modifier": {
+                                        "conditions": {
+                                            "condition": {
+                                                "@_type": "atLeast",
+                                                "@_value": "1",
+                                                "@_field": "selections",
+                                                "@_scope": "parent",
+                                                "@_childId": "be59-ec7d-2f02-b6ec",
+                                                "@_shared": "true"
+                                            }
+                                        },
+                                        "@_type": "set",
+                                        "@_value": "2",
+                                        "@_field": "bef7-942a-1a23-59f8"
+                                    }
+                                },
+                                "@_name": "Troupe",
+                                "@_typeId": "c547-1836-d8a-ff4f",
+                                "@_typeName": "Unit",
+                                "@_hidden": "false",
+                                "@_id": "42ad-7f55-e574-2e1b"
+                            }
+                        },
+                        "@_type": "model",
+                        "@_import": "true",
+                        "@_name": "Lead Player",
+                        "@_hidden": "false",
+                        "@_id": "a744-4ca3-3d8f-cdfa",
+                        "@_sortIndex": "1"
+                    },
+                    {
+                        "selectionEntries": {
+                            "selectionEntry": [
+                                {
+                                    "profiles": {
+                                        "profile": {
+                                            "characteristics": {
+                                                "characteristic": [
+                                                    {
+                                                        "#text": "12\"",
+                                                        "@_name": "Range",
+                                                        "@_typeId": "9896-9419-16a1-92fc"
+                                                    },
+                                                    {
+                                                        "#text": 1,
+                                                        "@_name": "A",
+                                                        "@_typeId": "3bb-c35f-f54-fb08"
+                                                    },
+                                                    {
+                                                        "#text": "3+",
+                                                        "@_name": "BS",
+                                                        "@_typeId": "94d-8a98-cf90-183e"
+                                                    },
+                                                    {
+                                                        "#text": 4,
+                                                        "@_name": "S",
+                                                        "@_typeId": "2229-f494-25db-c5d3"
+                                                    },
+                                                    {
+                                                        "#text": -1,
+                                                        "@_name": "AP",
+                                                        "@_typeId": "9ead-8a10-520-de15"
+                                                    },
+                                                    {
+                                                        "#text": 1,
+                                                        "@_name": "D",
+                                                        "@_typeId": "a354-c1c8-a745-f9e3"
+                                                    },
+                                                    {
+                                                        "#text": "Assault, Pistol",
+                                                        "@_name": "Keywords",
+                                                        "@_typeId": "7f1b-8591-2fcf-d01c"
+                                                    }
+                                                ]
+                                            },
+                                            "@_id": "f143-ae91-cefd-af24",
+                                            "@_name": "Shuriken Pistol",
+                                            "@_hidden": "false",
+                                            "@_typeId": "f77d-b953-8fa4-b762",
+                                            "@_typeName": "Ranged Weapons"
+                                        }
+                                    },
+                                    "infoLinks": {
+                                        "infoLink": [
+                                            {
+                                                "@_id": "b0de-da61-f458-339c",
+                                                "@_name": "Pistol",
+                                                "@_hidden": "false",
+                                                "@_targetId": "8bf7-8812-923d-29e4",
+                                                "@_type": "rule"
+                                            },
+                                            {
+                                                "@_id": "8030-ff1a-9730-3785",
+                                                "@_name": "Assault",
+                                                "@_hidden": "false",
+                                                "@_targetId": "fc8a-8c24-bae9-cc1c",
+                                                "@_type": "rule"
+                                            }
+                                        ]
+                                    },
+                                    "constraints": {
+                                        "constraint": [
+                                            {
+                                                "@_type": "max",
+                                                "@_value": "1",
+                                                "@_field": "selections",
+                                                "@_scope": "parent",
+                                                "@_shared": "true",
+                                                "@_id": "24ce-d545-e212-392c"
+                                            },
+                                            {
+                                                "@_type": "min",
+                                                "@_value": "1",
+                                                "@_field": "selections",
+                                                "@_scope": "parent",
+                                                "@_shared": "true",
+                                                "@_id": "5ac3-d91d-6c3-4069"
+                                            }
+                                        ]
+                                    },
+                                    "@_id": "8f8f-983d-3283-262d",
+                                    "@_name": "Shuriken Pistol",
+                                    "@_hidden": "false",
+                                    "@_collective": "true",
+                                    "@_import": "true",
+                                    "@_type": "upgrade"
+                                },
+                                {
+                                    "infoLinks": {
+                                        "infoLink": [
+                                            {
+                                                "@_name": "Devastating Wounds",
+                                                "@_id": "5079-caf8-c323-7e43",
+                                                "@_hidden": "false",
+                                                "@_type": "rule",
+                                                "@_targetId": "be1e-ac8e-1e2c-3528"
+                                            },
+                                            {
+                                                "@_name": "Harlequin's Blade",
+                                                "@_id": "e4b5-1f03-160f-7718",
+                                                "@_hidden": "false",
+                                                "@_type": "profile",
+                                                "@_targetId": "b95b-acd5-b326-7185"
+                                            }
+                                        ]
+                                    },
+                                    "constraints": {
+                                        "constraint": [
+                                            {
+                                                "@_type": "min",
+                                                "@_value": "1",
+                                                "@_field": "selections",
+                                                "@_scope": "parent",
+                                                "@_shared": "true",
+                                                "@_id": "f910-f21c-0948-a303",
+                                                "@_includeChildSelections": "false"
+                                            },
+                                            {
+                                                "@_type": "max",
+                                                "@_value": "1",
+                                                "@_field": "selections",
+                                                "@_scope": "parent",
+                                                "@_shared": "true",
+                                                "@_id": "7ac5-6dc1-6311-3e22",
+                                                "@_includeChildSelections": "false"
+                                            }
+                                        ]
+                                    },
+                                    "@_type": "upgrade",
+                                    "@_import": "true",
+                                    "@_name": "Harlequin's Blade",
+                                    "@_hidden": "false",
+                                    "@_id": "2b79-046d-a52a-b033",
+                                    "@_collective": "true"
+                                }
+                            ]
+                        },
+                        "constraints": {
+                            "constraint": {
+                                "@_type": "max",
+                                "@_value": "11",
+                                "@_field": "selections",
+                                "@_scope": "parent",
+                                "@_shared": "true",
+                                "@_id": "b87f-61ec-7118-964b"
+                            }
+                        },
+                        "profiles": {
+                            "profile": {
+                                "characteristics": {
+                                    "characteristic": [
+                                        {
+                                            "#text": "8\"",
+                                            "@_name": "M",
+                                            "@_typeId": "e703-ecb6-5ce7-aec1"
+                                        },
+                                        {
+                                            "#text": 3,
+                                            "@_name": "T",
+                                            "@_typeId": "d29d-cf75-fc2d-34a4"
+                                        },
+                                        {
+                                            "#text": "6+",
+                                            "@_name": "SV",
+                                            "@_typeId": "450-a17e-9d5e-29da"
+                                        },
+                                        {
+                                            "#text": 1,
+                                            "@_name": "W",
+                                            "@_typeId": "750a-a2ec-90d3-21fe"
+                                        },
+                                        {
+                                            "#text": "6+",
+                                            "@_name": "LD",
+                                            "@_typeId": "58d2-b879-49c7-43bc"
+                                        },
+                                        {
+                                            "#text": 1,
+                                            "@_name": "OC",
+                                            "@_typeId": "bef7-942a-1a23-59f8"
+                                        }
+                                    ]
+                                },
+                                "modifiers": {
+                                    "modifier": {
+                                        "conditions": {
+                                            "condition": {
+                                                "@_type": "atLeast",
+                                                "@_value": "1",
+                                                "@_field": "selections",
+                                                "@_scope": "parent",
+                                                "@_childId": "be59-ec7d-2f02-b6ec",
+                                                "@_shared": "true"
+                                            }
+                                        },
+                                        "@_type": "set",
+                                        "@_value": "2",
+                                        "@_field": "bef7-942a-1a23-59f8"
+                                    }
+                                },
+                                "@_name": "Troupe",
+                                "@_typeId": "c547-1836-d8a-ff4f",
+                                "@_typeName": "Unit",
+                                "@_hidden": "false",
+                                "@_id": "5fa7-a059-ea28-0d91"
+                            }
+                        },
+                        "@_type": "model",
+                        "@_import": "true",
+                        "@_name": "Player with Harlequin's Blade",
+                        "@_hidden": "false",
+                        "@_id": "69be-de22-4d8-ebe3",
+                        "@_collective": "false",
+                        "@_sortIndex": "2"
+                    },
+                    {
+                        "selectionEntries": {
+                            "selectionEntry": [
+                                {
+                                    "profiles": {
+                                        "profile": {
+                                            "characteristics": {
+                                                "characteristic": [
+                                                    {
+                                                        "#text": "12\"",
+                                                        "@_name": "Range",
+                                                        "@_typeId": "9896-9419-16a1-92fc"
+                                                    },
+                                                    {
+                                                        "#text": 1,
+                                                        "@_name": "A",
+                                                        "@_typeId": "3bb-c35f-f54-fb08"
+                                                    },
+                                                    {
+                                                        "#text": "3+",
+                                                        "@_name": "BS",
+                                                        "@_typeId": "94d-8a98-cf90-183e"
+                                                    },
+                                                    {
+                                                        "#text": 4,
+                                                        "@_name": "S",
+                                                        "@_typeId": "2229-f494-25db-c5d3"
+                                                    },
+                                                    {
+                                                        "#text": -1,
+                                                        "@_name": "AP",
+                                                        "@_typeId": "9ead-8a10-520-de15"
+                                                    },
+                                                    {
+                                                        "#text": 1,
+                                                        "@_name": "D",
+                                                        "@_typeId": "a354-c1c8-a745-f9e3"
+                                                    },
+                                                    {
+                                                        "#text": "Assault, Pistol",
+                                                        "@_name": "Keywords",
+                                                        "@_typeId": "7f1b-8591-2fcf-d01c"
+                                                    }
+                                                ]
+                                            },
+                                            "@_id": "14e2-d7d2-f6ed-d34f",
+                                            "@_name": "Shuriken Pistol",
+                                            "@_hidden": "false",
+                                            "@_typeId": "f77d-b953-8fa4-b762",
+                                            "@_typeName": "Ranged Weapons"
+                                        }
+                                    },
+                                    "infoLinks": {
+                                        "infoLink": [
+                                            {
+                                                "@_id": "ac1-a229-b19e-6589",
+                                                "@_name": "Pistol",
+                                                "@_hidden": "false",
+                                                "@_targetId": "8bf7-8812-923d-29e4",
+                                                "@_type": "rule"
+                                            },
+                                            {
+                                                "@_id": "9cc5-4c8a-7846-fabd",
+                                                "@_name": "Assault",
+                                                "@_hidden": "false",
+                                                "@_targetId": "fc8a-8c24-bae9-cc1c",
+                                                "@_type": "rule"
+                                            }
+                                        ]
+                                    },
+                                    "constraints": {
+                                        "constraint": [
+                                            {
+                                                "@_type": "min",
+                                                "@_value": "1",
+                                                "@_field": "selections",
+                                                "@_scope": "parent",
+                                                "@_shared": "true",
+                                                "@_id": "fd76-bf51-7b2f-8852"
+                                            },
+                                            {
+                                                "@_type": "max",
+                                                "@_value": "1",
+                                                "@_field": "selections",
+                                                "@_scope": "parent",
+                                                "@_shared": "true",
+                                                "@_id": "9bf5-5dd-ef2d-5eac"
+                                            }
+                                        ]
+                                    },
+                                    "@_id": "3992-6c24-5331-9100",
+                                    "@_name": "Shuriken Pistol",
+                                    "@_hidden": "false",
+                                    "@_collective": "true",
+                                    "@_import": "true",
+                                    "@_type": "upgrade"
+                                },
+                                {
+                                    "profiles": {
+                                        "profile": {
+                                            "characteristics": {
+                                                "characteristic": [
+                                                    {
+                                                        "#text": "Melee",
+                                                        "@_name": "Range",
+                                                        "@_typeId": "914c-b413-91e3-a132"
+                                                    },
+                                                    {
+                                                        "#text": 4,
+                                                        "@_name": "A",
+                                                        "@_typeId": "2337-daa1-6682-b110"
+                                                    },
+                                                    {
+                                                        "#text": "3+",
+                                                        "@_name": "WS",
+                                                        "@_typeId": "95d1-95f-45b4-11d6"
+                                                    },
+                                                    {
+                                                        "#text": 4,
+                                                        "@_name": "S",
+                                                        "@_typeId": "ab33-d393-96ce-ccba"
+                                                    },
+                                                    {
+                                                        "#text": -1,
+                                                        "@_name": "AP",
+                                                        "@_typeId": "41a0-1301-112a-e2f2"
+                                                    },
+                                                    {
+                                                        "#text": 1,
+                                                        "@_name": "D",
+                                                        "@_typeId": "3254-9fe6-d824-513e"
+                                                    },
+                                                    {
+                                                        "#text": "Devastating Wounds",
+                                                        "@_name": "Keywords",
+                                                        "@_typeId": "893f-9000-ccf7-648e"
+                                                    }
+                                                ]
+                                            },
+                                            "@_name": "Harlequin's Special Weapon",
+                                            "@_typeId": "8a40-4aaa-c780-9046",
+                                            "@_typeName": "Melee Weapons",
+                                            "@_hidden": "false",
+                                            "@_id": "c22a-0d28-cc5f-dd4b"
+                                        }
+                                    },
+                                    "infoLinks": {
+                                        "infoLink": {
+                                            "@_name": "Devastating Wounds",
+                                            "@_id": "c6bc-1ea6-7cd0-1b63",
+                                            "@_hidden": "false",
+                                            "@_type": "rule",
+                                            "@_targetId": "be1e-ac8e-1e2c-3528"
+                                        }
+                                    },
+                                    "constraints": {
+                                        "constraint": [
+                                            {
+                                                "@_type": "min",
+                                                "@_value": "1",
+                                                "@_field": "selections",
+                                                "@_scope": "parent",
+                                                "@_shared": "true",
+                                                "@_id": "9904-6a58-6261-ae8d",
+                                                "@_includeChildSelections": "false"
+                                            },
+                                            {
+                                                "@_type": "max",
+                                                "@_value": "1",
+                                                "@_field": "selections",
+                                                "@_scope": "parent",
+                                                "@_shared": "true",
+                                                "@_id": "30c8-dba3-3f40-c152",
+                                                "@_includeChildSelections": "false"
+                                            }
+                                        ]
+                                    },
+                                    "@_type": "upgrade",
+                                    "@_import": "true",
+                                    "@_name": "Harlequin's Special Weapon",
+                                    "@_hidden": "false",
+                                    "@_id": "d751-39c7-09a9-1bbe",
+                                    "@_collective": "true"
+                                }
+                            ]
+                        },
+                        "constraints": {
+                            "constraint": {
+                                "@_type": "max",
+                                "@_value": "11",
+                                "@_field": "selections",
+                                "@_scope": "parent",
+                                "@_shared": "true",
+                                "@_id": "b87f-61ec-7118-964b"
+                            }
+                        },
+                        "profiles": {
+                            "profile": {
+                                "characteristics": {
+                                    "characteristic": [
+                                        {
+                                            "#text": "8\"",
+                                            "@_name": "M",
+                                            "@_typeId": "e703-ecb6-5ce7-aec1"
+                                        },
+                                        {
+                                            "#text": 3,
+                                            "@_name": "T",
+                                            "@_typeId": "d29d-cf75-fc2d-34a4"
+                                        },
+                                        {
+                                            "#text": "6+",
+                                            "@_name": "SV",
+                                            "@_typeId": "450-a17e-9d5e-29da"
+                                        },
+                                        {
+                                            "#text": 1,
+                                            "@_name": "W",
+                                            "@_typeId": "750a-a2ec-90d3-21fe"
+                                        },
+                                        {
+                                            "#text": "6+",
+                                            "@_name": "LD",
+                                            "@_typeId": "58d2-b879-49c7-43bc"
+                                        },
+                                        {
+                                            "#text": 1,
+                                            "@_name": "OC",
+                                            "@_typeId": "bef7-942a-1a23-59f8"
+                                        }
+                                    ]
+                                },
+                                "modifiers": {
+                                    "modifier": {
+                                        "conditions": {
+                                            "condition": {
+                                                "@_type": "atLeast",
+                                                "@_value": "1",
+                                                "@_field": "selections",
+                                                "@_scope": "parent",
+                                                "@_childId": "be59-ec7d-2f02-b6ec",
+                                                "@_shared": "true"
+                                            }
+                                        },
+                                        "@_type": "set",
+                                        "@_value": "2",
+                                        "@_field": "bef7-942a-1a23-59f8"
+                                    }
+                                },
+                                "@_name": "Troupe",
+                                "@_typeId": "c547-1836-d8a-ff4f",
+                                "@_typeName": "Unit",
+                                "@_hidden": "false",
+                                "@_id": "95d7-463b-e304-629d"
+                            }
+                        },
+                        "@_type": "model",
+                        "@_import": "true",
+                        "@_name": "Player with Harlequin's Special Weapon",
+                        "@_hidden": "false",
+                        "@_id": "cfee-b429-9010-f384",
+                        "@_collective": "false",
+                        "@_sortIndex": "3"
+                    },
+                    {
+                        "selectionEntryGroups": {
+                            "selectionEntryGroup": {
+                                "selectionEntries": {
+                                    "selectionEntry": [
+                                        {
+                                            "infoLinks": {
+                                                "infoLink": [
+                                                    {
+                                                        "@_name": "Devastating Wounds",
+                                                        "@_id": "08ab-97cd-cb72-8aba",
+                                                        "@_hidden": "false",
+                                                        "@_type": "rule",
+                                                        "@_targetId": "be1e-ac8e-1e2c-3528"
+                                                    },
+                                                    {
+                                                        "@_name": "Harlequin's Blade",
+                                                        "@_id": "94aa-7380-738e-3778",
+                                                        "@_hidden": "false",
+                                                        "@_type": "profile",
+                                                        "@_targetId": "b95b-acd5-b326-7185"
+                                                    }
+                                                ]
+                                            },
+                                            "@_type": "upgrade",
+                                            "@_import": "true",
+                                            "@_name": "Harlequin's Blade",
+                                            "@_hidden": "false",
+                                            "@_id": "8d42-9cd7-85ec-3bf8",
+                                            "@_collective": "false"
+                                        },
+                                        {
+                                            "profiles": {
+                                                "profile": {
+                                                    "characteristics": {
+                                                        "characteristic": [
+                                                            {
+                                                                "#text": "Melee",
+                                                                "@_name": "Range",
+                                                                "@_typeId": "914c-b413-91e3-a132"
+                                                            },
+                                                            {
+                                                                "#text": 4,
+                                                                "@_name": "A",
+                                                                "@_typeId": "2337-daa1-6682-b110"
+                                                            },
+                                                            {
+                                                                "#text": "3+",
+                                                                "@_name": "WS",
+                                                                "@_typeId": "95d1-95f-45b4-11d6"
+                                                            },
+                                                            {
+                                                                "#text": 4,
+                                                                "@_name": "S",
+                                                                "@_typeId": "ab33-d393-96ce-ccba"
+                                                            },
+                                                            {
+                                                                "#text": -1,
+                                                                "@_name": "AP",
+                                                                "@_typeId": "41a0-1301-112a-e2f2"
+                                                            },
+                                                            {
+                                                                "#text": 1,
+                                                                "@_name": "D",
+                                                                "@_typeId": "3254-9fe6-d824-513e"
+                                                            },
+                                                            {
+                                                                "#text": "Devastating Wounds",
+                                                                "@_name": "Keywords",
+                                                                "@_typeId": "893f-9000-ccf7-648e"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "@_name": "Harlequin's Special Weapon",
+                                                    "@_typeId": "8a40-4aaa-c780-9046",
+                                                    "@_typeName": "Melee Weapons",
+                                                    "@_hidden": "false",
+                                                    "@_id": "73d0-c2a5-76a0-2eff"
+                                                }
+                                            },
+                                            "infoLinks": {
+                                                "infoLink": {
+                                                    "@_name": "Devastating Wounds",
+                                                    "@_id": "7228-02fa-0c05-9517",
+                                                    "@_hidden": "false",
+                                                    "@_type": "rule",
+                                                    "@_targetId": "be1e-ac8e-1e2c-3528"
+                                                }
+                                            },
+                                            "@_type": "upgrade",
+                                            "@_import": "true",
+                                            "@_name": "Harlequin's Special Weapon",
+                                            "@_hidden": "false",
+                                            "@_id": "1edd-d7e3-8174-181a"
+                                        }
+                                    ]
+                                },
+                                "constraints": {
+                                    "constraint": [
+                                        {
+                                            "@_type": "min",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "parent",
+                                            "@_shared": "true",
+                                            "@_id": "b6de-46e0-cb96-c08e"
+                                        },
+                                        {
+                                            "@_type": "max",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "parent",
+                                            "@_shared": "true",
+                                            "@_id": "38ec-caac-7754-2389"
+                                        }
+                                    ]
+                                },
+                                "@_name": "Weapon",
+                                "@_hidden": "false",
+                                "@_id": "a083-df4c-d6b8-cb68",
+                                "@_defaultSelectionEntryId": "8d42-9cd7-85ec-3bf8"
+                            }
+                        },
+                        "entryLinks": {
+                            "entryLink": {
+                                "constraints": {
+                                    "constraint": [
+                                        {
+                                            "@_type": "min",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "parent",
+                                            "@_shared": "true",
+                                            "@_id": "e2f4-2ecd-675f-56ae"
+                                        },
+                                        {
+                                            "@_type": "max",
+                                            "@_value": "4",
+                                            "@_field": "selections",
+                                            "@_scope": "dac1-6a7f-a06a-82cf",
+                                            "@_shared": "true",
+                                            "@_id": "4da1-419b-6ce4-1634",
+                                            "@_includeChildSelections": "true"
+                                        }
+                                    ]
+                                },
+                                "modifiers": {
+                                    "modifier": {
+                                        "conditions": {
+                                            "condition": {
+                                                "@_type": "lessThan",
+                                                "@_value": "10",
+                                                "@_field": "selections",
+                                                "@_scope": "dac1-6a7f-a06a-82cf",
+                                                "@_childId": "model",
+                                                "@_shared": "true",
+                                                "@_id": "c18d-6396-3dfa-f3cd",
+                                                "@_includeChildSelections": "true"
+                                            }
+                                        },
+                                        "@_type": "set",
+                                        "@_value": "2",
+                                        "@_field": "4da1-419b-6ce4-1634",
+                                        "@_id": "e8d7-b40-518d-75aa"
+                                    }
+                                },
+                                "@_import": "true",
+                                "@_name": "Fusion Pistol",
+                                "@_hidden": "false",
+                                "@_type": "selectionEntry",
+                                "@_id": "17-8dc1-4a9-74b8",
+                                "@_targetId": "3849-3ae7-3ab9-a2e4"
+                            }
+                        },
+                        "profiles": {
+                            "profile": {
+                                "characteristics": {
+                                    "characteristic": [
+                                        {
+                                            "#text": "8\"",
+                                            "@_name": "M",
+                                            "@_typeId": "e703-ecb6-5ce7-aec1"
+                                        },
+                                        {
+                                            "#text": 3,
+                                            "@_name": "T",
+                                            "@_typeId": "d29d-cf75-fc2d-34a4"
+                                        },
+                                        {
+                                            "#text": "6+",
+                                            "@_name": "SV",
+                                            "@_typeId": "450-a17e-9d5e-29da"
+                                        },
+                                        {
+                                            "#text": 1,
+                                            "@_name": "W",
+                                            "@_typeId": "750a-a2ec-90d3-21fe"
+                                        },
+                                        {
+                                            "#text": "6+",
+                                            "@_name": "LD",
+                                            "@_typeId": "58d2-b879-49c7-43bc"
+                                        },
+                                        {
+                                            "#text": 1,
+                                            "@_name": "OC",
+                                            "@_typeId": "bef7-942a-1a23-59f8"
+                                        }
+                                    ]
+                                },
+                                "modifiers": {
+                                    "modifier": {
+                                        "conditions": {
+                                            "condition": {
+                                                "@_type": "atLeast",
+                                                "@_value": "1",
+                                                "@_field": "selections",
+                                                "@_scope": "parent",
+                                                "@_childId": "be59-ec7d-2f02-b6ec",
+                                                "@_shared": "true"
+                                            }
+                                        },
+                                        "@_type": "set",
+                                        "@_value": "2",
+                                        "@_field": "bef7-942a-1a23-59f8"
+                                    }
+                                },
+                                "@_name": "Troupe",
+                                "@_typeId": "c547-1836-d8a-ff4f",
+                                "@_typeName": "Unit",
+                                "@_hidden": "false",
+                                "@_id": "322c-9a88-1cc7-adcc"
+                            }
+                        },
+                        "@_type": "model",
+                        "@_import": "true",
+                        "@_name": "Player with Fusion Pistol",
+                        "@_hidden": "false",
+                        "@_id": "1fa6-f9a2-a56e-1317",
+                        "@_collective": "false",
+                        "@_sortIndex": "5"
+                    },
+                    {
+                        "selectionEntryGroups": {
+                            "selectionEntryGroup": {
+                                "selectionEntries": {
+                                    "selectionEntry": [
+                                        {
+                                            "infoLinks": {
+                                                "infoLink": [
+                                                    {
+                                                        "@_name": "Devastating Wounds",
+                                                        "@_id": "1e14-b397-5f51-d70e",
+                                                        "@_hidden": "false",
+                                                        "@_type": "rule",
+                                                        "@_targetId": "be1e-ac8e-1e2c-3528"
+                                                    },
+                                                    {
+                                                        "@_name": "Harlequin's Blade",
+                                                        "@_id": "97d5-f6cb-acc2-5f67",
+                                                        "@_hidden": "false",
+                                                        "@_type": "profile",
+                                                        "@_targetId": "b95b-acd5-b326-7185"
+                                                    }
+                                                ]
+                                            },
+                                            "@_type": "upgrade",
+                                            "@_import": "true",
+                                            "@_name": "Harlequin's Blade",
+                                            "@_hidden": "false",
+                                            "@_id": "3392-8910-0cdc-4586",
+                                            "@_collective": "false"
+                                        },
+                                        {
+                                            "profiles": {
+                                                "profile": {
+                                                    "characteristics": {
+                                                        "characteristic": [
+                                                            {
+                                                                "#text": "Melee",
+                                                                "@_name": "Range",
+                                                                "@_typeId": "914c-b413-91e3-a132"
+                                                            },
+                                                            {
+                                                                "#text": 4,
+                                                                "@_name": "A",
+                                                                "@_typeId": "2337-daa1-6682-b110"
+                                                            },
+                                                            {
+                                                                "#text": "3+",
+                                                                "@_name": "WS",
+                                                                "@_typeId": "95d1-95f-45b4-11d6"
+                                                            },
+                                                            {
+                                                                "#text": 4,
+                                                                "@_name": "S",
+                                                                "@_typeId": "ab33-d393-96ce-ccba"
+                                                            },
+                                                            {
+                                                                "#text": -1,
+                                                                "@_name": "AP",
+                                                                "@_typeId": "41a0-1301-112a-e2f2"
+                                                            },
+                                                            {
+                                                                "#text": 1,
+                                                                "@_name": "D",
+                                                                "@_typeId": "3254-9fe6-d824-513e"
+                                                            },
+                                                            {
+                                                                "#text": "Devastating Wounds",
+                                                                "@_name": "Keywords",
+                                                                "@_typeId": "893f-9000-ccf7-648e"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "@_name": "Harlequin's Special Weapon",
+                                                    "@_typeId": "8a40-4aaa-c780-9046",
+                                                    "@_typeName": "Melee Weapons",
+                                                    "@_hidden": "false",
+                                                    "@_id": "7784-9cef-a541-3227"
+                                                }
+                                            },
+                                            "infoLinks": {
+                                                "infoLink": {
+                                                    "@_name": "Devastating Wounds",
+                                                    "@_id": "752b-18c8-6482-86ef",
+                                                    "@_hidden": "false",
+                                                    "@_type": "rule",
+                                                    "@_targetId": "be1e-ac8e-1e2c-3528"
+                                                }
+                                            },
+                                            "@_type": "upgrade",
+                                            "@_import": "true",
+                                            "@_name": "Harlequin's Special Weapon",
+                                            "@_hidden": "false",
+                                            "@_id": "2943-b70d-213b-51cd"
+                                        }
+                                    ]
+                                },
+                                "constraints": {
+                                    "constraint": [
+                                        {
+                                            "@_type": "min",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "parent",
+                                            "@_shared": "true",
+                                            "@_id": "b6de-46e0-cb96-c08e"
+                                        },
+                                        {
+                                            "@_type": "max",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "parent",
+                                            "@_shared": "true",
+                                            "@_id": "38ec-caac-7754-2389"
+                                        }
+                                    ]
+                                },
+                                "@_name": "Weapon",
+                                "@_hidden": "false",
+                                "@_id": "5b79-87bb-880e-437e",
+                                "@_defaultSelectionEntryId": "3392-8910-0cdc-4586"
+                            }
+                        },
+                        "entryLinks": {
+                            "entryLink": {
+                                "constraints": {
+                                    "constraint": [
+                                        {
+                                            "@_type": "min",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "parent",
+                                            "@_shared": "true",
+                                            "@_id": "755b-9cff-9abf-4b4e"
+                                        },
+                                        {
+                                            "@_type": "max",
+                                            "@_value": "4",
+                                            "@_field": "selections",
+                                            "@_scope": "dac1-6a7f-a06a-82cf",
+                                            "@_shared": "true",
+                                            "@_id": "2aad-86c2-bf1c-a8e",
+                                            "@_includeChildSelections": "true"
+                                        }
+                                    ]
+                                },
+                                "modifiers": {
+                                    "modifier": {
+                                        "conditions": {
+                                            "condition": {
+                                                "@_type": "lessThan",
+                                                "@_value": "10",
+                                                "@_field": "selections",
+                                                "@_scope": "dac1-6a7f-a06a-82cf",
+                                                "@_childId": "model",
+                                                "@_shared": "true",
+                                                "@_id": "dc7f-c4f2-fbdd-767d",
+                                                "@_includeChildSelections": "true"
+                                            }
+                                        },
+                                        "@_type": "set",
+                                        "@_value": "2",
+                                        "@_field": "2aad-86c2-bf1c-a8e",
+                                        "@_id": "9228-c287-99cd-f78f"
+                                    }
+                                },
+                                "@_import": "true",
+                                "@_name": "Neuro Disruptor",
+                                "@_hidden": "false",
+                                "@_type": "selectionEntry",
+                                "@_id": "cbb1-5aea-77c5-b69e",
+                                "@_targetId": "a290-45ae-dc73-9c30"
+                            }
+                        },
+                        "profiles": {
+                            "profile": {
+                                "characteristics": {
+                                    "characteristic": [
+                                        {
+                                            "#text": "8\"",
+                                            "@_name": "M",
+                                            "@_typeId": "e703-ecb6-5ce7-aec1"
+                                        },
+                                        {
+                                            "#text": 3,
+                                            "@_name": "T",
+                                            "@_typeId": "d29d-cf75-fc2d-34a4"
+                                        },
+                                        {
+                                            "#text": "6+",
+                                            "@_name": "SV",
+                                            "@_typeId": "450-a17e-9d5e-29da"
+                                        },
+                                        {
+                                            "#text": 1,
+                                            "@_name": "W",
+                                            "@_typeId": "750a-a2ec-90d3-21fe"
+                                        },
+                                        {
+                                            "#text": "6+",
+                                            "@_name": "LD",
+                                            "@_typeId": "58d2-b879-49c7-43bc"
+                                        },
+                                        {
+                                            "#text": 1,
+                                            "@_name": "OC",
+                                            "@_typeId": "bef7-942a-1a23-59f8"
+                                        }
+                                    ]
+                                },
+                                "modifiers": {
+                                    "modifier": {
+                                        "conditions": {
+                                            "condition": {
+                                                "@_type": "atLeast",
+                                                "@_value": "1",
+                                                "@_field": "selections",
+                                                "@_scope": "parent",
+                                                "@_childId": "be59-ec7d-2f02-b6ec",
+                                                "@_shared": "true"
+                                            }
+                                        },
+                                        "@_type": "set",
+                                        "@_value": "2",
+                                        "@_field": "bef7-942a-1a23-59f8"
+                                    }
+                                },
+                                "@_name": "Troupe",
+                                "@_typeId": "c547-1836-d8a-ff4f",
+                                "@_typeName": "Unit",
+                                "@_hidden": "false",
+                                "@_id": "6191-b223-0850-d159"
+                            }
+                        },
+                        "@_type": "model",
+                        "@_import": "true",
+                        "@_name": "Player with Neuro Disruptor",
+                        "@_hidden": "false",
+                        "@_id": "c69e-69e8-9b0d-bead",
+                        "@_sortIndex": "4"
+                    }
+                ]
+            },
+            "constraints": {
+                "constraint": [
+                    {
+                        "@_type": "min",
+                        "@_value": "5",
+                        "@_field": "selections",
+                        "@_scope": "parent",
+                        "@_shared": "true",
+                        "@_id": "56ea-b206-e4ea-c59a"
+                    },
+                    {
+                        "@_type": "max",
+                        "@_value": "12",
+                        "@_field": "selections",
+                        "@_scope": "parent",
+                        "@_shared": "true",
+                        "@_id": "9946-e687-a3bb-85b"
+                    }
+                ]
+            },
+            "@_name": "1 Lead Player and 4-11 Players",
+            "@_hidden": "false",
+            "@_id": "ee36-1cbf-1933-2c96",
+            "@_defaultSelectionEntryId": "69be-de22-4d8-ebe3"
+        }
+    },
+    "modifiers": {
+        "modifier": [
+            {
+                "conditionGroups": {
+                    "conditionGroup": {
+                        "conditions": {
+                            "condition": {
+                                "@_type": "atLeast",
+                                "@_value": "1",
+                                "@_field": "forces",
+                                "@_scope": "roster",
+                                "@_childId": "1d6e-2579-8e7f-1ed4",
+                                "@_shared": "true"
+                            }
+                        },
+                        "conditionGroups": {
+                            "conditionGroup": {
+                                "conditions": {
+                                    "condition": [
+                                        {
+                                            "@_type": "atLeast",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "force",
+                                            "@_childId": "df57-7a59-75eb-ce63",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                            "@_type": "atLeast",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "force",
+                                            "@_childId": "497a-263e-966a-5a15",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                            "@_type": "atLeast",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "force",
+                                            "@_childId": "8732-df2f-a542-805f",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                            "@_type": "atLeast",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "force",
+                                            "@_childId": "f48e-276e-a997-c90e",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                            "@_type": "atLeast",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "force",
+                                            "@_childId": "b2f5-8219-f875-917e",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                            "@_type": "atLeast",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "force",
+                                            "@_childId": "9262-3993-1368-be5a",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                            "@_type": "atLeast",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "force",
+                                            "@_childId": "2713-f82d-5189-d5de",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                            "@_type": "atLeast",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "force",
+                                            "@_childId": "77f9-e8de-225f-9e68",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                            "@_type": "atLeast",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "force",
+                                            "@_childId": "c9ed-d190-419c-78d3",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                            "@_type": "atLeast",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "force",
+                                            "@_childId": "6f18-95b7-2662-8925",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                            "@_type": "atLeast",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "force",
+                                            "@_childId": "1fbf-55d9-5ca8-4e9e",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                            "@_type": "atLeast",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "force",
+                                            "@_childId": "e53b-7d09-eb7c-c6c7",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                            "@_type": "atLeast",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "force",
+                                            "@_childId": "dd79-c2fe-59d6-d2",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                            "@_type": "atLeast",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "force",
+                                            "@_childId": "ada5-25ce-d5d5-4ccb",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                            "@_type": "atLeast",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "force",
+                                            "@_childId": "828d-840a-9a67-9074",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                            "@_type": "atLeast",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "force",
+                                            "@_childId": "98f7-4a8a-dbd3-4a81",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                            "@_type": "atLeast",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "force",
+                                            "@_childId": "ce44-615a-a40e-d092",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                            "@_type": "atLeast",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "force",
+                                            "@_childId": "e78a-4442-4ed2-66bf",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                            "@_type": "atLeast",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "force",
+                                            "@_childId": "af39-ea5c-4f23-311d",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                            "@_type": "atLeast",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "force",
+                                            "@_childId": "9c94-b663-fd31-6001",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                            "@_type": "atLeast",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "force",
+                                            "@_childId": "240f-70a4-7ba7-a538",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                            "@_type": "atLeast",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "force",
+                                            "@_childId": "57ec-47a8-a59a-6a46",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                            "@_type": "atLeast",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "force",
+                                            "@_childId": "e6c2-f3b2-6d3e-c3d3",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                            "@_type": "atLeast",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "force",
+                                            "@_childId": "5374-9e93-8af2-819e",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                            "@_type": "atLeast",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "force",
+                                            "@_childId": "5374-9e93-8af2-819e",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                            "@_type": "atLeast",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "force",
+                                            "@_childId": "7fcb-9262-474a-7cec",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                            "@_type": "atLeast",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "force",
+                                            "@_childId": "b98b-701f-9c0c-5437",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                            "@_type": "atLeast",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "force",
+                                            "@_childId": "5aa4-107-d7ee-f0f3",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                            "@_type": "atLeast",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "force",
+                                            "@_childId": "bb4f-4359-cc16-e6d5",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                            "@_type": "atLeast",
+                                            "@_value": "1",
+                                            "@_field": "selections",
+                                            "@_scope": "force",
+                                            "@_childId": "c90f-a8e5-6afa-eb91",
+                                            "@_shared": "true",
+                                            "@_includeChildSelections": "true"
+                                        }
+                                    ]
+                                },
+                                "@_type": "or"
+                            }
+                        },
+                        "@_type": "and"
+                    }
+                },
+                "@_type": "set",
+                "@_value": "true",
+                "@_field": "hidden"
+            },
+            {
+                "conditions": {
+                    "condition": {
+                        "@_type": "atLeast",
+                        "@_value": "1",
+                        "@_field": "forces",
+                        "@_scope": "roster",
+                        "@_childId": "1d6e-2579-8e7f-1ed4",
+                        "@_shared": "true"
+                    }
+                },
+                "@_type": "set",
+                "@_value": "3",
+                "@_field": "c312-7a4e-3c9e-d35a"
+            },
+            {
+                "conditions": {
+                    "condition": {
+                        "@_type": "atLeast",
+                        "@_value": "1",
+                        "@_field": "selections",
+                        "@_scope": "roster",
+                        "@_childId": "be59-ec7d-2f02-b6ec",
+                        "@_shared": "true",
+                        "@_includeChildSelections": "true",
+                        "@_includeChildForces": "true"
+                    }
+                },
+                "@_type": "set",
+                "@_value": "6",
+                "@_field": "a2c9-1821-93ce-3900"
+            },
+            {
+                "conditions": {
+                    "condition": {
+                        "@_type": "atLeast",
+                        "@_value": "1",
+                        "@_field": "selections",
+                        "@_scope": "roster",
+                        "@_childId": "be59-ec7d-2f02-b6ec",
+                        "@_shared": "true",
+                        "@_includeChildSelections": "true",
+                        "@_includeChildForces": "true"
+                    }
+                },
+                "@_type": "set-primary",
+                "@_value": "e338-111e-d0c6-b687",
+                "@_field": "category"
+            }
+        ]
+    },
+    "constraints": {
+        "constraint": [
+            {
+                "@_type": "max",
+                "@_value": "-1",
+                "@_field": "selections",
+                "@_scope": "force",
+                "@_shared": "true",
+                "@_id": "c312-7a4e-3c9e-d35a"
+            },
+            {
+                "@_type": "max",
+                "@_value": "3",
+                "@_field": "selections",
+                "@_scope": "roster",
+                "@_shared": "true",
+                "@_id": "a2c9-1821-93ce-3900",
+                "@_includeChildSelections": "true"
+            }
+        ]
+    },
+    "infoLinks": {
+        "infoLink": [
+            {
+                "@_id": "7c82-c361-18b-246b",
+                "@_name": "Battle Focus",
+                "@_hidden": "false",
+                "@_targetId": "c324-e193-e23c-7d2e",
+                "@_type": "rule"
+            },
+            {
+                "@_name": "Flip Belt",
+                "@_id": "276b-47c3-fd3c-7cce",
+                "@_hidden": "false",
+                "@_type": "profile",
+                "@_targetId": "b783-5813-dfe0-aca5"
+            }
+        ]
+    },
+    "@_id": "dac1-6a7f-a06a-82cf",
+    "@_name": "Troupe",
+    "@_hidden": "false",
+    "@_collective": "false",
+    "@_import": "true",
+    "@_type": "unit"
+}

@@ -13,6 +13,7 @@ export class DataCard {
     keywords: Array<String>;
     costs: Array<Cost>;
     profiles: Array<Profile>;
+    costString: String;
 
     index: IndexedData;
 
@@ -31,7 +32,7 @@ export class DataCard {
         ensureArray(d.categoryLinks?.categoryLink).forEach((value: any) => {
             try {
                 if (!value) {
-                    console.error("THIS SHIT SHOULDN:T BE", value);
+                    // console.error("THIS SHIT SHOULDN:T BE", value);
                     return;
                 }
                 const name = value['@_name'];
@@ -52,7 +53,7 @@ export class DataCard {
         ensureArray(d.infolinks?.infoLink).forEach((value: any) => {
             try {
                 if (!value) {
-                    console.error("THIS SHIT SHOULDN:T BE", value);
+                    // console.error("THIS SHIT SHOULDN:T BE", value);
                     return;
                 }
                 const name = value['@_name'];
@@ -70,6 +71,8 @@ export class DataCard {
                 console.error();
             }
         });
+
+        this.costString = this.costs.map((c) => c.value).sort((a, b) => a - b).join(', ');
 
         this.data = d;
 

@@ -40,8 +40,8 @@ export class Cost {
                 .forEach((c: any) => {
                     pointlist.push(new Cost(c));
                 });
-            if (pointlist.length > 0)
-                console.log(pointlist);
+            // if (pointlist.length > 0)
+            //     console.log(pointlist);
             return pointlist;
         } catch (error) {
             console.error("Error extracting costs:", modifierGroups, error);
