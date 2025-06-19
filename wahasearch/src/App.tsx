@@ -106,7 +106,7 @@ function App() {
           <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 mt-5 lg:mt-0 gap-4">
             {
               catalogue.map((element: any) => {
-                return (<DataCardDisplay key={element.name} datacard={element} />);
+                return (<DataCardDisplay key={element.uniqueKey} datacard={element} />);
               })
             }
           </div>

@@ -8,6 +8,7 @@ export class DataCard {
     _raw: Object;
     data: Object;
     name: string;
+    uniqueKey: string;
     legends: boolean;
     factions: Array<String>;
     keywords: Array<String>;
@@ -21,6 +22,8 @@ export class DataCard {
         this._raw = deepClone(data);
         const d = deepClone(data);
         const n = d['@_name'] ?? "";
+        this.uniqueKey = n + d['@_id'];
+        delete d['@_id'];
         this.legends = n.includes("[Legends]");
         this.costs = Cost.extractCosts(d['costs']);
         this.name = n.replace("[Legends]", "").trim();
