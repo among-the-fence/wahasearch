@@ -63,8 +63,21 @@ const DataCardCard = ({ datacard, cardClick }: DataCardCardProps) => {
                     fontWeight: 'bold',
                     fontSize: '1.3em',
                     textAlign: 'center',
-                    marginBottom: '0.5em',
+                    marginBottom: '0.2em',
                 }}>{datacard.name}</div>
+                {datacard.costs.length > 0 && (
+                    <div style={{
+                        textAlign: 'center',
+                        fontWeight: 'bold',
+                        color: '#0ea5e9', // Tailwind's sky-500
+                        fontSize: '0.8em',
+                        letterSpacing: '0.04em',
+                        marginBottom: '0.5em',
+                    }}>
+                        ({datacard.costString})
+                    </div>
+                )}
+
                 {modelProfiles.length > 1 && (
                     <div style={{ textAlign: "center" }}>
                         {modelProfiles.map((p, idx) => {
