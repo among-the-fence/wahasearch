@@ -4,10 +4,11 @@ import { ChangeEvent, useEffect, useState } from "react";
 
 export interface SearchFormProps {
     applyFunction: (form: Map<String, String>) => void;
+    initialFormState: Map<String, String>;
 }
 
-export const SearchForm = ({ applyFunction }: SearchFormProps) => {
-    const [localFormState, setLocalFormState] = useState(new Map<String, String>());
+export const SearchForm = ({ applyFunction, initialFormState }: SearchFormProps) => {
+    const [localFormState, setLocalFormState] = useState(initialFormState);
 
     useEffect(() => {
         const timeOutId = setTimeout(() => applyFunction(localFormState), 500);

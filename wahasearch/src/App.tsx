@@ -4,6 +4,7 @@ import './App.css'
 import { WahaSearchLoader } from './lib/models/wahaSearchLoader';
 import { DataCardDisplay } from './ui/DataCardDisplay';
 import { SearchForm } from './ui/SearchForm';
+import { FILTERS_LEGENDS, LEGENDS_NONE } from './lib/constants';
 
 
 function App() {
@@ -13,8 +14,10 @@ function App() {
   useEffect(() => {
     const c = WahaSearchLoader.data();
     setFullCatalogue(c);
-    setCatalogue(c);
+    setCatalogue(c.filter(datacard => datacard.index?.matches(initialFormState)));
   }, []);
+  const initialFormState = new Map<String, String>();
+  initialFormState.set(FILTERS_LEGENDS, LEGENDS_NONE);
 
   if (!fullcatalogue) {
     return <> </>;
@@ -96,7 +99,7 @@ function App() {
             >
               ×
             </button>
-            <SearchForm applyFunction={keywordFilter}/>
+            <SearchForm applyFunction={keywordFilter} initialFormState={initialFormState} />
           </div>
         </div>
       )}
