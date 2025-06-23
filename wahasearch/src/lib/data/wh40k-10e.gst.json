@@ -3125,6 +3125,7 @@
         },
         {
           "description": "Weapons with [DEVASTATING WOUNDS] in their profile are known as Devastating Wounds weapons. Each time an attack is made with such a weapon, if that attack scores a Critical Wound, no saving throw of any kind can be made against that attack (including invulnerable saving throws). Such attacks are only allocated to models after all other attacks made by the attacking unit have been allocated and resolved. After that attack is allocated and after any modifiers are applied, it inflicts a number of mortal wounds on the target equal to the Damage characteristic of that attack, instead of inflicting damage normally.",
+          "alias": "DEVASTATING WOUNDS",
           "@_id": "be1e-ac8e-1e2c-3528",
           "@_name": "Devastating Wounds",
           "@_publicationId": "48fc-15aa-b307-9443",
@@ -3165,6 +3166,7 @@
         },
         {
           "description": "Weapons with [SUSTAINED HITS X] in their profile are known as Sustained Hits weapons. Each time an attack is made with such a weapon, if a Critical Hit is rolled, that attack scores a number of additional hits on the target as denoted by ‘x’",
+          "alias": "SUSTAINED HITS",
           "@_id": "1897-c22c-9597-12b1",
           "@_name": "Sustained Hits",
           "@_publicationId": "48fc-15aa-b307-9443",
@@ -3229,6 +3231,7 @@
         },
         {
           "description": "Weapons with [LETHAL HITS] in their profile are known as Lethal Hits weapons. Each time an attack is made with such a weapon, a Critical Hit automatically wounds the target.",
+          "alias": "LETHAL HITS",
           "@_id": "d1d1-611e-5191-1095",
           "@_name": "Lethal Hits",
           "@_publicationId": "48fc-15aa-b307-9443",
@@ -3357,7 +3360,7 @@
         {
           "characteristics": {
             "characteristic": {
-              "#text": "While an enemy unit is only within Engagement Range of one or more FORTIFICATIONS from your army:\n- That unit can still be selected as the target of ranged attacks, but each time such an attack is made, unless it is made with a Pistol, subtract 1 from the Hit roll.\n- Models in that unit do not need to take Desperate Escape tests due to Falling Back while Battle-shocked, except for those that will move over enemy models when doing so.",
+              "#text": "While an enemy unit is only within Engagement Range of one or more ^^**Fortifications**^^ from your army:\n- That unit can still be selected as the target of ranged attacks, but each time such an attack is made, unless it is made with a Pistol, subtract 1 from the Hit roll.\n- Models in that unit do not need to take Desperate Escape tests due to Falling Back while Battle-shocked, except for those that will move over enemy models when doing so.",
               "@_name": "Description",
               "@_typeId": "9b8f-694b-e5e-b573"
             }
@@ -3965,6 +3968,42 @@
                           "@_join": ",",
                           "@_scope": "upgrade",
                           "@_affects": "self.entries.profiles.Melee Weapons"
+                        },
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "atLeast",
+                              "@_value": "1",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "a925-2f50-1580-0f5c",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "floor",
+                          "@_value": "2",
+                          "@_field": "95d1-95f-45b4-11d6",
+                          "@_scope": "upgrade",
+                          "@_affects": "self.entries.profiles.Melee Weapons"
+                        },
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "atLeast",
+                              "@_value": "1",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "a925-2f50-1580-0f5c",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "floor",
+                          "@_value": "2",
+                          "@_field": "94d-8a98-cf90-183e",
+                          "@_scope": "upgrade",
+                          "@_affects": "self.entries.profiles.Ranged Weapons"
                         }
                       ]
                     },
@@ -4950,7 +4989,7 @@
     "@_xmlns": "http://www.battlescribe.net/schema/gameSystemSchema",
     "@_id": "sys-352e-adc2-7639-d6a9",
     "@_name": "Warhammer 40,000 10th Edition",
-    "@_revision": "36",
+    "@_revision": "38",
     "@_battleScribeVersion": "2.03",
     "@_type": "gameSystem"
   }

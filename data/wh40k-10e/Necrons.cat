@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="b654-a18a-ea1-3bf2" name="Xenos - Necrons" gameSystemId="sys-352e-adc2-7639-d6a9" gameSystemRevision="1" revision="56" battleScribeVersion="2.03" type="catalogue">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="b654-a18a-ea1-3bf2" name="Xenos - Necrons" gameSystemId="sys-352e-adc2-7639-d6a9" gameSystemRevision="1" revision="60" battleScribeVersion="2.03" type="catalogue">
   <sharedSelectionEntryGroups>
     <selectionEntryGroup name="Enhancements" hidden="false" id="9574-b5d1-8b0a-d95d">
       <constraints>
@@ -7,7 +7,7 @@
         <constraint type="max" value="3" field="selections" scope="force" shared="true" id="946-bfa0-af93-2909" includeChildSelections="true"/>
       </constraints>
       <selectionEntries>
-        <selectionEntry type="upgrade" import="true" name="Veil of Darkness" hidden="false" id="a562-e37c-3a4d-d152">
+        <selectionEntry type="upgrade" import="true" name="Veil of Darkness" hidden="false" id="a562-e37c-3a4d-d152" sortIndex="8">
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="722-5683-4ff-da16"/>
             <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="d044-31b5-c11a-2504" includeChildSelections="true"/>
@@ -29,8 +29,9 @@
           <costs>
             <cost name="pts" typeId="51b2-306e-1021-d207" value="20"/>
           </costs>
+          <comment>Awakened Dynasty</comment>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Nether-realm Casket" hidden="false" id="76a0-7f0a-49e7-992a">
+        <selectionEntry type="upgrade" import="true" name="Nether-realm Casket" hidden="false" id="76a0-7f0a-49e7-992a" sortIndex="6">
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="722-5683-4ff-da16"/>
             <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="f2e6-938b-9ff0-37c7" includeChildSelections="true"/>
@@ -52,8 +53,9 @@
           <costs>
             <cost name="pts" typeId="51b2-306e-1021-d207" value="20"/>
           </costs>
+          <comment>Awakened Dynasty</comment>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Phasal Subjugator" hidden="false" id="a89b-612a-b6f-40ee">
+        <selectionEntry type="upgrade" import="true" name="Phasal Subjugator" hidden="false" id="a89b-612a-b6f-40ee" sortIndex="7">
           <profiles>
             <profile name="Phasal Subjugator (Aura)" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="32de-35c9-8e2f-72">
               <characteristics>
@@ -75,8 +77,9 @@
           <costs>
             <cost name="pts" typeId="51b2-306e-1021-d207" value="35"/>
           </costs>
+          <comment>Awakened Dynasty</comment>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Dimensional Overseer" hidden="false" id="d191-f492-ef11-6c9d">
+        <selectionEntry type="upgrade" import="true" name="Dimensional Overseer" hidden="false" id="d191-f492-ef11-6c9d" sortIndex="14">
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="722-5683-4ff-da16"/>
             <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="5c7c-8a55-a4c8-6127" includeChildSelections="true"/>
@@ -98,8 +101,9 @@
           <costs>
             <cost name="pts" typeId="51b2-306e-1021-d207" value="25"/>
           </costs>
+          <comment>Hypercrypt Legion</comment>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Eternal Madness" hidden="false" id="cb96-5b69-ad55-31ce">
+        <selectionEntry type="upgrade" import="true" name="Eternal Madness" hidden="false" id="cb96-5b69-ad55-31ce" sortIndex="2">
           <modifiers>
             <modifier type="set" value="true" field="hidden">
               <conditions>
@@ -121,8 +125,9 @@
           <costs>
             <cost name="pts" typeId="51b2-306e-1021-d207" value="25"/>
           </costs>
+          <comment>Annihilation Legion</comment>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Ingrained Superiority" hidden="false" id="8923-bbd7-b53b-71c6">
+        <selectionEntry type="upgrade" import="true" name="Ingrained Superiority" hidden="false" id="8923-bbd7-b53b-71c6" sortIndex="3">
           <modifiers>
             <modifier type="set" value="true" field="hidden">
               <conditions>
@@ -144,8 +149,9 @@
           <costs>
             <cost name="pts" typeId="51b2-306e-1021-d207" value="10"/>
           </costs>
+          <comment>Annihilation Legion</comment>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Soulless Reaper" hidden="false" id="90ad-322-9cab-ceed">
+        <selectionEntry type="upgrade" import="true" name="Soulless Reaper" hidden="false" id="90ad-322-9cab-ceed" sortIndex="4">
           <modifiers>
             <modifier type="set" value="true" field="hidden">
               <conditionGroups>
@@ -172,8 +178,9 @@
           <costs>
             <cost name="pts" typeId="51b2-306e-1021-d207" value="20"/>
           </costs>
+          <comment>Annihilation Legion</comment>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Eldritch Nightmare" hidden="false" id="6f24-8659-cef-d28d">
+        <selectionEntry type="upgrade" import="true" name="Eldritch Nightmare" hidden="false" id="6f24-8659-cef-d28d" sortIndex="1">
           <modifiers>
             <modifier type="set" value="true" field="hidden">
               <conditionGroups>
@@ -200,8 +207,9 @@
           <costs>
             <cost name="pts" typeId="51b2-306e-1021-d207" value="15"/>
           </costs>
+          <comment>Annihilation Legion</comment>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Dimensional Sanctum" hidden="false" id="8894-c0fc-28c4-1bb4">
+        <selectionEntry type="upgrade" import="true" name="Dimensional Sanctum" hidden="false" id="8894-c0fc-28c4-1bb4" sortIndex="9">
           <modifiers>
             <modifier type="set" value="true" field="hidden">
               <conditionGroups>
@@ -231,8 +239,9 @@
           <costs>
             <cost name="pts" typeId="51b2-306e-1021-d207" value="20"/>
           </costs>
+          <comment>Canoptek Court</comment>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Hyperphasic Fulcrum" hidden="false" id="23b2-9675-34d6-b505">
+        <selectionEntry type="upgrade" import="true" name="Hyperphasic Fulcrum" hidden="false" id="23b2-9675-34d6-b505" sortIndex="10">
           <modifiers>
             <modifier type="set" value="true" field="hidden">
               <conditionGroups>
@@ -259,8 +268,9 @@
           <costs>
             <cost name="pts" typeId="51b2-306e-1021-d207" value="15"/>
           </costs>
+          <comment>Canoptek Court</comment>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Autodivinator" hidden="false" id="a894-7fcb-6cf-6809">
+        <selectionEntry type="upgrade" import="true" name="Autodivinator" hidden="false" id="a894-7fcb-6cf-6809" sortIndex="12">
           <modifiers>
             <modifier type="set" value="true" field="hidden">
               <conditionGroups>
@@ -287,8 +297,9 @@
           <costs>
             <cost name="pts" typeId="51b2-306e-1021-d207" value="15"/>
           </costs>
+          <comment>Canoptek Court</comment>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Metalodermal Tesla Weave" hidden="false" id="481d-a059-d2fd-600d">
+        <selectionEntry type="upgrade" import="true" name="Metalodermal Tesla Weave" hidden="false" id="481d-a059-d2fd-600d" sortIndex="11">
           <modifiers>
             <modifier type="set" value="true" field="hidden">
               <conditionGroups>
@@ -315,8 +326,9 @@
           <costs>
             <cost name="pts" typeId="51b2-306e-1021-d207" value="10"/>
           </costs>
+          <comment>Canoptek Court</comment>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Honourable Combatant" hidden="false" id="adf7-e842-41e1-6994">
+        <selectionEntry type="upgrade" import="true" name="Honourable Combatant" hidden="false" id="adf7-e842-41e1-6994" sortIndex="18">
           <modifiers>
             <modifier type="set" value="true" field="hidden">
               <conditionGroups>
@@ -343,8 +355,9 @@
           <costs>
             <cost name="pts" typeId="51b2-306e-1021-d207" value="10"/>
           </costs>
+          <comment>Obeisance Phalanx</comment>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Unflinching Will" hidden="false" id="2339-9780-e93d-943b">
+        <selectionEntry type="upgrade" import="true" name="Unflinching Will" hidden="false" id="2339-9780-e93d-943b" sortIndex="19">
           <modifiers>
             <modifier type="set" value="true" field="hidden">
               <conditionGroups>
@@ -356,6 +369,7 @@
                 </conditionGroup>
               </conditionGroups>
             </modifier>
+            <modifier type="append" value="Precision, Anti-INFANTRY 5+" field="893f-9000-ccf7-648e" affects="self.entries.recursive.profiles.Melee Weapons" scope="parent" join=", "/>
           </modifiers>
           <profiles>
             <profile name="Unflinching Will" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="2cac-9b4b-a8d4-7b76">
@@ -371,8 +385,9 @@
           <costs>
             <cost name="pts" typeId="51b2-306e-1021-d207" value="20"/>
           </costs>
+          <comment>Obeisance Phalanx</comment>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Warrior Noble" hidden="false" id="4abc-8ef7-8689-80d7">
+        <selectionEntry type="upgrade" import="true" name="Warrior Noble" hidden="false" id="4abc-8ef7-8689-80d7" sortIndex="20">
           <modifiers>
             <modifier type="set" value="true" field="hidden">
               <conditionGroups>
@@ -399,8 +414,9 @@
           <costs>
             <cost name="pts" typeId="51b2-306e-1021-d207" value="15"/>
           </costs>
+          <comment>Obeisance Phalanx</comment>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Eternal Conqueror" hidden="false" id="f607-55be-a68b-a452">
+        <selectionEntry type="upgrade" import="true" name="Eternal Conqueror" hidden="false" id="f607-55be-a68b-a452" sortIndex="17">
           <modifiers>
             <modifier type="set" value="true" field="hidden">
               <conditionGroups>
@@ -427,8 +443,9 @@
           <costs>
             <cost name="pts" typeId="51b2-306e-1021-d207" value="25"/>
           </costs>
+          <comment>Obeisance Phalanx</comment>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Enaegic Dermal Bond" hidden="false" id="3cc5-4b3-9380-981a">
+        <selectionEntry type="upgrade" import="true" name="Enaegic Dermal Bond" hidden="false" id="3cc5-4b3-9380-981a" sortIndex="5">
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="c86c-1d64-a1b5-70c"/>
             <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="2ea8-2905-2b82-301d" includeChildSelections="true"/>
@@ -448,10 +465,15 @@
             </modifier>
           </modifiers>
           <costs>
-            <cost name="pts" typeId="51b2-306e-1021-d207" value="15"/>
+            <cost name="pts" typeId="51b2-306e-1021-d207" value="30"/>
+            <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
+            <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
+            <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
+            <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
           </costs>
+          <comment>Awakened Dynasty</comment>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Arisen Tyrant" hidden="false" id="11d5-61c1-bc4a-d9ca">
+        <selectionEntry type="upgrade" import="true" name="Arisen Tyrant" hidden="false" id="11d5-61c1-bc4a-d9ca" sortIndex="13">
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8389-d4af-e732-b495"/>
             <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="2a79-e63e-f055-39c2" includeChildSelections="true"/>
@@ -473,8 +495,9 @@
           <costs>
             <cost name="pts" typeId="51b2-306e-1021-d207" value="25"/>
           </costs>
+          <comment>Hypercrypt Legion</comment>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Hyperspatial Transfer Node" hidden="false" id="e294-31a1-a398-8695">
+        <selectionEntry type="upgrade" import="true" name="Hyperspatial Transfer Node" hidden="false" id="e294-31a1-a398-8695" sortIndex="15">
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="54cf-1244-744c-1982"/>
             <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="89b1-470a-76ce-aa8a" includeChildSelections="true"/>
@@ -496,8 +519,9 @@
           <costs>
             <cost name="pts" typeId="51b2-306e-1021-d207" value="15"/>
           </costs>
+          <comment>Hypercrypt Legion</comment>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Osteoclave Fulcrum" hidden="false" id="ebd8-d7a3-52cf-4a4b">
+        <selectionEntry type="upgrade" import="true" name="Osteoclave Fulcrum" hidden="false" id="ebd8-d7a3-52cf-4a4b" sortIndex="16">
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="acc0-7b77-e3aa-a17a"/>
             <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="954b-8c69-9f9f-3040" includeChildSelections="true"/>
@@ -519,8 +543,9 @@
           <costs>
             <cost name="pts" typeId="51b2-306e-1021-d207" value="20"/>
           </costs>
+          <comment>Hypercrypt Legion</comment>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Dread Majesty" hidden="false" id="564a-6fab-2aa8-260e">
+        <selectionEntry type="upgrade" import="true" name="Dread Majesty" hidden="false" id="564a-6fab-2aa8-260e" sortIndex="23">
           <costs>
             <cost name="pts" typeId="51b2-306e-1021-d207" value="30"/>
             <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
@@ -558,8 +583,9 @@
             <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="1d8e-3f9e-353a-7e5c" includeChildSelections="true"/>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="925e-9eea-76f4-a8a3"/>
           </constraints>
+          <comment>Starshatter Arsenal</comment>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Minaturised Nebuloscope" hidden="false" id="d8be-0f2f-0902-ae47">
+        <selectionEntry type="upgrade" import="true" name="Minaturised Nebuloscope" hidden="false" id="d8be-0f2f-0902-ae47" sortIndex="24">
           <costs>
             <cost name="pts" typeId="51b2-306e-1021-d207" value="15"/>
             <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
@@ -573,6 +599,7 @@
                 <condition type="lessThan" value="1" field="selections" scope="force" childId="e0fd-c955-4822-6dba" shared="true" id="5a5d-a5e3-0d3e-1105" includeChildSelections="true"/>
               </conditions>
             </modifier>
+            <modifier type="append" value="Ignores Cover" field="7f1b-8591-2fcf-d01c" affects="self.entries.recursive.profiles.Ranged Weapons" scope="parent" join=", "/>
           </modifiers>
           <profiles>
             <profile name="Minaturised Nebuloscope" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="bd49-399b-926c-936d">
@@ -585,8 +612,9 @@
             <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="15a5-4021-d62e-4d0e" includeChildSelections="true"/>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="5cd5-3fa0-5b79-f778"/>
           </constraints>
+          <comment>Starshatter Arsenal</comment>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Demanding Leader" hidden="false" id="40fb-0220-5d6a-4b29">
+        <selectionEntry type="upgrade" import="true" name="Demanding Leader" hidden="false" id="40fb-0220-5d6a-4b29" sortIndex="22">
           <costs>
             <cost name="pts" typeId="51b2-306e-1021-d207" value="10"/>
             <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
@@ -612,8 +640,9 @@
             <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="3f80-e273-ec3f-ad87" includeChildSelections="true"/>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="3ac7-2b5b-c5e1-6cea"/>
           </constraints>
+          <comment>Starshatter Arsenal</comment>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Chrono-impedance Fields" hidden="false" id="0def-3e8b-cd0d-f2aa">
+        <selectionEntry type="upgrade" import="true" name="Chrono-impedance Fields" hidden="false" id="0def-3e8b-cd0d-f2aa" sortIndex="21">
           <costs>
             <cost name="pts" typeId="51b2-306e-1021-d207" value="25"/>
             <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
@@ -639,6 +668,7 @@
             <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="1850-7a23-dfb7-b2b7" includeChildSelections="true"/>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e2f3-7e3d-c9ac-1fbe"/>
           </constraints>
+          <comment>Starshatter Arsenal</comment>
         </selectionEntry>
       </selectionEntries>
     </selectionEntryGroup>
@@ -1063,7 +1093,11 @@ You can attach this model to one of the above units even if NEMESOR ZAHNDREKH h
     </selectionEntry>
     <selectionEntry type="model" import="true" name="Illuminor Szeras" hidden="false" id="d977-6a26-bc03-4722">
       <costs>
-        <cost name="pts" typeId="51b2-306e-1021-d207" value="175"/>
+        <cost name="pts" typeId="51b2-306e-1021-d207" value="165"/>
+        <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
+        <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
+        <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
+        <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
       </costs>
       <categoryLinks>
         <categoryLink targetId="ee0-cf31-4fb5-6b26" id="9ea0-5396-91e-8751" primary="false" name="Faction: Necrons"/>
@@ -1459,7 +1493,11 @@ in its place, with all of its wounds remaining (if the selected model was leadi
     </selectionEntry>
     <selectionEntry type="model" import="true" name="Skorpekh Lord" hidden="false" id="c401-d95f-c5ce-7738">
       <costs>
-        <cost name="pts" typeId="51b2-306e-1021-d207" value="80"/>
+        <cost name="pts" typeId="51b2-306e-1021-d207" value="90"/>
+        <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
+        <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
+        <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
+        <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
       </costs>
       <categoryLinks>
         <categoryLink targetId="ee0-cf31-4fb5-6b26" id="c38a-24bb-46a5-cb13" primary="false" name="Faction: Necrons"/>
@@ -2126,6 +2164,13 @@ in its place, with all of its wounds remaining (if the selected model was leadi
                     <characteristic name="D" typeId="3254-9fe6-d824-513e">1</characteristic>
                     <characteristic name="Keywords" typeId="893f-9000-ccf7-648e">-</characteristic>
                   </characteristics>
+                  <modifiers>
+                    <modifier type="set" field="893f-9000-ccf7-648e">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="2339-9780-e93d-943b" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
                 </profile>
               </profiles>
               <constraints>
@@ -2180,7 +2225,11 @@ in its place, with all of its wounds remaining (if the selected model was leadi
     </selectionEntry>
     <selectionEntry type="model" import="true" name="Technomancer" hidden="false" id="852a-ba39-e93f-6b62">
       <costs>
-        <cost name="pts" typeId="51b2-306e-1021-d207" value="85"/>
+        <cost name="pts" typeId="51b2-306e-1021-d207" value="80"/>
+        <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
+        <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
+        <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
+        <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
       </costs>
       <categoryLinks>
         <categoryLink targetId="ee0-cf31-4fb5-6b26" id="8229-37bb-bbd3-a9eb" primary="false" name="Faction: Necrons"/>
@@ -2520,7 +2569,7 @@ You can attach this model to one of the above units even if one ROYAL WARDEN or
         </selectionEntry>
       </selectionEntries>
       <costs>
-        <cost name="pts" typeId="51b2-306e-1021-d207" value="60"/>
+        <cost name="pts" typeId="51b2-306e-1021-d207" value="55"/>
         <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
         <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
         <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
@@ -3081,14 +3130,14 @@ You can attach this model to one of the above units even if one ROYAL WARDEN or
         <infoLink name="Deep Strike" hidden="false" type="rule" id="3c64-302e-2acf-b51f" targetId="7cb5-dd6b-dd87-ad3b"/>
       </infoLinks>
       <modifiers>
-        <modifier type="set" value="130" field="51b2-306e-1021-d207">
+        <modifier type="set" value="120" field="51b2-306e-1021-d207">
           <conditions>
             <condition type="atLeast" value="6" field="selections" scope="b7d7-14c9-63c1-ded5" childId="model" shared="true" id="db70-3966-b824-3330" includeChildSelections="true"/>
           </conditions>
         </modifier>
       </modifiers>
       <costs>
-        <cost name="pts" typeId="51b2-306e-1021-d207" value="65"/>
+        <cost name="pts" typeId="51b2-306e-1021-d207" value="60"/>
         <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
         <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
         <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
@@ -3934,7 +3983,7 @@ You can attach this model to one of the above units even if one ROYAL WARDEN or
         </selectionEntry>
       </selectionEntries>
     </selectionEntry>
-    <selectionEntry type="model" import="true" name="Transcendant C&apos;tan" hidden="false" id="276e-bc21-e1d0-3c41">
+    <selectionEntry type="model" import="true" name="Transcendent C&apos;tan" hidden="false" id="276e-bc21-e1d0-3c41">
       <costs>
         <cost name="pts" typeId="51b2-306e-1021-d207" value="295"/>
         <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
@@ -3950,7 +3999,7 @@ You can attach this model to one of the above units even if one ROYAL WARDEN or
         <categoryLink targetId="6f8b-d28b-62f8-b51f" id="98c4-c096-f455-707b" primary="false" name="Transcendant C&apos;tan"/>
       </categoryLinks>
       <profiles>
-        <profile name="Transcendant C&apos;tan" typeId="c547-1836-d8a-ff4f" typeName="Unit" hidden="false" id="4702-9574-e392-eea1">
+        <profile name="Transcendent C&apos;tan" typeId="c547-1836-d8a-ff4f" typeName="Unit" hidden="false" id="4702-9574-e392-eea1">
           <characteristics>
             <characteristic name="M" typeId="e703-ecb6-5ce7-aec1">6&quot;</characteristic>
             <characteristic name="T" typeId="d29d-cf75-fc2d-34a4">11</characteristic>
@@ -3972,7 +4021,7 @@ You can attach this model to one of the above units even if one ROYAL WARDEN or
         </profile>
         <profile name="C&apos;tan Shard" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="e3b7-d666-dd22-7d60">
           <characteristics>
-            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">This model cannot be given Enhancements</characteristic>
+            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">This model cannot be given Enhancements.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -4662,7 +4711,7 @@ You can attach this model to one of the above units even if one ROYAL WARDEN or
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Canoptek Wraiths" hidden="false" id="a022-9bf6-f08b-c416">
       <costs>
-        <cost name="pts" typeId="51b2-306e-1021-d207" value="115"/>
+        <cost name="pts" typeId="51b2-306e-1021-d207" value="110"/>
         <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
         <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
         <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
@@ -4764,7 +4813,7 @@ You can attach this model to one of the above units even if one ROYAL WARDEN or
         </selectionEntryGroup>
       </selectionEntryGroups>
       <modifiers>
-        <modifier type="set" value="230" field="51b2-306e-1021-d207">
+        <modifier type="set" value="220" field="51b2-306e-1021-d207">
           <conditions>
             <condition type="atLeast" value="4" field="selections" scope="a022-9bf6-f08b-c416" childId="model" shared="true" id="f080-bdee-2b3b-843d" includeChildSelections="true"/>
           </conditions>
@@ -5094,7 +5143,7 @@ You can attach this model to one of the above units even if one ROYAL WARDEN or
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Lokhust Destroyers" hidden="false" id="6f72-b8f7-fd8d-5c2c">
       <costs>
-        <cost name="pts" typeId="51b2-306e-1021-d207" value="35"/>
+        <cost name="pts" typeId="51b2-306e-1021-d207" value="40"/>
         <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
         <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
         <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
@@ -5324,7 +5373,11 @@ You can attach this model to one of the above units even if one ROYAL WARDEN or
     </selectionEntry>
     <selectionEntry type="model" import="true" name="Canoptek Doomstalker" hidden="false" id="ff8f-2e43-8af1-3470">
       <costs>
-        <cost name="pts" typeId="51b2-306e-1021-d207" value="145"/>
+        <cost name="pts" typeId="51b2-306e-1021-d207" value="140"/>
+        <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
+        <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
+        <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
+        <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
       </costs>
       <categoryLinks>
         <categoryLink targetId="ee0-cf31-4fb5-6b26" id="bc9a-641a-fd9f-f647" primary="false" name="Faction: Necrons"/>
@@ -6469,7 +6522,7 @@ You can attach this model to one of the above units even if one ROYAL WARDEN or
         </selectionEntry>
       </selectionEntries>
       <entryLinks>
-        <entryLink import="true" name="Gloom prism" hidden="false" type="selectionEntry" id="be86-b1af-873e-d37a" targetId="bf18-cd0a-a37f-b62b">
+        <entryLink import="true" name="Gloom prism" hidden="false" type="selectionEntry" id="be86-b1af-873e-d37a" targetId="782d-ecfc-7aba-60d1">
           <constraints>
             <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="3369-cc7d-f5a5-7189"/>
           </constraints>
@@ -6558,7 +6611,7 @@ You can attach this model to one of the above units even if one ROYAL WARDEN or
         </selectionEntry>
       </selectionEntries>
       <entryLinks>
-        <entryLink import="true" name="Gloom prism" hidden="false" type="selectionEntry" id="76ec-d562-eb29-72ec" targetId="bf18-cd0a-a37f-b62b">
+        <entryLink import="true" name="Gloom prism" hidden="false" type="selectionEntry" id="76ec-d562-eb29-72ec" targetId="782d-ecfc-7aba-60d1">
           <constraints>
             <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="3369-cc7d-f5a5-7189"/>
           </constraints>
@@ -7425,6 +7478,19 @@ You can attach this model to one of the above units even if one ROYAL WARDEN or
       </constraints>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Tomb Citadel Walls" hidden="false" id="32fd-f21-a91b-768a"/>
+    <selectionEntry type="upgrade" import="true" name="Gloom prism" hidden="false" id="782d-ecfc-7aba-60d1">
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2d8f-d084-004c-0a55"/>
+      </constraints>
+      <profiles>
+        <profile name="Gloom Prism (Aura)" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="6e01-88f9-87f0-d595">
+          <characteristics>
+            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">While a friendly NECRONS unit is within 6&quot; of the bearer, models in that unit have the Feel No Pain 4+ ability against Psychic Attacks.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <comment>Legends</comment>
+    </selectionEntry>
   </sharedSelectionEntries>
   <sharedRules>
     <rule name="Reanimation Protocols" hidden="false" id="a511-d9ca-17d0-42c5">
@@ -7607,7 +7673,7 @@ Each time a model in a CRYPTEK or CANOPTEK unit from your army makes an attack, 
         <constraint type="max" value="1" field="selections" scope="force" shared="true" id="ecdd-2754-441c-8e52" includeChildSelections="true"/>
       </constraints>
     </categoryEntry>
-    <categoryEntry name="Transcendant C&apos;tan" hidden="false" id="6f8b-d28b-62f8-b51f">
+    <categoryEntry name="Transcendent C&apos;tan" hidden="false" id="6f8b-d28b-62f8-b51f">
       <constraints>
         <constraint type="max" value="3" field="selections" scope="force" shared="true" id="ecdd-2754-441c-8e52" includeChildSelections="true"/>
       </constraints>

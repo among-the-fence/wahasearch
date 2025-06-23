@@ -3415,11 +3415,33 @@
               ]
             },
             "costs": {
-              "cost": {
-                "@_name": "pts",
-                "@_typeId": "51b2-306e-1021-d207",
-                "@_value": "75"
-              }
+              "cost": [
+                {
+                  "@_name": "pts",
+                  "@_typeId": "51b2-306e-1021-d207",
+                  "@_value": "85"
+                },
+                {
+                  "@_name": "Crusade Points",
+                  "@_typeId": "b03b-c239-15a5-da55",
+                  "@_value": "0"
+                },
+                {
+                  "@_name": "Crusade: Battle Honours",
+                  "@_typeId": "75bb-ded1-c86d-bdf0",
+                  "@_value": "0"
+                },
+                {
+                  "@_name": "Crusade: Experience",
+                  "@_typeId": "a623-fe74-1d33-cddf",
+                  "@_value": "0"
+                },
+                {
+                  "@_name": "Crusade: Weapon Modifications",
+                  "@_typeId": "716d-91b7-d55a-1022",
+                  "@_value": "0"
+                }
+              ]
             },
             "modifiers": {
               "modifier": {
@@ -7378,7 +7400,7 @@
                                 "@_id": "a9af-280-501f-a5fe",
                                 "@_name": "Shuriken pistol Power sword",
                                 "@_hidden": "false",
-                                "@_collective": "true",
+                                "@_collective": "false",
                                 "@_import": "true",
                                 "@_type": "upgrade"
                               },
@@ -7472,7 +7494,7 @@
                                 "@_id": "b89e-3e79-8a04-731",
                                 "@_name": "Shuriken rifle",
                                 "@_hidden": "false",
-                                "@_collective": "true",
+                                "@_collective": "false",
                                 "@_import": "true",
                                 "@_type": "upgrade"
                               }
@@ -11041,60 +11063,170 @@
                           "@_type": "max"
                         }
                       },
-                      "profiles": {
-                        "profile": {
-                          "characteristics": {
-                            "characteristic": [
-                              {
-                                "#text": "36\"",
-                                "@_name": "Range",
-                                "@_typeId": "9896-9419-16a1-92fc"
-                              },
-                              {
-                                "#text": 2,
-                                "@_name": "A",
-                                "@_typeId": "3bb-c35f-f54-fb08"
-                              },
-                              {
-                                "#text": "3+",
-                                "@_name": "BS",
-                                "@_typeId": "94d-8a98-cf90-183e"
-                              },
-                              {
-                                "#text": 8,
-                                "@_name": "S",
-                                "@_typeId": "2229-f494-25db-c5d3"
-                              },
-                              {
-                                "#text": -3,
-                                "@_name": "AP",
-                                "@_typeId": "9ead-8a10-520-de15"
-                              },
-                              {
-                                "#text": 2,
-                                "@_name": "D",
-                                "@_typeId": "a354-c1c8-a745-f9e3"
-                              },
-                              {
-                                "#text": "-",
-                                "@_name": "Keywords",
-                                "@_typeId": "7f1b-8591-2fcf-d01c"
-                              }
-                            ]
-                          },
-                          "@_id": "d917-b60b-fa1c-f0c7",
-                          "@_name": "Starcannon",
-                          "@_hidden": "false",
-                          "@_typeId": "f77d-b953-8fa4-b762",
-                          "@_typeName": "Ranged Weapons"
-                        }
-                      },
                       "costs": {
                         "cost": {
                           "@_name": "pts",
                           "@_typeId": "51b2-306e-1021-d207",
                           "@_value": "0"
                         }
+                      },
+                      "selectionEntries": {
+                        "selectionEntry": [
+                          {
+                            "profiles": {
+                              "profile": {
+                                "characteristics": {
+                                  "characteristic": [
+                                    {
+                                      "#text": "36\"",
+                                      "@_name": "Range",
+                                      "@_typeId": "9896-9419-16a1-92fc"
+                                    },
+                                    {
+                                      "#text": 2,
+                                      "@_name": "A",
+                                      "@_typeId": "3bb-c35f-f54-fb08"
+                                    },
+                                    {
+                                      "#text": "3+",
+                                      "@_name": "BS",
+                                      "@_typeId": "94d-8a98-cf90-183e"
+                                    },
+                                    {
+                                      "#text": 8,
+                                      "@_name": "S",
+                                      "@_typeId": "2229-f494-25db-c5d3"
+                                    },
+                                    {
+                                      "#text": -3,
+                                      "@_name": "AP",
+                                      "@_typeId": "9ead-8a10-520-de15"
+                                    },
+                                    {
+                                      "#text": 2,
+                                      "@_name": "D",
+                                      "@_typeId": "a354-c1c8-a745-f9e3"
+                                    },
+                                    {
+                                      "#text": "-",
+                                      "@_name": "Keywords",
+                                      "@_typeId": "7f1b-8591-2fcf-d01c"
+                                    }
+                                  ]
+                                },
+                                "@_name": "Starcannon",
+                                "@_typeId": "f77d-b953-8fa4-b762",
+                                "@_typeName": "Ranged Weapons",
+                                "@_hidden": "false",
+                                "@_id": "d917-b60b-fa1c-f0c7"
+                              }
+                            },
+                            "constraints": {
+                              "constraint": [
+                                {
+                                  "@_type": "min",
+                                  "@_value": "1",
+                                  "@_field": "selections",
+                                  "@_scope": "parent",
+                                  "@_shared": "true",
+                                  "@_id": "9240-b771-7948-9e3f",
+                                  "@_includeChildSelections": "false"
+                                },
+                                {
+                                  "@_type": "max",
+                                  "@_value": "1",
+                                  "@_field": "selections",
+                                  "@_scope": "parent",
+                                  "@_shared": "true",
+                                  "@_id": "1348-2041-cc0a-7d37",
+                                  "@_includeChildSelections": "false"
+                                }
+                              ]
+                            },
+                            "@_type": "upgrade",
+                            "@_import": "true",
+                            "@_name": "Starcannon",
+                            "@_hidden": "false",
+                            "@_id": "2b64-7c3a-709d-82d5"
+                          },
+                          {
+                            "profiles": {
+                              "profile": {
+                                "characteristics": {
+                                  "characteristic": [
+                                    {
+                                      "#text": "36\"",
+                                      "@_name": "Range",
+                                      "@_typeId": "9896-9419-16a1-92fc"
+                                    },
+                                    {
+                                      "#text": 2,
+                                      "@_name": "A",
+                                      "@_typeId": "3bb-c35f-f54-fb08"
+                                    },
+                                    {
+                                      "#text": "3+",
+                                      "@_name": "BS",
+                                      "@_typeId": "94d-8a98-cf90-183e"
+                                    },
+                                    {
+                                      "#text": 8,
+                                      "@_name": "S",
+                                      "@_typeId": "2229-f494-25db-c5d3"
+                                    },
+                                    {
+                                      "#text": -3,
+                                      "@_name": "AP",
+                                      "@_typeId": "9ead-8a10-520-de15"
+                                    },
+                                    {
+                                      "#text": 2,
+                                      "@_name": "D",
+                                      "@_typeId": "a354-c1c8-a745-f9e3"
+                                    },
+                                    {
+                                      "#text": "-",
+                                      "@_name": "Keywords",
+                                      "@_typeId": "7f1b-8591-2fcf-d01c"
+                                    }
+                                  ]
+                                },
+                                "@_name": "Starcannon",
+                                "@_typeId": "f77d-b953-8fa4-b762",
+                                "@_typeName": "Ranged Weapons",
+                                "@_hidden": "false",
+                                "@_id": "119e-32cd-90a7-b4b0"
+                              }
+                            },
+                            "constraints": {
+                              "constraint": [
+                                {
+                                  "@_type": "min",
+                                  "@_value": "1",
+                                  "@_field": "selections",
+                                  "@_scope": "parent",
+                                  "@_shared": "true",
+                                  "@_id": "a048-ba4d-7253-1c3b",
+                                  "@_includeChildSelections": "false"
+                                },
+                                {
+                                  "@_type": "max",
+                                  "@_value": "1",
+                                  "@_field": "selections",
+                                  "@_scope": "parent",
+                                  "@_shared": "true",
+                                  "@_id": "527c-7a32-ecde-6dc9",
+                                  "@_includeChildSelections": "false"
+                                }
+                              ]
+                            },
+                            "@_type": "upgrade",
+                            "@_import": "true",
+                            "@_name": "Starcannon",
+                            "@_hidden": "false",
+                            "@_id": "9b9c-6662-0e42-9ccd"
+                          }
+                        ]
                       },
                       "@_id": "a333-ffe0-66ef-d64f",
                       "@_name": "2 Starcannons",
@@ -11117,60 +11249,170 @@
                           "@_type": "max"
                         }
                       },
-                      "profiles": {
-                        "profile": {
-                          "characteristics": {
-                            "characteristic": [
-                              {
-                                "#text": "36\"",
-                                "@_name": "Range",
-                                "@_typeId": "9896-9419-16a1-92fc"
-                              },
-                              {
-                                "#text": 1,
-                                "@_name": "A",
-                                "@_typeId": "3bb-c35f-f54-fb08"
-                              },
-                              {
-                                "#text": "3+",
-                                "@_name": "BS",
-                                "@_typeId": "94d-8a98-cf90-183e"
-                              },
-                              {
-                                "#text": 12,
-                                "@_name": "S",
-                                "@_typeId": "2229-f494-25db-c5d3"
-                              },
-                              {
-                                "#text": -3,
-                                "@_name": "AP",
-                                "@_typeId": "9ead-8a10-520-de15"
-                              },
-                              {
-                                "#text": "D6+2",
-                                "@_name": "D",
-                                "@_typeId": "a354-c1c8-a745-f9e3"
-                              },
-                              {
-                                "#text": "-",
-                                "@_name": "Keywords",
-                                "@_typeId": "7f1b-8591-2fcf-d01c"
-                              }
-                            ]
-                          },
-                          "@_id": "872e-1cf8-23a8-f6d7",
-                          "@_name": "Bright Lance",
-                          "@_hidden": "false",
-                          "@_typeId": "f77d-b953-8fa4-b762",
-                          "@_typeName": "Ranged Weapons"
-                        }
-                      },
                       "costs": {
                         "cost": {
                           "@_name": "pts",
                           "@_typeId": "51b2-306e-1021-d207",
                           "@_value": "0"
                         }
+                      },
+                      "selectionEntries": {
+                        "selectionEntry": [
+                          {
+                            "profiles": {
+                              "profile": {
+                                "characteristics": {
+                                  "characteristic": [
+                                    {
+                                      "#text": "36\"",
+                                      "@_name": "Range",
+                                      "@_typeId": "9896-9419-16a1-92fc"
+                                    },
+                                    {
+                                      "#text": 1,
+                                      "@_name": "A",
+                                      "@_typeId": "3bb-c35f-f54-fb08"
+                                    },
+                                    {
+                                      "#text": "3+",
+                                      "@_name": "BS",
+                                      "@_typeId": "94d-8a98-cf90-183e"
+                                    },
+                                    {
+                                      "#text": 12,
+                                      "@_name": "S",
+                                      "@_typeId": "2229-f494-25db-c5d3"
+                                    },
+                                    {
+                                      "#text": -3,
+                                      "@_name": "AP",
+                                      "@_typeId": "9ead-8a10-520-de15"
+                                    },
+                                    {
+                                      "#text": "D6+2",
+                                      "@_name": "D",
+                                      "@_typeId": "a354-c1c8-a745-f9e3"
+                                    },
+                                    {
+                                      "#text": "-",
+                                      "@_name": "Keywords",
+                                      "@_typeId": "7f1b-8591-2fcf-d01c"
+                                    }
+                                  ]
+                                },
+                                "@_name": "Bright Lance",
+                                "@_typeId": "f77d-b953-8fa4-b762",
+                                "@_typeName": "Ranged Weapons",
+                                "@_hidden": "false",
+                                "@_id": "872e-1cf8-23a8-f6d7"
+                              }
+                            },
+                            "constraints": {
+                              "constraint": [
+                                {
+                                  "@_type": "min",
+                                  "@_value": "1",
+                                  "@_field": "selections",
+                                  "@_scope": "parent",
+                                  "@_shared": "true",
+                                  "@_id": "82ed-5b0a-f8f7-3939",
+                                  "@_includeChildSelections": "false"
+                                },
+                                {
+                                  "@_type": "max",
+                                  "@_value": "1",
+                                  "@_field": "selections",
+                                  "@_scope": "parent",
+                                  "@_shared": "true",
+                                  "@_id": "bed5-636e-b6e0-1b26",
+                                  "@_includeChildSelections": "false"
+                                }
+                              ]
+                            },
+                            "@_type": "upgrade",
+                            "@_import": "true",
+                            "@_name": "Bright Lance",
+                            "@_hidden": "false",
+                            "@_id": "8f2e-65ee-4cc5-318f"
+                          },
+                          {
+                            "profiles": {
+                              "profile": {
+                                "characteristics": {
+                                  "characteristic": [
+                                    {
+                                      "#text": "36\"",
+                                      "@_name": "Range",
+                                      "@_typeId": "9896-9419-16a1-92fc"
+                                    },
+                                    {
+                                      "#text": 1,
+                                      "@_name": "A",
+                                      "@_typeId": "3bb-c35f-f54-fb08"
+                                    },
+                                    {
+                                      "#text": "3+",
+                                      "@_name": "BS",
+                                      "@_typeId": "94d-8a98-cf90-183e"
+                                    },
+                                    {
+                                      "#text": 12,
+                                      "@_name": "S",
+                                      "@_typeId": "2229-f494-25db-c5d3"
+                                    },
+                                    {
+                                      "#text": -3,
+                                      "@_name": "AP",
+                                      "@_typeId": "9ead-8a10-520-de15"
+                                    },
+                                    {
+                                      "#text": "D6+2",
+                                      "@_name": "D",
+                                      "@_typeId": "a354-c1c8-a745-f9e3"
+                                    },
+                                    {
+                                      "#text": "-",
+                                      "@_name": "Keywords",
+                                      "@_typeId": "7f1b-8591-2fcf-d01c"
+                                    }
+                                  ]
+                                },
+                                "@_name": "Bright Lance",
+                                "@_typeId": "f77d-b953-8fa4-b762",
+                                "@_typeName": "Ranged Weapons",
+                                "@_hidden": "false",
+                                "@_id": "81af-9db4-8111-0bd9"
+                              }
+                            },
+                            "constraints": {
+                              "constraint": [
+                                {
+                                  "@_type": "min",
+                                  "@_value": "1",
+                                  "@_field": "selections",
+                                  "@_scope": "parent",
+                                  "@_shared": "true",
+                                  "@_id": "e11d-a5e0-89bd-b43c",
+                                  "@_includeChildSelections": "false"
+                                },
+                                {
+                                  "@_type": "max",
+                                  "@_value": "1",
+                                  "@_field": "selections",
+                                  "@_scope": "parent",
+                                  "@_shared": "true",
+                                  "@_id": "7f1b-2006-c573-d22a",
+                                  "@_includeChildSelections": "false"
+                                }
+                              ]
+                            },
+                            "@_type": "upgrade",
+                            "@_import": "true",
+                            "@_name": "Bright Lance",
+                            "@_hidden": "false",
+                            "@_id": "47a7-4688-2924-7aaa"
+                          }
+                        ]
                       },
                       "@_id": "92fd-dbc8-7ba4-e705",
                       "@_name": "2 Bright Lances",
@@ -17443,7 +17685,7 @@
                 {
                   "@_name": "pts",
                   "@_typeId": "51b2-306e-1021-d207",
-                  "@_value": "110"
+                  "@_value": "120"
                 },
                 {
                   "@_name": "Crusade Points",
@@ -18407,7 +18649,7 @@
                 {
                   "@_name": "pts",
                   "@_typeId": "51b2-306e-1021-d207",
-                  "@_value": "160"
+                  "@_value": "150"
                 },
                 {
                   "@_name": "Crusade Points",
@@ -20374,7 +20616,7 @@
                   },
                   "@_type": "set",
                   "@_field": "51b2-306e-1021-d207",
-                  "@_value": "180"
+                  "@_value": "190"
                 },
                 {
                   "conditions": {
@@ -20466,7 +20708,7 @@
                 {
                   "@_name": "pts",
                   "@_typeId": "51b2-306e-1021-d207",
-                  "@_value": "90"
+                  "@_value": "95"
                 },
                 {
                   "@_name": "Crusade Points",
@@ -26502,7 +26744,7 @@
                   },
                   "@_type": "set",
                   "@_field": "51b2-306e-1021-d207",
-                  "@_value": "240"
+                  "@_value": "220"
                 },
                 {
                   "conditions": {
@@ -26576,7 +26818,7 @@
                 {
                   "@_name": "pts",
                   "@_typeId": "51b2-306e-1021-d207",
-                  "@_value": "120"
+                  "@_value": "110"
                 },
                 {
                   "@_name": "Crusade Points",
@@ -33981,7 +34223,7 @@
                 {
                   "@_name": "pts",
                   "@_typeId": "51b2-306e-1021-d207",
-                  "@_value": "250"
+                  "@_value": "260"
                 },
                 {
                   "@_name": "Crusade Points",
@@ -35007,64 +35249,13 @@
                           }
                         ]
                       },
-                      "profiles": {
-                        "profile": {
-                          "characteristics": {
-                            "characteristic": [
-                              {
-                                "#text": "8\"",
-                                "@_name": "M",
-                                "@_typeId": "e703-ecb6-5ce7-aec1"
-                              },
-                              {
-                                "#text": 3,
-                                "@_name": "T",
-                                "@_typeId": "d29d-cf75-fc2d-34a4"
-                              },
-                              {
-                                "#text": "6+",
-                                "@_name": "SV",
-                                "@_typeId": "450-a17e-9d5e-29da"
-                              },
-                              {
-                                "#text": 1,
-                                "@_name": "W",
-                                "@_typeId": "750a-a2ec-90d3-21fe"
-                              },
-                              {
-                                "#text": "6+",
-                                "@_name": "LD",
-                                "@_typeId": "58d2-b879-49c7-43bc"
-                              },
-                              {
-                                "#text": 1,
-                                "@_name": "OC",
-                                "@_typeId": "bef7-942a-1a23-59f8"
-                              }
-                            ]
-                          },
-                          "modifiers": {
-                            "modifier": {
-                              "conditions": {
-                                "condition": {
-                                  "@_type": "atLeast",
-                                  "@_value": "1",
-                                  "@_field": "selections",
-                                  "@_scope": "parent",
-                                  "@_childId": "be59-ec7d-2f02-b6ec",
-                                  "@_shared": "true"
-                                }
-                              },
-                              "@_type": "set",
-                              "@_value": "2",
-                              "@_field": "bef7-942a-1a23-59f8"
-                            }
-                          },
+                      "infoLinks": {
+                        "infoLink": {
                           "@_name": "Troupe",
-                          "@_typeId": "c547-1836-d8a-ff4f",
-                          "@_typeName": "Unit",
+                          "@_id": "28c8-5e3e-f915-5ebc",
                           "@_hidden": "false",
-                          "@_id": "42ad-7f55-e574-2e1b"
+                          "@_type": "profile",
+                          "@_targetId": "42ad-7f55-e574-2e1b"
                         }
                       },
                       "@_type": "model",
@@ -35231,64 +35422,13 @@
                           "@_id": "b87f-61ec-7118-964b"
                         }
                       },
-                      "profiles": {
-                        "profile": {
-                          "characteristics": {
-                            "characteristic": [
-                              {
-                                "#text": "8\"",
-                                "@_name": "M",
-                                "@_typeId": "e703-ecb6-5ce7-aec1"
-                              },
-                              {
-                                "#text": 3,
-                                "@_name": "T",
-                                "@_typeId": "d29d-cf75-fc2d-34a4"
-                              },
-                              {
-                                "#text": "6+",
-                                "@_name": "SV",
-                                "@_typeId": "450-a17e-9d5e-29da"
-                              },
-                              {
-                                "#text": 1,
-                                "@_name": "W",
-                                "@_typeId": "750a-a2ec-90d3-21fe"
-                              },
-                              {
-                                "#text": "6+",
-                                "@_name": "LD",
-                                "@_typeId": "58d2-b879-49c7-43bc"
-                              },
-                              {
-                                "#text": 1,
-                                "@_name": "OC",
-                                "@_typeId": "bef7-942a-1a23-59f8"
-                              }
-                            ]
-                          },
-                          "modifiers": {
-                            "modifier": {
-                              "conditions": {
-                                "condition": {
-                                  "@_type": "atLeast",
-                                  "@_value": "1",
-                                  "@_field": "selections",
-                                  "@_scope": "parent",
-                                  "@_childId": "be59-ec7d-2f02-b6ec",
-                                  "@_shared": "true"
-                                }
-                              },
-                              "@_type": "set",
-                              "@_value": "2",
-                              "@_field": "bef7-942a-1a23-59f8"
-                            }
-                          },
+                      "infoLinks": {
+                        "infoLink": {
                           "@_name": "Troupe",
-                          "@_typeId": "c547-1836-d8a-ff4f",
-                          "@_typeName": "Unit",
+                          "@_id": "cf8a-a452-6941-cc21",
                           "@_hidden": "false",
-                          "@_id": "5fa7-a059-ea28-0d91"
+                          "@_type": "profile",
+                          "@_targetId": "42ad-7f55-e574-2e1b"
                         }
                       },
                       "@_type": "model",
@@ -35495,64 +35635,13 @@
                           "@_id": "b87f-61ec-7118-964b"
                         }
                       },
-                      "profiles": {
-                        "profile": {
-                          "characteristics": {
-                            "characteristic": [
-                              {
-                                "#text": "8\"",
-                                "@_name": "M",
-                                "@_typeId": "e703-ecb6-5ce7-aec1"
-                              },
-                              {
-                                "#text": 3,
-                                "@_name": "T",
-                                "@_typeId": "d29d-cf75-fc2d-34a4"
-                              },
-                              {
-                                "#text": "6+",
-                                "@_name": "SV",
-                                "@_typeId": "450-a17e-9d5e-29da"
-                              },
-                              {
-                                "#text": 1,
-                                "@_name": "W",
-                                "@_typeId": "750a-a2ec-90d3-21fe"
-                              },
-                              {
-                                "#text": "6+",
-                                "@_name": "LD",
-                                "@_typeId": "58d2-b879-49c7-43bc"
-                              },
-                              {
-                                "#text": 1,
-                                "@_name": "OC",
-                                "@_typeId": "bef7-942a-1a23-59f8"
-                              }
-                            ]
-                          },
-                          "modifiers": {
-                            "modifier": {
-                              "conditions": {
-                                "condition": {
-                                  "@_type": "atLeast",
-                                  "@_value": "1",
-                                  "@_field": "selections",
-                                  "@_scope": "parent",
-                                  "@_childId": "be59-ec7d-2f02-b6ec",
-                                  "@_shared": "true"
-                                }
-                              },
-                              "@_type": "set",
-                              "@_value": "2",
-                              "@_field": "bef7-942a-1a23-59f8"
-                            }
-                          },
+                      "infoLinks": {
+                        "infoLink": {
                           "@_name": "Troupe",
-                          "@_typeId": "c547-1836-d8a-ff4f",
-                          "@_typeName": "Unit",
+                          "@_id": "1cea-0da1-b859-8176",
                           "@_hidden": "false",
-                          "@_id": "95d7-463b-e304-629d"
+                          "@_type": "profile",
+                          "@_targetId": "42ad-7f55-e574-2e1b"
                         }
                       },
                       "@_type": "model",
@@ -35737,64 +35826,13 @@
                           "@_targetId": "3849-3ae7-3ab9-a2e4"
                         }
                       },
-                      "profiles": {
-                        "profile": {
-                          "characteristics": {
-                            "characteristic": [
-                              {
-                                "#text": "8\"",
-                                "@_name": "M",
-                                "@_typeId": "e703-ecb6-5ce7-aec1"
-                              },
-                              {
-                                "#text": 3,
-                                "@_name": "T",
-                                "@_typeId": "d29d-cf75-fc2d-34a4"
-                              },
-                              {
-                                "#text": "6+",
-                                "@_name": "SV",
-                                "@_typeId": "450-a17e-9d5e-29da"
-                              },
-                              {
-                                "#text": 1,
-                                "@_name": "W",
-                                "@_typeId": "750a-a2ec-90d3-21fe"
-                              },
-                              {
-                                "#text": "6+",
-                                "@_name": "LD",
-                                "@_typeId": "58d2-b879-49c7-43bc"
-                              },
-                              {
-                                "#text": 1,
-                                "@_name": "OC",
-                                "@_typeId": "bef7-942a-1a23-59f8"
-                              }
-                            ]
-                          },
-                          "modifiers": {
-                            "modifier": {
-                              "conditions": {
-                                "condition": {
-                                  "@_type": "atLeast",
-                                  "@_value": "1",
-                                  "@_field": "selections",
-                                  "@_scope": "parent",
-                                  "@_childId": "be59-ec7d-2f02-b6ec",
-                                  "@_shared": "true"
-                                }
-                              },
-                              "@_type": "set",
-                              "@_value": "2",
-                              "@_field": "bef7-942a-1a23-59f8"
-                            }
-                          },
+                      "infoLinks": {
+                        "infoLink": {
                           "@_name": "Troupe",
-                          "@_typeId": "c547-1836-d8a-ff4f",
-                          "@_typeName": "Unit",
+                          "@_id": "1504-24e1-c30f-202d",
                           "@_hidden": "false",
-                          "@_id": "322c-9a88-1cc7-adcc"
+                          "@_type": "profile",
+                          "@_targetId": "42ad-7f55-e574-2e1b"
                         }
                       },
                       "@_type": "model",
@@ -35979,64 +36017,13 @@
                           "@_targetId": "a290-45ae-dc73-9c30"
                         }
                       },
-                      "profiles": {
-                        "profile": {
-                          "characteristics": {
-                            "characteristic": [
-                              {
-                                "#text": "8\"",
-                                "@_name": "M",
-                                "@_typeId": "e703-ecb6-5ce7-aec1"
-                              },
-                              {
-                                "#text": 3,
-                                "@_name": "T",
-                                "@_typeId": "d29d-cf75-fc2d-34a4"
-                              },
-                              {
-                                "#text": "6+",
-                                "@_name": "SV",
-                                "@_typeId": "450-a17e-9d5e-29da"
-                              },
-                              {
-                                "#text": 1,
-                                "@_name": "W",
-                                "@_typeId": "750a-a2ec-90d3-21fe"
-                              },
-                              {
-                                "#text": "6+",
-                                "@_name": "LD",
-                                "@_typeId": "58d2-b879-49c7-43bc"
-                              },
-                              {
-                                "#text": 1,
-                                "@_name": "OC",
-                                "@_typeId": "bef7-942a-1a23-59f8"
-                              }
-                            ]
-                          },
-                          "modifiers": {
-                            "modifier": {
-                              "conditions": {
-                                "condition": {
-                                  "@_type": "atLeast",
-                                  "@_value": "1",
-                                  "@_field": "selections",
-                                  "@_scope": "parent",
-                                  "@_childId": "be59-ec7d-2f02-b6ec",
-                                  "@_shared": "true"
-                                }
-                              },
-                              "@_type": "set",
-                              "@_value": "2",
-                              "@_field": "bef7-942a-1a23-59f8"
-                            }
-                          },
+                      "infoLinks": {
+                        "infoLink": {
                           "@_name": "Troupe",
-                          "@_typeId": "c547-1836-d8a-ff4f",
-                          "@_typeName": "Unit",
+                          "@_id": "0ab0-6fc0-c5f0-2ef6",
                           "@_hidden": "false",
-                          "@_id": "6191-b223-0850-d159"
+                          "@_type": "profile",
+                          "@_targetId": "42ad-7f55-e574-2e1b"
                         }
                       },
                       "@_type": "model",
@@ -38662,7 +38649,7 @@
                   },
                   "@_type": "set",
                   "@_field": "51b2-306e-1021-d207",
-                  "@_value": "110"
+                  "@_value": "130"
                 },
                 {
                   "conditions": {
@@ -42689,7 +42676,7 @@
                                   "@_typeId": "a354-c1c8-a745-f9e3"
                                 },
                                 {
-                                  "#text": "-",
+                                  "#text": "Sustained Hits 1",
                                   "@_name": "Keywords",
                                   "@_typeId": "7f1b-8591-2fcf-d01c"
                                 }
@@ -44932,7 +44919,7 @@
                 {
                   "characteristics": {
                     "characteristic": {
-                      "#text": "At the start of the Fight phase, select one enemy unit within Engagement Range of this model. Until the end of the phase, each time a friendly Aeldari model makes an attack that targets that unit, you can re-roll the Wound roll.",
+                      "#text": "At the start of the Fight phase, select one enemy unit within Engagement Range of this model. Until the end of the phase, each time a friendly Aeldari model makes an attack that targets that unit, you can re-roll a Wound roll of 1.",
                       "@_name": "Description",
                       "@_typeId": "9b8f-694b-e5e-b573"
                     }
@@ -53511,7 +53498,7 @@
                 },
                 "@_type": "set",
                 "@_field": "51b2-306e-1021-d207",
-                "@_value": "130"
+                "@_value": "120"
               }
             },
             "categoryLinks": {
@@ -53551,7 +53538,7 @@
                 {
                   "@_name": "pts",
                   "@_typeId": "51b2-306e-1021-d207",
-                  "@_value": "70"
+                  "@_value": "65"
                 },
                 {
                   "@_name": "Crusade Points",
@@ -54182,11 +54169,33 @@
               ]
             },
             "costs": {
-              "cost": {
-                "@_name": "pts",
-                "@_typeId": "51b2-306e-1021-d207",
-                "@_value": "80"
-              }
+              "cost": [
+                {
+                  "@_name": "pts",
+                  "@_typeId": "51b2-306e-1021-d207",
+                  "@_value": "75"
+                },
+                {
+                  "@_name": "Crusade Points",
+                  "@_typeId": "b03b-c239-15a5-da55",
+                  "@_value": "0"
+                },
+                {
+                  "@_name": "Crusade: Battle Honours",
+                  "@_typeId": "75bb-ded1-c86d-bdf0",
+                  "@_value": "0"
+                },
+                {
+                  "@_name": "Crusade: Experience",
+                  "@_typeId": "a623-fe74-1d33-cddf",
+                  "@_value": "0"
+                },
+                {
+                  "@_name": "Crusade: Weapon Modifications",
+                  "@_typeId": "716d-91b7-d55a-1022",
+                  "@_value": "0"
+                }
+              ]
             },
             "selectionEntryGroups": {
               "selectionEntryGroup": {
@@ -54623,11 +54632,33 @@
               ]
             },
             "costs": {
-              "cost": {
-                "@_name": "pts",
-                "@_typeId": "51b2-306e-1021-d207",
-                "@_value": "110"
-              }
+              "cost": [
+                {
+                  "@_name": "pts",
+                  "@_typeId": "51b2-306e-1021-d207",
+                  "@_value": "100"
+                },
+                {
+                  "@_name": "Crusade Points",
+                  "@_typeId": "b03b-c239-15a5-da55",
+                  "@_value": "0"
+                },
+                {
+                  "@_name": "Crusade: Battle Honours",
+                  "@_typeId": "75bb-ded1-c86d-bdf0",
+                  "@_value": "0"
+                },
+                {
+                  "@_name": "Crusade: Experience",
+                  "@_typeId": "a623-fe74-1d33-cddf",
+                  "@_value": "0"
+                },
+                {
+                  "@_name": "Crusade: Weapon Modifications",
+                  "@_typeId": "716d-91b7-d55a-1022",
+                  "@_value": "0"
+                }
+              ]
             },
             "infoLinks": {
               "infoLink": [
@@ -61257,11 +61288,33 @@
               ]
             },
             "costs": {
-              "cost": {
-                "@_name": "pts",
-                "@_typeId": "51b2-306e-1021-d207",
-                "@_value": "70"
-              }
+              "cost": [
+                {
+                  "@_name": "pts",
+                  "@_typeId": "51b2-306e-1021-d207",
+                  "@_value": "65"
+                },
+                {
+                  "@_name": "Crusade Points",
+                  "@_typeId": "b03b-c239-15a5-da55",
+                  "@_value": "0"
+                },
+                {
+                  "@_name": "Crusade: Battle Honours",
+                  "@_typeId": "75bb-ded1-c86d-bdf0",
+                  "@_value": "0"
+                },
+                {
+                  "@_name": "Crusade: Experience",
+                  "@_typeId": "a623-fe74-1d33-cddf",
+                  "@_value": "0"
+                },
+                {
+                  "@_name": "Crusade: Weapon Modifications",
+                  "@_typeId": "716d-91b7-d55a-1022",
+                  "@_value": "0"
+                }
+              ]
             },
             "infoLinks": {
               "infoLink": [
@@ -86461,7 +86514,7 @@
                 {
                   "@_name": "pts",
                   "@_typeId": "51b2-306e-1021-d207",
-                  "@_value": "75"
+                  "@_value": "85"
                 },
                 {
                   "@_name": "Crusade Points",
@@ -87722,7 +87775,7 @@
                     {
                       "@_name": "pts",
                       "@_typeId": "51b2-306e-1021-d207",
-                      "@_value": "95"
+                      "@_value": "85"
                     },
                     {
                       "@_name": "Crusade Points",
@@ -92672,7 +92725,7 @@
                     }
                   },
                   "@_type": "set",
-                  "@_value": "150",
+                  "@_value": "170",
                   "@_field": "51b2-306e-1021-d207"
                 },
                 {
@@ -92730,7 +92783,7 @@
                 {
                   "@_name": "pts",
                   "@_typeId": "51b2-306e-1021-d207",
-                  "@_value": "75"
+                  "@_value": "85"
                 },
                 {
                   "@_name": "Crusade Points",
@@ -98301,7 +98354,7 @@
                 {
                   "rules": {
                     "rule": {
-                      "description": "At the start of the battle, Drukhari units from your army are winning the wager.\nEach time a Drukhari unit from your army destroys an enemy unit, Drukhari units from your army are winning the wager.\nEach time a Harlequins unit from your army destroys an enemy unit, Harlequin units from your army are winning the wager.\nWhile Drukhari units from your army are winning the wager, Harlequin units from your army are losing the wager, and vice versa.\nEach time a Drukhari or Harlequins model from your army makes an attack, if that model’s unit is losing the wager, re‑roll a Hit roll of 1 and re‑roll a Wound roll of 1.",
+                      "description": "At the start of the battle, Drukhari units from your army are winning the wager.\nEach time a Drukhari unit from your army destroys an enemy unit, Drukhari units from your army are winning the wager.\nEach time a Harlequins unit from your army destroys an enemy unit, Harlequin units from your army are winning the wager.\nWhile Drukhari units from your army are winning the wager, Harlequin units from your army are losing the wager, and vice versa.\nEach time a Drukhari or Harlequins model from your army makes an attack, if that model’s unit is winning the wager, re-roll a Hit roll of 1. If that model's unit is losing the wager, re‑roll a Hit roll of 1 and re‑roll a Wound roll of 1 instead.",
                       "@_name": "Callous Competition",
                       "@_id": "134d-1e4d-5f9c-2905",
                       "@_hidden": "false"
@@ -98565,7 +98618,7 @@
                   "rules": {
                     "rule": [
                       {
-                        "description": "Lethal Intent\nAt the end of your opponent's Shooting phase, if one or more Ynnari units from your army were destroyed this phase, select one Ynnari unit from your army (excluding Titanic units). That unit can make a Normal move.\n\n\nLethal Surge\nOnce per turn, when a Ynnari unit from your army performs the Fade Back Agile Manoeuvre, it can make a Lethal Surge move instead of a Normal move. If it does, roll one D6 and add 1 to the result: that unit can be moved a number of inches up to the total. When doing so, those models can be moved within Engagement Range of the enemy unit that just triggered that Agile Manoeuvre.\n\n\nLethal Reprisal\nAt the start of the Fight phase, select one Ynnari unit from your army (excluding Titanic units) that is below its Starting Strength. Until the end of the phase, that unit has the Fights First ability.",
+                        "description": "Lethal Intent\nAt the end of your opponent's Shooting phase, if one or more Ynnari units from your army were destroyed this phase, select one Ynnari Infantry or Ynnari Mounted unit from your army that was within 6\" of your destroyed unit. That unit can make a Normal move of up to D6+1\".\n\n\nLethal Surge\nOnce per turn, when a Ynnari unit from your army performs the Fade Back Agile Manoeuvre, it can make a Lethal Surge move instead of a Normal move. If it does, roll one D6 and add 1 to the result: that unit can be moved a number of inches up to the total. When doing so, those models can be moved within Engagement Range of the enemy unit that just triggered that Agile Manoeuvre.\n\n\nLethal Reprisal\nAt the start of the Fight phase, select one Ynnari unit from your army (excluding Titanic units) that is below its Starting Strength. Until the end of the phase, that unit has the Fights First ability.",
                         "@_name": "Strength From Death",
                         "@_id": "8d75-16ba-0739-1355",
                         "@_hidden": "false"
@@ -103187,13 +103240,72 @@
             "@_typeName": "Melee Weapons",
             "@_hidden": "false",
             "@_id": "b95b-acd5-b326-7185"
+          },
+          {
+            "characteristics": {
+              "characteristic": [
+                {
+                  "#text": "8\"",
+                  "@_name": "M",
+                  "@_typeId": "e703-ecb6-5ce7-aec1"
+                },
+                {
+                  "#text": 3,
+                  "@_name": "T",
+                  "@_typeId": "d29d-cf75-fc2d-34a4"
+                },
+                {
+                  "#text": "6+",
+                  "@_name": "SV",
+                  "@_typeId": "450-a17e-9d5e-29da"
+                },
+                {
+                  "#text": 1,
+                  "@_name": "W",
+                  "@_typeId": "750a-a2ec-90d3-21fe"
+                },
+                {
+                  "#text": "6+",
+                  "@_name": "LD",
+                  "@_typeId": "58d2-b879-49c7-43bc"
+                },
+                {
+                  "#text": 1,
+                  "@_name": "OC",
+                  "@_typeId": "bef7-942a-1a23-59f8"
+                }
+              ]
+            },
+            "modifiers": {
+              "modifier": {
+                "conditions": {
+                  "condition": {
+                    "@_type": "atLeast",
+                    "@_value": "1",
+                    "@_field": "selections",
+                    "@_scope": "force",
+                    "@_childId": "be59-ec7d-2f02-b6ec",
+                    "@_shared": "true",
+                    "@_includeChildSelections": "true"
+                  }
+                },
+                "@_type": "set",
+                "@_value": "2",
+                "@_field": "bef7-942a-1a23-59f8"
+              }
+            },
+            "@_name": "Troupe",
+            "@_typeId": "c547-1836-d8a-ff4f",
+            "@_typeName": "Unit",
+            "@_hidden": "false",
+            "@_id": "42ad-7f55-e574-2e1b"
           }
         ]
       },
       "@_xmlns": "http://www.battlescribe.net/schema/catalogueSchema",
       "@_id": "dfcf-1214-b57-2205",
       "@_name": "Aeldari - Aeldari Library",
-      "@_revision": "80",
+      "@_revision": "83",
       "@_battleScribeVersion": "2.03",
       "@_library": "true",
       "@_gameSystemId": "sys-352e-adc2-7639-d6a9",

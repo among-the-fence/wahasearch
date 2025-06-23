@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" id="b45c-af22-788a-dfd6" name="Chaos - Daemons Library" revision="51" battleScribeVersion="2.03" library="true" gameSystemId="sys-352e-adc2-7639-d6a9" gameSystemRevision="1" type="catalogue">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" id="b45c-af22-788a-dfd6" name="Chaos - Daemons Library" revision="54" battleScribeVersion="2.03" library="true" gameSystemId="sys-352e-adc2-7639-d6a9" gameSystemRevision="1" type="catalogue">
   <publications>
     <publication id="e3ec-7a32-ae62-8727" name="Index - Chaos Daemons"/>
   </publications>
@@ -62,7 +62,7 @@
     <categoryEntry id="7750-481d-9ad-7b3c" name="The Masque of Slaanesh" hidden="false"/>
     <categoryEntry id="a05-bf7-2667-d6a4" name="Syll&apos;esske" hidden="false"/>
     <categoryEntry id="72ec-31eb-611-6056" name="Contorted Epitome" hidden="false"/>
-    <categoryEntry id="79e8-a88c-ad73-2a94" name="Tormentbringer on Exalted Seeker Chariot" hidden="false"/>
+    <categoryEntry id="79e8-a88c-ad73-2a94" name="Tormentbringer" hidden="false"/>
     <categoryEntry id="a14a-ccaa-8931-e0ab" name="Tranceweaver" hidden="false"/>
     <categoryEntry id="e70c-8ee7-836c-caa2" name="Daemonettes" hidden="false"/>
     <categoryEntry id="45be-dcbc-e09c-69ba" name="Fiends" hidden="false"/>
@@ -277,12 +277,12 @@
     <entryLink import="true" name="Furies [Legends]" hidden="false" type="selectionEntry" id="c812-edb-a62f-c4fc" targetId="1b9e-e164-7a5a-c8b7"/>
     <entryLink import="true" name="Giant Chaos Spawn [Legends]" hidden="false" type="selectionEntry" id="d5e4-a883-4a7d-c82d" targetId="2901-92bd-2f4-736d"/>
     <entryLink import="true" name="Great Unclean One" hidden="false" type="selectionEntry" id="4033-b330-c232-b0c7" targetId="d490-6c4d-e83b-b183"/>
-    <entryLink import="true" name="Hellflayer [Legends]" hidden="false" type="selectionEntry" id="7ac1-4d10-e8b4-bdc5" targetId="e8d-bf22-b29-d20e"/>
+    <entryLink import="true" name="Hellflayers" hidden="false" type="selectionEntry" id="7ac1-4d10-e8b4-bdc5" targetId="e8d-bf22-b29-d20e"/>
     <entryLink import="true" name="Herald of Slaanesh on Steed of Slaanesh [Legends]" hidden="false" type="selectionEntry" id="c4d5-e085-5a5d-7439" targetId="b48f-f9b4-b47d-d181"/>
     <entryLink import="true" name="Horticulous Slimux" hidden="false" type="selectionEntry" id="35a3-f267-c6cf-7272" targetId="7151-238f-a6eb-2f94"/>
     <entryLink import="true" name="Infernal Enrapturess" hidden="false" type="selectionEntry" id="30f6-f452-8564-c6d5" targetId="2cc5-ef65-c4b9-28c6"/>
     <entryLink import="true" name="Kairos Fateweaver" hidden="false" type="selectionEntry" id="26bd-56be-f5be-19f7" targetId="6df5-f246-6bd-55b8"/>
-    <entryLink import="true" name="Karanak [Legends]" hidden="false" type="selectionEntry" id="f2f0-6213-2417-57dc" targetId="8436-cec1-e65a-d1a7"/>
+    <entryLink import="true" name="Karanak" hidden="false" type="selectionEntry" id="f2f0-6213-2417-57dc" targetId="8436-cec1-e65a-d1a7"/>
     <entryLink import="true" name="Keeper of Secrets" hidden="false" type="selectionEntry" id="26af-cfb8-dc7b-acce" targetId="a903-dd97-339d-6899"/>
     <entryLink import="true" name="Khorne Soul Grinder" hidden="false" type="selectionEntry" id="98bd-6217-a3ac-b86a" targetId="8e9f-aa9-17f5-e2d3"/>
     <entryLink import="true" name="Lord of Change" hidden="false" type="selectionEntry" id="d54c-41ba-2f37-22a4" targetId="3600-9f92-933-bf54"/>
@@ -314,7 +314,7 @@
     <entryLink import="true" name="The Blue Scribes" hidden="false" type="selectionEntry" id="e1ce-8c52-b40a-7868" targetId="caf1-8818-9e65-7154"/>
     <entryLink import="true" name="The Changeling" hidden="false" type="selectionEntry" id="be77-fd68-1840-a285" targetId="ac75-c011-9a10-2c4a"/>
     <entryLink import="true" name="The Masque of Slaanesh" hidden="false" type="selectionEntry" id="f135-a27-d47-d791" targetId="1567-b99b-bd8f-d485"/>
-    <entryLink import="true" name="Tormentbringer on Exalted Seeker Chariot [Legends]" hidden="false" type="selectionEntry" id="fa07-2fe1-8621-b69d" targetId="673b-111b-6dcb-352"/>
+    <entryLink import="true" name="Tormentbringer" hidden="false" type="selectionEntry" id="fa07-2fe1-8621-b69d" targetId="673b-111b-6dcb-352"/>
     <entryLink import="true" name="Tranceweaver" hidden="false" type="selectionEntry" id="3cf-6042-5a03-a295" targetId="dba-34e3-46f2-56e0"/>
     <entryLink import="true" name="Tzeentch Soul Grinder" hidden="false" type="selectionEntry" id="73ac-1752-3efd-100a" targetId="e1b1-146f-6f77-3a15"/>
     <entryLink import="true" name="Zarakynel [Legends]" hidden="false" type="selectionEntry" id="8d96-ce07-a948-add2" targetId="268e-459c-c6e8-7754"/>
@@ -1155,7 +1155,7 @@ In your Command phase, if your opponent has one or more Flux tokens, you gain on
         </modifier>
       </modifiers>
     </selectionEntry>
-    <selectionEntry id="8436-cec1-e65a-d1a7" name="Karanak [Legends]" hidden="false" collective="false" import="true" type="model">
+    <selectionEntry id="8436-cec1-e65a-d1a7" name="Karanak" hidden="false" collective="false" import="true" type="model">
       <constraints>
         <constraint field="selections" scope="force" value="1" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="8617-31f4-e81f-1248" type="max"/>
       </constraints>
@@ -1177,7 +1177,7 @@ In your Command phase, if your opponent has one or more Flux tokens, you gain on
         </profile>
         <profile id="5abc-becd-aac1-cc42" name="Prey of the Blood God" hidden="false" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">At the start of the first battle round, select one enemy unit to be this model’s prey. Weapons equipped by models in this model’s unit have the [LETHAL HITS] ability when targeting this model’s prey. Each time this model’s prey is destroyed, select one new enemy unit to be this model’s prey.</characteristic>
+            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">At the start of the first battle round, select one enemy unit to be this model’s prey. Each time a model in this model’s unit makes a melee attack that targets its prey, you can re-roll the Wound roll. Each time this model’s prey is destroyed, select one new enemy unit to be this model’s prey.</characteristic>
           </characteristics>
         </profile>
         <profile id="a448-9846-5967-6db1" name="Leader" hidden="false" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities">
@@ -1186,7 +1186,7 @@ In your Command phase, if your opponent has one or more Flux tokens, you gain on
 ■ FLESH HOUNDS</characteristic>
           </characteristics>
         </profile>
-        <profile id="d02e-5a9a-2202-d1d7" name="Invulnerable Save: Karanak" hidden="false" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities">
+        <profile id="d02e-5a9a-2202-d1d7" name="Invulnerable Save" hidden="false" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities">
           <characteristics>
             <characteristic name="Description" typeId="9b8f-694b-e5e-b573">This model has a 4+ invulnerable save.</characteristic>
           </characteristics>
@@ -1207,6 +1207,7 @@ In your Command phase, if your opponent has one or more Flux tokens, you gain on
         <categoryLink id="1003-9014-5705-b252" name="Khorne" hidden="false" targetId="4bd-5ee0-f179-2fc5" primary="false"/>
         <categoryLink id="e920-3a03-5335-18ef" name="Karanak" hidden="false" targetId="658b-f0f5-347c-9216" primary="false"/>
         <categoryLink targetId="2308-7f1a-2beb-1e16" id="b1cf-4de5-16d0-dfbc" primary="false" name="Khorne non-Battleline"/>
+        <categoryLink name="Faction: Legiones Daemonica" hidden="false" id="1779-d82d-04d6-c7d9" targetId="571f-ec3a-a5a2-751a" primary="false"/>
       </categoryLinks>
       <selectionEntries>
         <selectionEntry id="65ef-e78a-ac45-b60a" name="Soul-rending fangs" hidden="false" collective="false" import="true" type="upgrade">
@@ -1221,26 +1222,69 @@ In your Command phase, if your opponent has one or more Flux tokens, you gain on
                 <characteristic name="A" typeId="2337-daa1-6682-b110">6</characteristic>
                 <characteristic name="WS" typeId="95d1-95f-45b4-11d6">2+</characteristic>
                 <characteristic name="S" typeId="ab33-d393-96ce-ccba">6</characteristic>
-                <characteristic name="AP" typeId="41a0-1301-112a-e2f2">-1</characteristic>
+                <characteristic name="AP" typeId="41a0-1301-112a-e2f2">-2</characteristic>
                 <characteristic name="D" typeId="3254-9fe6-d824-513e">2</characteristic>
-                <characteristic name="Keywords" typeId="893f-9000-ccf7-648e">Precision</characteristic>
+                <characteristic name="Keywords" typeId="893f-9000-ccf7-648e">Anti-Character 3+, Precision</characteristic>
               </characteristics>
             </profile>
           </profiles>
           <infoLinks>
             <infoLink id="dfc-4811-668e-3b7b" name="Precision" hidden="false" targetId="9143-31ae-e0a6-6007" type="rule"/>
+            <infoLink name="Anti-" id="40f7-1543-1e17-6222" hidden="false" targetId="4111-82e3-9444-e942" type="rule"/>
           </infoLinks>
           <costs>
             <cost name="pts" typeId="51b2-306e-1021-d207" value="0"/>
           </costs>
         </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Brass Collar of Bloody Vengeance" hidden="false" id="296c-f462-677f-0c95">
+          <constraints>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="9b5d-f1c1-8ebf-3098-min" includeChildSelections="false"/>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="9b5d-f1c1-8ebf-3098-max" includeChildSelections="false"/>
+          </constraints>
+          <profiles>
+            <profile name="Brass Collar of Bloody Vengeance" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="cffc-137a-2a20-bc57">
+              <characteristics>
+                <characteristic name="Description" typeId="9b8f-694b-e5e-b573">The bearer has the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <infoLinks>
+            <infoLink name="Feel No Pain" id="8217-ce48-5105-a7eb" hidden="false" type="rule" targetId="9bf4-280f-bbe2-6fbb"/>
+          </infoLinks>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Scalding Roar" hidden="false" id="0cb2-1f91-0fc0-c69e">
+          <constraints>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="b04b-ddaf-5af5-0e7c-min" includeChildSelections="false"/>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="b04b-ddaf-5af5-0e7c-max" includeChildSelections="false"/>
+          </constraints>
+          <profiles>
+            <profile name="Scalding Roar" typeId="f77d-b953-8fa4-b762" typeName="Ranged Weapons" hidden="false" id="9496-b906-c70e-d89d">
+              <characteristics>
+                <characteristic name="Range" typeId="9896-9419-16a1-92fc">12&quot;</characteristic>
+                <characteristic name="A" typeId="3bb-c35f-f54-fb08">D6+3</characteristic>
+                <characteristic name="BS" typeId="94d-8a98-cf90-183e">N/A</characteristic>
+                <characteristic name="S" typeId="2229-f494-25db-c5d3">5</characteristic>
+                <characteristic name="AP" typeId="9ead-8a10-520-de15">-1</characteristic>
+                <characteristic name="D" typeId="a354-c1c8-a745-f9e3">1</characteristic>
+                <characteristic name="Keywords" typeId="7f1b-8591-2fcf-d01c">Ignores Cover, Torrent</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <infoLinks>
+            <infoLink name="Ignores Cover" id="838c-bda0-f738-8abc" hidden="false" targetId="4640-43e7-30b-215a" type="rule"/>
+            <infoLink name="Torrent" id="f640-bc66-c49e-3cef" hidden="false" targetId="5edf-d619-23e0-9b56" type="rule"/>
+          </infoLinks>
+        </selectionEntry>
       </selectionEntries>
       <entryLinks>
         <entryLink id="b3ea-32a1-35a6-a0b5" name="Warlord" hidden="false" collective="false" import="true" targetId="13f1-2794-34e7-4bd6" type="selectionEntry"/>
-        <entryLink id="c9c2-ddcd-f3db-783f" name="Collar of Khorne" hidden="false" collective="false" import="true" targetId="fbad-4487-a8bc-9ef0" type="selectionEntry"/>
       </entryLinks>
       <costs>
-        <cost name="pts" typeId="51b2-306e-1021-d207" value="65"/>
+        <cost name="pts" typeId="51b2-306e-1021-d207" value="75"/>
+        <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
+        <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
+        <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
+        <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
       </costs>
       <modifiers>
         <modifier type="set" value="true" field="hidden">
@@ -1252,25 +1296,6 @@ In your Command phase, if your opponent has one or more Flux tokens, you gain on
           <conditions>
             <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="d265-877b-e03d-30ca" shared="true" includeChildSelections="true" includeChildForces="true"/>
           </conditions>
-        </modifier>
-        <modifier type="set" value="true" field="hidden">
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditionGroups>
-                <conditionGroup type="and">
-                  <conditions>
-                    <condition type="lessThan" value="1" field="selections" scope="force" childId="f5f9-1339-84bb-ae85" shared="true" id="d672-0ee8-3e78-fbd8" includeChildSelections="true"/>
-                    <condition type="lessThan" value="1" field="selections" scope="force" childId="1248-8642-b42f-1dca" shared="true" id="de77-0e13-3b69-f1fa" includeChildSelections="true"/>
-                    <condition type="lessThan" value="1" field="selections" scope="force" childId="f486-5e38-994c-15ec" shared="true" id="5638-ebf5-5535-eb47" includeChildSelections="true"/>
-                    <condition type="lessThan" value="1" field="selections" scope="force" childId="d3ff-16f0-dad2-c03c" shared="true" id="65f7-d5f9-2869-6a37" includeChildSelections="true"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-              <conditions>
-                <condition type="lessThan" value="1" field="selections" scope="force" childId="9ed-cbf4-bfe5-90bf" shared="true" id="92df-515d-ffc5-7c57" includeChildSelections="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
         </modifier>
         <modifier type="set" value="true" field="hidden">
           <conditions>
@@ -2975,7 +3000,7 @@ In your Command phase, if your opponent has one or more Flux tokens, you gain on
             <characteristic name="Description" typeId="9b8f-694b-e5e-b573">At the end of your Command phase, if this model is on the battlefield, take a Leadership test for this model; if that test is passed, you gain 1CP.</characteristic>
           </characteristics>
         </profile>
-        <profile id="9d33-996b-cbcb-61c5" name="One Head Looks Back (Aura)" hidden="true" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities">
+        <profile id="9d33-996b-cbcb-61c5" name="One Head Looks Back (Aura)" hidden="false" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities">
           <characteristics>
             <characteristic name="Description" typeId="9b8f-694b-e5e-b573">Each time your opponent targets a unit from their army with a Stratagem, if that unit is within 12&quot; of this model, increase the cost of that use of that Stratagem by 1CP (this is not cumulative with any other rules that would increase the CP cost of that Stratagem).</characteristic>
           </characteristics>
@@ -5869,14 +5894,9 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
     </selectionEntry>
     <selectionEntry id="e403-3a9-279e-41b7" name="Nurglings" hidden="false" collective="false" import="true" type="unit">
       <modifiers>
-        <modifier type="set" field="51b2-306e-1021-d207" value="60">
+        <modifier type="set" field="51b2-306e-1021-d207" value="70">
           <conditions>
             <condition field="selections" scope="e403-3a9-279e-41b7" value="4" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="model" type="atLeast"/>
-          </conditions>
-        </modifier>
-        <modifier type="set" field="51b2-306e-1021-d207" value="90">
-          <conditions>
-            <condition field="selections" scope="e403-3a9-279e-41b7" value="7" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="model" type="atLeast"/>
           </conditions>
         </modifier>
         <modifier type="set" value="true" field="hidden">
@@ -5896,7 +5916,7 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
       <profiles>
         <profile id="6135-124a-15ea-e7c5" name="Invulnerable Save" hidden="false" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">Models in this unit have a 6+ invulnerable save.</characteristic>
+            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">Models in this unit have a 5+ invulnerable save.</characteristic>
           </characteristics>
         </profile>
         <profile id="129e-55b-55a9-7d28" name="Nurglings" hidden="false" typeId="c547-1836-d8a-ff4f" typeName="Unit">
@@ -5937,7 +5957,7 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
         <selectionEntry id="7212-7cc9-ec49-72b8" name="Nurgling Swarm" hidden="false" collective="false" import="true" type="model">
           <constraints>
             <constraint field="selections" scope="parent" value="3" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="582b-23e2-beb8-b4da" type="min"/>
-            <constraint field="selections" scope="parent" value="9" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6e3b-7a53-bcc3-154c" type="max"/>
+            <constraint field="selections" scope="parent" value="6" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6e3b-7a53-bcc3-154c" type="max"/>
           </constraints>
           <selectionEntries>
             <selectionEntry id="2aea-961-8345-fce5" name="Diseased claws and teeth" hidden="false" collective="true" import="true" type="upgrade">
@@ -5972,7 +5992,7 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
         </selectionEntry>
       </selectionEntries>
       <costs>
-        <cost name="pts" typeId="51b2-306e-1021-d207" value="35"/>
+        <cost name="pts" typeId="51b2-306e-1021-d207" value="40"/>
         <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
         <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
         <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
@@ -7400,7 +7420,7 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
         </modifier>
       </modifiers>
     </selectionEntry>
-    <selectionEntry id="673b-111b-6dcb-352" name="Tormentbringer on Exalted Seeker Chariot [Legends]" hidden="false" collective="false" import="true" type="model">
+    <selectionEntry id="673b-111b-6dcb-352" name="Tormentbringer" hidden="false" collective="false" import="true" type="model">
       <constraints>
         <constraint field="selections" scope="force" value="3" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="a2f1-8cba-b498-d7a" type="max"/>
       </constraints>
@@ -7410,7 +7430,7 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
             <characteristic name="Description" typeId="9b8f-694b-e5e-b573">This model has a 4+ invulnerable save.</characteristic>
           </characteristics>
         </profile>
-        <profile id="dcff-70c2-7195-8e06" name="Tormentbringer on Exalted Seeker Chariot" hidden="false" typeId="c547-1836-d8a-ff4f" typeName="Unit">
+        <profile id="dcff-70c2-7195-8e06" name="Tormentbringer" hidden="false" typeId="c547-1836-d8a-ff4f" typeName="Unit">
           <characteristics>
             <characteristic name="M" typeId="e703-ecb6-5ce7-aec1">14&quot;</characteristic>
             <characteristic name="T" typeId="d29d-cf75-fc2d-34a4">6</characteristic>
@@ -7422,12 +7442,18 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
         </profile>
         <profile id="6563-fd19-91d4-8074" name="Tormentbringer (Aura)" hidden="false" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">While a friendly SLAANESH LEGIONES DAEMONICA unit is within 6&quot; of this model, melee weapons in that unit have the [SUSTAINED HITS 1] ability.</characteristic>
+            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">While a friendly **^^Slaanesh Legions Daemonica**^^ unit is within 6&quot; of this model, melee weapons in that unit have the [^^SUSTAINED HITS 1^^] ability.</characteristic>
           </characteristics>
         </profile>
-        <profile id="a132-d15f-e3fb-346c" name="Hysterical Frenzy (Psychic)" hidden="false" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities">
+        <profile id="a132-d15f-e3fb-346c" name="Hysterical Frenzy" hidden="false" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">Once per Fight phase, just after an enemy unit selects a SLAANESH LEGIONES DAEMONICA unit from your army as a target, one friendly PSYKER that is within 6&quot; of that SLAANESH unit and has this ability can use it. If it does, until the end of the phase, each time a model in that SLAANESH unit is destroyed, roll one D6: on a 4+, do not remove it from play. That model can fight after the attacking model’s unit has finished making its attacks, and is then removed from play.</characteristic>
+            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">Each time a model in this model’s unit is destroyed, if that model has not fought this phase, do not remove it from play. The destroyed model can fight after the attacking unit has finished making its attacks, and is then removed from play.</characteristic>
+          </characteristics>
+        </profile>
+        <profile name="Leader" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="b8ff-c6e0-f8f5-5192">
+          <characteristics>
+            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">This model can be attached to the following unit: 
+- ^^**Hellflayers^^**</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -7436,6 +7462,8 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
         <infoLink id="f37e-3e49-5ed8-c751" name="The Shadow of Chaos" hidden="false" targetId="a312-a2f1-e1c0-30ed" type="rule"/>
         <infoLink id="71b6-b129-8df3-6225" name="Warp Rifts" hidden="false" targetId="877e-cc0c-8a1d-be46" type="rule"/>
         <infoLink name="Seductive Gambit" id="1d6a-8a5c-5cec-c842" hidden="false" type="profile" targetId="25c8-c84a-4f3d-7b60"/>
+        <infoLink name="Leader" id="9df9-9f4f-2da6-17cf" hidden="false" type="rule" targetId="b4dd-3e1f-41cb-218f"/>
+        <infoLink name="Shadow&apos;s Caress" id="aa0c-8360-e7a0-a4d4" hidden="false" type="profile" targetId="1d4c-b5d1-2e67-43f6"/>
       </infoLinks>
       <categoryLinks>
         <categoryLink id="ac8e-192e-1f7a-e0ec" name="Faction: Legiones Daemonica" hidden="false" targetId="571f-ec3a-a5a2-751a" primary="false"/>
@@ -7445,7 +7473,7 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
         <categoryLink id="37e1-dbc7-8044-9df9" name="Chaos" hidden="false" targetId="4c00-2578-faf5-6918" primary="false"/>
         <categoryLink id="2c85-36b3-335b-3673" name="Daemon" hidden="false" targetId="9c0e-7e25-4580-e439" primary="false"/>
         <categoryLink id="2cad-5e6b-a09b-f41" name="Slaanesh" hidden="false" targetId="b2a9-ede5-7a83-4da8" primary="false"/>
-        <categoryLink id="7365-b4c3-cc1a-b14a" name="Tormentbringer on Exalted Seeker Chariot" hidden="false" targetId="79e8-a88c-ad73-2a94" primary="false"/>
+        <categoryLink id="7365-b4c3-cc1a-b14a" name="Tormentbringer" hidden="false" targetId="79e8-a88c-ad73-2a94" primary="false"/>
         <categoryLink targetId="8aa7-4f0e-f4ab-83a3" id="d9a1-fc41-4550-9b6d" primary="false" name="Slaanesh non-Battleline"/>
         <categoryLink name="Shadow Legion" hidden="false" id="6dab-f7cb-73e9-1774" targetId="4df3-beae-010c-9087" primary="false"/>
       </categoryLinks>
@@ -7458,13 +7486,24 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
           <profiles>
             <profile id="60ae-8126-dd79-982b" name="Lashes of torment" hidden="false" typeId="f77d-b953-8fa4-b762" typeName="Ranged Weapons">
               <characteristics>
-                <characteristic name="Range" typeId="9896-9419-16a1-92fc">6&quot;</characteristic>
+                <characteristic name="Range" typeId="9896-9419-16a1-92fc">12&quot;</characteristic>
                 <characteristic name="A" typeId="3bb-c35f-f54-fb08">6</characteristic>
-                <characteristic name="BS" typeId="94d-8a98-cf90-183e">3+</characteristic>
+                <characteristic name="BS" typeId="94d-8a98-cf90-183e">2+</characteristic>
                 <characteristic name="S" typeId="2229-f494-25db-c5d3">4</characteristic>
-                <characteristic name="AP" typeId="9ead-8a10-520-de15">0</characteristic>
-                <characteristic name="D" typeId="a354-c1c8-a745-f9e3">1</characteristic>
+                <characteristic name="AP" typeId="9ead-8a10-520-de15">-1</characteristic>
+                <characteristic name="D" typeId="a354-c1c8-a745-f9e3">2</characteristic>
                 <characteristic name="Keywords" typeId="7f1b-8591-2fcf-d01c">Anti-INFANTRY 3+, Assault, Pistol</characteristic>
+              </characteristics>
+            </profile>
+            <profile name="Lashes of torment" typeId="8a40-4aaa-c780-9046" typeName="Melee Weapons" hidden="false" id="dbff-9b30-a51b-0be1">
+              <characteristics>
+                <characteristic name="Range" typeId="914c-b413-91e3-a132">Melee</characteristic>
+                <characteristic name="A" typeId="2337-daa1-6682-b110">6</characteristic>
+                <characteristic name="WS" typeId="95d1-95f-45b4-11d6">2+</characteristic>
+                <characteristic name="S" typeId="ab33-d393-96ce-ccba">4</characteristic>
+                <characteristic name="AP" typeId="41a0-1301-112a-e2f2">-1</characteristic>
+                <characteristic name="D" typeId="3254-9fe6-d824-513e">2</characteristic>
+                <characteristic name="Keywords" typeId="893f-9000-ccf7-648e">Anti-INFANTRY 3+, Extra Attacks</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -7472,21 +7511,22 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
             <infoLink id="783b-3391-b72b-9e0d" name="Anti-" hidden="false" targetId="4111-82e3-9444-e942" type="rule"/>
             <infoLink id="5b87-aca6-7399-def1" name="Assault" hidden="false" targetId="fc8a-8c24-bae9-cc1c" type="rule"/>
             <infoLink id="b028-b528-2d0f-bb48" name="Pistol" hidden="false" targetId="8bf7-8812-923d-29e4" type="rule"/>
+            <infoLink name="Extra Attacks" id="2542-b191-b501-ee6c" hidden="false" type="rule" targetId="115b-79dc-f723-d761"/>
           </infoLinks>
           <costs>
             <cost name="pts" typeId="51b2-306e-1021-d207" value="0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="96fd-cab1-c43f-5c49" name="Exalted Seeker tongues" hidden="false" collective="false" import="true" type="upgrade">
+        <selectionEntry id="96fd-cab1-c43f-5c49" name="Seeker tongues" hidden="false" collective="false" import="true" type="upgrade">
           <constraints>
             <constraint field="selections" scope="parent" value="1" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ef6-5c6e-b1b0-b8c0" type="min"/>
             <constraint field="selections" scope="parent" value="1" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6d2a-91c2-d611-c9cf" type="max"/>
           </constraints>
           <profiles>
-            <profile id="93f2-bbc6-9ff0-ef4a" name="Exalted Seeker tongues" hidden="false" typeId="8a40-4aaa-c780-9046" typeName="Melee Weapons">
+            <profile id="93f2-bbc6-9ff0-ef4a" name="Seeker tongues" hidden="false" typeId="8a40-4aaa-c780-9046" typeName="Melee Weapons">
               <characteristics>
                 <characteristic name="Range" typeId="914c-b413-91e3-a132">Melee</characteristic>
-                <characteristic name="A" typeId="2337-daa1-6682-b110">8</characteristic>
+                <characteristic name="A" typeId="2337-daa1-6682-b110">4</characteristic>
                 <characteristic name="WS" typeId="95d1-95f-45b4-11d6">4+</characteristic>
                 <characteristic name="S" typeId="ab33-d393-96ce-ccba">4</characteristic>
                 <characteristic name="AP" typeId="41a0-1301-112a-e2f2">0</characteristic>
@@ -7503,16 +7543,16 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
             <cost name="pts" typeId="51b2-306e-1021-d207" value="0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="d5d4-e425-88a4-f0ec" name="Ravaging claws" hidden="false" collective="false" import="true" type="upgrade">
+        <selectionEntry id="d5d4-e425-88a4-f0ec" name="Slashing claws" hidden="false" collective="false" import="true" type="upgrade">
           <constraints>
             <constraint field="selections" scope="parent" value="1" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d637-6f5c-4060-621e" type="min"/>
             <constraint field="selections" scope="parent" value="1" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c362-a7bb-c48f-b3b7" type="max"/>
           </constraints>
           <profiles>
-            <profile id="7acd-df2-bb6a-275b" name="Ravaging claws" hidden="false" typeId="8a40-4aaa-c780-9046" typeName="Melee Weapons">
+            <profile id="7acd-df2-bb6a-275b" name="Slashing claws" hidden="false" typeId="8a40-4aaa-c780-9046" typeName="Melee Weapons">
               <characteristics>
                 <characteristic name="Range" typeId="914c-b413-91e3-a132">Melee</characteristic>
-                <characteristic name="A" typeId="2337-daa1-6682-b110">15</characteristic>
+                <characteristic name="A" typeId="2337-daa1-6682-b110">8</characteristic>
                 <characteristic name="WS" typeId="95d1-95f-45b4-11d6">3+</characteristic>
                 <characteristic name="S" typeId="ab33-d393-96ce-ccba">4</characteristic>
                 <characteristic name="AP" typeId="41a0-1301-112a-e2f2">-1</characteristic>
@@ -7547,26 +7587,6 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
           <conditions>
             <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="d265-877b-e03d-30ca" shared="true" includeChildSelections="true" includeChildForces="true"/>
           </conditions>
-        </modifier>
-        <modifier type="set" value="true" field="hidden">
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditionGroups>
-                <conditionGroup type="and">
-                  <conditions>
-                    <condition type="lessThan" value="1" field="selections" scope="force" childId="f5f9-1339-84bb-ae85" shared="true" id="e796-d678-205f-5c66" includeChildSelections="true"/>
-                    <condition type="lessThan" value="1" field="selections" scope="force" childId="1248-8642-b42f-1dca" shared="true" id="a782-1249-6933-2543" includeChildSelections="true"/>
-                    <condition type="lessThan" value="1" field="selections" scope="force" childId="f486-5e38-994c-15ec" shared="true" id="73b1-741c-49a0-eb61" includeChildSelections="true"/>
-                    <condition type="lessThan" value="1" field="selections" scope="force" childId="d3ff-16f0-dad2-c03c" shared="true" id="54ce-11ca-681a-0f6a" includeChildSelections="true"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-              <conditions>
-                <condition type="lessThan" value="1" field="selections" scope="force" childId="9ed-cbf4-bfe5-90bf" shared="true" id="5b61-9712-e32a-2874" includeChildSelections="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <comment>Legends</comment>
         </modifier>
       </modifiers>
     </selectionEntry>
@@ -8158,19 +8178,19 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
         <cost name="pts" typeId="51b2-306e-1021-d207" value="80"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="e8d-bf22-b29-d20e" name="Hellflayer [Legends]" hidden="false" collective="false" import="true" type="unit">
+    <selectionEntry id="e8d-bf22-b29-d20e" name="Hellflayers" hidden="false" collective="false" import="true" type="unit">
       <constraints>
         <constraint field="selections" scope="force" value="3" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="48f9-159a-3c0d-a439" type="max"/>
       </constraints>
       <profiles>
         <profile id="d3c1-c2ed-1e79-a2ca" name="Invulnerable Save" hidden="false" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">Models in this unit have a 4+ invulnerable save.</characteristic>
+            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">Models in this unit have a 5+ invulnerable save.</characteristic>
           </characteristics>
         </profile>
         <profile id="86c1-944-cb8c-e6f" name="Cutting Down the Foe" hidden="false" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">Each time this unit is selected to fight, you can select one enemy unit within Engagement Range of it and roll one D6, adding 2 to the result if that unit is an INFANTRY unit: on a 2-3, that enemy unit suffers D3 mortal wounds; on a 4-5, that enemy unit suffers 3 mortal wounds; on a 6+, that enemy unit suffers D3+3 mortal wounds.</characteristic>
+            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">Each time a model in this unit makes a melee attack, if this unit made a Charge move this turn, improve the Strength and Damage characteristics of that attack by 1.</characteristic>
           </characteristics>
         </profile>
         <profile id="4063-1fc8-a9f7-3692" name="Hellflayer" hidden="false" typeId="c547-1836-d8a-ff4f" typeName="Unit">
@@ -8216,13 +8236,24 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
               <profiles>
                 <profile id="b5d4-86e1-aef9-68dd" name="Lashes of torment" hidden="false" typeId="f77d-b953-8fa4-b762" typeName="Ranged Weapons">
                   <characteristics>
-                    <characteristic name="Range" typeId="9896-9419-16a1-92fc">6&quot;</characteristic>
-                    <characteristic name="A" typeId="3bb-c35f-f54-fb08">6</characteristic>
+                    <characteristic name="Range" typeId="9896-9419-16a1-92fc">12&quot;</characteristic>
+                    <characteristic name="A" typeId="3bb-c35f-f54-fb08">3</characteristic>
                     <characteristic name="BS" typeId="94d-8a98-cf90-183e">3+</characteristic>
                     <characteristic name="S" typeId="2229-f494-25db-c5d3">4</characteristic>
-                    <characteristic name="AP" typeId="9ead-8a10-520-de15">0</characteristic>
-                    <characteristic name="D" typeId="a354-c1c8-a745-f9e3">1</characteristic>
+                    <characteristic name="AP" typeId="9ead-8a10-520-de15">-1</characteristic>
+                    <characteristic name="D" typeId="a354-c1c8-a745-f9e3">2</characteristic>
                     <characteristic name="Keywords" typeId="7f1b-8591-2fcf-d01c">Anti-INFANTRY 3+, Assault, Pistol</characteristic>
+                  </characteristics>
+                </profile>
+                <profile name="Lashes of torment" typeId="8a40-4aaa-c780-9046" typeName="Melee Weapons" hidden="false" id="0a8f-36f3-e90e-cf37">
+                  <characteristics>
+                    <characteristic name="Range" typeId="914c-b413-91e3-a132">Melee</characteristic>
+                    <characteristic name="A" typeId="2337-daa1-6682-b110">3</characteristic>
+                    <characteristic name="WS" typeId="95d1-95f-45b4-11d6">3+</characteristic>
+                    <characteristic name="S" typeId="ab33-d393-96ce-ccba">4</characteristic>
+                    <characteristic name="AP" typeId="41a0-1301-112a-e2f2">-1</characteristic>
+                    <characteristic name="D" typeId="3254-9fe6-d824-513e">2</characteristic>
+                    <characteristic name="Keywords" typeId="893f-9000-ccf7-648e">Anti-INFANTRY 3+, Extra Attacks</characteristic>
                   </characteristics>
                 </profile>
               </profiles>
@@ -8230,31 +8261,7 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
                 <infoLink id="9948-dd67-b935-1f76" name="Anti-" hidden="false" targetId="4111-82e3-9444-e942" type="rule"/>
                 <infoLink id="70d9-4066-c44f-bd76" name="Assault" hidden="false" targetId="fc8a-8c24-bae9-cc1c" type="rule"/>
                 <infoLink id="8d55-5bb-ad66-51bf" name="Pistol" hidden="false" targetId="8bf7-8812-923d-29e4" type="rule"/>
-              </infoLinks>
-              <costs>
-                <cost name="pts" typeId="51b2-306e-1021-d207" value="0"/>
-              </costs>
-            </selectionEntry>
-            <selectionEntry id="5ac2-ed3-9027-c63e" name="Bladed axle" hidden="false" collective="true" import="true" type="upgrade">
-              <constraints>
-                <constraint field="selections" scope="parent" value="1" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="488e-8725-6a0-50b7" type="min"/>
-                <constraint field="selections" scope="parent" value="1" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ac3e-576a-15af-b439" type="max"/>
-              </constraints>
-              <profiles>
-                <profile id="ee99-5160-f357-a11c" name="Bladed axle" hidden="false" typeId="8a40-4aaa-c780-9046" typeName="Melee Weapons">
-                  <characteristics>
-                    <characteristic name="Range" typeId="914c-b413-91e3-a132">Melee</characteristic>
-                    <characteristic name="A" typeId="2337-daa1-6682-b110">6</characteristic>
-                    <characteristic name="WS" typeId="95d1-95f-45b4-11d6">3+</characteristic>
-                    <characteristic name="S" typeId="ab33-d393-96ce-ccba">6</characteristic>
-                    <characteristic name="AP" typeId="41a0-1301-112a-e2f2">-1</characteristic>
-                    <characteristic name="D" typeId="3254-9fe6-d824-513e">2</characteristic>
-                    <characteristic name="Keywords" typeId="893f-9000-ccf7-648e">Extra Attacks</characteristic>
-                  </characteristics>
-                </profile>
-              </profiles>
-              <infoLinks>
-                <infoLink id="5dd8-4dfa-3b73-7ef9" name="Extra Attacks" hidden="false" targetId="115b-79dc-f723-d761" type="rule"/>
+                <infoLink name="Extra Attacks" id="dd6e-5671-7c04-94fe" hidden="false" targetId="115b-79dc-f723-d761" type="rule"/>
               </infoLinks>
               <costs>
                 <cost name="pts" typeId="51b2-306e-1021-d207" value="0"/>
@@ -8295,10 +8302,10 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
                 <profile id="bc28-3c88-f383-3933" name="Slashing claws" hidden="false" typeId="8a40-4aaa-c780-9046" typeName="Melee Weapons">
                   <characteristics>
                     <characteristic name="Range" typeId="914c-b413-91e3-a132">Melee</characteristic>
-                    <characteristic name="A" typeId="2337-daa1-6682-b110">9</characteristic>
+                    <characteristic name="A" typeId="2337-daa1-6682-b110">8</characteristic>
                     <characteristic name="WS" typeId="95d1-95f-45b4-11d6">3+</characteristic>
                     <characteristic name="S" typeId="ab33-d393-96ce-ccba">4</characteristic>
-                    <characteristic name="AP" typeId="41a0-1301-112a-e2f2">0</characteristic>
+                    <characteristic name="AP" typeId="41a0-1301-112a-e2f2">-1</characteristic>
                     <characteristic name="D" typeId="3254-9fe6-d824-513e">1</characteristic>
                     <characteristic name="Keywords" typeId="893f-9000-ccf7-648e">Devastating Wounds</characteristic>
                   </characteristics>
@@ -8313,7 +8320,11 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
             </selectionEntry>
           </selectionEntries>
           <costs>
-            <cost name="pts" typeId="51b2-306e-1021-d207" value="105"/>
+            <cost name="pts" typeId="51b2-306e-1021-d207" value="80"/>
+            <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
+            <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
+            <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
+            <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
           </costs>
         </selectionEntry>
       </selectionEntries>
@@ -8330,26 +8341,6 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
           <conditions>
             <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="d265-877b-e03d-30ca" shared="true" includeChildSelections="true" includeChildForces="true"/>
           </conditions>
-        </modifier>
-        <modifier type="set" value="true" field="hidden">
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditionGroups>
-                <conditionGroup type="and">
-                  <conditions>
-                    <condition type="lessThan" value="1" field="selections" scope="force" childId="f5f9-1339-84bb-ae85" shared="true" id="20e7-cbab-41e1-e6d7" includeChildSelections="true"/>
-                    <condition type="lessThan" value="1" field="selections" scope="force" childId="1248-8642-b42f-1dca" shared="true" id="cc98-b35e-da5d-6898" includeChildSelections="true"/>
-                    <condition type="lessThan" value="1" field="selections" scope="force" childId="f486-5e38-994c-15ec" shared="true" id="ff2e-21e9-fc08-c469" includeChildSelections="true"/>
-                    <condition type="lessThan" value="1" field="selections" scope="force" childId="d3ff-16f0-dad2-c03c" shared="true" id="0fd1-6b21-6f37-ecd3" includeChildSelections="true"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-              <conditions>
-                <condition type="lessThan" value="1" field="selections" scope="force" childId="9ed-cbf4-bfe5-90bf" shared="true" id="e614-4af1-e6c9-6291" includeChildSelections="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <comment>Legends</comment>
         </modifier>
       </modifiers>
     </selectionEntry>
@@ -10445,7 +10436,7 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
         <constraint field="selections" scope="force" value="3" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="beb0-b746-d96b-b611" type="max"/>
       </constraints>
       <selectionEntries>
-        <selectionEntry id="55e8-3587-8285-d3e0" name="A&apos;rgath, the King of Blades" publicationId="e3ec-7a32-ae62-8727" page="5" hidden="false" collective="false" import="true" type="upgrade">
+        <selectionEntry id="55e8-3587-8285-d3e0" name="A&apos;rgath, the King of Blades" publicationId="e3ec-7a32-ae62-8727" page="5" hidden="false" collective="false" import="true" type="upgrade" sortIndex="5">
           <modifiers>
             <modifier type="set" field="hidden" value="true">
               <conditionGroups>
@@ -10479,7 +10470,7 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
           </costs>
           <comment>Daemonic Incursion</comment>
         </selectionEntry>
-        <selectionEntry id="a80f-8b38-42e7-5ab6" name="The Everstave" publicationId="e3ec-7a32-ae62-8727" page="5" hidden="false" collective="false" import="true" type="upgrade">
+        <selectionEntry id="a80f-8b38-42e7-5ab6" name="The Everstave" publicationId="e3ec-7a32-ae62-8727" page="5" hidden="false" collective="false" import="true" type="upgrade" sortIndex="8">
           <modifiers>
             <modifier type="set" field="hidden" value="true">
               <conditionGroups>
@@ -10513,7 +10504,7 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
           </costs>
           <comment>Daemonic Incursion</comment>
         </selectionEntry>
-        <selectionEntry id="de5c-77a2-684a-2f10" name="The Endless Gift" publicationId="e3ec-7a32-ae62-8727" page="5" hidden="false" collective="false" import="true" type="upgrade">
+        <selectionEntry id="de5c-77a2-684a-2f10" name="The Endless Gift" publicationId="e3ec-7a32-ae62-8727" page="5" hidden="false" collective="false" import="true" type="upgrade" sortIndex="7">
           <modifiers>
             <modifier type="set" field="hidden" value="true">
               <conditionGroups>
@@ -10554,7 +10545,7 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
           </costs>
           <comment>Daemonic Incursion</comment>
         </selectionEntry>
-        <selectionEntry id="2680-4597-b6c3-b0c5" name="Soulstealer" publicationId="e3ec-7a32-ae62-8727" page="5" hidden="false" collective="false" import="true" type="upgrade">
+        <selectionEntry id="2680-4597-b6c3-b0c5" name="Soulstealer" publicationId="e3ec-7a32-ae62-8727" page="5" hidden="false" collective="false" import="true" type="upgrade" sortIndex="6">
           <modifiers>
             <modifier type="set" field="hidden" value="true">
               <conditions>
@@ -10591,7 +10582,7 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
           </costs>
           <comment>Daemonic Incursion</comment>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="False Majesty (Aura)" hidden="false" id="68bd-b1b0-cc80-eaa0">
+        <selectionEntry type="upgrade" import="true" name="False Majesty (Aura)" hidden="false" id="68bd-b1b0-cc80-eaa0" sortIndex="11">
           <costs>
             <cost name="pts" typeId="51b2-306e-1021-d207" value="30"/>
             <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
@@ -10632,7 +10623,7 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
           </modifiers>
           <comment>Legion of Excess</comment>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Dreaming Crown (Aura)" hidden="false" id="c918-c2ed-eb33-e512">
+        <selectionEntry type="upgrade" import="true" name="Dreaming Crown (Aura)" hidden="false" id="c918-c2ed-eb33-e512" sortIndex="10">
           <costs>
             <cost name="pts" typeId="51b2-306e-1021-d207" value="30"/>
             <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
@@ -10673,7 +10664,7 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
           </modifiers>
           <comment>Legion of Excess</comment>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Infernal Puppeteer" hidden="false" id="806e-b30b-3bcd-71c3">
+        <selectionEntry type="upgrade" import="true" name="Infernal Puppeteer" hidden="false" id="806e-b30b-3bcd-71c3" sortIndex="19">
           <costs>
             <cost name="pts" typeId="51b2-306e-1021-d207" value="10"/>
             <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
@@ -10719,7 +10710,7 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
           </modifiers>
           <comment>Scintillating Legion</comment>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Soul Glutton" hidden="false" id="2ed9-45a3-0611-6a2d">
+        <selectionEntry type="upgrade" import="true" name="Soul Glutton" hidden="false" id="2ed9-45a3-0611-6a2d" sortIndex="12">
           <costs>
             <cost name="pts" typeId="51b2-306e-1021-d207" value="10"/>
             <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
@@ -10765,7 +10756,7 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
           </modifiers>
           <comment>Legion of Excess</comment>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Avatar of Perfection" hidden="false" id="4f8a-c385-a04c-222d">
+        <selectionEntry type="upgrade" import="true" name="Avatar of Perfection" hidden="false" id="4f8a-c385-a04c-222d" sortIndex="9">
           <costs>
             <cost name="pts" typeId="51b2-306e-1021-d207" value="15"/>
             <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
@@ -10811,7 +10802,7 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
           </modifiers>
           <comment>Legion of Excess</comment>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Fury&apos;s Cage" hidden="false" id="7889-754e-cf05-8b98">
+        <selectionEntry type="upgrade" import="true" name="Fury&apos;s Cage" hidden="false" id="7889-754e-cf05-8b98" sortIndex="2">
           <costs>
             <cost name="pts" typeId="51b2-306e-1021-d207" value="20"/>
             <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
@@ -10857,7 +10848,7 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
           </modifiers>
           <comment>Blood Legion</comment>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Inescapable Eye" hidden="false" id="5c15-6ac1-0115-9df8">
+        <selectionEntry type="upgrade" import="true" name="Inescapable Eye" hidden="false" id="5c15-6ac1-0115-9df8" sortIndex="18">
           <costs>
             <cost name="pts" typeId="51b2-306e-1021-d207" value="10"/>
             <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
@@ -10898,7 +10889,7 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
           </modifiers>
           <comment>Scintillating Legion</comment>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Improbable Shield (Aura)" hidden="false" id="d6e9-169c-3b2a-ee09">
+        <selectionEntry type="upgrade" import="true" name="Improbable Shield (Aura)" hidden="false" id="d6e9-169c-3b2a-ee09" sortIndex="17">
           <costs>
             <cost name="pts" typeId="51b2-306e-1021-d207" value="30"/>
             <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
@@ -10939,7 +10930,7 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
           </modifiers>
           <comment>Scintillating Legion</comment>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Neverblade" hidden="false" id="b4ce-a5bf-52e7-884c">
+        <selectionEntry type="upgrade" import="true" name="Neverblade" hidden="false" id="b4ce-a5bf-52e7-884c" sortIndex="20">
           <costs>
             <cost name="pts" typeId="51b2-306e-1021-d207" value="20"/>
             <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
@@ -10985,9 +10976,9 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
           </modifiers>
           <comment>Scintillating Legion</comment>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Slaugterthirst (Aura)" hidden="false" id="8d0b-296c-5515-4267">
+        <selectionEntry type="upgrade" import="true" name="Slaugterthirst (Aura)" hidden="false" id="8d0b-296c-5515-4267" sortIndex="4">
           <costs>
-            <cost name="pts" typeId="51b2-306e-1021-d207" value="35"/>
+            <cost name="pts" typeId="51b2-306e-1021-d207" value="25"/>
             <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
             <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
             <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
@@ -11026,7 +11017,7 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
           </modifiers>
           <comment>Blood Legion</comment>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Brazenmaw" hidden="false" id="87ae-e092-2e5d-16a6">
+        <selectionEntry type="upgrade" import="true" name="Brazenmaw" hidden="false" id="87ae-e092-2e5d-16a6" sortIndex="1">
           <costs>
             <cost name="pts" typeId="51b2-306e-1021-d207" value="15"/>
             <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
@@ -11067,7 +11058,7 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
           </modifiers>
           <comment>Blood Legion</comment>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Gateway Unto Damnation" hidden="false" id="202a-2f25-f692-8b36">
+        <selectionEntry type="upgrade" import="true" name="Gateway Unto Damnation" hidden="false" id="202a-2f25-f692-8b36" sortIndex="3">
           <costs>
             <cost name="pts" typeId="51b2-306e-1021-d207" value="10"/>
             <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
@@ -11113,7 +11104,7 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
           </modifiers>
           <comment>Blood Legion</comment>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Maggot Maws" hidden="false" id="12f2-8867-2b0f-a619">
+        <selectionEntry type="upgrade" import="true" name="Maggot Maws" hidden="false" id="12f2-8867-2b0f-a619" sortIndex="16">
           <costs>
             <cost name="pts" typeId="51b2-306e-1021-d207" value="15"/>
             <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
@@ -11154,7 +11145,7 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
           </modifiers>
           <comment>Plague Legion</comment>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Font of Spores (Aura)" hidden="false" id="3014-b3f7-7236-9ef5">
+        <selectionEntry type="upgrade" import="true" name="Font of Spores (Aura)" hidden="false" id="3014-b3f7-7236-9ef5" sortIndex="15">
           <costs>
             <cost name="pts" typeId="51b2-306e-1021-d207" value="20"/>
             <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
@@ -11200,7 +11191,7 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
           </modifiers>
           <comment>Plague Legion</comment>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Cankerblight (Aura)" hidden="false" id="0f1b-f380-fa24-beb0">
+        <selectionEntry type="upgrade" import="true" name="Cankerblight (Aura)" hidden="false" id="0f1b-f380-fa24-beb0" sortIndex="13">
           <costs>
             <cost name="pts" typeId="51b2-306e-1021-d207" value="15"/>
             <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
@@ -11241,7 +11232,7 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
           </modifiers>
           <comment>Plague Legion</comment>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Droning Shroud (Aura)" hidden="false" id="33a0-657f-619d-5961">
+        <selectionEntry type="upgrade" import="true" name="Droning Shroud (Aura)" hidden="false" id="33a0-657f-619d-5961" sortIndex="14">
           <costs>
             <cost name="pts" typeId="51b2-306e-1021-d207" value="35"/>
             <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
@@ -11287,7 +11278,7 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
           </modifiers>
           <comment>Plague Legion</comment>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Leaping Shadows" hidden="false" id="15b1-1f0f-9bf6-9f0a">
+        <selectionEntry type="upgrade" import="true" name="Leaping Shadows" hidden="false" id="15b1-1f0f-9bf6-9f0a" sortIndex="22">
           <profiles>
             <profile name="Leaping Shadows" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="2e4a-29e6-512b-60b2">
               <characteristics>
@@ -11304,7 +11295,7 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
           </infoLinks>
           <comment>Shadow Legion</comment>
           <costs>
-            <cost name="pts" typeId="51b2-306e-1021-d207" value="15"/>
+            <cost name="pts" typeId="51b2-306e-1021-d207" value="25"/>
             <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
             <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
             <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
@@ -11321,7 +11312,7 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
             <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="ce2d-ebcc-2ad3-df4b" includeChildSelections="true"/>
           </constraints>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Mantle of Gloom (Aura)" hidden="false" id="0af0-fe8c-ad36-60c5">
+        <selectionEntry type="upgrade" import="true" name="Mantle of Gloom (Aura)" hidden="false" id="0af0-fe8c-ad36-60c5" sortIndex="24">
           <comment>Shadow Legion</comment>
           <modifiers>
             <modifier type="set" value="true" field="hidden">
@@ -11348,7 +11339,7 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
             <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="2934-6ed3-e82a-df92" includeChildSelections="true"/>
           </constraints>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Fade to Darkness" hidden="false" id="0b93-011a-c681-722c">
+        <selectionEntry type="upgrade" import="true" name="Fade to Darkness" hidden="false" id="0b93-011a-c681-722c" sortIndex="21">
           <comment>Shadow Legion</comment>
           <modifiers>
             <modifier type="set" value="true" field="hidden">
@@ -11365,7 +11356,7 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
             </profile>
           </profiles>
           <costs>
-            <cost name="pts" typeId="51b2-306e-1021-d207" value="15"/>
+            <cost name="pts" typeId="51b2-306e-1021-d207" value="30"/>
             <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
             <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
             <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
@@ -11375,7 +11366,7 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
             <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="8b57-e815-93c2-8997" includeChildSelections="true"/>
           </constraints>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Malice Made Manifest" hidden="false" id="8978-7278-1e4a-40a4">
+        <selectionEntry type="upgrade" import="true" name="Malice Made Manifest" hidden="false" id="8978-7278-1e4a-40a4" sortIndex="23">
           <profiles>
             <profile name="Malice Made Manifest" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="dc7c-cddd-069e-25e7">
               <characteristics>
