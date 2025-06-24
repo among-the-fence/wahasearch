@@ -44,9 +44,39 @@ export const SearchForm = ({ applyFunction, initialFormState }: SearchFormProps)
         applyFunction(localFormState);
     }
 
+    const handleClear = () => {
+        const cleared = new Map<string, string>();
+        cleared.set(FILTERS_LEGENDS, LEGENDS_NONE);
+        setLocalFormState(new Map(cleared));
+        applyFunction(new Map(cleared));
+    };
+
     return (
         <div>
-            <h2 style={{ marginBottom: '1rem', color: '#1d4ed8' }}>Search</h2>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <h2 style={{ marginBottom: '1rem', color: '#1d4ed8' }}>Search</h2>
+                <button
+                    type="button"
+                    onClick={handleClear}
+                    style={{
+                        background: 'transparent',
+                        border: '1px solid #e5e7eb', // lighter border
+                        borderRadius: '4px',
+                        padding: '0.15em 0.7em',
+                        color: '#6b7280', // subtle gray
+                        fontWeight: 400,
+                        fontSize: '0.95em',
+                        cursor: 'pointer',
+                        marginLeft: '0.5em',
+                        marginBottom: 0,
+                        transition: 'background 0.15s',
+                    }}
+                    onMouseOver={e => (e.currentTarget.style.background = '#f3f4f6')}
+                    onMouseOut={e => (e.currentTarget.style.background = 'transparent')}
+                >
+                    Clear
+                </button>
+            </div>
             <div>
                 <h2>Keywords</h2>
                 <input
