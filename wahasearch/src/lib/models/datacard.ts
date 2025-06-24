@@ -45,7 +45,7 @@ export class DataCard {
                     return;
                 }
                 if (name.includes('Faction:'))
-                    this.factions.push(name.replace("Faction:", ""));
+                    this.factions.push(name.replace("Faction:", "").trim());
                 else {
                     this.keywords.push(name);
                 }

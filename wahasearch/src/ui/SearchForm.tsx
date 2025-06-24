@@ -1,4 +1,4 @@
-import { FILTERS_KEYWORDS, FILTERS_LEGENDS, LEGENDS_ALL, LEGENDS_NONE, LEGENDS_ONLY } from "@/lib/constants";
+import { FILTERS_KEYWORDS, FILTERS_LEGENDS, FILTERS_FACTION, LEGENDS_ALL, LEGENDS_NONE, LEGENDS_ONLY } from "@/lib/constants";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { ChangeEvent, useEffect, useState } from "react";
 
@@ -51,6 +51,14 @@ export const SearchForm = ({ applyFunction, initialFormState }: SearchFormProps)
                     style={{ width: '100%', padding: '0.6rem', borderRadius: '6px', border: '1px solid #ddd' }}
                     autoFocus
                     onChange={e => updateLocalFormState(FILTERS_KEYWORDS, e)} />
+            </div>
+            <div style={{ marginTop: '1em' }}>
+                <h2>Faction</h2>
+                <input
+                    type="text"
+                    placeholder="Space Marines, Orks, etc."
+                    style={{ width: '100%', padding: '0.6rem', borderRadius: '6px', border: '1px solid #ddd' }}
+                    onChange={e => updateLocalFormState(FILTERS_FACTION, e)} />
             </div>
 
             <div>
