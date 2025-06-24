@@ -1,6 +1,7 @@
 export const FILTERS_KEYWORDS = "KEYWORDS";
 export const FILTERS_LEGENDS = "LEGENDS";
 export const FILTERS_FACTION = "FACTION";
+export const FILTERS_POINTS = "POINTS";
 
 export const LEGENDS_ALL = "ALL";
 export const LEGENDS_ONLY = "ONLY";

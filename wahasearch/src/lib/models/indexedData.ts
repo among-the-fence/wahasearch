@@ -1,6 +1,6 @@
 import { cleanName } from "@/lib/util";
 import { DataCard } from "./datacard";
-import { FILTERS_FACTION, FILTERS_KEYWORDS, FILTERS_LEGENDS, LEGENDS_NONE, LEGENDS_ONLY, FACTION_NICKNAME_MAP } from "../constants";
+import { FILTERS_FACTION, FILTERS_KEYWORDS, FILTERS_LEGENDS, FILTERS_POINTS, LEGENDS_NONE, LEGENDS_ONLY, FACTION_NICKNAME_MAP } from "../constants";
 
 export class IndexedData {
     sortingName: string;
@@ -8,6 +8,7 @@ export class IndexedData {
     keywords: string[];
     factions: string[];
     legends: boolean;
+    points: number[];
 
     constructor(data: DataCard) {
         this.names = [];
@@ -16,9 +17,15 @@ export class IndexedData {
         this.names.push(this.sortingName.toLowerCase());
         this.keywords = data.keywords.map(x => x.toLowerCase());
         this.factions = data.factions.map(x => x.toLowerCase());
-        this.factions.push(...data.factions.map(x => FACTION_NICKNAME_MAP[x.toLowerCase()]).flat());
-        this.factions = this.factions.filter(Boolean);
+        this.factions.push(
+            ...data.factions
+                .map(x => FACTION_NICKNAME_MAP[x.toLowerCase() as keyof typeof FACTION_NICKNAME_MAP])
+                .filter(Boolean)
+                .flat()
+        );
+        this.factions = Array.from(new Set(this.factions.filter(Boolean)));
         this.legends = data.legends;
+        this.points = data.costs.map(x => x.value);
     }
 
     matches(filters: Map<String, String>): boolean {
@@ -33,6 +40,31 @@ export class IndexedData {
             const matches = factionNames.some(filt =>
                 this.factions.some(fac => fac.includes(filt))
             );
+            if (!matches) return false;
+        }
+
+        // Points filter
+        const pointsFilter = filters.get(FILTERS_POINTS)?.trim() || "";
+        if (pointsFilter.length > 0) {
+            const filtersArr = pointsFilter.split(',').map(s => s.trim()).filter(Boolean);
+            // For each point value, check if ANY filter matches it
+            const matches = this.points.some(cardPoints => {
+                return filtersArr.some(expr => {
+                    // Match operators
+                    const opMatch = expr.match(/^(<=|>=|<|>|==)?\s*(-?\d+)$/);
+                    if (!opMatch) return false;
+                    const [, op, numStr] = opMatch;
+                    const num = Number(numStr);
+                    switch (op) {
+                        case '<=': return cardPoints <= num;
+                        case '<': return cardPoints < num;
+                        case '>=': return cardPoints >= num;
+                        case '>': return cardPoints > num;
+                        case '==': return cardPoints === num;
+                        default: return cardPoints === num;
+                    }
+                });
+            });
             if (!matches) return false;
         }
 

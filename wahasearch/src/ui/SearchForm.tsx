@@ -1,4 +1,4 @@
-import { FILTERS_KEYWORDS, FILTERS_LEGENDS, FILTERS_FACTION, LEGENDS_ALL, LEGENDS_NONE, LEGENDS_ONLY } from "@/lib/constants";
+import { FILTERS_KEYWORDS, FILTERS_LEGENDS, FILTERS_FACTION, FILTERS_POINTS, LEGENDS_ALL, LEGENDS_NONE, LEGENDS_ONLY } from "@/lib/constants";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { ChangeEvent, useEffect, useState } from "react";
 
@@ -52,6 +52,7 @@ export const SearchForm = ({ applyFunction, initialFormState }: SearchFormProps)
                     autoFocus
                     onChange={e => updateLocalFormState(FILTERS_KEYWORDS, e)} />
             </div>
+
             <div style={{ marginTop: '1em' }}>
                 <h2>Faction</h2>
                 <input
@@ -61,7 +62,16 @@ export const SearchForm = ({ applyFunction, initialFormState }: SearchFormProps)
                     onChange={e => updateLocalFormState(FILTERS_FACTION, e)} />
             </div>
 
-            <div>
+            <div style={{ marginTop: '1em' }}>
+                <h2>Points</h2>
+                <input
+                    type="text"
+                    placeholder="200, <=100, >50, ==75"
+                    style={{ width: '100%', padding: '0.6rem', borderRadius: '6px', border: '1px solid #ddd' }}
+                    onChange={e => updateLocalFormState(FILTERS_POINTS, e)} />
+            </div>
+
+            <div style={{ marginTop: '1em' }}>
                 <ToggleGroup defaultValue={["current"]} className="col-span-3" type="multiple" onValueChange={e => updateLegendsState(e)}>
                     <ToggleGroupItem className="border-2" defaultChecked={true} value="current" aria-label="Toggle current">
                         Current
