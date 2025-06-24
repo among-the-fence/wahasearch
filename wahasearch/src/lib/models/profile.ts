@@ -5,6 +5,7 @@ export class Profile {
     data: Object;
     name: string;
     characteristics: Map<string, any>;
+    keywords: string[];
     characteristicKeys: Array<string>;
 
     constructor(data: any) {
@@ -21,6 +22,7 @@ export class Profile {
             console.log(data);
         }
         this.characteristicKeys = Array.from(this.characteristics.keys());
+        this.keywords = this.characteristics.get('Keywords')?.['#text']?.split(',').map((x: string) => x.trim()).filter(Boolean);
         this.data = d;
     }
 }

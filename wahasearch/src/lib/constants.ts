@@ -37,3 +37,7 @@ export const FACTION_NICKNAME_MAP = {
     "necrons": ["necrons", "crons", "zombies", "ben"]
 }
 
+export const KEYWORD_NICKNAME_MAP = {
+    "lethal hits": ["lh"],
+    "devastating wounds": ["dw"],
+}

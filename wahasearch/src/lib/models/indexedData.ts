@@ -1,6 +1,6 @@
 import { cleanName } from "@/lib/util";
 import { DataCard } from "./datacard";
-import { FILTERS_FACTION, FILTERS_KEYWORDS, FILTERS_LEGENDS, FILTERS_POINTS, LEGENDS_NONE, LEGENDS_ONLY, FACTION_NICKNAME_MAP } from "../constants";
+import { FILTERS_FACTION, FILTERS_KEYWORDS, FILTERS_LEGENDS, FILTERS_POINTS, LEGENDS_NONE, LEGENDS_ONLY, FACTION_NICKNAME_MAP, KEYWORD_NICKNAME_MAP } from "../constants";
 
 export class IndexedData {
     sortingName: string;
@@ -11,11 +11,16 @@ export class IndexedData {
     points: number[];
 
     constructor(data: DataCard) {
-        this.names = [];
+        const names = [data.name.toLowerCase()];
         this.sortingName = cleanName(data.name);
-        this.names.push(data.name.toLowerCase());
-        this.names.push(this.sortingName.toLowerCase());
-        this.keywords = data.keywords.map(x => x.toLowerCase());
+        names.push(this.sortingName.toLowerCase());
+        this.names = Array.from(new Set(names.filter(Boolean)));
+
+        const keywords = data.keywords.map(x => x.toLowerCase());
+        keywords.push(...data.profiles.flatMap(profile => profile.keywords?.map(x => x.toLowerCase())));
+        const additional = keywords.filter(Boolean).flatMap(x => KEYWORD_NICKNAME_MAP[x.toLowerCase() as keyof typeof KEYWORD_NICKNAME_MAP]);
+        this.keywords = Array.from(new Set([...keywords, ...additional].filter(Boolean)));
+
         this.factions = data.factions.map(x => x.toLowerCase());
         this.factions.push(
             ...data.factions
