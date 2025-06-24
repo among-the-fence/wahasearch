@@ -18,12 +18,14 @@ function App() {
   }, []);
   const initialFormState = new Map<String, String>();
   initialFormState.set(FILTERS_LEGENDS, LEGENDS_NONE);
+  const [filterFormState, setFilterFormState] = useState<Map<String, String>>(new Map(initialFormState));
 
   if (!fullcatalogue) {
     return <> </>;
   }
 
   const keywordFilter = (filters: Map<String, String>) => {
+    setFilterFormState(new Map(filters)); // Retain the latest filter state
     setCatalogue(fullcatalogue.filter(datacard => datacard.index?.matches(filters)));
   }
 
@@ -99,7 +101,7 @@ function App() {
             >
               ×
             </button>
-            <SearchForm applyFunction={keywordFilter} initialFormState={initialFormState} />
+            <SearchForm applyFunction={keywordFilter} initialFormState={filterFormState} />
           </div>
         </div>
       )}

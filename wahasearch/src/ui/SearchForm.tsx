@@ -11,6 +11,10 @@ export const SearchForm = ({ applyFunction, initialFormState }: SearchFormProps)
     const [localFormState, setLocalFormState] = useState(initialFormState);
 
     useEffect(() => {
+        setLocalFormState(new Map(initialFormState));
+    }, [initialFormState]);
+
+    useEffect(() => {
         const timeOutId = setTimeout(() => applyFunction(localFormState), 500);
         return () => clearTimeout(timeOutId);
     }, [localFormState]);
@@ -50,6 +54,7 @@ export const SearchForm = ({ applyFunction, initialFormState }: SearchFormProps)
                     placeholder="dw, lethal, chaos"
                     style={{ width: '100%', padding: '0.6rem', borderRadius: '6px', border: '1px solid #ddd' }}
                     autoFocus
+                    value={localFormState.get(FILTERS_KEYWORDS)?.toString() || ""}
                     onChange={e => updateLocalFormState(FILTERS_KEYWORDS, e)} />
             </div>
 
@@ -59,6 +64,7 @@ export const SearchForm = ({ applyFunction, initialFormState }: SearchFormProps)
                     type="text"
                     placeholder="Space Marines, Orks, etc."
                     style={{ width: '100%', padding: '0.6rem', borderRadius: '6px', border: '1px solid #ddd' }}
+                    value={localFormState.get(FILTERS_FACTION)?.toString() || ""}
                     onChange={e => updateLocalFormState(FILTERS_FACTION, e)} />
             </div>
 
@@ -68,6 +74,7 @@ export const SearchForm = ({ applyFunction, initialFormState }: SearchFormProps)
                     type="text"
                     placeholder="200, <=100, >50, ==75"
                     style={{ width: '100%', padding: '0.6rem', borderRadius: '6px', border: '1px solid #ddd' }}
+                    value={localFormState.get(FILTERS_POINTS)?.toString() || ""}
                     onChange={e => updateLocalFormState(FILTERS_POINTS, e)} />
             </div>
 
