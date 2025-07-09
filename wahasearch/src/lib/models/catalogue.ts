@@ -31,6 +31,8 @@ export class Catalogue {
         this.detachments = Detachment.extractDetachment(data['sharedSelectionEntries'] as Array<any>);
         delete data['sharedSelectionEntries'];
 
+        // console.log(Array.from(new Set(this.datacards.map(x => x.factions).flat().filter(Boolean))));
+
         this.data = data;
     }
 }

@@ -8,6 +8,7 @@ export const LEGENDS_ONLY = "ONLY";
 export const LEGENDS_NONE = "NONE";
 
 export const FACTION_NICKNAME_MAP = {
+    "adeptus astartes": ["sm", "space marines", "marines"],
     "astra militarum": ["am", "ig", "guard", "imperial guard"],
     "adepta sororitas": ["mommy", "senoritas", "sisters", "sob", "ben"],
     "adeptus custodes": ["custodes"],
@@ -26,7 +27,6 @@ export const FACTION_NICKNAME_MAP = {
     "grey knights": ["gk"],
     "genestealer cults": ["gsc", "genestealers"],
     "imperial knights": ["ik"],
-    "space marines": ["sm", "marines"],
     "space wolves": ["wolves", "sw"],
     "leagues of votann": ["dwarves", "gimli", "lov", "jason"],
     "world eaters": ["we", "eaters", "ben"],
