@@ -1,18 +1,18 @@
 import { FILTERS_KEYWORDS, FILTERS_LEGENDS, FILTERS_FACTION, FILTERS_POINTS, LEGENDS_ALL, LEGENDS_NONE, LEGENDS_ONLY } from "@/lib/constants";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { ChangeEvent, useEffect, useState } from "react";
+import { formData, SearchFormData } from "@/lib/models/searchFormData";
 
 export interface SearchFormProps {
-    applyFunction: (form: Map<String, String>) => void;
-    initialFormState: Map<String, String>;
+    applyFunction: (form: SearchFormData) => void;
 }
 
-export const SearchForm = ({ applyFunction, initialFormState }: SearchFormProps) => {
-    const [localFormState, setLocalFormState] = useState(initialFormState);
+export const SearchForm = ({ applyFunction }: SearchFormProps) => {
+    const [localFormState, setLocalFormState] = useState(formData);
 
     useEffect(() => {
-        setLocalFormState(new Map(initialFormState));
-    }, [initialFormState]);
+        setLocalFormState(formData);
+    }, []);
 
     useEffect(() => {
         const timeOutId = setTimeout(() => applyFunction(localFormState), 500);
@@ -21,11 +21,12 @@ export const SearchForm = ({ applyFunction, initialFormState }: SearchFormProps)
 
     const updateLocalFormState = (field: string, e: ChangeEvent<HTMLInputElement>) => {
         if (e.target.value.length == 0) {
-            localFormState.delete(field)
-            setLocalFormState(new Map(localFormState));
+            localFormState.formData.delete(field)
+            setLocalFormState(new SearchFormData(localFormState.formData));
         }
         else {
-            setLocalFormState(new Map(localFormState).set(field, e.target.value));
+            localFormState.formData.set(field, e.target.value);
+            setLocalFormState(new SearchFormData(localFormState.formData));
         }
     }
 
@@ -40,15 +41,15 @@ export const SearchForm = ({ applyFunction, initialFormState }: SearchFormProps)
         else {
             localFormState.set(FILTERS_LEGENDS, LEGENDS_ONLY);
         }
-        setLocalFormState(new Map(localFormState));
+        setLocalFormState(new SearchFormData(localFormState.formData));
         applyFunction(localFormState);
     }
 
     const handleClear = () => {
         const cleared = new Map<string, string>();
         cleared.set(FILTERS_LEGENDS, LEGENDS_NONE);
-        setLocalFormState(new Map(cleared));
-        applyFunction(new Map(cleared));
+        setLocalFormState(new SearchFormData(cleared));
+        applyFunction(new SearchFormData(cleared));
     };
 
     return (

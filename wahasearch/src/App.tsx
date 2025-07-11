@@ -4,7 +4,7 @@ import './App.css'
 import { WahaSearchLoader } from './lib/models/wahaSearchLoader';
 import { DataCardDisplay } from './ui/DataCardDisplay';
 import { SearchForm } from './ui/SearchForm';
-import { FILTERS_LEGENDS, LEGENDS_NONE } from './lib/constants';
+import { formData, SearchFormData } from './lib/models/searchFormData';
 
 
 function App() {
@@ -14,19 +14,15 @@ function App() {
   useEffect(() => {
     const c = WahaSearchLoader.data();
     setFullCatalogue(c);
-    setCatalogue(c.filter(datacard => datacard.index?.matches(initialFormState)));
+    setCatalogue(c.filter((datacard: any) => datacard.index?.matches(formData.formData)));
   }, []);
-  const initialFormState = new Map<String, String>();
-  initialFormState.set(FILTERS_LEGENDS, LEGENDS_NONE);
-  const [filterFormState, setFilterFormState] = useState<Map<String, String>>(new Map(initialFormState));
 
   if (!fullcatalogue) {
     return <> </>;
   }
 
-  const keywordFilter = (filters: Map<String, String>) => {
-    setFilterFormState(new Map(filters)); // Retain the latest filter state
-    setCatalogue(fullcatalogue.filter(datacard => datacard.index?.matches(filters)));
+  const keywordFilter = (filters: SearchFormData) => {
+    setCatalogue(fullcatalogue.filter((datacard: any) => datacard.index?.matches(filters.formData)));
   }
 
   if (!catalogue) {
@@ -101,7 +97,7 @@ function App() {
             >
               ×
             </button>
-            <SearchForm applyFunction={keywordFilter} initialFormState={filterFormState} />
+            <SearchForm applyFunction={keywordFilter} />
           </div>
         </div>
       )}

@@ -1,4 +1,4 @@
-import { cleanName, deepClone, ensureArray } from "@/lib/util";
+import { deepClone, ensureArray } from "@/lib/util";
 import { Cost } from "./cost";
 import { collectSelectionProfiles } from "../collectProfiles";
 import { Profile } from "./profile";
