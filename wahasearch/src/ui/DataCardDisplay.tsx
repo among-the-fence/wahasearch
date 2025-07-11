@@ -22,7 +22,7 @@ export const DataCardDisplay = ({ datacard }: DataCardDisplayProps) => {
             <SheetTrigger asChild>
                 <DataCardCard datacard={datacard} cardClick={async () => setOpen(true)} />
             </SheetTrigger>
-            <SheetContent side="right" style={{ maxWidth: "100%", width: '800px' }}>
+            <SheetContent side="right" style={{ maxWidth: "100%", width: '800px', zIndex: 1200 }}>
                 <SheetHeader>
                     <SheetTitle>
                         <div>

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import './App.css'
 import { WahaSearchLoader } from './lib/models/wahaSearchLoader';
 import { DataCardDisplay } from './ui/DataCardDisplay';
-import { SearchForm } from './ui/SearchForm';
+import { SearchBar, SearchForm } from './ui/SearchForm';
 import { formData, SearchFormData } from './lib/models/searchFormData';
 
 
@@ -26,81 +26,89 @@ function App() {
   }
 
   if (!catalogue) {
-    return <h1>Huh...</h1>;
+    return <h1 style={{ color: 'white' }}>Huh...</h1>;
   }
 
   return (
     <div style={{ position: 'relative' }}>
       {/* Fixed Search Button */}
-      <button
-        style={{
-          position: 'fixed',
-          top: 20,
-          left: '5%',
-          transform: 'translateX(-50%)',
-          zIndex: 1000,
-          padding: '12px 28px',
-          background: '#1d4ed8',
-          color: 'white',
-          border: 'none',
-          borderRadius: '8px',
-          fontSize: '1rem',
-          cursor: 'pointer',
-          boxShadow: '0 2px 8px rgba(0,0,0,0.08)'
-        }}
-        onClick={() => setIsSearchOpen(true)}
-      >
-        Open Search
-      </button>
+      <div style={{
+        position: 'fixed', top: 20,
+        zIndex: 1000,
+        display: 'flex',
+        alignItems: 'left',
+        justifyContent: 'left',
+        flexDirection: 'row',
+        width: '80%',
+        maxWidth: '1000px',
+        gap: '2rem',
+      }}>
+        <button
+          style={{
+            padding: '12px 28px',
+            background: '#1d4ed8',
+            color: 'white',
+            borderRadius: '8px',
+            cursor: 'pointer',
+            boxShadow: '0 2px 8px rgba(0,0,0,0.08)'
+          }}
+          onClick={() => setIsSearchOpen(true)}
+        >
+          Open Search
+        </button>
+        <SearchBar applyFunction={keywordFilter} />
+      </div>
 
       {/* Search Panel Overlay */}
-      {isSearchOpen && (
-        <div
-          style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            width: '100vw',
-            height: '100vh',
-            background: 'rgba(0,0,0,0.32)',
-            zIndex: 1100,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-          onClick={() => setIsSearchOpen(false)}
-        >
+      {
+        isSearchOpen && (
           <div
             style={{
-              background: 'white',
-              padding: '2rem',
-              borderRadius: '12px',
-              minWidth: '350px',
-              minHeight: '120px',
-              position: 'relative',
-              boxShadow: '0 4px 24px rgba(0,0,0,0.14)'
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              width: '100vw',
+              height: '100vh',
+              background: 'rgba(0,0,0,0.32)',
+              zIndex: 1100,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
             }}
-            onClick={e => e.stopPropagation()}
+            onClick={() => setIsSearchOpen(false)}
           >
-            <button
+            <div
               style={{
-                position: 'absolute',
-                top: 10,
-                right: 10,
-                background: 'transparent',
-                border: 'none',
-                fontSize: '1.3rem',
-                cursor: 'pointer',
-                color: '#888'
+                background: 'white',
+                padding: '2rem',
+                borderRadius: '12px',
+                minWidth: '350px',
+                minHeight: '120px',
+                position: 'relative',
+                boxShadow: '0 4px 24px rgba(0,0,0,0.14)'
               }}
-              onClick={() => setIsSearchOpen(false)}
+              onClick={e => e.stopPropagation()}
             >
-              ×
-            </button>
-            <SearchForm applyFunction={keywordFilter} />
+              <button
+                style={{
+                  position: 'absolute',
+                  top: 10,
+                  right: 10,
+                  background: 'transparent',
+                  border: 'none',
+                  fontSize: '1.3rem',
+                  cursor: 'pointer',
+                  color: '#888'
+                }}
+                onClick={() => setIsSearchOpen(false)}
+              >
+                ×
+              </button>
+              <SearchForm applyFunction={keywordFilter} />
+            </div>
           </div>
-        </div>
-      )}
+        )
+      }
 
       <div className='mt-12'>
         <div style={{ alignContent: 'center', justifyContent: 'center', display: 'flex' }}>
@@ -113,7 +121,7 @@ function App() {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 
 }

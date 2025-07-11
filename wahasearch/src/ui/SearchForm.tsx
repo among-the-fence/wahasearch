@@ -7,6 +7,63 @@ export interface SearchFormProps {
     applyFunction: (form: SearchFormData) => void;
 }
 
+export const SearchBar = ({ applyFunction }: SearchFormProps) => {
+    const [localFormState, setLocalFormState] = useState(formData);
+
+    useEffect(() => {
+        setLocalFormState(formData);
+    }, []);
+
+    useEffect(() => {
+        const timeOutId = setTimeout(() => applyFunction(localFormState), 500);
+        return () => clearTimeout(timeOutId);
+    }, [localFormState]);
+
+    const updateLocalFormState = (field: string, e: ChangeEvent<HTMLInputElement>) => {
+        if (e.target.value.length == 0) {
+            localFormState.formData.delete(field)
+            setLocalFormState(new SearchFormData(localFormState.formData));
+        }
+        else {
+            localFormState.formData.set(field, e.target.value);
+            setLocalFormState(new SearchFormData(localFormState.formData));
+        }
+    }
+
+    const handleClear = () => {
+        const cleared = new Map<string, string>();
+        cleared.set(FILTERS_LEGENDS, LEGENDS_NONE);
+        setLocalFormState(new SearchFormData(cleared));
+        applyFunction(new SearchFormData(cleared));
+    };
+
+
+    return (
+        <div style={{ display: 'flex', flexDirection: 'row', width: '80%' }}>
+            <input
+                type="keyword"
+                placeholder="dw, lethal, chaos"
+                style={{ width: '100%', padding: '0.6rem', borderRadius: '6px', border: '1px solid #ddd' }}
+                autoFocus
+                value={localFormState.get(FILTERS_KEYWORDS)?.toString() || ""}
+                onChange={e => updateLocalFormState(FILTERS_KEYWORDS, e)} />
+            <button
+                style={{
+                    padding: '12px 16px',
+                    background: '#7B8FA1',
+                    color: 'white',
+                    borderRadius: '8px',
+                    cursor: 'pointer',
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.08)'
+                }}
+                onClick={handleClear}
+            >
+                x
+            </button>
+        </div>
+    );
+}
+
 export const SearchForm = ({ applyFunction }: SearchFormProps) => {
     const [localFormState, setLocalFormState] = useState(formData);
 
