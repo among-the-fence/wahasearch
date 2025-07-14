@@ -120,6 +120,9 @@ const JsonRenderer: React.FC<JsonRendererProps> = ({ data }) => {
             <div style={levelStyle}>
                 {data.map((item, idx) => {
                     let label = `[${idx}]`;
+                    if (item && typeof item === 'string') {
+                        label = `[${idx}]: ${item}`;
+                    }
                     if (item && typeof item === 'object') {
                         let extra = '';
                         if ('name' in item && typeof item.name === 'string') {
