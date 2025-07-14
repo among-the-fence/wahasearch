@@ -1,6 +1,7 @@
 import { cleanName } from "@/lib/util";
 import { DataCard } from "./datacard";
 import { FILTERS_FACTION, FILTERS_KEYWORDS, FILTERS_LEGENDS, FILTERS_POINTS, LEGENDS_NONE, LEGENDS_ONLY, FACTION_NICKNAME_MAP, KEYWORD_NICKNAME_MAP } from "../constants";
+import { SearchFormData } from "./searchFormData";
 
 export class IndexedData {
     sortingName: string;
@@ -33,27 +34,28 @@ export class IndexedData {
         this.points = data.costs.map(x => x.value);
     }
 
-    matches(filters: Map<String, String>): boolean {
-        // console.log(filters);
-        const keywordFilter = filters.get(FILTERS_KEYWORDS)?.toLowerCase() || "";
-        if (keywordFilter.length > 0 && !this.keywords.some(x => x.includes(keywordFilter)))
+    matches(filters: SearchFormData): boolean {
+        const keywordFilter = filters.processedKeywords;
+        const keywordMatch = keywordFilter.length === 0 || keywordFilter.every(kw => this.keywords.some(k => k.includes(kw)));
+        if (!keywordMatch)
             return false;
 
         const factionFilter = filters.get(FILTERS_FACTION)?.toLowerCase() || "";
+        let factionMatch = true;
         if (factionFilter.length > 0) {
             const factionNames = factionFilter.split(',').map(s => s.trim()).filter(Boolean);
-            const matches = factionNames.some(filt =>
+            factionMatch = factionNames.some(filt =>
                 this.factions.some(fac => fac.includes(filt))
             );
-            if (!matches) return false;
         }
 
         // Points filter
         const pointsFilter = filters.get(FILTERS_POINTS)?.trim() || "";
+        let pointsMatch = true;
         if (pointsFilter.length > 0) {
             const filtersArr = pointsFilter.split(',').map(s => s.trim()).filter(Boolean);
             // For each point value, check if ANY filter matches it
-            const matches = this.points.some(cardPoints => {
+            pointsMatch = this.points.some(cardPoints => {
                 return filtersArr.some(expr => {
                     // Match operators
                     const opMatch = expr.match(/^(<=|>=|<|>|==)?\s*(-?\d+)$/);
@@ -70,13 +72,14 @@ export class IndexedData {
                     }
                 });
             });
-            if (!matches) return false;
         }
 
+        let legendsMatch = true;
         if (filters.get(FILTERS_LEGENDS) == LEGENDS_ONLY && !this.legends)
-            return false;
-        if (filters.get(FILTERS_LEGENDS) == LEGENDS_NONE && this.legends)
-            return false;
-        return true;
+            legendsMatch = false;
+        if ((!filters.get(FILTERS_LEGENDS) && this.legends) || (filters.get(FILTERS_LEGENDS) == LEGENDS_NONE && this.legends))
+            legendsMatch = false;
+        // console.log("Match:", keywordMatch, factionMatch, pointsMatch, legendsMatch);
+        return keywordMatch && factionMatch && pointsMatch && legendsMatch;
     }
 }

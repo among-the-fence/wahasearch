@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import './App.css'
 import { WahaSearchLoader } from './lib/models/wahaSearchLoader';
@@ -14,15 +13,17 @@ function App() {
   useEffect(() => {
     const c = WahaSearchLoader.data();
     setFullCatalogue(c);
-    setCatalogue(c.filter((datacard: any) => datacard.index?.matches(formData.formData)));
+    console.log("Initila load", formData);
+    setCatalogue(c.filter((datacard: any) => datacard.index?.matches(formData)));
   }, []);
 
   if (!fullcatalogue) {
     return <> </>;
   }
 
-  const keywordFilter = (filters: SearchFormData) => {
-    setCatalogue(fullcatalogue.filter((datacard: any) => datacard.index?.matches(filters.formData)));
+  const applyFilters = (filters: SearchFormData) => {
+    console.log("Update", filters);
+    setCatalogue(fullcatalogue.filter((datacard: any) => datacard.index?.matches(filters)));
   }
 
   if (!catalogue) {
@@ -56,10 +57,9 @@ function App() {
         >
           Open Search
         </button>
-        <SearchBar applyFunction={keywordFilter} />
+        <SearchBar applyFunction={applyFilters} />
       </div>
 
-      {/* Search Panel Overlay */}
       {
         isSearchOpen && (
           <div
@@ -104,7 +104,7 @@ function App() {
               >
                 ×
               </button>
-              <SearchForm applyFunction={keywordFilter} />
+              <SearchForm applyFunction={applyFilters} />
             </div>
           </div>
         )

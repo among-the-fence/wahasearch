@@ -49,66 +49,71 @@ export interface DataCardCardProps {
     datacard: DataCard
     cardClick: () => {}
 }
-const DataCardCard = ({ datacard, cardClick }: DataCardCardProps) => {
-    const modelProfiles = datacard.profiles.filter((p) => {
-        return p.characteristicKeys.includes("M")
-    })
+import React from "react";
 
-    const headingStyle = datacard.legends ? { color: "grey" } : { color: "black" };
-    return (
-        <Card onClick={cardClick} style={{ cursor: 'pointer' }}>
-            <div style={{ padding: '1rem' }}>
-                <div style={{
-                    ...headingStyle,
-                    fontWeight: 'bold',
-                    fontSize: '1.3em',
-                    textAlign: 'center',
-                    marginBottom: '0.2em',
-                }}>{datacard.name}</div>
-                {datacard.costs.length > 0 && (
+const DataCardCard = React.forwardRef<HTMLDivElement, DataCardCardProps>(
+    ({ datacard, cardClick }, ref) => {
+        const modelProfiles = datacard.profiles.filter((p) => {
+            return p.characteristicKeys.includes("M")
+        })
+
+        const headingStyle = datacard.legends ? { color: "grey" } : { color: "black" };
+        return (
+            <Card ref={ref} onClick={cardClick} style={{ cursor: 'pointer' }}>
+                <div style={{ padding: '1rem' }}>
                     <div style={{
-                        textAlign: 'center',
+                        ...headingStyle,
                         fontWeight: 'bold',
-                        color: '#0ea5e9', // Tailwind's sky-500
-                        fontSize: '0.8em',
-                        letterSpacing: '0.04em',
-                        marginBottom: '0.5em',
-                    }}>
-                        ({datacard.costString})
-                    </div>
-                )}
+                        fontSize: '1.3em',
+                        textAlign: 'center',
+                        marginBottom: '0.2em',
+                    }}>{datacard.name}</div>
+                    {datacard.costs.length > 0 && (
+                        <div style={{
+                            textAlign: 'center',
+                            fontWeight: 'bold',
+                            color: '#0ea5e9', // Tailwind's sky-500
+                            fontSize: '0.8em',
+                            letterSpacing: '0.04em',
+                            marginBottom: '0.5em',
+                        }}>
+                            ({datacard.costString})
+                        </div>
+                    )}
 
-                {modelProfiles.length > 1 && (
-                    <div style={{ textAlign: "center" }}>
-                        {modelProfiles.map((p, idx) => {
-                            // Prepare characteristic values, fallback to empty string if missing
-                            const getText = (key: string) => p.characteristics.get(key)?.["#text"] ?? "";
-                            const charString = unitCharacteristicOrder.map(key => `${key}:${getText(key)}`).join(",");
-                            return (
-                                <div key={idx} style={{ marginBottom: 4 }}>
-                                    <strong>{p.name}</strong>
-                                    <p>{charString}</p>
-                                </div>
-                            );
-                        })}
-                    </div>
-                )}
-                {modelProfiles.length === 1 && (
-                    <div style={{ textAlign: "center" }}>
-                        {modelProfiles.map((p, idx) => {
-                            const charString = unitCharacteristicOrder.map(key => `${key}: ${p.characteristics.get(key)?.["#text"] ?? ""}`).join(", ");
-                            return (
-                                <div key={idx} style={{ marginBottom: 4 }}>
-                                    {charString}
-                                </div>
-                            );
-                        })}
-                    </div>
-                )}
-            </div>
-        </Card>
-    );
-}
+                    {modelProfiles.length > 1 && (
+                        <div style={{ textAlign: "center" }}>
+                            {modelProfiles.map((p, idx) => {
+                                // Prepare characteristic values, fallback to empty string if missing
+                                const getText = (key: string) => p.characteristics.get(key)?.["#text"] ?? "";
+                                const charString = unitCharacteristicOrder.map(key => `${key}:${getText(key)}`).join(",");
+                                return (
+                                    <div key={idx} style={{ marginBottom: 4 }}>
+                                        <strong>{p.name}</strong>
+                                        <p>{charString}</p>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    )}
+                    {modelProfiles.length === 1 && (
+                        <div style={{ textAlign: "center" }}>
+                            {modelProfiles.map((p, idx) => {
+                                const charString = unitCharacteristicOrder.map(key => `${key}: ${p.characteristics.get(key)?.["#text"] ?? ""}`).join(", ");
+                                return (
+                                    <div key={idx} style={{ marginBottom: 4 }}>
+                                        {charString}
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    )}
+                </div>
+            </Card>
+        );
+    }
+);
+DataCardCard.displayName = "DataCardCard";
 
 const DataCardSheet = ({ datacard, cardClick }: DataCardCardProps) => {
     const byName = (a: any, b: any) => a.name.localeCompare(b.name);
@@ -116,8 +121,6 @@ const DataCardSheet = ({ datacard, cardClick }: DataCardCardProps) => {
     const rangedProfiles = datacard.profiles.filter(p => !p.characteristics.has('M') && typeof p.characteristics.get('Range')?.['#text'] === 'string' && p.characteristics.get('Range')['#text'].toLowerCase() !== 'melee').sort(byName);
     const meleeProfiles = datacard.profiles.filter(p => !p.characteristics.has('M') && typeof p.characteristics.get('Range')?.['#text'] === 'string' && p.characteristics.get('Range')['#text'].toLowerCase() === 'melee').sort(byName);
     const abilityProfiles = datacard.profiles.filter(p => !p.characteristics.has('M') && (!p.characteristics.has('Range') || typeof p.characteristics.get('Range')?.['#text'] !== 'string')).sort(byName);
-
-
 
     return (
         <div style={{ maxHeight: '70vh', overflowY: 'auto', padding: '1em 0' }}>
