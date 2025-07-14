@@ -23,7 +23,7 @@ export const FACTION_NICKNAME_MAP = {
     "death guard": ["dg"],
     "deathwatch": ["dw", "death watch", "watch"],
     "drukhari": ["elves", "dark elves", "dark eldar", "bad elves", "dark elf", "bad elf", "dark elf", "mary"],
-    "harlequins": ["hql", "harlequin", "harlequins", "elves", "elf", "murder circus"],
+    "harlequins": ["hql", "harlequin", "harlequins", "elves", "elf", "murder circus", "murder clowns", "murder", "mary", "bill"],
     "black templars": ["bt"],
     "grey knights": ["gk"],
     "genestealer cults": ["gsc", "genestealers"],
@@ -35,7 +35,8 @@ export const FACTION_NICKNAME_MAP = {
     "tyranids": ["nids", "bugs", "henry"],
     "tau empire": ["tau", "fish", "t'au", "henry"],
     "thousand sons": ["tsons", "ksons", "1ksons", "dustyboiz", "dustyboys", "jason"],
-    "necrons": ["necrons", "crons", "zombies", "ben"]
+    "necrons": ["necrons", "crons", "zombies", "ben"],
+    "ynnari": ["anhrathe", "elves", "dark elves", "dark eldar", "bad elves", "dark elf", "bad elf", "dark elf", "mary", "aeldari", "elves", "elf", "eldar", "legalos and friends", "bill", "good elves", "good elf", "light eldar", "light elf", "light elves", "weird elves"]
 }
 
 export const KEYWORD_NICKNAME_MAP = {
