@@ -35,8 +35,27 @@ export class IndexedData {
     }
 
     matches(filters: SearchFormData): boolean {
+
         const keywordFilter = filters.processedKeywords;
-        const keywordMatch = keywordFilter.length === 0 || keywordFilter.every(kw => this.keywords.some(k => k.includes(kw) || this.factions.some(f => f.includes(kw))));
+        const keywordMatch = keywordFilter.length === 0 || keywordFilter.every(kwExpr => {
+            // Support !=, ==, =
+            let op = '=';
+            let kw = kwExpr;
+            if (kwExpr.startsWith("!=") || kwExpr.startsWith("==")) {
+                op = kwExpr.substring(0, 2);
+                kw = kwExpr.substring(2);
+            } else if (kwExpr.startsWith("!") || kwExpr.startsWith("=")) {
+                op = kwExpr.substring(0, 1);
+                kw = kwExpr.substring(1);
+            }
+            kw = kw.trim().toLowerCase();
+            const present = this.keywords.some(k => k.includes(kw)) || this.factions.some(f => f.includes(kw));
+            if (op === '!=' || op === '!') {
+                return !present;
+            } else if (op === '=' || op === '==') {
+                return present;
+            }
+        });
         if (!keywordMatch)
             return false;
 
