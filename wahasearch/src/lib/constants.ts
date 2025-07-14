@@ -13,7 +13,7 @@ export const FACTION_NICKNAME_MAP = {
     "adepta sororitas": ["mommy", "senoritas", "sisters", "sob", "ben"],
     "adeptus custodes": ["custodes"],
     "adeptus mechanicus": ["admech"],
-    "asuryani": ["aeldari", "elves", "elf", "eldar", "legalos and friends", "bill"],
+    "asuryani": ["aeldari", "elves", "elf", "eldar", "legalos and friends", "bill", "good elves", "good elf", "light eldar", "light elf", "light elves"],
     "agents of the imperium": ["ia", "imperial agents", "imperial"],
     "blood angels": ["ba", "angles"],
     "dark angels": ["da", "angles"],
@@ -22,7 +22,7 @@ export const FACTION_NICKNAME_MAP = {
     "chaos space marines": ["csm", "chaos marines"],
     "death guard": ["dg"],
     "deathwatch": ["dw", "death watch", "watch"],
-    "drukhari": ["elves", "dark elves", "dark eldar", "bad elves", "dark elf", "bad elf"],
+    "drukhari": ["elves", "dark elves", "dark eldar", "bad elves", "dark elf", "bad elf", "dark elf"],
     "black templars": ["bt"],
     "grey knights": ["gk"],
     "genestealer cults": ["gsc", "genestealers"],
@@ -40,4 +40,5 @@ export const FACTION_NICKNAME_MAP = {
 export const KEYWORD_NICKNAME_MAP = {
     "lethal hits": ["lh"],
     "devastating wounds": ["dw"],
+    "fly": ["flying"],
 }

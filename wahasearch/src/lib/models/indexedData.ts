@@ -36,7 +36,7 @@ export class IndexedData {
 
     matches(filters: SearchFormData): boolean {
         const keywordFilter = filters.processedKeywords;
-        const keywordMatch = keywordFilter.length === 0 || keywordFilter.every(kw => this.keywords.some(k => k.includes(kw)));
+        const keywordMatch = keywordFilter.length === 0 || keywordFilter.every(kw => this.keywords.some(k => k.includes(kw) || this.factions.some(f => f.includes(kw))));
         if (!keywordMatch)
             return false;
 

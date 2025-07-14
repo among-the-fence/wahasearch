@@ -42,7 +42,7 @@ export const SearchBar = ({ applyFunction }: SearchFormProps) => {
         <div style={{ display: 'flex', flexDirection: 'row', width: '80%' }}>
             <input
                 type="keyword"
-                placeholder="dw, lethal, chaos"
+                placeholder="bugs, dw, infantry, grenade, fly, transport"
                 style={{ width: '100%', padding: '0.6rem', borderRadius: '6px', border: '1px solid #ddd' }}
                 autoFocus
                 value={localFormState.get(FILTERS_KEYWORDS)?.toString() || ""}

@@ -1,4 +1,4 @@
-import { FILTERS_KEYWORDS, FILTERS_LEGENDS, LEGENDS_NONE } from "../constants";
+import { FILTERS_KEYWORDS } from "../constants";
 
 export class SearchFormData {
     formData: Map<string, string>;
