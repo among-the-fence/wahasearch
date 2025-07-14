@@ -23,7 +23,13 @@ function App() {
 
   const applyFilters = (filters: SearchFormData) => {
     console.log("Update", filters);
-    setCatalogue(fullcatalogue.filter((datacard: any) => datacard.index?.matches(filters)));
+    if (fullcatalogue.length === 0) {
+      console.error("No catalogue");
+      return;
+    }
+    // console.log("Full catalogue", fullcatalogue.length);
+    const filtered = fullcatalogue.filter((datacard: any) => datacard.index?.matches(filters))
+    setCatalogue(filtered);
   }
 
   if (!catalogue) {
