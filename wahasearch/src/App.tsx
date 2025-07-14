@@ -13,7 +13,9 @@ function App() {
   useEffect(() => {
     const c = WahaSearchLoader.data();
     setFullCatalogue(c);
-    console.log("Initila load", formData);
+    // Log all faction names from the full list
+    const allFactions = Array.from(new Set(c.flatMap((datacard: any) => datacard.factions || []))).map((s: string) => s.toLowerCase()).sort();
+    console.log("All faction names:", allFactions);
     setCatalogue(c.filter((datacard: any) => datacard.index?.matches(formData)));
   }, []);
 
@@ -22,7 +24,6 @@ function App() {
   }
 
   const applyFilters = (filters: SearchFormData) => {
-    console.log("Update", filters);
     if (fullcatalogue.length === 0) {
       console.error("No catalogue");
       return;
