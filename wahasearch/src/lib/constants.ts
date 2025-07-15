@@ -48,7 +48,7 @@ export const FACTION_NICKNAME_MAP = {
     'unaligned forces': [],
     'white scars': [],
     'world eaters': ['we', 'eaters', 'ben'],
-    'ynnari': ['elves', 'dark elves', 'dark eldar', 'bad elves', 'dark elf', 'bad elf', 'dark elf', 'mary', 'aeldari', 'elves', 'elf', 'eldar', 'legalos and friends', 'bill', 'good elves', 'good elf', 'light eldar', 'light elf', 'light elves', 'weird elves']
+    'ynnari': ['elves', 'mary', 'aeldari', 'elves', 'elf', 'eldar', 'bill', 'weird elves']
 }
 
 export const KEYWORD_NICKNAME_MAP = {
