@@ -1,4 +1,4 @@
-import { FILTERS_KEYWORDS, FILTERS_TOUGHNESS } from "../constants";
+import { FILTERS_KEYWORDS, FILTERS_TOUGHNESS, KOTC_DATASHEETS } from "../constants";
 
 export class SearchFormData {
     formData: Map<string, string>;
@@ -10,6 +10,10 @@ export class SearchFormData {
         this.formData = formData;
         this.processedKeywords = this.formData.get(FILTERS_KEYWORDS)?.toLowerCase().split(',').map(s => s.trim()).filter(Boolean).filter(s => s.length > 0) || [];
         this.processedToughness = this.formData.get(FILTERS_TOUGHNESS)?.toLowerCase().split(',').map(s => s.trim()).filter(Boolean).filter(s => s.length > 0) || [];
+        if (this.formData.get(KOTC_DATASHEETS) == "true") {
+            this.processedKeywords.push("!epic hero");
+            this.processedToughness.push("<=10");
+        }
         console.log(this);
     }
 

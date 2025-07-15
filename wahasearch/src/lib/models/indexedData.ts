@@ -53,11 +53,7 @@ export class IndexedData {
 
     matches(filters: SearchFormData): boolean {
 
-        const kotcFilter = (filters.get(KOTC_DATASHEETS) == "true");
         const keywordFilter = filters.processedKeywords;
-        if (kotcFilter) {
-            keywordFilter.push("!epic hero");
-        }
         const keywordMatch = keywordFilter.length === 0 || keywordFilter.every(kwExpr => {
             // Support !=, ==, =
             let op = '=';
@@ -91,10 +87,6 @@ export class IndexedData {
 
         const toughnessFilter = filters.processedToughness;
         let toughnessMatch = true;
-
-        if (kotcFilter) {
-            toughnessFilter.push("<=10");
-        }
         if (toughnessFilter.length > 0) {
             // Support !=, ==, =, <=, >=
             toughnessMatch = toughnessFilter.every(t => {
@@ -156,7 +148,7 @@ export class IndexedData {
             if (filters.get(LEGENDS_DATASHEETS) != "true" && this.legends)
                 legendsMatch = false;
         }
-        console.log("Match:", keywordMatch, factionMatch, pointsMatch, toughnessMatch, legendsMatch);
+        // console.log("Match:", keywordMatch, factionMatch, pointsMatch, toughnessMatch, legendsMatch);
         return keywordMatch && factionMatch && pointsMatch && toughnessMatch && legendsMatch;
     }
 }
