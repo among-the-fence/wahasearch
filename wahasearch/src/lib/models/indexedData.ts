@@ -1,6 +1,6 @@
 import { cleanName } from "@/lib/util";
 import { DataCard } from "./datacard";
-import { FILTERS_FACTION, FILTERS_KEYWORDS, FILTERS_LEGENDS, FILTERS_POINTS, LEGENDS_NONE, LEGENDS_ONLY, FACTION_NICKNAME_MAP, KEYWORD_NICKNAME_MAP } from "../constants";
+import { FILTERS_FACTION, FILTERS_POINTS, FACTION_NICKNAME_MAP, KEYWORD_NICKNAME_MAP, CURRENT_DATASHEETS, KOTC_DATASHEETS, LEGENDS_DATASHEETS } from "../constants";
 import { SearchFormData } from "./searchFormData";
 
 export class IndexedData {
@@ -10,6 +10,7 @@ export class IndexedData {
     factions: string[];
     legends: boolean;
     points: number[];
+    characteristics: Map<string, number[]>;
 
     constructor(data: DataCard) {
         const names = [data.name.toLowerCase()];
@@ -32,11 +33,31 @@ export class IndexedData {
         this.factions = Array.from(new Set(this.factions.filter(Boolean)));
         this.legends = data.legends;
         this.points = data.costs.map(x => x.value);
+
+        this.characteristics = new Map<string, number[]>();
+        data.profiles.filter(p => p.characteristics.has('M')).forEach(profile => {
+            profile.characteristics.forEach((c: any) => {
+                const key = c['@_name'].toLowerCase();
+                if (!this.characteristics.has(key)) this.characteristics.set(key, []);
+                const v = c['#text'];
+                if (v === "-")
+                    this.characteristics.get(key)!.push(0);
+                else {
+                    const num = Number(v);
+                    if (!this.characteristics.get(key)!.includes(num))
+                        this.characteristics.get(key)!.push(num);
+                }
+            });
+        });
     }
 
     matches(filters: SearchFormData): boolean {
 
+        const kotcFilter = (filters.get(KOTC_DATASHEETS) == "true");
         const keywordFilter = filters.processedKeywords;
+        if (kotcFilter) {
+            keywordFilter.push("!epic hero");
+        }
         const keywordMatch = keywordFilter.length === 0 || keywordFilter.every(kwExpr => {
             // Support !=, ==, =
             let op = '=';
@@ -68,6 +89,42 @@ export class IndexedData {
             );
         }
 
+        const toughnessFilter = filters.processedToughness;
+        let toughnessMatch = true;
+
+        if (kotcFilter) {
+            toughnessFilter.push("<=10");
+        }
+        if (toughnessFilter.length > 0) {
+            // Support !=, ==, =, <=, >=
+            toughnessMatch = toughnessFilter.every(t => {
+                let op = '=';
+                let toughness = t;
+                if (t.startsWith("!=") || t.startsWith("==") || t.startsWith("<=") || t.startsWith(">=")) {
+                    op = t.substring(0, 2);
+                    toughness = t.substring(2);
+                } else if (t.startsWith("!") || t.startsWith("=") || t.startsWith("<") || t.startsWith(">")) {
+                    op = t.substring(0, 1);
+                    toughness = t.substring(1);
+                }
+                const toughnessNum = Number(toughness.trim());
+                const present = this.characteristics.get('t')?.includes(toughnessNum);
+                if (op === '!=' || op === '!') {
+                    return !present;
+                } else if (op === '=' || op === '==') {
+                    return present;
+                } else if (op === '<') {
+                    return this.characteristics.get('t')?.some(t => t < toughnessNum);
+                } else if (op === '<=') {
+                    return this.characteristics.get('t')?.some(t => t <= toughnessNum);
+                } else if (op === '>') {
+                    return this.characteristics.get('t')?.some(t => t > toughnessNum);
+                } else if (op === '>=') {
+                    return this.characteristics.get('t')?.some(t => t >= toughnessNum);
+                }
+            });
+        }
+
         // Points filter
         const pointsFilter = filters.get(FILTERS_POINTS)?.trim() || "";
         let pointsMatch = true;
@@ -94,11 +151,12 @@ export class IndexedData {
         }
 
         let legendsMatch = true;
-        if (filters.get(FILTERS_LEGENDS) == LEGENDS_ONLY && !this.legends)
-            legendsMatch = false;
-        if ((!filters.get(FILTERS_LEGENDS) && this.legends) || (filters.get(FILTERS_LEGENDS) == LEGENDS_NONE && this.legends))
-            legendsMatch = false;
-        // console.log("Match:", keywordMatch, factionMatch, pointsMatch, legendsMatch);
-        return keywordMatch && factionMatch && pointsMatch && legendsMatch;
+        // check the legends state against the card's legends state
+        if (filters.get(CURRENT_DATASHEETS) == "true") {
+            if (filters.get(LEGENDS_DATASHEETS) != "true" && this.legends)
+                legendsMatch = false;
+        }
+        console.log("Match:", keywordMatch, factionMatch, pointsMatch, toughnessMatch, legendsMatch);
+        return keywordMatch && factionMatch && pointsMatch && toughnessMatch && legendsMatch;
     }
 }

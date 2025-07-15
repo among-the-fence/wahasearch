@@ -1,11 +1,11 @@
 export const FILTERS_KEYWORDS = "KEYWORDS";
-export const FILTERS_LEGENDS = "LEGENDS";
 export const FILTERS_FACTION = "FACTION";
 export const FILTERS_POINTS = "POINTS";
+export const FILTERS_TOUGHNESS = "TOUGHNESS";
 
-export const LEGENDS_ALL = "ALL";
-export const LEGENDS_ONLY = "ONLY";
-export const LEGENDS_NONE = "NONE";
+export const LEGENDS_DATASHEETS = "LEGENDS_DATASHEETS";
+export const CURRENT_DATASHEETS = "CURRENT_DATASHEETS";
+export const KOTC_DATASHEETS = "KOTC_DATASHEETS";
 
 export const FACTION_NICKNAME_MAP = {
     'adepta sororitas': ['mommy', 'senoritas', 'sisters', 'sob', 'ben'],

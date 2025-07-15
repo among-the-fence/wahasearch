@@ -28,7 +28,6 @@ function App() {
       console.error("No catalogue");
       return;
     }
-    // console.log("Full catalogue", fullcatalogue.length);
     const filtered = fullcatalogue.filter((datacard: any) => datacard.index?.matches(filters))
     setCatalogue(filtered);
   }

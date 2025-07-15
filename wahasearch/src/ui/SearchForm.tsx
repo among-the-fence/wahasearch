@@ -1,5 +1,5 @@
-import { FILTERS_KEYWORDS, FILTERS_LEGENDS, FILTERS_FACTION, FILTERS_POINTS, LEGENDS_ALL, LEGENDS_NONE, LEGENDS_ONLY } from "@/lib/constants";
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import { FILTERS_KEYWORDS, FILTERS_FACTION, FILTERS_POINTS, FILTERS_TOUGHNESS, CURRENT_DATASHEETS, KOTC_DATASHEETS, LEGENDS_DATASHEETS } from "@/lib/constants";
+
 import { ChangeEvent, useEffect, useState } from "react";
 import { formData, SearchFormData } from "@/lib/models/searchFormData";
 
@@ -32,7 +32,9 @@ export const SearchBar = ({ applyFunction }: SearchFormProps) => {
 
     const handleClear = () => {
         const cleared = new Map<string, string>();
-        cleared.set(FILTERS_LEGENDS, LEGENDS_NONE);
+        cleared.set(CURRENT_DATASHEETS, "true");
+        cleared.set(LEGENDS_DATASHEETS, "false");
+        cleared.set(KOTC_DATASHEETS, "false");
         setLocalFormState(new SearchFormData(cleared));
         applyFunction(new SearchFormData(cleared));
     };
@@ -87,24 +89,19 @@ export const SearchForm = ({ applyFunction }: SearchFormProps) => {
         }
     }
 
-    const updateLegendsState = (value: string[]) => {
-        console.log(value);
-        if (value.length >= 2) {
-            localFormState.set(FILTERS_LEGENDS, LEGENDS_ALL);
-        }
-        else if (value.length == 0 || value.includes("current")) {
-            localFormState.set(FILTERS_LEGENDS, LEGENDS_NONE);
-        }
-        else {
-            localFormState.set(FILTERS_LEGENDS, LEGENDS_ONLY);
-        }
+    const handleLegendSwitch = (name: string, checked: boolean) => {
+        // Gather the current state of all switches
+        localFormState.formData.set(name, checked.toString());
+
         setLocalFormState(new SearchFormData(localFormState.formData));
         applyFunction(localFormState);
-    }
+    };
 
     const handleClear = () => {
         const cleared = new Map<string, string>();
-        cleared.set(FILTERS_LEGENDS, LEGENDS_NONE);
+        cleared.set(CURRENT_DATASHEETS, "true");
+        cleared.set(LEGENDS_DATASHEETS, "false");
+        cleared.set(KOTC_DATASHEETS, "false");
         setLocalFormState(new SearchFormData(cleared));
         applyFunction(new SearchFormData(cleared));
     };
@@ -167,14 +164,39 @@ export const SearchForm = ({ applyFunction }: SearchFormProps) => {
             </div>
 
             <div style={{ marginTop: '1em' }}>
-                <ToggleGroup defaultValue={["current"]} className="col-span-3" type="multiple" onValueChange={e => updateLegendsState(e)}>
-                    <ToggleGroupItem className="border-2" defaultChecked={true} value="current" aria-label="Toggle current">
-                        Current
-                    </ToggleGroupItem>
-                    <ToggleGroupItem className="border-2" value="legends" aria-label="Toggle legends">
-                        Legends
-                    </ToggleGroupItem>
-                </ToggleGroup>
+                <h2>Toughness</h2>
+                <input
+                    type="text"
+                    placeholder="2, <=1, >5, ==7"
+                    style={{ width: '100%', padding: '0.6rem', borderRadius: '6px', border: '1px solid #ddd' }}
+                    value={localFormState.get(FILTERS_TOUGHNESS)?.toString() || ""}
+                    onChange={e => updateLocalFormState(FILTERS_TOUGHNESS, e)} />
+            </div>
+
+            <div style={{ marginTop: '1em' }}>
+                <div style={{ display: 'flex', gap: '1em', alignItems: 'center' }}>
+                    <label>
+                        <input
+                            type="checkbox"
+                            checked={localFormState.get(CURRENT_DATASHEETS) === "true"}
+                            onChange={e => handleLegendSwitch(CURRENT_DATASHEETS, e.target.checked)}
+                        /> Current
+                    </label>
+                    <label>
+                        <input
+                            type="checkbox"
+                            checked={localFormState.get(LEGENDS_DATASHEETS) === "true"}
+                            onChange={e => handleLegendSwitch(LEGENDS_DATASHEETS, e.target.checked)}
+                        /> Legends
+                    </label>
+                    <label>
+                        <input
+                            type="checkbox"
+                            checked={localFormState.get(KOTC_DATASHEETS) === "true"}
+                            onChange={e => handleLegendSwitch(KOTC_DATASHEETS, e.target.checked)}
+                        /> KotC
+                    </label>
+                </div>
             </div>
         </div>
     );
