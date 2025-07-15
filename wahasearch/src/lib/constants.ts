@@ -33,7 +33,7 @@ export const FACTION_NICKNAME_MAP = {
     'iron hands': ['ih'],
     'leagues of votann': ['lov', 'dwarf', 'dwarves', 'jason'],
     'legiones daemonica': ['ld', 'demons', 'demons', 'jason', 'shannon'],
-    'legions of excess': ['slaanesh'],
+    'legions of excess': ['slaanesh', 'shannon'],
     'necrons': ['necrons', 'crons', 'zombies', 'ben'],
     'orks': ['orcs', 'ork', 'orc', 'mushrooms', 'henry'],
     'plague legions': ['plague', 'legions', 'plaguelegions'],
