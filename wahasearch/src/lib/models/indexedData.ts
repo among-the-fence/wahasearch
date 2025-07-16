@@ -17,7 +17,10 @@ export class IndexedData {
         const names = [data.name.toLowerCase()];
         this.sortingName = cleanName1(data.name);
         names.push(this.sortingName.toLowerCase());
-        names.push(cleanName2(this.sortingName));
+        const veryCleanName = cleanName2(this.sortingName);
+        names.push(veryCleanName);
+        names.push(veryCleanName.replace("daemon", "demon"));
+
         names.push(...UNIT_NICKNAME_MAP[data.name.toLowerCase() as keyof typeof UNIT_NICKNAME_MAP] || []);
         this.names = Array.from(new Set(names.filter(Boolean)));
 
