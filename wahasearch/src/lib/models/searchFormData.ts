@@ -1,9 +1,11 @@
-import { FILTERS_KEYWORDS, FILTERS_TOUGHNESS, KOTC_DATASHEETS } from "../constants";
+import { CURRENT_DATASHEETS, FILTERS_KEYWORDS, FILTERS_TOUGHNESS, KOTC_DATASHEETS, LEGENDS_DATASHEETS } from "../constants";
 
 export class SearchFormData {
     formData: Map<string, string>;
     processedKeywords: string[];
     processedToughness: string[];
+    includeLegends: boolean;
+    legendsOnly: boolean;
 
     constructor(formData: Map<string, string>) {
         // console.log("Initializing SearchFormData with:", formData);
@@ -14,7 +16,6 @@ export class SearchFormData {
             this.processedKeywords.push("!epic hero");
             this.processedToughness.push("<10");
         }
-        console.log(this);
     }
 
     clear() {

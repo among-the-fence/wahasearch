@@ -1,4 +1,4 @@
-import { cleanName } from "@/lib/util";
+import { cleanName1, cleanName2 } from "@/lib/util";
 import { DataCard } from "./datacard";
 import { FILTERS_FACTION, FILTERS_POINTS, FACTION_NICKNAME_MAP, KEYWORD_NICKNAME_MAP, CURRENT_DATASHEETS, KOTC_DATASHEETS, LEGENDS_DATASHEETS } from "../constants";
 import { SearchFormData } from "./searchFormData";
@@ -14,14 +14,15 @@ export class IndexedData {
 
     constructor(data: DataCard) {
         const names = [data.name.toLowerCase()];
-        this.sortingName = cleanName(data.name);
+        this.sortingName = cleanName1(data.name);
         names.push(this.sortingName.toLowerCase());
+        names.push(cleanName2(this.sortingName));
         this.names = Array.from(new Set(names.filter(Boolean)));
 
         const keywords = data.keywords.map(x => x.toLowerCase());
         keywords.push(...data.profiles.flatMap(profile => profile.keywords?.map(x => x.toLowerCase())));
         const additional = keywords.filter(Boolean).flatMap(x => KEYWORD_NICKNAME_MAP[x.toLowerCase() as keyof typeof KEYWORD_NICKNAME_MAP]);
-        this.keywords = Array.from(new Set([...keywords, ...additional].filter(Boolean)));
+        this.keywords = Array.from(new Set([...keywords, ...additional, ...this.names].filter(Boolean).filter((x: string) => x.length > 1)));
 
         this.factions = data.factions.map(x => x.toLowerCase());
         this.factions.push(
