@@ -2,6 +2,7 @@ import { cleanName1, cleanName2 } from "@/lib/util";
 import { DataCard } from "./datacard";
 import { FILTERS_FACTION, FILTERS_POINTS, FACTION_NICKNAME_MAP, KEYWORD_NICKNAME_MAP, CURRENT_DATASHEETS, KOTC_DATASHEETS, LEGENDS_DATASHEETS } from "../constants";
 import { SearchFormData } from "./searchFormData";
+import { UNIT_NICKNAME_MAP } from "../unitNickname";
 
 export class IndexedData {
     sortingName: string;
@@ -17,6 +18,7 @@ export class IndexedData {
         this.sortingName = cleanName1(data.name);
         names.push(this.sortingName.toLowerCase());
         names.push(cleanName2(this.sortingName));
+        names.push(...UNIT_NICKNAME_MAP[data.name.toLowerCase() as keyof typeof UNIT_NICKNAME_MAP] || []);
         this.names = Array.from(new Set(names.filter(Boolean)));
 
         const keywords = data.keywords.map(x => x.toLowerCase());
