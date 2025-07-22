@@ -32,6 +32,31 @@ export const DataCardDisplay = ({ datacard }: DataCardDisplayProps) => {
                                     <div>({datacard.costString})</div>
                                 )}
                             </div>
+                            {/* Google Image Search Button */}
+                            <button
+                                onClick={() => {
+                                    const faction = datacard.factions.length > 0 ? datacard.factions[0] : '';
+                                    const query = encodeURIComponent(`Warhammer 40k ${faction} ${datacard.name}`);
+                                    window.open(`https://www.google.com/search?tbm=isch&q=${query}`, '_blank');
+                                }}
+                                style={{
+                                    position: 'absolute',
+                                    top: 12,
+                                    right: 12,
+                                    background: '#0ea5e9',
+                                    color: 'white',
+                                    border: 'none',
+                                    borderRadius: '4px',
+                                    padding: '8px 14px',
+                                    fontWeight: 'bold',
+                                    cursor: 'pointer',
+                                    zIndex: 1300,
+                                    boxShadow: '0 2px 8px rgba(0,0,0,0.07)'
+                                }}
+                                title="Search Google Images for this unit"
+                            >
+                                📷
+                            </button>
                             {datacard.factions.length > 0 &&
                                 (<div>
                                     {datacard.factions.join(", ")}

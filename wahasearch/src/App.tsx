@@ -52,16 +52,25 @@ function App() {
       }}>
         <button
           style={{
-            padding: '12px 28px',
+            padding: '12px 20px',
             background: '#1d4ed8',
             color: 'white',
             borderRadius: '8px',
             cursor: 'pointer',
-            boxShadow: '0 2px 8px rgba(0,0,0,0.08)'
+            boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
           }}
+          aria-label="Open Search"
           onClick={() => setIsSearchOpen(true)}
         >
-          Open Search
+          {/* Hamburger Icon */}
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <line x1="4" y1="6" x2="20" y2="6" />
+            <line x1="4" y1="12" x2="20" y2="12" />
+            <line x1="4" y1="18" x2="20" y2="18" />
+          </svg>
         </button>
         <SearchBar applyFunction={applyFilters} />
       </div>
