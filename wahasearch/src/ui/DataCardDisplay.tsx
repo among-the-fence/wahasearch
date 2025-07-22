@@ -33,30 +33,45 @@ export const DataCardDisplay = ({ datacard }: DataCardDisplayProps) => {
                                 )}
                             </div>
                             {/* Google Image Search Button */}
-                            <button
-                                onClick={() => {
-                                    const faction = datacard.factions.length > 0 ? datacard.factions[0] : '';
-                                    const query = encodeURIComponent(`Warhammer 40k ${faction} ${datacard.name}`);
-                                    window.open(`https://www.google.com/search?tbm=isch&q=${query}`, '_blank');
-                                }}
-                                style={{
-                                    position: 'absolute',
-                                    top: 12,
-                                    right: 12,
-                                    background: '#0ea5e9',
-                                    color: 'white',
-                                    border: 'none',
-                                    borderRadius: '4px',
-                                    padding: '8px 14px',
-                                    fontWeight: 'bold',
-                                    cursor: 'pointer',
-                                    zIndex: 1300,
-                                    boxShadow: '0 2px 8px rgba(0,0,0,0.07)'
-                                }}
-                                title="Search Google Images for this unit"
-                            >
-                                📷
-                            </button>
+                            <div style={{ position: 'absolute', top: 12, right: 36, display: 'flex', gap: '8px', zIndex: 1300 }}>
+                                <button
+                                    onClick={() => {
+                                        const faction = datacard.factions.length > 0 ? datacard.factions[0] : '';
+                                        const query = encodeURIComponent(`Warhammer 40k ${faction} ${datacard.name}`);
+                                        window.open(`https://www.google.com/search?tbm=isch&q=${query}`, '_blank');
+                                    }}
+                                    style={{
+                                        color: 'white',
+                                        border: 'none',
+                                        borderRadius: '4px',
+                                        padding: '8px 14px',
+                                        fontWeight: 'bold',
+                                        cursor: 'pointer',
+                                        boxShadow: '0 2px 8px rgba(0,0,0,0.07)'
+                                    }}
+                                    title="Search Google Images for this unit"
+                                >
+                                    📷
+                                </button>
+                                <button
+                                    onClick={() => {
+                                        const faction = datacard.factions.length > 0 ? datacard.factions[0] : '';
+                                        window.open(`https://www.google.com/search?q=Wahapedia ${faction} ${datacard.name}&btnI=1`, '_blank');
+                                    }}
+                                    style={{
+                                        borderRadius: '4px',
+                                        padding: '8px 10px',
+                                        cursor: 'pointer',
+                                        boxShadow: '0 2px 8px rgba(0,0,0,0.07)',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center'
+                                    }}
+                                    title="Wahapedia"
+                                >
+                                    <img src="/wahasearch/wahapediaicon.png" alt="Wahapedia" style={{ height: 20, width: 20, display: 'block' }} />
+                                </button>
+                            </div>
                             {datacard.factions.length > 0 &&
                                 (<div>
                                     {datacard.factions.join(", ")}
