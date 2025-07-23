@@ -53,6 +53,6 @@ export const FACTION_NICKNAME_MAP = {
 
 export const KEYWORD_NICKNAME_MAP = {
     "lethal hits": ["lh"],
-    "devastating wounds": ["dev"],
+    "devastating wounds": ["dev", "deva", "dev wounds", "devwounds"],
     "fly": ["flying"],
 }
