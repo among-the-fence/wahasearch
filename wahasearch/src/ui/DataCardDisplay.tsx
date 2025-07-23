@@ -27,59 +27,73 @@ export const DataCardDisplay = ({ datacard }: DataCardDisplayProps) => {
                     <SheetTitle>
                         <div>
                             <div>
-                                <div>{datacard.name} {datacard.legends ? "[Legends]" : ""}</div>
-                                {datacard.costs.length > 0 && (
-                                    <div>({datacard.costString})</div>
-                                )}
+                                <div>
+                                    <div>{datacard.name} {datacard.legends ? "[Legends]" : ""}</div>
+                                    {datacard.costs.length > 0 && (
+                                        <div>({datacard.costString})</div>
+                                    )}
+                                </div>
+                                {datacard.factions.length > 0 &&
+                                    (<div>
+                                        {datacard.factions.join(", ")}
+                                    </div>)}
                             </div>
-                            {datacard.factions.length > 0 &&
-                                (<div>
-                                    {datacard.factions.join(", ")}
-                                </div>)}
+                            <div>
+                                <div style={{ display: 'flex', gap: '8px' }}>
+                                    <button
+                                        onClick={() => {
+                                            const faction = datacard.factions.length > 0 ? datacard.factions[0] : '';
+                                            const query = encodeURIComponent(`Warhammer 40k ${faction} ${datacard.name}`);
+                                            window.open(`https://www.google.com/search?tbm=isch&q=${query}`, '_blank');
+                                        }}
+                                        style={{
+                                            color: 'white',
+                                            border: 'none',
+                                            borderRadius: '4px',
+                                            padding: '8px 14px',
+                                            fontWeight: 'bold',
+                                            cursor: 'pointer',
+                                            boxShadow: '0 2px 8px rgba(0,0,0,0.07)'
+                                        }}
+                                        title="Search Google Images for this unit"
+                                    >
+                                        📷
+                                    </button>
+                                    <button
+                                        onClick={() => {
+                                            const faction = datacard.factions.length > 0 ? datacard.factions[0] : '';
+                                            window.open(`https://www.google.com/search?q=Wahapedia ${faction} ${datacard.name}&btnI=1`, '_blank');
+                                        }}
+                                        style={{
+                                            borderRadius: '4px',
+                                            padding: '8px 10px',
+                                            cursor: 'pointer',
+                                            boxShadow: '0 2px 8px rgba(0,0,0,0.07)',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center'
+                                        }}
+                                        title="Wahapedia"
+                                    >
+                                        <img src="/wahasearch/wahapediaicon.png" alt="Wahapedia" style={{ height: 20, width: 20, display: 'block' }} />
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </SheetTitle>
                 </SheetHeader>
                 <DataCardSheet datacard={datacard} cardClick={async () => setOpen(false)} />
                 <SheetFooter>
-                    <div style={{ display: 'flex', gap: '8px' }}>
-                        <button
-                            onClick={() => {
-                                const faction = datacard.factions.length > 0 ? datacard.factions[0] : '';
-                                const query = encodeURIComponent(`Warhammer 40k ${faction} ${datacard.name}`);
-                                window.open(`https://www.google.com/search?tbm=isch&q=${query}`, '_blank');
-                            }}
-                            style={{
-                                color: 'white',
-                                border: 'none',
-                                borderRadius: '4px',
-                                padding: '8px 14px',
-                                fontWeight: 'bold',
-                                cursor: 'pointer',
-                                boxShadow: '0 2px 8px rgba(0,0,0,0.07)'
-                            }}
-                            title="Search Google Images for this unit"
-                        >
-                            📷
-                        </button>
-                        <button
-                            onClick={() => {
-                                const faction = datacard.factions.length > 0 ? datacard.factions[0] : '';
-                                window.open(`https://www.google.com/search?q=Wahapedia ${faction} ${datacard.name}&btnI=1`, '_blank');
-                            }}
-                            style={{
-                                borderRadius: '4px',
-                                padding: '8px 10px',
-                                cursor: 'pointer',
-                                boxShadow: '0 2px 8px rgba(0,0,0,0.07)',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center'
-                            }}
-                            title="Wahapedia"
-                        >
-                            <img src="/wahasearch/wahapediaicon.png" alt="Wahapedia" style={{ height: 20, width: 20, display: 'block' }} />
-                        </button>
-                    </div>
+
+
+                    <Collapsible >
+                        <CollapsibleTrigger>Debug</CollapsibleTrigger>
+                        <CollapsibleContent>
+                            <div style={{ background: 'black' }}>
+                                <JsonRenderer data={datacard} />
+                            </div>
+                        </CollapsibleContent>
+                    </Collapsible>
                 </SheetFooter>
             </SheetContent>
         </Sheet>
@@ -279,14 +293,6 @@ const DataCardSheet = ({ datacard, cardClick }: DataCardCardProps) => {
                     </div>
                 </div>);
             })}
-            <Collapsible >
-                <CollapsibleTrigger>Debug</CollapsibleTrigger>
-                <CollapsibleContent>
-                    <div style={{ background: 'black' }}>
-                        <JsonRenderer data={datacard} />
-                    </div>
-                </CollapsibleContent>
-            </Collapsible>
         </div>);
 
 };
