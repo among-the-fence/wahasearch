@@ -27,7 +27,7 @@ export class Catalogue {
         this.rules = Rule.extractRules(data['sharedRules'] as Array<any>);
         delete data['sharedRules'];
         this.upgrades = Upgrade.extractUpgrade(data['sharedSelectionEntries'] as Array<any>);
-        this.datacards = DataCard.extractDataCards(data['sharedSelectionEntries'] as Array<any>);
+        this.datacards = DataCard.extractDataCards(data['sharedSelectionEntries'] as Array<any>, this.upgrades);
         this.detachments = Detachment.extractDetachment(data['sharedSelectionEntries'] as Array<any>);
         delete data['sharedSelectionEntries'];
 

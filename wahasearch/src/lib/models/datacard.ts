@@ -18,7 +18,7 @@ export class DataCard {
 
     index: IndexedData;
 
-    constructor(data: any) {
+    constructor(data: any, sharedProfiles: Map<string, any>) {
         this._raw = deepClone(data);
         const d = deepClone(data);
         const n = d['@_name'] ?? "";
@@ -80,11 +80,11 @@ export class DataCard {
 
         this.data = d;
 
-        this.profiles = collectSelectionProfiles(d);
+        this.profiles = collectSelectionProfiles(d, sharedProfiles);
         this.index = new IndexedData(this);
     }
 
-    static extractDataCards(sharedSelectionEntries: any) {
+    static extractDataCards(sharedSelectionEntries: any, sharedProfiles: Map<string, any>) {
         if (!sharedSelectionEntries) {
             return [];
         }
@@ -93,7 +93,7 @@ export class DataCard {
             ensureArray(sharedSelectionEntries?.selectionEntry)
                 .filter((dc: any) => !dc['@_type']?.includes("upgrade"))
                 .forEach((dc: any) => {
-                    cardList.push(new DataCard(dc));
+                    cardList.push(new DataCard(dc, sharedProfiles));
                 });
             return cardList.sort(DataCard.datacardCompare);
         } catch (error) {

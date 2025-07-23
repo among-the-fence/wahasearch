@@ -1,8 +1,9 @@
 import React from "react";
 import JsonRenderer from "./ui/jsonRenderer";
-import { WahaSearchLoader } from "./lib/models/wahaSearchLoader";
+import { Catalogue } from "./lib/models/catalogue";
+import debugDataAeldari from "./lib/data/wh40k-10eAeldari - Aeldari Library.cat.json";
 
-const debugData = WahaSearchLoader.data();
+const debugData = new Catalogue(debugDataAeldari);
 
 const DebugPage: React.FC = () => {
   return (
