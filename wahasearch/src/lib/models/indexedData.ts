@@ -26,9 +26,10 @@ export class IndexedData {
 
         const keywords = data.keywords.map(x => x.toLowerCase());
         keywords.push(...data.profiles.flatMap(profile => profile.keywords?.map(x => x.toLowerCase())));
+        keywords.push(...data.profiles.flatMap(profile => profile.name?.toLowerCase()));
         const additional = keywords.filter(Boolean).flatMap(x => KEYWORD_NICKNAME_MAP[x.toLowerCase() as keyof typeof KEYWORD_NICKNAME_MAP]);
+
         const mostKeywords = Array.from(new Set([...keywords, ...additional, ...this.names].filter(Boolean).filter((x: string) => x.length > 1)));
-        // duplicate the list and replace all s with z then recombine it with the list including s
         this.keywords = Array.from(new Set([...mostKeywords, ...mostKeywords.map(x => x.replace("s", "z"))].filter(Boolean)));
 
         this.factions = data.factions.map(x => x.toLowerCase());
@@ -38,7 +39,6 @@ export class IndexedData {
                 .filter(Boolean)
                 .flat()
         );
-        // z sub list
         this.factions.push(...this.factions.map(x => x.replace("s", "z")));
         this.factions = Array.from(new Set(this.factions.filter(Boolean)));
         this.legends = data.legends;
