@@ -3,7 +3,7 @@ import { ensureArray } from '@/lib/util';
 
 describe('ensureArray', () => {
   it('returns an empty array when given null', () => {
-    expect(ensureArray(null)).toEqual([null]);
+    expect(ensureArray(null)).toEqual([]);
   });
 
   it('returns an array containing the object when given a single object', () => {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="3bdf-a114-5035-c6ac" name="Xenos - Genestealer Cults" gameSystemId="sys-352e-adc2-7639-d6a9" gameSystemRevision="1" revision="79" battleScribeVersion="2.03" type="catalogue">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="3bdf-a114-5035-c6ac" name="Xenos - Genestealer Cults" gameSystemId="sys-352e-adc2-7639-d6a9" gameSystemRevision="1" revision="83" battleScribeVersion="2.03" type="catalogue">
   <sharedSelectionEntries>
     <selectionEntry type="upgrade" import="false" name="Detachment" hidden="false" id="b96c-3fb6-1ee9-15ae">
       <constraints>
@@ -6292,8 +6292,6 @@ You can attach this model to an ACOLYTE HYBRIDS or NEOPHYTE HYBRID unit, even if
         </profile>
       </profiles>
       <infoLinks>
-        <infoLink name="Devastating Wounds" hidden="false" type="rule" id="1741-8680-3c84-ad8c" targetId="be1e-ac8e-1e2c-3528"/>
-        <infoLink name="Ignores Cover" hidden="false" type="rule" id="9f26-9454-3cb4-b66d" targetId="4640-43e7-30b-215a"/>
         <infoLink name="Deep Strike" hidden="false" type="rule" id="1da8-33f5-85ff-f88a" targetId="7cb5-dd6b-dd87-ad3b"/>
         <infoLink name="Lone Operative" hidden="false" type="rule" id="93a3-b702-7aa9-bf3a" targetId="a8a0-8fe7-898-e0f3"/>
         <infoLink name="Infiltrators" hidden="false" type="rule" id="121d-d048-b76e-78cc" targetId="c05d-f4c3-f091-4938"/>
@@ -8754,7 +8752,7 @@ You can attach this model to an ACOLYTE HYBRIDS or NEOPHYTE HYBRID unit, even if
         </modifier>
       </modifiers>
     </entryLink>
-    <entryLink import="true" name="Tectonic Fragdrill [Legends]" hidden="true" type="selectionEntry" id="5f7f-5d6b-5e4-74c1" targetId="4c63-309e-88e3-7d17"/>
+    <entryLink import="true" name="Tectonic Fragdrill [Legends]" hidden="false" type="selectionEntry" id="5f7f-5d6b-5e4-74c1" targetId="4c63-309e-88e3-7d17"/>
     <entryLink import="true" name="Hydra Platform [Legends]" hidden="false" type="selectionEntry" id="faa3-fd3b-f418-b986" targetId="f46c-76ef-3d9c-98ea">
       <modifiers>
         <modifier type="set" value="true" field="hidden">
@@ -9659,7 +9657,7 @@ You can attach this model to an ACOLYTE HYBRIDS or NEOPHYTE HYBRID unit, even if
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d186-439d-5025-9131" includeChildSelections="false"/>
           </constraints>
         </selectionEntryGroup>
-        <selectionEntryGroup name="Brood Brothers Auxilia Enhancements" id="b5b7-d84f-b877-74d4" hidden="false" collapsible="true">
+        <selectionEntryGroup name="Brood Brother Auxilia Enhancements" id="b5b7-d84f-b877-74d4" hidden="false" collapsible="true">
           <modifiers>
             <modifier type="set" value="true" field="hidden">
               <conditionGroups>
@@ -9927,7 +9925,7 @@ You can attach this model to an ACOLYTE HYBRIDS or NEOPHYTE HYBRID unit, even if
             </rule>
           </rules>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Brood Brothers Auxilia" hidden="false" id="0a59-1d64-257c-04fb">
+        <selectionEntry type="upgrade" import="true" name="Brood Brother Auxilia" hidden="false" id="0a59-1d64-257c-04fb">
           <rules>
             <rule name="Brood Brothers" id="fc33-afdd-30e9-47b1" hidden="false">
               <description>You can include **^^Astra Militarum^^** units in your army, even though they do not have the **^^Genestealer Cult^^** Faction keyword. The combined points cost of such units you can include in your army is:

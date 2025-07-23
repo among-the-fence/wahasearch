@@ -24,8 +24,8 @@ function _collectSelectionProfiles(data: any) {
   if (data) {
     // console.log(data);
     ensureArray(data).forEach(item => {
-      if (item['@_targetId'])
-        console.log("TARGET ID", data);
+      // if (item['@_targetId'])
+      //   console.log("TARGET ID", data);
       if (item.profile)
         result.push(...ensureArray(item.profile));
       if (item.profiles) {

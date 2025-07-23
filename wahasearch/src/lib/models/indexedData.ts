@@ -150,9 +150,10 @@ export class IndexedData {
 
         let legendsMatch = true;
         // check the legends state against the card's legends state
-        if (filters.get(CURRENT_DATASHEETS) == "true") {
-            if (filters.get(LEGENDS_DATASHEETS) != "true" && this.legends)
-                legendsMatch = false;
+        if (!filters.includeCurrent) {
+            legendsMatch = this.legends;
+        } else if (!filters.includeLegends) {
+            legendsMatch = !this.legends;
         }
         // console.log("Match:", keywordMatch, factionMatch, pointsMatch, toughnessMatch, legendsMatch);
         return keywordMatch && factionMatch && pointsMatch && toughnessMatch && legendsMatch;

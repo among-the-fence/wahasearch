@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" id="df9a-59b2-f464-59ad" name="Chaos - World Eaters" revision="59" battleScribeVersion="2.03" library="false" gameSystemId="sys-352e-adc2-7639-d6a9" gameSystemRevision="1" type="catalogue">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" id="df9a-59b2-f464-59ad" name="Chaos - World Eaters" revision="67" battleScribeVersion="2.03" library="false" gameSystemId="sys-352e-adc2-7639-d6a9" gameSystemRevision="1" type="catalogue">
   <profileTypes>
     <profileType id="02a0-fa96-6f9b-354f" name="Wrathful Presence">
       <characteristicTypes>
@@ -646,7 +646,6 @@
         <categoryLink id="8fc8-d292-94b4-1efc" name="Mounted" hidden="false" targetId="14a0-40c9-2748-ae6e" primary="false"/>
         <categoryLink id="68a0-7de8-a111-d2b0" name="Character" hidden="false" targetId="9cfd-1c32-585f-7d5c" primary="false"/>
         <categoryLink id="3ae4-a2f4-b769-3496" name="Epic Hero" hidden="false" targetId="4f3a-f0f7-6647-348d" primary="true"/>
-        <categoryLink id="488b-fa3a-992c-aae6" name="Grenades" hidden="false" targetId="5a61-81ac-eb7c-a87e" primary="false"/>
         <categoryLink id="1664-af05-f9f8-332e" name="Chaos" hidden="false" targetId="4c00-2578-faf5-6918" primary="false"/>
         <categoryLink id="6052-2511-5f55-e244" name="Khorne" hidden="false" targetId="4bd-5ee0-f179-2fc5" primary="false"/>
         <categoryLink id="980b-3add-4ec0-e085" name="Lord Invocatus" hidden="false" targetId="59a2-5bf7-970b-4720" primary="false"/>
@@ -1019,7 +1018,7 @@
         </profile>
         <profile name="Leader" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="44d0-171a-0dbb-da86">
           <characteristics>
-            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">This model can be attached to the following units: ^^**Eightnound^^**, ^^**Exalted Eightbound^^**, ^^**Khorne Berserkers^^**</characteristic>
+            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">This model can be attached to the following units: ^^**Eightbound^^**, ^^**Exalted Eightbound^^**, ^^**Khorne Berserkers^^**</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -1437,7 +1436,7 @@
           <characteristics>
             <characteristic name="Range" typeId="9896-9419-16a1-92fc">12&quot;</characteristic>
             <characteristic name="A" typeId="3bb-c35f-f54-fb08">1</characteristic>
-            <characteristic name="BS" typeId="94d-8a98-cf90-183e">3+</characteristic>
+            <characteristic name="BS" typeId="94d-8a98-cf90-183e">4+</characteristic>
             <characteristic name="S" typeId="2229-f494-25db-c5d3">4</characteristic>
             <characteristic name="AP" typeId="9ead-8a10-520-de15">0</characteristic>
             <characteristic name="D" typeId="a354-c1c8-a745-f9e3">1</characteristic>
@@ -1541,7 +1540,7 @@
       <profiles>
         <profile id="355d-5150-1982-17b2" name="Icon of Khorne" hidden="false" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">Each time the bearer&apos;s unit destroys an enemy unit, you gain one Bloodshed point. Each time you make a Blessings of Khorne roll, roll one additional D6 for each Bloodshed point you have, after which, all your Bloodshed points are lost.</characteristic>
+            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">If the bearer&apos;s unit contains 1 or more Icons of Khorne, each time the bearer&apos;s unit destroys an enemy unit, you gain one Bloodshed point. Each time you make a Blessings of Khorne roll, roll one additional D6 for each Bloodshed point you have, after which, all your Bloodshed points are lost.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -2062,6 +2061,7 @@
         <categoryLink id="0b98-f991-10aa-40e0" name="Chaos" hidden="false" targetId="4c00-2578-faf5-6918" primary="false"/>
         <categoryLink id="6041-ca6f-ebe1-ebfa" name="Khorne" hidden="false" targetId="4bd-5ee0-f179-2fc5" primary="false"/>
         <categoryLink id="01d2-17a1-e4e9-ef55" name="Jakhals" hidden="false" targetId="f05b-e25f-cda0-4669" primary="false"/>
+        <categoryLink name="Grenades" hidden="false" id="79e9-cbab-b956-a7b6" targetId="5a61-81ac-eb7c-a87e" primary="false"/>
       </categoryLinks>
       <selectionEntries>
         <selectionEntry id="47af-ef6b-9d50-2c4a" name="Jakhal Pack Leader" hidden="false" collective="false" import="true" type="model">
@@ -3112,7 +3112,7 @@
             <characteristic name="SV" typeId="450-a17e-9d5e-29da">3+</characteristic>
             <characteristic name="W" typeId="750a-a2ec-90d3-21fe">11</characteristic>
             <characteristic name="LD" typeId="58d2-b879-49c7-43bc">6+</characteristic>
-            <characteristic name="OC" typeId="bef7-942a-1a23-59f8">4</characteristic>
+            <characteristic name="OC" typeId="bef7-942a-1a23-59f8">3</characteristic>
           </characteristics>
         </profile>
         <profile id="307f-af7c-e7b6-a4b0" name="Punishing Suppression" hidden="false" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities">
@@ -4736,36 +4736,42 @@ Melee weapons equipped by ^^**Blood Legions^^** units from your army have the [L
             <characteristic name="Roll" typeId="f99e-3b0d-b8fa-71b6">Double 1+</characteristic>
             <characteristic name="Effect" typeId="fcc3-ca7a-d697-7098">You can re-roll Charge rolls made for this unit.</characteristic>
           </characteristics>
+          <alias>Unbridled Bloodlust</alias>
         </profile>
         <profile id="4ba4-2d3a-a3b2-2a0c" name="2. Rage-fuelled Invigoration" hidden="false" typeId="d07f-b12b-1c73-fa2c" typeName="Blessings of Khorne">
           <characteristics>
             <characteristic name="Roll" typeId="f99e-3b0d-b8fa-71b6">Double 2+</characteristic>
             <characteristic name="Effect" typeId="fcc3-ca7a-d697-7098">Each time a model in this unit makes a Pile-In or Consolidation move, it can move up to 6&quot; instead of up to 3&quot;.</characteristic>
           </characteristics>
+          <alias>Rage-fuelled Invigoration</alias>
         </profile>
         <profile id="a2db-113d-0cc8-8d7d" name="3. Total Carnage" hidden="false" typeId="d07f-b12b-1c73-fa2c" typeName="Blessings of Khorne">
           <characteristics>
             <characteristic name="Roll" typeId="f99e-3b0d-b8fa-71b6">Double 3+</characteristic>
             <characteristic name="Effect" typeId="fcc3-ca7a-d697-7098">Each time a model in this unit is destroyed by a melee attack, if it has not fought this phase, roll one D6: on a 4+, do not remove it from play. The destroyed model can fight after the attacking model’s unit has finished making its attacks, and is then removed from play.</characteristic>
           </characteristics>
+          <alias>Total Carnage</alias>
         </profile>
         <profile id="35da-066e-5d34-b312" name="4. Martial Excellence" hidden="false" typeId="d07f-b12b-1c73-fa2c" typeName="Blessings of Khorne">
           <characteristics>
             <characteristic name="Roll" typeId="f99e-3b0d-b8fa-71b6">Double 4+ or Triple 1+</characteristic>
             <characteristic name="Effect" typeId="fcc3-ca7a-d697-7098">Melee weapons equipped by models in this unit have the [SUSTAINED HITS 1] ability.</characteristic>
           </characteristics>
+          <alias>Martial Excellence</alias>
         </profile>
         <profile id="fbfe-9079-46e0-0cbf" name="5. Warp Blades" hidden="false" typeId="d07f-b12b-1c73-fa2c" typeName="Blessings of Khorne">
           <characteristics>
             <characteristic name="Roll" typeId="f99e-3b0d-b8fa-71b6">Double 5+ or Triple 2+</characteristic>
             <characteristic name="Effect" typeId="fcc3-ca7a-d697-7098">Melee weapons equipped by models in this unit have the [LETHAL HITS] ability.</characteristic>
           </characteristics>
+          <alias>Warp Blades</alias>
         </profile>
         <profile id="3444-f024-bee5-e731" name="6. Decapitating Strikes" hidden="false" typeId="d07f-b12b-1c73-fa2c" typeName="Blessings of Khorne">
           <characteristics>
             <characteristic name="Roll" typeId="f99e-3b0d-b8fa-71b6">Double 6+ or Triple 3+</characteristic>
             <characteristic name="Effect" typeId="fcc3-ca7a-d697-7098">Each time a model in this unit makes a melee attack that targets an ^^**Infantry^^** unit, that attack has the [DEVASTATING WOUNDS] ability.</characteristic>
           </characteristics>
+          <alias>Decapitating Strikes</alias>
         </profile>
       </profiles>
       <categoryLinks>
@@ -5552,6 +5558,11 @@ Melee weapons equipped by ^^**Blood Legions^^** units from your army have the [L
             <characteristic name="W" typeId="750a-a2ec-90d3-21fe">18</characteristic>
             <characteristic name="LD" typeId="58d2-b879-49c7-43bc">6+</characteristic>
             <characteristic name="OC" typeId="bef7-942a-1a23-59f8">5</characteristic>
+          </characteristics>
+        </profile>
+        <profile name="Damaged: 1-6 wounds remaining" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="72d7-be5f-fd51-0230">
+          <characteristics>
+            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">While this model has 1-6 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll.</characteristic>
           </characteristics>
         </profile>
       </profiles>

@@ -5,7 +5,7 @@ export class SearchFormData {
     processedKeywords: string[];
     processedToughness: string[];
     includeLegends: boolean;
-    legendsOnly: boolean;
+    includeCurrent: boolean;
 
     constructor(formData: Map<string, string>) {
         // console.log("Initializing SearchFormData with:", formData);
@@ -16,6 +16,8 @@ export class SearchFormData {
             this.processedKeywords.push("!epic hero");
             this.processedToughness.push("<10");
         }
+        this.includeLegends = this.formData.get(LEGENDS_DATASHEETS) == "true";
+        this.includeCurrent = !this.formData.has(CURRENT_DATASHEETS) || this.formData.get(CURRENT_DATASHEETS) == "true" || !this.includeLegends;
     }
 
     clear() {

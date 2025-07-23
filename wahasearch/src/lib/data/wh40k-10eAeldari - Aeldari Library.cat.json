@@ -955,7 +955,7 @@
             },
             "@_name": "Corsairs and Travelling Players",
             "@_id": "e554-d095-bb9d-c930",
-            "@_hidden": "false"
+            "@_hidden": "true"
           },
           {
             "@_name": "Bonesinger",
@@ -6720,7 +6720,8 @@
                       "@_hidden": "false",
                       "@_collective": "false",
                       "@_import": "true",
-                      "@_type": "model"
+                      "@_type": "model",
+                      "@_sortIndex": "1"
                     },
                     {
                       "modifiers": {
@@ -6731,7 +6732,7 @@
                                 "conditions": {
                                   "condition": [
                                     {
-                                      "@_type": "atLeast",
+                                      "@_type": "lessThan",
                                       "@_value": "10",
                                       "@_field": "selections",
                                       "@_scope": "cc68-ad19-7285-7a11",
@@ -6742,13 +6743,12 @@
                                       "@_includeChildForces": "false"
                                     },
                                     {
-                                      "@_type": "equalTo",
-                                      "@_value": "0",
+                                      "@_type": "atLeast",
+                                      "@_value": "1",
                                       "@_field": "selections",
-                                      "@_scope": "cc68-ad19-7285-7a11",
-                                      "@_childId": "a9af-280-501f-a5fe",
+                                      "@_scope": "parent",
+                                      "@_childId": "6184-261f-65bd-1cd1",
                                       "@_shared": "true",
-                                      "@_includeChildForces": "false",
                                       "@_includeChildSelections": "true"
                                     }
                                   ]
@@ -6756,9 +6756,9 @@
                                 "@_type": "and"
                               }
                             },
-                            "@_type": "set",
-                            "@_field": "ae46-b4a6-cb1d-5339",
-                            "@_value": "1"
+                            "@_type": "add",
+                            "@_field": "error",
+                            "@_value": "Can only be taken if there are 10 models in the squad"
                           },
                           {
                             "conditions": {
@@ -6796,7 +6796,7 @@
                         "constraint": {
                           "@_field": "selections",
                           "@_scope": "parent",
-                          "@_value": "0",
+                          "@_value": "1",
                           "@_percentValue": "false",
                           "@_shared": "true",
                           "@_includeChildSelections": "false",
@@ -6977,7 +6977,7 @@
                           "@_hidden": "false",
                           "@_collective": "false",
                           "@_import": "true",
-                          "@_defaultSelectionEntryId": "3554-3b1d-63cc-7c6b"
+                          "@_defaultSelectionEntryId": "none"
                         }
                       },
                       "costs": {
@@ -7011,501 +7011,21 @@
                       "@_hidden": "false",
                       "@_collective": "false",
                       "@_import": "true",
-                      "@_type": "model"
+                      "@_type": "model",
+                      "@_sortIndex": "4"
                     },
                     {
-                      "modifiers": {
-                        "modifier": [
-                          {
-                            "conditions": {
-                              "condition": {
-                                "@_field": "selections",
-                                "@_scope": "cc68-ad19-7285-7a11",
-                                "@_value": "10",
-                                "@_percentValue": "false",
-                                "@_shared": "true",
-                                "@_includeChildSelections": "false",
-                                "@_includeChildForces": "false",
-                                "@_childId": "b3ab-c0f4-3253-859c",
-                                "@_type": "atLeast"
-                              }
-                            },
-                            "@_type": "set",
-                            "@_field": "acb6-e5d8-bbdf-f375",
-                            "@_value": "2"
-                          },
-                          {
-                            "repeats": {
-                              "repeat": {
-                                "@_field": "selections",
-                                "@_scope": "cc68-ad19-7285-7a11",
-                                "@_value": "1",
-                                "@_percentValue": "false",
-                                "@_shared": "true",
-                                "@_includeChildSelections": "true",
-                                "@_includeChildForces": "false",
-                                "@_childId": "060b-f996-dcf6-24f3",
-                                "@_repeats": "1",
-                                "@_roundUp": "false"
-                              }
-                            },
-                            "@_type": "decrement",
-                            "@_field": "acb6-e5d8-bbdf-f375",
-                            "@_value": "1"
-                          }
-                        ]
-                      },
                       "constraints": {
                         "constraint": {
                           "@_field": "selections",
                           "@_scope": "parent",
-                          "@_value": "1",
+                          "@_value": "9",
                           "@_percentValue": "false",
                           "@_shared": "true",
                           "@_includeChildSelections": "false",
                           "@_includeChildForces": "false",
-                          "@_id": "acb6-e5d8-bbdf-f375",
+                          "@_id": "7315-f370-e7fe-385b",
                           "@_type": "max"
-                        }
-                      },
-                      "selectionEntries": {
-                        "selectionEntry": {
-                          "profiles": {
-                            "profile": {
-                              "characteristics": {
-                                "characteristic": [
-                                  {
-                                    "#text": "18\"",
-                                    "@_name": "Range",
-                                    "@_typeId": "9896-9419-16a1-92fc"
-                                  },
-                                  {
-                                    "#text": 1,
-                                    "@_name": "A",
-                                    "@_typeId": "3bb-c35f-f54-fb08"
-                                  },
-                                  {
-                                    "#text": "3+",
-                                    "@_name": "BS",
-                                    "@_typeId": "94d-8a98-cf90-183e"
-                                  },
-                                  {
-                                    "#text": 8,
-                                    "@_name": "S",
-                                    "@_typeId": "2229-f494-25db-c5d3"
-                                  },
-                                  {
-                                    "#text": -4,
-                                    "@_name": "AP",
-                                    "@_typeId": "9ead-8a10-520-de15"
-                                  },
-                                  {
-                                    "#text": "D6+1",
-                                    "@_name": "D",
-                                    "@_typeId": "a354-c1c8-a745-f9e3"
-                                  },
-                                  {
-                                    "#text": "Assault",
-                                    "@_name": "Keywords",
-                                    "@_typeId": "7f1b-8591-2fcf-d01c"
-                                  }
-                                ]
-                              },
-                              "@_id": "147b-c104-ef93-7111",
-                              "@_name": "Blaster",
-                              "@_hidden": "false",
-                              "@_typeId": "f77d-b953-8fa4-b762",
-                              "@_typeName": "Ranged Weapons"
-                            }
-                          },
-                          "infoLinks": {
-                            "infoLink": {
-                              "@_id": "5e49-012d-aa2b-4a63",
-                              "@_name": "Assault",
-                              "@_hidden": "false",
-                              "@_targetId": "fc8a-8c24-bae9-cc1c",
-                              "@_type": "rule"
-                            }
-                          },
-                          "costs": {
-                            "cost": {
-                              "@_name": "pts",
-                              "@_typeId": "51b2-306e-1021-d207",
-                              "@_value": "0"
-                            }
-                          },
-                          "constraints": {
-                            "constraint": [
-                              {
-                                "@_type": "min",
-                                "@_value": "1",
-                                "@_field": "selections",
-                                "@_scope": "parent",
-                                "@_shared": "true",
-                                "@_id": "840d-86eb-bfce-7aa0"
-                              },
-                              {
-                                "@_type": "max",
-                                "@_value": "1",
-                                "@_field": "selections",
-                                "@_scope": "parent",
-                                "@_shared": "true",
-                                "@_id": "cf61-3dab-50dd-37c3"
-                              }
-                            ]
-                          },
-                          "@_id": "abb9-ea1a-aeb7-6798",
-                          "@_name": "Blaster",
-                          "@_hidden": "false",
-                          "@_collective": "true",
-                          "@_import": "true",
-                          "@_type": "upgrade"
-                        }
-                      },
-                      "costs": {
-                        "cost": {
-                          "@_name": "pts",
-                          "@_typeId": "51b2-306e-1021-d207",
-                          "@_value": "0"
-                        }
-                      },
-                      "infoLinks": {
-                        "infoLink": {
-                          "@_name": "Corsair Voidreaver",
-                          "@_id": "b6ed-adf2-697d-44de",
-                          "@_hidden": "false",
-                          "@_type": "profile",
-                          "@_targetId": "57e2-27b5-2c68-cb6e"
-                        }
-                      },
-                      "entryLinks": {
-                        "entryLink": [
-                          {
-                            "@_import": "true",
-                            "@_name": "Close Combat Weapon",
-                            "@_hidden": "false",
-                            "@_id": "bc98-a050-1e98-8f4e",
-                            "@_type": "selectionEntry",
-                            "@_targetId": "6f5b-87a7-49f0-9721"
-                          },
-                          {
-                            "@_import": "true",
-                            "@_name": "Shuriken Pistol",
-                            "@_hidden": "false",
-                            "@_id": "b7f4-0a69-6834-5e46",
-                            "@_type": "selectionEntry",
-                            "@_targetId": "6783-a483-98bc-4f87"
-                          }
-                        ]
-                      },
-                      "@_id": "97da-7e61-2efb-cdcb",
-                      "@_name": "Voidreaver with Blaster",
-                      "@_hidden": "false",
-                      "@_collective": "false",
-                      "@_import": "true",
-                      "@_type": "model"
-                    },
-                    {
-                      "constraints": {
-                        "constraint": [
-                          {
-                            "@_field": "selections",
-                            "@_scope": "parent",
-                            "@_value": "9",
-                            "@_percentValue": "false",
-                            "@_shared": "true",
-                            "@_includeChildSelections": "false",
-                            "@_includeChildForces": "false",
-                            "@_id": "7315-f370-e7fe-385b",
-                            "@_type": "max"
-                          },
-                          {
-                            "@_field": "selections",
-                            "@_scope": "parent",
-                            "@_value": "3",
-                            "@_percentValue": "false",
-                            "@_shared": "true",
-                            "@_includeChildSelections": "false",
-                            "@_includeChildForces": "false",
-                            "@_id": "bf38-b8c9-911d-c600",
-                            "@_type": "min"
-                          }
-                        ]
-                      },
-                      "selectionEntryGroups": {
-                        "selectionEntryGroup": {
-                          "constraints": {
-                            "constraint": [
-                              {
-                                "@_field": "selections",
-                                "@_scope": "parent",
-                                "@_value": "1",
-                                "@_percentValue": "false",
-                                "@_shared": "true",
-                                "@_includeChildSelections": "false",
-                                "@_includeChildForces": "false",
-                                "@_id": "bbb0-ffd7-3d89-f5e9",
-                                "@_type": "min"
-                              },
-                              {
-                                "@_field": "selections",
-                                "@_scope": "parent",
-                                "@_value": "1",
-                                "@_percentValue": "false",
-                                "@_shared": "true",
-                                "@_includeChildSelections": "false",
-                                "@_includeChildForces": "false",
-                                "@_id": "862b-d462-751-d701",
-                                "@_type": "max"
-                              }
-                            ]
-                          },
-                          "selectionEntries": {
-                            "selectionEntry": [
-                              {
-                                "constraints": {
-                                  "constraint": {
-                                    "@_field": "selections",
-                                    "@_scope": "parent",
-                                    "@_value": "1",
-                                    "@_percentValue": "false",
-                                    "@_shared": "true",
-                                    "@_includeChildSelections": "false",
-                                    "@_includeChildForces": "false",
-                                    "@_id": "307c-b0d6-e266-161a",
-                                    "@_type": "max"
-                                  }
-                                },
-                                "profiles": {
-                                  "profile": [
-                                    {
-                                      "characteristics": {
-                                        "characteristic": [
-                                          {
-                                            "#text": "12\"",
-                                            "@_name": "Range",
-                                            "@_typeId": "9896-9419-16a1-92fc"
-                                          },
-                                          {
-                                            "#text": 1,
-                                            "@_name": "A",
-                                            "@_typeId": "3bb-c35f-f54-fb08"
-                                          },
-                                          {
-                                            "#text": "3+",
-                                            "@_name": "BS",
-                                            "@_typeId": "94d-8a98-cf90-183e"
-                                          },
-                                          {
-                                            "#text": 4,
-                                            "@_name": "S",
-                                            "@_typeId": "2229-f494-25db-c5d3"
-                                          },
-                                          {
-                                            "#text": -1,
-                                            "@_name": "AP",
-                                            "@_typeId": "9ead-8a10-520-de15"
-                                          },
-                                          {
-                                            "#text": 1,
-                                            "@_name": "D",
-                                            "@_typeId": "a354-c1c8-a745-f9e3"
-                                          },
-                                          {
-                                            "#text": "Assault, Pistol",
-                                            "@_name": "Keywords",
-                                            "@_typeId": "7f1b-8591-2fcf-d01c"
-                                          }
-                                        ]
-                                      },
-                                      "@_id": "6b7-807e-e8b4-69cc",
-                                      "@_name": "Shuriken pistol",
-                                      "@_hidden": "false",
-                                      "@_typeId": "f77d-b953-8fa4-b762",
-                                      "@_typeName": "Ranged Weapons"
-                                    },
-                                    {
-                                      "characteristics": {
-                                        "characteristic": [
-                                          {
-                                            "#text": "Melee",
-                                            "@_name": "Range",
-                                            "@_typeId": "914c-b413-91e3-a132"
-                                          },
-                                          {
-                                            "#text": 2,
-                                            "@_name": "A",
-                                            "@_typeId": "2337-daa1-6682-b110"
-                                          },
-                                          {
-                                            "#text": "3+",
-                                            "@_name": "WS",
-                                            "@_typeId": "95d1-95f-45b4-11d6"
-                                          },
-                                          {
-                                            "#text": 4,
-                                            "@_name": "S",
-                                            "@_typeId": "ab33-d393-96ce-ccba"
-                                          },
-                                          {
-                                            "#text": -2,
-                                            "@_name": "AP",
-                                            "@_typeId": "41a0-1301-112a-e2f2"
-                                          },
-                                          {
-                                            "#text": 1,
-                                            "@_name": "D",
-                                            "@_typeId": "3254-9fe6-d824-513e"
-                                          },
-                                          {
-                                            "#text": "-",
-                                            "@_name": "Keywords",
-                                            "@_typeId": "893f-9000-ccf7-648e"
-                                          }
-                                        ]
-                                      },
-                                      "@_id": "29a6-f7d3-dddc-c8c3",
-                                      "@_name": "Power sword",
-                                      "@_hidden": "false",
-                                      "@_typeId": "8a40-4aaa-c780-9046",
-                                      "@_typeName": "Melee Weapons"
-                                    }
-                                  ]
-                                },
-                                "infoLinks": {
-                                  "infoLink": [
-                                    {
-                                      "@_id": "a43e-3e97-1a36-f17c",
-                                      "@_name": "Assault",
-                                      "@_hidden": "false",
-                                      "@_targetId": "fc8a-8c24-bae9-cc1c",
-                                      "@_type": "rule"
-                                    },
-                                    {
-                                      "@_id": "df4b-1398-8ed6-249c",
-                                      "@_name": "Pistol",
-                                      "@_hidden": "false",
-                                      "@_targetId": "8bf7-8812-923d-29e4",
-                                      "@_type": "rule"
-                                    }
-                                  ]
-                                },
-                                "costs": {
-                                  "cost": {
-                                    "@_name": "pts",
-                                    "@_typeId": "51b2-306e-1021-d207",
-                                    "@_value": "0"
-                                  }
-                                },
-                                "@_id": "a9af-280-501f-a5fe",
-                                "@_name": "Shuriken pistol Power sword",
-                                "@_hidden": "false",
-                                "@_collective": "false",
-                                "@_import": "true",
-                                "@_type": "upgrade"
-                              },
-                              {
-                                "constraints": {
-                                  "constraint": {
-                                    "@_field": "selections",
-                                    "@_scope": "parent",
-                                    "@_value": "1",
-                                    "@_percentValue": "false",
-                                    "@_shared": "true",
-                                    "@_includeChildSelections": "false",
-                                    "@_includeChildForces": "false",
-                                    "@_id": "37ab-6a5e-71a-64c1",
-                                    "@_type": "max"
-                                  }
-                                },
-                                "profiles": {
-                                  "profile": {
-                                    "characteristics": {
-                                      "characteristic": [
-                                        {
-                                          "#text": "24\"",
-                                          "@_name": "Range",
-                                          "@_typeId": "9896-9419-16a1-92fc"
-                                        },
-                                        {
-                                          "#text": 1,
-                                          "@_name": "A",
-                                          "@_typeId": "3bb-c35f-f54-fb08"
-                                        },
-                                        {
-                                          "#text": "3+",
-                                          "@_name": "BS",
-                                          "@_typeId": "94d-8a98-cf90-183e"
-                                        },
-                                        {
-                                          "#text": 4,
-                                          "@_name": "S",
-                                          "@_typeId": "2229-f494-25db-c5d3"
-                                        },
-                                        {
-                                          "#text": -1,
-                                          "@_name": "AP",
-                                          "@_typeId": "9ead-8a10-520-de15"
-                                        },
-                                        {
-                                          "#text": 1,
-                                          "@_name": "D",
-                                          "@_typeId": "a354-c1c8-a745-f9e3"
-                                        },
-                                        {
-                                          "#text": "Assault, Rapid Fire 1",
-                                          "@_name": "Keywords",
-                                          "@_typeId": "7f1b-8591-2fcf-d01c"
-                                        }
-                                      ]
-                                    },
-                                    "@_id": "efc9-b21c-3ce-515",
-                                    "@_name": "Shuriken rifle",
-                                    "@_hidden": "false",
-                                    "@_typeId": "f77d-b953-8fa4-b762",
-                                    "@_typeName": "Ranged Weapons"
-                                  }
-                                },
-                                "infoLinks": {
-                                  "infoLink": [
-                                    {
-                                      "@_id": "c361-a79d-83a4-1c12",
-                                      "@_name": "Assault",
-                                      "@_hidden": "false",
-                                      "@_targetId": "fc8a-8c24-bae9-cc1c",
-                                      "@_type": "rule"
-                                    },
-                                    {
-                                      "@_id": "bdd4-294f-892b-8ced",
-                                      "@_name": "Rapid Fire",
-                                      "@_hidden": "false",
-                                      "@_targetId": "c5c8-8b58-b8b6-7786",
-                                      "@_type": "rule"
-                                    }
-                                  ]
-                                },
-                                "costs": {
-                                  "cost": {
-                                    "@_name": "pts",
-                                    "@_typeId": "51b2-306e-1021-d207",
-                                    "@_value": "0"
-                                  }
-                                },
-                                "@_id": "b89e-3e79-8a04-731",
-                                "@_name": "Shuriken rifle",
-                                "@_hidden": "false",
-                                "@_collective": "false",
-                                "@_import": "true",
-                                "@_type": "upgrade"
-                              }
-                            ]
-                          },
-                          "@_id": "409e-c2a0-4aa-373a",
-                          "@_name": "Weapon",
-                          "@_hidden": "false",
-                          "@_collective": "false",
-                          "@_import": "true",
-                          "@_defaultSelectionEntryId": "a9af-280-501f-a5fe"
                         }
                       },
                       "costs": {
@@ -7534,96 +7054,56 @@
                           "@_targetId": "57e2-27b5-2c68-cb6e"
                         }
                       },
-                      "@_id": "fcf9-7d09-a246-b925",
-                      "@_name": "Voidreaver",
-                      "@_hidden": "false",
-                      "@_collective": "false",
-                      "@_import": "true",
-                      "@_type": "model"
-                    },
-                    {
-                      "modifiers": {
-                        "modifier": [
-                          {
-                            "conditions": {
-                              "condition": {
-                                "@_field": "selections",
-                                "@_scope": "cc68-ad19-7285-7a11",
-                                "@_value": "10",
-                                "@_percentValue": "false",
-                                "@_shared": "true",
-                                "@_includeChildSelections": "false",
-                                "@_includeChildForces": "false",
-                                "@_childId": "b3ab-c0f4-3253-859c",
-                                "@_type": "atLeast"
-                              }
-                            },
-                            "@_type": "set",
-                            "@_field": "83b7-85d3-09af-9e6a",
-                            "@_value": "2"
-                          },
-                          {
-                            "repeats": {
-                              "repeat": {
-                                "@_field": "selections",
-                                "@_scope": "cc68-ad19-7285-7a11",
-                                "@_value": "1",
-                                "@_percentValue": "false",
-                                "@_shared": "true",
-                                "@_includeChildSelections": "true",
-                                "@_includeChildForces": "false",
-                                "@_childId": "97da-7e61-2efb-cdcb",
-                                "@_repeats": "1",
-                                "@_roundUp": "false"
-                              }
-                            },
-                            "@_type": "decrement",
-                            "@_field": "83b7-85d3-09af-9e6a",
-                            "@_value": "1"
-                          }
-                        ]
-                      },
-                      "constraints": {
-                        "constraint": {
-                          "@_field": "selections",
-                          "@_scope": "parent",
-                          "@_value": "1",
-                          "@_percentValue": "false",
-                          "@_shared": "true",
-                          "@_includeChildSelections": "false",
-                          "@_includeChildForces": "false",
-                          "@_id": "83b7-85d3-09af-9e6a",
-                          "@_type": "max"
-                        }
-                      },
                       "selectionEntries": {
                         "selectionEntry": {
+                          "constraints": {
+                            "constraint": [
+                              {
+                                "@_type": "min",
+                                "@_value": "1",
+                                "@_field": "selections",
+                                "@_scope": "parent",
+                                "@_shared": "true",
+                                "@_id": "ed33-5fd5-bfcc-3af0-min",
+                                "@_includeChildSelections": "false"
+                              },
+                              {
+                                "@_type": "max",
+                                "@_value": "1",
+                                "@_field": "selections",
+                                "@_scope": "parent",
+                                "@_shared": "true",
+                                "@_id": "ed33-5fd5-bfcc-3af0-max",
+                                "@_includeChildSelections": "false"
+                              }
+                            ]
+                          },
                           "profiles": {
                             "profile": {
                               "characteristics": {
                                 "characteristic": [
                                   {
-                                    "#text": "18\"",
+                                    "#text": "24\"",
                                     "@_name": "Range",
                                     "@_typeId": "9896-9419-16a1-92fc"
                                   },
                                   {
-                                    "#text": "D6",
+                                    "#text": 1,
                                     "@_name": "A",
                                     "@_typeId": "3bb-c35f-f54-fb08"
                                   },
                                   {
-                                    "#text": "N/A",
+                                    "#text": "3+",
                                     "@_name": "BS",
                                     "@_typeId": "94d-8a98-cf90-183e"
                                   },
                                   {
-                                    "#text": 6,
+                                    "#text": 4,
                                     "@_name": "S",
                                     "@_typeId": "2229-f494-25db-c5d3"
                                   },
                                   {
-                                    "#text": 0,
+                                    "#text": -1,
                                     "@_name": "AP",
                                     "@_typeId": "9ead-8a10-520-de15"
                                   },
@@ -7633,33 +7113,33 @@
                                     "@_typeId": "a354-c1c8-a745-f9e3"
                                   },
                                   {
-                                    "#text": "Assault, Torrent",
+                                    "#text": "Assault, Rapid Fire 1",
                                     "@_name": "Keywords",
                                     "@_typeId": "7f1b-8591-2fcf-d01c"
                                   }
                                 ]
                               },
-                              "@_id": "d3c9-151e-99c0-8adc",
-                              "@_name": "Corsair shredder",
-                              "@_hidden": "false",
+                              "@_name": "Shuriken rifle",
                               "@_typeId": "f77d-b953-8fa4-b762",
-                              "@_typeName": "Ranged Weapons"
+                              "@_typeName": "Ranged Weapons",
+                              "@_hidden": "false",
+                              "@_id": "efc9-b21c-3ce-515"
                             }
                           },
                           "infoLinks": {
                             "infoLink": [
                               {
-                                "@_id": "25c1-38dd-990f-6da8",
                                 "@_name": "Assault",
+                                "@_id": "c361-a79d-83a4-1c12",
                                 "@_hidden": "false",
                                 "@_targetId": "fc8a-8c24-bae9-cc1c",
                                 "@_type": "rule"
                               },
                               {
-                                "@_id": "ff1b-2b2b-ea19-74d8",
-                                "@_name": "Torrent",
+                                "@_name": "Rapid Fire",
+                                "@_id": "bdd4-294f-892b-8ced",
                                 "@_hidden": "false",
-                                "@_targetId": "5edf-d619-23e0-9b56",
+                                "@_targetId": "c5c8-8b58-b8b6-7786",
                                 "@_type": "rule"
                               }
                             ]
@@ -7671,32 +7151,34 @@
                               "@_value": "0"
                             }
                           },
-                          "constraints": {
-                            "constraint": [
-                              {
-                                "@_type": "min",
-                                "@_value": "1",
-                                "@_field": "selections",
-                                "@_scope": "parent",
-                                "@_shared": "true",
-                                "@_id": "3763-efb9-a9f0-3af6"
-                              },
-                              {
-                                "@_type": "max",
-                                "@_value": "1",
-                                "@_field": "selections",
-                                "@_scope": "parent",
-                                "@_shared": "true",
-                                "@_id": "648-4642-270a-fb62"
-                              }
-                            ]
-                          },
-                          "@_id": "b6d4-2512-8595-d60a",
-                          "@_name": "Shredder",
-                          "@_hidden": "false",
-                          "@_collective": "true",
+                          "@_type": "upgrade",
                           "@_import": "true",
-                          "@_type": "upgrade"
+                          "@_name": "Shuriken rifle",
+                          "@_hidden": "false",
+                          "@_id": "b89e-3e79-8a04-731",
+                          "@_collective": "false"
+                        }
+                      },
+                      "@_id": "fcf9-7d09-a246-b925",
+                      "@_name": "Voidreaver with Shuriken rifle",
+                      "@_hidden": "false",
+                      "@_collective": "false",
+                      "@_import": "true",
+                      "@_type": "model",
+                      "@_sortIndex": "2"
+                    },
+                    {
+                      "constraints": {
+                        "constraint": {
+                          "@_type": "max",
+                          "@_value": "9",
+                          "@_field": "selections",
+                          "@_scope": "parent",
+                          "@_shared": "true",
+                          "@_id": "0cea-4ec1-b214-c6ce",
+                          "@_percentValue": "false",
+                          "@_includeChildSelections": "false",
+                          "@_includeChildForces": "false"
                         }
                       },
                       "costs": {
@@ -7706,22 +7188,13 @@
                           "@_value": "0"
                         }
                       },
-                      "infoLinks": {
-                        "infoLink": {
-                          "@_name": "Corsair Voidreaver",
-                          "@_id": "6bd8-926d-f279-8fc9",
-                          "@_hidden": "false",
-                          "@_type": "profile",
-                          "@_targetId": "57e2-27b5-2c68-cb6e"
-                        }
-                      },
                       "entryLinks": {
                         "entryLink": [
                           {
                             "@_import": "true",
                             "@_name": "Close Combat Weapon",
                             "@_hidden": "false",
-                            "@_id": "7352-100a-c621-aaf8",
+                            "@_id": "6740-03eb-70fe-5622",
                             "@_type": "selectionEntry",
                             "@_targetId": "6f5b-87a7-49f0-9721"
                           },
@@ -7729,20 +7202,408 @@
                             "@_import": "true",
                             "@_name": "Shuriken Pistol",
                             "@_hidden": "false",
-                            "@_id": "2e72-4304-54e0-de85",
+                            "@_id": "c09b-4bbb-a901-980e",
                             "@_type": "selectionEntry",
                             "@_targetId": "6783-a483-98bc-4f87"
+                          },
+                          {
+                            "@_import": "true",
+                            "@_name": "Power sword",
+                            "@_hidden": "false",
+                            "@_id": "5db8-79c8-8255-d500",
+                            "@_type": "selectionEntry",
+                            "@_targetId": "0e77-2630-6f58-75ce"
                           }
                         ]
                       },
-                      "@_id": "060b-f996-dcf6-24f3",
-                      "@_name": "Voidreaver with Shredder",
-                      "@_hidden": "false",
-                      "@_collective": "false",
+                      "infoLinks": {
+                        "infoLink": {
+                          "@_name": "Corsair Voidreaver",
+                          "@_id": "f65e-0e9a-1012-1eb5",
+                          "@_hidden": "false",
+                          "@_type": "profile",
+                          "@_targetId": "57e2-27b5-2c68-cb6e"
+                        }
+                      },
+                      "@_type": "model",
                       "@_import": "true",
-                      "@_type": "model"
+                      "@_name": "Voidreaver with sword and pistol",
+                      "@_hidden": "false",
+                      "@_id": "184e-6116-54ec-5804",
+                      "@_collective": "false",
+                      "@_sortIndex": "3"
                     }
                   ]
+                },
+                "selectionEntryGroups": {
+                  "selectionEntryGroup": {
+                    "constraints": {
+                      "constraint": {
+                        "@_type": "max",
+                        "@_value": "2",
+                        "@_field": "selections",
+                        "@_scope": "parent",
+                        "@_shared": "true",
+                        "@_id": "2e8a-fbcf-a50a-dc43",
+                        "@_includeChildSelections": "false"
+                      }
+                    },
+                    "selectionEntries": {
+                      "selectionEntry": [
+                        {
+                          "constraints": {
+                            "constraint": {
+                              "@_type": "max",
+                              "@_value": "2",
+                              "@_field": "selections",
+                              "@_scope": "parent",
+                              "@_shared": "true",
+                              "@_id": "47fe-0240-ad9e-28ae",
+                              "@_percentValue": "false",
+                              "@_includeChildSelections": "false",
+                              "@_includeChildForces": "false"
+                            }
+                          },
+                          "selectionEntries": {
+                            "selectionEntry": {
+                              "profiles": {
+                                "profile": {
+                                  "characteristics": {
+                                    "characteristic": [
+                                      {
+                                        "#text": "18\"",
+                                        "@_name": "Range",
+                                        "@_typeId": "9896-9419-16a1-92fc"
+                                      },
+                                      {
+                                        "#text": 1,
+                                        "@_name": "A",
+                                        "@_typeId": "3bb-c35f-f54-fb08"
+                                      },
+                                      {
+                                        "#text": "3+",
+                                        "@_name": "BS",
+                                        "@_typeId": "94d-8a98-cf90-183e"
+                                      },
+                                      {
+                                        "#text": 8,
+                                        "@_name": "S",
+                                        "@_typeId": "2229-f494-25db-c5d3"
+                                      },
+                                      {
+                                        "#text": -4,
+                                        "@_name": "AP",
+                                        "@_typeId": "9ead-8a10-520-de15"
+                                      },
+                                      {
+                                        "#text": "D6+1",
+                                        "@_name": "D",
+                                        "@_typeId": "a354-c1c8-a745-f9e3"
+                                      },
+                                      {
+                                        "#text": "Assault",
+                                        "@_name": "Keywords",
+                                        "@_typeId": "7f1b-8591-2fcf-d01c"
+                                      }
+                                    ]
+                                  },
+                                  "@_name": "Blaster",
+                                  "@_typeId": "f77d-b953-8fa4-b762",
+                                  "@_typeName": "Ranged Weapons",
+                                  "@_hidden": "false",
+                                  "@_id": "147b-c104-ef93-7111"
+                                }
+                              },
+                              "infoLinks": {
+                                "infoLink": {
+                                  "@_name": "Assault",
+                                  "@_id": "5e49-012d-aa2b-4a63",
+                                  "@_hidden": "false",
+                                  "@_targetId": "fc8a-8c24-bae9-cc1c",
+                                  "@_type": "rule"
+                                }
+                              },
+                              "costs": {
+                                "cost": {
+                                  "@_name": "pts",
+                                  "@_typeId": "51b2-306e-1021-d207",
+                                  "@_value": "0"
+                                }
+                              },
+                              "constraints": {
+                                "constraint": [
+                                  {
+                                    "@_type": "min",
+                                    "@_value": "1",
+                                    "@_field": "selections",
+                                    "@_scope": "parent",
+                                    "@_shared": "true",
+                                    "@_id": "840d-86eb-bfce-7aa0"
+                                  },
+                                  {
+                                    "@_type": "max",
+                                    "@_value": "1",
+                                    "@_field": "selections",
+                                    "@_scope": "parent",
+                                    "@_shared": "true",
+                                    "@_id": "cf61-3dab-50dd-37c3"
+                                  }
+                                ]
+                              },
+                              "@_type": "upgrade",
+                              "@_import": "true",
+                              "@_name": "Blaster",
+                              "@_hidden": "false",
+                              "@_id": "abb9-ea1a-aeb7-6798",
+                              "@_collective": "true"
+                            }
+                          },
+                          "costs": {
+                            "cost": {
+                              "@_name": "pts",
+                              "@_typeId": "51b2-306e-1021-d207",
+                              "@_value": "0"
+                            }
+                          },
+                          "infoLinks": {
+                            "infoLink": {
+                              "@_name": "Corsair Voidreaver",
+                              "@_id": "b6ed-adf2-697d-44de",
+                              "@_hidden": "false",
+                              "@_type": "profile",
+                              "@_targetId": "57e2-27b5-2c68-cb6e"
+                            }
+                          },
+                          "entryLinks": {
+                            "entryLink": [
+                              {
+                                "@_import": "true",
+                                "@_name": "Close Combat Weapon",
+                                "@_hidden": "false",
+                                "@_id": "bc98-a050-1e98-8f4e",
+                                "@_type": "selectionEntry",
+                                "@_targetId": "6f5b-87a7-49f0-9721"
+                              },
+                              {
+                                "@_import": "true",
+                                "@_name": "Shuriken Pistol",
+                                "@_hidden": "false",
+                                "@_id": "b7f4-0a69-6834-5e46",
+                                "@_type": "selectionEntry",
+                                "@_targetId": "6783-a483-98bc-4f87"
+                              }
+                            ]
+                          },
+                          "@_type": "model",
+                          "@_import": "true",
+                          "@_name": "Voidreaver with Blaster",
+                          "@_hidden": "false",
+                          "@_id": "97da-7e61-2efb-cdcb",
+                          "@_collective": "false"
+                        },
+                        {
+                          "constraints": {
+                            "constraint": {
+                              "@_type": "max",
+                              "@_value": "2",
+                              "@_field": "selections",
+                              "@_scope": "parent",
+                              "@_shared": "true",
+                              "@_id": "83b7-85d3-09af-9e6a",
+                              "@_percentValue": "false",
+                              "@_includeChildSelections": "false",
+                              "@_includeChildForces": "false"
+                            }
+                          },
+                          "selectionEntries": {
+                            "selectionEntry": {
+                              "profiles": {
+                                "profile": {
+                                  "characteristics": {
+                                    "characteristic": [
+                                      {
+                                        "#text": "18\"",
+                                        "@_name": "Range",
+                                        "@_typeId": "9896-9419-16a1-92fc"
+                                      },
+                                      {
+                                        "#text": "D6",
+                                        "@_name": "A",
+                                        "@_typeId": "3bb-c35f-f54-fb08"
+                                      },
+                                      {
+                                        "#text": "N/A",
+                                        "@_name": "BS",
+                                        "@_typeId": "94d-8a98-cf90-183e"
+                                      },
+                                      {
+                                        "#text": 6,
+                                        "@_name": "S",
+                                        "@_typeId": "2229-f494-25db-c5d3"
+                                      },
+                                      {
+                                        "#text": 0,
+                                        "@_name": "AP",
+                                        "@_typeId": "9ead-8a10-520-de15"
+                                      },
+                                      {
+                                        "#text": 1,
+                                        "@_name": "D",
+                                        "@_typeId": "a354-c1c8-a745-f9e3"
+                                      },
+                                      {
+                                        "#text": "Assault, Torrent",
+                                        "@_name": "Keywords",
+                                        "@_typeId": "7f1b-8591-2fcf-d01c"
+                                      }
+                                    ]
+                                  },
+                                  "@_name": "Corsair shredder",
+                                  "@_typeId": "f77d-b953-8fa4-b762",
+                                  "@_typeName": "Ranged Weapons",
+                                  "@_hidden": "false",
+                                  "@_id": "d3c9-151e-99c0-8adc"
+                                }
+                              },
+                              "infoLinks": {
+                                "infoLink": [
+                                  {
+                                    "@_name": "Assault",
+                                    "@_id": "25c1-38dd-990f-6da8",
+                                    "@_hidden": "false",
+                                    "@_targetId": "fc8a-8c24-bae9-cc1c",
+                                    "@_type": "rule"
+                                  },
+                                  {
+                                    "@_name": "Torrent",
+                                    "@_id": "ff1b-2b2b-ea19-74d8",
+                                    "@_hidden": "false",
+                                    "@_targetId": "5edf-d619-23e0-9b56",
+                                    "@_type": "rule"
+                                  }
+                                ]
+                              },
+                              "costs": {
+                                "cost": {
+                                  "@_name": "pts",
+                                  "@_typeId": "51b2-306e-1021-d207",
+                                  "@_value": "0"
+                                }
+                              },
+                              "constraints": {
+                                "constraint": [
+                                  {
+                                    "@_type": "min",
+                                    "@_value": "1",
+                                    "@_field": "selections",
+                                    "@_scope": "parent",
+                                    "@_shared": "true",
+                                    "@_id": "3763-efb9-a9f0-3af6"
+                                  },
+                                  {
+                                    "@_type": "max",
+                                    "@_value": "1",
+                                    "@_field": "selections",
+                                    "@_scope": "parent",
+                                    "@_shared": "true",
+                                    "@_id": "648-4642-270a-fb62"
+                                  }
+                                ]
+                              },
+                              "@_type": "upgrade",
+                              "@_import": "true",
+                              "@_name": "Shredder",
+                              "@_hidden": "false",
+                              "@_id": "b6d4-2512-8595-d60a",
+                              "@_collective": "true"
+                            }
+                          },
+                          "costs": {
+                            "cost": {
+                              "@_name": "pts",
+                              "@_typeId": "51b2-306e-1021-d207",
+                              "@_value": "0"
+                            }
+                          },
+                          "infoLinks": {
+                            "infoLink": {
+                              "@_name": "Corsair Voidreaver",
+                              "@_id": "6bd8-926d-f279-8fc9",
+                              "@_hidden": "false",
+                              "@_type": "profile",
+                              "@_targetId": "57e2-27b5-2c68-cb6e"
+                            }
+                          },
+                          "entryLinks": {
+                            "entryLink": [
+                              {
+                                "@_import": "true",
+                                "@_name": "Close Combat Weapon",
+                                "@_hidden": "false",
+                                "@_id": "7352-100a-c621-aaf8",
+                                "@_type": "selectionEntry",
+                                "@_targetId": "6f5b-87a7-49f0-9721"
+                              },
+                              {
+                                "@_import": "true",
+                                "@_name": "Shuriken Pistol",
+                                "@_hidden": "false",
+                                "@_id": "2e72-4304-54e0-de85",
+                                "@_type": "selectionEntry",
+                                "@_targetId": "6783-a483-98bc-4f87"
+                              }
+                            ]
+                          },
+                          "@_type": "model",
+                          "@_import": "true",
+                          "@_name": "Voidreaver with Shredder",
+                          "@_hidden": "false",
+                          "@_id": "060b-f996-dcf6-24f3",
+                          "@_collective": "false"
+                        }
+                      ]
+                    },
+                    "modifiers": {
+                      "modifier": {
+                        "conditionGroups": {
+                          "conditionGroup": {
+                            "conditions": {
+                              "condition": [
+                                {
+                                  "@_type": "atLeast",
+                                  "@_value": "2",
+                                  "@_field": "selections",
+                                  "@_scope": "cc68-ad19-7285-7a11",
+                                  "@_childId": "6233-f7e5-3337-389f",
+                                  "@_shared": "true",
+                                  "@_includeChildSelections": "true"
+                                },
+                                {
+                                  "@_type": "lessThan",
+                                  "@_value": "10",
+                                  "@_field": "selections",
+                                  "@_scope": "cc68-ad19-7285-7a11",
+                                  "@_childId": "b3ab-c0f4-3253-859c",
+                                  "@_shared": "true",
+                                  "@_percentValue": "false",
+                                  "@_includeChildSelections": "false",
+                                  "@_includeChildForces": "false"
+                                }
+                              ]
+                            },
+                            "@_type": "and"
+                          }
+                        },
+                        "@_type": "add",
+                        "@_value": "Max 1 Special weapon per 5 models",
+                        "@_field": "error"
+                      }
+                    },
+                    "@_name": "Voidreaver with special weapon",
+                    "@_id": "6233-f7e5-3337-389f",
+                    "@_hidden": "false",
+                    "@_sortIndex": "5"
+                  }
                 },
                 "@_id": "b3ab-c0f4-3253-859c",
                 "@_name": "4-9 Voidreavers and 1 Felarch",
@@ -97080,7 +96941,7 @@
                 "@_value": "0"
               }
             },
-            "comment": "Storm Guardians",
+            "comment": "WS 3+",
             "@_type": "upgrade",
             "@_import": "true",
             "@_name": "Power sword",
@@ -103305,7 +103166,7 @@
       "@_xmlns": "http://www.battlescribe.net/schema/catalogueSchema",
       "@_id": "dfcf-1214-b57-2205",
       "@_name": "Aeldari - Aeldari Library",
-      "@_revision": "83",
+      "@_revision": "84",
       "@_battleScribeVersion": "2.03",
       "@_library": "true",
       "@_gameSystemId": "sys-352e-adc2-7639-d6a9",
