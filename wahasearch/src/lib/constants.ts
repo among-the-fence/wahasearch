@@ -14,7 +14,7 @@ export const FACTION_NICKNAME_MAP = {
     'adeptus mechanicus': ['admech'],
     'agents of the imperium': ['ia', 'imperial agents', 'imperial'],
     'astra militarum': ['am', 'ig', 'guard', 'imperial guard'],
-    'asuryani': ['aeldari', 'elves', 'elf', 'eldar', 'legalos and friends', 'bill', 'good elves', 'good elf', 'light eldar', 'light elf', 'light elves'],
+    'asuryani': ['aeldari', 'elves', 'elfs', 'elvs', 'elf', 'eldar', 'legalos and friends', 'bill', 'good elves', 'good elf', 'light eldar', 'light elf', 'light elves'],
     'black templars': ['bt', 'templars'],
     'blood angels': ['ba', 'angels', 'angles', 'bangles', 'bangels'],
     'blood legions': ['bl'],
@@ -26,7 +26,7 @@ export const FACTION_NICKNAME_MAP = {
     "emperor's children": ['ec'],
     'genestealer cults': ['gsc', 'genestealers'],
     'grey knights': ['gk', 'grey knights'],
-    'harlequins': ['hq', 'murder circus', 'murder clowns', 'clowns', 'mary', 'bill'],
+    'harlequins': ['aeldari', 'eldar', 'hq', 'murder circus', 'murder clowns', 'clowns', 'mary', 'bill'],
     'heretic astartes': ['csm', 'chaos marines', 'marines'],
     'imperial fists': ['if'],
     'imperial knights': ['ik'],
@@ -48,11 +48,11 @@ export const FACTION_NICKNAME_MAP = {
     'unaligned forces': [],
     'white scars': [],
     'world eaters': ['we', 'eaters', 'ben'],
-    'ynnari': ['elves', 'mary', 'aeldari', 'elves', 'elf', 'eldar', 'bill', 'weird elves']
+    'ynnari': ['elfs', 'elvs', 'elves', 'mary', 'aeldari', 'elf', 'eldar', 'bill', 'weird elves']
 }
 
 export const KEYWORD_NICKNAME_MAP = {
     "lethal hits": ["lh"],
-    "devastating wounds": ["dev", "deva", "dev wounds", "devwounds"],
+    "devastating wounds": ["dev", "deva", "dev wounds", "devwounds", "devs"],
     "fly": ["flying"],
 }
