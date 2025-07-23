@@ -11,7 +11,8 @@ export interface DataCardDisplayProps {
 }
 
 const unitCharacteristicOrder = ["M", "T", "W", "OC", "SV"];
-const weaponProfileOrder = ["A", "WS", "S", "AP", "D"]
+const weaponProfileOrderRanged = ["Range", "A", "BS", "S", "AP", "D"]
+const weaponProfileOrderMelee = ["A", "WS", "S", "AP", "D"]
 
 export const DataCardDisplay = ({ datacard }: DataCardDisplayProps) => {
     const [open, setOpen] = useState(false);
@@ -83,18 +84,8 @@ export const DataCardDisplay = ({ datacard }: DataCardDisplayProps) => {
                     </SheetTitle>
                 </SheetHeader>
                 <DataCardSheet datacard={datacard} cardClick={async () => setOpen(false)} />
-                <SheetFooter>
 
 
-                    <Collapsible >
-                        <CollapsibleTrigger>Debug</CollapsibleTrigger>
-                        <CollapsibleContent>
-                            <div style={{ background: 'black' }}>
-                                <JsonRenderer data={datacard} />
-                            </div>
-                        </CollapsibleContent>
-                    </Collapsible>
-                </SheetFooter>
             </SheetContent>
         </Sheet>
     );
@@ -215,7 +206,7 @@ const DataCardSheet = ({ datacard, cardClick }: DataCardCardProps) => {
                         <tr>
                             <th style={{ borderBottom: '1px solid #ccc', textAlign: 'left' }}>Name</th>
                             <th style={{ borderBottom: '1px solid #ccc', textAlign: 'left' }}>Range</th>
-                            {weaponProfileOrder.map((char) => (
+                            {weaponProfileOrderRanged.map((char) => (
                                 <th key={char} style={{ borderBottom: '1px solid #ccc', textAlign: 'left' }}>{char}</th>
                             ))}
                         </tr>
@@ -223,7 +214,7 @@ const DataCardSheet = ({ datacard, cardClick }: DataCardCardProps) => {
                     <tbody>
                         {rangedProfiles.map((profile, idx) => {
                             const range = profile.characteristics.get('Range')?.['#text'] ?? '';
-                            const rowValues = weaponProfileOrder.map((key) => profile.characteristics.get(key)?.['#text'] ?? '');
+                            const rowValues = weaponProfileOrderRanged.map((key) => profile.characteristics.get(key)?.['#text'] ?? '');
                             const keywords = profile.characteristics.get('Keywords')?.['#text'] ?? '';
                             return (
                                 <>
@@ -235,7 +226,7 @@ const DataCardSheet = ({ datacard, cardClick }: DataCardCardProps) => {
                                         ))}
                                     </tr>
                                     <tr key={profile.name + '-keywords'}>
-                                        <td colSpan={weaponProfileOrder.length + 1} style={{ fontStyle: 'italic', color: '#666', borderBottom: '1px solid #eee' }}>
+                                        <td colSpan={weaponProfileOrderRanged.length + 1} style={{ fontStyle: 'italic', color: '#666', borderBottom: '1px solid #eee' }}>
                                             {keywords}
                                         </td>
                                     </tr>
@@ -250,14 +241,14 @@ const DataCardSheet = ({ datacard, cardClick }: DataCardCardProps) => {
                     <thead>
                         <tr>
                             <th style={{ borderBottom: '1px solid #ccc', textAlign: 'left' }}>Name</th>
-                            {weaponProfileOrder.map((char) => (
+                            {weaponProfileOrderMelee.map((char) => (
                                 <th key={char} style={{ borderBottom: '1px solid #ccc', textAlign: 'left' }}>{char}</th>
                             ))}
                         </tr>
                     </thead>
                     <tbody>
                         {meleeProfiles.map((profile, idx) => {
-                            const rowValues = weaponProfileOrder.map((key) => profile.characteristics.get(key)?.['#text'] ?? '');
+                            const rowValues = weaponProfileOrderMelee.map((key) => profile.characteristics.get(key)?.['#text'] ?? '');
                             const keywords = profile.characteristics.get('Keywords')?.['#text'] ?? '';
                             return (
                                 <>
@@ -268,7 +259,7 @@ const DataCardSheet = ({ datacard, cardClick }: DataCardCardProps) => {
                                         ))}
                                     </tr>
                                     <tr key={profile.name + '-keywords'}>
-                                        <td colSpan={weaponProfileOrder.length + 1} style={{ fontStyle: 'italic', color: '#666', borderBottom: '1px solid #eee' }}>
+                                        <td colSpan={weaponProfileOrderMelee.length + 1} style={{ fontStyle: 'italic', color: '#666', borderBottom: '1px solid #eee' }}>
                                             {keywords}
                                         </td>
                                     </tr>
@@ -293,6 +284,15 @@ const DataCardSheet = ({ datacard, cardClick }: DataCardCardProps) => {
                     </div>
                 </div>);
             })}
+
+            <Collapsible >
+                <CollapsibleTrigger>Debug</CollapsibleTrigger>
+                <CollapsibleContent>
+                    <div style={{ background: 'black' }}>
+                        <JsonRenderer data={datacard} />
+                    </div>
+                </CollapsibleContent>
+            </Collapsible>
         </div>);
 
 };
