@@ -23,7 +23,7 @@ export class IndexedData {
         names.push(veryCleanName.replace("-", " "));
         const removedHypend = veryCleanName.replace("-", "")
         names.push(removedHypend);
-        names.push(removedHypend.replace(" ", ""));
+        names.push(removedHypend.replace(" ", "").replace(" ", "").replace(" ", "").replace(" ", "").replace(" ", ""));
 
         names.push(...UNIT_NICKNAME_MAP[data.name.toLowerCase() as keyof typeof UNIT_NICKNAME_MAP] || []);
         this.names = Array.from(new Set(names.filter(Boolean)));
