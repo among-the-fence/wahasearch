@@ -21,7 +21,9 @@ export class IndexedData {
         names.push(veryCleanName);
         names.push(veryCleanName.replace("daemon", "demon"));
         names.push(veryCleanName.replace("-", " "));
-        names.push(veryCleanName.replace("-", ""));
+        const removedHypend = veryCleanName.replace("-", "")
+        names.push(removedHypend);
+        names.push(removedHypend.replace(" ", ""));
 
         names.push(...UNIT_NICKNAME_MAP[data.name.toLowerCase() as keyof typeof UNIT_NICKNAME_MAP] || []);
         this.names = Array.from(new Set(names.filter(Boolean)));
