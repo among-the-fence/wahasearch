@@ -66,6 +66,7 @@ export const SearchBar = ({ applyFunction }: SearchFormProps) => {
     );
 }
 
+
 export const SearchForm = ({ applyFunction }: SearchFormProps) => {
     const [localFormState, setLocalFormState] = useState(formData);
 
@@ -89,12 +90,20 @@ export const SearchForm = ({ applyFunction }: SearchFormProps) => {
         }
     }
 
-    const handleLegendSwitch = (name: string, checked: boolean) => {
-        // Gather the current state of all switches
-        localFormState.formData.set(name, checked.toString());
-
-        setLocalFormState(new SearchFormData(localFormState.formData));
-        applyFunction(localFormState);
+    const handleLegendSwitch = (selected: string) => {
+        const updated = new Map(localFormState.formData);
+        if (selected === SearchFormData.LEGENDS_GROUP_CURRENT) {
+            updated.set(CURRENT_DATASHEETS, "true");
+            updated.set(LEGENDS_DATASHEETS, "false");
+        } else if (selected === SearchFormData.LEGENDS_GROUP_ALL) {
+            updated.set(CURRENT_DATASHEETS, "true");
+            updated.set(LEGENDS_DATASHEETS, "true");
+        } else if (selected === SearchFormData.LEGENDS_GROUP_LEGENDS) {
+            updated.set(CURRENT_DATASHEETS, "false");
+            updated.set(LEGENDS_DATASHEETS, "true");
+        }
+        setLocalFormState(new SearchFormData(updated));
+        applyFunction(new SearchFormData(updated));
     };
 
     const handleClear = () => {
@@ -110,6 +119,19 @@ export const SearchForm = ({ applyFunction }: SearchFormProps) => {
         <div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <h2 style={{ marginBottom: '1rem', color: '#1d4ed8' }}>Search</h2>
+                <label style={{ display: 'flex', alignItems: 'center', marginRight: '1em' }}>
+                    <input
+                        type="checkbox"
+                        checked={localFormState.get(KOTC_DATASHEETS) === "true"}
+                        onChange={e => {
+                            const updated = new Map(localFormState.formData);
+                            updated.set(KOTC_DATASHEETS, e.target.checked ? "true" : "false");
+                            setLocalFormState(new SearchFormData(updated));
+                            applyFunction(new SearchFormData(updated));
+                        }}
+                        style={{ marginRight: 6 }}
+                    /> KotC
+                </label>
                 <button
                     type="button"
                     onClick={handleClear}
@@ -121,17 +143,13 @@ export const SearchForm = ({ applyFunction }: SearchFormProps) => {
                         color: '#6b7280', // subtle gray
                         fontWeight: 400,
                         fontSize: '0.95em',
-                        cursor: 'pointer',
                         marginLeft: '0.5em',
-                        marginBottom: 0,
-                        transition: 'background 0.15s',
                     }}
-                    onMouseOver={e => (e.currentTarget.style.background = '#f3f4f6')}
-                    onMouseOut={e => (e.currentTarget.style.background = 'transparent')}
                 >
                     Clear
                 </button>
             </div>
+
             <div>
                 <h2>Keywords</h2>
                 <input
@@ -177,24 +195,27 @@ export const SearchForm = ({ applyFunction }: SearchFormProps) => {
                 <div style={{ display: 'flex', gap: '1em', alignItems: 'center' }}>
                     <label>
                         <input
-                            type="checkbox"
-                            checked={localFormState.get(CURRENT_DATASHEETS) === "true"}
-                            onChange={e => handleLegendSwitch(CURRENT_DATASHEETS, e.target.checked)}
+                            type="radio"
+                            name="datasheetType"
+                            checked={localFormState.legendsGroupSelected() === SearchFormData.LEGENDS_GROUP_CURRENT}
+                            onChange={() => handleLegendSwitch(SearchFormData.LEGENDS_GROUP_CURRENT)}
                         /> Current
                     </label>
                     <label>
                         <input
-                            type="checkbox"
-                            checked={localFormState.get(LEGENDS_DATASHEETS) === "true"}
-                            onChange={e => handleLegendSwitch(LEGENDS_DATASHEETS, e.target.checked)}
-                        /> Legends
+                            type="radio"
+                            name="datasheetType"
+                            checked={localFormState.legendsGroupSelected() === SearchFormData.LEGENDS_GROUP_ALL}
+                            onChange={() => handleLegendSwitch(SearchFormData.LEGENDS_GROUP_ALL)}
+                        /> All
                     </label>
                     <label>
                         <input
-                            type="checkbox"
-                            checked={localFormState.get(KOTC_DATASHEETS) === "true"}
-                            onChange={e => handleLegendSwitch(KOTC_DATASHEETS, e.target.checked)}
-                        /> KotC
+                            type="radio"
+                            name="datasheetType"
+                            checked={localFormState.legendsGroupSelected() === SearchFormData.LEGENDS_GROUP_LEGENDS}
+                            onChange={() => handleLegendSwitch(SearchFormData.LEGENDS_GROUP_LEGENDS)}
+                        /> Legends
                     </label>
                 </div>
             </div>

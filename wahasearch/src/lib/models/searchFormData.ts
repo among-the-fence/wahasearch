@@ -20,6 +20,24 @@ export class SearchFormData {
         this.includeCurrent = !this.formData.has(CURRENT_DATASHEETS) || this.formData.get(CURRENT_DATASHEETS) == "true" || !this.includeLegends;
     }
 
+    // Radio group state constants
+    static LEGENDS_GROUP_CURRENT = "current";
+    static LEGENDS_GROUP_ALL = "all";
+    static LEGENDS_GROUP_LEGENDS = "legends";
+
+    legendsGroupSelected() {
+        if (this.formData.has(CURRENT_DATASHEETS) && this.formData.get(CURRENT_DATASHEETS) == "true") {
+            if (this.formData.has(LEGENDS_DATASHEETS) && this.formData.get(LEGENDS_DATASHEETS) == "true") {
+                return SearchFormData.LEGENDS_GROUP_ALL;
+            }
+            return SearchFormData.LEGENDS_GROUP_CURRENT;
+        } else if (this.formData.has(LEGENDS_DATASHEETS) && this.formData.get(LEGENDS_DATASHEETS) == "true") {
+            return SearchFormData.LEGENDS_GROUP_LEGENDS;
+        } else {
+            return SearchFormData.LEGENDS_GROUP_CURRENT;
+        }
+    }
+
     clear() {
         this.formData.clear();
     }
