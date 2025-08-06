@@ -191,31 +191,112 @@ export const SearchForm = ({ applyFunction }: SearchFormProps) => {
                     onChange={e => updateLocalFormState(FILTERS_TOUGHNESS, e)} />
             </div>
 
-            <div style={{ marginTop: '1em' }}>
-                <div style={{ display: 'flex', gap: '1em', alignItems: 'center' }}>
-                    <label>
+            <div style={{ marginTop: '1em', display: 'flex', justifyContent: 'center' }}>
+                <div style={{
+                    display: 'inline-flex',
+                    overflow: 'hidden',
+                    border: '1px solid #e5e7eb',
+                    borderRadius: '10px',
+                    background: '#fff',
+                }}>
+                    <label style={{ cursor: 'pointer' }}>
                         <input
                             type="radio"
                             name="datasheetType"
+                            id="current"
+                            className="sr-only"
                             checked={localFormState.legendsGroupSelected() === SearchFormData.LEGENDS_GROUP_CURRENT}
                             onChange={() => handleLegendSwitch(SearchFormData.LEGENDS_GROUP_CURRENT)}
-                        /> Current
+                        />
+                        <span style={{
+                            position: 'relative',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            height: '100%',
+                            padding: '0.5em 1.5em 0.5em 2.2em',
+                            fontSize: '1rem',
+                            background: localFormState.legendsGroupSelected() === SearchFormData.LEGENDS_GROUP_CURRENT ? '#bfdbfe' : 'transparent',
+                            transition: 'background 0.15s',
+                        }}>
+                            <span style={{
+                                width: 8,
+                                height: 8,
+                                background: '#3b82f6',
+                                borderRadius: '50%',
+                                position: 'absolute',
+                                top: '50%',
+                                left: 12,
+                                transform: 'translateY(-50%)',
+                                display: localFormState.legendsGroupSelected() === SearchFormData.LEGENDS_GROUP_CURRENT ? 'inline-block' : 'none',
+                            }}></span>
+                            Current
+                        </span>
                     </label>
-                    <label>
+                    <label style={{ cursor: 'pointer' }}>
                         <input
                             type="radio"
                             name="datasheetType"
+                            id="all"
+                            className="sr-only"
                             checked={localFormState.legendsGroupSelected() === SearchFormData.LEGENDS_GROUP_ALL}
                             onChange={() => handleLegendSwitch(SearchFormData.LEGENDS_GROUP_ALL)}
-                        /> All
+                        />
+                        <span style={{
+                            position: 'relative',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            height: '100%',
+                            padding: '0.5em 1.5em 0.5em 2.2em',
+                            fontSize: '1rem',
+                            background: localFormState.legendsGroupSelected() === SearchFormData.LEGENDS_GROUP_ALL ? '#bbf7d0' : 'transparent',
+                            transition: 'background 0.15s',
+                        }}>
+                            <span style={{
+                                width: 8,
+                                height: 8,
+                                background: '#22c55e',
+                                borderRadius: '50%',
+                                position: 'absolute',
+                                top: '50%',
+                                left: 12,
+                                transform: 'translateY(-50%)',
+                                display: localFormState.legendsGroupSelected() === SearchFormData.LEGENDS_GROUP_ALL ? 'inline-block' : 'none',
+                            }}></span>
+                            All
+                        </span>
                     </label>
-                    <label>
+                    <label style={{ cursor: 'pointer' }}>
                         <input
                             type="radio"
                             name="datasheetType"
+                            id="legends"
+                            className="sr-only"
                             checked={localFormState.legendsGroupSelected() === SearchFormData.LEGENDS_GROUP_LEGENDS}
                             onChange={() => handleLegendSwitch(SearchFormData.LEGENDS_GROUP_LEGENDS)}
-                        /> Legends
+                        />
+                        <span style={{
+                            position: 'relative',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            height: '100%',
+                            padding: '0.5em 1.5em 0.5em 2.2em',
+                            fontSize: '1rem',
+                            background: localFormState.legendsGroupSelected() === SearchFormData.LEGENDS_GROUP_LEGENDS ? '#ddd6fe' : 'transparent',
+                            transition: 'background 0.15s',
+                        }}>
+                            <span style={{
+                                width: 8,
+                                height: 8,
+                                background: '#8b5cf6',
+                                borderRadius: '50%',
+                                position: 'absolute',
+                                top: '50%',
+                                left: 12,
+                                transform: 'translateY(-50%)',
+                                display: localFormState.legendsGroupSelected() === SearchFormData.LEGENDS_GROUP_LEGENDS ? 'inline-block' : 'none',
+                            }}></span>
+                            Legends
+                        </span>
                     </label>
                 </div>
             </div>
