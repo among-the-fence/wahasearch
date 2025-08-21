@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="b39e-4401-8f3e-fdf7" name="Imperium - Adepta Sororitas" gameSystemId="sys-352e-adc2-7639-d6a9" gameSystemRevision="1" revision="70" battleScribeVersion="2.03" authorName="CrusherJoe" type="catalogue" authorContact="@CrusherJoe on Discord" authorUrl="Sometimes GitHub blows">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="b39e-4401-8f3e-fdf7" name="Imperium - Adepta Sororitas" gameSystemId="sys-352e-adc2-7639-d6a9" gameSystemRevision="1" revision="73" battleScribeVersion="2.03" authorName="CrusherJoe" type="catalogue" authorContact="@CrusherJoe on Discord" authorUrl="Sometimes GitHub blows">
   <categoryEntries>
     <categoryEntry name="Aestred Thurga and Agathae Dolan" hidden="false" id="c8ba-2b2d-e47f-d7a6"/>
     <categoryEntry name="Arco-flagellants" hidden="false" id="63f8-3a5d-ef9c-d86e"/>
@@ -6187,7 +6187,7 @@ of your Command phase, you can choose one of the following:
         </profile>
         <profile name="Invulnerable Save" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="3cae-8884-fe99-233f">
           <characteristics>
-            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">Models in this units have a 4+ invulnerable save.</characteristic>
+            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">Models in this unit have a 4+ invulnerable save.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -6728,15 +6728,6 @@ of your Command phase, you can choose one of the following:
           <selectionEntries>
             <selectionEntry type="model" import="true" name="Novitiate with Sacred Banner" hidden="false" id="a9c8-437a-2fb8-8ccb">
               <selectionEntries>
-                <selectionEntry type="upgrade" import="true" name="Autopistol" hidden="false" id="50d4-8ce5-9f75-bbc">
-                  <infoLinks>
-                    <infoLink name="Novitiate autopistol" hidden="false" type="profile" id="a39f-99d6-bd0f-3f74" targetId="3e10-d7df-b71c-6af3"/>
-                  </infoLinks>
-                  <constraints>
-                    <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="67ba-6f71-fe29-a568"/>
-                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e333-394f-5fe7-a6e6"/>
-                  </constraints>
-                </selectionEntry>
                 <selectionEntry type="upgrade" import="true" name="Sacred Banner" hidden="false" id="9059-ba63-3509-c02b">
                   <profiles>
                     <profile name="Sacred Banner" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="a98b-c507-2078-b22">
@@ -6764,6 +6755,7 @@ of your Command phase, you can choose one of the following:
                     <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="ce77-432c-fcbd-9b90"/>
                   </constraints>
                 </entryLink>
+                <entryLink import="true" name="Autopistol" hidden="false" id="9417-6b77-d28d-cb6e" type="selectionEntry" targetId="836e-4f46-1837-b270"/>
               </entryLinks>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Novitiate with Simulacrum Imperialis" hidden="false" id="5c8d-6030-2b4d-33f1">
@@ -6811,6 +6803,7 @@ of your Command phase, you can choose one of the following:
                     <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="ede1-bc27-cad0-8cf3"/>
                   </constraints>
                 </entryLink>
+                <entryLink import="true" name="Autopistol" hidden="false" id="769c-ff51-45bf-a2f9" type="selectionEntry" targetId="836e-4f46-1837-b270"/>
               </entryLinks>
               <constraints>
                 <constraint type="max" value="2" field="selections" scope="parent" shared="true" id="c02d-c780-3fb2-af6d"/>
@@ -7652,15 +7645,6 @@ If this unit made a Charge move this turn, until the end of the phase, select bo
         <infoLink name="Sister Novitiate" hidden="false" type="profile" id="4742-7a27-3b5f-c8c0" targetId="9996-fbd1-4807-f820"/>
       </infoLinks>
       <selectionEntries>
-        <selectionEntry type="upgrade" import="true" name="Autopistol" hidden="false" id="3574-7d5b-2177-1de2" collective="true">
-          <infoLinks>
-            <infoLink name="Novitiate autopistol" hidden="false" type="profile" id="76e4-698e-8c52-f6bf" targetId="3e10-d7df-b71c-6af3"/>
-          </infoLinks>
-          <constraints>
-            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="67ba-6f71-fe29-a568"/>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e333-394f-5fe7-a6e6"/>
-          </constraints>
-        </selectionEntry>
         <selectionEntry type="upgrade" import="true" name="Novitiate melee weapon" hidden="false" id="c5cf-70e-95a1-3c76" collective="true">
           <constraints>
             <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="95fc-e6d9-2aea-99a0"/>
@@ -7681,6 +7665,12 @@ If this unit made a Charge move this turn, until the end of the phase, select bo
           </profiles>
         </selectionEntry>
       </selectionEntries>
+      <entryLinks>
+        <entryLink import="true" name="Autopistol" hidden="false" id="c865-8f0c-4138-2d72" type="selectionEntry" targetId="836e-4f46-1837-b270"/>
+      </entryLinks>
+      <constraints>
+        <constraint type="max" value="9" field="selections" scope="parent" shared="true" id="54ab-806a-6690-3835" includeChildSelections="false"/>
+      </constraints>
     </selectionEntry>
     <selectionEntry type="model" import="true" name="Sister Novitiate (Autogun)" hidden="false" id="4cde-9ef-5b92-9c64" collective="false">
       <entryLinks>
@@ -7690,6 +7680,7 @@ If this unit made a Charge move this turn, until the end of the phase, select bo
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="1a92-3456-39b6-42c5"/>
           </constraints>
         </entryLink>
+        <entryLink import="true" name="Autopistol" hidden="false" id="5903-a8bf-587a-77da" type="selectionEntry" targetId="836e-4f46-1837-b270"/>
       </entryLinks>
       <infoLinks>
         <infoLink name="Sister Novitiate" hidden="false" type="profile" id="f820-a10c-c1f3-7d0a" targetId="9996-fbd1-4807-f820"/>
@@ -7717,16 +7708,10 @@ If this unit made a Charge move this turn, until the end of the phase, select bo
             </profile>
           </profiles>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Autopistol" hidden="false" id="bf01-9ddb-4a01-f570" collective="true">
-          <infoLinks>
-            <infoLink name="Novitiate autopistol" hidden="false" type="profile" id="2761-a5d5-9892-ffd6" targetId="3e10-d7df-b71c-6af3"/>
-          </infoLinks>
-          <constraints>
-            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="67ba-6f71-fe29-a568"/>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e333-394f-5fe7-a6e6"/>
-          </constraints>
-        </selectionEntry>
       </selectionEntries>
+      <constraints>
+        <constraint type="max" value="9" field="selections" scope="parent" shared="true" id="f838-fa46-1b4e-429c" includeChildSelections="false"/>
+      </constraints>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Warlord" id="66c6-be4b-a1dc-10d0">
       <categoryLinks>
@@ -9300,6 +9285,15 @@ If this unit made a Charge move this turn, until the end of the phase, select bo
         <infoLink name="Ignores Cover" id="5dba-d78d-667f-5793" hidden="false" type="rule" targetId="4640-43e7-30b-215a"/>
         <infoLink name="Torrent" id="0277-fbd1-8a02-7626" hidden="false" type="rule" targetId="5edf-d619-23e0-9b56"/>
       </infoLinks>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Autopistol" hidden="false" id="836e-4f46-1837-b270" collective="true">
+      <infoLinks>
+        <infoLink name="Novitiate autopistol" id="46fe-d226-42eb-6fb3" hidden="false" type="profile" targetId="3e10-d7df-b71c-6af3"/>
+      </infoLinks>
+      <constraints>
+        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="0c26-aebc-9a03-bbca"/>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2aab-ebca-c0de-d940"/>
+      </constraints>
     </selectionEntry>
   </sharedSelectionEntries>
   <sharedProfiles>
@@ -11472,7 +11466,7 @@ Death Before Disgrace: Each time a PENITENT model from your army is destroyed by
     <entryLink import="true" name="Triumph of Saint Katherine" hidden="false" type="selectionEntry" id="59f4-f4db-60d4-dfec" targetId="9f5f-d769-7900-c8a1"/>
     <entryLink import="true" name="Zephyrim Squad" hidden="false" type="selectionEntry" id="f2b9-cd8a-1e39-4cad" targetId="22f0-a7d8-b2b6-e26"/>
     <entryLink import="true" name="Daemonifuge" hidden="false" type="selectionEntry" id="ee6b-e1a3-5bb0-61c7" targetId="8569-2390-d4db-30fd"/>
-    <entryLink import="true" name="Detachment Choice" hidden="false" type="selectionEntry" id="ebb6-6e42-e707-22c1" targetId="9cc-e2b2-81eb-df6"/>
+    <entryLink import="true" name="Detachment" hidden="false" type="selectionEntry" id="ebb6-6e42-e707-22c1" targetId="9cc-e2b2-81eb-df6"/>
     <entryLink import="true" name="Show/Hide Options" hidden="false" type="selectionEntry" id="9321-138b-ef39-7413" targetId="e8ef-836a-a9d1-901d">
       <entryLinks>
         <entryLink import="true" name="Show Titans" hidden="false" type="selectionEntry" id="3f29-9131-bed-e7e3" targetId="f26b-79db-80e0-3a3b"/>
@@ -11494,7 +11488,11 @@ Death Before Disgrace: Each time a PENITENT model from your army is destroyed by
       </constraints>
     </entryLink>
     <entryLink import="true" name="Sanctifiers" hidden="false" id="9c29-9181-6f36-18ea" type="selectionEntry" targetId="eade-6ec7-7236-bfdb"/>
-    <entryLink import="true" name="Order of Battle" hidden="false" id="8ddd-e434-0f69-601a" type="selectionEntry" targetId="eda7-8b4b-3719-af36"/>
+    <entryLink import="true" name="Order of Battle" hidden="false" id="8ddd-e434-0f69-601a" type="selectionEntry" targetId="eda7-8b4b-3719-af36">
+      <entryLinks>
+        <entryLink import="true" name="Shadow Operations" hidden="false" id="e5fe-483d-2acf-2a50" type="selectionEntryGroup" targetId="68a2-ada5-3cd4-c5a3"/>
+      </entryLinks>
+    </entryLink>
   </entryLinks>
   <catalogueLinks>
     <catalogueLink type="catalogue" name="Imperium - Imperial Knights - Library" id="f82d-fbeb-8ed2-4284" targetId="1b6d-dc06-5db9-c7d1" importRootEntries="true"/>

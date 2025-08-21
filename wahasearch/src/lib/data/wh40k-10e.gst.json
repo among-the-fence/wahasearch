@@ -3454,6 +3454,15 @@
                                           "@_childId": "9cfd-1c32-585f-7d5c",
                                           "@_shared": "true",
                                           "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                          "@_type": "lessThan",
+                                          "@_value": "6",
+                                          "@_field": "selections",
+                                          "@_scope": "model-or-unit",
+                                          "@_childId": "d1a5-4297-168b-11cd",
+                                          "@_shared": "true",
+                                          "@_includeChildSelections": "true"
                                         }
                                       ]
                                     },
@@ -3488,6 +3497,15 @@
                                           "@_childId": "9cfd-1c32-585f-7d5c",
                                           "@_shared": "true",
                                           "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                          "@_type": "lessThan",
+                                          "@_value": "3",
+                                          "@_field": "selections",
+                                          "@_scope": "model-or-unit",
+                                          "@_childId": "d1a5-4297-168b-11cd",
+                                          "@_shared": "true",
+                                          "@_includeChildSelections": "true"
                                         }
                                       ]
                                     },
@@ -3511,6 +3529,15 @@
                                           "@_field": "75bb-ded1-c86d-bdf0",
                                           "@_scope": "model-or-unit",
                                           "@_childId": "any",
+                                          "@_shared": "true",
+                                          "@_includeChildSelections": "true"
+                                        },
+                                        {
+                                          "@_type": "lessThan",
+                                          "@_value": "6",
+                                          "@_field": "selections",
+                                          "@_scope": "model-or-unit",
+                                          "@_childId": "d1a5-4297-168b-11cd",
                                           "@_shared": "true",
                                           "@_includeChildSelections": "true"
                                         }
@@ -3551,6 +3578,228 @@
                             ]
                           },
                           "@_type": "and"
+                        },
+                        {
+                          "conditions": {
+                            "condition": [
+                              {
+                                "@_type": "equalTo",
+                                "@_value": "1",
+                                "@_field": "selections",
+                                "@_scope": "model-or-unit",
+                                "@_childId": "d1a5-4297-168b-11cd",
+                                "@_shared": "true",
+                                "@_includeChildSelections": "true",
+                                "@_includeChildForces": "false"
+                              },
+                              {
+                                "@_type": "equalTo",
+                                "@_value": "2",
+                                "@_field": "selections",
+                                "@_scope": "model-or-unit",
+                                "@_childId": "f9da-852a-d7f0-92e9",
+                                "@_shared": "true",
+                                "@_includeChildSelections": "true",
+                                "@_includeChildForces": "false"
+                              },
+                              {
+                                "@_type": "lessThan",
+                                "@_value": "1",
+                                "@_field": "selections",
+                                "@_scope": "self",
+                                "@_childId": "f9da-852a-d7f0-92e9",
+                                "@_shared": "true",
+                                "@_includeChildSelections": "true",
+                                "@_includeChildForces": "false"
+                              }
+                            ]
+                          },
+                          "@_type": "and"
+                        },
+                        {
+                          "conditions": {
+                            "condition": [
+                              {
+                                "@_type": "equalTo",
+                                "@_value": "2",
+                                "@_field": "selections",
+                                "@_scope": "model-or-unit",
+                                "@_childId": "d1a5-4297-168b-11cd",
+                                "@_shared": "true",
+                                "@_includeChildSelections": "true",
+                                "@_includeChildForces": "false"
+                              },
+                              {
+                                "@_type": "equalTo",
+                                "@_value": "4",
+                                "@_field": "selections",
+                                "@_scope": "model-or-unit",
+                                "@_childId": "f9da-852a-d7f0-92e9",
+                                "@_shared": "true",
+                                "@_includeChildSelections": "true",
+                                "@_includeChildForces": "false"
+                              },
+                              {
+                                "@_type": "lessThan",
+                                "@_value": "1",
+                                "@_field": "selections",
+                                "@_scope": "self",
+                                "@_childId": "f9da-852a-d7f0-92e9",
+                                "@_shared": "true",
+                                "@_includeChildSelections": "true",
+                                "@_includeChildForces": "false"
+                              }
+                            ]
+                          },
+                          "@_type": "and"
+                        },
+                        {
+                          "conditions": {
+                            "condition": [
+                              {
+                                "@_type": "equalTo",
+                                "@_value": "3",
+                                "@_field": "selections",
+                                "@_scope": "model-or-unit",
+                                "@_childId": "d1a5-4297-168b-11cd",
+                                "@_shared": "true",
+                                "@_includeChildSelections": "true",
+                                "@_includeChildForces": "false"
+                              },
+                              {
+                                "@_type": "equalTo",
+                                "@_value": "6",
+                                "@_field": "selections",
+                                "@_scope": "model-or-unit",
+                                "@_childId": "f9da-852a-d7f0-92e9",
+                                "@_shared": "true",
+                                "@_includeChildSelections": "true",
+                                "@_includeChildForces": "false"
+                              },
+                              {
+                                "@_type": "lessThan",
+                                "@_value": "1",
+                                "@_field": "selections",
+                                "@_scope": "self",
+                                "@_childId": "f9da-852a-d7f0-92e9",
+                                "@_shared": "true",
+                                "@_includeChildSelections": "true",
+                                "@_includeChildForces": "false"
+                              }
+                            ]
+                          },
+                          "@_type": "and"
+                        },
+                        {
+                          "conditions": {
+                            "condition": [
+                              {
+                                "@_type": "equalTo",
+                                "@_value": "4",
+                                "@_field": "selections",
+                                "@_scope": "model-or-unit",
+                                "@_childId": "d1a5-4297-168b-11cd",
+                                "@_shared": "true",
+                                "@_includeChildSelections": "true",
+                                "@_includeChildForces": "false"
+                              },
+                              {
+                                "@_type": "equalTo",
+                                "@_value": "8",
+                                "@_field": "selections",
+                                "@_scope": "model-or-unit",
+                                "@_childId": "f9da-852a-d7f0-92e9",
+                                "@_shared": "true",
+                                "@_includeChildSelections": "true",
+                                "@_includeChildForces": "false"
+                              },
+                              {
+                                "@_type": "lessThan",
+                                "@_value": "1",
+                                "@_field": "selections",
+                                "@_scope": "self",
+                                "@_childId": "f9da-852a-d7f0-92e9",
+                                "@_shared": "true",
+                                "@_includeChildSelections": "true",
+                                "@_includeChildForces": "false"
+                              }
+                            ]
+                          },
+                          "@_type": "and"
+                        },
+                        {
+                          "conditions": {
+                            "condition": [
+                              {
+                                "@_type": "equalTo",
+                                "@_value": "5",
+                                "@_field": "selections",
+                                "@_scope": "model-or-unit",
+                                "@_childId": "d1a5-4297-168b-11cd",
+                                "@_shared": "true",
+                                "@_includeChildSelections": "true",
+                                "@_includeChildForces": "false"
+                              },
+                              {
+                                "@_type": "equalTo",
+                                "@_value": "10",
+                                "@_field": "selections",
+                                "@_scope": "model-or-unit",
+                                "@_childId": "f9da-852a-d7f0-92e9",
+                                "@_shared": "true",
+                                "@_includeChildSelections": "true",
+                                "@_includeChildForces": "false"
+                              },
+                              {
+                                "@_type": "lessThan",
+                                "@_value": "1",
+                                "@_field": "selections",
+                                "@_scope": "self",
+                                "@_childId": "f9da-852a-d7f0-92e9",
+                                "@_shared": "true",
+                                "@_includeChildSelections": "true",
+                                "@_includeChildForces": "false"
+                              }
+                            ]
+                          },
+                          "@_type": "and"
+                        },
+                        {
+                          "conditions": {
+                            "condition": [
+                              {
+                                "@_type": "equalTo",
+                                "@_value": "6",
+                                "@_field": "selections",
+                                "@_scope": "model-or-unit",
+                                "@_childId": "d1a5-4297-168b-11cd",
+                                "@_shared": "true",
+                                "@_includeChildSelections": "true",
+                                "@_includeChildForces": "false"
+                              },
+                              {
+                                "@_type": "equalTo",
+                                "@_value": "12",
+                                "@_field": "selections",
+                                "@_scope": "model-or-unit",
+                                "@_childId": "f9da-852a-d7f0-92e9",
+                                "@_shared": "true",
+                                "@_includeChildSelections": "true",
+                                "@_includeChildForces": "false"
+                              },
+                              {
+                                "@_type": "lessThan",
+                                "@_value": "1",
+                                "@_field": "selections",
+                                "@_scope": "self",
+                                "@_childId": "f9da-852a-d7f0-92e9",
+                                "@_shared": "true",
+                                "@_includeChildSelections": "true",
+                                "@_includeChildForces": "false"
+                              }
+                            ]
+                          },
+                          "@_type": "and"
                         }
                       ]
                     },
@@ -3562,19 +3811,64 @@
                 "@_field": "hidden"
               },
               {
+                "conditionGroups": {
+                  "conditionGroup": {
+                    "conditions": {
+                      "condition": [
+                        {
+                          "@_type": "equalTo",
+                          "@_value": "1",
+                          "@_field": "selections",
+                          "@_scope": "self",
+                          "@_childId": "any",
+                          "@_shared": "true"
+                        },
+                        {
+                          "@_type": "equalTo",
+                          "@_value": "0",
+                          "@_field": "selections",
+                          "@_scope": "self",
+                          "@_childId": "d327-a8ea-20de-37f4",
+                          "@_shared": "true"
+                        }
+                      ]
+                    },
+                    "@_type": "and"
+                  }
+                },
+                "@_type": "set",
+                "@_value": "2",
+                "@_field": "2a14-db5e-c5ad-5ae9"
+              },
+              {
                 "conditions": {
                   "condition": {
                     "@_type": "equalTo",
                     "@_value": "1",
                     "@_field": "selections",
                     "@_scope": "self",
-                    "@_childId": "any",
+                    "@_childId": "d327-a8ea-20de-37f4",
                     "@_shared": "true"
                   }
                 },
                 "@_type": "set",
-                "@_value": "2",
+                "@_value": "1",
                 "@_field": "2a14-db5e-c5ad-5ae9"
+              },
+              {
+                "conditions": {
+                  "condition": {
+                    "@_type": "equalTo",
+                    "@_value": "1",
+                    "@_field": "selections",
+                    "@_scope": "self",
+                    "@_childId": "d327-a8ea-20de-37f4",
+                    "@_shared": "true"
+                  }
+                },
+                "@_type": "set",
+                "@_value": "1",
+                "@_field": "b96f-03f7-d8a1-92ce"
               }
             ]
           },
@@ -4412,6 +4706,168 @@
                 "@_name": "Precise",
                 "@_hidden": "false",
                 "@_id": "56e5-82b6-8596-85f5"
+              },
+              {
+                "costs": {
+                  "cost": [
+                    {
+                      "@_name": "pts",
+                      "@_typeId": "51b2-306e-1021-d207",
+                      "@_value": "0"
+                    },
+                    {
+                      "@_name": "Crusade Points",
+                      "@_typeId": "b03b-c239-15a5-da55",
+                      "@_value": "0"
+                    },
+                    {
+                      "@_name": "Crusade: Battle Honours",
+                      "@_typeId": "75bb-ded1-c86d-bdf0",
+                      "@_value": "0"
+                    },
+                    {
+                      "@_name": "Crusade: Experience",
+                      "@_typeId": "a623-fe74-1d33-cddf",
+                      "@_value": "0"
+                    },
+                    {
+                      "@_name": "Crusade: Weapon Modifications",
+                      "@_typeId": "716d-91b7-d55a-1022",
+                      "@_value": "2"
+                    }
+                  ]
+                },
+                "infoLinks": {
+                  "infoLink": {
+                    "@_name": "Lethal Hits",
+                    "@_id": "ea3c-d126-6581-9c0d",
+                    "@_hidden": "false",
+                    "@_type": "rule",
+                    "@_targetId": "d1d1-611e-5191-1095"
+                  }
+                },
+                "constraints": {
+                  "constraint": {
+                    "@_type": "max",
+                    "@_value": "1",
+                    "@_field": "selections",
+                    "@_scope": "parent",
+                    "@_shared": "true",
+                    "@_id": "045e-f0f0-0c25-9a3c",
+                    "@_includeChildSelections": "false"
+                  }
+                },
+                "modifiers": {
+                  "modifier": {
+                    "conditions": {
+                      "condition": {
+                        "@_type": "notInstanceOf",
+                        "@_value": "1",
+                        "@_field": "selections",
+                        "@_scope": "primary-catalogue",
+                        "@_childId": "5108-f98-63c2-53cb",
+                        "@_shared": "true"
+                      }
+                    },
+                    "@_type": "set",
+                    "@_value": "true",
+                    "@_field": "hidden"
+                  }
+                },
+                "modifierGroups": {
+                  "modifierGroup": {
+                    "comment": "Master-worked",
+                    "modifiers": {
+                      "modifier": [
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "greaterThan",
+                              "@_value": "0",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "d327-a8ea-20de-37f4",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "append",
+                          "@_value": "Seeping Poisons",
+                          "@_field": "annotation",
+                          "@_join": ",",
+                          "@_scope": "upgrade",
+                          "@_affects": "profiles.Ranged Weapons"
+                        },
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "atLeast",
+                              "@_value": "1",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "d327-a8ea-20de-37f4",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "append",
+                          "@_value": "Lethal Hits",
+                          "@_field": "7f1b-8591-2fcf-d01c",
+                          "@_scope": "upgrade",
+                          "@_affects": "profiles.Ranged Weapons",
+                          "@_position": "-1",
+                          "@_join": ","
+                        },
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "greaterThan",
+                              "@_value": "0",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "d327-a8ea-20de-37f4",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "append",
+                          "@_value": "Seeping Poisons",
+                          "@_field": "annotation",
+                          "@_join": ",",
+                          "@_scope": "upgrade",
+                          "@_affects": "profiles.Melee Weapons"
+                        },
+                        {
+                          "conditions": {
+                            "condition": {
+                              "@_type": "atLeast",
+                              "@_value": "1",
+                              "@_field": "selections",
+                              "@_scope": "upgrade",
+                              "@_childId": "d327-a8ea-20de-37f4",
+                              "@_shared": "true",
+                              "@_includeChildSelections": "true"
+                            }
+                          },
+                          "@_type": "append",
+                          "@_value": "Lethal Hits",
+                          "@_field": "893f-9000-ccf7-648e",
+                          "@_scope": "upgrade",
+                          "@_affects": "profiles.Melee Weapons",
+                          "@_position": "-1",
+                          "@_join": ","
+                        }
+                      ]
+                    },
+                    "@_type": "and"
+                  }
+                },
+                "comment": "Death Guard specific Weapon Modification",
+                "@_type": "upgrade",
+                "@_import": "true",
+                "@_name": "Seeping Poisons",
+                "@_hidden": "false",
+                "@_id": "d327-a8ea-20de-37f4"
               }
             ]
           },
@@ -4989,7 +5445,7 @@
     "@_xmlns": "http://www.battlescribe.net/schema/gameSystemSchema",
     "@_id": "sys-352e-adc2-7639-d6a9",
     "@_name": "Warhammer 40,000 10th Edition",
-    "@_revision": "38",
+    "@_revision": "41",
     "@_battleScribeVersion": "2.03",
     "@_type": "gameSystem"
   }

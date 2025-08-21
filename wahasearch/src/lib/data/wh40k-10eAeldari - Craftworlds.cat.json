@@ -44,7 +44,7 @@
           },
           {
             "@_import": "true",
-            "@_name": "Autarch Skyrunner",
+            "@_name": "Autarch Skyrunner [Legends]",
             "@_hidden": "false",
             "@_type": "selectionEntry",
             "@_id": "f765-5592-1494-7b5c",
@@ -204,7 +204,7 @@
           },
           {
             "@_import": "true",
-            "@_name": "Illic Nightspear",
+            "@_name": "Illic Nightspear [Legends]",
             "@_hidden": "false",
             "@_type": "selectionEntry",
             "@_id": "5238-a2cd-8def-931d",
@@ -220,7 +220,7 @@
           },
           {
             "@_import": "true",
-            "@_name": "Karandras",
+            "@_name": "Karandras [Legends]",
             "@_hidden": "false",
             "@_type": "selectionEntry",
             "@_id": "c1af-2aec-777b-da40",
@@ -244,7 +244,7 @@
           },
           {
             "@_import": "true",
-            "@_name": "Prince Yriel",
+            "@_name": "Prince Yriel [Legends]",
             "@_hidden": "false",
             "@_type": "selectionEntry",
             "@_id": "8a45-fd64-33fe-58b1",
@@ -471,7 +471,7 @@
           },
           {
             "@_import": "true",
-            "@_name": "Webway Gate",
+            "@_name": "Webway Gate [Legends]",
             "@_hidden": "false",
             "@_type": "selectionEntry",
             "@_id": "bdf5-36f4-8fc-1358",
@@ -519,7 +519,7 @@
           },
           {
             "@_import": "true",
-            "@_name": "Cobra",
+            "@_name": "Cobra [Legends]",
             "@_hidden": "false",
             "@_type": "selectionEntry",
             "@_id": "ae18-a032-75f6-f1f7",
@@ -527,7 +527,7 @@
           },
           {
             "@_import": "true",
-            "@_name": "Hornet",
+            "@_name": "Hornet [Legends]",
             "@_hidden": "false",
             "@_type": "selectionEntry",
             "@_id": "2f74-b5a1-d291-5623",
@@ -535,7 +535,7 @@
           },
           {
             "@_import": "true",
-            "@_name": "Irillyth",
+            "@_name": "Irillyth [Legends]",
             "@_hidden": "false",
             "@_type": "selectionEntry",
             "@_id": "ddab-1df8-7c4e-8768",
@@ -543,7 +543,7 @@
           },
           {
             "@_import": "true",
-            "@_name": "Lynx",
+            "@_name": "Lynx [Legends]",
             "@_hidden": "false",
             "@_type": "selectionEntry",
             "@_id": "548a-b4ab-4889-cde2",
@@ -551,7 +551,7 @@
           },
           {
             "@_import": "true",
-            "@_name": "Nightwing",
+            "@_name": "Nightwing [Legends]",
             "@_hidden": "false",
             "@_type": "selectionEntry",
             "@_id": "1736-9d5e-5276-f27",
@@ -559,7 +559,7 @@
           },
           {
             "@_import": "true",
-            "@_name": "Scorpion",
+            "@_name": "Scorpion [Legends]",
             "@_hidden": "false",
             "@_type": "selectionEntry",
             "@_id": "3977-a2b8-ae57-1b48",
@@ -567,7 +567,7 @@
           },
           {
             "@_import": "true",
-            "@_name": "Skathach Wraithknight",
+            "@_name": "Skathach Wraithknight [Legends]",
             "@_hidden": "false",
             "@_type": "selectionEntry",
             "@_id": "fbb7-854d-ce69-e961",
@@ -575,7 +575,7 @@
           },
           {
             "@_import": "true",
-            "@_name": "Shadow Spectres",
+            "@_name": "Shadow Spectres [Legends]",
             "@_hidden": "false",
             "@_type": "selectionEntry",
             "@_id": "189e-becb-ef7b-1233",
@@ -599,7 +599,7 @@
           },
           {
             "@_import": "true",
-            "@_name": "Warp Hunter",
+            "@_name": "Warp Hunter [Legends]",
             "@_hidden": "false",
             "@_type": "selectionEntry",
             "@_id": "3549-ed9e-6768-b32b",
@@ -607,7 +607,7 @@
           },
           {
             "@_import": "true",
-            "@_name": "Wraithseer",
+            "@_name": "Wraithseer [Legends]",
             "@_hidden": "false",
             "@_type": "selectionEntry",
             "@_id": "42ef-1197-f9dd-799c",
@@ -812,6 +812,14 @@
             "@_id": "e61a-e92c-74ec-5f31",
             "@_type": "selectionEntry",
             "@_targetId": "d756-653a-872b-5c1b"
+          },
+          {
+            "@_import": "true",
+            "@_name": "Order of Battle",
+            "@_hidden": "false",
+            "@_id": "c1e5-dcaa-6c66-cf40",
+            "@_type": "selectionEntry",
+            "@_targetId": "eda7-8b4b-3719-af36"
           }
         ]
       },
@@ -827,7 +835,7 @@
       "@_xmlns": "http://www.battlescribe.net/schema/catalogueSchema",
       "@_id": "34a5-8c7e-f468-82d1",
       "@_name": "Xenos - Aeldari",
-      "@_revision": "6",
+      "@_revision": "7",
       "@_battleScribeVersion": "2.03",
       "@_library": "false",
       "@_gameSystemId": "sys-352e-adc2-7639-d6a9",
