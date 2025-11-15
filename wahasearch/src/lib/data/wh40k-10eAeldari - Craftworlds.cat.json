@@ -814,6 +814,16 @@
             "@_targetId": "d756-653a-872b-5c1b"
           },
           {
+            "entryLinks": {
+              "entryLink": {
+                "@_import": "true",
+                "@_name": "Guiding Fate",
+                "@_hidden": "false",
+                "@_id": "d6f8-145b-93d5-0cdb",
+                "@_type": "selectionEntryGroup",
+                "@_targetId": "97ab-62de-dccd-4a8b"
+              }
+            },
             "@_import": "true",
             "@_name": "Order of Battle",
             "@_hidden": "false",
@@ -835,7 +845,7 @@
       "@_xmlns": "http://www.battlescribe.net/schema/catalogueSchema",
       "@_id": "34a5-8c7e-f468-82d1",
       "@_name": "Xenos - Aeldari",
-      "@_revision": "7",
+      "@_revision": "8",
       "@_battleScribeVersion": "2.03",
       "@_library": "false",
       "@_gameSystemId": "sys-352e-adc2-7639-d6a9",
